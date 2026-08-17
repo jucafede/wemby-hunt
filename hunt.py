@@ -27,9 +27,18 @@ RATE_S = 1.0  # 1 requête / seconde par shop
 # ---------------------------------------------------------------- normalisation
 FORMATS = [
     ("Case", r"\bcase\b|\d+\s*-?\s*box\s*case"),
-    ("Hobby", r"\bhobby\b(?!\s*blaster)"),
+    ("FOTL", r"first\s*off\s*the\s*line|\bfotl\b"),
+    ("Fast Break", r"fast\s*break"),
+    ("Choice", r"\bchoice\b"),
+    ("H2", r"\bh2\b|hybrid"),
+    ("Tin", r"\btin\b"),
+    ("Chinese New Year", r"chinese\s*new\s*year|\bcny\b|lunar"),
+    ("International", r"\binternational\b|\bintl\b|\basia\b|\btmall\b"),
+    ("Hobby Mega", r"hobby\s*mega|mega\s*hobby"),
+    ("Hobby Blaster", r"hobby\s*blaster"),
+    ("Hobby", r"\bhobby\b"),
     ("Mega", r"\bmega\b"),
-    ("Blaster", r"\bblaster\b|hobby\s*blaster"),
+    ("Blaster", r"\bblaster\b"),
     ("Hanger", r"\bhanger\b"),
     ("Cello", r"\bcello\b|multi[- ]?pack"),
     ("Fat Pack", r"fat[- ]?pack"),
@@ -38,8 +47,10 @@ FORMATS = [
     ("Pack", r"\bpack\b(?!s)"),
 ]
 SEASON_RE = re.compile(r"(20\d{2})\s*[-/–]\s*(\d{2,4})|(?<!\d)(\d{2})\s*[-/–]\s*(\d{2})(?!\d)")
-SPORT_HINTS = {"basketball": ["basketball", "nba", "bball", "hoops"], "not_basketball": ["football", "nfl", "baseball", "mlb", "hockey", "nhl", "soccer", "wnba", "pokemon", "ufc", "wrestling", "f1", "euroleague"]}
-CONFIG_HINTS = ["target", "walmart", "fanatics", "green shock", "cracked ice", "red ice", "hyper pink", "hyper orange", "glitter", "flash", "ice prizm", "seismic", "npp"]
+SPORT_HINTS = {"basketball": ["basketball", "nba", "bball", "hoops"], "not_basketball": ["football", "nfl", "baseball", "mlb", "hockey", "nhl", "soccer", "wnba", "pokemon", "ufc", "wrestling", "f1", "euroleague", "golf", "nascar", "racing", "wwe", "tennis", "mma", "boxing", "college", "draft picks", "world cup", "premier league"]}
+SEALED_RE = re.compile(r"\b(box|boxes|blaster|mega|hobby|case|pack|packs|tin|display|bundle|lot)\b")
+SINGLE_RE = re.compile(r"(#\s*\d+\b|\b\d{1,3}\s*/\s*\d{1,4}\b|\bpsa\b|\bbgs\b|\bsgc\b|\bauto\b|\bautograph\b|\brc\b\s*$|\bpatch\b|\brelic\b|\bslab)")
+CONFIG_HINTS = ["target", "walmart", "fanatics", "exclusive", "green shock", "cracked ice", "red ice", "blue ice", "green ice", "hyper pink", "hyper orange", "glitter", "flash", "ice prizm", "seismic", "npp", "reactive", "fluorescent", "shimmer", "pulsar", "disco", "holo", "purple", "pink", "orange", "yellow", "green", "blue", "red"]
 
 def norm(s: str) -> str:
     return re.sub(r"\s+", " ", s.lower().replace("&amp;", "&")).strip()
@@ -83,6 +94,10 @@ def match_title(title: str, skus: list[dict]) -> Match:
     t = norm(title)
     season, fmt, sport, cfg = parse_season(t), parse_format(t), parse_sport(t), parse_config(t)
     cands = []
+    # likely_single : signaux forts de carte individuelle SANS signal sealed → ignoré (pas même en REVIEW).
+    # Un titre sans "Box" mais sans signal single (ex. "2023-24 Panini Phoenix Basketball") reste candidat → REVIEW.
+    if SINGLE_RE.search(t) and not re.search(r"\b(box|boxes|blaster|mega|hobby|case|tin|display)\b", t):
+        return Match(None, 0.0, [], season, fmt, sport, cfg)
     for s in skus:
         sc = 0.0
         names = [s["set"].lower()] + [a.lower() for a in s.get("aliases", [])]
@@ -90,9 +105,12 @@ def match_title(title: str, skus: list[dict]) -> Match:
         if not set_hit: continue
         # garde-fous : "Donruss Optic" vs "Donruss" seul, "Prizm" vs "Prizm Monopoly", "Hoops Premium Stock" vs "Hoops"
         if s["set"].lower() == "prizm":
-            if "monopoly" in t or "draft" in t: continue
+            if any(k in t for k in ("monopoly", "draft", "deca", "emergent", "flashback", "collegiate")): continue
             if not re.search(r"(panini\s+prizm|prizm\s+(basketball|nba|bball))", t): continue  # évite "Ice Prizms", "Hyper Pink Prizms"
-        if s["set"].lower() == "donruss optic" and "optic" not in t: continue
+        if s["set"].lower() == "donruss optic" and ("optic" not in t or "contenders" in t or "recon" in t): continue
+        if s["set"].lower() == "select" and ("select racing" in t or "nascar" in t): continue
+        # sous-gammes explicites qui ne sont PAS le SKU canonique → jamais absorbées
+        if any(k in t for k in ("1st off the line", "fotl", "asia", "tmall", "hanger", "cello", "multi-pack", "value pack")): continue
         sc += 0.40                                            # gamme
         if season == s["season"]: sc += 0.30                  # saison
         elif season is None: sc += 0.05
@@ -246,7 +264,7 @@ def report(cat: dict, conn: sqlite3.Connection, seen_at: str | None):
     # REVIEW : bruts basket 2023-24 non matchés (score entre 0.4 et 0.8) — dernier crawl seulement
     print("\n" + "="*72 + "\n  ⚠️  REVIEW (basketball 2023-24, non rattachés)\n" + "="*72)
     q = conn.execute("""SELECT shop,title,price,available,candidates,match_score,url FROM products_raw
-        WHERE sku_id IS NULL AND sport!='other' AND (season='2023-24' OR season IS NULL) AND match_score>=0.40
+        WHERE sku_id IS NULL AND sport!='other' AND (season='2023-24' OR season IS NULL) AND match_score>=0.60
         AND seen_at=(SELECT MAX(seen_at) FROM products_raw) ORDER BY match_score DESC LIMIT 40""").fetchall()
     for shop,title,price,av,cands,sc,url in q:
         print(f"  [{shop}] {title}  ${price:.2f} {'IN' if av else 'OOS'}  → {cands}")
@@ -275,10 +293,16 @@ def write_html(cat, blocks, restocks, review, seen_at):
             h.append(f"<div class=sku><span class=st style='background:{col[status]}'>{icon} {status}</span> <b>{s['season']} {s['manufacturer']} {s['set']} {s['format']}</b>"
                      f"<div class=small>ask {ask or 'n/a'} $ · sold {sold or 'n/a'} $ · buy ≤ {s['buy_below_usd']} $ · watch ≤ {s['watch_below_usd']} $ · EU {eu or 'n/a'} €</div>")
             if obs:
-                h.append("<table><tr><th>Shop</th><th>Prix</th><th>Stock</th><th>Landed €</th><th></th></tr>")
-                for o in obs[:8]:
+                h.append("<table><tr><th>Shop</th><th>Produit (titre live)</th><th>Configuration</th><th>Prix</th><th>Stock</th><th>Landed €</th></tr>")
+                seen=set()
+                for o in obs:
+                    key=(o[1],o[5],o[8],round(o[3],2),o[4])   # shop, url, variante, prix, stock — deux configs restent deux lignes
+                    if key in seen: continue
+                    seen.add(key)
+                    if len(seen)>12: break
                     cls = "" if o[4] else " class=oos"
-                    h.append(f"<tr{cls}><td>{o[1]}</td><td>${o[3]:.2f}</td><td>{'IN STOCK' if o[4] else 'sold out'}</td><td>€{landed_eur(o[3],cat):.2f}</td><td><a href='{o[5]}'>voir</a></td></tr>")
+                    cfg = parse_config(norm(o[2])) or "—"
+                    h.append(f"<tr{cls}><td>{o[1]}</td><td><a href='{o[5]}'>{o[2]}</a></td><td class=small>{cfg}</td><td>${o[3]:.2f}</td><td>{'IN STOCK' if o[4] else 'sold out'}</td><td>€{landed_eur(o[3],cat):.2f}</td></tr>")
                 h.append("</table>")
             h.append("</div>")
     if review:

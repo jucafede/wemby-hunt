@@ -1,0 +1,56 @@
+# Registre des shops. type: shopify_json | html (fallback non implémenté en v1 → skip avec message)
+# Politesse : 1 req/s, UA identifiable. Un LCS qui te bloque = une source perdue.
+shops:
+  - name: EH Cards & Collectibles
+    key: ehcards
+    base_url: https://ehcards.com
+    type: shopify_json
+    ships_intl: unknown
+    notes: "Phoenix 23-24 : 34,99 $ LIVE au 17/08 (une lecture Google périmée disait 29,99). Limit 6/client. Port gratuit >99 $."
+  - name: Collector Store LLC
+    key: collectorstore
+    base_url: https://collectorstore.com
+    type: shopify_json
+    notes: "Missouri. Phoenix : anciens prix observés 22,99 / 29,99 $, OOS au 17/08 — ne PAS utiliser comme benchmark live. WATCHLIST restock."
+  - name: Hidden Gems Card Shop
+    key: hiddengems
+    base_url: https://www.hiddengemscardshop.com
+    type: shopify_json
+    notes: "Shelby Township MI. Vrai LCS."
+  - name: The Awesome Card Shop
+    key: awesome
+    base_url: https://theawesomecardshop.com
+    type: shopify_json
+    notes: "Las Vegas. Port gratuit >200 $."
+  - name: MojoBreak Shop
+    key: mojobreak
+    base_url: https://mojobreakshop.com
+    type: shopify_json
+    notes: "Bay Area. -25 $ dès 250 $ 1re commande (à vérifier)."
+  - name: RbiCru7 Collectibles
+    key: rbicru7
+    base_url: https://rbicru7.com
+    type: shopify_json
+    notes: "Missouri. Soldes Hobby."
+  - name: Layton Sports Cards
+    key: layton
+    base_url: https://laytonsportscards.com
+    type: shopify_json
+    ships_intl: yes
+    notes: "Floride. FedEx intl 5-7 j. Recommande Ship My Cards."
+  - name: Jaspy's
+    key: jaspys
+    base_url: https://www.jaspys.com
+    type: shopify_json
+    notes: "Los Angeles."
+  # --- benchmark / contrôle (pas Shopify, collecteur html à faire en v2) ---
+  - name: DA Card World
+    key: dacw
+    base_url: https://www.dacardworld.com
+    type: html
+    notes: "CONTROL. Commande validée 15/08. Site propre (pas Shopify)."
+  - name: Columbia Sports Cards
+    key: columbia
+    base_url: https://columbiasportscard.com
+    type: shopify_json
+    notes: "Optic Mega 64,99 $ (OOS 17/08)."

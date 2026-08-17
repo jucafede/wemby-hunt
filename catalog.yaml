@@ -1,0 +1,242 @@
+# Catalogue canonique — les SKU que le moteur a le DROIT de comparer.
+# Tout produit non rattaché avec confiance >= 0.80 va dans products_raw uniquement (REVIEW).
+# Prix marché : market_ask_us = prix affiché (WaxStat/shops), market_sold_us = ventes réalisées (SportsCardsPro/eBay sold).
+# Le seuil buy_below_usd doit être ≤ market_sold_us. Saisis à la main, datés. Mets à jour 1×/semaine.
+fx_usd_eur: 0.862
+
+landed_cost:                # hypothèses provisoires → coût rendu ESTIMÉ DANS UN PANIER TYPE DE bundle_boxes boîtes. À remplacer par tes chiffres MyUS réels.
+  bundle_boxes: 8
+  domestic_shipping_usd: 0.0        # la plupart des LCS offrent le port > 50-100 $
+  forwarder_fee_usd_per_box: 3.0    # MyUS traitement/consolidation, à affiner
+  intl_shipping_usd_per_box: 9.0    # DHL, hypothèse pour ~8 blasters consolidés
+  vat_rate: 0.20
+  customs_flat_eur_per_category: 3.0
+  customs_categories: 1
+
+skus:
+  - id: PANINI_2023-24_PHOENIX_BLASTER
+    season: "2023-24"
+    manufacturer: Panini
+    set: Phoenix
+    format: Blaster
+    configuration: null
+    tier: retail
+    wemby_rc: true
+    market_ask_us: 34.95
+    market_sold_us: 28.50
+    market_source: "ask: WaxStat 34,95 / EH Cards 34,99 live 17/08 ; sold: SportsCardsPro 23,50-30 (mai-juil), eBay Kruk 24,99"
+    market_checked_at: 2026-08-17
+    buy_below_usd: 27.00
+    watch_below_usd: 31.00
+    eu_reference_eur: 49.99
+    eu_reference_source: "ShopUSCards 49,99 / eBay DE 59,99"
+
+  - id: PANINI_2023-24_PREMIUM_STOCK_BLASTER
+    season: "2023-24"
+    manufacturer: Panini
+    set: Premium Stock
+    aliases: ["Hoops Premium Stock"]
+    format: Blaster
+    configuration: null
+    tier: retail
+    wemby_rc: true
+    market_ask_us: 34.96
+    market_sold_us: null
+    market_source: "ask: Walmart 34,96 / DACW 39,95 / Dick's 29,99 ; sold: à relever"
+    market_checked_at: 2026-08-17
+    buy_below_usd: 30.00
+    watch_below_usd: 35.00
+    eu_reference_eur: null
+    eu_reference_source: ""
+
+  - id: PANINI_2023-24_PREMIUM_STOCK_MEGA
+    season: "2023-24"
+    manufacturer: Panini
+    set: Premium Stock
+    aliases: ["Hoops Premium Stock"]
+    format: Mega
+    configuration: null
+    tier: retail
+    wemby_rc: true
+    market_ask_us: null
+    market_sold_us: null
+    market_source: ""
+    market_checked_at: null
+    buy_below_usd: 60.00
+    watch_below_usd: 75.00
+    eu_reference_eur: 149.00
+    eu_reference_source: "commande EU 08/08 (EC1206918)"
+
+  - id: PANINI_2023-24_PRIZM_BLASTER
+    season: "2023-24"
+    manufacturer: Panini
+    set: Prizm
+    format: Blaster
+    configuration: null
+    tier: retail
+    wemby_rc: true
+    market_ask_us: 119.95
+    market_sold_us: null
+    market_source: "DACW"
+    market_checked_at: 2026-08-17
+    buy_below_usd: 60.00
+    watch_below_usd: 80.00
+    eu_reference_eur: 150.00
+    eu_reference_source: "(GPT, à revérifier) – marché déjà arbitré"
+
+  - id: PANINI_2023-24_OPTIC_BLASTER
+    season: "2023-24"
+    manufacturer: Panini
+    set: Donruss Optic
+    aliases: ["Optic"]
+    format: Blaster
+    configuration: null
+    tier: retail
+    wemby_rc: true
+    market_ask_us: null
+    market_sold_us: null
+    market_source: ""
+    market_checked_at: null
+    buy_below_usd: 40.00
+    watch_below_usd: 45.00
+    eu_reference_eur: null
+    eu_reference_source: ""
+
+  - id: PANINI_2023-24_OPTIC_MEGA
+    season: "2023-24"
+    manufacturer: Panini
+    set: Donruss Optic
+    aliases: ["Optic"]
+    format: Mega
+    configuration: null
+    tier: retail
+    wemby_rc: true
+    market_ask_us: 63.95
+    market_sold_us: 60.00
+    market_source: "ask: WaxStat 62,95 / Steel City 62,95 / Columbia 64,99 (OOS) ; sold: eBay listings 59,99-69,99"
+    market_checked_at: 2026-08-17
+    buy_below_usd: 65.00
+    watch_below_usd: 75.00
+    eu_reference_eur: 99.00
+    eu_reference_source: "DACW vu depuis EU (à revérifier)"
+
+  - id: PANINI_2023-24_SELECT_BLASTER
+    season: "2023-24"
+    manufacturer: Panini
+    set: Select
+    format: Blaster
+    configuration: null
+    tier: retail
+    wemby_rc: true
+    market_ask_us: null
+    market_sold_us: null
+    market_source: ""
+    market_checked_at: null
+    buy_below_usd: 45.00
+    watch_below_usd: 55.00
+    eu_reference_eur: null
+    eu_reference_source: ""
+
+  - id: PANINI_2023-24_SELECT_MEGA
+    season: "2023-24"
+    manufacturer: Panini
+    set: Select
+    format: Mega
+    configuration: null
+    tier: retail
+    wemby_rc: true
+    market_ask_us: null
+    market_sold_us: null
+    market_source: ""
+    market_checked_at: null
+    buy_below_usd: 90.00
+    watch_below_usd: 100.00
+    eu_reference_eur: 134.00
+    eu_reference_source: "(GPT, à revérifier)"
+
+  - id: PANINI_2023-24_MOSAIC_BLASTER
+    season: "2023-24"
+    manufacturer: Panini
+    set: Mosaic
+    format: Blaster
+    configuration: null
+    tier: retail
+    wemby_rc: true
+    market_ask_us: null
+    market_sold_us: null
+    market_source: ""
+    market_checked_at: null
+    buy_below_usd: 40.00
+    watch_below_usd: 50.00
+    eu_reference_eur: null
+    eu_reference_source: ""
+
+  - id: PANINI_2023-24_MOSAIC_MEGA
+    season: "2023-24"
+    manufacturer: Panini
+    set: Mosaic
+    format: Mega
+    configuration: null
+    tier: retail
+    wemby_rc: true
+    market_ask_us: null
+    market_sold_us: null
+    market_source: ""
+    market_checked_at: null
+    buy_below_usd: 70.00
+    watch_below_usd: 80.00
+    eu_reference_eur: null
+    eu_reference_source: ""
+
+  # ---- HOBBY WATCH (classement séparé) ----
+  - id: PANINI_2023-24_COURT_KINGS_HOBBY
+    season: "2023-24"
+    manufacturer: Panini
+    set: Court Kings
+    format: Hobby
+    tier: hobby
+    wemby_rc: true
+    market_ask_us: null
+    market_sold_us: null
+    buy_below_usd: 250.00
+    watch_below_usd: 300.00
+  - id: PANINI_2023-24_REVOLUTION_HOBBY
+    season: "2023-24"
+    manufacturer: Panini
+    set: Revolution
+    format: Hobby
+    tier: hobby
+    wemby_rc: true
+    market_ask_us: 399.95
+    market_sold_us: null
+    market_source: "DACW"
+    buy_below_usd: 275.00
+    watch_below_usd: 320.00
+  - id: PANINI_2023-24_OPTIC_HOBBY
+    season: "2023-24"
+    manufacturer: Panini
+    set: Donruss Optic
+    aliases: ["Optic"]
+    format: Hobby
+    tier: hobby
+    wemby_rc: true
+    buy_below_usd: 250.00
+    watch_below_usd: 300.00
+  - id: PANINI_2023-24_SELECT_HOBBY
+    season: "2023-24"
+    manufacturer: Panini
+    set: Select
+    format: Hobby
+    tier: hobby
+    wemby_rc: true
+    buy_below_usd: 300.00
+    watch_below_usd: 350.00
+  - id: PANINI_2023-24_PRIZM_HOBBY
+    season: "2023-24"
+    manufacturer: Panini
+    set: Prizm
+    format: Hobby
+    tier: hobby
+    wemby_rc: true
+    buy_below_usd: 900.00
+    watch_below_usd: 1000.00

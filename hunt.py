@@ -1,0 +1,324 @@
+#!/usr/bin/env python3
+"""
+wemby-hunt v1 — moteur de détection de prix sur les LCS US (Shopify).
+Pipeline : shops -> products_raw -> normalisation -> sku_id (score) -> observations -> décision.
+
+Usage:
+  python hunt.py                 # crawl tous les shops + rapport
+  python hunt.py --shop ehcards  # un seul shop
+  python hunt.py --report        # rapport seul depuis la base (pas de crawl)
+  python hunt.py --dry-run       # normalise des titres de test (sans réseau)
+"""
+from __future__ import annotations
+import argparse, csv, json, re, sqlite3, sys, time
+from dataclasses import dataclass, asdict
+from datetime import datetime, timezone
+from pathlib import Path
+
+import requests
+import yaml
+
+ROOT = Path(__file__).parent
+DB = ROOT / "hunt.db"
+OUT = ROOT / "out"
+UA = "wemby-hunt/1.0 (personal price research; contact via order email)"
+RATE_S = 1.0  # 1 requête / seconde par shop
+
+# ---------------------------------------------------------------- normalisation
+FORMATS = [
+    ("Case", r"\bcase\b|\d+\s*-?\s*box\s*case"),
+    ("Hobby", r"\bhobby\b(?!\s*blaster)"),
+    ("Mega", r"\bmega\b"),
+    ("Blaster", r"\bblaster\b|hobby\s*blaster"),
+    ("Hanger", r"\bhanger\b"),
+    ("Cello", r"\bcello\b|multi[- ]?pack"),
+    ("Fat Pack", r"fat[- ]?pack"),
+    ("Value Box", r"value\s*box"),
+    ("Retail Box", r"\bretail\s*box\b|24[- ]?pack"),
+    ("Pack", r"\bpack\b(?!s)"),
+]
+SEASON_RE = re.compile(r"(20\d{2})\s*[-/–]\s*(\d{2,4})|(?<!\d)(\d{2})\s*[-/–]\s*(\d{2})(?!\d)")
+SPORT_HINTS = {"basketball": ["basketball", "nba", "bball", "hoops"], "not_basketball": ["football", "nfl", "baseball", "mlb", "hockey", "nhl", "soccer", "wnba", "pokemon", "ufc", "wrestling", "f1", "euroleague"]}
+CONFIG_HINTS = ["target", "walmart", "fanatics", "green shock", "cracked ice", "red ice", "hyper pink", "hyper orange", "glitter", "flash", "ice prizm", "seismic", "npp"]
+
+def norm(s: str) -> str:
+    return re.sub(r"\s+", " ", s.lower().replace("&amp;", "&")).strip()
+
+def parse_season(t: str) -> str | None:
+    m = SEASON_RE.search(t)
+    if not m: return None
+    if m.group(1):
+        y1 = int(m.group(1)); y2 = m.group(2)
+        y2 = int(y2[-2:])
+    else:
+        y1 = 2000 + int(m.group(3)); y2 = int(m.group(4))
+    if (y1 % 100 + 1) % 100 != y2: return None  # doit être consécutif (23-24)
+    return f"{y1}-{y2:02d}"
+
+def parse_format(t: str) -> str | None:
+    for name, rx in FORMATS:
+        if re.search(rx, t): return name
+    return None
+
+def parse_sport(t: str) -> str:
+    if any(k in t for k in SPORT_HINTS["not_basketball"]): return "other"
+    if any(k in t for k in SPORT_HINTS["basketball"]): return "basketball"
+    return "unknown"
+
+def parse_config(t: str) -> str | None:
+    hits = [h for h in CONFIG_HINTS if h in t]
+    return ", ".join(hits) if hits else None
+
+@dataclass
+class Match:
+    sku_id: str | None
+    score: float
+    candidates: list  # [(sku_id, score)]
+    season: str | None
+    fmt: str | None
+    sport: str
+    config: str | None
+
+def match_title(title: str, skus: list[dict]) -> Match:
+    t = norm(title)
+    season, fmt, sport, cfg = parse_season(t), parse_format(t), parse_sport(t), parse_config(t)
+    cands = []
+    for s in skus:
+        sc = 0.0
+        names = [s["set"].lower()] + [a.lower() for a in s.get("aliases", [])]
+        set_hit = any(re.search(rf"\b{re.escape(n)}\b", t) for n in names)
+        if not set_hit: continue
+        # garde-fous : "Donruss Optic" vs "Donruss" seul, "Prizm" vs "Prizm Monopoly", "Hoops Premium Stock" vs "Hoops"
+        if s["set"].lower() == "prizm":
+            if "monopoly" in t or "draft" in t: continue
+            if not re.search(r"(panini\s+prizm|prizm\s+(basketball|nba|bball))", t): continue  # évite "Ice Prizms", "Hyper Pink Prizms"
+        if s["set"].lower() == "donruss optic" and "optic" not in t: continue
+        sc += 0.40                                            # gamme
+        if season == s["season"]: sc += 0.30                  # saison
+        elif season is None: sc += 0.05
+        else: continue                                        # mauvaise saison = jamais
+        if fmt == s["format"]: sc += 0.25                     # format
+        elif fmt is None: sc += 0.0                           # format inconnu → jamais >= 0.80 → REVIEW
+        else: continue                                        # mauvais format = jamais
+        if sport == "basketball": sc += 0.05
+        elif sport == "other": continue
+        if s["manufacturer"].lower() in t: sc = min(1.0, sc + 0.02)
+        cands.append((s["id"], round(sc, 2)))
+    cands.sort(key=lambda x: -x[1])
+    best = cands[0] if cands else (None, 0.0)
+    return Match(best[0] if best[1] >= 0.80 else None, best[1], cands[:3], season, fmt, sport, cfg)
+
+# ---------------------------------------------------------------- stockage
+def db() -> sqlite3.Connection:
+    c = sqlite3.connect(DB)
+    c.executescript("""
+    CREATE TABLE IF NOT EXISTS products_raw(
+      shop TEXT, handle TEXT, title TEXT, variant_title TEXT, vendor TEXT, product_type TEXT,
+      price REAL, compare_at REAL, available INTEGER, url TEXT,
+      season TEXT, fmt TEXT, sport TEXT, config TEXT,
+      sku_id TEXT, match_score REAL, candidates TEXT, seen_at TEXT,
+      PRIMARY KEY(shop, handle, variant_title, seen_at));
+    CREATE TABLE IF NOT EXISTS observations(
+      sku_id TEXT, shop TEXT, title TEXT, variant_title TEXT, price REAL, available INTEGER,
+      url TEXT, match_score REAL, seen_at TEXT,
+      PRIMARY KEY(sku_id, shop, url, variant_title, seen_at));
+    CREATE INDEX IF NOT EXISTS ix_obs ON observations(sku_id, seen_at);
+    """)
+    return c
+
+# ---------------------------------------------------------------- collecte Shopify
+def shopify_products(base: str, session: requests.Session) -> list[dict]:
+    """Pagine /products.json?limit=250&page=N (fallback page_info non nécessaire en lecture publique
+    sur la plupart des stores ; si vide dès la page 1, on tente /collections/all/products.json)."""
+    out, page = [], 1
+    for path in ("/products.json", "/collections/all/products.json"):
+        page = 1
+        while True:
+            r = session.get(f"{base}{path}", params={"limit": 250, "page": page}, timeout=30)
+            time.sleep(RATE_S)
+            if r.status_code != 200: break
+            items = r.json().get("products", [])
+            if not items: break
+            out.extend(items)
+            if len(items) < 250: break
+            page += 1
+        if out: break
+    return out
+
+def collect_shop(shop: dict, skus: list[dict], conn: sqlite3.Connection, seen_at: str) -> tuple[int, int]:
+    s = requests.Session(); s.headers["User-Agent"] = UA
+    if shop["type"] != "shopify_json":
+        print(f"  [{shop['key']}] type={shop['type']} non géré en v1 → skip"); return (0, 0)
+    try:
+        prods = shopify_products(shop["base_url"], s)
+    except Exception as e:
+        print(f"  [{shop['key']}] erreur collecte: {e}"); return (0, 0)
+    n_raw = n_obs = 0
+    for p in prods:
+        title = p.get("title", ""); handle = p.get("handle", "")
+        variants = p.get("variants") or []
+        if not variants: continue
+        url = f"{shop['base_url']}/products/{handle}"
+        # Une ligne PAR VARIANTE : on matche titre + variant_title (garde-fou Blaster/Mega dans les variantes)
+        for v in variants:
+            vt = v.get("title") or ""
+            vt_clean = "" if vt.lower() in ("default title", "default") else vt
+            full = f"{title} {vt_clean}".strip()
+            price = float(v.get("price") or 0); cmp_at = float(v.get("compare_at_price") or 0) or None
+            available = 1 if v.get("available") else 0
+            m = match_title(full, skus)
+            conn.execute("INSERT OR REPLACE INTO products_raw VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                (shop["key"], handle, full, vt_clean, p.get("vendor"), p.get("product_type"), price, cmp_at, available, url,
+                 m.season, m.fmt, m.sport, m.config, m.sku_id, m.score, json.dumps(m.candidates), seen_at))
+            n_raw += 1
+            if m.sku_id:
+                conn.execute("INSERT OR REPLACE INTO observations VALUES (?,?,?,?,?,?,?,?,?)",
+                    (m.sku_id, shop["key"], full, vt_clean, price, available, url, m.score, seen_at))
+                n_obs += 1
+    conn.commit()
+    return (n_raw, n_obs)
+
+# ---------------------------------------------------------------- décision / rapport
+def landed_eur(price_usd: float, cat: dict) -> float:
+    lc = cat["landed_cost"]; fx = cat["fx_usd_eur"]
+    usd = price_usd + lc["domestic_shipping_usd"] + lc["forwarder_fee_usd_per_box"] + lc["intl_shipping_usd_per_box"]
+    eur = usd * fx
+    eur += eur * lc["vat_rate"]
+    eur += lc["customs_flat_eur_per_category"] * lc["customs_categories"] / float(lc.get("bundle_boxes", 8))
+    return round(eur, 2)  # = coût rendu ESTIMÉ par boîte dans un panier de bundle_boxes boîtes
+
+def prev_state(conn, sku_id, shop, url, vt, seen_at):
+    """dispo au passage précédent (pour détecter un RESTOCK)."""
+    r = conn.execute("""SELECT available FROM observations WHERE sku_id=? AND shop=? AND url=? AND variant_title=? AND seen_at<?
+                        ORDER BY seen_at DESC LIMIT 1""", (sku_id, shop, url, vt, seen_at)).fetchone()
+    return None if r is None else r[0]
+
+def report(cat: dict, conn: sqlite3.Connection, seen_at: str | None):
+    skus = {s["id"]: s for s in cat["skus"]}
+    nb = cat["landed_cost"].get("bundle_boxes", 8)
+    # dernière observation par (sku, shop, url, variante)
+    rows = conn.execute("""
+      SELECT o.sku_id, o.shop, o.title, o.price, o.available, o.url, o.match_score, o.seen_at, o.variant_title
+      FROM observations o
+      JOIN (SELECT sku_id, shop, url, variant_title, MAX(seen_at) AS m FROM observations GROUP BY sku_id, shop, url, variant_title) l
+        ON l.sku_id=o.sku_id AND l.shop=o.shop AND l.url=o.url AND l.variant_title=o.variant_title AND l.m=o.seen_at
+      ORDER BY o.sku_id, o.available DESC, o.price ASC""").fetchall()
+    by = {}; restocks = []
+    for r in rows:
+        by.setdefault(r[0], []).append(r)
+        if r[4] == 1 and prev_state(conn, r[0], r[1], r[5], r[8], r[7]) == 0:
+            deal = r[3] <= skus.get(r[0], {}).get("buy_below_usd", 0)
+            restocks.append((r, deal))
+    html = []  # lignes pour la page web
+    OUT.mkdir(exist_ok=True)
+    stamp = (seen_at or datetime.now(timezone.utc).isoformat())[:19].replace(":", "-")
+    csv_path = OUT / f"deals_{stamp}.csv"
+    if restocks:
+        print("\n" + "="*72 + "\n  🔔 RESTOCKS depuis le passage précédent\n" + "="*72)
+        for r, deal in restocks:
+            print(f"  {'🚨 RESTOCK DEAL' if deal else '🔔 RESTOCK'}  {r[0]}  {r[1]}  ${r[3]:.2f}  {r[5]}")
+    with open(csv_path, "w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f)
+        w.writerow(["sku_id","tier","shop","title","variant","price_usd","in_stock",f"landed_eur_est_{nb}box_bundle","market_ask_us","market_sold_us","buy_below","watch_below","eu_ref_eur","status","restock","url","seen_at","match_score"])
+        for tier in ("retail", "hobby"):
+            print("\n" + "="*72 + f"\n  {tier.upper()}\n" + "="*72)
+            for sid, s in skus.items():
+                if s.get("tier","retail") != tier: continue
+                obs = by.get(sid, [])
+                in_stock = [o for o in obs if o[4]]
+                best = in_stock[0] if in_stock else None
+                if best and best[3] <= s["buy_below_usd"]: status, icon = "GO", "🔥"
+                elif best and best[3] <= s["watch_below_usd"]: status, icon = "WATCH", "👀"
+                elif best: status, icon = "NO_GO", "⛔"
+                else: status, icon = ("NO_STOCK" if obs else "NO_DATA"), "—"
+                print(f"\n{icon} {status}   {s['season']} {s['manufacturer']} {s['set']} {s['format']}   [{sid}]")
+                rs = {id(r[0]) for r in restocks}
+                for i, o in enumerate(obs[:6], 1):
+                    stock = "IN STOCK" if o[4] else "SOLD OUT"
+                    flag = "  🔔" if any(o is r for r,_ in restocks) else ""
+                    print(f"   {i}. {o[1]:<16} ${o[3]:>8.2f}  {stock:<9} landed≈€{landed_eur(o[3],cat):>7.2f} ({nb}-box bundle)  (score {o[6]:.2f}){flag}")
+                ask = s.get("market_ask_us"); sold = s.get("market_sold_us"); eu = s.get("eu_reference_eur")
+                print(f"   ask {('$%.2f'%ask) if ask else 'n/a':<8} sold {('$%.2f'%sold) if sold else 'n/a':<8} | buy ≤ ${s['buy_below_usd']:.2f} | watch ≤ ${s['watch_below_usd']:.2f} | EU {('€%.2f'%eu) if eu else 'n/a'}")
+                if best: print(f"   BEST → {best[1]}  {best[5]}")
+                html.append((tier, status, icon, s, obs, best))
+                for o in obs:
+                    w.writerow([sid, tier, o[1], o[2], o[8], o[3], o[4], landed_eur(o[3],cat), ask, sold, s["buy_below_usd"], s["watch_below_usd"], eu, status if o is best else "", 1 if any(o is r for r,_ in restocks) else 0, o[5], o[7], o[6]])
+    # REVIEW : bruts basket 2023-24 non matchés (score entre 0.4 et 0.8) — dernier crawl seulement
+    print("\n" + "="*72 + "\n  ⚠️  REVIEW (basketball 2023-24, non rattachés)\n" + "="*72)
+    q = conn.execute("""SELECT shop,title,price,available,candidates,match_score,url FROM products_raw
+        WHERE sku_id IS NULL AND sport!='other' AND (season='2023-24' OR season IS NULL) AND match_score>=0.40
+        AND seen_at=(SELECT MAX(seen_at) FROM products_raw) ORDER BY match_score DESC LIMIT 40""").fetchall()
+    for shop,title,price,av,cands,sc,url in q:
+        print(f"  [{shop}] {title}  ${price:.2f} {'IN' if av else 'OOS'}  → {cands}")
+    write_html(cat, html, restocks, q, seen_at)
+    print(f"\nCSV → {csv_path}\nHTML → {OUT/'index.html'}")
+
+def write_html(cat, blocks, restocks, review, seen_at):
+    nb = cat["landed_cost"].get("bundle_boxes", 8)
+    col = {"GO":"#1b7f3b","WATCH":"#b8860b","NO_GO":"#b22222","NO_STOCK":"#666","NO_DATA":"#999"}
+    h = [f"<!doctype html><meta charset='utf-8'><meta name=viewport content='width=device-width,initial-scale=1'>"
+         f"<title>Wemby Hunt</title><style>body{{font-family:Arial,sans-serif;max-width:900px;margin:20px auto;padding:0 12px;color:#222}}"
+         f".sku{{border:1px solid #ddd;border-radius:8px;padding:12px;margin:12px 0}}.st{{font-weight:bold;color:#fff;padding:2px 8px;border-radius:4px}}"
+         f"table{{width:100%;border-collapse:collapse}}td,th{{padding:4px 6px;border-bottom:1px solid #eee;text-align:left;font-size:14px}}"
+         f".oos{{color:#999}}.small{{color:#666;font-size:12px}}h2{{margin-top:28px}}</style>"
+         f"<h1>Wemby Hunt — 2023-24 sealed</h1><p class=small>Dernier passage : {seen_at or ''} UTC. landed = coût rendu France ESTIMÉ par boîte dans un panier de {nb} boîtes (hypothèses catalog.yaml).</p>"]
+    if restocks:
+        h.append("<h2>🔔 Restocks</h2><ul>")
+        for r, deal in restocks:
+            h.append(f"<li>{'🚨 DEAL ' if deal else ''}<b>{r[0]}</b> — {r[1]} — ${r[3]:.2f} — <a href='{r[5]}'>lien</a></li>")
+        h.append("</ul>")
+    for tier in ("retail","hobby"):
+        h.append(f"<h2>{tier.upper()}</h2>")
+        for t, status, icon, s, obs, best in blocks:
+            if t != tier: continue
+            ask=s.get("market_ask_us"); sold=s.get("market_sold_us"); eu=s.get("eu_reference_eur")
+            h.append(f"<div class=sku><span class=st style='background:{col[status]}'>{icon} {status}</span> <b>{s['season']} {s['manufacturer']} {s['set']} {s['format']}</b>"
+                     f"<div class=small>ask {ask or 'n/a'} $ · sold {sold or 'n/a'} $ · buy ≤ {s['buy_below_usd']} $ · watch ≤ {s['watch_below_usd']} $ · EU {eu or 'n/a'} €</div>")
+            if obs:
+                h.append("<table><tr><th>Shop</th><th>Prix</th><th>Stock</th><th>Landed €</th><th></th></tr>")
+                for o in obs[:8]:
+                    cls = "" if o[4] else " class=oos"
+                    h.append(f"<tr{cls}><td>{o[1]}</td><td>${o[3]:.2f}</td><td>{'IN STOCK' if o[4] else 'sold out'}</td><td>€{landed_eur(o[3],cat):.2f}</td><td><a href='{o[5]}'>voir</a></td></tr>")
+                h.append("</table>")
+            h.append("</div>")
+    if review:
+        h.append("<h2>⚠️ À revoir (non rattachés)</h2><table><tr><th>Shop</th><th>Titre</th><th>Prix</th><th>Stock</th><th>Candidats</th></tr>")
+        for shop,title,price,av,cands,sc,url in review:
+            h.append(f"<tr><td>{shop}</td><td><a href='{url}'>{title}</a></td><td>${price:.2f}</td><td>{'IN' if av else 'OOS'}</td><td class=small>{cands}</td></tr>")
+        h.append("</table>")
+    (OUT/"index.html").write_text("\n".join(h), encoding="utf-8")
+
+# ---------------------------------------------------------------- main
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--shop"); ap.add_argument("--report", action="store_true"); ap.add_argument("--dry-run", action="store_true")
+    a = ap.parse_args()
+    cat = yaml.safe_load((ROOT/"catalog.yaml").read_text(encoding="utf-8"))
+    src = yaml.safe_load((ROOT/"sources.yaml").read_text(encoding="utf-8"))
+    skus = cat["skus"]
+    if a.dry_run:
+        tests = ["2023/24 Panini Phoenix Basketball 6-pack Blaster Box","2023-24 Panini Phoenix NBA NPP Blaster Box",
+          "23-24 Phoenix Bball Blaster","Phoenix Basketball Box","2023-24 Panini Donruss Optic Basketball Mega Box (Hyper Pink Prizms)",
+          "2023/24 Panini Donruss Optic Basketball 6-Pack Blaster Box (Glitter Parallels)","2023/24 Panini Premium Stock Basketball Blaster Box",
+          "2023/24 Panini NBA Hoops Premium Stock Basketball Mega Box","2024-25 Panini Phoenix Basketball Blaster Box",
+          "2023 Panini Phoenix Football Blaster Box","2023-24 Panini Select Basketball Mega Box (Green Shock Prizm)",
+          "23-24 Select Basketball Box","2023-24 Panini Prizm Basketball Blaster Box (Ice Prizms!)","2023-24 Panini Prizm Monopoly Basketball Blaster",
+          "2023-24 Panini Revolution Basketball Hobby Box","2023-24 Panini Donruss Optic Basketball 6-Pack Hobby Blaster Box (Shimmer Parallels)"]
+        for t in tests:
+            m = match_title(t, skus)
+            print(f"{m.score:>4.2f} {str(m.sku_id):<40} <- {t}   [season={m.season} fmt={m.fmt} sport={m.sport} cfg={m.config}]")
+        return
+    conn = db()
+    if not a.report:
+        seen_at = datetime.now(timezone.utc).isoformat(timespec="seconds")
+        shops = [s for s in src["shops"] if not a.shop or s["key"] == a.shop]
+        for sh in shops:
+            print(f"→ {sh['name']} ({sh['base_url']})")
+            n_raw, n_obs = collect_shop(sh, skus, conn, seen_at)
+            print(f"  {n_raw} produits bruts, {n_obs} rattachés à un SKU")
+        report(cat, conn, seen_at)
+    else:
+        report(cat, conn, None)
+
+if __name__ == "__main__":
+    main()

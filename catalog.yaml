@@ -240,3 +240,32 @@ skus:
     wemby_rc: true
     buy_below_usd: 900.00
     watch_below_usd: 1000.00
+  - id: PANINI_2023-24_PRIZM_HANGER
+    season: "2023-24"
+    manufacturer: Panini
+    set: Prizm
+    format: Hanger
+    configuration: null
+    tier: retail
+    wemby_rc: true
+    market_ask_us: null
+    market_sold_us: null
+    market_source: "à relever (Collector Store 99,99 $ = prix collectionneur, pas benchmark)"
+    market_checked_at: null
+    buy_below_usd: 25.00
+    watch_below_usd: 40.00
+    eu_reference_eur: null
+    eu_reference_source: ""
+  - id: PANINI_2023-24_CONTENDERS_HOBBY
+    season: "2023-24"
+    manufacturer: Panini
+    set: Contenders
+    format: Hobby
+    tier: hobby
+    wemby_rc: true
+    market_ask_us: 439.95
+    market_sold_us: null
+    market_source: "ask: Collector Store 439,95 $ (17/08) ; sold: à relever"
+    market_checked_at: 2026-08-17
+    buy_below_usd: 350.00
+    watch_below_usd: 400.00

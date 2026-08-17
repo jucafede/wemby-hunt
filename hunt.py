@@ -109,9 +109,10 @@ def match_title(title: str, skus: list[dict]) -> Match:
             if any(k in t for k in ("monopoly", "draft", "deca", "emergent", "flashback", "collegiate")): continue
             if not re.search(r"(panini\s+prizm|prizm\s+(basketball|nba|bball))", t): continue  # évite "Ice Prizms", "Hyper Pink Prizms"
         if s["set"].lower() == "donruss optic" and ("optic" not in t or "contenders" in t or "recon" in t): continue
+        if s["set"].lower() == "contenders" and "optic" in t: continue   # "Contenders Optic" est une autre gamme
         if s["set"].lower() == "select" and ("select racing" in t or "nascar" in t): continue
         # sous-gammes explicites qui ne sont PAS le SKU canonique → jamais absorbées
-        if any(k in t for k in ("1st off the line", "fotl", "asia", "tmall", "hanger", "cello", "multi-pack", "value pack")): continue
+        if any(k in t for k in ("1st off the line", "fotl", "asia", "tmall", "cello", "multi-pack", "value pack")): continue
         sc += 0.40                                            # gamme
         if season == s["season"]: sc += 0.30                  # saison
         elif season is None: sc += 0.05

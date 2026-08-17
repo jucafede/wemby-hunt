@@ -1,4 +1,4 @@
-# Registre des shops. type: shopify_json | html (fallback non implémenté en v1 → skip avec message)
+# Registre des shops. type: shopify_json | html (collecteur v2 → skip) | breaks (breaker, hors périmètre sealed → skip)
 # Politesse : 1 req/s, UA identifiable. Un LCS qui te bloque = une source perdue.
 shops:
   - name: EH Cards & Collectibles
@@ -35,9 +35,9 @@ shops:
   - name: Layton Sports Cards
     key: layton
     base_url: https://laytonsportscards.com
-    type: shopify_json
+    type: breaks
     ships_intl: yes
-    notes: "Floride. FedEx intl 5-7 j. Recommande Ship My Cards."
+    notes: "Floride. FedEx intl 5-7 j. Recommande Ship My Cards. BREAKER : 30 713 produits, 100 % 2025-26, le 'sealed' détecté est en réalité des places de break (Case Break / PICK YOUR PLAYER) — 0 rattaché sur 2023-24. Sorti du crawl sealed le 17/08 ; à réactiver pour un observatoire breaks."
   - name: Jaspy's
     key: jaspys
     base_url: https://www.jaspys.com

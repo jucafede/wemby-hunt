@@ -173,6 +173,8 @@ def shopify_products(base: str, session: requests.Session) -> list[dict]:
 
 def collect_shop(shop: dict, skus: list[dict], conn: sqlite3.Connection, seen_at: str) -> tuple[int, int]:
     s = requests.Session(); s.headers["User-Agent"] = UA
+    if shop["type"] == "breaks":
+        print(f"  [{shop['key']}] type=breaks (breaker, hors périmètre sealed) → skip"); return (0, 0)
     if shop["type"] != "shopify_json":
         print(f"  [{shop['key']}] type={shop['type']} non géré en v1 → skip"); return (0, 0)
     try:

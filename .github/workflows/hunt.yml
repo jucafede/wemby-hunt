@@ -13,17 +13,25 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
-        with: { python-version: "3.12" }
+        with:
+          python-version: "3.12"
       - run: pip install -r requirements.txt
       - name: Restore DB (historique)
         uses: actions/cache/restore@v4
-        with: { path: hunt.db, key: hunt-db-${{ github.run_id }}, restore-keys: hunt-db- }
+        with:
+          path: hunt.db
+          key: hunt-db-${{ github.run_id }}
+          restore-keys: hunt-db-
       - run: mkdir -p out && python hunt.py | tee out/last_report.txt
       - name: Save DB
         uses: actions/cache/save@v4
-        with: { path: hunt.db, key: hunt-db-${{ github.run_id }} }
+        with:
+          path: hunt.db
+          key: hunt-db-${{ github.run_id }}
       - uses: actions/upload-artifact@v4
-        with: { name: deals, path: out/ }
+        with:
+          name: deals
+          path: out/
       - name: Publier la page (GitHub Pages)
         uses: peaceiris/actions-gh-pages@v4
         with:

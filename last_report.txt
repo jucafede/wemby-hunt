@@ -9,9 +9,10 @@
 → MojoBreak Shop (https://mojobreakshop.com)
   1513 produits bruts, 0 rattachés à un SKU
 → RbiCru7 Collectibles (https://rbicru7.com)
-  12233 produits bruts, 7 rattachés à un SKU
+  12234 produits bruts, 7 rattachés à un SKU
 → Layton Sports Cards (https://laytonsportscards.com)
-  30805 produits bruts, 0 rattachés à un SKU
+  [layton] type=breaks (breaker, hors périmètre sealed) → skip
+  0 produits bruts, 0 rattachés à un SKU
 → Jaspy's (https://www.jaspys.com)
   69 produits bruts, 0 rattachés à un SKU
 → DA Card World (https://www.dacardworld.com)
@@ -148,5 +149,5 @@
   [hiddengems] 2024 Donruss Optic Mega Box - Green Hyper Parallels  $99.99 OOS  → [["PANINI_2023-24_OPTIC_MEGA", 0.7]]
   [awesome] 2019 Donruss Optic Blaster Box  $65.00 OOS  → [["PANINI_2023-24_OPTIC_BLASTER", 0.7]]
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-08-17T17-02-13.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-08-17T17-09-08.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

@@ -1,24 +1,24 @@
 → EH Cards & Collectibles (https://ehcards.com)
-  946 produits bruts, 5 rattachés à un SKU
+  944 produits bruts, 5 rattachés à un SKU
 → Collector Store LLC (https://collectorstore.com)
-  20319 produits bruts, 0 rattachés à un SKU
+  20323 produits bruts, 2 rattachés à un SKU
 → Hidden Gems Card Shop (https://www.hiddengemscardshop.com)
-  2717 produits bruts, 6 rattachés à un SKU
+  2719 produits bruts, 6 rattachés à un SKU
 → The Awesome Card Shop (https://theawesomecardshop.com)
-  7253 produits bruts, 13 rattachés à un SKU
+  7253 produits bruts, 14 rattachés à un SKU
 → MojoBreak Shop (https://mojobreakshop.com)
-  1512 produits bruts, 0 rattachés à un SKU
+  1513 produits bruts, 0 rattachés à un SKU
 → RbiCru7 Collectibles (https://rbicru7.com)
-  12198 produits bruts, 5 rattachés à un SKU
+  12233 produits bruts, 7 rattachés à un SKU
 → Layton Sports Cards (https://laytonsportscards.com)
-  30713 produits bruts, 0 rattachés à un SKU
+  30805 produits bruts, 0 rattachés à un SKU
 → Jaspy's (https://www.jaspys.com)
   69 produits bruts, 0 rattachés à un SKU
 → DA Card World (https://www.dacardworld.com)
   [dacw] type=html non géré en v1 → skip
   0 produits bruts, 0 rattachés à un SKU
 → Columbia Sports Cards (https://columbiasportscard.com)
-  3113 produits bruts, 9 rattachés à un SKU
+  3113 produits bruts, 10 rattachés à un SKU
 
 ========================================================================
   RETAIL
@@ -90,6 +90,11 @@
    ask n/a      sold n/a      | buy ≤ $70.00 | watch ≤ $80.00 | EU n/a
    BEST → rbicru7  https://rbicru7.com/products/2023-24-panini-mosaic-basketball-mega-box
 
+⛔ NO_GO   2023-24 Panini Prizm Hanger   [PANINI_2023-24_PRIZM_HANGER]
+   1. collectorstore   $   99.99  IN STOCK  landed≈€ 116.22 (8-box bundle)  (score 1.00)
+   ask n/a      sold n/a      | buy ≤ $25.00 | watch ≤ $40.00 | EU n/a
+   BEST → collectorstore  https://collectorstore.com/products/2023-24-panini-prizm-basketball-hanger-box-orange-ice-prizm
+
 ========================================================================
   HOBBY
 ========================================================================
@@ -118,13 +123,30 @@
    2. awesome          $ 1275.00  SOLD OUT  landed≈€1331.65 (8-box bundle)  (score 1.00)
    ask n/a      sold n/a      | buy ≤ $900.00 | watch ≤ $1000.00 | EU n/a
 
+🔥 GO   2023-24 Panini Contenders Hobby   [PANINI_2023-24_CONTENDERS_HOBBY]
+   1. rbicru7          $  150.00  IN STOCK  landed≈€ 167.95 (8-box bundle)  (score 1.00)
+   2. collectorstore   $  439.95  IN STOCK  landed≈€ 467.87 (8-box bundle)  (score 1.00)
+   3. rbicru7          $  550.00  IN STOCK  landed≈€ 581.71 (8-box bundle)  (score 1.00)
+   4. columbia         $  324.99  SOLD OUT  landed≈€ 348.96 (8-box bundle)  (score 1.00)
+   5. awesome          $  399.75  SOLD OUT  landed≈€ 426.29 (8-box bundle)  (score 1.00)
+   ask $439.95  sold n/a      | buy ≤ $350.00 | watch ≤ $400.00 | EU n/a
+   BEST → rbicru7  https://rbicru7.com/products/2023-24-panini-contenders-basketball-hobby-pack-releases-6-19
+
 ========================================================================
   ⚠️  REVIEW (basketball 2023-24, non rattachés)
 ========================================================================
   [collectorstore] Karl-Anthony Towns 2023-24 Panini Court Kings Art Nouveau Swatch #AN-KAT  $3.00 OOS  → [["PANINI_2023-24_COURT_KINGS_HOBBY", 0.72]]
+  [awesome] 2026 Panini Contenders Professional Fighters League PFL Hobby Box  $79.75 IN  → [["PANINI_2023-24_CONTENDERS_HOBBY", 0.72]]
+  [awesome] 2025 Panini Contenders Professional Fighters League PFL Hobby Box  $129.75 OOS  → [["PANINI_2023-24_CONTENDERS_HOBBY", 0.72]]
+  [mojobreak] 2026 Panini Contenders PFL Professional Fighters League  Hobby Box  $80.00 IN  → [["PANINI_2023-24_CONTENDERS_HOBBY", 0.72]]
+  [rbicru7] 2026 Panini Contenders PFL Hobby, Pack  $23.00 IN  → [["PANINI_2023-24_CONTENDERS_HOBBY", 0.72]]
+  [rbicru7] 2026 Panini Contenders PFL Hobby, Box  $80.00 IN  → [["PANINI_2023-24_CONTENDERS_HOBBY", 0.72]]
+  [rbicru7] 2025 Panini Contenders PFL Hobby, Box  $95.00 IN  → [["PANINI_2023-24_CONTENDERS_HOBBY", 0.72]]
   [rbicru7] 2024 Panini Prizm The Rolling Stones Hobby, Mega Box  $45.00 IN  → [["PANINI_2023-24_PRIZM_HOBBY", 0.72]]
+  [columbia] 2026 Panini Contenders Professional Fighters League PFL Hobby Box | Columbia Sports Cards  $79.99 IN  → [["PANINI_2023-24_CONTENDERS_HOBBY", 0.72]]
+  [columbia] 2025 Panini Contenders Professional Fighters League PFL Hobby Box | Columbia Sports Cards & More  $129.95 OOS  → [["PANINI_2023-24_CONTENDERS_HOBBY", 0.72]]
   [hiddengems] 2024 Donruss Optic Mega Box - Green Hyper Parallels  $99.99 OOS  → [["PANINI_2023-24_OPTIC_MEGA", 0.7]]
   [awesome] 2019 Donruss Optic Blaster Box  $65.00 OOS  → [["PANINI_2023-24_OPTIC_BLASTER", 0.7]]
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-08-17T12-58-29.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-08-17T17-02-13.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

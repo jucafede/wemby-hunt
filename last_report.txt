@@ -52,8 +52,6 @@
    2. hiddengems       $   35.00  SOLD OUT  landed≈€  48.99 (8-box bundle)  (score 1.00)
    3. awesome          $   45.00  SOLD OUT  landed≈€  59.34 (8-box bundle)  (score 1.00)
    4. columbia         $   49.95  SOLD OUT  landed≈€  64.46 (8-box bundle)  (score 1.00)
-   5. ehcards          $   54.99  SOLD OUT  landed≈€  69.67 (8-box bundle)  (score 1.00)
-   6. columbia         $   59.95  SOLD OUT  landed≈€  74.80 (8-box bundle)  (score 1.00)
    ask n/a      sold n/a      | buy ≤ $40.00 | watch ≤ $45.00 | EU n/a
    BEST → ehcards  https://ehcards.com/products/2023-24-panini-donruss-optic-basketball-6-pack-blaster-box
 
@@ -69,7 +67,6 @@
 — NO_STOCK   2023-24 Panini Select Blaster   [PANINI_2023-24_SELECT_BLASTER]
    1. awesome          $   49.75  SOLD OUT  landed≈€  64.25 (8-box bundle)  (score 1.00)
    2. columbia         $   49.95  SOLD OUT  landed≈€  64.46 (8-box bundle)  (score 1.00)
-   3. columbia         $   59.95  SOLD OUT  landed≈€  74.80 (8-box bundle)  (score 1.00)
    ask n/a      sold n/a      | buy ≤ $45.00 | watch ≤ $55.00 | EU n/a
 
 ⛔ NO_GO   2023-24 Panini Select Mega   [PANINI_2023-24_SELECT_MEGA]
@@ -83,8 +80,7 @@
    2. hiddengems       $   19.99  SOLD OUT  landed≈€  33.47 (8-box bundle)  (score 1.00)
    3. awesome          $   34.00  SOLD OUT  landed≈€  47.96 (8-box bundle)  (score 1.00)
    4. columbia         $   39.95  SOLD OUT  landed≈€  54.11 (8-box bundle)  (score 1.00)
-   5. ehcards          $   44.99  SOLD OUT  landed≈€  59.33 (8-box bundle)  (score 1.00)
-   6. ehcards          $   49.99  SOLD OUT  landed≈€  64.50 (8-box bundle)  (score 1.00)
+   5. ehcards          $   49.99  SOLD OUT  landed≈€  64.50 (8-box bundle)  (score 1.00)
    ask n/a      sold n/a      | buy ≤ $40.00 | watch ≤ $50.00 | EU n/a
    BEST → rbicru7  https://rbicru7.com/products/2023-24-panini-mosaic-basketball-blaster-box
 
@@ -107,27 +103,19 @@
    1. awesome          $  159.75  SOLD OUT  landed≈€ 178.03 (8-box bundle)  (score 1.00)
    ask $399.95  sold n/a      | buy ≤ $275.00 | watch ≤ $320.00 | EU n/a
 
-⛔ NO_GO   2023-24 Panini Donruss Optic Hobby   [PANINI_2023-24_OPTIC_HOBBY]
-   1. rbicru7          $  475.00  IN STOCK  landed≈€ 504.13 (8-box bundle)  (score 1.00)
-   2. columbia         $   89.95  SOLD OUT  landed≈€ 105.83 (8-box bundle)  (score 1.00)
-   3. columbia         $  289.99  SOLD OUT  landed≈€ 312.75 (8-box bundle)  (score 1.00)
-   4. ehcards          $  339.99  SOLD OUT  landed≈€ 364.47 (8-box bundle)  (score 1.00)
-   5. awesome          $  464.75  SOLD OUT  landed≈€ 493.53 (8-box bundle)  (score 1.00)
-   6. columbia         $  519.99  SOLD OUT  landed≈€ 550.67 (8-box bundle)  (score 1.00)
+— NO_STOCK   2023-24 Panini Donruss Optic Hobby   [PANINI_2023-24_OPTIC_HOBBY]
+   1. awesome          $  464.75  SOLD OUT  landed≈€ 493.53 (8-box bundle)  (score 1.00)
+   2. columbia         $  519.99  SOLD OUT  landed≈€ 550.67 (8-box bundle)  (score 1.00)
    ask n/a      sold n/a      | buy ≤ $250.00 | watch ≤ $300.00 | EU n/a
-   BEST → rbicru7  https://rbicru7.com/products/2023-24-panini-contenders-optic-basketball-hobby-box
 
 — NO_STOCK   2023-24 Panini Select Hobby   [PANINI_2023-24_SELECT_HOBBY]
-   1. columbia         $  229.99  SOLD OUT  landed≈€ 250.69 (8-box bundle)  (score 1.00)
-   2. awesome          $  534.00  SOLD OUT  landed≈€ 565.16 (8-box bundle)  (score 1.00)
-   3. columbia         $  544.99  SOLD OUT  landed≈€ 576.53 (8-box bundle)  (score 1.00)
+   1. awesome          $  534.00  SOLD OUT  landed≈€ 565.16 (8-box bundle)  (score 1.00)
+   2. columbia         $  544.99  SOLD OUT  landed≈€ 576.53 (8-box bundle)  (score 1.00)
    ask n/a      sold n/a      | buy ≤ $300.00 | watch ≤ $350.00 | EU n/a
 
 — NO_STOCK   2023-24 Panini Prizm Hobby   [PANINI_2023-24_PRIZM_HOBBY]
-   1. columbia         $  289.99  SOLD OUT  landed≈€ 312.75 (8-box bundle)  (score 1.00)
-   2. columbia         $  999.99  SOLD OUT  landed≈€1047.18 (8-box bundle)  (score 1.00)
-   3. columbia         $ 1149.00  SOLD OUT  landed≈€1201.31 (8-box bundle)  (score 1.00)
-   4. awesome          $ 1275.00  SOLD OUT  landed≈€1331.65 (8-box bundle)  (score 1.00)
+   1. columbia         $ 1149.00  SOLD OUT  landed≈€1201.31 (8-box bundle)  (score 1.00)
+   2. awesome          $ 1275.00  SOLD OUT  landed≈€1331.65 (8-box bundle)  (score 1.00)
    ask n/a      sold n/a      | buy ≤ $900.00 | watch ≤ $1000.00 | EU n/a
 
 ========================================================================
@@ -138,5 +126,5 @@
   [hiddengems] 2024 Donruss Optic Mega Box - Green Hyper Parallels  $99.99 OOS  → [["PANINI_2023-24_OPTIC_MEGA", 0.7]]
   [awesome] 2019 Donruss Optic Blaster Box  $65.00 OOS  → [["PANINI_2023-24_OPTIC_BLASTER", 0.7]]
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-08-17T11-13-10.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-08-17T11-25-45.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

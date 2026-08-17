@@ -21,7 +21,8 @@ import yaml
 ROOT = Path(__file__).parent
 DB = ROOT / "hunt.db"
 OUT = ROOT / "out"
-UA = "wemby-hunt/1.0 (personal price research; contact via order email)"
+MATCHER_VERSION = "1.4"
+UA = "wemby-hunt/1.4 (personal price research; contact via order email)"
 RATE_S = 1.0  # 1 requête / seconde par shop
 
 # ---------------------------------------------------------------- normalisation
@@ -140,6 +141,12 @@ def db() -> sqlite3.Connection:
       sku_id TEXT, shop TEXT, title TEXT, variant_title TEXT, price REAL, available INTEGER,
       url TEXT, match_score REAL, seen_at TEXT,
       PRIMARY KEY(sku_id, shop, url, variant_title, seen_at));
+    """)
+    # migration douce : colonne matcher_version si absente
+    cols = [r[1] for r in c.execute("PRAGMA table_info(observations)")]
+    if "matcher_version" not in cols:
+        c.execute("ALTER TABLE observations ADD COLUMN matcher_version TEXT")
+    c.executescript("""
     CREATE INDEX IF NOT EXISTS ix_obs ON observations(sku_id, seen_at);
     """)
     return c
@@ -190,8 +197,8 @@ def collect_shop(shop: dict, skus: list[dict], conn: sqlite3.Connection, seen_at
                  m.season, m.fmt, m.sport, m.config, m.sku_id, m.score, json.dumps(m.candidates), seen_at))
             n_raw += 1
             if m.sku_id:
-                conn.execute("INSERT OR REPLACE INTO observations VALUES (?,?,?,?,?,?,?,?,?)",
-                    (m.sku_id, shop["key"], full, vt_clean, price, available, url, m.score, seen_at))
+                conn.execute("INSERT OR REPLACE INTO observations (sku_id,shop,title,variant_title,price,available,url,match_score,seen_at,matcher_version) VALUES (?,?,?,?,?,?,?,?,?,?)",
+                    (m.sku_id, shop["key"], full, vt_clean, price, available, url, m.score, seen_at, MATCHER_VERSION))
                 n_obs += 1
     conn.commit()
     return (n_raw, n_obs)
@@ -211,9 +218,24 @@ def prev_state(conn, sku_id, shop, url, vt, seen_at):
                         ORDER BY seen_at DESC LIMIT 1""", (sku_id, shop, url, vt, seen_at)).fetchone()
     return None if r is None else r[0]
 
+def purge_stale(conn: sqlite3.Connection, skus: list[dict]):
+    """Supprime des observations les lignes que le matching ACTUEL ne rattacherait plus (ex. Contenders Optic
+    matché par une ancienne version). L'historique products_raw n'est pas touché."""
+    rows = conn.execute("SELECT rowid, sku_id, title FROM observations").fetchall()
+    bad = [r[0] for r in rows if match_title(r[2], skus).sku_id != r[1]]
+    if bad:
+        conn.executemany("DELETE FROM observations WHERE rowid=?", [(b,) for b in bad])
+    conn.execute("UPDATE observations SET matcher_version=? WHERE matcher_version IS NULL", (MATCHER_VERSION,))  # re-validées par le matcher actuel
+    conn.commit()
+    return len(bad)
+
 def report(cat: dict, conn: sqlite3.Connection, seen_at: str | None):
     skus = {s["id"]: s for s in cat["skus"]}
     nb = cat["landed_cost"].get("bundle_boxes", 8)
+    n_purged = purge_stale(conn, cat["skus"])
+    if n_purged: print(f"(purge : {n_purged} observation(s) obsolètes retirées — matchées par une ancienne version du code)")
+    # dernier passage RÉUSSI par shop (dernier seen_at où le shop a renvoyé au moins 1 produit brut)
+    last_by_shop = dict(conn.execute("SELECT shop, MAX(seen_at) FROM products_raw GROUP BY shop").fetchall())
     # dernière observation par (sku, shop, url, variante)
     rows = conn.execute("""
       SELECT o.sku_id, o.shop, o.title, o.price, o.available, o.url, o.match_score, o.seen_at, o.variant_title
@@ -221,8 +243,12 @@ def report(cat: dict, conn: sqlite3.Connection, seen_at: str | None):
       JOIN (SELECT sku_id, shop, url, variant_title, MAX(seen_at) AS m FROM observations GROUP BY sku_id, shop, url, variant_title) l
         ON l.sku_id=o.sku_id AND l.shop=o.shop AND l.url=o.url AND l.variant_title=o.variant_title AND l.m=o.seen_at
       ORDER BY o.sku_id, o.available DESC, o.price ASC""").fetchall()
-    by = {}; restocks = []
+    by = {}; restocks = []; stale = []
     for r in rows:
+        # une observation est LIVE seulement si elle date du dernier passage réussi de ce shop ;
+        # sinon le produit a disparu du catalogue du shop → on la garde en mémoire (stale) mais pas dans le classement
+        if r[7] != last_by_shop.get(r[1]):
+            stale.append(r); continue
         by.setdefault(r[0], []).append(r)
         if r[4] == 1 and prev_state(conn, r[0], r[1], r[5], r[8], r[7]) == 0:
             deal = r[3] <= skus.get(r[0], {}).get("buy_below_usd", 0)
@@ -231,6 +257,8 @@ def report(cat: dict, conn: sqlite3.Connection, seen_at: str | None):
     OUT.mkdir(exist_ok=True)
     stamp = (seen_at or datetime.now(timezone.utc).isoformat())[:19].replace(":", "-")
     csv_path = OUT / f"deals_{stamp}.csv"
+    if stale:
+        print(f"({len(stale)} observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)")
     if restocks:
         print("\n" + "="*72 + "\n  🔔 RESTOCKS depuis le passage précédent\n" + "="*72)
         for r, deal in restocks:
@@ -316,6 +344,7 @@ def write_html(cat, blocks, restocks, review, seen_at):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--shop"); ap.add_argument("--report", action="store_true"); ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--diag", metavar="SHOP", help="affiche des titres bruts basket/2023-24 d'un shop pour comprendre un 0 rattaché")
     a = ap.parse_args()
     cat = yaml.safe_load((ROOT/"catalog.yaml").read_text(encoding="utf-8"))
     src = yaml.safe_load((ROOT/"sources.yaml").read_text(encoding="utf-8"))
@@ -333,6 +362,15 @@ def main():
             print(f"{m.score:>4.2f} {str(m.sku_id):<40} <- {t}   [season={m.season} fmt={m.fmt} sport={m.sport} cfg={m.config}]")
         return
     conn = db()
+    if a.diag:
+        rows = conn.execute("""SELECT title, price, available, season, fmt, sport, match_score FROM products_raw
+            WHERE shop=? AND seen_at=(SELECT MAX(seen_at) FROM products_raw WHERE shop=?)
+            AND (title LIKE '%2023%' OR title LIKE '%23-24%' OR title LIKE '%23/24%' OR title LIKE '%Wemb%')
+            ORDER BY match_score DESC, price DESC LIMIT 60""", (a.diag, a.diag)).fetchall()
+        tot = conn.execute("SELECT COUNT(*), SUM(CASE WHEN sport='basketball' THEN 1 ELSE 0 END), SUM(CASE WHEN fmt IS NOT NULL THEN 1 ELSE 0 END) FROM products_raw WHERE shop=? AND seen_at=(SELECT MAX(seen_at) FROM products_raw WHERE shop=?)", (a.diag, a.diag)).fetchone()
+        print(f"[{a.diag}] {tot[0]} bruts | {tot[1]} détectés basket | {tot[2]} avec un format sealed détecté")
+        for t in rows: print(f"  {t[6]:.2f} {str(t[3]):<8} {str(t[4]):<12} {t[5]:<10} ${t[1]:>8.2f} {'IN ' if t[2] else 'OOS'}  {t[0][:90]}")
+        return
     if not a.report:
         seen_at = datetime.now(timezone.utc).isoformat(timespec="seconds")
         shops = [s for s in src["shops"] if not a.shop or s["key"] == a.shop]

@@ -232,7 +232,14 @@ def purge_stale(conn: sqlite3.Connection, skus: list[dict]):
     conn.commit()
     return len(bad)
 
-def report(cat: dict, conn: sqlite3.Connection, seen_at: str | None):
+TRUST_FLAG = {"watch": "  👀 VERIFY", "high_risk": "  ⚠️ VERIFY SELLER"}
+
+def trust_of(shop_key: str, trust: dict) -> str:
+    """trusted par défaut : un shop sans clé `trust` dans sources.yaml reste classé normalement."""
+    return trust.get(shop_key, "trusted")
+
+def report(cat: dict, conn: sqlite3.Connection, seen_at: str | None, trust: dict | None = None):
+    trust = trust or {}
     skus = {s["id"]: s for s in cat["skus"]}
     nb = cat["landed_cost"].get("bundle_boxes", 8)
     n_purged = purge_stale(conn, cat["skus"])
@@ -268,14 +275,15 @@ def report(cat: dict, conn: sqlite3.Connection, seen_at: str | None):
             print(f"  {'🚨 RESTOCK DEAL' if deal else '🔔 RESTOCK'}  {r[0]}  {r[1]}  ${r[3]:.2f}  {r[5]}")
     with open(csv_path, "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
-        w.writerow(["sku_id","tier","shop","title","variant","price_usd","in_stock",f"landed_eur_est_{nb}box_bundle","market_ask_us","market_sold_us","buy_below","watch_below","eu_ref_eur","status","restock","url","seen_at","match_score"])
+        w.writerow(["sku_id","tier","shop","trust","title","variant","price_usd","in_stock",f"landed_eur_est_{nb}box_bundle","market_ask_us","market_sold_us","market_sold_source","market_sold_checked_at","buy_below","watch_below","eu_ref_eur","status","restock","url","seen_at","match_score"])
         for tier in ("retail", "hobby"):
             print("\n" + "="*72 + f"\n  {tier.upper()}\n" + "="*72)
             for sid, s in skus.items():
                 if s.get("tier","retail") != tier: continue
                 obs = by.get(sid, [])
                 in_stock = [o for o in obs if o[4]]
-                best = in_stock[0] if in_stock else None
+                # high_risk : observé et affiché, mais jamais retenu comme BEST → ne peut pas déclencher un GO
+                best = next((o for o in in_stock if trust_of(o[1], trust) != "high_risk"), None)
                 if best and best[3] <= s["buy_below_usd"]: status, icon = "GO", "🔥"
                 elif best and best[3] <= s["watch_below_usd"]: status, icon = "WATCH", "👀"
                 elif best: status, icon = "NO_GO", "⛔"
@@ -285,13 +293,15 @@ def report(cat: dict, conn: sqlite3.Connection, seen_at: str | None):
                 for i, o in enumerate(obs[:6], 1):
                     stock = "IN STOCK" if o[4] else "SOLD OUT"
                     flag = "  🔔" if any(o is r for r,_ in restocks) else ""
-                    print(f"   {i}. {o[1]:<16} ${o[3]:>8.2f}  {stock:<9} landed≈€{landed_eur(o[3],cat):>7.2f} ({nb}-box bundle)  (score {o[6]:.2f}){flag}")
+                    print(f"   {i}. {o[1]:<16} ${o[3]:>8.2f}  {stock:<9} landed≈€{landed_eur(o[3],cat):>7.2f} ({nb}-box bundle)  (score {o[6]:.2f}){flag}{TRUST_FLAG.get(trust_of(o[1], trust), '')}")
                 ask = s.get("market_ask_us"); sold = s.get("market_sold_us"); eu = s.get("eu_reference_eur")
-                print(f"   ask {('$%.2f'%ask) if ask else 'n/a':<8} sold {('$%.2f'%sold) if sold else 'n/a':<8} | buy ≤ ${s['buy_below_usd']:.2f} | watch ≤ ${s['watch_below_usd']:.2f} | EU {('€%.2f'%eu) if eu else 'n/a'}")
+                ssrc = s.get("market_sold_source"); schk = s.get("market_sold_checked_at")
+                prov = f" [{ssrc}{' ' + str(schk) if schk else ''}]" if sold and ssrc else ""
+                print(f"   ask {('$%.2f'%ask) if ask else 'n/a':<8} sold {('$%.2f'%sold) if sold else 'n/a':<8}{prov} | buy ≤ ${s['buy_below_usd']:.2f} | watch ≤ ${s['watch_below_usd']:.2f} | EU {('€%.2f'%eu) if eu else 'n/a'}")
                 if best: print(f"   BEST → {best[1]}  {best[5]}")
                 html.append((tier, status, icon, s, obs, best))
                 for o in obs:
-                    w.writerow([sid, tier, o[1], o[2], o[8], o[3], o[4], landed_eur(o[3],cat), ask, sold, s["buy_below_usd"], s["watch_below_usd"], eu, status if o is best else "", 1 if any(o is r for r,_ in restocks) else 0, o[5], o[7], o[6]])
+                    w.writerow([sid, tier, o[1], trust_of(o[1], trust), o[2], o[8], o[3], o[4], landed_eur(o[3],cat), ask, sold, ssrc, schk, s["buy_below_usd"], s["watch_below_usd"], eu, status if o is best else "", 1 if any(o is r for r,_ in restocks) else 0, o[5], o[7], o[6]])
     # REVIEW : bruts basket 2023-24 non matchés (score entre 0.4 et 0.8) — dernier crawl seulement
     print("\n" + "="*72 + "\n  ⚠️  REVIEW (basketball 2023-24, non rattachés)\n" + "="*72)
     q = conn.execute("""SELECT shop,title,price,available,candidates,match_score,url FROM products_raw
@@ -299,10 +309,11 @@ def report(cat: dict, conn: sqlite3.Connection, seen_at: str | None):
         AND seen_at=(SELECT MAX(seen_at) FROM products_raw) ORDER BY match_score DESC LIMIT 40""").fetchall()
     for shop,title,price,av,cands,sc,url in q:
         print(f"  [{shop}] {title}  ${price:.2f} {'IN' if av else 'OOS'}  → {cands}")
-    write_html(cat, html, restocks, q, seen_at)
+    write_html(cat, html, restocks, q, seen_at, trust)
     print(f"\nCSV → {csv_path}\nHTML → {OUT/'index.html'}")
 
-def write_html(cat, blocks, restocks, review, seen_at):
+def write_html(cat, blocks, restocks, review, seen_at, trust=None):
+    trust = trust or {}
     nb = cat["landed_cost"].get("bundle_boxes", 8)
     col = {"GO":"#1b7f3b","WATCH":"#b8860b","NO_GO":"#b22222","NO_STOCK":"#666","NO_DATA":"#999"}
     h = [f"<!doctype html><meta charset='utf-8'><meta name=viewport content='width=device-width,initial-scale=1'>"
@@ -333,7 +344,10 @@ def write_html(cat, blocks, restocks, review, seen_at):
                     if len(seen)>12: break
                     cls = "" if o[4] else " class=oos"
                     cfg = parse_config(norm(o[2])) or "—"
-                    h.append(f"<tr{cls}><td>{o[1]}</td><td><a href='{o[5]}'>{o[2]}</a></td><td class=small>{cfg}</td><td>${o[3]:.2f}</td><td>{'IN STOCK' if o[4] else 'sold out'}</td><td>€{landed_eur(o[3],cat):.2f}</td></tr>")
+                    tv = trust_of(o[1], trust)
+                    badge = {"watch": " <span class=small>👀 VERIFY</span>",
+                             "high_risk": " <span class=small>⚠️ VERIFY SELLER</span>"}.get(tv, "")
+                    h.append(f"<tr{cls}><td>{o[1]}{badge}</td><td><a href='{o[5]}'>{o[2]}</a></td><td class=small>{cfg}</td><td>${o[3]:.2f}</td><td>{'IN STOCK' if o[4] else 'sold out'}</td><td>€{landed_eur(o[3],cat):.2f}</td></tr>")
                 h.append("</table>")
             h.append("</div>")
     if review:
@@ -374,16 +388,17 @@ def main():
         print(f"[{a.diag}] {tot[0]} bruts | {tot[1]} détectés basket | {tot[2]} avec un format sealed détecté")
         for t in rows: print(f"  {t[6]:.2f} {str(t[3]):<8} {str(t[4]):<12} {t[5]:<10} ${t[1]:>8.2f} {'IN ' if t[2] else 'OOS'}  {t[0][:90]}")
         return
+    trust = {sh["key"]: sh.get("trust", "trusted") for sh in src["shops"]}
     if not a.report:
         seen_at = datetime.now(timezone.utc).isoformat(timespec="seconds")
         shops = [s for s in src["shops"] if not a.shop or s["key"] == a.shop]
         for sh in shops:
-            print(f"→ {sh['name']} ({sh['base_url']})")
+            print(f"→ {sh['name']} ({sh['base_url']})  [trust={sh.get('trust','trusted')}]")
             n_raw, n_obs = collect_shop(sh, skus, conn, seen_at)
             print(f"  {n_raw} produits bruts, {n_obs} rattachés à un SKU")
-        report(cat, conn, seen_at)
+        report(cat, conn, seen_at, trust)
     else:
-        report(cat, conn, None)
+        report(cat, conn, None, trust)
 
 if __name__ == "__main__":
     main()

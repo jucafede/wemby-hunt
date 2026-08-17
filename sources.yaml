@@ -1,56 +1,84 @@
 # Registre des shops. type: shopify_json | html (collecteur v2 → skip) | breaks (breaker, hors périmètre sealed → skip)
+# trust: trusted (défaut si absent) | watch (lignes marquées 👀 VERIFY) | high_risk (observé, jamais GO ni BEST, ⚠️ VERIFY SELLER)
+#        trust n'est PAS un score : il ne pondère rien, il ne fait qu'étiqueter et, pour high_risk, retirer du classement.
+# priority: indicatif humain, le moteur n'en tient pas compte.
 # Politesse : 1 req/s, UA identifiable. Un LCS qui te bloque = une source perdue.
+#
+# NON CRAWLÉ — BlackTree Sports Cards : à documenter high_risk (litiges livraison/remboursement rapportés).
+#   Ne pas ajouter au crawl tant que ce n'est pas tranché. Si un jour ajouté : trust: high_risk obligatoire.
 shops:
   - name: EH Cards & Collectibles
     key: ehcards
     base_url: https://ehcards.com
     type: shopify_json
+    trust: trusted
     ships_intl: unknown
     notes: "Phoenix 23-24 : 34,99 $ LIVE au 17/08 (une lecture Google périmée disait 29,99). Limit 6/client. Port gratuit >99 $."
   - name: Collector Store LLC
     key: collectorstore
     base_url: https://collectorstore.com
     type: shopify_json
-    notes: "Missouri. Phoenix : anciens prix observés 22,99 / 29,99 $, OOS au 17/08 — ne PAS utiliser comme benchmark live. WATCHLIST restock."
+    trust: trusted
+    notes: "Missouri. Phoenix : anciens prix observés 22,99 / 29,99 $, OOS au 17/08 — ne PAS utiliser comme benchmark live. WATCHLIST restock. 99 % de singles gradés."
   - name: Hidden Gems Card Shop
     key: hiddengems
     base_url: https://www.hiddengemscardshop.com
     type: shopify_json
-    notes: "Shelby Township MI. Vrai LCS."
+    trust: trusted
+    priority: high
+    notes: "Shelby Township MI. Vrai LCS. Clearance agressive observée sur plusieurs SKU NBA sealed."
   - name: The Awesome Card Shop
     key: awesome
     base_url: https://theawesomecardshop.com
     type: shopify_json
+    trust: trusted
     notes: "Las Vegas. Port gratuit >200 $."
   - name: MojoBreak Shop
     key: mojobreak
     base_url: https://mojobreakshop.com
     type: shopify_json
+    trust: trusted
     notes: "Bay Area. -25 $ dès 250 $ 1re commande (à vérifier)."
   - name: RbiCru7 Collectibles
     key: rbicru7
     base_url: https://rbicru7.com
     type: shopify_json
-    notes: "Missouri. Soldes Hobby."
+    trust: trusted
+    notes: "Missouri. Soldes Hobby. Variantes Pack/Box sur le même produit — attention au format."
   - name: Layton Sports Cards
     key: layton
     base_url: https://laytonsportscards.com
     type: breaks
+    trust: trusted
     ships_intl: yes
     notes: "Floride. FedEx intl 5-7 j. Recommande Ship My Cards. BREAKER : 30 713 produits, 100 % 2025-26, le 'sealed' détecté est en réalité des places de break (Case Break / PICK YOUR PLAYER) — 0 rattaché sur 2023-24. Sorti du crawl sealed le 17/08 ; à réactiver pour un observatoire breaks."
   - name: Jaspy's
     key: jaspys
     base_url: https://www.jaspys.com
     type: shopify_json
+    trust: trusted
     notes: "Los Angeles."
-  # --- benchmark / contrôle (pas Shopify, collecteur html à faire en v2) ---
+  # --- benchmark / contrôle (pas Shopify, collecteur html à faire en v2, non crawlés) ---
   - name: DA Card World
     key: dacw
     base_url: https://www.dacardworld.com
     type: html
+    trust: trusted
     notes: "CONTROL. Commande validée 15/08. Site propre (pas Shopify)."
   - name: Columbia Sports Cards
     key: columbia
     base_url: https://columbiasportscard.com
     type: shopify_json
+    trust: trusted
     notes: "Optic Mega 64,99 $ (OOS 17/08)."
+  # --- candidats v1.5, ajoutés en trust: watch — à qualifier sur données réelles, pas sur la page d'accueil ---
+  - {key: sportscardjunction, name: Sports Card Junction, base_url: https://sportscardjunction.com, type: shopify_json, trust: watch, notes: "Pittsburgh PA. LCS multi-sports."}
+  - {key: grandslam, name: Grand Slam Collectibles, base_url: https://grandslamcollectibles.com, type: shopify_json, trust: watch, notes: "Phoenix 23-24 listé."}
+  - {key: cardiacs, name: The Cardiacs, base_url: https://www.thecardiacs.com, type: shopify_json, trust: watch, notes: "Phoenix 23-24 listé."}
+  - {key: monmouth, name: Monmouth Cards, base_url: https://monmouthcards.com, type: shopify_json, trust: watch, notes: "NJ. Revendeur autorisé. Port gratuit >100 $. Prix plutôt MSRP."}
+  - {key: worldchampion, name: World Champion Sports Cards, base_url: https://www.worldchampionsportscards.org, type: shopify_json, trust: watch, notes: "Select Mega 23-24 vu 75 $ puis OOS (17/08) — watchlist restock."}
+  - {key: superior, name: Superior Sports Investments, base_url: https://superiorsportsinvestments.com, type: shopify_json, trust: watch, notes: "Optic Mega 23-24 listé (fiche 404 le 17/08)."}
+  - {key: sjay2k, name: SJAY2K Trading Cards, base_url: https://www.sjay2k.com, type: shopify_json, trust: watch, notes: "Optic Mega 23-24 listé."}
+  - {key: ballgame, name: The Ballgame, base_url: https://theballgame.com, type: shopify_json, trust: watch, notes: "Optic Mega 23-24 backorder."}
+  - {key: bleecker, name: Bleecker Trading, base_url: https://bleeckertrading.com, type: shopify_json, trust: watch, notes: "NYC. Prix retail+."}
+  - {key: cbhobby, name: CB Hobby, base_url: https://cbhobby.com, type: shopify_json, trust: watch, notes: "Phoenix 23-24 backorder."}

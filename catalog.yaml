@@ -2,6 +2,8 @@
 # Tout produit non rattaché avec confiance >= 0.80 va dans products_raw uniquement (REVIEW).
 # Prix marché : market_ask_us = prix affiché (WaxStat/shops), market_sold_us = ventes réalisées (SportsCardsPro/eBay sold).
 # Le seuil buy_below_usd doit être ≤ market_sold_us. Saisis à la main, datés. Mets à jour 1×/semaine.
+# Provenance de market_sold_us : market_sold_source = stockx | sportscardspro | ebay_sold | manual, + market_sold_checked_at.
+# ATTENTION StockX : le prix retail/MSRP affiché n'est PAS une vente. Seule une "Last Sale" alimente market_sold_us.
 fx_usd_eur: 0.862
 
 landed_cost:                # hypothèses provisoires → coût rendu ESTIMÉ DANS UN PANIER TYPE DE bundle_boxes boîtes. À remplacer par tes chiffres MyUS réels.
@@ -145,10 +147,12 @@ skus:
     configuration: null
     tier: retail
     wemby_rc: true
-    market_ask_us: null
-    market_sold_us: null
-    market_source: ""
-    market_checked_at: null
+    market_ask_us: 75.00
+    market_sold_us: 60.00
+    market_source: "ask: World Champion 75 $ vu 17/08 puis OOS"
+    market_checked_at: 2026-08-17
+    market_sold_source: ebay_sold
+    market_sold_checked_at: 2026-08-17
     buy_below_usd: 90.00
     watch_below_usd: 100.00
     eu_reference_eur: 134.00

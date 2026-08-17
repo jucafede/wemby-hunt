@@ -1,15 +1,15 @@
 → EH Cards & Collectibles (https://ehcards.com)  [trust=trusted]
   944 produits bruts, 5 rattachés à un SKU
 → Collector Store LLC (https://collectorstore.com)  [trust=trusted]
-  20323 produits bruts, 2 rattachés à un SKU
+  20332 produits bruts, 2 rattachés à un SKU
 → Hidden Gems Card Shop (https://www.hiddengemscardshop.com)  [trust=trusted]
-  2719 produits bruts, 6 rattachés à un SKU
+  2720 produits bruts, 6 rattachés à un SKU
 → The Awesome Card Shop (https://theawesomecardshop.com)  [trust=trusted]
   7253 produits bruts, 14 rattachés à un SKU
 → MojoBreak Shop (https://mojobreakshop.com)  [trust=trusted]
-  1507 produits bruts, 0 rattachés à un SKU
+  1496 produits bruts, 0 rattachés à un SKU
 → RbiCru7 Collectibles (https://rbicru7.com)  [trust=trusted]
-  12240 produits bruts, 7 rattachés à un SKU
+  12257 produits bruts, 7 rattachés à un SKU
 → Layton Sports Cards (https://laytonsportscards.com)  [trust=trusted]
   [layton] type=breaks (breaker, hors périmètre sealed) → skip
   0 produits bruts, 0 rattachés à un SKU
@@ -25,9 +25,9 @@
 → Grand Slam Collectibles (https://grandslamcollectibles.com)  [trust=watch]
   198 produits bruts, 0 rattachés à un SKU
 → The Cardiacs (https://www.thecardiacs.com)  [trust=watch]
-  5272 produits bruts, 2 rattachés à un SKU
+  5271 produits bruts, 2 rattachés à un SKU
 → Monmouth Cards (https://monmouthcards.com)  [trust=watch]
-  5078 produits bruts, 6 rattachés à un SKU
+  5067 produits bruts, 6 rattachés à un SKU
 → World Champion Sports Cards (https://www.worldchampionsportscards.org)  [trust=watch]
   3830 produits bruts, 12 rattachés à un SKU
 → Superior Sports Investments (https://superiorsportsinvestments.com)  [trust=watch]
@@ -239,5 +239,5 @@
   [sjay2k] 2012 Select NRL Champions Collector Cards Hobby Box  $100.00 IN  → [["PANINI_2023-24_SELECT_HOBBY", 0.7]]
   [sjay2k] 2026 Select AFL Footy Stars Blaster Box  $50.00 IN  → [["PANINI_2023-24_SELECT_BLASTER", 0.7]]
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-08-17T17-36-58.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-08-17T18-50-49.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

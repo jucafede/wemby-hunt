@@ -74,12 +74,23 @@ POS = [
  ("2023-24 Panini Prizm Turkish Airlines EuroLeague Basketball Blaster Box","PRIZM_EUROLEAGUE_BLASTER"),
  ("2023-24 Panini Prizm Turkish Airlines EuroLeague Basketball Hobby Box","PRIZM_EUROLEAGUE_HOBBY"),
  ("2023-24 Panini Prizm Turkish Airlines Euroleague Basketball Blaster Box","PRIZM_EUROLEAGUE_BLASTER"),
+]
+P2 = [
+ # F — Topps 2023-24, licensed nbpa
+ ("2023-24 Topps Chrome Basketball Value Blaster Box","TOPPS_2023-24_CHROME_VALUE_BLASTER"),
+ ("2023-24 Topps Chrome Basketball Hobby Box","TOPPS_2023-24_CHROME_HOBBY"),
+ ("2023-24 Topps Chrome Basketball Sapphire Edition Hobby Box","TOPPS_2023-24_CHROME_SAPPHIRE"),
+ ("2023-24 Topps Cosmic Chrome Basketball Hobby Box","TOPPS_2023-24_COSMIC_CHROME_HOBBY"),
  ("2023-24 Panini Select Basketball Mega 20-Box Case (Green Shock Prizm)","SELECT_MEGA_CASE"),
  ("2023-24 Panini Mosaic Fast Break Basketball Hobby 20-Box Case","MOSAIC_FAST_BREAK_CASE"),
  ("2023-24 Panini Mosaic Basketball Fast Brk Box","MOSAIC_FAST_BREAK"),
  ("2023-24 Panini Select BasketballMega Box (Red/ Purple Cracked Ice)","SELECT_MEGA"),
 ]
 NEG = [
+ ("2023-24 Topps Chrome NBL Australia Basketball Hobby Box","Topps Chrome NBL exclu"),
+ ("2023-24 Overtime Elite Topps Chrome Basketball Hobby Box","OTE exclu"),
+ ("2023-24 Bowman University Basketball Hobby Box","Bowman University exclu"),
+ ("2023-24 Topps Chrome G-League Basketball Hobby Box","G-League exclu"),
  ("2023-24 Panini Prizm EuroLeague Soccer Blaster Box","EuroLeague mais pas basket -> aucun SKU"),
  ("2023/24 Panini Contenders Optic Basketball Hobby, Box","Contenders Optic ≠ Optic ni Contenders"),
  ("2023/24 Panini Prizm Deca Basketball Hobby Box","Deca ≠ Prizm"),
@@ -101,11 +112,11 @@ NEG = [
 ]
 fails = []
 print("--- POSITIFS ---")
-for t, exp in POS:
+for t, exp in POS + [(a, b) for a, b in P2]:
     m = hunt.match_title(t, skus)
-    good = m.sku_id == P + exp
+    good = m.sku_id == (exp if exp.startswith("TOPPS") else P + exp)
     if not good: fails.append(("POS", t, exp, m.sku_id))
-    print(f"{'PASS' if good else 'FAIL'} {m.score:4.2f} {str(m.sku_id).replace(P,''):<26} attendu={exp:<26} fmt={m.fmt}")
+    print(f"{'PASS' if good else 'FAIL'} {m.score:4.2f} {str(m.sku_id).replace(P,''):<30} attendu={exp:<30} fmt={m.fmt}")
 print("\n--- NEGATIFS (aucun ne doit produire un MATCH) ---")
 for t, why in NEG:
     m = hunt.match_title(t, skus)
@@ -113,6 +124,6 @@ for t, why in NEG:
     if not good: fails.append(("NEG", t, "aucun match", m.sku_id))
     v = "REJECT" if m.score == 0 else ("REVIEW %.2f" % m.score if m.sku_id is None else "MATCH:" + str(m.sku_id).replace(P,""))
     print(f"{'PASS' if good else 'FAIL'} {v:<26} {why}")
-print(f"\nTOTAL : {len(POS)+len(NEG)} tests, {len(fails)} FAIL")
+print(f"\nTOTAL : {len(POS)+len(P2)+len(NEG)} tests, {len(fails)} FAIL")
 for f in fails: print("  FAIL", f)
 sys.exit(1 if fails else 0)

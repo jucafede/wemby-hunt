@@ -24,6 +24,7 @@ skus:
     configuration: null
     tier: retail
     wemby_rc: true
+    market_ask_from: [waxstat, ehcards]
     market_ask_us: 34.95
     market_sold_us: 28.50
     market_source: "ask: WaxStat 34,95 / EH Cards 34,99 live 17/08 ; sold: SportsCardsPro 23,50-30 (mai-juil), eBay Kruk 24,99"
@@ -42,6 +43,7 @@ skus:
     configuration: null
     tier: retail
     wemby_rc: true
+    market_ask_from: [walmart, dacw]
     market_ask_us: 34.96
     market_sold_us: null
     market_source: "ask: Walmart 34,96 / DACW 39,95 / Dick's 29,99 ; sold: à relever"
@@ -77,6 +79,7 @@ skus:
     configuration: null
     tier: retail
     wemby_rc: true
+    market_ask_from: [dacw]
     market_ask_us: 119.95
     market_sold_us: null
     market_source: "DACW"
@@ -113,6 +116,7 @@ skus:
     configuration: null
     tier: retail
     wemby_rc: true
+    market_ask_from: [waxstat, steelcity, columbia]
     market_ask_us: 63.95
     market_sold_us: 60.00
     market_source: "ask: WaxStat 62,95 / Steel City 62,95 / Columbia 64,99 (OOS) ; sold: eBay listings 59,99-69,99"
@@ -147,6 +151,7 @@ skus:
     configuration: null
     tier: retail
     wemby_rc: true
+    market_ask_from: [worldchampion]
     market_ask_us: 75.00
     market_sold_us: 60.00
     market_source: "ask: World Champion 75 $ vu 17/08 puis OOS"
@@ -211,6 +216,7 @@ skus:
     format: Hobby
     tier: hobby
     wemby_rc: true
+    market_ask_from: [dacw]
     market_ask_us: 399.95
     market_sold_us: null
     market_source: "DACW"
@@ -267,6 +273,7 @@ skus:
     format: Hobby
     tier: hobby
     wemby_rc: true
+    market_ask_from: [collectorstore]
     market_ask_us: 439.95
     market_sold_us: null
     market_source: "ask: Collector Store 439,95 $ (17/08) ; sold: à relever"
@@ -979,12 +986,831 @@ skus:
     format: Hobby
     configuration: null
     tier: hobby
-    status: WATCH
+    status: CANDIDATE
     licensed: euroleague
     wemby_rc: false
     personal_interest: 4
     market_ask_us: null
     market_sold_us: null
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: ""
+  - id: PANINI_2024-25_PRIZM_BLASTER
+    season: "2024-25"
+    manufacturer: Panini
+    set: Prizm
+    wemby_year2: true
+    wemby_rc: false
+    format: Blaster
+    configuration: null
+    tier: retail
+    status: WATCH
+    licensed: true
+    market_ask_from: [sportscardjunction]
+    market_ask_us: 15.00
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_n: null
+    market_sold_window_days: null
+    market_sold_checked_at: null
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://sportscardjunction.com/products/2024-25-panini-prizm-turkish-airlines-euroleauge-basketball-blaster-box"
+  - id: PANINI_2024-25_PRIZM_MEGA
+    season: "2024-25"
+    manufacturer: Panini
+    set: Prizm
+    wemby_year2: true
+    wemby_rc: false
+    format: Mega
+    configuration: null
+    tier: retail
+    status: WATCH
+    licensed: true
+    market_ask_from: [grandslam]
+    market_ask_us: 59.99
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_n: null
+    market_sold_window_days: null
+    market_sold_checked_at: null
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://grandslamcollectibles.com/products/2024-25-panini-prizm-basketball-nba-mega-box"
+  - id: PANINI_2024-25_PRIZM_HOBBY
+    season: "2024-25"
+    manufacturer: Panini
+    set: Prizm
+    wemby_year2: true
+    wemby_rc: false
+    format: Hobby
+    configuration: null
+    tier: hobby
+    status: WATCH
+    licensed: true
+    market_ask_from: [cbhobby]
+    market_ask_us: 300.00
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_n: null
+    market_sold_window_days: null
+    market_sold_checked_at: null
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://cbhobby.com/products/2024-25-panini-prizm-basketball-china-hobby-box"
+  - id: PANINI_2024-25_SELECT_BLASTER
+    season: "2024-25"
+    manufacturer: Panini
+    set: Select
+    wemby_year2: true
+    wemby_rc: false
+    format: Blaster
+    configuration: null
+    tier: retail
+    status: WATCH
+    licensed: true
+    market_ask_from: [cardiacs]
+    market_ask_us: 4.00
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_n: null
+    market_sold_window_days: null
+    market_sold_checked_at: null
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://www.thecardiacs.com/products/2024-25-panini-select-basketball-blaster-pack-flash-prizms"
+  - id: PANINI_2024-25_SELECT_MEGA
+    season: "2024-25"
+    manufacturer: Panini
+    set: Select
+    wemby_year2: true
+    wemby_rc: false
+    format: Mega
+    configuration: null
+    tier: retail
+    status: WATCH
+    licensed: true
+    market_ask_from: [cardiacs]
+    market_ask_us: 39.95
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_n: null
+    market_sold_window_days: null
+    market_sold_checked_at: null
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://www.thecardiacs.com/products/2024-25-panini-select-basketball-mega-box-cracked-ice"
+  - id: PANINI_2024-25_SELECT_HOBBY
+    season: "2024-25"
+    manufacturer: Panini
+    set: Select
+    wemby_year2: true
+    wemby_rc: false
+    format: Hobby
+    configuration: null
+    tier: hobby
+    status: WATCH
+    licensed: true
+    market_ask_from: [rbicru7]
+    market_ask_us: 35.00
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_n: null
+    market_sold_window_days: null
+    market_sold_checked_at: null
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://rbicru7.com/products/2024-25-panini-select-basketball-hobby-pack"
+  - id: PANINI_2024-25_OPTIC_BLASTER
+    season: "2024-25"
+    manufacturer: Panini
+    set: Donruss Optic
+    aliases: ["Optic"]
+    wemby_year2: true
+    wemby_rc: false
+    format: Blaster
+    configuration: null
+    tier: retail
+    status: WATCH
+    licensed: true
+    market_ask_from: [grandslam]
+    market_ask_us: 34.97
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_n: null
+    market_sold_window_days: null
+    market_sold_checked_at: null
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://grandslamcollectibles.com/products/2024-25-panini-donruss-optic-nba-blaster"
+  - id: PANINI_2024-25_OPTIC_MEGA
+    season: "2024-25"
+    manufacturer: Panini
+    set: Donruss Optic
+    aliases: ["Optic"]
+    wemby_year2: true
+    wemby_rc: false
+    format: Mega
+    configuration: null
+    tier: retail
+    status: WATCH
+    licensed: true
+    market_ask_from: [superior]
+    market_ask_us: 88.00
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_n: null
+    market_sold_window_days: null
+    market_sold_checked_at: null
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://superiorsportsinvestments.com/products/2024-25-panini-donruss-optic-basketball-mega-box-hyper-parallels"
+  - id: PANINI_2024-25_OPTIC_HOBBY
+    season: "2024-25"
+    manufacturer: Panini
+    set: Donruss Optic
+    aliases: ["Optic"]
+    wemby_year2: true
+    wemby_rc: false
+    format: Hobby
+    configuration: null
+    tier: hobby
+    status: WATCH
+    licensed: true
+    market_ask_from: [superior]
+    market_ask_us: 35.00
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_n: null
+    market_sold_window_days: null
+    market_sold_checked_at: null
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://superiorsportsinvestments.com/products/2024-25-panini-donruss-optic-basketball-hobby-pack"
+  - id: PANINI_2024-25_MOSAIC_BLASTER
+    season: "2024-25"
+    manufacturer: Panini
+    set: Mosaic
+    wemby_year2: true
+    wemby_rc: false
+    format: Blaster
+    configuration: null
+    tier: retail
+    status: WATCH
+    licensed: true
+    market_ask_from: [rbicru7]
+    market_ask_us: 33.00
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_n: null
+    market_sold_window_days: null
+    market_sold_checked_at: null
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://rbicru7.com/products/2024-25-panini-mosaic-basketball-retail-blaster-box-capacity-insert"
+  - id: PANINI_2024-25_MOSAIC_MEGA
+    season: "2024-25"
+    manufacturer: Panini
+    set: Mosaic
+    wemby_year2: true
+    wemby_rc: false
+    format: Mega
+    configuration: null
+    tier: retail
+    status: WATCH
+    licensed: true
+    market_ask_from: [ehcards]
+    market_ask_us: 59.99
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_n: null
+    market_sold_window_days: null
+    market_sold_checked_at: null
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://ehcards.com/products/2024-25-panini-mosaic-basketball-60-card-mega-box"
+  - id: PANINI_2024-25_MOSAIC_HOBBY
+    season: "2024-25"
+    manufacturer: Panini
+    set: Mosaic
+    wemby_year2: true
+    wemby_rc: false
+    format: Hobby
+    configuration: null
+    tier: hobby
+    status: WATCH
+    licensed: true
+    market_ask_from: [collectorstore]
+    market_ask_us: 499.95
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_n: null
+    market_sold_window_days: null
+    market_sold_checked_at: null
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://collectorstore.com/products/2024-25-panini-mosaic-basketball-hobby-box"
+  - id: PANINI_2024-25_DONRUSS_BLASTER
+    season: "2024-25"
+    manufacturer: Panini
+    set: Donruss
+    wemby_year2: true
+    wemby_rc: false
+    format: Blaster
+    configuration: null
+    tier: retail
+    status: WATCH
+    licensed: true
+    market_ask_from: [ehcards]
+    market_ask_us: 24.99
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_n: null
+    market_sold_window_days: null
+    market_sold_checked_at: null
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://ehcards.com/products/2024-25-panini-donruss-nba-basketball-6-pack-blaster-box-holo-orange-laser-inserts"
+  - id: PANINI_2024-25_DONRUSS_MEGA
+    season: "2024-25"
+    manufacturer: Panini
+    set: Donruss
+    wemby_year2: true
+    wemby_rc: false
+    format: Mega
+    configuration: null
+    tier: retail
+    status: WATCH
+    licensed: true
+    market_ask_from: [ehcards]
+    market_ask_us: 44.99
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_n: null
+    market_sold_window_days: null
+    market_sold_checked_at: null
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://ehcards.com/products/2024-25-panini-donruss-nba-basketball-10-pack-mega-box-teal-laser-copy"
+  - id: PANINI_2024-25_DONRUSS_HOBBY
+    season: "2024-25"
+    manufacturer: Panini
+    set: Donruss
+    wemby_year2: true
+    wemby_rc: false
+    format: Hobby
+    configuration: null
+    tier: hobby
+    status: WATCH
+    licensed: true
+    market_ask_from: [rbicru7]
+    market_ask_us: 30.00
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_n: null
+    market_sold_window_days: null
+    market_sold_checked_at: null
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://rbicru7.com/products/2024-25-panini-donruss-basketball-hobby-pack"
+  - id: PANINI_2024-25_HOOPS_BLASTER
+    season: "2024-25"
+    manufacturer: Panini
+    set: Hoops
+    wemby_year2: true
+    wemby_rc: false
+    format: Blaster
+    configuration: null
+    tier: retail
+    status: WATCH
+    licensed: true
+    market_ask_from: [hiddengems]
+    market_ask_us: 20.00
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_n: null
+    market_sold_window_days: null
+    market_sold_checked_at: null
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://www.hiddengemscardshop.com/products/2024-25-nba-hoops-blaster-box"
+  - id: PANINI_2024-25_HOOPS_HOBBY
+    season: "2024-25"
+    manufacturer: Panini
+    set: Hoops
+    wemby_year2: true
+    wemby_rc: false
+    format: Hobby
+    configuration: null
+    tier: hobby
+    status: WATCH
+    licensed: true
+    market_ask_from: [awesome]
+    market_ask_us: 7.00
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_n: null
+    market_sold_window_days: null
+    market_sold_checked_at: null
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://theawesomecardshop.com/products/2024-25-panini-nba-hoops-basketball-hobby-pack"
+  - id: PANINI_2024-25_TOTALLY_CERTIFIED_BLASTER
+    season: "2024-25"
+    manufacturer: Panini
+    set: Totally Certified
+    wemby_year2: true
+    wemby_rc: false
+    format: Blaster
+    configuration: null
+    tier: retail
+    status: WATCH
+    licensed: true
+    market_ask_from: [superior]
+    market_ask_us: 52.00
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_n: null
+    market_sold_window_days: null
+    market_sold_checked_at: null
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://superiorsportsinvestments.com/products/2024-25-panini-totally-certified-basketball-blaster-box"
+  - id: PANINI_2024-25_TOTALLY_CERTIFIED_MEGA
+    season: "2024-25"
+    manufacturer: Panini
+    set: Totally Certified
+    wemby_year2: true
+    wemby_rc: false
+    format: Mega
+    configuration: null
+    tier: retail
+    status: WATCH
+    licensed: true
+    market_ask_from: [hiddengems]
+    market_ask_us: 50.00
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_n: null
+    market_sold_window_days: null
+    market_sold_checked_at: null
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://www.hiddengemscardshop.com/products/2024-25-panini-totally-certified-basketball-mega-box-retail-debut"
+  - id: PANINI_2024-25_TOTALLY_CERTIFIED_HOBBY
+    season: "2024-25"
+    manufacturer: Panini
+    set: Totally Certified
+    wemby_year2: true
+    wemby_rc: false
+    format: Hobby
+    configuration: null
+    tier: hobby
+    status: WATCH
+    licensed: true
+    market_ask_from: [ballgame]
+    market_ask_us: 350.00
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_n: null
+    market_sold_window_days: null
+    market_sold_checked_at: null
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://theballgame.com/products/2024-25-panini-nba-totally-certified-basketball-trading-card-premium-hobby-box"
+  - id: PANINI_2024-25_COURT_KINGS_BLASTER
+    season: "2024-25"
+    manufacturer: Panini
+    set: Court Kings
+    wemby_year2: true
+    wemby_rc: false
+    format: Blaster
+    configuration: null
+    tier: retail
+    status: WATCH
+    licensed: true
+    market_ask_from: [bleecker]
+    market_ask_us: 250.00
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_n: null
+    market_sold_window_days: null
+    market_sold_checked_at: null
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://bleeckertrading.com/products/2024-25-court-kings-basketball-blaster-box"
+  - id: PANINI_2024-25_COURT_KINGS_HOBBY
+    season: "2024-25"
+    manufacturer: Panini
+    set: Court Kings
+    wemby_year2: true
+    wemby_rc: false
+    format: Hobby
+    configuration: null
+    tier: hobby
+    status: WATCH
+    licensed: true
+    market_ask_from: [sportscardjunction]
+    market_ask_us: 165.00
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_n: null
+    market_sold_window_days: null
+    market_sold_checked_at: null
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://sportscardjunction.com/products/2024-25-panini-court-kings-basketball-hobby-box"
+  - id: PANINI_2024-25_REVOLUTION_BLASTER
+    season: "2024-25"
+    manufacturer: Panini
+    set: Revolution
+    wemby_year2: true
+    wemby_rc: false
+    format: Blaster
+    configuration: null
+    tier: retail
+    status: WATCH
+    licensed: true
+    market_ask_from: [superior]
+    market_ask_us: 55.00
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_n: null
+    market_sold_window_days: null
+    market_sold_checked_at: null
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://superiorsportsinvestments.com/products/2024-25-panini-revolution-basketball-6-pack-blaster-box"
+  - id: PANINI_2024-25_REVOLUTION_MEGA
+    season: "2024-25"
+    manufacturer: Panini
+    set: Revolution
+    wemby_year2: true
+    wemby_rc: false
+    format: Mega
+    configuration: null
+    tier: retail
+    status: WATCH
+    licensed: true
+    market_ask_from: [superior]
+    market_ask_us: 90.00
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_n: null
+    market_sold_window_days: null
+    market_sold_checked_at: null
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://superiorsportsinvestments.com/products/2024-25-panini-revolution-basketball-mega-box-scope-parallels"
+  - id: PANINI_2024-25_REVOLUTION_HOBBY
+    season: "2024-25"
+    manufacturer: Panini
+    set: Revolution
+    wemby_year2: true
+    wemby_rc: false
+    format: Hobby
+    configuration: null
+    tier: hobby
+    status: WATCH
+    licensed: true
+    market_ask_from: [superior]
+    market_ask_us: 780.00
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_n: null
+    market_sold_window_days: null
+    market_sold_checked_at: null
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://superiorsportsinvestments.com/products/2024-25-panini-revolution-basketball-hobby-box"
+  - id: TOPPS_2023-24_CHROME_HOBBY
+    season: "2023-24"
+    manufacturer: Topps
+    set: Topps Chrome
+    wemby_rc: true
+    format: Hobby
+    configuration: null
+    tier: hobby
+    status: ACTIVE
+    licensed: nbpa
+    market_ask_from: [cardiacs]
+    market_ask_us: 369.95
+    market_sold_us: 300.00
+    market_sold_source: stockx
+    market_sold_n: 6
+    market_sold_window_days: 90
+    market_sold_checked_at: 2026-08-18
+    buy_below_usd: 260.00
+    watch_below_usd: 300.00
+    note: "Wemby #1, seul produit avec autos RC Wemby (exclusivité Fanatics), 2 autos/box, Superfractor toutes configs"
+    url_proof: "https://www.thecardiacs.com/products/2023-24-topps-chrome-basketball-hobby-box"
+  - id: TOPPS_2023-24_CHROME_VALUE_BLASTER
+    season: "2023-24"
+    manufacturer: Topps
+    set: Topps Chrome
+    aliases: ["Topps Chrome Value Blaster"]
+    wemby_rc: true
+    format: Blaster
+    configuration: null
+    tier: retail
+    status: ACTIVE
+    licensed: nbpa
+    market_ask_from: [superior]
+    market_ask_us: 120.00
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_n: null
+    market_sold_window_days: null
+    market_sold_checked_at: null
+    buy_below_usd: 35.00
+    watch_below_usd: 45.00
+    market_source: "ask: 42,95-55 relevés le 18/08 ; sold à relever"
+    url_proof: "https://superiorsportsinvestments.com/products/2023-24-topps-chrome-basketball-blaster-box"
+  - id: TOPPS_2023-24_CHROME_MEGA
+    season: "2023-24"
+    manufacturer: Topps
+    set: Topps Chrome
+    wemby_rc: true
+    format: Mega
+    configuration: null
+    tier: retail
+    status: WATCH
+    licensed: nbpa
+    market_ask_from: [e5sports]
+    market_ask_us: 60.00
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_n: null
+    market_sold_window_days: null
+    market_sold_checked_at: null
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://e5sports.com/products/2023-24-topps-chrome-nba-mega-box"
+  - id: TOPPS_2023-24_CHROME_HANGER
+    season: "2023-24"
+    manufacturer: Topps
+    set: Topps Chrome
+    wemby_rc: true
+    format: Hanger
+    configuration: null
+    tier: retail
+    status: WATCH
+    licensed: nbpa
+    market_ask_from: [superior]
+    market_ask_us: 85.00
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_n: null
+    market_sold_window_days: null
+    market_sold_checked_at: null
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://superiorsportsinvestments.com/products/2023-24-topps-chrome-basketball-hanger-box"
+  - id: TOPPS_2023-24_CHROME_MONSTER
+    season: "2023-24"
+    manufacturer: Topps
+    set: Topps Chrome
+    wemby_rc: true
+    configuration_note: "Monster Box — configuration distincte"
+    format: Value Box
+    configuration: null
+    tier: retail
+    status: WATCH
+    licensed: nbpa
+    market_ask_from: [columbia]
+    market_ask_us: 58.99
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_n: null
+    market_sold_window_days: null
+    market_sold_checked_at: null
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://columbiasportscard.com/products/2023-24-topps-chrome-basketball-monster"
+  - id: TOPPS_2023-24_CHROME_SAPPHIRE
+    season: "2023-24"
+    manufacturer: Topps
+    set: Topps Chrome
+    wemby_rc: true
+    configuration_note: "Sapphire Edition — configuration distincte"
+    format: Hobby
+    configuration: null
+    tier: hobby
+    status: WATCH
+    licensed: nbpa
+    market_ask_from: [bleecker]
+    market_ask_us: 400.00
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_n: null
+    market_sold_window_days: null
+    market_sold_checked_at: null
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://bleeckertrading.com/products/2023-24-topps-chrome-basketball-sapphire-edition"
+  - id: TOPPS_2023-24_COSMIC_CHROME_HOBBY
+    season: "2023-24"
+    manufacturer: Topps
+    set: Cosmic Chrome
+    wemby_rc: true
+    format: Hobby
+    configuration: null
+    tier: hobby
+    status: WATCH
+    licensed: nbpa
+    market_ask_from: [awesome]
+    market_ask_us: 9.00
+    market_sold_us: 187.00
+    market_sold_source: stockx
+    market_sold_n: 2
+    market_sold_window_days: 90
+    market_sold_checked_at: 2026-08-18
+    buy_below_usd: null
+    watch_below_usd: null
+    note: "moyenne 3 mois ; last sale 136"
+    url_proof: "https://theawesomecardshop.com/products/2023-24-topps-cosmic-chrome-basketball-hobby-box-copy"
+  - id: PANINI_2023-24_NATIONAL_TREASURES_HOBBY
+    season: "2023-24"
+    manufacturer: Panini
+    set: National Treasures
+    trophy: true
+    wemby_rc: true
+    format: Hobby
+    configuration: null
+    tier: hobby
+    status: CANDIDATE
+    licensed: true
+    market_ask_from: [ballgame]
+    market_ask_us: 2800.00
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_n: null
+    market_sold_window_days: null
+    market_sold_checked_at: null
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://theballgame.com/products/2023-24-panini-national-treasures-basketball-hobby-box"
+  - id: PANINI_2023-24_FLAWLESS_HOBBY
+    season: "2023-24"
+    manufacturer: Panini
+    set: Flawless
+    trophy: true
+    wemby_rc: true
+    format: Hobby
+    configuration: null
+    tier: hobby
+    status: CANDIDATE
+    licensed: true
+    market_ask_from: [awesome]
+    market_ask_us: 10999.75
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_n: null
+    market_sold_window_days: null
+    market_sold_checked_at: null
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://theawesomecardshop.com/products/2023-24-panini-flawless-basketball-hobby-box"
+  - id: PANINI_2023-24_IMMACULATE_HOBBY
+    season: "2023-24"
+    manufacturer: Panini
+    set: Immaculate
+    trophy: true
+    wemby_rc: true
+    format: Hobby
+    configuration: null
+    tier: hobby
+    status: CANDIDATE
+    licensed: true
+    market_ask_us: null
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_n: null
+    market_sold_window_days: null
+    market_sold_checked_at: null
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: ""
+  - id: PANINI_2023-24_NOIR_HOBBY
+    season: "2023-24"
+    manufacturer: Panini
+    set: Noir
+    trophy: true
+    wemby_rc: true
+    format: Hobby
+    configuration: null
+    tier: hobby
+    status: CANDIDATE
+    licensed: true
+    market_ask_from: [superior]
+    market_ask_us: 3500.00
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_n: null
+    market_sold_window_days: null
+    market_sold_checked_at: null
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://superiorsportsinvestments.com/products/2023-24-panini-noir-basketball-hobby-box"
+  - id: PANINI_2023-24_ONE_AND_ONE_HOBBY
+    season: "2023-24"
+    manufacturer: Panini
+    set: One and One
+    trophy: true
+    wemby_rc: true
+    format: Hobby
+    configuration: null
+    tier: hobby
+    status: CANDIDATE
+    licensed: true
+    market_ask_from: [superior]
+    market_ask_us: 1650.00
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_n: null
+    market_sold_window_days: null
+    market_sold_checked_at: null
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://superiorsportsinvestments.com/products/2023-24-panini-one-and-one-basketball-hobby-box"
+  - id: TOPPS_2023-24_MIDNIGHT_HOBBY
+    season: "2023-24"
+    manufacturer: Topps
+    set: Midnight
+    trophy: true
+    wemby_rc: true
+    format: Hobby
+    configuration: null
+    tier: hobby
+    status: CANDIDATE
+    licensed: nbpa
+    market_ask_from: [superior]
+    market_ask_us: 695.00
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_n: null
+    market_sold_window_days: null
+    market_sold_checked_at: null
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://superiorsportsinvestments.com/products/2023-24-topps-midnight-basketball-hobby-box"
+  - id: TOPPS_2023-24_INCEPTION_HOBBY
+    season: "2023-24"
+    manufacturer: Topps
+    set: Inception
+    trophy: true
+    wemby_rc: true
+    format: Hobby
+    configuration: null
+    tier: hobby
+    status: CANDIDATE
+    licensed: nbpa
+    market_ask_us: null
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_n: null
+    market_sold_window_days: null
+    market_sold_checked_at: null
     buy_below_usd: null
     watch_below_usd: null
     url_proof: ""

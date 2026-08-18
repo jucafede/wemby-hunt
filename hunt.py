@@ -76,6 +76,18 @@ SEASON_RE = re.compile(r"(20\d{2})\s*[-/–]\s*(\d{2,4})|(?<!\d)(\d{2})\s*[-/–
 SPORT_HINTS = {"basketball": ["basketball", "nba", "bball", "hoops"], "not_basketball": ["football", "nfl", "baseball", "mlb", "hockey", "nhl", "soccer", "wnba", "pokemon", "ufc", "wrestling", "f1", "euroleague", "golf", "nascar", "racing", "wwe", "tennis", "mma", "boxing", "pfl", "fighters", "college", "draft picks", "world cup", "premier league"]}
 SEALED_RE = re.compile(r"\b(box|boxes|blaster|mega|hobby|case|pack|packs|tin|display|bundle|lot)\b")
 SINGLE_RE = re.compile(r"(#\s*\d+\b|\b\d{1,3}\s*/\s*\d{1,4}\b|\bpsa\b|\bbgs\b|\bsgc\b|\bauto\b|\bautograph\b|\brc\b\s*$|\bpatch\b|\brelic\b|\bslab)")
+# Parallèles nommés : une "Green Shock" ou une "Hyper Pink" n'est pas la boîte standard.
+# Un SKU sans configuration qui capte un titre porteur d'un parallèle nommé donne une
+# comparaison RELATED — observée, jamais convertie en GO.
+PARALLEL_HINTS = ["green shock", "cracked ice", "red ice", "blue ice", "green ice", "hyper pink",
+                  "hyper orange", "hyper green", "ice prizm", "velocity", "shimmer", "pulsar",
+                  "disco", "seismic", "glitter", "flash", "reactive", "fluorescent", "purple shock"]
+
+def comp_type_of(title_norm: str, sku: dict) -> str:
+    """EXACT = même configuration que le SKU. RELATED = même SKU, autre configuration reconnue."""
+    if sku.get("configuration"): return "EXACT"
+    return "RELATED" if any(h in title_norm for h in PARALLEL_HINTS) else "EXACT"
+
 CONFIG_HINTS = ["target", "walmart", "fanatics", "exclusive", "green shock", "cracked ice", "red ice", "blue ice", "green ice", "hyper pink", "hyper orange", "glitter", "flash", "ice prizm", "seismic", "npp", "reactive", "fluorescent", "shimmer", "pulsar", "disco", "holo", "purple", "pink", "orange", "yellow", "green", "blue", "red"]
 
 def norm(s: str) -> str:
@@ -147,7 +159,11 @@ def match_title(title: str, skus: list[dict]) -> Match:
         # garde-fous : "Donruss Optic" vs "Donruss" seul, "Prizm" vs "Prizm Monopoly", "Hoops Premium Stock" vs "Hoops"
         if s["set"].lower() == "prizm":
             if any(k in t for k in ("monopoly", "draft", "deca", "emergent", "flashback", "collegiate")): continue
-            if not re.search(r"(panini\s+prizm|prizm\s+(basketball|nba|bball))", t): continue  # évite "Ice Prizms", "Hyper Pink Prizms"
+            # le garde-fou anti-"Ice Prizms" exige "Panini Prizm" ou "Prizm Basketball". Un SKU de
+            # ligue est déjà identifié par son token de ligue : "Prizm Turkish Airlines EuroLeague"
+            # suffit, inutile d'exiger en plus "Panini" ou "Basketball".
+            if not (re.search(r"(panini\s+prizm|prizm\s+(basketball|nba|bball))", t)
+                    or (s.get("league") and league == s.get("league"))): continue
         if s["set"].lower() == "donruss optic" and ("optic" not in t or "contenders" in t or "recon" in t): continue
         if s["set"].lower() == "contenders" and "optic" in t: continue   # "Contenders Optic" est une autre gamme
         if s["set"].lower() == "select" and ("select racing" in t or "nascar" in t): continue
@@ -199,14 +215,19 @@ def db() -> sqlite3.Connection:
       PRIMARY KEY(sku_id, shop, url, variant_title, seen_at));
     """)
     c.executescript("""
+    CREATE TABLE IF NOT EXISTS signals(
+      sku TEXT, shop TEXT, url TEXT, variant_title TEXT, price REAL,
+      badges TEXT, reference REAL, reference_kind TEXT, gap_pct REAL, seen_at TEXT,
+      PRIMARY KEY(sku, shop, url, variant_title, seen_at));
     CREATE TABLE IF NOT EXISTS crawl_runs(
       shop TEXT, seen_at TEXT, partial INTEGER, n_raw INTEGER,
       PRIMARY KEY(shop, seen_at));
     """)
     # migration douce : colonne matcher_version si absente
     cols = [r[1] for r in c.execute("PRAGMA table_info(observations)")]
-    if "matcher_version" not in cols:
-        c.execute("ALTER TABLE observations ADD COLUMN matcher_version TEXT")
+    for col in ("matcher_version TEXT", "image_url TEXT", "comp_type TEXT"):
+        if col.split()[0] not in cols:
+            c.execute(f"ALTER TABLE observations ADD COLUMN {col}")
     c.executescript("""
     CREATE INDEX IF NOT EXISTS ix_obs ON observations(sku_id, seen_at);
     """)
@@ -323,6 +344,8 @@ def collect_shop(shop: dict, skus: list[dict], conn: sqlite3.Connection, seen_at
         variants = p.get("variants") or []
         if not variants: continue
         url = f"{shop['base_url']}/products/{handle}"
+        imgs = p.get("images") or []
+        image_url = (imgs[0].get("src") if imgs else None)
         # Une ligne PAR VARIANTE : on matche titre + variant_title (garde-fou Blaster/Mega dans les variantes)
         for v in variants:
             vt = v.get("title") or ""
@@ -336,8 +359,10 @@ def collect_shop(shop: dict, skus: list[dict], conn: sqlite3.Connection, seen_at
                  m.season, m.fmt, m.sport, m.config, m.sku_id, m.score, json.dumps(m.candidates), seen_at))
             n_raw += 1
             if m.sku_id:
-                conn.execute("INSERT OR REPLACE INTO observations (sku_id,shop,title,variant_title,price,available,url,match_score,seen_at,matcher_version) VALUES (?,?,?,?,?,?,?,?,?,?)",
-                    (m.sku_id, shop["key"], full, vt_clean, price, available, url, m.score, seen_at, MATCHER_VERSION))
+                sku_obj = next((x for x in skus if x["id"] == m.sku_id), {})
+                ct = comp_type_of(norm(full), sku_obj)
+                conn.execute("INSERT OR REPLACE INTO observations (sku_id,shop,title,variant_title,price,available,url,match_score,seen_at,matcher_version,image_url,comp_type) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)",
+                    (m.sku_id, shop["key"], full, vt_clean, price, available, url, m.score, seen_at, MATCHER_VERSION, image_url, ct))
                 n_obs += 1
     conn.execute("INSERT OR REPLACE INTO crawl_runs VALUES (?,?,?,?)",
                  (shop["key"], seen_at, 1 if partial else 0, n_raw))
@@ -345,6 +370,16 @@ def collect_shop(shop: dict, skus: list[dict], conn: sqlite3.Connection, seen_at
     return (n_raw, n_obs, partial)
 
 # ---------------------------------------------------------------- décision / rapport
+def sku_label(s: dict) -> str:
+    """Libellé humain d'un SKU. Doit inclure league et configuration : sans elles, le Prizm
+    EuroLeague s'affichait '2023-24 Panini Prizm Blaster', identique au Prizm NBA — trompeur
+    sur une ligne GO."""
+    bits = [s["season"], s["manufacturer"], s["set"]]
+    if s.get("league"): bits.append(s["league"])
+    bits.append(s["format"])
+    if s.get("configuration"): bits.append(f"({s['configuration']})")
+    return " ".join(str(b) for b in bits)
+
 def money(v, cur="$"):
     """Un champ catalogue mal saisi (texte au lieu d'un nombre) doit dégrader la ligne, pas tuer le run."""
     try: return f"{cur}{float(v):.2f}"
@@ -381,6 +416,108 @@ def trust_of(shop_key: str, trust: dict) -> str:
     """trusted par défaut : un shop sans clé `trust` dans sources.yaml reste classé normalement."""
     return trust.get(shop_key, "trusted")
 
+
+# ================================================================ V2-a : mémoire et badges
+def sold_confidence(sku: dict) -> str | None:
+    """Dérivée, jamais saisie. HIGH n>=5 et <=60 j · MEDIUM n>=2 et <=90 j · LOW sinon.
+    None = aucune vente réalisée renseignée."""
+    if sku.get("market_sold_us") is None: return None
+    n = sku.get("market_sold_n") or 0
+    w = sku.get("market_sold_window_days")
+    if n >= 5 and w is not None and w <= 60: return "HIGH"
+    if n >= 2 and w is not None and w <= 90: return "MEDIUM"
+    return "LOW"
+
+def market_ref(sku: dict) -> tuple[float | None, str | None]:
+    """Référence de marché : sold si présent, sinon ask. Aucune des deux -> pas de référence."""
+    if sku.get("market_sold_us") is not None: return float(sku["market_sold_us"]), "sold"
+    if sku.get("market_ask_us") is not None: return float(sku["market_ask_us"]), "ask"
+    return None, None
+
+def line_memory(conn, sku_id, shop, url, vt, upto):
+    """Restitution pure depuis observations — aucune collecte supplémentaire."""
+    rows = conn.execute("""SELECT seen_at, price, available FROM observations
+        WHERE sku_id=? AND shop=? AND url=? AND variant_title=? AND seen_at<=?
+        ORDER BY seen_at""", (sku_id, shop, url, vt, upto)).fetchall()
+    if not rows: return None
+    prices = [r[1] for r in rows]
+    m = {"first_seen": rows[0][0], "last_seen": rows[-1][0], "n_obs": len(rows),
+         "min_price_ever": min(prices), "price_history": [(r[0], r[1]) for r in rows],
+         "prev_price": prices[-2] if len(rows) > 1 else None,
+         "days_oos_before_return": None, "days_in_stock_same_price": None}
+    def days(a, b):
+        try: return max(0, (datetime.fromisoformat(b) - datetime.fromisoformat(a)).days)
+        except Exception: return None
+    if rows[-1][2] == 1:
+        # remontée : depuis quand en rupture avant ce retour ?
+        oos_start = None
+        for r in reversed(rows[:-1]):
+            if r[2] == 0: oos_start = r[0]
+            else: break
+        if oos_start: m["days_oos_before_return"] = days(oos_start, rows[-1][0])
+        # depuis quand en stock au même prix ?
+        same = rows[-1][0]
+        for r in reversed(rows[:-1]):
+            if r[2] == 1 and abs(r[1] - rows[-1][1]) < 0.01: same = r[0]
+            else: break
+        m["days_in_stock_same_price"] = days(same, rows[-1][0])
+    return m
+
+def compute_badges(o, mem, sku, trust_level, in_stock_lines):
+    """Renvoie (déclencheurs, descriptifs, gap_pct, ref, ref_kind). Aucun score composite :
+    chaque badge est un fait vérifiable, et les descriptifs ne déclenchent jamais HOT NOW."""
+    price, available = o[3], o[4]
+    ref, kind = market_ref(sku)
+    gap = round((price - ref) / ref * 100, 1) if ref else None
+    trig, desc = [], []
+
+    if mem and mem.get("days_oos_before_return") is not None and available:
+        trig.append(f"RESTOCK +{mem['days_oos_before_return']}j")
+    if mem and available and mem["n_obs"] >= 3 and price <= mem["min_price_ever"] + 1e-9:
+        trig.append("NEW_LOW")
+    if mem and mem.get("prev_price") and price < mem["prev_price"] - 1e-9:
+        trig.append(f"PRICE_DROP -{round((mem['prev_price'] - price) / mem['prev_price'] * 100)}%")
+    if available and len(in_stock_lines) == 1:
+        sold = sku.get("market_sold_us"); ask = sku.get("market_ask_us")
+        cheap = (ask is not None and price <= ask) or (sold is not None and price <= 1.10 * float(sold))
+        (trig if cheap else desc).append("SEUL_EN_STOCK" if cheap else "ONLY_STOCK_SEEN")
+    if gap is not None and available:
+        if gap <= -20: trig.append(f"STRONG_DEAL {gap:.0f}%")
+        elif gap <= -10: trig.append(f"DEAL {gap:.0f}%")
+
+    if sku.get("wemby_rc"): desc.append("RC_YEAR")
+    if sku.get("wemby_year2"): desc.append("YEAR2")
+    if sku.get("trophy"): desc.append("TROPHY")
+    lic = sku.get("licensed", True)
+    if lic is False: desc.append("UNLICENSED")
+    elif lic == "nbpa": desc.append("NBPA")
+    elif lic == "euroleague": desc.append("EUROLEAGUE")
+    if sku.get("league") == "EuroLeague" and "EUROLEAGUE" not in desc: desc.append("EUROLEAGUE")
+    if trust_level == "watch": desc.append("VERIFY")
+    elif trust_level == "high_risk": desc.append("VERIFY SELLER")
+    if available and len(in_stock_lines) > 1 and price == min(l[3] for l in in_stock_lines):
+        desc.append(f"cheapest of {len(in_stock_lines)} in stock")
+    if ref is None: desc.append("MARKET DATA INSUFFICIENT")
+    return trig, desc, gap, ref, kind
+
+def hot_now(entries, limit=15):
+    """Lignes EN STOCK avec >=1 déclencheur ET une référence de marché. Triées par nombre de
+    déclencheurs puis par écart croissant. Une ligne sans référence n'y entre jamais."""
+    elig = [e for e in entries if e["available"] and e["triggers"] and e["ref"] is not None]
+    elig.sort(key=lambda e: (-len(e["triggers"]), e["gap"] if e["gap"] is not None else 0))
+    return elig[:limit]
+
+def decide(status_active, gap, conf, comp, buy_below, price):
+    """GO exige : SKU ACTIVE, comparaison EXACT, sold_confidence >= MEDIUM, et prix sous le seuil.
+    Sans sold fiable, une anomalie de prix reste une anomalie — jamais un ordre d'achat."""
+    if not status_active: return None
+    under = buy_below is not None and price <= buy_below
+    if not under: return None
+    if comp != "EXACT": return "PRICE ANOMALY — RELATED COMP"
+    if conf is None: return "PRICE ANOMALY — NO SOLD DATA"
+    if conf == "LOW": return "PRICE ANOMALY — LOW MARKET CONFIDENCE"
+    return "GO"
+
 def report(cat: dict, conn: sqlite3.Connection, seen_at: str | None, trust: dict | None = None):
     trust = trust or {}
     skus = {s["id"]: s for s in cat["skus"]}
@@ -402,7 +539,7 @@ def report(cat: dict, conn: sqlite3.Connection, seen_at: str | None, trust: dict
         print(f"⚠️  [{sh}] passage {sa} PARTIAL ({nr} produits) — ignoré, référence = dernier passage complet")
     # dernière observation par (sku, shop, url, variante)
     rows = conn.execute("""
-      SELECT o.sku_id, o.shop, o.title, o.price, o.available, o.url, o.match_score, o.seen_at, o.variant_title
+      SELECT o.sku_id, o.shop, o.title, o.price, o.available, o.url, o.match_score, o.seen_at, o.variant_title, o.comp_type, o.image_url
       FROM observations o
       JOIN (SELECT sku_id, shop, url, variant_title, MAX(seen_at) AS m FROM observations GROUP BY sku_id, shop, url, variant_title) l
         ON l.sku_id=o.sku_id AND l.shop=o.shop AND l.url=o.url AND l.variant_title=o.variant_title AND l.m=o.seen_at
@@ -417,7 +554,8 @@ def report(cat: dict, conn: sqlite3.Connection, seen_at: str | None, trust: dict
         if r[4] == 1 and prev_state(conn, r[0], r[1], r[5], r[8], r[7]) == 0:
             deal = r[3] <= skus.get(r[0], {}).get("buy_below_usd", 0)
             restocks.append((r, deal))
-    html = []  # lignes pour la page web
+    html = []          # lignes pour la page web
+    all_entries = []   # toutes les lignes enrichies (mémoire + badges) pour HOT NOW et signals
     OUT.mkdir(exist_ok=True)
     stamp = (seen_at or datetime.now(timezone.utc).isoformat())[:19].replace(":", "-")
     csv_path = OUT / f"deals_{stamp}.csv"
@@ -443,20 +581,34 @@ def report(cat: dict, conn: sqlite3.Connection, seen_at: str | None, trust: dict
                 sk_st = s.get("status", "ACTIVE")
                 if sk_st != "ACTIVE":
                     status, icon = ("SUIVI" if sk_st == "WATCH" else "CANDIDAT"), "·"
-                elif best and s.get("buy_below_usd") and best[3] <= s["buy_below_usd"]: status, icon = "GO", "🔥"
+                elif best and s.get("buy_below_usd") and best[3] <= s["buy_below_usd"]:
+                    d = decide(True, None, conf, by_line[id(best)]["comp"], s.get("buy_below_usd"), best[3])
+                    status, icon = ("GO", "🔥") if d == "GO" else (d, "⚡")
                 elif best and s.get("watch_below_usd") and best[3] <= s["watch_below_usd"]: status, icon = "WATCH", "👀"
                 elif best: status, icon = "NO_GO", "⛔"
                 else: status, icon = ("NO_STOCK" if obs else "NO_DATA"), "—"
-                lic = "" if s.get("licensed", True) else "  ⚑ unlicensed"
+                lic = "" if s.get("licensed", True) is True else f"  ⚑ {s.get('licensed')}"
                 bpc = s.get("boxes_per_case")
-                cfgl = f" ({s['configuration']})" if s.get("configuration") else ""
-                print(f"\n{icon} {status}   {s['season']} {s['manufacturer']} {s['set']} {s['format']}{cfgl}   [{sid}]{lic}")
+                conf = sold_confidence(s)
+                entries = []
+                for o in obs:
+                    mem = line_memory(conn, sid, o[1], o[5], o[8], o[7])
+                    tg, dsc, gap, ref, kind = compute_badges(o, mem, s, trust_of(o[1], trust), in_stock)
+                    entries.append({"o": o, "available": bool(o[4]), "triggers": tg, "descriptors": dsc,
+                                    "gap": gap, "ref": ref, "kind": kind, "mem": mem,
+                                    "comp": (o[9] or "EXACT"), "sku": s, "sid": sid})
+                all_entries.extend(entries)
+                by_line = {id(e["o"]): e for e in entries}
+                print(f"\n{icon} {status}   {sku_label(s)}   [{sid}]{lic}")
                 rs = {id(r[0]) for r in restocks}
                 for i, o in enumerate(obs[:6], 1):
                     stock = "IN STOCK" if o[4] else "SOLD OUT"
                     flag = "  🔔" if any(o is r for r,_ in restocks) else ""
                     unit = f"  = ${o[3]/bpc:>7.2f}/boîte" if bpc else ""
-                    print(f"   {i}. {o[1]:<16} ${o[3]:>8.2f}{unit}  {stock:<9} landed≈€{landed_eur(o[3]/bpc if bpc else o[3],cat):>7.2f} ({nb}-box bundle)  (score {o[6]:.2f}){flag}{TRUST_FLAG.get(trust_of(o[1], trust), '')}")
+                    e = by_line[id(o)]
+                    bl = "  ".join(["🔹" + x for x in e["triggers"]] + e["descriptors"])
+                    print(f"   {i}. {o[1]:<16} ${o[3]:>8.2f}{unit}  {stock:<9} landed≈€{landed_eur(o[3]/bpc if bpc else o[3],cat):>7.2f}  (score {o[6]:.2f}){flag}")
+                    if bl: print(f"        {bl}")
                 ask = s.get("market_ask_us"); sold = s.get("market_sold_us"); eu = s.get("eu_reference_eur")
                 ssrc = s.get("market_sold_source"); schk = s.get("market_sold_checked_at")
                 prov = f" [{ssrc}{' ' + str(schk) if schk else ''}]" if sold and ssrc else ""
@@ -472,6 +624,22 @@ def report(cat: dict, conn: sqlite3.Connection, seen_at: str | None, trust: dict
         AND seen_at=(SELECT MAX(seen_at) FROM products_raw) ORDER BY match_score DESC LIMIT 40""").fetchall()
     for shop,title,price,av,cands,sc,url in q:
         print(f"  [{shop}] {title}  ${price:.2f} {'IN' if av else 'OOS'}  → {cands}")
+    # P : chaque ligne porteuse d'un déclencheur est enregistrée — base du backtesting à N jours
+    stamp_now = seen_at or datetime.now(timezone.utc).isoformat(timespec="seconds")
+    for e in all_entries:
+        if not e["triggers"]: continue
+        o = e["o"]
+        conn.execute("INSERT OR REPLACE INTO signals VALUES (?,?,?,?,?,?,?,?,?,?)",
+                     (e["sid"], o[1], o[5], o[8], o[3], json.dumps(e["triggers"] + e["descriptors"]),
+                      e["ref"], e["kind"], e["gap"], stamp_now))
+    conn.commit()
+    hn = hot_now(all_entries)
+    print("\n" + "="*72 + f"\n  🔥 HOT NOW — {len(hn)} ligne(s)\n" + "="*72)
+    for e in hn:
+        o = e["o"]
+        print(f"  {sku_label(e['sku'])[:44]:<46} ${o[3]:>8.2f} {o[1]:<16} {e['gap']:>6.1f}%  "
+              + " ".join(e["triggers"]))
+    if not hn: print("  (aucune ligne en stock ne cumule un déclencheur et une référence de marché)")
     write_html(cat, html, restocks, q, seen_at, trust)
     print(f"\nCSV → {csv_path}\nHTML → {OUT/'index.html'}")
 

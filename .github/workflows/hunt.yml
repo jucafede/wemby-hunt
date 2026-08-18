@@ -22,7 +22,14 @@ jobs:
           path: hunt.db
           key: hunt-db-${{ github.run_id }}
           restore-keys: hunt-db-
-      - run: mkdir -p out && python hunt.py | tee out/last_report.txt
+      # pipefail obligatoire : sans lui, `python … | tee` renvoie le code de tee et un crash du crawler
+      # passe pour un succès (vécu le 18/08 : rapport tronqué, run vert).
+      - name: Crawl + rapport
+        shell: bash
+        run: |
+          set -o pipefail
+          mkdir -p out
+          python hunt.py | tee out/last_report.txt
       - name: Save DB
         uses: actions/cache/save@v4
         with:

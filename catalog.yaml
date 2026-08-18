@@ -831,14 +831,14 @@ skus:
     licensed: true
     wemby_rc: true
     boxes_per_case: 20
-    market_ask_us: https://theawesomecardshop.com/products/2023-24-panini-select-basketball-mega-20-box-case-green-shock-prizm
+    market_ask_us: 1400.00
     market_sold_us: null
     market_sold_source: null
     market_sold_checked_at: null
     market_source: "ask: fiche live 17/08 — sold à relever"
     buy_below_usd: 1120
     watch_below_usd: 1300
-    url_proof: ""
+    url_proof: "https://theawesomecardshop.com/products/2023-24-panini-select-basketball-mega-20-box-case-green-shock-prizm"
   - id: PANINI_2023-24_MOSAIC_FAST_BREAK_CASE
     season: "2023-24"
     manufacturer: Panini
@@ -851,14 +851,14 @@ skus:
     licensed: true
     wemby_rc: true
     boxes_per_case: 20
-    market_ask_us: https://theawesomecardshop.com/products/2023-24-panini-mosaic-fast-break-basketball-hobby-20-box-case
+    market_ask_us: 5945.00
     market_sold_us: null
     market_sold_source: null
     market_sold_checked_at: null
     market_source: "ask: fiche live 17/08 — sold à relever"
     buy_below_usd: 4800
     watch_below_usd: 5600
-    url_proof: ""
+    url_proof: "https://theawesomecardshop.com/products/2023-24-panini-mosaic-fast-break-basketball-hobby-20-box-case"
   - id: PANINI_2023-24_PHOENIX_BLASTER_CASE_20
     season: "2023-24"
     manufacturer: Panini

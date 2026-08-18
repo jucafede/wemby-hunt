@@ -267,6 +267,11 @@ def collect_shop(shop: dict, skus: list[dict], conn: sqlite3.Connection, seen_at
     return (n_raw, n_obs)
 
 # ---------------------------------------------------------------- décision / rapport
+def money(v, cur="$"):
+    """Un champ catalogue mal saisi (texte au lieu d'un nombre) doit dégrader la ligne, pas tuer le run."""
+    try: return f"{cur}{float(v):.2f}"
+    except (TypeError, ValueError): return "n/a"
+
 def landed_eur(price_usd: float, cat: dict) -> float:
     lc = cat["landed_cost"]; fx = cat["fx_usd_eur"]
     usd = price_usd + lc["domestic_shipping_usd"] + lc["forwarder_fee_usd_per_box"] + lc["intl_shipping_usd_per_box"]
@@ -366,7 +371,7 @@ def report(cat: dict, conn: sqlite3.Connection, seen_at: str | None, trust: dict
                 ask = s.get("market_ask_us"); sold = s.get("market_sold_us"); eu = s.get("eu_reference_eur")
                 ssrc = s.get("market_sold_source"); schk = s.get("market_sold_checked_at")
                 prov = f" [{ssrc}{' ' + str(schk) if schk else ''}]" if sold and ssrc else ""
-                print(f"   ask {('$%.2f'%ask) if ask else 'n/a':<8} sold {('$%.2f'%sold) if sold else 'n/a':<8}{prov} | buy ≤ {('$%.2f'%s['buy_below_usd']) if s.get('buy_below_usd') else 'n/a':<8} | watch ≤ {('$%.2f'%s['watch_below_usd']) if s.get('watch_below_usd') else 'n/a':<8} | EU {('€%.2f'%eu) if eu else 'n/a'}")
+                print(f"   ask {money(ask):<8} sold {money(sold):<8}{prov} | buy ≤ {money(s.get('buy_below_usd')):<8} | watch ≤ {money(s.get('watch_below_usd')):<8} | EU {money(eu, '€')}")
                 if best: print(f"   BEST → {best[1]}  {best[5]}")
                 html.append((tier, status, icon, s, obs, best))
                 for o in obs:

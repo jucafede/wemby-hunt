@@ -36,7 +36,7 @@ FORMATS = [
     ("Retail Box", r"\bretail\s*box\b|24[- ]?pack"),
     ("Pack", r"(?<![\w-])packs?\b"),
     ("Case", r"\bcase\b|\d+\s*-?\s*box\s*case"),
-    ("FOTL", r"first\s*off\s*the\s*line|\bfotl\b"),
+    ("FOTL", r"(first|1st)\s*off\s*the\s*line|\bfotl\b"),
     ("Fast Break", r"fast\s*break|fast\s*brk"),
     ("Choice", r"\bchoice\b"),
     ("H2", r"\bh2\b|hybrid"),

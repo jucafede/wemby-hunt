@@ -64,6 +64,8 @@ POS = [
  ("2023-24 Panini Mosaic Basketball Target Mega Box (Reactive Yellow/Green)","MOSAIC_MEGA_TARGET"),
  ("2023-24 Panini Mosaic Basketball Mega Box (Reactive Blue Pink)","MOSAIC_MEGA"),
  ("2023-24 Panini Donruss Optic Basketball 1st Off The Line FOTL Hobby Box","OPTIC_FOTL"),
+ ("2023-24 Panini Donruss Optic Basketball 1st Off the Line Hobby Box","OPTIC_FOTL"),
+ ("2023/24 Panini Mosaic Basketball First Off The Line Hobby Box","MOSAIC_FOTL"),
  # non-régression sur les SKU existants
  ("2023-24 Panini Prizm Basketball Hanger Box (Orange Ice Prizm)","PRIZM_HANGER"),
  ("2023-24 Panini Contenders Basketball Hobby Box","CONTENDERS_HOBBY"),

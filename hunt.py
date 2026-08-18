@@ -447,6 +447,11 @@ def write_html(cat, blocks, restocks, review, seen_at, trust=None):
         for shop,title,price,av,cands,sc,url in review:
             h.append(f"<tr><td>{shop}</td><td><a href='{url}'>{title}</a></td><td>${price:.2f}</td><td>{'IN' if av else 'OOS'}</td><td class=small>{cands}</td></tr>")
         h.append("</table>")
+    # section "Nouveaux candidats" produite par discover.py (workflow hebdomadaire séparé).
+    # Absente au premier passage : elle apparaît au run hunt suivant la découverte.
+    frag = ROOT / "discovered" / "candidates.html"
+    if frag.exists():
+        h.append(frag.read_text(encoding="utf-8"))
     (OUT/"index.html").write_text("\n".join(h), encoding="utf-8")
 
 # ---------------------------------------------------------------- main

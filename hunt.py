@@ -663,7 +663,8 @@ def write_html(cat, blocks, restocks, review, seen_at, trust=None):
         for t, status, icon, s, obs, best in blocks:
             if t != tier: continue
             ask=s.get("market_ask_us"); sold=s.get("market_sold_us"); eu=s.get("eu_reference_eur")
-            h.append(f"<div class=sku><span class=st style='background:{col[status]}'>{icon} {status}</span> <b>{s['season']} {s['manufacturer']} {s['set']} {s['format']}</b>"
+            bg = col.get(status, "#8a5a00")   # les statuts PRICE ANOMALY n'ont pas de couleur dédiée
+            h.append(f"<div class=sku><span class=st style='background:{bg}'>{icon} {status}</span> <b>{sku_label(s)}</b>"
                      f"<div class=small>ask {ask or 'n/a'} $ · sold {sold or 'n/a'} $ · buy ≤ {s.get('buy_below_usd') or 'n/a'} $ · watch ≤ {s.get('watch_below_usd') or 'n/a'} $ · EU {eu or 'n/a'} €{'' if s.get('licensed', True) else ' · ⚑ unlicensed'}</div>")
             if obs:
                 h.append("<table><tr><th>Shop</th><th>Produit (titre live)</th><th>Configuration</th><th>Prix</th><th>Stock</th><th>Landed €</th></tr>")

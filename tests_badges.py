@@ -99,6 +99,21 @@ if f:
 else:
     print("  (CSV du 18/08 absent — rejeu ignoré)")
 
+# ---- rendu HTML : un statut hors palette ne doit jamais lever (crash prod du 18/08 18:11)
+import yaml as _y
+_cat = _y.safe_load(open("/Users/ju/Draft Class/wemby-hunt/catalog.yaml", encoding="utf-8"))
+_sku = [x for x in _cat["skus"] if x["id"].endswith("EUROLEAGUE_BLASTER")][0]
+_o = ("SKU", "cardiacs", "t", 9.95, 1, "https://x", 1.0, "2026-08-18T00:00:00", "", "EXACT", None)
+try:
+    hunt.write_html(_cat, [("retail", "PRICE ANOMALY — NO SOLD DATA", "⚡", _sku, [_o], _o)],
+                    [], [], "2026-08-18T00:00:00", {"cardiacs": "watch"})
+    _ok = True
+except Exception as _e:
+    _ok = f"{_e.__class__.__name__}: {_e}"
+check("write_html supporte un statut hors palette", _ok, True)
+_h = open("/Users/ju/Draft Class/wemby-hunt/out/index.html", encoding="utf-8").read()
+check("libellé HTML inclut la ligue", "Prizm EuroLeague Blaster" in _h, True)
+
 print(f"\nTOTAL : {len(total)} tests, {len(fails)} FAIL")
 for x in fails: print("  FAIL", x)
 sys.exit(1 if fails else 0)

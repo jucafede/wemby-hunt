@@ -1,45 +1,49 @@
 → EH Cards & Collectibles (https://ehcards.com)  [trust=trusted]
-  947 produits bruts, 5 rattachés à un SKU
+  947 produits bruts, 8 rattachés à un SKU
 → Collector Store LLC (https://collectorstore.com)  [trust=trusted]
-  20352 produits bruts, 2 rattachés à un SKU
+  20352 produits bruts, 3 rattachés à un SKU
 → Hidden Gems Card Shop (https://www.hiddengemscardshop.com)  [trust=trusted]
-  2734 produits bruts, 6 rattachés à un SKU
+  2734 produits bruts, 10 rattachés à un SKU
 → The Awesome Card Shop (https://theawesomecardshop.com)  [trust=trusted]
-  7266 produits bruts, 14 rattachés à un SKU
+  7266 produits bruts, 39 rattachés à un SKU
 → MojoBreak Shop (https://mojobreakshop.com)  [trust=trusted]
-  1500 produits bruts, 0 rattachés à un SKU
+  [mojobreak] status=reject (qualifié sur données réelles → 0 sealed 2023-24) → skip
+  0 produits bruts, 0 rattachés à un SKU
 → RbiCru7 Collectibles (https://rbicru7.com)  [trust=trusted]
-  12266 produits bruts, 7 rattachés à un SKU
+  12266 produits bruts, 8 rattachés à un SKU
 → Layton Sports Cards (https://laytonsportscards.com)  [trust=trusted]
   [layton] type=breaks (breaker, hors périmètre sealed) → skip
   0 produits bruts, 0 rattachés à un SKU
 → Jaspy's (https://www.jaspys.com)  [trust=trusted]
-  59 produits bruts, 0 rattachés à un SKU
+  [jaspys] status=reject (qualifié sur données réelles → 0 sealed 2023-24) → skip
+  0 produits bruts, 0 rattachés à un SKU
 → DA Card World (https://www.dacardworld.com)  [trust=trusted]
   [dacw] type=html non géré en v1 → skip
   0 produits bruts, 0 rattachés à un SKU
 → Columbia Sports Cards (https://columbiasportscard.com)  [trust=trusted]
-  3115 produits bruts, 10 rattachés à un SKU
+  3115 produits bruts, 25 rattachés à un SKU
 → Sports Card Junction (https://sportscardjunction.com)  [trust=watch]
-  3741 produits bruts, 7 rattachés à un SKU
+  3741 produits bruts, 17 rattachés à un SKU
 → Grand Slam Collectibles (https://grandslamcollectibles.com)  [trust=watch]
-  198 produits bruts, 0 rattachés à un SKU
+  [grandslam] status=reject (qualifié sur données réelles → 0 sealed 2023-24) → skip
+  0 produits bruts, 0 rattachés à un SKU
 → The Cardiacs (https://www.thecardiacs.com)  [trust=watch]
   5278 produits bruts, 2 rattachés à un SKU
 → Monmouth Cards (https://monmouthcards.com)  [trust=watch]
-  5002 produits bruts, 6 rattachés à un SKU
+  5001 produits bruts, 9 rattachés à un SKU
 → World Champion Sports Cards (https://www.worldchampionsportscards.org)  [trust=watch]
-  3830 produits bruts, 12 rattachés à un SKU
+  3830 produits bruts, 21 rattachés à un SKU
 → Superior Sports Investments (https://superiorsportsinvestments.com)  [trust=watch]
-  25000 produits bruts, 2 rattachés à un SKU
+  54506 produits bruts, 6 rattachés à un SKU
 → SJAY2K Trading Cards (https://www.sjay2k.com)  [trust=watch]
-  605 produits bruts, 0 rattachés à un SKU
+  617 produits bruts, 2 rattachés à un SKU
 → The Ballgame (https://theballgame.com)  [trust=watch]
-  13773 produits bruts, 10 rattachés à un SKU
+  13773 produits bruts, 21 rattachés à un SKU
 → Bleecker Trading (https://bleeckertrading.com)  [trust=watch]
-  2182 produits bruts, 18 rattachés à un SKU
+  2182 produits bruts, 36 rattachés à un SKU
 → CB Hobby (https://cbhobby.com)  [trust=watch]
   660 produits bruts, 0 rattachés à un SKU
+(purge : 14 observation(s) obsolètes retirées — matchées par une ancienne version du code)
 (1 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
 
 ========================================================================
@@ -53,7 +57,7 @@
    4. cardiacs         $   29.95  SOLD OUT  landed≈€  43.77 (8-box bundle)  (score 1.00)  👀 VERIFY
    5. bleecker         $   30.00  SOLD OUT  landed≈€  43.82 (8-box bundle)  (score 1.00)  👀 VERIFY
    6. awesome          $   35.00  SOLD OUT  landed≈€  48.99 (8-box bundle)  (score 1.00)
-   ask $34.95   sold $28.50   | buy ≤ $27.00 | watch ≤ $31.00 | EU €49.99
+   ask $34.95   sold $28.50   | buy ≤ $27.00   | watch ≤ $31.00   | EU €49.99
    BEST → ehcards  https://ehcards.com/products/2023-24-panini-phoenix-basketball-6-pack-blaster-box
 
 ⛔ NO_GO   2023-24 Panini Premium Stock Blaster   [PANINI_2023-24_PREMIUM_STOCK_BLASTER]
@@ -62,14 +66,14 @@
    3. cardiacs         $   29.95  SOLD OUT  landed≈€  43.77 (8-box bundle)  (score 1.00)  👀 VERIFY
    4. worldchampion    $   35.00  SOLD OUT  landed≈€  48.99 (8-box bundle)  (score 1.00)  👀 VERIFY
    5. monmouth         $   39.99  SOLD OUT  landed≈€  54.15 (8-box bundle)  (score 1.00)  👀 VERIFY
-   ask $34.96   sold n/a      | buy ≤ $30.00 | watch ≤ $35.00 | EU n/a
+   ask $34.96   sold n/a      | buy ≤ $30.00   | watch ≤ $35.00   | EU n/a
    BEST → ehcards  https://ehcards.com/products/2023-24-panini-premium-stock-basketball-blaster-box
 
 — NO_STOCK   2023-24 Panini Premium Stock Mega   [PANINI_2023-24_PREMIUM_STOCK_MEGA]
    1. hiddengems       $   35.00  SOLD OUT  landed≈€  48.99 (8-box bundle)  (score 1.00)
    2. monmouth         $   54.99  SOLD OUT  landed≈€  69.67 (8-box bundle)  (score 1.00)  👀 VERIFY
    3. bleecker         $   60.00  SOLD OUT  landed≈€  74.85 (8-box bundle)  (score 1.00)  👀 VERIFY
-   ask n/a      sold n/a      | buy ≤ $60.00 | watch ≤ $75.00 | EU €149.00
+   ask n/a      sold n/a      | buy ≤ $60.00   | watch ≤ $75.00   | EU €149.00
 
 — NO_STOCK   2023-24 Panini Prizm Blaster   [PANINI_2023-24_PRIZM_BLASTER]
    1. awesome          $   60.00  SOLD OUT  landed≈€  74.85 (8-box bundle)  (score 1.00)
@@ -77,7 +81,7 @@
    3. columbia         $   69.95  SOLD OUT  landed≈€  85.14 (8-box bundle)  (score 1.00)
    4. worldchampion    $   70.00  SOLD OUT  landed≈€  85.20 (8-box bundle)  (score 1.00)  👀 VERIFY
    5. bleecker         $   80.00  SOLD OUT  landed≈€  95.54 (8-box bundle)  (score 1.00)  👀 VERIFY
-   ask $119.95  sold n/a      | buy ≤ $60.00 | watch ≤ $80.00 | EU €150.00
+   ask $119.95  sold n/a      | buy ≤ $60.00   | watch ≤ $80.00   | EU €150.00
 
 ⛔ NO_GO   2023-24 Panini Donruss Optic Blaster   [PANINI_2023-24_OPTIC_BLASTER]
    1. ehcards          $   59.99  IN STOCK  landed≈€  74.84 (8-box bundle)  (score 1.00)
@@ -85,7 +89,7 @@
    3. awesome          $   45.00  SOLD OUT  landed≈€  59.34 (8-box bundle)  (score 1.00)
    4. columbia         $   49.95  SOLD OUT  landed≈€  64.46 (8-box bundle)  (score 1.00)
    5. bleecker         $   50.00  SOLD OUT  landed≈€  64.51 (8-box bundle)  (score 1.00)  👀 VERIFY
-   ask n/a      sold n/a      | buy ≤ $40.00 | watch ≤ $45.00 | EU n/a
+   ask n/a      sold n/a      | buy ≤ $40.00   | watch ≤ $45.00   | EU n/a
    BEST → ehcards  https://ehcards.com/products/2023-24-panini-donruss-optic-basketball-6-pack-blaster-box
 
 ⛔ NO_GO   2023-24 Panini Donruss Optic Mega   [PANINI_2023-24_OPTIC_MEGA]
@@ -95,7 +99,7 @@
    4. worldchampion    $   60.00  SOLD OUT  landed≈€  74.85 (8-box bundle)  (score 1.00)  👀 VERIFY
    5. columbia         $   64.99  SOLD OUT  landed≈€  80.01 (8-box bundle)  (score 1.00)
    6. ballgame         $   68.00  SOLD OUT  landed≈€  83.13 (8-box bundle)  (score 1.00)  👀 VERIFY
-   ask $63.95   sold $60.00   | buy ≤ $65.00 | watch ≤ $75.00 | EU €99.00
+   ask $63.95   sold $60.00   | buy ≤ $65.00   | watch ≤ $75.00   | EU €99.00
    BEST → rbicru7  https://rbicru7.com/products/2023-24-donruss-optic-basketball-mega-box
 
 — NO_STOCK   2023-24 Panini Select Blaster   [PANINI_2023-24_SELECT_BLASTER]
@@ -105,7 +109,7 @@
    4. ballgame         $   48.00  SOLD OUT  landed≈€  62.44 (8-box bundle)  (score 1.00)  👀 VERIFY
    5. awesome          $   49.75  SOLD OUT  landed≈€  64.25 (8-box bundle)  (score 1.00)
    6. columbia         $   49.95  SOLD OUT  landed≈€  64.46 (8-box bundle)  (score 1.00)
-   ask n/a      sold n/a      | buy ≤ $45.00 | watch ≤ $55.00 | EU n/a
+   ask n/a      sold n/a      | buy ≤ $45.00   | watch ≤ $55.00   | EU n/a
 
 ⛔ NO_GO   2023-24 Panini Select Mega   [PANINI_2023-24_SELECT_MEGA]
    1. rbicru7          $  110.00  IN STOCK  landed≈€ 126.57 (8-box bundle)  (score 1.00)
@@ -114,7 +118,7 @@
    4. ballgame         $   80.00  SOLD OUT  landed≈€  95.54 (8-box bundle)  (score 1.00)  👀 VERIFY
    5. bleecker         $   90.00  SOLD OUT  landed≈€ 105.88 (8-box bundle)  (score 1.00)  👀 VERIFY
    6. awesome          $  109.75  SOLD OUT  landed≈€ 126.31 (8-box bundle)  (score 1.00)
-   ask $75.00   sold $60.00   [ebay_sold 2026-08-17] | buy ≤ $90.00 | watch ≤ $100.00 | EU €134.00
+   ask $75.00   sold $60.00   [ebay_sold 2026-08-17] | buy ≤ $55.00   | watch ≤ $65.00   | EU €134.00
    BEST → rbicru7  https://rbicru7.com/products/2023-24-panini-select-basketball-mega-box-releases-5-17
 
 👀 WATCH   2023-24 Panini Mosaic Blaster   [PANINI_2023-24_MOSAIC_BLASTER]
@@ -124,121 +128,114 @@
    4. awesome          $   34.00  SOLD OUT  landed≈€  47.96 (8-box bundle)  (score 1.00)
    5. columbia         $   39.95  SOLD OUT  landed≈€  54.11 (8-box bundle)  (score 1.00)
    6. monmouth         $   39.99  SOLD OUT  landed≈€  54.15 (8-box bundle)  (score 1.00)  👀 VERIFY
-   ask n/a      sold n/a      | buy ≤ $40.00 | watch ≤ $50.00 | EU n/a
+   ask n/a      sold n/a      | buy ≤ $40.00   | watch ≤ $50.00   | EU n/a
    BEST → rbicru7  https://rbicru7.com/products/2023-24-panini-mosaic-basketball-blaster-box
 
 ⛔ NO_GO   2023-24 Panini Mosaic Mega   [PANINI_2023-24_MOSAIC_MEGA]
    1. rbicru7          $  100.00  IN STOCK  landed≈€ 116.23 (8-box bundle)  (score 1.00)
-   2. rbicru7          $  100.00  IN STOCK  landed≈€ 116.23 (8-box bundle)  (score 1.00)
-   3. bleecker         $   80.00  SOLD OUT  landed≈€  95.54 (8-box bundle)  (score 1.00)  👀 VERIFY
-   ask n/a      sold n/a      | buy ≤ $70.00 | watch ≤ $80.00 | EU n/a
+   2. bleecker         $   80.00  SOLD OUT  landed≈€  95.54 (8-box bundle)  (score 1.00)  👀 VERIFY
+   ask n/a      sold n/a      | buy ≤ $70.00   | watch ≤ $80.00   | EU n/a
    BEST → rbicru7  https://rbicru7.com/products/2023-24-panini-mosaic-basketball-mega-box
 
 ⛔ NO_GO   2023-24 Panini Prizm Hanger   [PANINI_2023-24_PRIZM_HANGER]
    1. collectorstore   $   99.99  IN STOCK  landed≈€ 116.22 (8-box bundle)  (score 1.00)
    2. superior         $  110.00  IN STOCK  landed≈€ 126.57 (8-box bundle)  (score 1.00)  👀 VERIFY
    3. bleecker         $   50.00  SOLD OUT  landed≈€  64.51 (8-box bundle)  (score 1.00)  👀 VERIFY
-   ask n/a      sold n/a      | buy ≤ $25.00 | watch ≤ $40.00 | EU n/a
+   ask n/a      sold n/a      | buy ≤ $25.00   | watch ≤ $40.00   | EU n/a
    BEST → collectorstore  https://collectorstore.com/products/2023-24-panini-prizm-basketball-hanger-box-orange-ice-prizm
 
-========================================================================
-  HOBBY
-========================================================================
+— NO_STOCK   2023-24 Panini Phoenix Mega   [PANINI_2023-24_PHOENIX_MEGA]
+   1. hiddengems       $   29.99  SOLD OUT  landed≈€  43.81 (8-box bundle)  (score 1.00)
+   2. awesome          $   49.75  SOLD OUT  landed≈€  64.25 (8-box bundle)  (score 1.00)
+   3. monmouth         $   59.99  SOLD OUT  landed≈€  74.84 (8-box bundle)  (score 1.00)  👀 VERIFY
+   4. sportscardjunction $   60.00  SOLD OUT  landed≈€  74.85 (8-box bundle)  (score 1.00)  👀 VERIFY
+   5. bleecker         $   65.00  SOLD OUT  landed≈€  80.02 (8-box bundle)  (score 1.00)  👀 VERIFY
+   ask $29.99   sold n/a      | buy ≤ $30.00   | watch ≤ $40.00   | EU n/a
 
-— NO_STOCK   2023-24 Panini Court Kings Hobby   [PANINI_2023-24_COURT_KINGS_HOBBY]
-   1. sportscardjunction $  200.00  SOLD OUT  landed≈€ 219.67 (8-box bundle)  (score 1.00)  👀 VERIFY
-   2. columbia         $  209.99  SOLD OUT  landed≈€ 230.00 (8-box bundle)  (score 1.00)
-   3. bleecker         $  235.00  SOLD OUT  landed≈€ 255.87 (8-box bundle)  (score 1.00)  👀 VERIFY
-   4. worldchampion    $  250.00  SOLD OUT  landed≈€ 271.39 (8-box bundle)  (score 1.00)  👀 VERIFY
-   5. awesome          $  680.75  SOLD OUT  landed≈€ 716.96 (8-box bundle)  (score 1.00)
-   ask n/a      sold n/a      | buy ≤ $250.00 | watch ≤ $300.00 | EU n/a
+— NO_STOCK   2023-24 Panini Donruss Optic Hobby Blaster   [PANINI_2023-24_OPTIC_HOBBY_BLASTER]
+   1. sportscardjunction $   40.00  SOLD OUT  landed≈€  54.16 (8-box bundle)  (score 1.00)  👀 VERIFY
+   2. awesome          $   49.00  SOLD OUT  landed≈€  63.47 (8-box bundle)  (score 1.00)
+   3. ehcards          $   54.99  SOLD OUT  landed≈€  69.67 (8-box bundle)  (score 1.00)
+   4. ballgame         $   55.00  SOLD OUT  landed≈€  69.68 (8-box bundle)  (score 1.00)  👀 VERIFY
+   5. columbia         $   59.95  SOLD OUT  landed≈€  74.80 (8-box bundle)  (score 1.00)
+   ask $54.99   sold n/a      | buy ≤ $40.00   | watch ≤ $50.00   | EU n/a
 
-— NO_STOCK   2023-24 Panini Revolution Hobby   [PANINI_2023-24_REVOLUTION_HOBBY]
-   1. sportscardjunction $  140.00  SOLD OUT  landed≈€ 157.60 (8-box bundle)  (score 1.00)  👀 VERIFY
-   2. awesome          $  159.75  SOLD OUT  landed≈€ 178.03 (8-box bundle)  (score 1.00)
-   3. worldchampion    $  175.00  SOLD OUT  landed≈€ 193.81 (8-box bundle)  (score 1.00)  👀 VERIFY
-   4. ballgame         $  190.00  SOLD OUT  landed≈€ 209.32 (8-box bundle)  (score 1.00)  👀 VERIFY
-   5. monmouth         $  199.99  SOLD OUT  landed≈€ 219.66 (8-box bundle)  (score 1.00)  👀 VERIFY
-   ask $399.95  sold n/a      | buy ≤ $275.00 | watch ≤ $320.00 | EU n/a
+⛔ NO_GO   2023-24 Panini Donruss Optic Hanger   [PANINI_2023-24_OPTIC_HANGER]
+   1. superior         $   75.00  IN STOCK  landed≈€  90.37 (8-box bundle)  (score 1.00)  👀 VERIFY
+   ask $75.00   sold n/a      | buy ≤ $25.00   | watch ≤ $40.00   | EU n/a
+   BEST → superior  https://superiorsportsinvestments.com/products/2023-24-panini-donruss-optic-basketball-hanger-box-velocity-parallels
 
-— NO_STOCK   2023-24 Panini Donruss Optic Hobby   [PANINI_2023-24_OPTIC_HOBBY]
-   1. awesome          $  464.75  SOLD OUT  landed≈€ 493.53 (8-box bundle)  (score 1.00)
-   2. monmouth         $  499.99  SOLD OUT  landed≈€ 529.98 (8-box bundle)  (score 1.00)  👀 VERIFY
-   3. sportscardjunction $  500.00  SOLD OUT  landed≈€ 529.99 (8-box bundle)  (score 1.00)  👀 VERIFY
-   4. columbia         $  519.99  SOLD OUT  landed≈€ 550.67 (8-box bundle)  (score 1.00)
-   5. ballgame         $  540.00  SOLD OUT  landed≈€ 571.36 (8-box bundle)  (score 1.00)  👀 VERIFY
-   6. worldchampion    $  550.00  SOLD OUT  landed≈€ 581.71 (8-box bundle)  (score 1.00)  👀 VERIFY
-   ask n/a      sold n/a      | buy ≤ $250.00 | watch ≤ $300.00 | EU n/a
+⛔ NO_GO   2023-24 Panini Select Hanger   [PANINI_2023-24_SELECT_HANGER]
+   1. rbicru7          $   55.00  IN STOCK  landed≈€  69.68 (8-box bundle)  (score 1.00)
+   2. ehcards          $   29.99  SOLD OUT  landed≈€  43.81 (8-box bundle)  (score 1.00)
+   3. hiddengems       $   29.99  SOLD OUT  landed≈€  43.81 (8-box bundle)  (score 1.00)
+   4. bleecker         $   40.00  SOLD OUT  landed≈€  54.16 (8-box bundle)  (score 1.00)  👀 VERIFY
+   5. hiddengems       $   45.00  SOLD OUT  landed≈€  59.34 (8-box bundle)  (score 1.00)
+   ask $55.00   sold n/a      | buy ≤ $25.00   | watch ≤ $40.00   | EU n/a
+   BEST → rbicru7  https://rbicru7.com/products/2023-24-panini-select-basketball-hanger-box
 
-— NO_STOCK   2023-24 Panini Select Hobby   [PANINI_2023-24_SELECT_HOBBY]
-   1. ballgame         $   50.00  SOLD OUT  landed≈€  64.51 (8-box bundle)  (score 1.00)  👀 VERIFY
+— NO_STOCK   2023-24 Panini Select Hobby Mega   [PANINI_2023-24_SELECT_HOBBY_MEGA]
+   1. sportscardjunction $   80.00  SOLD OUT  landed≈€  95.54 (8-box bundle)  (score 1.00)  👀 VERIFY
+   2. bleecker         $   95.00  SOLD OUT  landed≈€ 111.06 (8-box bundle)  (score 1.00)  👀 VERIFY
+   ask $80.00   sold n/a      | buy ≤ $60.00   | watch ≤ $75.00   | EU n/a
+
+— NO_STOCK   2023-24 Panini Prizm Mega   [PANINI_2023-24_PRIZM_MEGA]
+   1. worldchampion    $  100.00  SOLD OUT  landed≈€ 116.23 (8-box bundle)  (score 1.00)  👀 VERIFY
+   2. awesome          $  130.00  SOLD OUT  landed≈€ 147.26 (8-box bundle)  (score 1.00)
+   3. awesome          $  134.00  SOLD OUT  landed≈€ 151.40 (8-box bundle)  (score 1.00)
+   ask $134.00  sold n/a      | buy ≤ $90.00   | watch ≤ $110.00  | EU n/a
+
+⛔ NO_GO   2023-24 Panini Contenders Blaster   [PANINI_2023-24_CONTENDERS_BLASTER]
+   1. collectorstore   $   49.99  IN STOCK  landed≈€  64.50 (8-box bundle)  (score 1.00)
+   2. hiddengems       $   30.00  SOLD OUT  landed≈€  43.82 (8-box bundle)  (score 1.00)
+   3. awesome          $   33.00  SOLD OUT  landed≈€  46.92 (8-box bundle)  (score 1.00)
+   4. ehcards          $   39.99  SOLD OUT  landed≈€  54.15 (8-box bundle)  (score 1.00)
+   5. bleecker         $   40.00  SOLD OUT  landed≈€  54.16 (8-box bundle)  (score 1.00)  👀 VERIFY
+   ask $39.99   sold n/a      | buy ≤ $30.00   | watch ≤ $40.00   | EU n/a
+   BEST → collectorstore  https://collectorstore.com/products/2023-24-panini-contenders-basketball-blaster-box
+
+— NO_STOCK   2023-24 Panini Prizm Retail Box   [PANINI_2023-24_PRIZM_RETAIL_BOX]
+   1. awesome          $  149.94  SOLD OUT  landed≈€ 167.89 (8-box bundle)  (score 1.00)
+   2. columbia         $  154.95  SOLD OUT  landed≈€ 173.07 (8-box bundle)  (score 1.00)
+   3. monmouth         $  179.99  SOLD OUT  landed≈€ 198.97 (8-box bundle)  (score 1.00)  👀 VERIFY
+   4. bleecker         $  240.00  SOLD OUT  landed≈€ 261.04 (8-box bundle)  (score 1.00)  👀 VERIFY
+   ask $149.94  sold n/a      | buy ≤ $110.00  | watch ≤ $140.00  | EU n/a
+
+⛔ NO_GO   2023-24 Panini Hoops Blaster   [PANINI_2023-24_HOOPS_BLASTER]
+   1. superior         $   60.00  IN STOCK  landed≈€  74.85 (8-box bundle)  (score 1.00)  👀 VERIFY
+   2. superior         $   80.00  IN STOCK  landed≈€  95.54 (8-box bundle)  (score 1.00)  👀 VERIFY
+   3. sportscardjunction $   25.00  SOLD OUT  landed≈€  38.65 (8-box bundle)  (score 1.00)  👀 VERIFY
+   4. awesome          $   33.75  SOLD OUT  landed≈€  47.70 (8-box bundle)  (score 1.00)
+   5. bleecker         $   40.00  SOLD OUT  landed≈€  54.16 (8-box bundle)  (score 1.00)  👀 VERIFY
+   ask $60.00   sold n/a      | buy ≤ $20.00   | watch ≤ $25.00   | EU n/a
+   BEST → superior  https://superiorsportsinvestments.com/products/2023-24-panini-nba-hoops-basketball-6-pack-blaster-box
+
+— NO_DATA   2023-24 Panini Hoops Mega   [PANINI_2023-24_HOOPS_MEGA]
+   ask n/a      sold n/a      | buy ≤ $40.00   | watch ≤ $50.00   | EU n/a
+
+⛔ NO_GO   2023-24 Panini Mosaic Mega (Target Reactive Yellow/Green)   [PANINI_2023-24_MOSAIC_MEGA_TARGET]
+   1. rbicru7          $  100.00  IN STOCK  landed≈€ 116.23 (8-box bundle)  (score 1.00)
+   ask n/a      sold n/a      | buy ≤ $70.00   | watch ≤ $80.00   | EU n/a
+   BEST → rbicru7  https://rbicru7.com/products/2023-24-panini-mosaic-basketball-target-mega-box-reactive-yellow-green-fluorescent
+
+· SUIVI   2023-24 Panini Donruss Optic Hobby Mega   [PANINI_2023-24_OPTIC_HOBBY_MEGA]
+   1. superior         $  250.00  IN STOCK  landed≈€ 271.39 (8-box bundle)  (score 1.00)  👀 VERIFY
    2. ballgame         $   75.00  SOLD OUT  landed≈€  90.37 (8-box bundle)  (score 1.00)  👀 VERIFY
-   3. awesome          $  534.00  SOLD OUT  landed≈€ 565.16 (8-box bundle)  (score 1.00)
-   4. columbia         $  544.99  SOLD OUT  landed≈€ 576.53 (8-box bundle)  (score 1.00)
-   5. sportscardjunction $  565.00  SOLD OUT  landed≈€ 597.22 (8-box bundle)  (score 1.00)  👀 VERIFY
-   6. ballgame         $  675.00  SOLD OUT  landed≈€ 711.01 (8-box bundle)  (score 1.00)  👀 VERIFY
-   ask n/a      sold n/a      | buy ≤ $300.00 | watch ≤ $350.00 | EU n/a
+   3. awesome          $   80.00  SOLD OUT  landed≈€  95.54 (8-box bundle)  (score 1.00)
+   4. sportscardjunction $   80.00  SOLD OUT  landed≈€  95.54 (8-box bundle)  (score 1.00)  👀 VERIFY
+   5. columbia         $   89.95  SOLD OUT  landed≈€ 105.83 (8-box bundle)  (score 1.00)
+   ask $250.00  sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
+   BEST → superior  https://superiorsportsinvestments.com/products/2023-24-panini-donruss-optic-basketball-mega-hobby-box-hyper-green-prizms
 
-— NO_STOCK   2023-24 Panini Prizm Hobby   [PANINI_2023-24_PRIZM_HOBBY]
-   1. sportscardjunction $  950.00  SOLD OUT  landed≈€ 995.47 (8-box bundle)  (score 1.00)  👀 VERIFY
-   2. columbia         $ 1149.00  SOLD OUT  landed≈€1201.31 (8-box bundle)  (score 1.00)
-   3. ballgame         $ 1175.00  SOLD OUT  landed≈€1228.21 (8-box bundle)  (score 1.00)  👀 VERIFY
-   4. awesome          $ 1275.00  SOLD OUT  landed≈€1331.65 (8-box bundle)  (score 1.00)
-   5. worldchampion    $ 1400.00  SOLD OUT  landed≈€1460.95 (8-box bundle)  (score 1.00)  👀 VERIFY
-   6. bleecker         $ 1500.00  SOLD OUT  landed≈€1564.39 (8-box bundle)  (score 1.00)  👀 VERIFY
-   ask n/a      sold n/a      | buy ≤ $900.00 | watch ≤ $1000.00 | EU n/a
+· SUIVI   2023-24 Panini Revolution Chinese New Year   [PANINI_2023-24_REVOLUTION_CNY]
+   1. sportscardjunction $   95.00  SOLD OUT  landed≈€ 111.06 (8-box bundle)  (score 1.00)  👀 VERIFY
+   2. worldchampion    $  100.00  SOLD OUT  landed≈€ 116.23 (8-box bundle)  (score 1.00)  👀 VERIFY
+   3. awesome          $  109.75  SOLD OUT  landed≈€ 126.31 (8-box bundle)  (score 1.00)
+   4. columbia         $  109.99  SOLD OUT  landed≈€ 126.56 (8-box bundle)  (score 1.00)
+   5. ballgame         $  115.00  SOLD OUT  landed≈€ 131.74 (8-box bundle)  (score 1.00)  👀 VERIFY
+   6. worldchampion    $  120.00  SOLD OUT  landed≈€ 136.92 (8-box bundle)  (score 1.00)  👀 VERIFY
+   ask $109.75  sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
 
-🔥 GO   2023-24 Panini Contenders Hobby   [PANINI_2023-24_CONTENDERS_HOBBY]
-   1. rbicru7          $  150.00  IN STOCK  landed≈€ 167.95 (8-box bundle)  (score 1.00)
-   2. collectorstore   $  439.95  IN STOCK  landed≈€ 467.87 (8-box bundle)  (score 1.00)
-   3. rbicru7          $  550.00  IN STOCK  landed≈€ 581.71 (8-box bundle)  (score 1.00)
-   4. columbia         $  324.99  SOLD OUT  landed≈€ 348.96 (8-box bundle)  (score 1.00)
-   5. sportscardjunction $  340.00  SOLD OUT  landed≈€ 364.48 (8-box bundle)  (score 1.00)  👀 VERIFY
-   6. awesome          $  399.75  SOLD OUT  landed≈€ 426.29 (8-box bundle)  (score 1.00)
-   ask $439.95  sold n/a      | buy ≤ $350.00 | watch ≤ $400.00 | EU n/a
-   BEST → rbicru7  https://rbicru7.com/products/2023-24-panini-contenders-basketball-hobby-pack-releases-6-19
-
-========================================================================
-  ⚠️  REVIEW (basketball 2023-24, non rattachés)
-========================================================================
-  [sportscardjunction] 2023-24 Panini Mosaic Basketball Fast Brk Box  $210.00 OOS  → [["PANINI_2023-24_MOSAIC_BLASTER", 0.77], ["PANINI_2023-24_MOSAIC_MEGA", 0.77]]
-  [sportscardjunction] 2023-24 Panini Donruss Optic Basketball Fast BRK Box  $325.00 OOS  → [["PANINI_2023-24_OPTIC_BLASTER", 0.77], ["PANINI_2023-24_OPTIC_MEGA", 0.77], ["PANINI_2023-24_OPTIC_HOBBY", 0.77]]
-  [sportscardjunction] 2023-24 Panini Prizm NBA Basketball Fast BRK Box  $495.00 OOS  → [["PANINI_2023-24_PRIZM_BLASTER", 0.77], ["PANINI_2023-24_PRIZM_HOBBY", 0.77], ["PANINI_2023-24_PRIZM_HANGER", 0.77]]
-  [worldchampion] 2025 Panini Mosaic Basketball Mega Box  $60.00 OOS  → [["PANINI_2023-24_MOSAIC_MEGA", 0.77]]
-  [bleecker] 2023-24 Panini Select BasketballMega Box (Red/ Purple Cracked Ice)  $100.00 OOS  → [["PANINI_2023-24_SELECT_BLASTER", 0.77], ["PANINI_2023-24_SELECT_MEGA", 0.77], ["PANINI_2023-24_SELECT_HOBBY", 0.77]]
-  [bleecker] 2021 Panini Court Kings Basketball Hobby Box  $200.00 OOS  → [["PANINI_2023-24_COURT_KINGS_HOBBY", 0.77]]
-  [bleecker] 2020 Panini Court Kings Basketball Hobby Box  $300.00 OOS  → [["PANINI_2023-24_COURT_KINGS_HOBBY", 0.77]]
-  [bleecker] 2022 Panini Court Kings Basketball Hobby Box  $200.00 OOS  → [["PANINI_2023-24_COURT_KINGS_HOBBY", 0.77]]
-  [bleecker] 2014-14 Panini Court Kings Basketball Hobby Box  $225.00 OOS  → [["PANINI_2023-24_COURT_KINGS_HOBBY", 0.77]]
-  [bleecker] 2012 Prizm Basketball Hobby Box  $17500.00 OOS  → [["PANINI_2023-24_PRIZM_HOBBY", 0.75]]
-  [bleecker] 2022 Prizm NBA Basketball Hobby Box  $850.00 OOS  → [["PANINI_2023-24_PRIZM_HOBBY", 0.75]]
-  [collectorstore] Karl-Anthony Towns 2023-24 Panini Court Kings Art Nouveau Swatch #AN-KAT  $3.00 OOS  → [["PANINI_2023-24_COURT_KINGS_HOBBY", 0.72]]
-  [awesome] 2026 Panini Contenders Professional Fighters League PFL Hobby Box  $79.75 IN  → [["PANINI_2023-24_CONTENDERS_HOBBY", 0.72]]
-  [awesome] 2025 Panini Contenders Professional Fighters League PFL Hobby Box  $129.75 OOS  → [["PANINI_2023-24_CONTENDERS_HOBBY", 0.72]]
-  [mojobreak] 2026 Panini Contenders PFL Professional Fighters League  Hobby Box  $80.00 IN  → [["PANINI_2023-24_CONTENDERS_HOBBY", 0.72]]
-  [rbicru7] 2026 Panini Contenders PFL Hobby, Pack  $23.00 IN  → [["PANINI_2023-24_CONTENDERS_HOBBY", 0.72]]
-  [rbicru7] 2026 Panini Contenders PFL Hobby, Box  $80.00 IN  → [["PANINI_2023-24_CONTENDERS_HOBBY", 0.72]]
-  [rbicru7] 2025 Panini Contenders PFL Hobby, Box  $95.00 IN  → [["PANINI_2023-24_CONTENDERS_HOBBY", 0.72]]
-  [rbicru7] 2024 Panini Prizm The Rolling Stones Hobby, Mega Box  $45.00 IN  → [["PANINI_2023-24_PRIZM_HOBBY", 0.72]]
-  [columbia] 2026 Panini Contenders Professional Fighters League PFL Hobby Box | Columbia Sports Cards  $79.99 IN  → [["PANINI_2023-24_CONTENDERS_HOBBY", 0.72]]
-  [columbia] 2025 Panini Contenders Professional Fighters League PFL Hobby Box | Columbia Sports Cards & More  $129.95 OOS  → [["PANINI_2023-24_CONTENDERS_HOBBY", 0.72]]
-  [sportscardjunction] 2026 Panini Contenders PFL Hobby Box  $80.00 IN  → [["PANINI_2023-24_CONTENDERS_HOBBY", 0.72]]
-  [sportscardjunction] 2025 Panini Contenders PFL Professional Fighters League Hobby Box  $90.00 IN  → [["PANINI_2023-24_CONTENDERS_HOBBY", 0.72]]
-  [cardiacs] 2026 Panini Contenders PFL Hobby Box  $84.95 IN  → [["PANINI_2023-24_CONTENDERS_HOBBY", 0.72]]
-  [cardiacs] 2024 Panini Prizm The Rolling Stones Blaster Box  $24.95 IN  → [["PANINI_2023-24_PRIZM_BLASTER", 0.72]]
-  [worldchampion] 2023-24 Panini Contenders #RTS-WEM Victor Wembanyama Rookie Ticket Swatches  $80.00 OOS  → [["PANINI_2023-24_CONTENDERS_HOBBY", 0.72]]
-  [sjay2k] 2025 Panini Contenders PFL Trading Card Hobby Box  $220.00 IN  → [["PANINI_2023-24_CONTENDERS_HOBBY", 0.72]]
-  [bleecker] 2025 Panini Squishmallows Series 2 Mega Box (Blue Mosaic Parrallels)  $30.00 IN  → [["PANINI_2023-24_MOSAIC_MEGA", 0.72]]
-  [bleecker] 2025 Panini Prizm K League Hobby Box  $75.00 IN  → [["PANINI_2023-24_PRIZM_HOBBY", 0.72]]
-  [bleecker] 2020 Panini Prizm Hanger Box  $100.00 OOS  → [["PANINI_2023-24_PRIZM_HANGER", 0.72]]
-  [hiddengems] 2024 Donruss Optic Mega Box - Green Hyper Parallels  $99.99 OOS  → [["PANINI_2023-24_OPTIC_MEGA", 0.7]]
-  [awesome] 2019 Donruss Optic Blaster Box  $65.00 OOS  → [["PANINI_2023-24_OPTIC_BLASTER", 0.7]]
-  [sjay2k] 2026 Select AFL Footy Stars Hobby + Retail Box Combo  $425.00 IN  → [["PANINI_2023-24_SELECT_HOBBY", 0.7]]
-  [sjay2k] 2009 Select NRL Champions Collector Cards Sealed Hobby Box  $100.00 IN  → [["PANINI_2023-24_SELECT_HOBBY", 0.7]]
-  [sjay2k] 2025 Select AFL Footy Stars Blaster Box  $45.00 IN  → [["PANINI_2023-24_SELECT_BLASTER", 0.7]]
-  [sjay2k] 2010 Select NRL Champions Collector Cards Sealed Hobby Box  $100.00 IN  → [["PANINI_2023-24_SELECT_HOBBY", 0.7]]
-  [sjay2k] 2012 Select NRL Champions Collector Cards Hobby Box  $100.00 IN  → [["PANINI_2023-24_SELECT_HOBBY", 0.7]]
-  [sjay2k] 2026 Select AFL Footy Stars Blaster Box  $50.00 IN  → [["PANINI_2023-24_SELECT_BLASTER", 0.7]]
-
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-08-18T06-56-44.csv
-HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html
+— NO_STOCK   2023-24 Panini Select Case   [PANINI_2023-24_SELECT_MEGA_CASE]
+   1. ballgame         $ 1300.00  = $  65.00/boîte  SOLD OUT  landed≈€  80.02 (8-box bundle)  (score 1.00)  👀 VERIFY
+   2. awesome          $ 1400.00  = $  70.00/boîte  SOLD OUT  landed≈€  85.20 (8-box bundle)  (score 1.00)

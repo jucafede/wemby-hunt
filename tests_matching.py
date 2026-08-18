@@ -68,6 +68,8 @@ POS = [
  ("2023-24 Panini Prizm Basketball Hanger Box (Orange Ice Prizm)","PRIZM_HANGER"),
  ("2023-24 Panini Contenders Basketball Hobby Box","CONTENDERS_HOBBY"),
  ("2023-24 Panini NBA Hoops Basketball 6-Pack Blaster Box","HOOPS_BLASTER"),
+ ("2023-24 Panini Select Basketball Mega 20-Box Case (Green Shock Prizm)","SELECT_MEGA_CASE"),
+ ("2023-24 Panini Mosaic Fast Break Basketball Hobby 20-Box Case","MOSAIC_FAST_BREAK_CASE"),
 ]
 NEG = [
  ("2023/24 Panini Contenders Optic Basketball Hobby, Box","Contenders Optic ≠ Optic ni Contenders"),
@@ -76,7 +78,7 @@ NEG = [
  ("2023-24 Panini Contenders Basketball Hobby, Pack","Pack ≠ Box (le 4e nouveau)"),
  ("2023-24 Panini Prizm Basketball 4-Card Pack","Pack ≠ Box"),
  ("2023-24 Panini Contenders Basketball Value Pack","Value Pack ≠ Box"),
- ("2023-24 Panini Mosaic Basketball 20-Box Case","Case ≠ Box"),
+ ("2023-24 Panini Mosaic Basketball 20-Box Case","Case générique : ni Mega ni Fast Break → REVIEW"),
  ("2026 Panini Contenders Professional Fighters League PFL Hobby Box","PFL ≠ basket"),
  ("Karl-Anthony Towns 2023-24 Panini Court Kings Art Nouveau Swatch #AN-KAT","single ≠ sealed"),
  ("2023 Panini Phoenix Football Blaster Box","football ≠ basket"),

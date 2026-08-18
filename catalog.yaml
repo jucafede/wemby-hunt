@@ -153,8 +153,8 @@ skus:
     market_checked_at: 2026-08-17
     market_sold_source: ebay_sold
     market_sold_checked_at: 2026-08-17
-    buy_below_usd: 90.00
-    watch_below_usd: 100.00
+    buy_below_usd: 55.00
+    watch_below_usd: 65.00
     eu_reference_eur: 134.00
     eu_reference_source: "(GPT, à revérifier)"
 
@@ -273,3 +273,648 @@ skus:
     market_checked_at: 2026-08-17
     buy_below_usd: 350.00
     watch_below_usd: 400.00
+  - id: PANINI_2023-24_PHOENIX_MEGA
+    season: "2023-24"
+    manufacturer: Panini
+    set: Phoenix
+    format: Mega
+    configuration: null
+    tier: retail
+    status: ACTIVE
+    licensed: true
+    wemby_rc: true
+    market_ask_us: 29.99
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_checked_at: null
+    market_source: "ask: fiche live 17/08 — sold à relever"
+    buy_below_usd: 30
+    watch_below_usd: 40
+    url_proof: "https://www.hiddengemscardshop.com/products/2023-24-panini-phoenix-mega-box"
+  - id: PANINI_2023-24_OPTIC_HOBBY_BLASTER
+    season: "2023-24"
+    manufacturer: Panini
+    set: Donruss Optic
+    aliases: ["Optic"]
+    format: Hobby Blaster
+    configuration: null
+    tier: retail
+    status: ACTIVE
+    licensed: true
+    wemby_rc: true
+    market_ask_us: 54.99
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_checked_at: null
+    market_source: "ask: fiche live 17/08 — sold à relever"
+    buy_below_usd: 40
+    watch_below_usd: 50
+    url_proof: "https://ehcards.com/products/2023-24-donruss-optic-basketball-6-pack-hobby-blaster-box"
+  - id: PANINI_2023-24_OPTIC_HANGER
+    season: "2023-24"
+    manufacturer: Panini
+    set: Donruss Optic
+    aliases: ["Optic"]
+    format: Hanger
+    configuration: null
+    tier: retail
+    status: ACTIVE
+    licensed: true
+    wemby_rc: true
+    market_ask_us: 75.0
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_checked_at: null
+    market_source: "ask: fiche live 17/08 — sold à relever"
+    buy_below_usd: 25
+    watch_below_usd: 40
+    url_proof: "https://superiorsportsinvestments.com/products/2023-24-panini-donruss-optic-basketball-hanger-box-velocity-parallels"
+  - id: PANINI_2023-24_SELECT_HANGER
+    season: "2023-24"
+    manufacturer: Panini
+    set: Select
+    format: Hanger
+    configuration: null
+    tier: retail
+    status: ACTIVE
+    licensed: true
+    wemby_rc: true
+    market_ask_us: 55.0
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_checked_at: null
+    market_source: "ask: fiche live 17/08 — sold à relever"
+    buy_below_usd: 25
+    watch_below_usd: 40
+    url_proof: "https://rbicru7.com/products/2023-24-panini-select-basketball-hanger-box"
+  - id: PANINI_2023-24_SELECT_HOBBY_MEGA
+    season: "2023-24"
+    manufacturer: Panini
+    set: Select
+    format: Hobby Mega
+    configuration: null
+    tier: retail
+    status: ACTIVE
+    licensed: true
+    wemby_rc: true
+    market_ask_us: 80.0
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_checked_at: null
+    market_source: "ask: fiche live 17/08 — sold à relever"
+    buy_below_usd: 60
+    watch_below_usd: 75
+    url_proof: "https://sportscardjunction.com/products/2023-24-panini-select-basketball-hobby-mega-box"
+  - id: PANINI_2023-24_PRIZM_MEGA
+    season: "2023-24"
+    manufacturer: Panini
+    set: Prizm
+    format: Mega
+    configuration: null
+    tier: retail
+    status: ACTIVE
+    licensed: true
+    wemby_rc: true
+    market_ask_us: 134.0
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_checked_at: null
+    market_source: "ask: fiche live 17/08 — sold à relever"
+    buy_below_usd: 90
+    watch_below_usd: 110
+    url_proof: "https://theawesomecardshop.com/products/2023-24-panini-prizm-basketball-mega-box-pink-ice-prizms"
+  - id: PANINI_2023-24_CONTENDERS_BLASTER
+    season: "2023-24"
+    manufacturer: Panini
+    set: Contenders
+    format: Blaster
+    configuration: null
+    tier: retail
+    status: ACTIVE
+    licensed: true
+    wemby_rc: true
+    market_ask_us: 39.99
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_checked_at: null
+    market_source: "ask: fiche live 17/08 — sold à relever"
+    buy_below_usd: 30
+    watch_below_usd: 40
+    url_proof: "https://ehcards.com/products/2023-24-panini-contenders-basketball-blaster-box"
+  - id: PANINI_2023-24_PRIZM_RETAIL_BOX
+    season: "2023-24"
+    manufacturer: Panini
+    set: Prizm
+    format: Retail Box
+    configuration: null
+    tier: retail
+    status: ACTIVE
+    licensed: true
+    wemby_rc: true
+    market_ask_us: 149.94
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_checked_at: null
+    market_source: "ask: fiche live 17/08 — sold à relever"
+    buy_below_usd: 110
+    watch_below_usd: 140
+    url_proof: "https://theawesomecardshop.com/products/2023-24-panini-prizm-basketball-24-pack-retail-box"
+  - id: PANINI_2023-24_HOOPS_BLASTER
+    season: "2023-24"
+    manufacturer: Panini
+    set: Hoops
+    format: Blaster
+    configuration: null
+    tier: retail
+    status: ACTIVE
+    licensed: true
+    wemby_rc: true
+    market_ask_us: 60.0
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_checked_at: null
+    market_source: "ask: fiche live 17/08 — sold à relever"
+    buy_below_usd: 20
+    watch_below_usd: 25
+    url_proof: "https://superiorsportsinvestments.com/products/2023-24-panini-nba-hoops-basketball-6-pack-blaster-box"
+  - id: PANINI_2023-24_HOOPS_MEGA
+    season: "2023-24"
+    manufacturer: Panini
+    set: Hoops
+    format: Mega
+    configuration: null
+    tier: retail
+    status: ACTIVE
+    licensed: true
+    wemby_rc: true
+    market_ask_us: null
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_checked_at: null
+    market_source: ""
+    buy_below_usd: 40
+    watch_below_usd: 50
+    url_proof: "https://superiorsportsinvestments.com/products/2023-24-panini-nba-hoops-basketball-6-pack-blaster-box"
+  - id: PANINI_2023-24_MOSAIC_MEGA_TARGET
+    season: "2023-24"
+    manufacturer: Panini
+    set: Mosaic
+    format: Mega
+    configuration: Target Reactive Yellow/Green
+    tier: retail
+    status: ACTIVE
+    licensed: true
+    wemby_rc: true
+    market_ask_us: null
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_checked_at: null
+    market_source: ""
+    buy_below_usd: 70
+    watch_below_usd: 80
+    url_proof: "https://rbicru7.com/products/2023-24-panini-mosaic-basketball-target-mega-box-reactive-yellow-green-fluorescent"
+  - id: PANINI_2023-24_OPTIC_HOBBY_MEGA
+    season: "2023-24"
+    manufacturer: Panini
+    set: Donruss Optic
+    aliases: ["Optic"]
+    format: Hobby Mega
+    configuration: null
+    tier: retail
+    status: WATCH
+    licensed: true
+    wemby_rc: true
+    market_ask_us: 250.0
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_checked_at: null
+    market_source: "ask: fiche live 17/08 — sold à relever"
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://superiorsportsinvestments.com/products/2023-24-panini-donruss-optic-basketball-mega-hobby-box-hyper-green-prizms"
+  - id: PANINI_2023-24_OPTIC_FOTL
+    season: "2023-24"
+    manufacturer: Panini
+    set: Donruss Optic
+    aliases: ["Optic"]
+    format: FOTL
+    configuration: null
+    tier: hobby
+    status: WATCH
+    licensed: true
+    wemby_rc: true
+    market_ask_us: 949.98
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_checked_at: null
+    market_source: "ask: fiche live 17/08 — sold à relever"
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://columbiasportscard.com/products/2023-24-panini-donruss-optic-fotl-nba-basketball-hobby-box"
+  - id: PANINI_2023-24_OPTIC_CHOICE
+    season: "2023-24"
+    manufacturer: Panini
+    set: Donruss Optic
+    aliases: ["Optic"]
+    format: Choice
+    configuration: null
+    tier: hobby
+    status: WATCH
+    licensed: true
+    wemby_rc: true
+    market_ask_us: 244.75
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_checked_at: null
+    market_source: "ask: fiche live 17/08 — sold à relever"
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://theawesomecardshop.com/products/2023-24-panini-donruss-optic-basketball-choice-box"
+  - id: PANINI_2023-24_OPTIC_FAST_BREAK
+    season: "2023-24"
+    manufacturer: Panini
+    set: Donruss Optic
+    aliases: ["Optic"]
+    format: Fast Break
+    configuration: null
+    tier: hobby
+    status: WATCH
+    licensed: true
+    wemby_rc: true
+    market_ask_us: 254.75
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_checked_at: null
+    market_source: "ask: fiche live 17/08 — sold à relever"
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://theawesomecardshop.com/products/2023-24-panini-donruss-optic-basketball-fast-break-box"
+  - id: PANINI_2023-24_PRIZM_FAST_BREAK
+    season: "2023-24"
+    manufacturer: Panini
+    set: Prizm
+    format: Fast Break
+    configuration: null
+    tier: hobby
+    status: WATCH
+    licensed: true
+    wemby_rc: true
+    market_ask_us: 520.0
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_checked_at: null
+    market_source: "ask: fiche live 17/08 — sold à relever"
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://theawesomecardshop.com/products/2023-24-panini-prizm-basketball-fast-break-box"
+  - id: PANINI_2023-24_PRIZM_CHOICE
+    season: "2023-24"
+    manufacturer: Panini
+    set: Prizm
+    format: Choice
+    configuration: null
+    tier: hobby
+    status: WATCH
+    licensed: true
+    wemby_rc: true
+    market_ask_us: 529.75
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_checked_at: null
+    market_source: "ask: fiche live 17/08 — sold à relever"
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://theawesomecardshop.com/products/2023-24-panini-prizm-basketball-choice-hobby-box"
+  - id: PANINI_2023-24_PRIZM_INTERNATIONAL
+    season: "2023-24"
+    manufacturer: Panini
+    set: Prizm
+    format: International
+    configuration: null
+    tier: hobby
+    status: WATCH
+    licensed: true
+    wemby_rc: true
+    market_ask_us: 274.75
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_checked_at: null
+    market_source: "ask: fiche live 17/08 — sold à relever"
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://theawesomecardshop.com/products/2023-24-panini-prizm-basketball-international-hobby-box"
+  - id: PANINI_2023-24_SELECT_H2
+    season: "2023-24"
+    manufacturer: Panini
+    set: Select
+    format: H2
+    configuration: null
+    tier: hobby
+    status: WATCH
+    licensed: true
+    wemby_rc: true
+    market_ask_us: 620.0
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_checked_at: null
+    market_source: "ask: fiche live 17/08 — sold à relever"
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://www.sjay2k.com/products/2023-24-panini-select-basketball-h2-hobby-hybrid-box"
+  - id: PANINI_2023-24_SELECT_INTERNATIONAL
+    season: "2023-24"
+    manufacturer: Panini
+    set: Select
+    format: International
+    configuration: null
+    tier: hobby
+    status: WATCH
+    licensed: true
+    wemby_rc: true
+    market_ask_us: 209.75
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_checked_at: null
+    market_source: "ask: fiche live 17/08 — sold à relever"
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://theawesomecardshop.com/products/2023-24-panini-select-basketball-international-hobby-box"
+  - id: PANINI_2023-24_MOSAIC_HOBBY
+    season: "2023-24"
+    manufacturer: Panini
+    set: Mosaic
+    format: Hobby
+    configuration: null
+    tier: hobby
+    status: WATCH
+    licensed: true
+    wemby_rc: true
+    market_ask_us: 334.75
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_checked_at: null
+    market_source: "ask: fiche live 17/08 — sold à relever"
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://theawesomecardshop.com/products/product2023-24-panini-mosaic-basketball-hobby-box5489"
+  - id: PANINI_2023-24_MOSAIC_FOTL
+    season: "2023-24"
+    manufacturer: Panini
+    set: Mosaic
+    format: FOTL
+    configuration: null
+    tier: hobby
+    status: WATCH
+    licensed: true
+    wemby_rc: true
+    market_ask_us: 509.75
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_checked_at: null
+    market_source: "ask: fiche live 17/08 — sold à relever"
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://theawesomecardshop.com/products/2023-24-panini-mosaic-basketball-1st-off-the-line-fotl-hobby-box"
+  - id: PANINI_2023-24_MOSAIC_CHOICE
+    season: "2023-24"
+    manufacturer: Panini
+    set: Mosaic
+    format: Choice
+    configuration: null
+    tier: hobby
+    status: WATCH
+    licensed: true
+    wemby_rc: true
+    market_ask_us: 309.75
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_checked_at: null
+    market_source: "ask: fiche live 17/08 — sold à relever"
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://theawesomecardshop.com/products/2023-24-panini-mosaic-basketball-choice-box"
+  - id: PANINI_2023-24_MOSAIC_FAST_BREAK
+    season: "2023-24"
+    manufacturer: Panini
+    set: Mosaic
+    format: Fast Break
+    configuration: null
+    tier: hobby
+    status: WATCH
+    licensed: true
+    wemby_rc: true
+    market_ask_us: 188.0
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_checked_at: null
+    market_source: "ask: fiche live 17/08 — sold à relever"
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://theawesomecardshop.com/products/2023-24-panini-mosaic-fast-break-basketball-hobby-box"
+  - id: PANINI_2023-24_MOSAIC_INTERNATIONAL
+    season: "2023-24"
+    manufacturer: Panini
+    set: Mosaic
+    format: International
+    configuration: null
+    tier: hobby
+    status: WATCH
+    licensed: true
+    wemby_rc: true
+    market_ask_us: 189.99
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_checked_at: null
+    market_source: "ask: fiche live 17/08 — sold à relever"
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://columbiasportscard.com/products/2023-24-panini-mosaic-basketball-international-hobby-box"
+  - id: PANINI_2023-24_PHOENIX_INTERNATIONAL
+    season: "2023-24"
+    manufacturer: Panini
+    set: Phoenix
+    format: International
+    configuration: null
+    tier: hobby
+    status: WATCH
+    licensed: true
+    wemby_rc: true
+    market_ask_us: 174.75
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_checked_at: null
+    market_source: "ask: fiche live 17/08 — sold à relever"
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://theawesomecardshop.com/products/2023-24-panini-phoenix-basketball-international-hobby-box"
+  - id: PANINI_2023-24_PHOENIX_FOTL
+    season: "2023-24"
+    manufacturer: Panini
+    set: Phoenix
+    format: FOTL
+    configuration: null
+    tier: hobby
+    status: WATCH
+    licensed: true
+    wemby_rc: true
+    market_ask_us: 624.75
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_checked_at: null
+    market_source: "ask: fiche live 17/08 — sold à relever"
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://theawesomecardshop.com/products/2023-24-panini-phoenix-basketball-1st-off-the-line-fotl-hobby-box"
+  - id: PANINI_2023-24_PREMIUM_STOCK_HOBBY
+    season: "2023-24"
+    manufacturer: Panini
+    set: Premium Stock
+    format: Hobby
+    configuration: null
+    tier: hobby
+    status: WATCH
+    licensed: true
+    wemby_rc: true
+    market_ask_us: 375.0
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_checked_at: null
+    market_source: "ask: fiche live 17/08 — sold à relever"
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://theawesomecardshop.com/products/2023-24-panini-premium-stock-basketball-hobby-box"
+  - id: PANINI_2023-24_REVOLUTION_CNY
+    season: "2023-24"
+    manufacturer: Panini
+    set: Revolution
+    format: Chinese New Year
+    configuration: null
+    tier: retail
+    status: WATCH
+    licensed: true
+    wemby_rc: true
+    market_ask_us: 109.75
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_checked_at: null
+    market_source: "ask: fiche live 17/08 — sold à relever"
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://theawesomecardshop.com/products/2023-24-panini-revolution-chinese-new-year-basketball-box"
+  - id: PANINI_2023-24_COURT_KINGS_INTERNATIONAL
+    season: "2023-24"
+    manufacturer: Panini
+    set: Court Kings
+    format: International
+    configuration: null
+    tier: hobby
+    status: WATCH
+    licensed: true
+    wemby_rc: true
+    market_ask_us: 262.75
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_checked_at: null
+    market_source: "ask: fiche live 17/08 — sold à relever"
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://theawesomecardshop.com/products/2023-24-panini-court-kings-basketball-international-blaster-box"
+  - id: PANINI_2023-24_SELECT_MEGA_CASE
+    season: "2023-24"
+    manufacturer: Panini
+    set: Select
+    format: Case
+    case_of: Mega
+    configuration: null
+    tier: retail
+    status: ACTIVE
+    licensed: true
+    wemby_rc: true
+    boxes_per_case: 20
+    market_ask_us: https://theawesomecardshop.com/products/2023-24-panini-select-basketball-mega-20-box-case-green-shock-prizm
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_checked_at: null
+    market_source: "ask: fiche live 17/08 — sold à relever"
+    buy_below_usd: 1120
+    watch_below_usd: 1300
+    url_proof: ""
+  - id: PANINI_2023-24_MOSAIC_FAST_BREAK_CASE
+    season: "2023-24"
+    manufacturer: Panini
+    set: Mosaic
+    format: Case
+    case_of: Fast Break
+    configuration: null
+    tier: hobby
+    status: ACTIVE
+    licensed: true
+    wemby_rc: true
+    boxes_per_case: 20
+    market_ask_us: https://theawesomecardshop.com/products/2023-24-panini-mosaic-fast-break-basketball-hobby-20-box-case
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_checked_at: null
+    market_source: "ask: fiche live 17/08 — sold à relever"
+    buy_below_usd: 4800
+    watch_below_usd: 5600
+    url_proof: ""
+  - id: PANINI_2023-24_PHOENIX_BLASTER_CASE_20
+    season: "2023-24"
+    manufacturer: Panini
+    set: Phoenix
+    format: Case
+    case_of: Blaster
+    configuration: null
+    tier: retail
+    status: CANDIDATE
+    licensed: true
+    wemby_rc: true
+    boxes_per_case: 20
+    market_ask_us: 
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_checked_at: null
+    market_source: ""
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: ""
+  - id: PANINI_2023-24_OPTIC_MEGA_CASE
+    season: "2023-24"
+    manufacturer: Panini
+    set: Donruss Optic
+    aliases: ["Optic"]
+    format: Case
+    case_of: Mega
+    configuration: null
+    tier: retail
+    status: CANDIDATE
+    licensed: true
+    wemby_rc: true
+    market_ask_us: 
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_checked_at: null
+    market_source: ""
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: ""
+  - id: PANINI_2023-24_PREMIUM_STOCK_BLASTER_CASE
+    season: "2023-24"
+    manufacturer: Panini
+    set: Premium Stock
+    format: Case
+    case_of: Blaster
+    configuration: null
+    tier: retail
+    status: CANDIDATE
+    licensed: true
+    wemby_rc: true
+    market_ask_us: 
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_checked_at: null
+    market_source: ""
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: ""

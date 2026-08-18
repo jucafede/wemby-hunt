@@ -135,6 +135,11 @@ def match_title(title: str, skus: list[dict]) -> Match:
         if excl:
             if excl.lower() not in sku_cfg.lower(): continue
         elif parse_exclusive(sku_cfg.lower()): continue
+        # un Case est toujours "case DE quelque chose" : sans le format interne dans le titre, on ne peut pas
+        # décider entre le case Mega et le case Fast Break de la même gamme → aucun candidat → REVIEW.
+        if s["format"] == "Case":
+            inner = (s.get("case_of") or "").lower()
+            if not inner or not re.search(rf"\b{re.escape(inner)}\b", t): continue
         sc += 0.40                                            # gamme
         if season == s["season"]: sc += 0.30                  # saison
         elif season is None: sc += 0.05
@@ -175,6 +180,37 @@ def db() -> sqlite3.Connection:
     return c
 
 # ---------------------------------------------------------------- collecte Shopify
+def shopify_by_collections(base: str, session: requests.Session) -> list[dict]:
+    """Contourne le plafond de ~100 pages de /products.json : on liste les collections puis on pagine
+    chacune. Dédoublonné par product id — un produit présent dans 3 collections ne compte qu'une fois."""
+    seen, out = set(), []
+    cols, page = [], 1
+    while True:
+        r = session.get(f"{base}/collections.json", params={"limit": 250, "page": page}, timeout=30)
+        time.sleep(RATE_S)
+        if r.status_code != 200: break
+        items = r.json().get("collections", [])
+        if not items: break
+        cols.extend(items)
+        if len(items) < 250: break
+        page += 1
+    for col in cols:
+        handle = col.get("handle")
+        if not handle: continue
+        page = 1
+        while True:
+            r = session.get(f"{base}/collections/{handle}/products.json", params={"limit": 250, "page": page}, timeout=30)
+            time.sleep(RATE_S)
+            if r.status_code != 200: break
+            items = r.json().get("products", [])
+            if not items: break
+            for p in items:
+                if p.get("id") not in seen:
+                    seen.add(p.get("id")); out.append(p)
+            if len(items) < 250: break
+            page += 1
+    return out
+
 def shopify_products(base: str, session: requests.Session) -> list[dict]:
     """Pagine /products.json?limit=250&page=N (fallback page_info non nécessaire en lecture publique
     sur la plupart des stores ; si vide dès la page 1, on tente /collections/all/products.json)."""
@@ -195,12 +231,14 @@ def shopify_products(base: str, session: requests.Session) -> list[dict]:
 
 def collect_shop(shop: dict, skus: list[dict], conn: sqlite3.Connection, seen_at: str) -> tuple[int, int]:
     s = requests.Session(); s.headers["User-Agent"] = UA
+    if shop.get("status") == "reject":
+        print(f"  [{shop['key']}] status=reject (qualifié sur données réelles → 0 sealed 2023-24) → skip"); return (0, 0)
     if shop["type"] == "breaks":
         print(f"  [{shop['key']}] type=breaks (breaker, hors périmètre sealed) → skip"); return (0, 0)
     if shop["type"] != "shopify_json":
         print(f"  [{shop['key']}] type={shop['type']} non géré en v1 → skip"); return (0, 0)
     try:
-        prods = shopify_products(shop["base_url"], s)
+        prods = (shopify_by_collections if shop.get("paginate") == "collections" else shopify_products)(shop["base_url"], s)
     except Exception as e:
         print(f"  [{shop['key']}] erreur collecte: {e}"); return (0, 0)
     n_raw = n_obs = 0
@@ -297,7 +335,7 @@ def report(cat: dict, conn: sqlite3.Connection, seen_at: str | None, trust: dict
             print(f"  {'🚨 RESTOCK DEAL' if deal else '🔔 RESTOCK'}  {r[0]}  {r[1]}  ${r[3]:.2f}  {r[5]}")
     with open(csv_path, "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
-        w.writerow(["sku_id","tier","shop","trust","title","variant","price_usd","in_stock",f"landed_eur_est_{nb}box_bundle","market_ask_us","market_sold_us","market_sold_source","market_sold_checked_at","buy_below","watch_below","eu_ref_eur","status","restock","url","seen_at","match_score"])
+        w.writerow(["sku_id","sku_status","licensed","tier","shop","trust","title","variant","price_usd","boxes_per_case","unit_price_per_box","in_stock",f"landed_eur_est_{nb}box_bundle","market_ask_us","market_sold_us","market_sold_source","market_sold_checked_at","buy_below","watch_below","eu_ref_eur","status","restock","url","seen_at","match_score"])
         for tier in ("retail", "hobby"):
             print("\n" + "="*72 + f"\n  {tier.upper()}\n" + "="*72)
             for sid, s in skus.items():
@@ -306,24 +344,33 @@ def report(cat: dict, conn: sqlite3.Connection, seen_at: str | None, trust: dict
                 in_stock = [o for o in obs if o[4]]
                 # high_risk : observé et affiché, mais jamais retenu comme BEST → ne peut pas déclencher un GO
                 best = next((o for o in in_stock if trust_of(o[1], trust) != "high_risk"), None)
-                if best and best[3] <= s["buy_below_usd"]: status, icon = "GO", "🔥"
-                elif best and best[3] <= s["watch_below_usd"]: status, icon = "WATCH", "👀"
+                # status du SKU : le matching tourne sur TOUS les statuts, la classification GO/NO_GO
+                # ne concerne que les ACTIVE. WATCH/CANDIDATE sont observés, jamais recommandés à l'achat.
+                sk_st = s.get("status", "ACTIVE")
+                if sk_st != "ACTIVE":
+                    status, icon = ("SUIVI" if sk_st == "WATCH" else "CANDIDAT"), "·"
+                elif best and s.get("buy_below_usd") and best[3] <= s["buy_below_usd"]: status, icon = "GO", "🔥"
+                elif best and s.get("watch_below_usd") and best[3] <= s["watch_below_usd"]: status, icon = "WATCH", "👀"
                 elif best: status, icon = "NO_GO", "⛔"
                 else: status, icon = ("NO_STOCK" if obs else "NO_DATA"), "—"
-                print(f"\n{icon} {status}   {s['season']} {s['manufacturer']} {s['set']} {s['format']}   [{sid}]")
+                lic = "" if s.get("licensed", True) else "  ⚑ unlicensed"
+                bpc = s.get("boxes_per_case")
+                cfgl = f" ({s['configuration']})" if s.get("configuration") else ""
+                print(f"\n{icon} {status}   {s['season']} {s['manufacturer']} {s['set']} {s['format']}{cfgl}   [{sid}]{lic}")
                 rs = {id(r[0]) for r in restocks}
                 for i, o in enumerate(obs[:6], 1):
                     stock = "IN STOCK" if o[4] else "SOLD OUT"
                     flag = "  🔔" if any(o is r for r,_ in restocks) else ""
-                    print(f"   {i}. {o[1]:<16} ${o[3]:>8.2f}  {stock:<9} landed≈€{landed_eur(o[3],cat):>7.2f} ({nb}-box bundle)  (score {o[6]:.2f}){flag}{TRUST_FLAG.get(trust_of(o[1], trust), '')}")
+                    unit = f"  = ${o[3]/bpc:>7.2f}/boîte" if bpc else ""
+                    print(f"   {i}. {o[1]:<16} ${o[3]:>8.2f}{unit}  {stock:<9} landed≈€{landed_eur(o[3]/bpc if bpc else o[3],cat):>7.2f} ({nb}-box bundle)  (score {o[6]:.2f}){flag}{TRUST_FLAG.get(trust_of(o[1], trust), '')}")
                 ask = s.get("market_ask_us"); sold = s.get("market_sold_us"); eu = s.get("eu_reference_eur")
                 ssrc = s.get("market_sold_source"); schk = s.get("market_sold_checked_at")
                 prov = f" [{ssrc}{' ' + str(schk) if schk else ''}]" if sold and ssrc else ""
-                print(f"   ask {('$%.2f'%ask) if ask else 'n/a':<8} sold {('$%.2f'%sold) if sold else 'n/a':<8}{prov} | buy ≤ ${s['buy_below_usd']:.2f} | watch ≤ ${s['watch_below_usd']:.2f} | EU {('€%.2f'%eu) if eu else 'n/a'}")
+                print(f"   ask {('$%.2f'%ask) if ask else 'n/a':<8} sold {('$%.2f'%sold) if sold else 'n/a':<8}{prov} | buy ≤ {('$%.2f'%s['buy_below_usd']) if s.get('buy_below_usd') else 'n/a':<8} | watch ≤ {('$%.2f'%s['watch_below_usd']) if s.get('watch_below_usd') else 'n/a':<8} | EU {('€%.2f'%eu) if eu else 'n/a'}")
                 if best: print(f"   BEST → {best[1]}  {best[5]}")
                 html.append((tier, status, icon, s, obs, best))
                 for o in obs:
-                    w.writerow([sid, tier, o[1], trust_of(o[1], trust), o[2], o[8], o[3], o[4], landed_eur(o[3],cat), ask, sold, ssrc, schk, s["buy_below_usd"], s["watch_below_usd"], eu, status if o is best else "", 1 if any(o is r for r,_ in restocks) else 0, o[5], o[7], o[6]])
+                    w.writerow([sid, sk_st, s.get("licensed", True), tier, o[1], trust_of(o[1], trust), o[2], o[8], o[3], bpc or "", round(o[3]/bpc, 2) if bpc else "", o[4], landed_eur(o[3]/bpc if bpc else o[3],cat), ask, sold, ssrc, schk, s.get("buy_below_usd"), s.get("watch_below_usd"), eu, status if o is best else "", 1 if any(o is r for r,_ in restocks) else 0, o[5], o[7], o[6]])
     # REVIEW : bruts basket 2023-24 non matchés (score entre 0.4 et 0.8) — dernier crawl seulement
     print("\n" + "="*72 + "\n  ⚠️  REVIEW (basketball 2023-24, non rattachés)\n" + "="*72)
     q = conn.execute("""SELECT shop,title,price,available,candidates,match_score,url FROM products_raw
@@ -337,7 +384,7 @@ def report(cat: dict, conn: sqlite3.Connection, seen_at: str | None, trust: dict
 def write_html(cat, blocks, restocks, review, seen_at, trust=None):
     trust = trust or {}
     nb = cat["landed_cost"].get("bundle_boxes", 8)
-    col = {"GO":"#1b7f3b","WATCH":"#b8860b","NO_GO":"#b22222","NO_STOCK":"#666","NO_DATA":"#999"}
+    col = {"GO":"#1b7f3b","WATCH":"#b8860b","NO_GO":"#b22222","NO_STOCK":"#666","NO_DATA":"#999","SUIVI":"#4a5568","CANDIDAT":"#8a8a8a"}
     h = [f"<!doctype html><meta charset='utf-8'><meta name=viewport content='width=device-width,initial-scale=1'>"
          f"<title>Wemby Hunt</title><style>body{{font-family:Arial,sans-serif;max-width:900px;margin:20px auto;padding:0 12px;color:#222}}"
          f".sku{{border:1px solid #ddd;border-radius:8px;padding:12px;margin:12px 0}}.st{{font-weight:bold;color:#fff;padding:2px 8px;border-radius:4px}}"
@@ -355,7 +402,7 @@ def write_html(cat, blocks, restocks, review, seen_at, trust=None):
             if t != tier: continue
             ask=s.get("market_ask_us"); sold=s.get("market_sold_us"); eu=s.get("eu_reference_eur")
             h.append(f"<div class=sku><span class=st style='background:{col[status]}'>{icon} {status}</span> <b>{s['season']} {s['manufacturer']} {s['set']} {s['format']}</b>"
-                     f"<div class=small>ask {ask or 'n/a'} $ · sold {sold or 'n/a'} $ · buy ≤ {s['buy_below_usd']} $ · watch ≤ {s['watch_below_usd']} $ · EU {eu or 'n/a'} €</div>")
+                     f"<div class=small>ask {ask or 'n/a'} $ · sold {sold or 'n/a'} $ · buy ≤ {s.get('buy_below_usd') or 'n/a'} $ · watch ≤ {s.get('watch_below_usd') or 'n/a'} $ · EU {eu or 'n/a'} €{'' if s.get('licensed', True) else ' · ⚑ unlicensed'}</div>")
             if obs:
                 h.append("<table><tr><th>Shop</th><th>Produit (titre live)</th><th>Configuration</th><th>Prix</th><th>Stock</th><th>Landed €</th></tr>")
                 seen=set()

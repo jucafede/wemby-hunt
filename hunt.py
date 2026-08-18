@@ -90,8 +90,15 @@ def parse_format(t: str) -> str | None:
     return None
 
 def parse_sport(t: str) -> str:
-    if any(k in t for k in SPORT_HINTS["not_basketball"]): return "other"
-    if any(k in t for k in SPORT_HINTS["basketball"]): return "basketball"
+    # Le dé-collage de norm() coupe les mots collés : "EuroLeague" -> "euro league". Un mot-clé
+    # d'exclusion écrit en CamelCase par le shop cessait donc d'être reconnu — un blaster
+    # EuroLeague à 14,75 $ est ressorti en 🔥 GO sur le SKU Prizm NBA le 18/08.
+    # On teste aussi la forme sans espaces. Le garde len>4 évite qu'un token court (f1, mma,
+    # pfl, nfl) ne matche accidentellement à l'intérieur d'un autre mot.
+    tight = t.replace(" ", "")
+    def has(k): return k in t or (len(k) > 4 and k.replace(" ", "") in tight)
+    if any(has(k) for k in SPORT_HINTS["not_basketball"]): return "other"
+    if any(has(k) for k in SPORT_HINTS["basketball"]): return "basketball"
     return "unknown"
 
 def parse_config(t: str) -> str | None:

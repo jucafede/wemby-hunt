@@ -20,7 +20,13 @@ jobs:
           SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}   # absent → bascule automatique sur DuckDuckGo
         run: |
           set -o pipefail
-          python discover.py | tee discover_log.txt
+          # étalé en 3 lots de 10 SKU avec pauses : DuckDuckGo bloque l'IP au-delà d'une
+          # quarantaine de requêtes rapprochées (constaté le 18/08 en local, HTTP 403).
+          python discover.py --offset 0  --limit 10 --sleep 5            | tee    discover_log.txt
+          sleep 120
+          python discover.py --offset 10 --limit 10 --sleep 5 --merge    | tee -a discover_log.txt
+          sleep 120
+          python discover.py --offset 20 --limit 10 --sleep 5 --merge    | tee -a discover_log.txt
       - uses: actions/upload-artifact@v4
         with:
           name: candidates

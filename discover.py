@@ -110,7 +110,7 @@ def probe(host: str, skus: list[dict]) -> dict:
     """Teste /products.json. Un seul appel de 250 produits : on qualifie, on ne crawle pas."""
     import hunt   # réutilise le normaliseur SANS le modifier
     res = {"domain": host, "shopify": False, "products_sampled": 0,
-           "basketball": 0, "sealed_2023_24": 0, "matched": 0, "error": None}
+           "basketball": 0, "sealed_2023_24": 0, "matched": 0, "matched_in_stock": 0, "error": None}
     s = requests.Session(); s.headers["User-Agent"] = UA
     for scheme in ("https://", "http://"):
         base = scheme + host
@@ -134,7 +134,9 @@ def probe(host: str, skus: list[dict]) -> dict:
                 res["basketball"] += 1
                 if hunt.parse_format(t) and hunt.parse_season(t) == "2023-24":
                     res["sealed_2023_24"] += 1
-                if hunt.match_title(full, skus).sku_id: res["matched"] += 1
+                if hunt.match_title(full, skus).sku_id:
+                    res["matched"] += 1
+                    if v.get("available"): res["matched_in_stock"] += 1
         return res
     return res
 
@@ -142,7 +144,12 @@ def probe(host: str, skus: list[dict]) -> dict:
 # ---------------------------------------------------------------- rendu
 def write_outputs(cands: list[dict], queried: int, engine: str, stamp: str):
     OUT.mkdir(exist_ok=True)
+    # métrique hebdo : combien de sources qualifiées, et combien ont au moins un match EN STOCK
+    qualified = [c for c in cands if c["shopify"]]
+    with_stock = [c for c in qualified if c.get("matched_in_stock", 0) >= 1]
     doc = {"generated_at": stamp, "engine": engine, "skus_queried": queried,
+           "metrics": {"nouvelles_sources_qualifiees": len(qualified),
+                       "dont_au_moins_1_match_in_stock": len(with_stock)},
            "note": "Prospection automatique. sources.yaml n'est JAMAIS modifié par ce module.",
            "candidates": cands}
     (OUT / "candidates.yaml").write_text(
@@ -150,28 +157,35 @@ def write_outputs(cands: list[dict], queried: int, engine: str, stamp: str):
 
     h = ["<h2>🔎 Nouveaux candidats</h2>",
          f"<p class=small>discover.py — {stamp} · moteur {engine} · {queried} SKU ACTIVE interrogés · "
-         f"{len(cands)} domaine(s) retenus. Aucun ajout automatique à sources.yaml.</p>"]
+         f"<b>{len(qualified)} nouvelle(s) source(s) qualifiée(s), dont {len(with_stock)} avec ≥1 match EN STOCK</b>. "
+         f"Aucun ajout automatique à sources.yaml.</p>"]
     if not cands:
         h.append("<p class=small>Aucun nouveau domaine Shopify détecté ce passage.</p>")
     else:
         h.append("<table><tr><th>Domaine</th><th>Shopify</th><th>Échantillon</th>"
-                 "<th>Basket</th><th>Sealed 23-24</th><th>Matchés</th><th>Vu pour</th></tr>")
+                 "<th>Basket</th><th>Sealed 23-24</th><th>Matchés</th><th>dont en stock</th><th>Vu pour</th></tr>")
         for c in cands:
             h.append(f"<tr><td><a href='{c.get('base_url', 'https://'+c['domain'])}'>{c['domain']}</a></td>"
                      f"<td>{'oui' if c['shopify'] else 'non'}</td><td>{c['products_sampled']}</td>"
                      f"<td>{c['basketball']}</td><td>{c['sealed_2023_24']}</td><td>{c['matched']}</td>"
+                     f"<td>{c.get('matched_in_stock', 0)}</td>"
                      f"<td class=small>{', '.join(c['seen_for'][:3])}</td></tr>")
         h.append("</table>")
     (OUT / "candidates.html").write_text("\n".join(h), encoding="utf-8")
 
 
 def main():
+    global RATE_S
     ap = argparse.ArgumentParser()
-    ap.add_argument("--limit", type=int, help="nombre de SKU ACTIVE à interroger")
+    ap.add_argument("--limit", type=int, help="nombre de SKU ACTIVE à interroger (lot)")
+    ap.add_argument("--offset", type=int, default=0, help="démarre au Nième SKU ACTIVE (étalement)")
+    ap.add_argument("--sleep", type=float, default=RATE_S, help="pause entre requêtes moteur, en secondes")
+    ap.add_argument("--merge", action="store_true", help="fusionne avec les candidats déjà écrits")
     ap.add_argument("--engine", choices=["serpapi", "ddg"], help="force le moteur")
     ap.add_argument("--no-probe", action="store_true", help="collecte les domaines sans les sonder")
     a = ap.parse_args()
 
+    RATE_S = a.sleep
     cat = yaml.safe_load((ROOT / "catalog.yaml").read_text(encoding="utf-8"))
     src = yaml.safe_load((ROOT / "sources.yaml").read_text(encoding="utf-8"))
     skus = cat["skus"]
@@ -183,8 +197,10 @@ def main():
         print("SERPAPI_KEY absent → bascule sur DuckDuckGo"); engine = "ddg"
     print(f"moteur : {engine} | {len(known)} domaines déjà connus | {len(GIANTS)} géants exclus")
 
-    active = [s for s in skus if s.get("status", "ACTIVE") == "ACTIVE"]
+    all_active = [s for s in skus if s.get("status", "ACTIVE") == "ACTIVE"]
+    active = all_active[a.offset:]
     if a.limit: active = active[:a.limit]
+    print(f"lot : SKU {a.offset+1}..{a.offset+len(active)} sur {len(all_active)} ACTIVE | pause {RATE_S}s")
     print(f"{len(active)} SKU ACTIVE à interroger\n")
 
     found: dict[str, set] = {}
@@ -213,6 +229,10 @@ def main():
         print(f"shopify={r['shopify']} basket={r['basketball']} sealed23-24={r['sealed_2023_24']} match={r['matched']}")
         if r["shopify"]: cands.append(r)
 
+    if a.merge and (OUT / "candidates.yaml").exists():
+        prev = yaml.safe_load((OUT / "candidates.yaml").read_text(encoding="utf-8")) or {}
+        seen = {c["domain"] for c in cands}
+        cands += [c for c in (prev.get("candidates") or []) if c["domain"] not in seen]
     cands.sort(key=lambda c: (-c["sealed_2023_24"], -c["basketball"]))
     from datetime import datetime, timezone
     stamp = datetime.now(timezone.utc).isoformat(timespec="seconds")

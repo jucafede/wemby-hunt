@@ -11,7 +11,7 @@
   [mojobreak] status=reject (qualifié sur données réelles → 0 sealed 2023-24) → skip
   0 produits bruts, 0 rattachés à un SKU
 → RbiCru7 Collectibles (https://rbicru7.com)  [trust=trusted]
-  12266 produits bruts, 8 rattachés à un SKU
+  12253 produits bruts, 8 rattachés à un SKU
 → Layton Sports Cards (https://laytonsportscards.com)  [trust=trusted]
   [layton] type=breaks (breaker, hors périmètre sealed) → skip
   0 produits bruts, 0 rattachés à un SKU
@@ -29,14 +29,14 @@
   [grandslam] status=reject (qualifié sur données réelles → 0 sealed 2023-24) → skip
   0 produits bruts, 0 rattachés à un SKU
 → The Cardiacs (https://www.thecardiacs.com)  [trust=watch]
-  5278 produits bruts, 2 rattachés à un SKU
+  5283 produits bruts, 2 rattachés à un SKU
 → Monmouth Cards (https://monmouthcards.com)  [trust=watch]
-  5000 produits bruts, 9 rattachés à un SKU
+  4999 produits bruts, 9 rattachés à un SKU
 → World Champion Sports Cards (https://www.worldchampionsportscards.org)  [trust=watch]
   3830 produits bruts, 21 rattachés à un SKU
 → Superior Sports Investments (https://superiorsportsinvestments.com)  [trust=watch]
     collections : 8/84 retenues (filtre 'basketball|\\bnba\\b|hoops|prizm|mosaic|optic|select|phoenix|contenders|court.kings|revolution|premium.stock')
-  16321 produits bruts, 6 rattachés à un SKU
+  16320 produits bruts, 6 rattachés à un SKU
 → SJAY2K Trading Cards (https://www.sjay2k.com)  [trust=watch]
   617 produits bruts, 2 rattachés à un SKU
 → The Ballgame (https://theballgame.com)  [trust=watch]
@@ -51,7 +51,6 @@
   1073 produits bruts, 8 rattachés à un SKU
 → SportCards.com (https://sportcards.com)  [trust=watch]
   7909 produits bruts, 6 rattachés à un SKU
-(purge : 11 observation(s) obsolètes retirées — matchées par une ancienne version du code)
 (1 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
 
 ========================================================================
@@ -489,5 +488,5 @@
   [boxseat] 2025 Select FB Blaster  $39.99 OOS  → [["PANINI_2023-24_SELECT_BLASTER", 0.7]]
   [boxseat] BB Select (2025) Blaster  $39.99 IN  → [["PANINI_2023-24_SELECT_BLASTER", 0.7]]
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-08-18T11-20-15.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-08-18T13-00-05.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

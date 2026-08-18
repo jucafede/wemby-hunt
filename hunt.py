@@ -37,7 +37,7 @@ FORMATS = [
     ("Pack", r"(?<![\w-])packs?\b"),
     ("Case", r"\bcase\b|\d+\s*-?\s*box\s*case"),
     ("FOTL", r"first\s*off\s*the\s*line|\bfotl\b"),
-    ("Fast Break", r"fast\s*break"),
+    ("Fast Break", r"fast\s*break|fast\s*brk"),
     ("Choice", r"\bchoice\b"),
     ("H2", r"\bh2\b|hybrid"),
     ("Tin", r"\btin\b"),
@@ -62,12 +62,15 @@ def parse_exclusive(t: str) -> str | None:
         if re.search(rx, t): return name
     return None
 SEASON_RE = re.compile(r"(20\d{2})\s*[-/–]\s*(\d{2,4})|(?<!\d)(\d{2})\s*[-/–]\s*(\d{2})(?!\d)")
-SPORT_HINTS = {"basketball": ["basketball", "nba", "bball", "hoops"], "not_basketball": ["football", "nfl", "baseball", "mlb", "hockey", "nhl", "soccer", "wnba", "pokemon", "ufc", "wrestling", "f1", "euroleague", "golf", "nascar", "racing", "wwe", "tennis", "mma", "boxing", "college", "draft picks", "world cup", "premier league"]}
+SPORT_HINTS = {"basketball": ["basketball", "nba", "bball", "hoops"], "not_basketball": ["football", "nfl", "baseball", "mlb", "hockey", "nhl", "soccer", "wnba", "pokemon", "ufc", "wrestling", "f1", "euroleague", "golf", "nascar", "racing", "wwe", "tennis", "mma", "boxing", "pfl", "fighters", "college", "draft picks", "world cup", "premier league"]}
 SEALED_RE = re.compile(r"\b(box|boxes|blaster|mega|hobby|case|pack|packs|tin|display|bundle|lot)\b")
 SINGLE_RE = re.compile(r"(#\s*\d+\b|\b\d{1,3}\s*/\s*\d{1,4}\b|\bpsa\b|\bbgs\b|\bsgc\b|\bauto\b|\bautograph\b|\brc\b\s*$|\bpatch\b|\brelic\b|\bslab)")
 CONFIG_HINTS = ["target", "walmart", "fanatics", "exclusive", "green shock", "cracked ice", "red ice", "blue ice", "green ice", "hyper pink", "hyper orange", "glitter", "flash", "ice prizm", "seismic", "npp", "reactive", "fluorescent", "shimmer", "pulsar", "disco", "holo", "purple", "pink", "orange", "yellow", "green", "blue", "red"]
 
 def norm(s: str) -> str:
+    # dé-collage AVANT le passage en minuscules : "BasketballMega" -> "Basketball Mega".
+    # Des titres de shops collent deux mots et le format devenait indétectable.
+    s = re.sub(r"([a-z])([A-Z])", r"\1 \2", s)
     return re.sub(r"\s+", " ", s.lower().replace("&amp;", "&")).strip()
 
 def parse_season(t: str) -> str | None:

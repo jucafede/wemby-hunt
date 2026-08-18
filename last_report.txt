@@ -4,14 +4,14 @@
     collections : 4/124 retenues (filtre 'basketball|\\bnba\\b|hoops|prizm|mosaic|optic|select|phoenix|contenders|court.kings|revolution|premium.stock')
   750 produits bruts, 3 rattachés à un SKU
 → Hidden Gems Card Shop (https://www.hiddengemscardshop.com)  [trust=trusted]
-  2734 produits bruts, 10 rattachés à un SKU
+  2736 produits bruts, 10 rattachés à un SKU
 → The Awesome Card Shop (https://theawesomecardshop.com)  [trust=trusted]
   7266 produits bruts, 40 rattachés à un SKU
 → MojoBreak Shop (https://mojobreakshop.com)  [trust=trusted]
   [mojobreak] status=reject (qualifié sur données réelles → 0 sealed 2023-24) → skip
   0 produits bruts, 0 rattachés à un SKU
 → RbiCru7 Collectibles (https://rbicru7.com)  [trust=trusted]
-  12334 produits bruts, 9 rattachés à un SKU
+  12340 produits bruts, 9 rattachés à un SKU
 → Layton Sports Cards (https://laytonsportscards.com)  [trust=trusted]
   [layton] type=breaks (breaker, hors périmètre sealed) → skip
   0 produits bruts, 0 rattachés à un SKU
@@ -29,20 +29,20 @@
   [grandslam] status=reject (qualifié sur données réelles → 0 sealed 2023-24) → skip
   0 produits bruts, 0 rattachés à un SKU
 → The Cardiacs (https://www.thecardiacs.com)  [trust=watch]
-  5303 produits bruts, 3 rattachés à un SKU
+  5305 produits bruts, 3 rattachés à un SKU
 → Monmouth Cards (https://monmouthcards.com)  [trust=watch]
-  4979 produits bruts, 9 rattachés à un SKU
+  4973 produits bruts, 9 rattachés à un SKU
 → World Champion Sports Cards (https://www.worldchampionsportscards.org)  [trust=watch]
   3869 produits bruts, 23 rattachés à un SKU
 → Superior Sports Investments (https://superiorsportsinvestments.com)  [trust=watch]
     collections : 8/84 retenues (filtre 'basketball|\\bnba\\b|hoops|prizm|mosaic|optic|select|phoenix|contenders|court.kings|revolution|premium.stock')
-  16324 produits bruts, 7 rattachés à un SKU
+  16317 produits bruts, 7 rattachés à un SKU
 → SJAY2K Trading Cards (https://www.sjay2k.com)  [trust=watch]
   617 produits bruts, 2 rattachés à un SKU
 → The Ballgame (https://theballgame.com)  [trust=watch]
-  13773 produits bruts, 21 rattachés à un SKU
+  13812 produits bruts, 21 rattachés à un SKU
 → Bleecker Trading (https://bleeckertrading.com)  [trust=watch]
-  2182 produits bruts, 37 rattachés à un SKU
+  2191 produits bruts, 37 rattachés à un SKU
 → CB Hobby (https://cbhobby.com)  [trust=watch]
   661 produits bruts, 1 rattachés à un SKU
 → Box Seat Collectibles (https://boxseatcollectibles.com)  [trust=watch]
@@ -247,13 +247,13 @@
 
 ⛔ NO_GO   2023-24 Panini Donruss Optic Hanger   [PANINI_2023-24_OPTIC_HANGER]
    1. superior         $   75.00  IN STOCK  landed≈€  90.37  (score 1.00)
-        🔹SEUL_EN_STOCK  RC_YEAR  VERIFY
+        ONLY_STOCK_SEEN  RC_YEAR  VERIFY
    ask $75.00   sold n/a      | buy ≤ $25.00   | watch ≤ $40.00   | EU n/a
    BEST → superior  https://superiorsportsinvestments.com/products/2023-24-panini-donruss-optic-basketball-hanger-box-velocity-parallels
 
 ⛔ NO_GO   2023-24 Panini Select Hanger   [PANINI_2023-24_SELECT_HANGER]
    1. rbicru7          $   55.00  IN STOCK  landed≈€  69.68  (score 1.00)
-        🔹SEUL_EN_STOCK  RC_YEAR
+        ONLY_STOCK_SEEN  RC_YEAR
    2. ehcards          $   29.99  SOLD OUT  landed≈€  43.81  (score 1.00)
         RC_YEAR
    3. hiddengems       $   29.99  SOLD OUT  landed≈€  43.81  (score 1.00)
@@ -335,7 +335,7 @@
 
 · SUIVI   2023-24 Panini Donruss Optic Hobby Mega   [PANINI_2023-24_OPTIC_HOBBY_MEGA]
    1. superior         $  250.00  IN STOCK  landed≈€ 271.39  (score 1.00)
-        🔹SEUL_EN_STOCK  RC_YEAR  VERIFY
+        ONLY_STOCK_SEEN  RC_YEAR  VERIFY
    2. ballgame         $   75.00  SOLD OUT  landed≈€  90.37  (score 1.00)
         RC_YEAR  VERIFY
    3. awesome          $   80.00  SOLD OUT  landed≈€  95.54  (score 1.00)
@@ -556,7 +556,7 @@
 
 · SUIVI   2023-24 Panini Select H2   [PANINI_2023-24_SELECT_H2]
    1. sjay2k           $  620.00  IN STOCK  landed≈€ 654.12  (score 1.00)
-        🔹SEUL_EN_STOCK  RC_YEAR  VERIFY
+        ONLY_STOCK_SEEN  RC_YEAR  VERIFY
    2. sportscardjunction $  285.00  SOLD OUT  landed≈€ 307.59  (score 1.00)
         RC_YEAR  VERIFY
    3. columbia         $  299.99  SOLD OUT  landed≈€ 323.10  (score 1.00)
@@ -722,16 +722,12 @@
   [boxseat] BB Select (2025) Blaster  $39.99 IN  → [["PANINI_2023-24_SELECT_BLASTER", 0.7]]
 
 ========================================================================
-  🔥 HOT NOW — 8 ligne(s)
+  🔥 HOT NOW — 4 ligne(s)
 ========================================================================
   2023-24 Panini Prizm EuroLeague Blaster        $    9.95 cardiacs          -60.2%  STRONG_DEAL -60%
   2023-24 Panini Prizm EuroLeague Blaster        $   14.75 awesome           -41.0%  STRONG_DEAL -41%
   2023-24 Panini Prizm EuroLeague Blaster        $   15.00 rbicru7           -40.0%  STRONG_DEAL -40%
   2023-24 Panini Prizm EuroLeague Blaster        $   20.00 cbhobby           -20.0%  STRONG_DEAL -20%
-  2023-24 Panini Donruss Optic Hanger            $   75.00 superior            0.0%  SEUL_EN_STOCK
-  2023-24 Panini Select Hanger                   $   55.00 rbicru7             0.0%  SEUL_EN_STOCK
-  2023-24 Panini Donruss Optic Hobby Mega        $  250.00 superior            0.0%  SEUL_EN_STOCK
-  2023-24 Panini Select H2                       $  620.00 sjay2k              0.0%  SEUL_EN_STOCK
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-08-18T18-49-33.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-08-18T20-11-13.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

@@ -57,6 +57,17 @@ EXCLUSIVES = [
     ("Fanatics", r"\bfanatics\b"),
 ]
 
+# Une ligue non-NBA est une identité produit à part entière : le Prizm EuroLeague n'est pas un
+# Prizm NBA moins cher, c'est un autre produit. Un SKU sans `league` refuse les titres de ligue,
+# et un SKU avec `league` n'accepte QUE cette ligue.
+LEAGUES = [("EuroLeague", r"euro\s*league|turkish\s*airlines")]
+LEAGUE_STRIP = re.compile(r"euro\s*league|turkish\s*airlines")
+
+def parse_league(t: str) -> str | None:
+    for name, rx in LEAGUES:
+        if re.search(rx, t): return name
+    return None
+
 def parse_exclusive(t: str) -> str | None:
     for name, rx in EXCLUSIVES:
         if re.search(rx, t): return name
@@ -119,6 +130,10 @@ def match_title(title: str, skus: list[dict]) -> Match:
     t = norm(title)
     season, fmt, sport, cfg = parse_season(t), parse_format(t), parse_sport(t), parse_config(t)
     excl = parse_exclusive(t)
+    league = parse_league(t)
+    # pour un SKU de ligue, le sport se juge sur le titre débarrassé des tokens de ligue :
+    # sinon "euroleague" (exclusion sport) rejetterait son propre SKU.
+    sport_noleague = parse_sport(LEAGUE_STRIP.sub(" ", t)) if league else sport
     cands = []
     # likely_single : signaux forts de carte individuelle SANS signal sealed → ignoré (pas même en REVIEW).
     # Un titre sans "Box" mais sans signal single (ex. "2023-24 Panini Phoenix Basketball") reste candidat → REVIEW.
@@ -141,6 +156,9 @@ def match_title(title: str, skus: list[dict]) -> Match:
         if any(k in t for k in ("cello", "multi-pack", "value pack")): continue
         # exclusivité retailer : Target/Fanatics ne peut matcher qu'un SKU portant cette configuration,
         # et un SKU d'exclusivité ne peut pas absorber un titre standard. Sinon → pas de candidat → REVIEW.
+        sku_league = s.get("league")
+        if bool(sku_league) != bool(league) or (sku_league and sku_league != league): continue
+        eff_sport = sport_noleague if sku_league else sport
         sku_cfg = (s.get("configuration") or "")
         if excl:
             if excl.lower() not in sku_cfg.lower(): continue
@@ -157,8 +175,8 @@ def match_title(title: str, skus: list[dict]) -> Match:
         if fmt == s["format"]: sc += 0.25                     # format
         elif fmt is None: sc += 0.0                           # format inconnu → jamais >= 0.80 → REVIEW
         else: continue                                        # mauvais format = jamais
-        if sport == "basketball": sc += 0.05
-        elif sport == "other": continue
+        if eff_sport == "basketball": sc += 0.05
+        elif eff_sport == "other": continue
         if s["manufacturer"].lower() in t: sc = min(1.0, sc + 0.02)
         cands.append((s["id"], round(sc, 2)))
     cands.sort(key=lambda x: -x[1])

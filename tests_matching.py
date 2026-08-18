@@ -92,6 +92,9 @@ NEG = [
  ("2023-24 Panini Select Basketball Tin","Tin ≠ Blaster/Mega"),
  ("2023-24 Panini Mosaic Basketball Fat Pack","Fat Pack ≠ Box"),
  ("2023-24 Panini Prizm Basketball Cello Multi-Pack","Cello ≠ Box"),
+ ("2023-24 Panini Prizm Turkish Airlines EuroLeague Basketball Blaster Box","EuroLeague CamelCase ≠ NBA (faux GO du 18/08)"),
+ ("2023-24 Panini Prizm Turkish Airlines Euroleague Basketball Blaster Box","euroleague en un mot ≠ NBA"),
+ ("2023 Panini Donruss FootBall Blaster Box","FootBall CamelCase ≠ basket"),
 ]
 fails = []
 print("--- POSITIFS ---")

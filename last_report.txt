@@ -6,12 +6,12 @@
 → Hidden Gems Card Shop (https://www.hiddengemscardshop.com)  [trust=trusted]
   2734 produits bruts, 10 rattachés à un SKU
 → The Awesome Card Shop (https://theawesomecardshop.com)  [trust=trusted]
-  7266 produits bruts, 39 rattachés à un SKU
+  7266 produits bruts, 40 rattachés à un SKU
 → MojoBreak Shop (https://mojobreakshop.com)  [trust=trusted]
   [mojobreak] status=reject (qualifié sur données réelles → 0 sealed 2023-24) → skip
   0 produits bruts, 0 rattachés à un SKU
 → RbiCru7 Collectibles (https://rbicru7.com)  [trust=trusted]
-  12253 produits bruts, 8 rattachés à un SKU
+  12347 produits bruts, 9 rattachés à un SKU
 → Layton Sports Cards (https://laytonsportscards.com)  [trust=trusted]
   [layton] type=breaks (breaker, hors périmètre sealed) → skip
   0 produits bruts, 0 rattachés à un SKU
@@ -24,19 +24,19 @@
 → Columbia Sports Cards (https://columbiasportscard.com)  [trust=trusted]
   3115 produits bruts, 25 rattachés à un SKU
 → Sports Card Junction (https://sportscardjunction.com)  [trust=watch]
-  3741 produits bruts, 20 rattachés à un SKU
+  3742 produits bruts, 22 rattachés à un SKU
 → Grand Slam Collectibles (https://grandslamcollectibles.com)  [trust=watch]
   [grandslam] status=reject (qualifié sur données réelles → 0 sealed 2023-24) → skip
   0 produits bruts, 0 rattachés à un SKU
 → The Cardiacs (https://www.thecardiacs.com)  [trust=watch]
-  5283 produits bruts, 2 rattachés à un SKU
+  5303 produits bruts, 3 rattachés à un SKU
 → Monmouth Cards (https://monmouthcards.com)  [trust=watch]
-  4999 produits bruts, 9 rattachés à un SKU
+  4983 produits bruts, 9 rattachés à un SKU
 → World Champion Sports Cards (https://www.worldchampionsportscards.org)  [trust=watch]
-  3830 produits bruts, 21 rattachés à un SKU
+  3850 produits bruts, 23 rattachés à un SKU
 → Superior Sports Investments (https://superiorsportsinvestments.com)  [trust=watch]
     collections : 8/84 retenues (filtre 'basketball|\\bnba\\b|hoops|prizm|mosaic|optic|select|phoenix|contenders|court.kings|revolution|premium.stock')
-  16320 produits bruts, 6 rattachés à un SKU
+  16319 produits bruts, 7 rattachés à un SKU
 → SJAY2K Trading Cards (https://www.sjay2k.com)  [trust=watch]
   617 produits bruts, 2 rattachés à un SKU
 → The Ballgame (https://theballgame.com)  [trust=watch]
@@ -44,7 +44,7 @@
 → Bleecker Trading (https://bleeckertrading.com)  [trust=watch]
   2182 produits bruts, 37 rattachés à un SKU
 → CB Hobby (https://cbhobby.com)  [trust=watch]
-  660 produits bruts, 0 rattachés à un SKU
+  661 produits bruts, 1 rattachés à un SKU
 → Box Seat Collectibles (https://boxseatcollectibles.com)  [trust=watch]
   2082 produits bruts, 7 rattachés à un SKU
 → E5 Sports (https://e5sports.com)  [trust=watch]
@@ -269,6 +269,16 @@
 · CANDIDAT   2023-24 Panini Premium Stock Case   [PANINI_2023-24_PREMIUM_STOCK_BLASTER_CASE]
    ask n/a      sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
 
+🔥 GO   2023-24 Panini Prizm Blaster   [PANINI_2023-24_PRIZM_EUROLEAGUE_BLASTER]
+   1. cardiacs         $    9.95  IN STOCK  landed≈€  23.08 (8-box bundle)  (score 1.00)  👀 VERIFY
+   2. awesome          $   14.75  IN STOCK  landed≈€  28.05 (8-box bundle)  (score 1.00)
+   3. rbicru7          $   15.00  IN STOCK  landed≈€  28.30 (8-box bundle)  (score 1.00)
+   4. cbhobby          $   20.00  IN STOCK  landed≈€  33.48 (8-box bundle)  (score 1.00)  👀 VERIFY
+   5. superior         $   45.00  IN STOCK  landed≈€  59.34 (8-box bundle)  (score 1.00)  👀 VERIFY
+   6. sportscardjunction $   15.00  SOLD OUT  landed≈€  28.30 (8-box bundle)  (score 1.00)  👀 VERIFY
+   ask $25.00   sold n/a      | buy ≤ $20.00   | watch ≤ $25.00   | EU n/a
+   BEST → cardiacs  https://www.thecardiacs.com/products/2023-24-panini-prizm-euroleague-basketball-blaster-box
+
 ========================================================================
   HOBBY
 ========================================================================
@@ -445,6 +455,11 @@
    1. awesome          $ 5945.00  = $ 297.25/boîte  SOLD OUT  landed≈€ 320.26 (8-box bundle)  (score 1.00)
    ask $5945.00 sold n/a      | buy ≤ $4800.00 | watch ≤ $5600.00 | EU n/a
 
+· SUIVI   2023-24 Panini Prizm Hobby   [PANINI_2023-24_PRIZM_EUROLEAGUE_HOBBY]
+   1. sportscardjunction $   75.00  SOLD OUT  landed≈€  90.37 (8-box bundle)  (score 1.00)  👀 VERIFY
+   2. worldchampion    $  100.00  SOLD OUT  landed≈€ 116.23 (8-box bundle)  (score 1.00)  👀 VERIFY
+   ask n/a      sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
+
 ========================================================================
   ⚠️  REVIEW (basketball 2023-24, non rattachés)
 ========================================================================
@@ -488,5 +503,5 @@
   [boxseat] 2025 Select FB Blaster  $39.99 OOS  → [["PANINI_2023-24_SELECT_BLASTER", 0.7]]
   [boxseat] BB Select (2025) Blaster  $39.99 IN  → [["PANINI_2023-24_SELECT_BLASTER", 0.7]]
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-08-18T13-00-05.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-08-18T17-27-24.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

@@ -173,6 +173,11 @@ def db() -> sqlite3.Connection:
       url TEXT, match_score REAL, seen_at TEXT,
       PRIMARY KEY(sku_id, shop, url, variant_title, seen_at));
     """)
+    c.executescript("""
+    CREATE TABLE IF NOT EXISTS crawl_runs(
+      shop TEXT, seen_at TEXT, partial INTEGER, n_raw INTEGER,
+      PRIMARY KEY(shop, seen_at));
+    """)
     # migration douce : colonne matcher_version si absente
     cols = [r[1] for r in c.execute("PRAGMA table_info(observations)")]
     if "matcher_version" not in cols:
@@ -183,17 +188,41 @@ def db() -> sqlite3.Connection:
     return c
 
 # ---------------------------------------------------------------- collecte Shopify
-def shopify_by_collections(base: str, session: requests.Session, only: str | None = None) -> list[dict]:
+RETRIES = 3
+BACKOFF = (2, 5)   # secondes entre tentatives
+
+def fetch_json(session, url, params, label):
+    """Retourne (data, ok). ok=False après RETRIES tentatives non-200 ou en erreur réseau.
+    L'appelant décide alors si la pagination est PARTIELLE (des produits déjà collectés) ou
+    simplement terminée. Sans ça, une erreur passagère tronque un shop en silence — vécu le
+    18/08 : awesome tombé de 7 266 à 2 000 produits et de 40 matchs à 1, run vert."""
+    last = None
+    for i in range(RETRIES):
+        try:
+            r = session.get(url, params=params, timeout=30)
+            time.sleep(RATE_S)
+            if r.status_code == 200:
+                return r.json(), True
+            last = f"HTTP {r.status_code}"
+        except Exception as e:
+            last = e.__class__.__name__
+        if i < RETRIES - 1:
+            time.sleep(BACKOFF[i])
+    print(f"    ⚠️  {label} : {RETRIES} tentatives en échec ({last})")
+    return None, False
+
+def shopify_by_collections(base: str, session: requests.Session, only: str | None = None) -> tuple[list[dict], bool]:
     """Contourne le plafond de ~100 pages de /products.json : on liste les collections puis on pagine
     chacune. Dédoublonné par product id — un produit présent dans 3 collections ne compte qu'une fois.
     `only` = regex sur handle+titre pour ne garder que les collections utiles (ex. basket) et tenir le budget temps."""
-    seen, out = set(), []
+    seen, out, partial = set(), [], False
     cols, page = [], 1
     while True:
-        r = session.get(f"{base}/collections.json", params={"limit": 250, "page": page}, timeout=30)
-        time.sleep(RATE_S)
-        if r.status_code != 200: break
-        items = r.json().get("collections", [])
+        data, ok = fetch_json(session, f"{base}/collections.json", {"limit": 250, "page": page},
+                              f"collections.json page {page}")
+        if not ok:
+            partial = bool(cols); break
+        items = data.get("collections", [])
         if not items: break
         cols.extend(items)
         if len(items) < 250: break
@@ -208,57 +237,61 @@ def shopify_by_collections(base: str, session: requests.Session, only: str | Non
             # aucune collection basket : le shop n'expose pas /collections.json, ou nomme ses collections
             # autrement. On ne rate PAS le shop — retour à la pagination complète, et c'est écrit noir sur blanc.
             print(f"    ⚠️  FALLBACK pagination complète : 0/{len(cols)} collection ne matche {only!r}")
-            return shopify_products(base, session)
+            prods, p2 = shopify_products(base, session)
+            return prods, (partial or p2)
     for col in cols:
         handle = col.get("handle")
         if not handle: continue
         page = 1
         while True:
-            r = session.get(f"{base}/collections/{handle}/products.json", params={"limit": 250, "page": page}, timeout=30)
-            time.sleep(RATE_S)
-            if r.status_code != 200: break
-            items = r.json().get("products", [])
+            data, ok = fetch_json(session, f"{base}/collections/{handle}/products.json",
+                                  {"limit": 250, "page": page}, f"{handle} page {page}")
+            if not ok:
+                partial = True; break
+            items = data.get("products", [])
             if not items: break
             for p in items:
                 if p.get("id") not in seen:
                     seen.add(p.get("id")); out.append(p)
             if len(items) < 250: break
             page += 1
-    return out
+    return out, partial
 
-def shopify_products(base: str, session: requests.Session) -> list[dict]:
+def shopify_products(base: str, session: requests.Session) -> tuple[list[dict], bool]:
     """Pagine /products.json?limit=250&page=N (fallback page_info non nécessaire en lecture publique
     sur la plupart des stores ; si vide dès la page 1, on tente /collections/all/products.json)."""
-    out, page = [], 1
+    out, partial = [], False
     for path in ("/products.json", "/collections/all/products.json"):
-        page = 1
+        out, partial, page = [], False, 1
         while True:
-            r = session.get(f"{base}{path}", params={"limit": 250, "page": page}, timeout=30)
-            time.sleep(RATE_S)
-            if r.status_code != 200: break
-            items = r.json().get("products", [])
+            data, ok = fetch_json(session, f"{base}{path}", {"limit": 250, "page": page},
+                                  f"{path} page {page}")
+            if not ok:
+                partial = bool(out)   # des produits déjà collectés → catalogue TRONQUÉ, pas terminé
+                break
+            items = data.get("products", [])
             if not items: break
             out.extend(items)
             if len(items) < 250: break
             page += 1
         if out: break
-    return out
+    return out, partial
 
-def collect_shop(shop: dict, skus: list[dict], conn: sqlite3.Connection, seen_at: str) -> tuple[int, int]:
+def collect_shop(shop: dict, skus: list[dict], conn: sqlite3.Connection, seen_at: str) -> tuple[int, int, bool]:
     s = requests.Session(); s.headers["User-Agent"] = UA
     if shop.get("status") == "reject":
-        print(f"  [{shop['key']}] status=reject (qualifié sur données réelles → 0 sealed 2023-24) → skip"); return (0, 0)
+        print(f"  [{shop['key']}] status=reject (qualifié sur données réelles → 0 sealed 2023-24) → skip"); return (0, 0, False)
     if shop["type"] == "breaks":
-        print(f"  [{shop['key']}] type=breaks (breaker, hors périmètre sealed) → skip"); return (0, 0)
+        print(f"  [{shop['key']}] type=breaks (breaker, hors périmètre sealed) → skip"); return (0, 0, False)
     if shop["type"] != "shopify_json":
-        print(f"  [{shop['key']}] type={shop['type']} non géré en v1 → skip"); return (0, 0)
+        print(f"  [{shop['key']}] type={shop['type']} non géré en v1 → skip"); return (0, 0, False)
     try:
         if shop.get("paginate") == "collections":
-            prods = shopify_by_collections(shop["base_url"], s, shop.get("collections_match"))
+            prods, partial = shopify_by_collections(shop["base_url"], s, shop.get("collections_match"))
         else:
-            prods = shopify_products(shop["base_url"], s)
+            prods, partial = shopify_products(shop["base_url"], s)
     except Exception as e:
-        print(f"  [{shop['key']}] erreur collecte: {e}"); return (0, 0)
+        print(f"  [{shop['key']}] erreur collecte: {e}"); return (0, 0, True)
     n_raw = n_obs = 0
     for p in prods:
         title = p.get("title", ""); handle = p.get("handle", "")
@@ -281,8 +314,10 @@ def collect_shop(shop: dict, skus: list[dict], conn: sqlite3.Connection, seen_at
                 conn.execute("INSERT OR REPLACE INTO observations (sku_id,shop,title,variant_title,price,available,url,match_score,seen_at,matcher_version) VALUES (?,?,?,?,?,?,?,?,?,?)",
                     (m.sku_id, shop["key"], full, vt_clean, price, available, url, m.score, seen_at, MATCHER_VERSION))
                 n_obs += 1
+    conn.execute("INSERT OR REPLACE INTO crawl_runs VALUES (?,?,?,?)",
+                 (shop["key"], seen_at, 1 if partial else 0, n_raw))
     conn.commit()
-    return (n_raw, n_obs)
+    return (n_raw, n_obs, partial)
 
 # ---------------------------------------------------------------- décision / rapport
 def money(v, cur="$"):
@@ -328,7 +363,18 @@ def report(cat: dict, conn: sqlite3.Connection, seen_at: str | None, trust: dict
     n_purged = purge_stale(conn, cat["skus"])
     if n_purged: print(f"(purge : {n_purged} observation(s) obsolètes retirées — matchées par une ancienne version du code)")
     # dernier passage RÉUSSI par shop (dernier seen_at où le shop a renvoyé au moins 1 produit brut)
-    last_by_shop = dict(conn.execute("SELECT shop, MAX(seen_at) FROM products_raw GROUP BY shop").fetchall())
+    # dernier passage RÉUSSI = le plus récent qui n'est PAS marqué PARTIAL. Un crawl tronqué par
+    # une erreur réseau ne devient jamais la référence : les observations du dernier passage complet
+    # restent en place plutôt que de disparaître du classement.
+    last_by_shop = dict(conn.execute("""
+        SELECT shop, MAX(seen_at) FROM products_raw p
+        WHERE NOT EXISTS (SELECT 1 FROM crawl_runs c
+                          WHERE c.shop=p.shop AND c.seen_at=p.seen_at AND c.partial=1)
+        GROUP BY shop""").fetchall())
+    part = conn.execute("""SELECT shop, seen_at, n_raw FROM crawl_runs WHERE partial=1
+                           AND seen_at=(SELECT MAX(seen_at) FROM crawl_runs)""").fetchall()
+    for sh, sa, nr in part:
+        print(f"⚠️  [{sh}] passage {sa} PARTIAL ({nr} produits) — ignoré, référence = dernier passage complet")
     # dernière observation par (sku, shop, url, variante)
     rows = conn.execute("""
       SELECT o.sku_id, o.shop, o.title, o.price, o.available, o.url, o.match_score, o.seen_at, o.variant_title
@@ -491,8 +537,9 @@ def main():
         shops = [s for s in src["shops"] if not a.shop or s["key"] == a.shop]
         for sh in shops:
             print(f"→ {sh['name']} ({sh['base_url']})  [trust={sh.get('trust','trusted')}]")
-            n_raw, n_obs = collect_shop(sh, skus, conn, seen_at)
-            print(f"  {n_raw} produits bruts, {n_obs} rattachés à un SKU")
+            n_raw, n_obs, partial = collect_shop(sh, skus, conn, seen_at)
+            tag = "  ⚠️ PARTIAL — passage NON retenu comme référence" if partial else ""
+            print(f"  {n_raw} produits bruts, {n_obs} rattachés à un SKU{tag}")
         report(cat, conn, seen_at, trust)
     else:
         report(cat, conn, None, trust)

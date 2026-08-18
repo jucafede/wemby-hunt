@@ -94,3 +94,6 @@ shops:
   - {key: cbhobby, name: CB Hobby, base_url: https://cbhobby.com, type: shopify_json, trust: watch, notes: "Phoenix 23-24 backorder.", status: watch}
   # --- candidat v1.6 remonté par discover.py le 18/08 (boxseatcollectibles) ---
   - {key: boxseat, name: Box Seat Collectibles, base_url: https://boxseatcollectibles.com, type: shopify_json, trust: watch, status: watch, notes: "Découvert par discover.py 18/08 : Shopify, 72 produits basket / 11 sealed 2023-24 sur un échantillon de 250. Doit participer à un run normal avant tout passage en trusted."}
+  # --- candidats remontés par discover.py le 18/08 (run Actions) ---
+  - {key: e5sports, name: E5 Sports, base_url: https://e5sports.com, type: shopify_json, trust: watch, status: watch, notes: "discover.py 18/08 : Shopify, 26 basket / 13 sealed 2023-24 / 8 matchs sur 250 produits échantillonnés. --diag avant tout passage en trusted."}
+  - {key: sportcards, name: SportCards.com, base_url: https://sportcards.com, type: shopify_json, trust: watch, status: watch, notes: "discover.py 18/08 : Shopify, 12 basket / 7 sealed 2023-24 / 5 matchs sur 250 produits échantillonnés. --diag avant tout passage en trusted."}

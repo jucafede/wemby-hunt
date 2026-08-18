@@ -288,8 +288,8 @@ skus:
     market_sold_source: null
     market_sold_checked_at: null
     market_source: "ask: fiche live 17/08 — sold à relever"
-    buy_below_usd: 30
-    watch_below_usd: 40
+    buy_below_usd: 25.00
+    watch_below_usd: 35.00
     url_proof: "https://www.hiddengemscardshop.com/products/2023-24-panini-phoenix-mega-box"
   - id: PANINI_2023-24_OPTIC_HOBBY_BLASTER
     season: "2023-24"
@@ -434,8 +434,8 @@ skus:
     market_sold_source: null
     market_sold_checked_at: null
     market_source: "ask: fiche live 17/08 — sold à relever"
-    buy_below_usd: 20
-    watch_below_usd: 25
+    buy_below_usd: 25.00
+    watch_below_usd: 35.00
     url_proof: "https://superiorsportsinvestments.com/products/2023-24-panini-nba-hoops-basketball-6-pack-blaster-box"
   - id: PANINI_2023-24_HOOPS_MEGA
     season: "2023-24"

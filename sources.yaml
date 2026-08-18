@@ -73,7 +73,9 @@ shops:
     base_url: https://www.dacardworld.com
     type: html
     trust: trusted
-    notes: "CONTROL. Commande validée 15/08. Site propre (pas Shopify)."
+    myus_risk: high
+    direct_france: unknown
+    notes: "CONTROL. Commande validée 15/08 puis ANNULÉE le 18/08 — myus_risk: high. Site propre (pas Shopify)."
   - name: Columbia Sports Cards
     key: columbia
     status: active
@@ -84,7 +86,7 @@ shops:
   # --- candidats v1.5, ajoutés en trust: watch — à qualifier sur données réelles, pas sur la page d'accueil ---
   - {key: sportscardjunction, name: Sports Card Junction, base_url: https://sportscardjunction.com, type: shopify_json, trust: watch, notes: "Pittsburgh PA. LCS multi-sports.", status: active}
   - {key: grandslam, name: Grand Slam Collectibles, base_url: https://grandslamcollectibles.com, type: shopify_json, trust: watch, notes: "Phoenix 23-24 listé.", status: reject}
-  - {key: cardiacs, name: The Cardiacs, base_url: https://www.thecardiacs.com, type: shopify_json, trust: watch, notes: "Phoenix 23-24 listé.", status: watch}
+  - {key: cardiacs, name: The Cardiacs, base_url: https://www.thecardiacs.com, type: shopify_json, trust: trusted, status: active, payment_passes: yes, notes: "Phoenix 23-24 listé. Commande #NJHHDXG5V passée le 18/08, 367 $ — paiement accepté, passage en trusted."}
   - {key: monmouth, name: Monmouth Cards, base_url: https://monmouthcards.com, type: shopify_json, trust: watch, notes: "NJ. Revendeur autorisé. Port gratuit >100 $. Prix plutôt MSRP.", status: active}
   - {key: worldchampion, name: World Champion Sports Cards, base_url: https://www.worldchampionsportscards.org, type: shopify_json, trust: watch, notes: "Select Mega 23-24 vu 75 $ puis OOS (17/08) — watchlist restock.", status: active}
   - {key: superior, name: Superior Sports Investments, base_url: https://superiorsportsinvestments.com, type: shopify_json, trust: watch, paginate: collections, collections_match: "basketball|\\bnba\\b|hoops|prizm|mosaic|optic|select|phoenix|contenders|court.kings|revolution|premium.stock", notes: "Optic Mega 23-24 listé (fiche 404 le 17/08). 25 000 pile au crawl du 17/08 = plafond ~100 pages de /products.json → pagination par collections.", status: watch}
@@ -97,3 +99,6 @@ shops:
   # --- candidats remontés par discover.py le 18/08 (run Actions) ---
   - {key: e5sports, name: E5 Sports, base_url: https://e5sports.com, type: shopify_json, trust: watch, status: watch, notes: "discover.py 18/08 : Shopify, 26 basket / 13 sealed 2023-24 / 8 matchs sur 250 produits échantillonnés. --diag avant tout passage en trusted."}
   - {key: sportcards, name: SportCards.com, base_url: https://sportcards.com, type: shopify_json, trust: watch, status: watch, notes: "discover.py 18/08 : Shopify, 12 basket / 7 sealed 2023-24 / 5 matchs sur 250 produits échantillonnés. --diag avant tout passage en trusted."}
+  # --- non crawlés : marketplace et benchmarks, utiles pour market_sold et l'achat direct ---
+  - {key: stockx, name: StockX, base_url: https://stockx.com, type: marketplace, trust: trusted, direct_france: yes, notes: "Source de market_sold (Last Sale) + route d'achat directe France, produits vérifiés. NON CRAWLÉ."}
+  - {key: blowout, name: Blowout Cards, base_url: https://www.blowoutcards.com, type: html, trust: trusted, direct_france: yes, intl_shipping_note: "UPS Worldwide ~71 $ pour ~6 blasters (18/08)", notes: "Benchmark. Collecteur html à faire. NON CRAWLÉ."}

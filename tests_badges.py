@@ -34,6 +34,11 @@ check("parallèle nommé sur SKU sans configuration -> RELATED",
 check("boîte standard -> EXACT",
       hunt.comp_type_of("2023-24 panini select basketball mega box", {"configuration": None}), "EXACT")
 
+check("ask sans market_ask_from -> pas de référence",
+      hunt.market_ref({"market_ask_us": 50, "market_sold_us": None}), (None, None))
+check("ask avec provenance -> référence ask",
+      hunt.market_ref({"market_ask_us": 50, "market_ask_from": ["awesome"], "market_sold_us": None}), (50.0, "ask"))
+
 # ---- mémoire : restock et new low sur base réelle simulée
 db = tempfile.NamedTemporaryFile(suffix=".db", delete=False).name
 hunt.DB = pathlib.Path(db); conn = hunt.db()

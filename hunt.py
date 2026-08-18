@@ -168,6 +168,16 @@ def match_title(title: str, skus: list[dict]) -> Match:
         if s["set"].lower() == "donruss optic" and ("optic" not in t or "contenders" in t or "recon" in t): continue
         if s["set"].lower() == "contenders" and "optic" in t: continue   # "Contenders Optic" est une autre gamme
         if s["set"].lower() == "select" and ("select racing" in t or "nascar" in t): continue
+        if s["set"].lower() in ("topps chrome", "cosmic chrome"):
+            # gammes voisines qui ne sont PAS du Topps Chrome NBA
+            if any(k in t for k in ("nbl", "australia", "overtime elite", "\bote\b", "bowman",
+                                    "g-league", "g league", "breaker", "uefa")): continue
+            # Cosmic est une gamme distincte de Chrome, dans les deux sens
+            if ("cosmic" in t) != (s["set"].lower() == "cosmic chrome"): continue
+            # Sapphire et Monster sont des configurations distinctes : le titre et le SKU doivent
+            # être d'accord, sinon une Sapphire à 400 $ nourrirait le Chrome Hobby standard.
+            ident = s["id"].lower() + " " + (s.get("configuration_note") or "").lower()
+            if any((tok in t) != (tok in ident) for tok in ("sapphire", "monster")): continue
         # FOTL / International (asia, tmall) sont désormais des FORMATS détectés : le garde-fou "mauvais format
         # = éliminé" suffit, comme pour Hanger. Ne restent ici que les sous-gammes sans format dédié.
         if any(k in t for k in ("cello", "multi-pack", "value pack")): continue
@@ -328,6 +338,8 @@ def collect_shop(shop: dict, skus: list[dict], conn: sqlite3.Connection, seen_at
     s = requests.Session(); s.headers["User-Agent"] = UA
     if shop.get("status") == "reject":
         print(f"  [{shop['key']}] status=reject (qualifié sur données réelles → 0 sealed 2023-24) → skip"); return (0, 0, False)
+    if shop["type"] == "marketplace":
+        print(f"  [{shop['key']}] type=marketplace (source de market_sold / achat direct) → skip"); return (0, 0, False)
     if shop["type"] == "breaks":
         print(f"  [{shop['key']}] type=breaks (breaker, hors périmètre sealed) → skip"); return (0, 0, False)
     if shop["type"] != "shopify_json":
@@ -432,7 +444,10 @@ def sold_confidence(sku: dict) -> str | None:
 def market_ref(sku: dict) -> tuple[float | None, str | None]:
     """Référence de marché : sold si présent, sinon ask. Aucune des deux -> pas de référence."""
     if sku.get("market_sold_us") is not None: return float(sku["market_sold_us"]), "sold"
-    if sku.get("market_ask_us") is not None: return float(sku["market_ask_us"]), "ask"
+    # un ask sans provenance n'est pas une référence : on ne sait pas d'où il vient, donc on ne
+    # peut ni juger l'auto-sourçage ni le dater. Traité comme absent.
+    if sku.get("market_ask_us") is not None and (sku.get("market_ask_from") or []):
+        return float(sku["market_ask_us"]), "ask"
     return None, None
 
 def line_memory(conn, sku_id, shop, url, vt, upto):

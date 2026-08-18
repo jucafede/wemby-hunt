@@ -1,7 +1,7 @@
 → EH Cards & Collectibles (https://ehcards.com)  [trust=trusted]
   947 produits bruts, 8 rattachés à un SKU
 → Collector Store LLC (https://collectorstore.com)  [trust=trusted]
-    collections : 4/123 retenues (filtre 'basketball|\\bnba\\b|hoops|prizm|mosaic|optic|select|phoenix|contenders|court.kings|revolution|premium.stock')
+    collections : 4/124 retenues (filtre 'basketball|\\bnba\\b|hoops|prizm|mosaic|optic|select|phoenix|contenders|court.kings|revolution|premium.stock')
   750 produits bruts, 3 rattachés à un SKU
 → Hidden Gems Card Shop (https://www.hiddengemscardshop.com)  [trust=trusted]
   2734 produits bruts, 10 rattachés à un SKU
@@ -11,7 +11,7 @@
   [mojobreak] status=reject (qualifié sur données réelles → 0 sealed 2023-24) → skip
   0 produits bruts, 0 rattachés à un SKU
 → RbiCru7 Collectibles (https://rbicru7.com)  [trust=trusted]
-  12325 produits bruts, 9 rattachés à un SKU
+  12334 produits bruts, 9 rattachés à un SKU
 → Layton Sports Cards (https://laytonsportscards.com)  [trust=trusted]
   [layton] type=breaks (breaker, hors périmètre sealed) → skip
   0 produits bruts, 0 rattachés à un SKU
@@ -31,12 +31,12 @@
 → The Cardiacs (https://www.thecardiacs.com)  [trust=watch]
   5303 produits bruts, 3 rattachés à un SKU
 → Monmouth Cards (https://monmouthcards.com)  [trust=watch]
-  4980 produits bruts, 9 rattachés à un SKU
+  4979 produits bruts, 9 rattachés à un SKU
 → World Champion Sports Cards (https://www.worldchampionsportscards.org)  [trust=watch]
-  3852 produits bruts, 23 rattachés à un SKU
+  3869 produits bruts, 23 rattachés à un SKU
 → Superior Sports Investments (https://superiorsportsinvestments.com)  [trust=watch]
     collections : 8/84 retenues (filtre 'basketball|\\bnba\\b|hoops|prizm|mosaic|optic|select|phoenix|contenders|court.kings|revolution|premium.stock')
-  16323 produits bruts, 7 rattachés à un SKU
+  16324 produits bruts, 7 rattachés à un SKU
 → SJAY2K Trading Cards (https://www.sjay2k.com)  [trust=watch]
   617 produits bruts, 2 rattachés à un SKU
 → The Ballgame (https://theballgame.com)  [trust=watch]
@@ -733,5 +733,5 @@
   2023-24 Panini Donruss Optic Hobby Mega        $  250.00 superior            0.0%  SEUL_EN_STOCK
   2023-24 Panini Select H2                       $  620.00 sjay2k              0.0%  SEUL_EN_STOCK
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-08-18T18-30-03.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-08-18T18-49-33.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

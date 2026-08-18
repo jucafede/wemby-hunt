@@ -21,6 +21,8 @@ shops:
     base_url: https://collectorstore.com
     type: shopify_json
     trust: trusted
+    paginate: collections
+    collections_match: "basketball|\\bnba\\b|hoops|prizm|mosaic|optic|select|phoenix|contenders|court.kings|revolution|premium.stock"
     notes: "Missouri. Phoenix : anciens prix observés 22,99 / 29,99 $, OOS au 17/08 — ne PAS utiliser comme benchmark live. WATCHLIST restock. 99 % de singles gradés."
   - name: Hidden Gems Card Shop
     key: hiddengems
@@ -87,6 +89,6 @@ shops:
   - {key: worldchampion, name: World Champion Sports Cards, base_url: https://www.worldchampionsportscards.org, type: shopify_json, trust: watch, notes: "Select Mega 23-24 vu 75 $ puis OOS (17/08) — watchlist restock.", status: active}
   - {key: superior, name: Superior Sports Investments, base_url: https://superiorsportsinvestments.com, type: shopify_json, trust: watch, paginate: collections, collections_match: "basketball|\\bnba\\b|hoops|prizm|mosaic|optic|select|phoenix|contenders|court.kings|revolution|premium.stock", notes: "Optic Mega 23-24 listé (fiche 404 le 17/08). 25 000 pile au crawl du 17/08 = plafond ~100 pages de /products.json → pagination par collections.", status: watch}
   - {key: sjay2k, name: SJAY2K Trading Cards, base_url: https://www.sjay2k.com, type: shopify_json, trust: watch, notes: "Optic Mega 23-24 listé.", status: watch}
-  - {key: ballgame, name: The Ballgame, base_url: https://theballgame.com, type: shopify_json, trust: watch, notes: "Optic Mega 23-24 backorder.", status: active}
+  - {key: ballgame, name: The Ballgame, base_url: https://theballgame.com, type: shopify_json, trust: watch, notes: "Optic Mega 23-24 backorder. PAS de filtre collections : ses collections basket (basketball-cards, nba-clearance, nba-tees, phoenix-suns) ne contiennent pas le sealed — testé 18/08, 21 matchs perdus sur 21.", status: active}
   - {key: bleecker, name: Bleecker Trading, base_url: https://bleeckertrading.com, type: shopify_json, trust: watch, notes: "NYC. Prix retail+.", status: active}
   - {key: cbhobby, name: CB Hobby, base_url: https://cbhobby.com, type: shopify_json, trust: watch, notes: "Phoenix 23-24 backorder.", status: watch}

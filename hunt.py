@@ -442,7 +442,8 @@ def line_memory(conn, sku_id, shop, url, vt, upto):
     if not rows: return None
     prices = [r[1] for r in rows]
     m = {"first_seen": rows[0][0], "last_seen": rows[-1][0], "n_obs": len(rows),
-         "min_price_ever": min(prices), "price_history": [(r[0], r[1]) for r in rows],
+         "min_price_ever": min(prices), "min_price_before": min(prices[:-1]) if len(prices) > 1 else None,
+         "price_history": [(r[0], r[1]) for r in rows],
          "prev_price": prices[-2] if len(rows) > 1 else None,
          "days_oos_before_return": None, "days_in_stock_same_price": None}
     def days(a, b):
@@ -473,7 +474,10 @@ def compute_badges(o, mem, sku, trust_level, in_stock_lines):
 
     if mem and mem.get("days_oos_before_return") is not None and available:
         trig.append(f"RESTOCK +{mem['days_oos_before_return']}j")
-    if mem and available and mem["n_obs"] >= 3 and price <= mem["min_price_ever"] + 1e-9:
+    # NEW_LOW est un événement, pas un état : un prix stable observé trois fois n'est pas un
+    # nouveau plus-bas. Constaté le 18/08 — 11 des 15 lignes HOT NOW étaient des prix inchangés.
+    if (mem and available and mem["n_obs"] >= 3 and mem["min_price_before"] is not None
+            and price < mem["min_price_before"] - 1e-9):
         trig.append("NEW_LOW")
     if mem and mem.get("prev_price") and price < mem["prev_price"] - 1e-9:
         trig.append(f"PRICE_DROP -{round((mem['prev_price'] - price) / mem['prev_price'] * 100)}%")
@@ -503,7 +507,10 @@ def compute_badges(o, mem, sku, trust_level, in_stock_lines):
 def hot_now(entries, limit=15):
     """Lignes EN STOCK avec >=1 déclencheur ET une référence de marché. Triées par nombre de
     déclencheurs puis par écart croissant. Une ligne sans référence n'y entre jamais."""
-    elig = [e for e in entries if e["available"] and e["triggers"] and e["ref"] is not None]
+    # invariant : une ligne plus chère que la référence de marché n'est pas une opportunité,
+    # quel que soit le déclencheur qui l'accompagne.
+    elig = [e for e in entries if e["available"] and e["triggers"] and e["ref"] is not None
+            and e["gap"] is not None and e["gap"] <= 0]
     elig.sort(key=lambda e: (-len(e["triggers"]), e["gap"] if e["gap"] is not None else 0))
     return elig[:limit]
 

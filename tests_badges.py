@@ -50,10 +50,20 @@ check("mémoire : prix précédent", mem["prev_price"], 40.0)
 sku = {"market_sold_us": 50, "market_sold_n": 6, "market_sold_window_days": 30, "wemby_rc": True}
 tg, dsc, gap, ref, kind = hunt.compute_badges(O("sh", 30.0, True), mem, sku, "trusted", [O("sh", 30.0, True)])
 check("RESTOCK déclenché après rupture", any(t.startswith("RESTOCK") for t in tg), True)
-check("NEW_LOW déclenché", "NEW_LOW" in tg, True)
+check("NEW_LOW déclenché sur baisse réelle", "NEW_LOW" in tg, True)
 check("PRICE_DROP déclenché", any(t.startswith("PRICE_DROP") for t in tg), True)
 check("STRONG_DEAL à -40% vs sold", any(t.startswith("STRONG_DEAL") for t in tg), True)
 check("RC_YEAR est un descriptif, pas un déclencheur", "RC_YEAR" in dsc and "RC_YEAR" not in tg, True)
+
+# prix stable observé 3 fois -> PAS de NEW_LOW
+for sa, pr in [("2026-02-01T00:00:00", 20.0), ("2026-02-02T00:00:00", 20.0), ("2026-02-03T00:00:00", 20.0)]:
+    conn.execute("INSERT INTO observations (sku_id,shop,title,variant_title,price,available,url,match_score,seen_at) "
+                 "VALUES ('SKU2','sh','t','',?,1,'u2',1.0,?)", (pr, sa))
+conn.commit()
+mem2 = hunt.line_memory(conn, "SKU2", "sh", "u2", "", "2026-02-03T00:00:00")
+tgs, _, _, _, _ = hunt.compute_badges(O("sh", 20.0, True), mem2, {"market_sold_us": 20, "market_sold_n": 6,
+                                     "market_sold_window_days": 30}, "trusted", [O("sh", 20.0, True), O("x", 21.0, True)])
+check("prix stable 3x -> pas de NEW_LOW", "NEW_LOW" in tgs, False)
 
 # ---- seul en stock : sous la référence -> déclencheur ; très au-dessus -> descriptif
 one = [O("sh", 30.0, True)]
@@ -70,6 +80,7 @@ ok    = {"available": True, "triggers": ["DEAL -12%"], "gap": -12.0, "ref": 50}
 over  = {"available": True, "triggers": ["RESTOCK +3j"], "gap": 8.0, "ref": 50}
 oos   = {"available": False, "triggers": ["NEW_LOW"], "gap": -30.0, "ref": 50}
 hn = hunt.hot_now([noref, ok, over, oos])
+check("INVARIANT : ligne au-dessus de la référence exclue de HOT NOW", over not in hn, True)
 check("ligne sans référence exclue de HOT NOW", noref not in hn, True)
 check("ligne hors stock exclue de HOT NOW", oos not in hn, True)
 check("HOT NOW <= 15", len(hunt.hot_now([dict(ok) for _ in range(40)])) <= 15, True)

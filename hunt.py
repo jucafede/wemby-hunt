@@ -576,6 +576,16 @@ def report(cat: dict, conn: sqlite3.Connection, seen_at: str | None, trust: dict
                 in_stock = [o for o in obs if o[4]]
                 # high_risk : observé et affiché, mais jamais retenu comme BEST → ne peut pas déclencher un GO
                 best = next((o for o in in_stock if trust_of(o[1], trust) != "high_risk"), None)
+                conf = sold_confidence(s)
+                entries = []
+                for o in obs:
+                    mem = line_memory(conn, sid, o[1], o[5], o[8], o[7])
+                    tg, dsc, gap, ref, kind = compute_badges(o, mem, s, trust_of(o[1], trust), in_stock)
+                    entries.append({"o": o, "available": bool(o[4]), "triggers": tg, "descriptors": dsc,
+                                    "gap": gap, "ref": ref, "kind": kind, "mem": mem,
+                                    "comp": (o[9] or "EXACT"), "sku": s, "sid": sid})
+                all_entries.extend(entries)
+                by_line = {id(e["o"]): e for e in entries}
                 # status du SKU : le matching tourne sur TOUS les statuts, la classification GO/NO_GO
                 # ne concerne que les ACTIVE. WATCH/CANDIDATE sont observés, jamais recommandés à l'achat.
                 sk_st = s.get("status", "ACTIVE")
@@ -589,16 +599,6 @@ def report(cat: dict, conn: sqlite3.Connection, seen_at: str | None, trust: dict
                 else: status, icon = ("NO_STOCK" if obs else "NO_DATA"), "—"
                 lic = "" if s.get("licensed", True) is True else f"  ⚑ {s.get('licensed')}"
                 bpc = s.get("boxes_per_case")
-                conf = sold_confidence(s)
-                entries = []
-                for o in obs:
-                    mem = line_memory(conn, sid, o[1], o[5], o[8], o[7])
-                    tg, dsc, gap, ref, kind = compute_badges(o, mem, s, trust_of(o[1], trust), in_stock)
-                    entries.append({"o": o, "available": bool(o[4]), "triggers": tg, "descriptors": dsc,
-                                    "gap": gap, "ref": ref, "kind": kind, "mem": mem,
-                                    "comp": (o[9] or "EXACT"), "sku": s, "sid": sid})
-                all_entries.extend(entries)
-                by_line = {id(e["o"]): e for e in entries}
                 print(f"\n{icon} {status}   {sku_label(s)}   [{sid}]{lic}")
                 rs = {id(r[0]) for r in restocks}
                 for i, o in enumerate(obs[:6], 1):

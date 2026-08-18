@@ -165,7 +165,7 @@ def write_outputs(cands: list[dict], queried: int, engine: str, stamp: str):
         h.append("<table><tr><th>Domaine</th><th>Shopify</th><th>Échantillon</th>"
                  "<th>Basket</th><th>Sealed 23-24</th><th>Matchés</th><th>dont en stock</th><th>Vu pour</th></tr>")
         for c in cands:
-            h.append(f"<tr><td><a href='{c.get('base_url', 'https://'+c['domain'])}'>{c['domain']}</a></td>"
+            h.append(f"<tr><td><a href='{c.get('base_url', 'https://'+c['domain'])}' target=\"_blank\" rel=\"noopener noreferrer\">{c['domain']}</a></td>"
                      f"<td>{'oui' if c['shopify'] else 'non'}</td><td>{c['products_sampled']}</td>"
                      f"<td>{c['basketball']}</td><td>{c['sealed_2023_24']}</td><td>{c['matched']}</td>"
                      f"<td>{c.get('matched_in_stock', 0)}</td>"

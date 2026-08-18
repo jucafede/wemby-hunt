@@ -74,6 +74,19 @@ tg2, d2, *_ = hunt.compute_badges(hi[0], None, {"market_ask_us": None, "market_s
                                                 "market_sold_n": 6, "market_sold_window_days": 30}, "trusted", hi)
 check("seul en stock à +83% -> ONLY_STOCK_SEEN (descriptif)", "ONLY_STOCK_SEEN" in d2 and not tg2, True)
 
+# référence auto-sourcée : seul en stock au prix qu'on a soi-même relevé chez ce shop
+selfsrc = [O("superior", 75.0, True)]
+tg3, d3, *_ = hunt.compute_badges(selfsrc[0], None,
+    {"market_ask_us": 75, "market_ask_from": ["superior"], "market_sold_us": None}, "watch", selfsrc)
+check("ask relevé chez ce seul shop -> ONLY_STOCK_SEEN, pas déclencheur",
+      "ONLY_STOCK_SEEN" in d3 and "SEUL_EN_STOCK" not in tg3, True)
+other = [O("rbicru7", 75.0, True)]
+tg4, _, *_ = hunt.compute_badges(other[0], None,
+    {"market_ask_us": 75, "market_ask_from": ["superior"], "market_sold_us": None}, "trusted", other)
+check("ask relevé ailleurs -> SEUL_EN_STOCK reste déclencheur", "SEUL_EN_STOCK" in tg4, True)
+check("sold externe n'est jamais auto-sourcé",
+      hunt.ref_self_sourced({"market_ask_from": ["superior"]}, "superior", "sold"), False)
+
 # ---- HOT NOW : invariants
 noref = {"available": True, "triggers": ["NEW_LOW"], "gap": None, "ref": None}
 ok    = {"available": True, "triggers": ["DEAL -12%"], "gap": -12.0, "ref": 50}

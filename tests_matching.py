@@ -70,12 +70,17 @@ POS = [
  ("2023-24 Panini Prizm Basketball Hanger Box (Orange Ice Prizm)","PRIZM_HANGER"),
  ("2023-24 Panini Contenders Basketball Hobby Box","CONTENDERS_HOBBY"),
  ("2023-24 Panini NBA Hoops Basketball 6-Pack Blaster Box","HOOPS_BLASTER"),
+ # G — EuroLeague : identité produit distincte, pas un Prizm NBA moins cher
+ ("2023-24 Panini Prizm Turkish Airlines EuroLeague Basketball Blaster Box","PRIZM_EUROLEAGUE_BLASTER"),
+ ("2023-24 Panini Prizm Turkish Airlines EuroLeague Basketball Hobby Box","PRIZM_EUROLEAGUE_HOBBY"),
+ ("2023-24 Panini Prizm Turkish Airlines Euroleague Basketball Blaster Box","PRIZM_EUROLEAGUE_BLASTER"),
  ("2023-24 Panini Select Basketball Mega 20-Box Case (Green Shock Prizm)","SELECT_MEGA_CASE"),
  ("2023-24 Panini Mosaic Fast Break Basketball Hobby 20-Box Case","MOSAIC_FAST_BREAK_CASE"),
  ("2023-24 Panini Mosaic Basketball Fast Brk Box","MOSAIC_FAST_BREAK"),
  ("2023-24 Panini Select BasketballMega Box (Red/ Purple Cracked Ice)","SELECT_MEGA"),
 ]
 NEG = [
+ ("2023-24 Panini Prizm EuroLeague Soccer Blaster Box","EuroLeague mais pas basket -> aucun SKU"),
  ("2023/24 Panini Contenders Optic Basketball Hobby, Box","Contenders Optic ≠ Optic ni Contenders"),
  ("2023/24 Panini Prizm Deca Basketball Hobby Box","Deca ≠ Prizm"),
  ("2023-24 Panini Prizm Monopoly 6-Pack Basketball Blaster Box","Monopoly ≠ Prizm"),
@@ -92,8 +97,6 @@ NEG = [
  ("2023-24 Panini Select Basketball Tin","Tin ≠ Blaster/Mega"),
  ("2023-24 Panini Mosaic Basketball Fat Pack","Fat Pack ≠ Box"),
  ("2023-24 Panini Prizm Basketball Cello Multi-Pack","Cello ≠ Box"),
- ("2023-24 Panini Prizm Turkish Airlines EuroLeague Basketball Blaster Box","EuroLeague CamelCase ≠ NBA (faux GO du 18/08)"),
- ("2023-24 Panini Prizm Turkish Airlines Euroleague Basketball Blaster Box","euroleague en un mot ≠ NBA"),
  ("2023 Panini Donruss FootBall Blaster Box","FootBall CamelCase ≠ basket"),
 ]
 fails = []

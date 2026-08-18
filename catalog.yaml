@@ -918,3 +918,42 @@ skus:
     buy_below_usd: null
     watch_below_usd: null
     url_proof: ""
+  - id: PANINI_2023-24_PRIZM_EUROLEAGUE_BLASTER
+    season: "2023-24"
+    manufacturer: Panini
+    set: Prizm
+    aliases: ["Turkish Airlines EuroLeague"]
+    league: EuroLeague
+    format: Blaster
+    configuration: null
+    tier: retail
+    status: ACTIVE
+    licensed: euroleague
+    wemby_rc: false
+    personal_interest: 4
+    market_ask_us: 25.00
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_checked_at: null
+    market_source: "ask: awesome 14,75 / worldchampion 25,00 / superior 45,00 (18/08) — sold à relever"
+    buy_below_usd: 20.00
+    watch_below_usd: 25.00
+    url_proof: "https://theawesomecardshop.com/products/2023-24-panini-prizm-turkish-airlines-euroleague-basketball-blaster-box"
+  - id: PANINI_2023-24_PRIZM_EUROLEAGUE_HOBBY
+    season: "2023-24"
+    manufacturer: Panini
+    set: Prizm
+    aliases: ["Turkish Airlines EuroLeague"]
+    league: EuroLeague
+    format: Hobby
+    configuration: null
+    tier: hobby
+    status: WATCH
+    licensed: euroleague
+    wemby_rc: false
+    personal_interest: 4
+    market_ask_us: null
+    market_sold_us: null
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: ""

@@ -180,9 +180,10 @@ def db() -> sqlite3.Connection:
     return c
 
 # ---------------------------------------------------------------- collecte Shopify
-def shopify_by_collections(base: str, session: requests.Session) -> list[dict]:
+def shopify_by_collections(base: str, session: requests.Session, only: str | None = None) -> list[dict]:
     """Contourne le plafond de ~100 pages de /products.json : on liste les collections puis on pagine
-    chacune. Dédoublonné par product id — un produit présent dans 3 collections ne compte qu'une fois."""
+    chacune. Dédoublonné par product id — un produit présent dans 3 collections ne compte qu'une fois.
+    `only` = regex sur handle+titre pour ne garder que les collections utiles (ex. basket) et tenir le budget temps."""
     seen, out = set(), []
     cols, page = [], 1
     while True:
@@ -194,6 +195,11 @@ def shopify_by_collections(base: str, session: requests.Session) -> list[dict]:
         cols.extend(items)
         if len(items) < 250: break
         page += 1
+    if only:
+        rx = re.compile(only, re.I)
+        kept = [c for c in cols if rx.search(f"{c.get('handle','')} {c.get('title','')}")]
+        print(f"    collections : {len(kept)}/{len(cols)} retenues (filtre {only!r})")
+        cols = kept
     for col in cols:
         handle = col.get("handle")
         if not handle: continue
@@ -238,7 +244,10 @@ def collect_shop(shop: dict, skus: list[dict], conn: sqlite3.Connection, seen_at
     if shop["type"] != "shopify_json":
         print(f"  [{shop['key']}] type={shop['type']} non géré en v1 → skip"); return (0, 0)
     try:
-        prods = (shopify_by_collections if shop.get("paginate") == "collections" else shopify_products)(shop["base_url"], s)
+        if shop.get("paginate") == "collections":
+            prods = shopify_by_collections(shop["base_url"], s, shop.get("collections_match"))
+        else:
+            prods = shopify_products(shop["base_url"], s)
     except Exception as e:
         print(f"  [{shop['key']}] erreur collecte: {e}"); return (0, 0)
     n_raw = n_obs = 0

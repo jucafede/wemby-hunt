@@ -27,6 +27,14 @@ RATE_S = 1.0  # 1 requête / seconde par shop
 
 # ---------------------------------------------------------------- normalisation
 FORMATS = [
+    # Pack en tête : une variante Shopify ", Pack" ou un "4-Card Pack" ne doit JAMAIS être lu comme une boîte.
+    # Le (?<![\w-]) protège "6-Pack Blaster" / "24-Pack Retail Box", où "pack" décrit le contenu de la boîte,
+    # pas le produit. Les packs nommés (fat/value/multi) gardent leurs entrées dédiées, testées plus bas.
+    ("Fat Pack", r"fat[- ]?pack"),
+    ("Cello", r"\bcello\b|multi[- ]?pack"),
+    ("Value Box", r"value\s*box"),
+    ("Retail Box", r"\bretail\s*box\b|24[- ]?pack"),
+    ("Pack", r"(?<![\w-])packs?\b"),
     ("Case", r"\bcase\b|\d+\s*-?\s*box\s*case"),
     ("FOTL", r"first\s*off\s*the\s*line|\bfotl\b"),
     ("Fast Break", r"fast\s*break"),
@@ -41,12 +49,18 @@ FORMATS = [
     ("Mega", r"\bmega\b"),
     ("Blaster", r"\bblaster\b"),
     ("Hanger", r"\bhanger\b"),
-    ("Cello", r"\bcello\b|multi[- ]?pack"),
-    ("Fat Pack", r"fat[- ]?pack"),
-    ("Value Box", r"value\s*box"),
-    ("Retail Box", r"\bretail\s*box\b|24[- ]?pack"),
-    ("Pack", r"\bpack\b(?!s)"),
 ]
+# Exclusivités retailer : un titre qui en porte une ne peut matcher QU'UN SKU déclarant cette configuration.
+# Décision 17/08 : Walmart Reactive Blue/Pink = le Mega standard ; Target Reactive Yellow/Green = SKU distinct.
+EXCLUSIVES = [
+    ("Target", r"\btarget\b|reactive\s*(yellow|green)|yellow\s*/\s*green"),
+    ("Fanatics", r"\bfanatics\b"),
+]
+
+def parse_exclusive(t: str) -> str | None:
+    for name, rx in EXCLUSIVES:
+        if re.search(rx, t): return name
+    return None
 SEASON_RE = re.compile(r"(20\d{2})\s*[-/–]\s*(\d{2,4})|(?<!\d)(\d{2})\s*[-/–]\s*(\d{2})(?!\d)")
 SPORT_HINTS = {"basketball": ["basketball", "nba", "bball", "hoops"], "not_basketball": ["football", "nfl", "baseball", "mlb", "hockey", "nhl", "soccer", "wnba", "pokemon", "ufc", "wrestling", "f1", "euroleague", "golf", "nascar", "racing", "wwe", "tennis", "mma", "boxing", "college", "draft picks", "world cup", "premier league"]}
 SEALED_RE = re.compile(r"\b(box|boxes|blaster|mega|hobby|case|pack|packs|tin|display|bundle|lot)\b")
@@ -94,6 +108,7 @@ class Match:
 def match_title(title: str, skus: list[dict]) -> Match:
     t = norm(title)
     season, fmt, sport, cfg = parse_season(t), parse_format(t), parse_sport(t), parse_config(t)
+    excl = parse_exclusive(t)
     cands = []
     # likely_single : signaux forts de carte individuelle SANS signal sealed → ignoré (pas même en REVIEW).
     # Un titre sans "Box" mais sans signal single (ex. "2023-24 Panini Phoenix Basketball") reste candidat → REVIEW.
@@ -111,8 +126,15 @@ def match_title(title: str, skus: list[dict]) -> Match:
         if s["set"].lower() == "donruss optic" and ("optic" not in t or "contenders" in t or "recon" in t): continue
         if s["set"].lower() == "contenders" and "optic" in t: continue   # "Contenders Optic" est une autre gamme
         if s["set"].lower() == "select" and ("select racing" in t or "nascar" in t): continue
-        # sous-gammes explicites qui ne sont PAS le SKU canonique → jamais absorbées
-        if any(k in t for k in ("1st off the line", "fotl", "asia", "tmall", "cello", "multi-pack", "value pack")): continue
+        # FOTL / International (asia, tmall) sont désormais des FORMATS détectés : le garde-fou "mauvais format
+        # = éliminé" suffit, comme pour Hanger. Ne restent ici que les sous-gammes sans format dédié.
+        if any(k in t for k in ("cello", "multi-pack", "value pack")): continue
+        # exclusivité retailer : Target/Fanatics ne peut matcher qu'un SKU portant cette configuration,
+        # et un SKU d'exclusivité ne peut pas absorber un titre standard. Sinon → pas de candidat → REVIEW.
+        sku_cfg = (s.get("configuration") or "")
+        if excl:
+            if excl.lower() not in sku_cfg.lower(): continue
+        elif parse_exclusive(sku_cfg.lower()): continue
         sc += 0.40                                            # gamme
         if season == s["season"]: sc += 0.30                  # saison
         elif season is None: sc += 0.05

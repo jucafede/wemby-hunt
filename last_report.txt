@@ -1,20 +1,20 @@
 → EH Cards & Collectibles (https://ehcards.com)  [trust=trusted]
   947 produits bruts, 5 rattachés à un SKU
 → Collector Store LLC (https://collectorstore.com)  [trust=trusted]
-  20351 produits bruts, 2 rattachés à un SKU
+  20352 produits bruts, 2 rattachés à un SKU
 → Hidden Gems Card Shop (https://www.hiddengemscardshop.com)  [trust=trusted]
   2734 produits bruts, 6 rattachés à un SKU
 → The Awesome Card Shop (https://theawesomecardshop.com)  [trust=trusted]
   7266 produits bruts, 14 rattachés à un SKU
 → MojoBreak Shop (https://mojobreakshop.com)  [trust=trusted]
-  1502 produits bruts, 0 rattachés à un SKU
+  1500 produits bruts, 0 rattachés à un SKU
 → RbiCru7 Collectibles (https://rbicru7.com)  [trust=trusted]
   12266 produits bruts, 7 rattachés à un SKU
 → Layton Sports Cards (https://laytonsportscards.com)  [trust=trusted]
   [layton] type=breaks (breaker, hors périmètre sealed) → skip
   0 produits bruts, 0 rattachés à un SKU
 → Jaspy's (https://www.jaspys.com)  [trust=trusted]
-  62 produits bruts, 0 rattachés à un SKU
+  59 produits bruts, 0 rattachés à un SKU
 → DA Card World (https://www.dacardworld.com)  [trust=trusted]
   [dacw] type=html non géré en v1 → skip
   0 produits bruts, 0 rattachés à un SKU
@@ -27,19 +27,20 @@
 → The Cardiacs (https://www.thecardiacs.com)  [trust=watch]
   5278 produits bruts, 2 rattachés à un SKU
 → Monmouth Cards (https://monmouthcards.com)  [trust=watch]
-  5037 produits bruts, 6 rattachés à un SKU
+  5002 produits bruts, 6 rattachés à un SKU
 → World Champion Sports Cards (https://www.worldchampionsportscards.org)  [trust=watch]
   3830 produits bruts, 12 rattachés à un SKU
 → Superior Sports Investments (https://superiorsportsinvestments.com)  [trust=watch]
   25000 produits bruts, 2 rattachés à un SKU
 → SJAY2K Trading Cards (https://www.sjay2k.com)  [trust=watch]
-  610 produits bruts, 0 rattachés à un SKU
+  605 produits bruts, 0 rattachés à un SKU
 → The Ballgame (https://theballgame.com)  [trust=watch]
   13773 produits bruts, 10 rattachés à un SKU
 → Bleecker Trading (https://bleeckertrading.com)  [trust=watch]
   2182 produits bruts, 18 rattachés à un SKU
 → CB Hobby (https://cbhobby.com)  [trust=watch]
-  694 produits bruts, 1 rattachés à un SKU
+  660 produits bruts, 0 rattachés à un SKU
+(1 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
 
 ========================================================================
   RETAIL
@@ -51,7 +52,7 @@
    3. sportscardjunction $   25.00  SOLD OUT  landed≈€  38.65 (8-box bundle)  (score 1.00)  👀 VERIFY
    4. cardiacs         $   29.95  SOLD OUT  landed≈€  43.77 (8-box bundle)  (score 1.00)  👀 VERIFY
    5. bleecker         $   30.00  SOLD OUT  landed≈€  43.82 (8-box bundle)  (score 1.00)  👀 VERIFY
-   6. cbhobby          $   30.00  SOLD OUT  landed≈€  43.82 (8-box bundle)  (score 1.00)  👀 VERIFY
+   6. awesome          $   35.00  SOLD OUT  landed≈€  48.99 (8-box bundle)  (score 1.00)
    ask $34.95   sold $28.50   | buy ≤ $27.00 | watch ≤ $31.00 | EU €49.99
    BEST → ehcards  https://ehcards.com/products/2023-24-panini-phoenix-basketball-6-pack-blaster-box
 
@@ -239,5 +240,5 @@
   [sjay2k] 2012 Select NRL Champions Collector Cards Hobby Box  $100.00 IN  → [["PANINI_2023-24_SELECT_HOBBY", 0.7]]
   [sjay2k] 2026 Select AFL Footy Stars Blaster Box  $50.00 IN  → [["PANINI_2023-24_SELECT_BLASTER", 0.7]]
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-08-18T01-42-39.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-08-18T06-56-44.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

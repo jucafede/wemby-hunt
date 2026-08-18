@@ -201,8 +201,14 @@ def shopify_by_collections(base: str, session: requests.Session, only: str | Non
     if only:
         rx = re.compile(only, re.I)
         kept = [c for c in cols if rx.search(f"{c.get('handle','')} {c.get('title','')}")]
-        print(f"    collections : {len(kept)}/{len(cols)} retenues (filtre {only!r})")
-        cols = kept
+        if kept:
+            print(f"    collections : {len(kept)}/{len(cols)} retenues (filtre {only!r})")
+            cols = kept
+        else:
+            # aucune collection basket : le shop n'expose pas /collections.json, ou nomme ses collections
+            # autrement. On ne rate PAS le shop — retour à la pagination complète, et c'est écrit noir sur blanc.
+            print(f"    ⚠️  FALLBACK pagination complète : 0/{len(cols)} collection ne matche {only!r}")
+            return shopify_products(base, session)
     for col in cols:
         handle = col.get("handle")
         if not handle: continue

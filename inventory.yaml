@@ -1,0 +1,9 @@
+# Stock physique détenu. NON LU par le moteur pour l'instant — schéma posé pour V2.1+.
+# Chaque ligne : ce que tu as réellement acheté, à quel coût rendu, et où ça en est.
+#   sku: identifiant du catalogue
+#   qty: nombre de boîtes
+#   unit_cost_landed_eur: coût rendu France réel par boîte (pas l'estimation du moteur)
+#   source: clé du shop dans sources.yaml
+#   date: date d'achat (AAAA-MM-JJ)
+#   status: ordered | in_transit | received | listed | sold
+items: []

@@ -106,6 +106,33 @@ def sealed_product(t: str) -> bool | None:
     if single: return False
     return container or None
 
+# ---------------------------------------------------------------- H/I : EXACT_COMP et quantité
+# Jetons de configuration : un titre qui en porte un ne peut matcher QU'UN SKU qui le déclare,
+# et réciproquement. Vaut pour toutes les familles, pas seulement Topps.
+EDITION_TOKENS = ("sapphire", "monster", "first day", "cactus jack", "china", "gravity feed")
+
+QTY_RE = re.compile(r"(\d{1,3})\s*-?\s*box\b")
+LOT_RE = re.compile(r"\blot\b|\bbundle\b|\bcase\b|gravity\s*feed|\bdisplay\b")
+
+def parse_quantity(t: str, sku: dict | None = None) -> int:
+    """Nombre de boîtes derrière un prix. '6-box lot' -> 6. 'case' sans nombre -> boxes_per_case
+    du SKU si connu. Défaut 1. Le prix affiché reste le TOTAL : l'unitaire en est dérivé, jamais
+    l'inverse — on ne doit ni annoncer une boîte à 300 $ ni un lot entier à 50 $."""
+    m = QTY_RE.search(t)
+    if m:
+        n = int(m.group(1))
+        if 1 < n <= 200: return n
+    if LOT_RE.search(t) and sku and sku.get("boxes_per_case"):
+        return int(sku["boxes_per_case"])
+    return 1
+
+def exact_comp_key(sku_id: str, t: str, sku: dict | None = None) -> str:
+    """Cloison de comparabilité commerciale. SOLD, LIVE MARKET, cheapest, historique et signaux
+    ne doivent JAMAIS traverser cette clé. Deux offres de clés différentes ne se comparent pas."""
+    qty = parse_quantity(t, sku)
+    ed = "+".join(tok.replace(" ", "") for tok in EDITION_TOKENS if tok in t) or "std"
+    return f"{sku_id}|{ed}|x{qty}"
+
 def comp_type_of(title_norm: str, sku: dict) -> str:
     """EXACT = même configuration que le SKU. RELATED = même SKU, autre configuration reconnue."""
     if sku.get("configuration"): return "EXACT"
@@ -197,11 +224,9 @@ def match_title(title: str, skus: list[dict]) -> Match:
         # Éditions spéciales : Sapphire, Monster, First Day Issue, Cactus Jack sont des identités
         # à part dans TOUTES les familles Topps/Bowman. Titre et SKU doivent concorder, sinon un
         # "Bowman Sapphire Hobby Box" à 2 500 $ finit sur le Hobby standard (constaté le 20/08).
-        if s["manufacturer"].lower() == "topps":
-            ident_ed = (s["id"] + " " + (s.get("configuration") or "") + " "
-                        + (s.get("configuration_note") or "")).lower()
-            if any((tok in t) != (tok in ident_ed)
-                   for tok in ("sapphire", "monster", "first day", "cactus jack")): continue
+        ident_ed = (s["id"] + " " + (s.get("configuration") or "") + " "
+                    + (s.get("configuration_note") or "")).lower()
+        if any((tok in t) != (tok in ident_ed) for tok in EDITION_TOKENS): continue
         if s["set"].lower() == "bowman":
             # la famille Bowman Basketball ne couvre PAS les sous-gammes universitaires ni les
             # déclinaisons Chrome/Best/1st Edition, qui sont d'autres produits.
@@ -281,7 +306,8 @@ def db() -> sqlite3.Connection:
     """)
     # migration douce : colonne matcher_version si absente
     cols = [r[1] for r in c.execute("PRAGMA table_info(observations)")]
-    for col in ("matcher_version TEXT", "image_url TEXT", "comp_type TEXT"):
+    for col in ("matcher_version TEXT", "image_url TEXT", "comp_type TEXT",
+                "quantity INTEGER", "unit_price REAL", "exact_comp_key TEXT", "sealed INTEGER"):
         if col.split()[0] not in cols:
             c.execute(f"ALTER TABLE observations ADD COLUMN {col}")
     c.executescript("""
@@ -418,9 +444,15 @@ def collect_shop(shop: dict, skus: list[dict], conn: sqlite3.Connection, seen_at
             n_raw += 1
             if m.sku_id:
                 sku_obj = next((x for x in skus if x["id"] == m.sku_id), {})
-                ct = comp_type_of(norm(full), sku_obj)
-                conn.execute("INSERT OR REPLACE INTO observations (sku_id,shop,title,variant_title,price,available,url,match_score,seen_at,matcher_version,image_url,comp_type) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)",
-                    (m.sku_id, shop["key"], full, vt_clean, price, available, url, m.score, seen_at, MATCHER_VERSION, image_url, ct))
+                tn = norm(full)
+                ct = comp_type_of(tn, sku_obj)
+                qty = parse_quantity(tn, sku_obj)
+                # le prix collecté est TOUJOURS le total de l'offre ; l'unitaire en dérive
+                unit = round(price / qty, 2) if qty else price
+                conn.execute("INSERT OR REPLACE INTO observations (sku_id,shop,title,variant_title,price,available,url,match_score,seen_at,matcher_version,image_url,comp_type,quantity,unit_price,exact_comp_key,sealed) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                    (m.sku_id, shop["key"], full, vt_clean, price, available, url, m.score, seen_at,
+                     MATCHER_VERSION, image_url, ct, qty, unit, exact_comp_key(m.sku_id, tn, sku_obj),
+                     1 if sealed_product(tn) else 0))
                 n_obs += 1
     conn.execute("INSERT OR REPLACE INTO crawl_runs VALUES (?,?,?,?)",
                  (shop["key"], seen_at, 1 if partial else 0, n_raw))
@@ -617,7 +649,7 @@ def report(cat: dict, conn: sqlite3.Connection, seen_at: str | None, trust: dict
         print(f"⚠️  [{sh}] passage {sa} PARTIAL ({nr} produits) — ignoré, référence = dernier passage complet")
     # dernière observation par (sku, shop, url, variante)
     rows = conn.execute("""
-      SELECT o.sku_id, o.shop, o.title, o.price, o.available, o.url, o.match_score, o.seen_at, o.variant_title, o.comp_type, o.image_url
+      SELECT o.sku_id, o.shop, o.title, o.price, o.available, o.url, o.match_score, o.seen_at, o.variant_title, o.comp_type, o.image_url, o.quantity, o.unit_price, o.exact_comp_key
       FROM observations o
       JOIN (SELECT sku_id, shop, url, variant_title, MAX(seen_at) AS m FROM observations GROUP BY sku_id, shop, url, variant_title) l
         ON l.sku_id=o.sku_id AND l.shop=o.shop AND l.url=o.url AND l.variant_title=o.variant_title AND l.m=o.seen_at
@@ -682,7 +714,8 @@ def report(cat: dict, conn: sqlite3.Connection, seen_at: str | None, trust: dict
                 for i, o in enumerate(obs[:6], 1):
                     stock = "IN STOCK" if o[4] else "SOLD OUT"
                     flag = "  🔔" if any(o is r for r,_ in restocks) else ""
-                    unit = f"  = ${o[3]/bpc:>7.2f}/boîte" if bpc else ""
+                    q = (o[11] if len(o) > 11 and o[11] else None) or bpc
+                    unit = f"  ({q} boîtes = ${o[3]/q:>7.2f}/boîte)" if q and q > 1 else ""
                     e = by_line[id(o)]
                     bl = "  ".join(["🔹" + x for x in e["triggers"]] + e["descriptors"])
                     print(f"   {i}. {o[1]:<16} ${o[3]:>8.2f}{unit}  {stock:<9} landed≈€{landed_eur(o[3]/bpc if bpc else o[3],cat):>7.2f}  (score {o[6]:.2f}){flag}")

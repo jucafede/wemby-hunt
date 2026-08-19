@@ -106,6 +106,9 @@ P2 = [
  ("2023-24 Panini Select BasketballMega Box (Red/ Purple Cracked Ice)","SELECT_MEGA"),
 ]
 NEG = [
+ # H — configurations distinctes
+ ("2023-24 Panini Prizm Basketball China Hobby Box","China Hobby n'est pas le Hobby standard"),
+ ("2023-24 Panini Prizm Basketball Hanger Pack","Hanger Pack n'est pas Hanger Box"),
  # G — sealed gate (P0) : aucun single ne peut alimenter la couche décisionnelle
  ("2025-26 Cooper Flagg Bowman Hobby Stars Rookie RC HS-3","single Cooper Flagg : pas une Bowman Hobby Box"),
  ("Trayce Jackson-Davis 2023-24 Panini Mosaic #PM-TJD Pictographs Mosaic Choice","single : pas une Mosaic Choice Box"),
@@ -168,5 +171,21 @@ for _t, _w in [("2025-26 Cooper Flagg Bowman Hobby Stars Rookie RC HS-3", False)
     _g = hunt.sealed_product(hunt.norm(_t))
     if _g is not _w: fails.append(("SEALED", _t, _w, _g))
     print(f"{'PASS' if _g is _w else 'FAIL'} sealed={str(_g):<5} {_t[:56]}")
-print(f"TOTAL AVEC SEALED : {len(POS)+len(P2)+len(NEG)+5} tests, {len(fails)} FAIL")
+# H/I — quantité et cloison de comparabilité
+_skmap = {s["id"]: s for s in skus}
+for _t, _sid, _wq in [("2023-24 Panini Mosaic Basketball 6-Box Lot", None, 6),
+                      ("2023-24 Panini Select Basketball Mega 20-Box Case (Green Shock Prizm)", "PANINI_2023-24_SELECT_MEGA_CASE", 20),
+                      ("2023-24 Panini Phoenix Basketball Blaster Box", None, 1),
+                      ("2025-26 Bowman Basketball Sealed Hobby Case 12 Boxes", "TOPPS_2025-26_BOWMAN_HOBBY_CASE", 12)]:
+    _q = hunt.parse_quantity(hunt.norm(_t), _skmap.get(_sid))
+    if _q != _wq: fails.append(("QTY", _t, _wq, _q))
+    print(f"{'PASS' if _q == _wq else 'FAIL'} qty={_q:<3} attendu {_wq:<3} {_t[:50]}")
+_k1 = hunt.exact_comp_key("X", hunt.norm("2023-24 Panini Select Basketball Mega Box"))
+_k6 = hunt.exact_comp_key("X", hunt.norm("2023-24 Panini Select Basketball Mega 6-Box Lot"))
+_ks = hunt.exact_comp_key("X", hunt.norm("2025-26 Topps Chrome Basketball Sapphire Edition Hobby Box"))
+for _n, _c in [("lot de 6 et boite unique ne partagent pas la cloison", _k1 != _k6),
+               ("Sapphire et standard ne partagent pas la cloison", _k1 != _ks)]:
+    if not _c: fails.append(("KEY", _n))
+    print(f"{'PASS' if _c else 'FAIL'} {_n}")
+print(f"TOTAL AVEC SEALED : {len(POS)+len(P2)+len(NEG)+11} tests, {len(fails)} FAIL")
 sys.exit(1 if fails else 0)

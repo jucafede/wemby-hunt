@@ -86,6 +86,26 @@ PARALLEL_HINTS = ["green shock", "cracked ice", "red ice", "blue ice", "green ic
                   "hyper orange", "hyper green", "ice prizm", "velocity", "shimmer", "pulsar",
                   "disco", "seismic", "glitter", "flash", "reactive", "fluorescent", "purple shock"]
 
+# ---------------------------------------------------------------- G : sealed gate (P0)
+# Aucune blacklist de joueurs : on s'appuie sur des caractéristiques STRUCTURELLES.
+# Un produit scellé nomme son contenant (box, case, tin, display, blaster, mega, hanger, pack).
+# Une carte à l'unité porte un identifiant de carte : code d'insert (HS-3, #AN-KAT), numérotation
+# (12/99), ou une note de grading. "Hobby Stars" contient "hobby" mais n'est pas une boîte.
+CONTAINER_RE = re.compile(r"\b(box|boxes|case|tin|display|bundle|lot|blaster|mega|hanger|packs?)\b")
+# un "#" suivi d'un code d'insert est le marqueur le plus fiable d'une carte à l'unité :
+# #339, #HS-3, #AN-KAT, #PM-TJD, #RGBR — lettres et/ou chiffres, avec ou sans tiret.
+CARD_ID_RE = re.compile(r"#\s*[a-z0-9]{1,8}(?:-[a-z0-9]{1,8})?\b"
+                        r"|\b[a-z]{2,3}-\d{1,3}\b|\b\d{1,3}\s*/\s*\d{1,4}\b")
+GRADE_RE = re.compile(r"\b(psa|bgs|sgc|cgc)\s*\d(\.\d)?\b|\bgem\s*mt\b")
+
+def sealed_product(t: str) -> bool | None:
+    """True = scellé · False = carte à l'unité · None = indécidable (-> REVIEW, jamais décisionnel)."""
+    single = bool(CARD_ID_RE.search(t) or GRADE_RE.search(t))
+    container = bool(CONTAINER_RE.search(t))
+    if single and container: return None      # "lot de 3 cartes #12" : ambigu
+    if single: return False
+    return container or None
+
 def comp_type_of(title_norm: str, sku: dict) -> str:
     """EXACT = même configuration que le SKU. RELATED = même SKU, autre configuration reconnue."""
     if sku.get("configuration"): return "EXACT"
@@ -152,6 +172,10 @@ def match_title(title: str, skus: list[dict]) -> Match:
     cands = []
     # likely_single : signaux forts de carte individuelle SANS signal sealed → ignoré (pas même en REVIEW).
     # Un titre sans "Box" mais sans signal single (ex. "2023-24 Panini Phoenix Basketball") reste candidat → REVIEW.
+    # G : sealed gate. Un non-scellé ne peut alimenter aucune décision marché.
+    sealed = sealed_product(t)
+    if sealed is False:
+        return Match(None, 0.0, [], season, fmt, sport, cfg)
     if SINGLE_RE.search(t) and not re.search(r"\b(box|boxes|blaster|mega|hobby|case|tin|display)\b", t):
         return Match(None, 0.0, [], season, fmt, sport, cfg)
     for s in skus:
@@ -224,6 +248,9 @@ def match_title(title: str, skus: list[dict]) -> Match:
         elif eff_sport == "other": continue
         if s["manufacturer"].lower() in t: sc = min(1.0, sc + 0.02)
         cands.append((s["id"], round(sc, 2)))
+    # sealed indécidable : plafonné sous le seuil de rattachement -> REVIEW, jamais décisionnel
+    if sealed is None:
+        cands = [(i, min(sc, 0.75)) for i, sc in cands]
     cands.sort(key=lambda x: -x[1])
     best = cands[0] if cands else (None, 0.0)
     return Match(best[0] if best[1] >= 0.80 else None, best[1], cands[:3], season, fmt, sport, cfg)

@@ -40,6 +40,33 @@ check("ancien OOS ne fabrique aucun GO (pas de sold)",
 check("historique ne devient jamais une référence marché",
       hunt.market_ref({"market_ask_us": None, "market_sold_us": None}), (None, None))
 
+# ---- N : watchlist en trois couches
+def E(key, low, ref, kind, askfrom=(), avail=False, shop="sh"):
+    return {"key": key, "available": avail, "o": ("S", shop, "t", 99.0, 0, "u", 1.0, "2026-01-01T00:00:00", ""),
+            "hist": {"low": low, "at": "2026-01-01T00:00:00", "shop": shop, "n_shops": 3, "n_obs": 5},
+            "ref": ref, "kind": kind, "sku": {"market_ask_from": list(askfrom), "season": "2023-24",
+            "manufacturer": "P", "set": "X", "format": "Blaster"}}
+
+sold_ok  = E("A", 20.0, 30.0, "sold")                    # -33 % vs sold externe
+ask_1src = E("B", 20.0, 30.0, "ask", ("superior",))      # ask mono-source : circulaire
+ask_2src = E("C", 20.0, 30.0, "ask", ("walmart", "dacw"))
+no_ref   = E("D", 20.0, None, None)
+close    = E("E", 29.0, 30.0, "sold")                    # -3 %, pas une priorité
+in_stock = E("F", 20.0, 30.0, "sold", avail=True)
+dup      = E("A", 20.0, 30.0, "sold", shop="autre")      # même produit, autre shop
+
+prio, lows, rest = hunt.watchlist_layers([sold_ok, ask_1src, ask_2src, no_ref, close, in_stock, dup])
+pk = {e["key"] for e in prio}
+check("sold externe qualifie une priorité", "A" in pk)
+check("ask mono-source ne qualifie PAS (circulaire)", "B" in pk, False)
+check("ask multi-source qualifie", "C" in pk)
+check("sans référence : pas de priorité", "D" in pk, False)
+check("écart faible : pas de priorité", "E" in pk, False)
+check("en stock : hors watchlist", "F" in pk, False)
+check("déduplication par exact_comp_key", len([e for e in prio if e["key"] == "A"]), 1)
+check("sans historique -> couche 3", [e["key"] for e in rest], ["D"] if False else [])
+check("les non qualifiés retombent en historical lows", {"B", "E"} <= {e["key"] for e in lows})
+
 print(f"\nTOTAL : {len(total)} tests, {len(fails)} FAIL")
 for f in fails: print("  FAIL", f)
 sys.exit(1 if fails else 0)

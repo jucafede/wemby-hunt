@@ -80,8 +80,8 @@ hunt.DB = __import__("pathlib").Path(db)
 conn = hunt.db()
 conn.execute("INSERT INTO products_raw VALUES ('sh','h','t','',NULL,NULL,1,NULL,1,'u',NULL,NULL,NULL,NULL,NULL,0,'[]','2026-01-01T00:00:00')")
 conn.execute("INSERT INTO products_raw VALUES ('sh','h2','t','',NULL,NULL,1,NULL,1,'u',NULL,NULL,NULL,NULL,NULL,0,'[]','2026-01-02T00:00:00')")
-conn.execute("INSERT INTO crawl_runs VALUES ('sh','2026-01-01T00:00:00',0,100)")
-conn.execute("INSERT INTO crawl_runs VALUES ('sh','2026-01-02T00:00:00',1,7)")   # tronqué
+conn.execute("INSERT INTO crawl_runs VALUES ('sh','2026-01-01T00:00:00',0,100,12.0,NULL)")
+conn.execute("INSERT INTO crawl_runs VALUES ('sh','2026-01-02T00:00:00',1,7,9.0,'PAGINATION_INCOMPLETE')")
 conn.commit()
 last = dict(conn.execute("""
     SELECT shop, MAX(seen_at) FROM products_raw p
@@ -91,6 +91,46 @@ last = dict(conn.execute("""
 check("passage PARTIAL ignoré : référence = passage complet précédent",
       last.get("sh"), "2026-01-01T00:00:00")
 
-print(f"\nTOTAL : 10 tests, {len(fails)} FAIL")
+
+# ---- P : garde-fous de runtime
+import time as _time
+class SlowSession(FakeSession):
+    """Chaque page coûte du temps simulé : on dépasse la deadline sans attendre réellement."""
+    def __init__(self, script, cost):
+        super().__init__(script); self.cost = cost; self.clock = [0.0]
+    def get(self, url, params=None, timeout=None):
+        self.clock[0] += self.cost
+        return super().get(url, params, timeout)
+
+_real = hunt.time.monotonic
+sess = SlowSession([200] * 50, cost=200.0)
+hunt.time.monotonic = lambda: sess.clock[0]
+deadline = 0 + hunt.HARD_TIMEOUT_S          # 480 s : la 3e page dépasse
+try:
+    prods, partial = hunt.shopify_products("https://x.test", sess, deadline)
+    timed_out = False
+except hunt.ShopTimeout:
+    timed_out = True
+hunt.time.monotonic = _real
+check("timeout simulé > 8 min -> ShopTimeout levée", timed_out, True)
+check("le seuil dur vaut bien 8 min", hunt.HARD_TIMEOUT_S, 480)
+check("le seuil SLOW_CRAWL vaut 5 min", hunt.SLOW_CRAWL_S, 300)
+
+# un passage TIMEOUT est PARTIAL et ne devient jamais la référence
+conn2 = hunt.db()
+conn2.execute("INSERT OR REPLACE INTO products_raw VALUES ('t1','h','x','',NULL,NULL,1,NULL,1,'u',NULL,NULL,NULL,NULL,NULL,0,'[]','2026-03-01T00:00:00')")
+conn2.execute("INSERT OR REPLACE INTO products_raw VALUES ('t1','h2','x','',NULL,NULL,1,NULL,1,'u',NULL,NULL,NULL,NULL,NULL,0,'[]','2026-03-02T00:00:00')")
+conn2.execute("INSERT OR REPLACE INTO crawl_runs VALUES ('t1','2026-03-01T00:00:00',0,500,120.0,NULL)")
+conn2.execute("INSERT OR REPLACE INTO crawl_runs VALUES ('t1','2026-03-02T00:00:00',1,3,481.0,'TIMEOUT')")
+conn2.commit()
+last = dict(conn2.execute("""SELECT shop, MAX(seen_at) FROM products_raw p
+    WHERE NOT EXISTS (SELECT 1 FROM crawl_runs c WHERE c.shop=p.shop AND c.seen_at=p.seen_at AND c.partial=1)
+    GROUP BY shop""").fetchall())
+check("passage TIMEOUT non retenu comme crawl complet", last.get("t1"), "2026-03-01T00:00:00")
+check("la durée et la raison sont conservées",
+      conn2.execute("SELECT duration_s, reason FROM crawl_runs WHERE seen_at='2026-03-02T00:00:00'").fetchone(),
+      (481.0, "TIMEOUT"))
+
+print(f"\nTOTAL : {10 + 5} tests, {len(fails)} FAIL")
 for f in fails: print("  FAIL", f)
 sys.exit(1 if fails else 0)

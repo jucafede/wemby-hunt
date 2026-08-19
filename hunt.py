@@ -546,6 +546,24 @@ def trust_of(shop_key: str, trust: dict) -> str:
 
 
 # ================================================================ V2-a : mémoire et badges
+STALE_THRESHOLD_DAYS = 30
+
+def threshold_age(sku: dict, today: str | None = None):
+    """Q — âge d'un seuil manuel buy/watch. Renvoie (jours, stale) ou (None, False) si le SKU
+    n'a pas de seuil. Le moteur ne recalcule JAMAIS un seuil : il signale qu'il a vieilli.
+    Hiérarchie visée, à brancher quand le dataset SOLD arrivera :
+    sold fiable > information marché récente > seuil manuel."""
+    if sku.get("buy_below_usd") is None and sku.get("watch_below_usd") is None:
+        return None, False
+    d = sku.get("thresholds_reviewed_at")
+    if not d: return None, True          # jamais revu = périmé par défaut, conservateur
+    try:
+        ref = datetime.fromisoformat(str(today)[:10]) if today else datetime.now(timezone.utc).replace(tzinfo=None)
+        age = (ref - datetime.fromisoformat(str(d)[:10])).days
+    except Exception:
+        return None, True
+    return age, age > STALE_THRESHOLD_DAYS
+
 def sold_confidence(sku: dict) -> str | None:
     """Dérivée, jamais saisie. HIGH n>=5 et <=60 j · MEDIUM n>=2 et <=90 j · LOW sinon.
     None = aucune vente réalisée renseignée."""
@@ -869,7 +887,9 @@ def report(cat: dict, conn: sqlite3.Connection, seen_at: str | None, trust: dict
                 ask = s.get("market_ask_us"); sold = s.get("market_sold_us"); eu = s.get("eu_reference_eur")
                 ssrc = s.get("market_sold_source"); schk = s.get("market_sold_checked_at")
                 prov = f" [{ssrc}{' ' + str(schk) if schk else ''}]" if sold and ssrc else ""
-                print(f"   ask {money(ask):<8} sold {money(sold):<8}{prov} | buy ≤ {money(s.get('buy_below_usd')):<8} | watch ≤ {money(s.get('watch_below_usd')):<8} | EU {money(eu, '€')}")
+                age, stale = threshold_age(s, seen_at)
+                tinfo = ("  ⏳ STALE THRESHOLD" + (f" ({age} j)" if age is not None else " (jamais revu)")) if stale else ""
+                print(f"   ask {money(ask):<8} sold {money(sold):<8}{prov} | buy ≤ {money(s.get('buy_below_usd')):<8} | watch ≤ {money(s.get('watch_below_usd')):<8} | EU {money(eu, '€')}{tinfo}")
                 # M : l'historique est un FAIT, jamais une référence de marché. Il est affiché
                 # séparément du prix live et ne peut produire ni DEAL ni GO.
                 he = next((e for e in entries if e["hist"]), None)

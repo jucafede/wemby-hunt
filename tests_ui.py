@@ -21,9 +21,14 @@ hunt.write_html(cat, blocks, [], [], "2026-08-18T00:00:00", {"cardiacs": "watch"
 h = pathlib.Path("/Users/ju/Draft Class/wemby-hunt/out/index.html").read_text(encoding="utf-8")
 
 order = ["Hot now", "Rookie 23/24", "Year 2", "Trophy", "Mouvements récents",
-         "Watchlist restock", "Shops découverts", "À revoir", "Rapport complet"]
+         "Watchlist", "Shops découverts", "À revoir", "Rapport complet"]
 idx = [h.index(x) for x in order]
 check("D : les 8 sections sont dans l'ordre", idx == sorted(idx))
+# N : la watchlist expose ses trois couches, les deux dernières repliées
+check("N : couche Restock priority ou son absence justifiée",
+      "Restock priority" in h or "Aucune priorité qualifiable" in h)
+check("N : Historical lows et All OOS sont repliés",
+      h.count("<details>") >= 2)
 check("C : HOT NOW est en tête", h.index("Hot now") < h.index("Rookie 23/24"))
 check("D : compteurs techniques hors premier écran", h.index("Compteurs par source") > h.index("Rapport complet"))
 

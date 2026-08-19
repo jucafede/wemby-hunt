@@ -170,6 +170,14 @@ def match_title(title: str, skus: list[dict]) -> Match:
         if s["set"].lower() == "donruss optic" and ("optic" not in t or "contenders" in t or "recon" in t): continue
         if s["set"].lower() == "contenders" and "optic" in t: continue   # "Contenders Optic" est une autre gamme
         if s["set"].lower() == "select" and ("select racing" in t or "nascar" in t): continue
+        # Éditions spéciales : Sapphire, Monster, First Day Issue, Cactus Jack sont des identités
+        # à part dans TOUTES les familles Topps/Bowman. Titre et SKU doivent concorder, sinon un
+        # "Bowman Sapphire Hobby Box" à 2 500 $ finit sur le Hobby standard (constaté le 20/08).
+        if s["manufacturer"].lower() == "topps":
+            ident_ed = (s["id"] + " " + (s.get("configuration") or "") + " "
+                        + (s.get("configuration_note") or "")).lower()
+            if any((tok in t) != (tok in ident_ed)
+                   for tok in ("sapphire", "monster", "first day", "cactus jack")): continue
         if s["set"].lower() == "bowman":
             # la famille Bowman Basketball ne couvre PAS les sous-gammes universitaires ni les
             # déclinaisons Chrome/Best/1st Edition, qui sont d'autres produits.
@@ -177,13 +185,10 @@ def match_title(title: str, skus: list[dict]) -> Match:
                                     "bowman best", "bowman chrome", "u chrome")): continue
             # Sapphire / Monster sont des éditions distinctes ici aussi : un "Bowman Sapphire
             # Hobby Box" à 2 500 $ était absorbé par le Hobby standard (constaté le 20/08).
-            ident_b = (s["id"] + " " + (s.get("configuration") or "")).lower()
-            if any((tok in t) != (tok in ident_b) for tok in ("sapphire", "monster")): continue
         if s["set"].lower() in ("topps chrome", "cosmic chrome", "topps chrome update"):
             # Update est une gamme distincte de Chrome, dans les deux sens.
             if ("update" in t) != ("update" in s["set"].lower()): continue
             # collaborations et éditions spéciales : identités séparées, pas du Chrome standard
-            if "cactus jack" in t and "cactus" not in s["id"].lower(): continue
             # gammes voisines qui ne sont PAS du Topps Chrome NBA
             if any(k in t for k in ("nbl", "australia", "overtime elite", "\bote\b", "bowman",
                                     "g-league", "g league", "breaker", "uefa")): continue
@@ -191,9 +196,6 @@ def match_title(title: str, skus: list[dict]) -> Match:
             if ("cosmic" in t) != (s["set"].lower() == "cosmic chrome"): continue
             # Sapphire et Monster sont des configurations distinctes : le titre et le SKU doivent
             # être d'accord, sinon une Sapphire à 400 $ nourrirait le Chrome Hobby standard.
-            ident = (s["id"] + " " + (s.get("configuration") or "") + " "
-                     + (s.get("configuration_note") or "")).lower()
-            if any((tok in t) != (tok in ident) for tok in ("sapphire", "monster", "first day")): continue
         # FOTL / International (asia, tmall) sont désormais des FORMATS détectés : le garde-fou "mauvais format
         # = éliminé" suffit, comme pour Hanger. Ne restent ici que les sous-gammes sans format dédié.
         if any(k in t for k in ("cello", "multi-pack", "value pack")): continue

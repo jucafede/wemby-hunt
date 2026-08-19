@@ -2470,3 +2470,72 @@ skus:
     buy_below_usd: null
     watch_below_usd: null
     url_proof: "https://theawesomecardshop.com/products/2025-26-topps-finest-basketball-hobby-box"
+  - id: TOPPS_2025-26_COSMIC_CHROME_HOBBY
+    season: "2025-26"
+    manufacturer: Topps
+    set: Cosmic Chrome
+    format: Hobby
+    configuration: null
+    tier: hobby
+    status: WATCH
+    licensed: true
+    program: hot_box
+    wemby_rc: false
+    wemby_year2: false
+    market_ask_from: [cardiacs]
+    market_ask_us: 919.95
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_n: null
+    market_sold_window_days: null
+    market_sold_checked_at: null
+    buy_below_usd: null
+    watch_below_usd: null
+    note: "ask 919,95 Cardiacs (20/08) ; 899-950 vu chez plusieurs shops."
+    url_proof: "https://www.thecardiacs.com/products/2025-26-topps-cosmic-chrome-basketball-hobby-box"
+  - id: TOPPS_2025-26_COSMIC_CHROME_FIRST_DAY_ISSUE
+    season: "2025-26"
+    manufacturer: Topps
+    set: Cosmic Chrome
+    format: Hobby
+    configuration: First Day Issue
+    tier: hobby
+    status: CANDIDATE
+    licensed: true
+    program: hot_box
+    wemby_rc: false
+    wemby_year2: false
+    market_ask_from: [dacw]
+    market_ask_us: 1799.95
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_n: null
+    market_sold_window_days: null
+    market_sold_checked_at: null
+    buy_below_usd: null
+    watch_below_usd: null
+    note: "ask 1 799,95 DACW — DACW n'est pas crawle, pas d'url_proof."
+    url_proof: ""
+  - id: TOPPS_2025-26_CHROME_CACTUS_JACK_HOBBY
+    season: "2025-26"
+    manufacturer: Topps
+    set: Topps Chrome
+    format: Hobby
+    configuration: Cactus Jack
+    tier: hobby
+    status: WATCH
+    licensed: true
+    program: hot_box
+    wemby_rc: false
+    wemby_year2: false
+    market_ask_from: [columbia]
+    market_ask_us: 539.99
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_n: null
+    market_sold_window_days: null
+    market_sold_checked_at: null
+    buy_below_usd: null
+    watch_below_usd: null
+    note: "Collab distincte. Preuve columbia 539,99 (20/08) ; Cardiacs 569,95 releve le 18/08."
+    url_proof: "https://columbiasportscard.com/products/2025-26-topps-chrome-cactus-jack-basketball-hobby-box"

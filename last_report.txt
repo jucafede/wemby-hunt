@@ -29,16 +29,16 @@
   [grandslam] status=reject (qualifié sur données réelles → 0 sealed 2023-24) → skip
   0 produits bruts, 0 rattachés à un SKU
 → The Cardiacs (https://www.thecardiacs.com)  [trust=trusted]
-  5301 produits bruts, 18 rattachés à un SKU
+  5303 produits bruts, 18 rattachés à un SKU
 → Monmouth Cards (https://monmouthcards.com)  [trust=watch]
-  4942 produits bruts, 24 rattachés à un SKU
+  4932 produits bruts, 24 rattachés à un SKU
 → World Champion Sports Cards (https://www.worldchampionsportscards.org)  [trust=watch]
   3869 produits bruts, 37 rattachés à un SKU
 → Superior Sports Investments (https://superiorsportsinvestments.com)  [trust=watch]
     collections : 8/84 retenues (filtre 'basketball|\\bnba\\b|hoops|prizm|mosaic|optic|select|phoenix|contenders|court.kings|revolution|premium.stock')
-  16306 produits bruts, 26 rattachés à un SKU
+  16307 produits bruts, 26 rattachés à un SKU
 → SJAY2K Trading Cards (https://www.sjay2k.com)  [trust=watch]
-  603 produits bruts, 7 rattachés à un SKU
+  602 produits bruts, 8 rattachés à un SKU
 → The Ballgame (https://theballgame.com)  [trust=watch]
   13813 produits bruts, 38 rattachés à un SKU
 → Bleecker Trading (https://bleeckertrading.com)  [trust=watch]
@@ -438,7 +438,7 @@
 
 · SUIVI   2024-25 Panini Select Blaster   [PANINI_2024-25_SELECT_BLASTER]
    1. collectorstore   $   21.99  IN STOCK  landed≈€  35.53  (score 1.00)
-        YEAR2  cheapest of 6 in stock
+        YEAR2  cheapest of 7 in stock
    2. cardiacs         $   22.95  IN STOCK  landed≈€  36.53  (score 1.00)
         YEAR2
    3. rbicru7          $   28.00  IN STOCK  landed≈€  41.75  (score 1.00)
@@ -1243,5 +1243,5 @@
   2023-24 Panini Prizm EuroLeague Blaster        $   15.00 rbicru7           -40.0%  STRONG_DEAL -40%
   2023-24 Panini Prizm EuroLeague Blaster        $   20.00 cbhobby           -20.0%  STRONG_DEAL -20%
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-08-19T06-57-08.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-08-19T13-01-22.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

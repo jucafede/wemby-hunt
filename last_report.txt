@@ -6,12 +6,12 @@
 → Hidden Gems Card Shop (https://www.hiddengemscardshop.com)  [trust=trusted]
   2738 produits bruts, 29 rattachés à un SKU
 → The Awesome Card Shop (https://theawesomecardshop.com)  [trust=trusted]
-  7270 produits bruts, 71 rattachés à un SKU
+  7274 produits bruts, 71 rattachés à un SKU
 → MojoBreak Shop (https://mojobreakshop.com)  [trust=trusted]
   [mojobreak] status=reject (qualifié sur données réelles → 0 sealed 2023-24) → skip
   0 produits bruts, 0 rattachés à un SKU
 → RbiCru7 Collectibles (https://rbicru7.com)  [trust=trusted]
-  12354 produits bruts, 16 rattachés à un SKU
+  12352 produits bruts, 16 rattachés à un SKU
 → Layton Sports Cards (https://laytonsportscards.com)  [trust=trusted]
   [layton] type=breaks (breaker, hors périmètre sealed) → skip
   0 produits bruts, 0 rattachés à un SKU
@@ -31,12 +31,12 @@
 → The Cardiacs (https://www.thecardiacs.com)  [trust=trusted]
   5301 produits bruts, 18 rattachés à un SKU
 → Monmouth Cards (https://monmouthcards.com)  [trust=watch]
-  4954 produits bruts, 24 rattachés à un SKU
+  4942 produits bruts, 24 rattachés à un SKU
 → World Champion Sports Cards (https://www.worldchampionsportscards.org)  [trust=watch]
   3869 produits bruts, 37 rattachés à un SKU
 → Superior Sports Investments (https://superiorsportsinvestments.com)  [trust=watch]
     collections : 8/84 retenues (filtre 'basketball|\\bnba\\b|hoops|prizm|mosaic|optic|select|phoenix|contenders|court.kings|revolution|premium.stock')
-  16314 produits bruts, 26 rattachés à un SKU
+  16306 produits bruts, 26 rattachés à un SKU
 → SJAY2K Trading Cards (https://www.sjay2k.com)  [trust=watch]
   603 produits bruts, 7 rattachés à un SKU
 → The Ballgame (https://theballgame.com)  [trust=watch]
@@ -44,7 +44,7 @@
 → Bleecker Trading (https://bleeckertrading.com)  [trust=watch]
   2194 produits bruts, 76 rattachés à un SKU
 → CB Hobby (https://cbhobby.com)  [trust=watch]
-  661 produits bruts, 2 rattachés à un SKU
+  663 produits bruts, 2 rattachés à un SKU
 → Box Seat Collectibles (https://boxseatcollectibles.com)  [trust=watch]
   2082 produits bruts, 14 rattachés à un SKU
 → E5 Sports (https://e5sports.com)  [trust=watch]
@@ -633,7 +633,7 @@
    BEST → superior  https://superiorsportsinvestments.com/products/2024-25-panini-revolution-basketball-mega-box-scope-parallels
 
 ⛔ NO_GO   2023-24 Topps Topps Chrome Blaster   [TOPPS_2023-24_CHROME_VALUE_BLASTER]  ⚑ nbpa
-   1. superior         $  120.00  IN STOCK  landed≈€ 136.92  (score 1.00)
+   1. superior         $  125.00  IN STOCK  landed≈€ 142.09  (score 1.00)
         ONLY_STOCK_SEEN  RC_YEAR  NBPA  VERIFY
    2. sportscardjunction $   25.00  SOLD OUT  landed≈€  38.65  (score 1.00)
         RC_YEAR  NBPA  VERIFY
@@ -1243,5 +1243,5 @@
   2023-24 Panini Prizm EuroLeague Blaster        $   15.00 rbicru7           -40.0%  STRONG_DEAL -40%
   2023-24 Panini Prizm EuroLeague Blaster        $   20.00 cbhobby           -20.0%  STRONG_DEAL -20%
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-08-19T01-45-01.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-08-19T06-57-08.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

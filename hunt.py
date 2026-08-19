@@ -420,14 +420,19 @@ def shopify_products(base: str, session: requests.Session, deadline=None) -> tup
 
 def collect_shop(shop: dict, skus: list[dict], conn: sqlite3.Connection, seen_at: str) -> tuple[int, int, bool]:
     s = requests.Session(); s.headers["User-Agent"] = UA
+    def skip(msg, why):
+        print(f"  [{shop['key']}] {msg}")
+        conn.execute("INSERT OR REPLACE INTO crawl_runs VALUES (?,?,?,?,?,?)",
+                     (shop["key"], seen_at, 0, 0, 0.0, f"SKIPPED:{why}")); conn.commit()
+        return (0, 0, False)
     if shop.get("status") == "reject":
-        print(f"  [{shop['key']}] status=reject (qualifié sur données réelles → 0 sealed 2023-24) → skip"); return (0, 0, False)
+        return skip(f"status=reject \(qualifié sur données réelles → 0 sealed 2023-24\) → skip", "REJECT")
     if shop["type"] == "marketplace":
-        print(f"  [{shop['key']}] type=marketplace (source de market_sold / achat direct) → skip"); return (0, 0, False)
+        return skip(f"type=marketplace \(source de market_sold / achat direct\) → skip", "MARKETPLACE")
     if shop["type"] == "breaks":
-        print(f"  [{shop['key']}] type=breaks (breaker, hors périmètre sealed) → skip"); return (0, 0, False)
+        return skip(f"type=breaks \(breaker, hors périmètre sealed\) → skip", "BREAKS")
     if shop["type"] != "shopify_json":
-        print(f"  [{shop['key']}] type={shop['type']} non géré en v1 → skip"); return (0, 0, False)
+        return skip(f"type={shop['type']} non géré en v1 → skip", "UNSUPPORTED_TYPE")
     t0 = time.monotonic()
     deadline = t0 + HARD_TIMEOUT_S
     reason = None
@@ -669,6 +674,45 @@ def compute_badges(o, mem, sku, trust_level, in_stock_lines):
     if ref is None: desc.append("MARKET DATA INSUFFICIENT")
     return trig, desc, gap, ref, kind
 
+def source_health(conn, shop_keys, lookback=6):
+    """O — santé d'une source, jugée sur son propre historique plutôt que sur un seuil unique.
+
+    HEALTHY  : dernier passage complet et volume conforme à sa base récente.
+    PARTIAL  : dernier passage interrompu (timeout, erreur, pagination incomplète).
+               Ce n'est PAS une source morte : le chrono ou le réseau l'ont coupée.
+    DEGRADED : volume effondré vs sa propre base, ou PARTIAL répétés, ou dernier passage
+               complet trop ancien.
+    DEAD     : plusieurs passages consécutifs à zéro produit, sans interruption pour l'expliquer.
+    """
+    out = {}
+    for k in shop_keys:
+        runs = conn.execute("""SELECT seen_at, partial, n_raw, reason, duration_s FROM crawl_runs
+                               WHERE shop=? ORDER BY seen_at DESC LIMIT ?""", (k, lookback)).fetchall()
+        if not runs:
+            out[k] = ("UNKNOWN", "aucun passage enregistré"); continue
+        seen_at, partial, n_raw, reason, dur = runs[0]
+        if (reason or "").startswith("SKIPPED"):
+            out[k] = ("SKIPPED", reason.split(":", 1)[1].lower()); continue
+        complete = [r for r in runs if not r[1]]
+        zeros = [r for r in runs if not r[1] and (r[2] or 0) == 0]
+        if len(zeros) >= 2 and len(zeros) == len(complete):
+            out[k] = ("DEAD", f"{len(zeros)} passages complets consécutifs à 0 produit"); continue
+        if partial:
+            n_part = sum(1 for r in runs if r[1])
+            if n_part >= 3:
+                out[k] = ("DEGRADED", f"{n_part} passages interrompus sur {len(runs)} (dernier : {reason})")
+            else:
+                out[k] = ("PARTIAL", f"dernier passage interrompu ({reason}"
+                                     + (f", {dur/60:.1f} min)" if dur else ")"))
+            continue
+        base = [r[2] or 0 for r in complete[1:]]
+        if base:
+            med = sorted(base)[len(base) // 2]
+            if med and n_raw < med * 0.5:
+                out[k] = ("DEGRADED", f"volume {n_raw} contre une base récente de {med}"); continue
+        out[k] = ("HEALTHY", f"{n_raw} produits" + (f", {dur/60:.1f} min" if dur else ""))
+    return out
+
 def watchlist_layers(entries):
     """N — trois couches, pour que la watchlist redevienne actionnable.
 
@@ -866,6 +910,16 @@ def report(cat: dict, conn: sqlite3.Connection, seen_at: str | None, trust: dict
     for e in lows[:10]:
         h = e["hist"]
         print(f"     historical low     {sku_label(e['sku'])[:40]:<42} ${h['low']:>8.2f} ({h['at'][:10]}, {h['n_shops']} shop(s))")
+    health = source_health(conn, [x["key"] for x in yaml.safe_load((ROOT/"sources.yaml").read_text(encoding="utf-8"))["shops"]])
+    # UNKNOWN = aucun passage encore enregistré : absence de donnée, pas anomalie. Après un run
+    # complet aucun shop crawlable ne reste UNKNOWN — le compteur de synthèse le montre.
+    anomalies = {k: v for k, v in health.items() if v[0] not in ("HEALTHY", "SKIPPED", "UNKNOWN")}
+    print("\n" + "="*72 + f"\n  🩺 SANTÉ DES SOURCES — {len(anomalies)} anomalie(s)\n" + "="*72)
+    for k, (st, why) in sorted(anomalies.items()):
+        print(f"  {st:<9} {k:<20} {why}")
+    if not anomalies: print("  (aucune anomalie : toutes les sources crawlées ont rendu un passage complet)")
+    import collections as _c
+    print("  " + " · ".join(f"{n} {st}" for st, n in _c.Counter(v[0] for v in health.values()).most_common()))
     hn = hot_now(all_entries)
     print("\n" + "="*72 + f"\n  🔥 HOT NOW — {len(hn)} ligne(s)\n" + "="*72)
     for e in hn:

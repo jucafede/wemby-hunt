@@ -305,6 +305,10 @@ def db() -> sqlite3.Connection:
       PRIMARY KEY(shop, seen_at));
     """)
     # migration douce : colonne matcher_version si absente
+    cr = [r[1] for r in c.execute("PRAGMA table_info(crawl_runs)")]
+    for col in ("duration_s REAL", "reason TEXT"):
+        if col.split()[0] not in cr:
+            c.execute(f"ALTER TABLE crawl_runs ADD COLUMN {col}")
     cols = [r[1] for r in c.execute("PRAGMA table_info(observations)")]
     for col in ("matcher_version TEXT", "image_url TEXT", "comp_type TEXT",
                 "quantity INTEGER", "unit_price REAL", "exact_comp_key TEXT", "sealed INTEGER"):
@@ -316,16 +320,25 @@ def db() -> sqlite3.Connection:
     return c
 
 # ---------------------------------------------------------------- collecte Shopify
+SLOW_CRAWL_S = 300      # 5 min : avertissement, le crawl continue
+HARD_TIMEOUT_S = 480    # 8 min : ce shop est interrompu proprement, le run global continue
+
+class ShopTimeout(Exception):
+    """Levée par fetch_json quand le budget temps du shop est épuisé. Interrompt CE shop,
+    jamais le run : les données déjà collectées deviennent un passage PARTIAL/TIMEOUT."""
+
 RETRIES = 3
 BACKOFF = (2, 5)   # secondes entre tentatives
 
-def fetch_json(session, url, params, label):
+def fetch_json(session, url, params, label, deadline=None):
     """Retourne (data, ok). ok=False après RETRIES tentatives non-200 ou en erreur réseau.
     L'appelant décide alors si la pagination est PARTIELLE (des produits déjà collectés) ou
     simplement terminée. Sans ça, une erreur passagère tronque un shop en silence — vécu le
     18/08 : awesome tombé de 7 266 à 2 000 produits et de 40 matchs à 1, run vert."""
     last = None
     for i in range(RETRIES):
+        if deadline and time.monotonic() > deadline:
+            raise ShopTimeout(label)
         try:
             r = session.get(url, params=params, timeout=30)
             time.sleep(RATE_S)
@@ -339,7 +352,7 @@ def fetch_json(session, url, params, label):
     print(f"    ⚠️  {label} : {RETRIES} tentatives en échec ({last})")
     return None, False
 
-def shopify_by_collections(base: str, session: requests.Session, only: str | None = None) -> tuple[list[dict], bool]:
+def shopify_by_collections(base: str, session: requests.Session, only: str | None = None, deadline=None) -> tuple[list[dict], bool]:
     """Contourne le plafond de ~100 pages de /products.json : on liste les collections puis on pagine
     chacune. Dédoublonné par product id — un produit présent dans 3 collections ne compte qu'une fois.
     `only` = regex sur handle+titre pour ne garder que les collections utiles (ex. basket) et tenir le budget temps."""
@@ -347,7 +360,7 @@ def shopify_by_collections(base: str, session: requests.Session, only: str | Non
     cols, page = [], 1
     while True:
         data, ok = fetch_json(session, f"{base}/collections.json", {"limit": 250, "page": page},
-                              f"collections.json page {page}")
+                              f"collections.json page {page}", deadline)
         if not ok:
             partial = bool(cols); break
         items = data.get("collections", [])
@@ -365,7 +378,7 @@ def shopify_by_collections(base: str, session: requests.Session, only: str | Non
             # aucune collection basket : le shop n'expose pas /collections.json, ou nomme ses collections
             # autrement. On ne rate PAS le shop — retour à la pagination complète, et c'est écrit noir sur blanc.
             print(f"    ⚠️  FALLBACK pagination complète : 0/{len(cols)} collection ne matche {only!r}")
-            prods, p2 = shopify_products(base, session)
+            prods, p2 = shopify_products(base, session, deadline)
             return prods, (partial or p2)
     for col in cols:
         handle = col.get("handle")
@@ -373,7 +386,7 @@ def shopify_by_collections(base: str, session: requests.Session, only: str | Non
         page = 1
         while True:
             data, ok = fetch_json(session, f"{base}/collections/{handle}/products.json",
-                                  {"limit": 250, "page": page}, f"{handle} page {page}")
+                                  {"limit": 250, "page": page}, f"{handle} page {page}", deadline)
             if not ok:
                 partial = True; break
             items = data.get("products", [])
@@ -385,7 +398,7 @@ def shopify_by_collections(base: str, session: requests.Session, only: str | Non
             page += 1
     return out, partial
 
-def shopify_products(base: str, session: requests.Session) -> tuple[list[dict], bool]:
+def shopify_products(base: str, session: requests.Session, deadline=None) -> tuple[list[dict], bool]:
     """Pagine /products.json?limit=250&page=N (fallback page_info non nécessaire en lecture publique
     sur la plupart des stores ; si vide dès la page 1, on tente /collections/all/products.json)."""
     out, partial = [], False
@@ -393,7 +406,7 @@ def shopify_products(base: str, session: requests.Session) -> tuple[list[dict], 
         out, partial, page = [], False, 1
         while True:
             data, ok = fetch_json(session, f"{base}{path}", {"limit": 250, "page": page},
-                                  f"{path} page {page}")
+                                  f"{path} page {page}", deadline)
             if not ok:
                 partial = bool(out)   # des produits déjà collectés → catalogue TRONQUÉ, pas terminé
                 break
@@ -415,13 +428,28 @@ def collect_shop(shop: dict, skus: list[dict], conn: sqlite3.Connection, seen_at
         print(f"  [{shop['key']}] type=breaks (breaker, hors périmètre sealed) → skip"); return (0, 0, False)
     if shop["type"] != "shopify_json":
         print(f"  [{shop['key']}] type={shop['type']} non géré en v1 → skip"); return (0, 0, False)
+    t0 = time.monotonic()
+    deadline = t0 + HARD_TIMEOUT_S
+    reason = None
     try:
         if shop.get("paginate") == "collections":
-            prods, partial = shopify_by_collections(shop["base_url"], s, shop.get("collections_match"))
+            prods, partial = shopify_by_collections(shop["base_url"], s, shop.get("collections_match"), deadline)
         else:
-            prods, partial = shopify_products(shop["base_url"], s)
+            prods, partial = shopify_products(shop["base_url"], s, deadline)
+    except ShopTimeout as e:
+        # budget épuisé : ce shop s'arrête, le run global continue. Tout ce qui a été collecté
+        # avant l'interruption est PARTIAL et ne deviendra jamais un passage de référence.
+        dur = time.monotonic() - t0
+        print(f"  [{shop['key']}] ⏱ HARD TIMEOUT après {dur/60:.1f} min sur {e} → PARTIAL/TIMEOUT")
+        conn.execute("INSERT OR REPLACE INTO crawl_runs VALUES (?,?,?,?,?,?)",
+                     (shop["key"], seen_at, 1, 0, dur, "TIMEOUT")); conn.commit()
+        return (0, 0, True)
     except Exception as e:
-        print(f"  [{shop['key']}] erreur collecte: {e}"); return (0, 0, True)
+        dur = time.monotonic() - t0
+        print(f"  [{shop['key']}] erreur collecte: {e}")
+        conn.execute("INSERT OR REPLACE INTO crawl_runs VALUES (?,?,?,?,?,?)",
+                     (shop["key"], seen_at, 1, 0, dur, f"ERROR:{e.__class__.__name__}")); conn.commit()
+        return (0, 0, True)
     n_raw = n_obs = 0
     for p in prods:
         title = p.get("title", ""); handle = p.get("handle", "")
@@ -454,8 +482,13 @@ def collect_shop(shop: dict, skus: list[dict], conn: sqlite3.Connection, seen_at
                      MATCHER_VERSION, image_url, ct, qty, unit, exact_comp_key(m.sku_id, tn, sku_obj),
                      1 if sealed_product(tn) else 0))
                 n_obs += 1
-    conn.execute("INSERT OR REPLACE INTO crawl_runs VALUES (?,?,?,?)",
-                 (shop["key"], seen_at, 1 if partial else 0, n_raw))
+    dur = time.monotonic() - t0
+    if dur > SLOW_CRAWL_S:
+        reason = "SLOW_CRAWL"
+        print(f"  [{shop['key']}] ⚠️ SLOW_CRAWL : {dur/60:.1f} min (> {SLOW_CRAWL_S//60} min)")
+    if partial and not reason: reason = "PAGINATION_INCOMPLETE"
+    conn.execute("INSERT OR REPLACE INTO crawl_runs VALUES (?,?,?,?,?,?)",
+                 (shop["key"], seen_at, 1 if partial else 0, n_raw, dur, reason))
     conn.commit()
     return (n_raw, n_obs, partial)
 

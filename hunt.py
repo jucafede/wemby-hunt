@@ -636,6 +636,41 @@ def compute_badges(o, mem, sku, trust_level, in_stock_lines):
     if ref is None: desc.append("MARKET DATA INSUFFICIENT")
     return trig, desc, gap, ref, kind
 
+def watchlist_layers(entries):
+    """N — trois couches, pour que la watchlist redevienne actionnable.
+
+    1. RESTOCK PRIORITY : en rupture, historique cloisonné, et l'ancien bas est nettement sous
+       la référence de marché disponible. Sans référence exploitable on ne peut PAS qualifier
+       une priorité honnêtement — la ligne descend en historique, elle n'est pas promue.
+    2. HISTORICAL LOWS : un historique existe, mais rien ne justifie l'urgence.
+    3. ALL OOS : le reste, replié.
+    """
+    prio, lows, rest = [], [], []
+    seen = set()
+    for e in entries:
+        if e["available"]: continue
+        # une ligne par produit, pas par annonce : l'historique est déjà cloisonné par
+        # exact_comp_key, cinq shops en rupture sur le même produit = une seule entrée.
+        k = e.get("key")
+        if k in seen: continue
+        seen.add(k)
+        h = e.get("hist")
+        if not h: rest.append(e); continue
+        ref, kind = e.get("ref"), e.get("kind")
+        # Qualifier une priorité exige une référence NON CIRCULAIRE : un sold externe, ou un ask
+        # relevé chez au moins deux sources. Comparer un ancien bas d'un shop à l'ask du même shop
+        # ne prouve rien. Sans cela la ligne descend en historique — elle n'est pas promue.
+        solid = kind == "sold" or (kind == "ask" and len(e["sku"].get("market_ask_from") or []) >= 2)
+        if ref and solid and h["low"] <= ref * 0.90:
+            e["restock_gap"] = round((h["low"] - ref) / ref * 100, 1)
+            prio.append(e)
+        else:
+            e["restock_gap"] = None
+            lows.append(e)
+    prio.sort(key=lambda e: e["restock_gap"])
+    lows.sort(key=lambda e: e["hist"]["low"])
+    return prio, lows, rest
+
 def hot_now(entries, limit=15):
     """Lignes EN STOCK avec >=1 déclencheur ET une référence de marché. Triées par nombre de
     déclencheurs puis par écart croissant. Une ligne sans référence n'y entre jamais."""
@@ -787,6 +822,17 @@ def report(cat: dict, conn: sqlite3.Connection, seen_at: str | None, trust: dict
                      (e["sid"], o[1], o[5], o[8], o[3], json.dumps(e["triggers"] + e["descriptors"]),
                       e["ref"], e["kind"], e["gap"], stamp_now))
     conn.commit()
+    prio, lows, rest = watchlist_layers(all_entries)
+    print("\n" + "="*72 + f"\n  👀 WATCHLIST — {len(prio)} prioritaires / {len(lows)} historiques / {len(rest)} autres\n" + "="*72)
+    for e in prio[:15]:
+        h = e["hist"]
+        print(f"  🔔 RESTOCK PRIORITY  {sku_label(e['sku'])[:40]:<42} target ${h['low']:>8.2f} "
+              f"({h['at'][:10]}, {h['n_shops']} shop(s))  {e['restock_gap']:>6.1f}% vs {e['kind']} ${e['ref']:.2f}")
+    if not prio:
+        print("  (aucune priorité qualifiable : il faut une référence de marché pour dire qu'un ancien prix mérite surveillance)")
+    for e in lows[:10]:
+        h = e["hist"]
+        print(f"     historical low     {sku_label(e['sku'])[:40]:<42} ${h['low']:>8.2f} ({h['at'][:10]}, {h['n_shops']} shop(s))")
     hn = hot_now(all_entries)
     print("\n" + "="*72 + f"\n  🔥 HOT NOW — {len(hn)} ligne(s)\n" + "="*72)
     for e in hn:
@@ -935,19 +981,33 @@ def write_html(cat, blocks, restocks, review, seen_at, trust=None, hot=None, ent
                      f"<td>${e['o'][3]:.2f}</td><td>{badge_html(e)}</td></tr>")
         h.append("</table></div>")
 
-    # 👀 Watchlist restock : prix bas déjà vus, actuellement en rupture
-    wl = [e for e in entries if not e["available"] and e["mem"] and e["mem"]["min_price_ever"] is not None
-          and e["ref"] is not None and e["mem"]["min_price_ever"] <= e["ref"]]
-    wl.sort(key=lambda e: e["mem"]["min_price_ever"])
-    h.append(f"<h2>👀 Watchlist restock — {len(wl)}</h2>")
-    h.append("<p class=small>Déjà vus sous la référence de marché, actuellement en rupture. Un retour en stock "
-             "sous ce prix est le signal le plus actionnable.</p>")
-    if wl:
-        h.append("<div class=wrap><table><tr><th>SKU</th><th>Shop</th><th>Plus bas vu</th><th>Réf</th></tr>")
-        for e in wl[:25]:
-            h.append(f"<tr><td>{A(e['o'][5], sku_label(e['sku'])[:40])}</td><td>{e['o'][1]}</td>"
-                     f"<td>${e['mem']['min_price_ever']:.2f}</td><td>${e['ref']:.2f}</td></tr>")
-        h.append("</table></div>")
+    # 👀 Watchlist en trois couches (N)
+    wprio, wlows, wrest = watchlist_layers(entries)
+    h.append(f"<h2>👀 Watchlist — {len(wprio)} prioritaire(s)</h2>")
+    h.append("<p class=small>Un ancien prix n'est jamais une valeur de marché. Une priorité n'est "
+             "affichée que si une référence de marché permet de la justifier.</p>")
+    def wl_table(items, cols_gap):
+        r = ["<div class=wrap><table><tr><th>Produit</th><th>Historical low</th><th>Vu le</th><th>Shops</th>"
+             + ("<th>vs réf</th>" if cols_gap else "") + "</tr>"]
+        for e in items:
+            hh = e["hist"]
+            r.append(f"<tr><td>{A(e['o'][5], sku_label(e['sku'])[:44])}</td><td>${hh['low']:.2f}</td>"
+                     f"<td class=small>{hh['at'][:10]}</td><td>{hh['n_shops']}</td>"
+                     + (f"<td>{e['restock_gap']:.1f} %</td>" if cols_gap else "") + "</tr>")
+        return "".join(r) + "</table></div>"
+    if wprio:
+        h.append("<h3>🔔 Restock priority</h3>" + wl_table(wprio[:20], True))
+    else:
+        h.append("<p class=small>Aucune priorité qualifiable aujourd'hui : sans référence de marché, "
+                 "un ancien prix bas ne suffit pas à justifier une surveillance.</p>")
+    if wlows:
+        h.append(f"<details><summary>📉 Historical lows — {len(wlows)}</summary>" + wl_table(wlows[:40], False) + "</details>")
+    if wrest:
+        h.append(f"<details><summary>🗂 Toutes les observations en rupture — {len(wrest)}</summary>"
+                 "<div class=wrap><table><tr><th>Produit</th><th>Shop</th><th>Dernier prix</th></tr>"
+                 + "".join(f"<tr><td>{A(e['o'][5], sku_label(e['sku'])[:44])}</td><td>{e['o'][1]}</td>"
+                           f"<td>${e['o'][3]:.2f}</td></tr>" for e in wrest[:60])
+                 + "</table></div></details>")
 
     # 🔎 Shops découverts
     # le fragment de discover.py porte son propre titre : on le retire pour garder l'ordre des sections

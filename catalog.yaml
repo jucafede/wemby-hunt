@@ -29,6 +29,7 @@ skus:
     market_sold_us: 28.50
     market_source: "ask: WaxStat 34,95 / EH Cards 34,99 live 17/08 ; sold: SportsCardsPro 23,50-30 (mai-juil), eBay Kruk 24,99"
     market_checked_at: 2026-08-17
+    thresholds_reviewed_at: 2026-08-17
     buy_below_usd: 27.00
     watch_below_usd: 31.00
     eu_reference_eur: 49.99
@@ -48,6 +49,7 @@ skus:
     market_sold_us: null
     market_source: "ask: Walmart 34,96 / DACW 39,95 / Dick's 29,99 ; sold: à relever"
     market_checked_at: 2026-08-17
+    thresholds_reviewed_at: 2026-08-17
     buy_below_usd: 30.00
     watch_below_usd: 35.00
     eu_reference_eur: null
@@ -66,6 +68,7 @@ skus:
     market_sold_us: null
     market_source: ""
     market_checked_at: null
+    thresholds_reviewed_at: 2026-08-17
     buy_below_usd: 60.00
     watch_below_usd: 75.00
     eu_reference_eur: 149.00
@@ -84,6 +87,7 @@ skus:
     market_sold_us: null
     market_source: "DACW"
     market_checked_at: 2026-08-17
+    thresholds_reviewed_at: 2026-08-17
     buy_below_usd: 60.00
     watch_below_usd: 80.00
     eu_reference_eur: 150.00
@@ -102,6 +106,7 @@ skus:
     market_sold_us: null
     market_source: ""
     market_checked_at: null
+    thresholds_reviewed_at: 2026-08-17
     buy_below_usd: 40.00
     watch_below_usd: 45.00
     eu_reference_eur: null
@@ -121,6 +126,7 @@ skus:
     market_sold_us: 60.00
     market_source: "ask: WaxStat 62,95 / Steel City 62,95 / Columbia 64,99 (OOS) ; sold: eBay listings 59,99-69,99"
     market_checked_at: 2026-08-17
+    thresholds_reviewed_at: 2026-08-17
     buy_below_usd: 65.00
     watch_below_usd: 75.00
     eu_reference_eur: 99.00
@@ -138,6 +144,7 @@ skus:
     market_sold_us: null
     market_source: ""
     market_checked_at: null
+    thresholds_reviewed_at: 2026-08-17
     buy_below_usd: 45.00
     watch_below_usd: 55.00
     eu_reference_eur: null
@@ -158,6 +165,7 @@ skus:
     market_checked_at: 2026-08-17
     market_sold_source: ebay_sold
     market_sold_checked_at: 2026-08-17
+    thresholds_reviewed_at: 2026-08-17
     buy_below_usd: 55.00
     watch_below_usd: 65.00
     eu_reference_eur: 134.00
@@ -175,6 +183,7 @@ skus:
     market_sold_us: null
     market_source: ""
     market_checked_at: null
+    thresholds_reviewed_at: 2026-08-17
     buy_below_usd: 40.00
     watch_below_usd: 50.00
     eu_reference_eur: null
@@ -192,6 +201,7 @@ skus:
     market_sold_us: null
     market_source: ""
     market_checked_at: null
+    thresholds_reviewed_at: 2026-08-17
     buy_below_usd: 70.00
     watch_below_usd: 80.00
     eu_reference_eur: null
@@ -207,6 +217,7 @@ skus:
     wemby_rc: true
     market_ask_us: null
     market_sold_us: null
+    thresholds_reviewed_at: 2026-08-17
     buy_below_usd: 250.00
     watch_below_usd: 300.00
   - id: PANINI_2023-24_REVOLUTION_HOBBY
@@ -220,6 +231,7 @@ skus:
     market_ask_us: 399.95
     market_sold_us: null
     market_source: "DACW"
+    thresholds_reviewed_at: 2026-08-17
     buy_below_usd: 275.00
     watch_below_usd: 320.00
   - id: PANINI_2023-24_OPTIC_HOBBY
@@ -230,6 +242,7 @@ skus:
     format: Hobby
     tier: hobby
     wemby_rc: true
+    thresholds_reviewed_at: 2026-08-17
     buy_below_usd: 250.00
     watch_below_usd: 300.00
   - id: PANINI_2023-24_SELECT_HOBBY
@@ -239,6 +252,7 @@ skus:
     format: Hobby
     tier: hobby
     wemby_rc: true
+    thresholds_reviewed_at: 2026-08-17
     buy_below_usd: 300.00
     watch_below_usd: 350.00
   - id: PANINI_2023-24_PRIZM_HOBBY
@@ -248,6 +262,7 @@ skus:
     format: Hobby
     tier: hobby
     wemby_rc: true
+    thresholds_reviewed_at: 2026-08-17
     buy_below_usd: 900.00
     watch_below_usd: 1000.00
   - id: PANINI_2023-24_PRIZM_HANGER
@@ -262,6 +277,7 @@ skus:
     market_sold_us: null
     market_source: "à relever (Collector Store 99,99 $ = prix collectionneur, pas benchmark)"
     market_checked_at: null
+    thresholds_reviewed_at: 2026-08-17
     buy_below_usd: 25.00
     watch_below_usd: 40.00
     eu_reference_eur: null
@@ -278,6 +294,7 @@ skus:
     market_sold_us: null
     market_source: "ask: Collector Store 439,95 $ (17/08) ; sold: à relever"
     market_checked_at: 2026-08-17
+    thresholds_reviewed_at: 2026-08-17
     buy_below_usd: 350.00
     watch_below_usd: 400.00
   - id: PANINI_2023-24_PHOENIX_MEGA
@@ -296,6 +313,7 @@ skus:
     market_sold_source: null
     market_sold_checked_at: null
     market_source: "ask: fiche live 17/08 — sold à relever"
+    thresholds_reviewed_at: 2026-08-17
     buy_below_usd: 25.00
     watch_below_usd: 35.00
     url_proof: "https://www.hiddengemscardshop.com/products/2023-24-panini-phoenix-mega-box"
@@ -316,6 +334,7 @@ skus:
     market_sold_source: null
     market_sold_checked_at: null
     market_source: "ask: fiche live 17/08 — sold à relever"
+    thresholds_reviewed_at: 2026-08-17
     buy_below_usd: 40
     watch_below_usd: 50
     url_proof: "https://ehcards.com/products/2023-24-donruss-optic-basketball-6-pack-hobby-blaster-box"
@@ -336,6 +355,7 @@ skus:
     market_sold_source: null
     market_sold_checked_at: null
     market_source: "ask: fiche live 17/08 — sold à relever"
+    thresholds_reviewed_at: 2026-08-17
     buy_below_usd: 25
     watch_below_usd: 40
     url_proof: "https://superiorsportsinvestments.com/products/2023-24-panini-donruss-optic-basketball-hanger-box-velocity-parallels"
@@ -355,6 +375,7 @@ skus:
     market_sold_source: null
     market_sold_checked_at: null
     market_source: "ask: fiche live 17/08 — sold à relever"
+    thresholds_reviewed_at: 2026-08-17
     buy_below_usd: 25
     watch_below_usd: 40
     url_proof: "https://rbicru7.com/products/2023-24-panini-select-basketball-hanger-box"
@@ -374,6 +395,7 @@ skus:
     market_sold_source: null
     market_sold_checked_at: null
     market_source: "ask: fiche live 17/08 — sold à relever"
+    thresholds_reviewed_at: 2026-08-17
     buy_below_usd: 60
     watch_below_usd: 75
     url_proof: "https://sportscardjunction.com/products/2023-24-panini-select-basketball-hobby-mega-box"
@@ -393,6 +415,7 @@ skus:
     market_sold_source: null
     market_sold_checked_at: null
     market_source: "ask: fiche live 17/08 — sold à relever"
+    thresholds_reviewed_at: 2026-08-17
     buy_below_usd: 90
     watch_below_usd: 110
     url_proof: "https://theawesomecardshop.com/products/2023-24-panini-prizm-basketball-mega-box-pink-ice-prizms"
@@ -412,6 +435,7 @@ skus:
     market_sold_source: null
     market_sold_checked_at: null
     market_source: "ask: fiche live 17/08 — sold à relever"
+    thresholds_reviewed_at: 2026-08-17
     buy_below_usd: 30
     watch_below_usd: 40
     url_proof: "https://ehcards.com/products/2023-24-panini-contenders-basketball-blaster-box"
@@ -431,6 +455,7 @@ skus:
     market_sold_source: null
     market_sold_checked_at: null
     market_source: "ask: fiche live 17/08 — sold à relever"
+    thresholds_reviewed_at: 2026-08-17
     buy_below_usd: 110
     watch_below_usd: 140
     url_proof: "https://theawesomecardshop.com/products/2023-24-panini-prizm-basketball-24-pack-retail-box"
@@ -450,6 +475,7 @@ skus:
     market_sold_source: null
     market_sold_checked_at: null
     market_source: "ask: fiche live 17/08 — sold à relever"
+    thresholds_reviewed_at: 2026-08-17
     buy_below_usd: 25.00
     watch_below_usd: 35.00
     url_proof: "https://superiorsportsinvestments.com/products/2023-24-panini-nba-hoops-basketball-6-pack-blaster-box"
@@ -468,6 +494,7 @@ skus:
     market_sold_source: null
     market_sold_checked_at: null
     market_source: ""
+    thresholds_reviewed_at: 2026-08-17
     buy_below_usd: 40
     watch_below_usd: 50
     url_proof: "https://superiorsportsinvestments.com/products/2023-24-panini-nba-hoops-basketball-6-pack-blaster-box"
@@ -486,6 +513,7 @@ skus:
     market_sold_source: null
     market_sold_checked_at: null
     market_source: ""
+    thresholds_reviewed_at: 2026-08-17
     buy_below_usd: 70
     watch_below_usd: 80
     url_proof: "https://rbicru7.com/products/2023-24-panini-mosaic-basketball-target-mega-box-reactive-yellow-green-fluorescent"
@@ -872,6 +900,7 @@ skus:
     market_sold_source: null
     market_sold_checked_at: null
     market_source: "ask: fiche live 17/08 — sold à relever"
+    thresholds_reviewed_at: 2026-08-17
     buy_below_usd: 1120
     watch_below_usd: 1300
     url_proof: "https://theawesomecardshop.com/products/2023-24-panini-select-basketball-mega-20-box-case-green-shock-prizm"
@@ -893,6 +922,7 @@ skus:
     market_sold_source: null
     market_sold_checked_at: null
     market_source: "ask: fiche live 17/08 — sold à relever"
+    thresholds_reviewed_at: 2026-08-17
     buy_below_usd: 4800
     watch_below_usd: 5600
     url_proof: "https://theawesomecardshop.com/products/2023-24-panini-mosaic-fast-break-basketball-hobby-20-box-case"
@@ -974,6 +1004,7 @@ skus:
     market_sold_source: null
     market_sold_checked_at: null
     market_source: "ask: awesome 14,75 / worldchampion 25,00 / superior 45,00 (18/08) — sold à relever"
+    thresholds_reviewed_at: 2026-08-17
     buy_below_usd: 20.00
     watch_below_usd: 25.00
     url_proof: "https://theawesomecardshop.com/products/2023-24-panini-prizm-turkish-airlines-euroleague-basketball-blaster-box"
@@ -1540,6 +1571,7 @@ skus:
     market_sold_n: 6
     market_sold_window_days: 90
     market_sold_checked_at: 2026-08-18
+    thresholds_reviewed_at: 2026-08-17
     buy_below_usd: 260.00
     watch_below_usd: 300.00
     note: "Wemby #1, seul produit avec autos RC Wemby (exclusivité Fanatics), 2 autos/box, Superfractor toutes configs"
@@ -1562,6 +1594,7 @@ skus:
     market_sold_n: null
     market_sold_window_days: null
     market_sold_checked_at: null
+    thresholds_reviewed_at: 2026-08-17
     buy_below_usd: 35.00
     watch_below_usd: 45.00
     market_source: "ask: 42,95-55 relevés le 18/08 ; sold à relever"

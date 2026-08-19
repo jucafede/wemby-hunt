@@ -106,6 +106,10 @@ P2 = [
  ("2023-24 Panini Select BasketballMega Box (Red/ Purple Cracked Ice)","SELECT_MEGA"),
 ]
 NEG = [
+ # G — sealed gate (P0) : aucun single ne peut alimenter la couche décisionnelle
+ ("2025-26 Cooper Flagg Bowman Hobby Stars Rookie RC HS-3","single Cooper Flagg : pas une Bowman Hobby Box"),
+ ("Trayce Jackson-Davis 2023-24 Panini Mosaic #PM-TJD Pictographs Mosaic Choice","single : pas une Mosaic Choice Box"),
+ ("CJ Stroud 2023 Panini Prizm Green Ice Prizm RC #339 PSA 10","single grade : jamais scelle"),
  ("2023-24 Topps Chrome NBL Australia Basketball Hobby Box","Topps Chrome NBL exclu"),
  ("2023-24 Overtime Elite Topps Chrome Basketball Hobby Box","OTE exclu"),
  ("2023-24 Bowman University Basketball Hobby Box","Bowman University exclu"),
@@ -154,4 +158,15 @@ for t, why in NEG:
     print(f"{'PASS' if good else 'FAIL'} {v:<26} {why}")
 print(f"\nTOTAL : {len(POS)+len(P2)+len(NEG)} tests, {len(fails)} FAIL")
 for f in fails: print("  FAIL", f)
+
+# sealed_product : verdicts structurels, sans blacklist de joueurs
+for _t, _w in [("2025-26 Cooper Flagg Bowman Hobby Stars Rookie RC HS-3", False),
+               ("Trayce Jackson-Davis 2023-24 Panini Mosaic #PM-TJD Pictographs Mosaic Choice", False),
+               ("2025-26 Bowman Basketball Hobby Box", True),
+               ("2023-24 Topps Chrome Basketball Value Blaster Box", True),
+               ("2023-24 Panini Select Basketball Mega 20-Box Case (Green Shock Prizm)", True)]:
+    _g = hunt.sealed_product(hunt.norm(_t))
+    if _g is not _w: fails.append(("SEALED", _t, _w, _g))
+    print(f"{'PASS' if _g is _w else 'FAIL'} sealed={str(_g):<5} {_t[:56]}")
+print(f"TOTAL AVEC SEALED : {len(POS)+len(P2)+len(NEG)+5} tests, {len(fails)} FAIL")
 sys.exit(1 if fails else 0)

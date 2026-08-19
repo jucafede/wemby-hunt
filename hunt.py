@@ -44,6 +44,8 @@ FORMATS = [
     ("Tin", r"\btin\b"),
     ("Chinese New Year", r"chinese\s*new\s*year|\bcny\b|lunar"),
     ("International", r"\binternational\b|\bintl\b|\basia\b|\btmall\b"),
+    ("Breakers Delight", r"breaker'?s?\s*delight"),
+    ("Hobby Jumbo", r"\bjumbo\b"),
     ("Hobby Mega", r"hobby\s*mega|mega\s*hobby"),
     ("Hobby Blaster", r"hobby\s*blaster"),
     ("Hobby", r"\bhobby\b"),
@@ -168,6 +170,11 @@ def match_title(title: str, skus: list[dict]) -> Match:
         if s["set"].lower() == "donruss optic" and ("optic" not in t or "contenders" in t or "recon" in t): continue
         if s["set"].lower() == "contenders" and "optic" in t: continue   # "Contenders Optic" est une autre gamme
         if s["set"].lower() == "select" and ("select racing" in t or "nascar" in t): continue
+        if s["set"].lower() == "bowman":
+            # la famille Bowman Basketball ne couvre PAS les sous-gammes universitaires ni les
+            # déclinaisons Chrome/Best/1st Edition, qui sont d'autres produits.
+            if any(k in t for k in ("bowman u ", "bowman university", "1st edition", "first edition",
+                                    "bowman best", "bowman chrome", "u chrome")): continue
         if s["set"].lower() in ("topps chrome", "cosmic chrome"):
             # gammes voisines qui ne sont PAS du Topps Chrome NBA
             if any(k in t for k in ("nbl", "australia", "overtime elite", "\bote\b", "bowman",

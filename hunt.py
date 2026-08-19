@@ -175,7 +175,15 @@ def match_title(title: str, skus: list[dict]) -> Match:
             # déclinaisons Chrome/Best/1st Edition, qui sont d'autres produits.
             if any(k in t for k in ("bowman u ", "bowman university", "1st edition", "first edition",
                                     "bowman best", "bowman chrome", "u chrome")): continue
-        if s["set"].lower() in ("topps chrome", "cosmic chrome"):
+            # Sapphire / Monster sont des éditions distinctes ici aussi : un "Bowman Sapphire
+            # Hobby Box" à 2 500 $ était absorbé par le Hobby standard (constaté le 20/08).
+            ident_b = (s["id"] + " " + (s.get("configuration") or "")).lower()
+            if any((tok in t) != (tok in ident_b) for tok in ("sapphire", "monster")): continue
+        if s["set"].lower() in ("topps chrome", "cosmic chrome", "topps chrome update"):
+            # Update est une gamme distincte de Chrome, dans les deux sens.
+            if ("update" in t) != ("update" in s["set"].lower()): continue
+            # collaborations et éditions spéciales : identités séparées, pas du Chrome standard
+            if "cactus jack" in t and "cactus" not in s["id"].lower(): continue
             # gammes voisines qui ne sont PAS du Topps Chrome NBA
             if any(k in t for k in ("nbl", "australia", "overtime elite", "\bote\b", "bowman",
                                     "g-league", "g league", "breaker", "uefa")): continue
@@ -183,8 +191,9 @@ def match_title(title: str, skus: list[dict]) -> Match:
             if ("cosmic" in t) != (s["set"].lower() == "cosmic chrome"): continue
             # Sapphire et Monster sont des configurations distinctes : le titre et le SKU doivent
             # être d'accord, sinon une Sapphire à 400 $ nourrirait le Chrome Hobby standard.
-            ident = s["id"].lower() + " " + (s.get("configuration_note") or "").lower()
-            if any((tok in t) != (tok in ident) for tok in ("sapphire", "monster")): continue
+            ident = (s["id"] + " " + (s.get("configuration") or "") + " "
+                     + (s.get("configuration_note") or "")).lower()
+            if any((tok in t) != (tok in ident) for tok in ("sapphire", "monster", "first day")): continue
         # FOTL / International (asia, tmall) sont désormais des FORMATS détectés : le garde-fou "mauvais format
         # = éliminé" suffit, comme pour Hanger. Ne restent ici que les sous-gammes sans format dédié.
         if any(k in t for k in ("cello", "multi-pack", "value pack")): continue

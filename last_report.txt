@@ -1,17 +1,17 @@
 → EH Cards & Collectibles (https://ehcards.com)  [trust=trusted]
-  947 produits bruts, 24 rattachés à un SKU
+  948 produits bruts, 24 rattachés à un SKU
 → Collector Store LLC (https://collectorstore.com)  [trust=trusted]
     collections : 4/124 retenues (filtre 'basketball|\\bnba\\b|hoops|prizm|mosaic|optic|select|phoenix|contenders|court.kings|revolution|premium.stock')
   750 produits bruts, 10 rattachés à un SKU
 → Hidden Gems Card Shop (https://www.hiddengemscardshop.com)  [trust=trusted]
-  2738 produits bruts, 29 rattachés à un SKU
+  2749 produits bruts, 29 rattachés à un SKU
 → The Awesome Card Shop (https://theawesomecardshop.com)  [trust=trusted]
   7274 produits bruts, 71 rattachés à un SKU
 → MojoBreak Shop (https://mojobreakshop.com)  [trust=trusted]
   [mojobreak] status=reject (qualifié sur données réelles → 0 sealed 2023-24) → skip
   0 produits bruts, 0 rattachés à un SKU
 → RbiCru7 Collectibles (https://rbicru7.com)  [trust=trusted]
-  12352 produits bruts, 16 rattachés à un SKU
+  12398 produits bruts, 16 rattachés à un SKU
 → Layton Sports Cards (https://laytonsportscards.com)  [trust=trusted]
   [layton] type=breaks (breaker, hors périmètre sealed) → skip
   0 produits bruts, 0 rattachés à un SKU
@@ -22,31 +22,31 @@
   [dacw] type=html non géré en v1 → skip
   0 produits bruts, 0 rattachés à un SKU
 → Columbia Sports Cards (https://columbiasportscard.com)  [trust=trusted]
-  3115 produits bruts, 47 rattachés à un SKU
+  3116 produits bruts, 47 rattachés à un SKU
 → Sports Card Junction (https://sportscardjunction.com)  [trust=watch]
-  3742 produits bruts, 44 rattachés à un SKU
+  3747 produits bruts, 44 rattachés à un SKU
 → Grand Slam Collectibles (https://grandslamcollectibles.com)  [trust=watch]
   [grandslam] status=reject (qualifié sur données réelles → 0 sealed 2023-24) → skip
   0 produits bruts, 0 rattachés à un SKU
 → The Cardiacs (https://www.thecardiacs.com)  [trust=trusted]
-  5303 produits bruts, 18 rattachés à un SKU
+  5325 produits bruts, 18 rattachés à un SKU
 → Monmouth Cards (https://monmouthcards.com)  [trust=watch]
-  4932 produits bruts, 24 rattachés à un SKU
+  4859 produits bruts, 24 rattachés à un SKU
 → World Champion Sports Cards (https://www.worldchampionsportscards.org)  [trust=watch]
-  3869 produits bruts, 37 rattachés à un SKU
+  3945 produits bruts, 37 rattachés à un SKU
 → Superior Sports Investments (https://superiorsportsinvestments.com)  [trust=watch]
     collections : 8/84 retenues (filtre 'basketball|\\bnba\\b|hoops|prizm|mosaic|optic|select|phoenix|contenders|court.kings|revolution|premium.stock')
-  16307 produits bruts, 26 rattachés à un SKU
+  16303 produits bruts, 26 rattachés à un SKU
 → SJAY2K Trading Cards (https://www.sjay2k.com)  [trust=watch]
   602 produits bruts, 8 rattachés à un SKU
 → The Ballgame (https://theballgame.com)  [trust=watch]
   13813 produits bruts, 38 rattachés à un SKU
 → Bleecker Trading (https://bleeckertrading.com)  [trust=watch]
-  2194 produits bruts, 76 rattachés à un SKU
+  2196 produits bruts, 76 rattachés à un SKU
 → CB Hobby (https://cbhobby.com)  [trust=watch]
   663 produits bruts, 2 rattachés à un SKU
 → Box Seat Collectibles (https://boxseatcollectibles.com)  [trust=watch]
-  2082 produits bruts, 14 rattachés à un SKU
+  2083 produits bruts, 14 rattachés à un SKU
 → E5 Sports (https://e5sports.com)  [trust=watch]
   1073 produits bruts, 10 rattachés à un SKU
 → SportCards.com (https://sportcards.com)  [trust=watch]
@@ -1243,5 +1243,5 @@
   2023-24 Panini Prizm EuroLeague Blaster        $   15.00 rbicru7           -40.0%  STRONG_DEAL -40%
   2023-24 Panini Prizm EuroLeague Blaster        $   20.00 cbhobby           -20.0%  STRONG_DEAL -20%
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-08-19T13-01-22.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-08-19T18-45-45.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

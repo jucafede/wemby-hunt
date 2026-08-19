@@ -102,3 +102,7 @@ shops:
   # --- non crawlés : marketplace et benchmarks, utiles pour market_sold et l'achat direct ---
   - {key: stockx, name: StockX, base_url: https://stockx.com, type: marketplace, trust: trusted, direct_france: yes, notes: "Source de market_sold (Last Sale) + route d'achat directe France, produits vérifiés. NON CRAWLÉ."}
   - {key: blowout, name: Blowout Cards, base_url: https://www.blowoutcards.com, type: html, trust: trusted, direct_france: yes, intl_shipping_note: "UPS Worldwide ~71 $ pour ~6 blasters (18/08)", notes: "Benchmark. Collecteur html à faire. NON CRAWLÉ."}
+  # --- sources Bowman repérées le 18/08, à qualifier par --diag avant leur premier run ---
+  - {key: rlsports, name: RL Sports Cards, base_url: https://rlsportscards.com, type: shopify_json, trust: watch, status: watch, notes: "Déjà remonté par discover.py (17 basket, 0 sealed 23-24 sur 250). Fiches Bowman 2025-26 vues le 18/08."}
+  - {key: fancave, name: Fan Cave, base_url: https://fancave.com, type: shopify_json, trust: watch, status: watch, notes: "Fiches Bowman 2025-26 vues le 18/08."}
+  - {key: millcreek, name: Mill Creek Sports, base_url: https://www.millcreeksports.com, type: html, trust: watch, status: watch, notes: "PAS Shopify : /products.json renvoie 404 après redirection vers www (testé 18/08). Collecteur html requis — non crawlé en v1. Fiches Bowman 2025-26 vues le 18/08."}

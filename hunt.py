@@ -527,6 +527,35 @@ def market_ref(sku: dict) -> tuple[float | None, str | None]:
         return float(sku["market_ask_us"]), "ask"
     return None, None
 
+def backfill_comp(conn, skus):
+    """Les observations antérieures à H/I n'ont ni exact_comp_key ni sealed. On les recalcule une
+    fois, sinon l'historique repartirait de zéro. Migration idempotente."""
+    smap = {x["id"]: x for x in skus}
+    todo = conn.execute("SELECT rowid, sku_id, title, price FROM observations WHERE exact_comp_key IS NULL").fetchall()
+    for rid, sid, title, price in todo:
+        tn = norm(title or "")
+        sk = smap.get(sid, {})
+        q = parse_quantity(tn, sk)
+        conn.execute("UPDATE observations SET quantity=?, unit_price=?, exact_comp_key=?, sealed=? WHERE rowid=?",
+                     (q, round((price or 0) / q, 2) if q else price,
+                      exact_comp_key(sid, tn, sk), 1 if sealed_product(tn) else 0, rid))
+    if todo: conn.commit()
+    return len(todo)
+
+def historical_low(conn, key, upto=None):
+    """Plus bas prix UNITAIRE jamais observé pour cette cloison de comparabilité.
+    C'est un FAIT HISTORIQUE, jamais une valeur de marché : il ne sert qu'à surveiller un retour
+    en stock. Strictement cloisonné par exact_comp_key et réservé aux lignes sealed=1 — un single,
+    une autre configuration ou un lot de quantité différente ne peut pas le contaminer."""
+    q = ("SELECT unit_price, seen_at, shop FROM observations "
+         "WHERE exact_comp_key=? AND sealed=1 AND unit_price IS NOT NULL")
+    args = [key]
+    if upto: q += " AND seen_at<=?"; args.append(upto)
+    rows = conn.execute(q + " ORDER BY unit_price", args).fetchall()
+    if not rows: return None
+    return {"low": rows[0][0], "at": rows[0][1], "shop": rows[0][2],
+            "n_shops": len({r[2] for r in rows}), "n_obs": len(rows)}
+
 def line_memory(conn, sku_id, shop, url, vt, upto):
     """Restitution pure depuis observations — aucune collecte supplémentaire."""
     rows = conn.execute("""SELECT seen_at, price, available FROM observations
@@ -632,6 +661,8 @@ def report(cat: dict, conn: sqlite3.Connection, seen_at: str | None, trust: dict
     trust = trust or {}
     skus = {s["id"]: s for s in cat["skus"]}
     nb = cat["landed_cost"].get("bundle_boxes", 8)
+    n_mig = backfill_comp(conn, cat["skus"])
+    if n_mig: print(f"(migration : {n_mig} observation(s) enrichies en exact_comp_key / sealed)")
     n_purged = purge_stale(conn, cat["skus"])
     if n_purged: print(f"(purge : {n_purged} observation(s) obsolètes retirées — matchées par une ancienne version du code)")
     # dernier passage RÉUSSI par shop (dernier seen_at où le shop a renvoyé au moins 1 produit brut)
@@ -691,7 +722,10 @@ def report(cat: dict, conn: sqlite3.Connection, seen_at: str | None, trust: dict
                 for o in obs:
                     mem = line_memory(conn, sid, o[1], o[5], o[8], o[7])
                     tg, dsc, gap, ref, kind = compute_badges(o, mem, s, trust_of(o[1], trust), in_stock)
-                    entries.append({"o": o, "available": bool(o[4]), "triggers": tg, "descriptors": dsc,
+                    key = o[13] if len(o) > 13 and o[13] else exact_comp_key(sid, norm(o[2]), s)
+                    hist = historical_low(conn, key, o[7])
+                    entries.append({"o": o, "key": key, "hist": hist,
+                                    "available": bool(o[4]), "triggers": tg, "descriptors": dsc,
                                     "gap": gap, "ref": ref, "kind": kind, "mem": mem,
                                     "comp": (o[9] or "EXACT"), "sku": s, "sid": sid})
                 all_entries.extend(entries)
@@ -724,6 +758,15 @@ def report(cat: dict, conn: sqlite3.Connection, seen_at: str | None, trust: dict
                 ssrc = s.get("market_sold_source"); schk = s.get("market_sold_checked_at")
                 prov = f" [{ssrc}{' ' + str(schk) if schk else ''}]" if sold and ssrc else ""
                 print(f"   ask {money(ask):<8} sold {money(sold):<8}{prov} | buy ≤ {money(s.get('buy_below_usd')):<8} | watch ≤ {money(s.get('watch_below_usd')):<8} | EU {money(eu, '€')}")
+                # M : l'historique est un FAIT, jamais une référence de marché. Il est affiché
+                # séparément du prix live et ne peut produire ni DEAL ni GO.
+                he = next((e for e in entries if e["hist"]), None)
+                if he:
+                    h = he["hist"]
+                    live = min((x[3] for x in in_stock), default=None)
+                    print(f"   HISTORICAL LOW ${h['low']:.2f} (le {h['at'][:10]}, {h['shop']}, "
+                          f"{h['n_shops']} shop(s) vus)" + (f" | cheapest live ${live:.2f}" if live else " | aucun live"))
+                    if not in_stock: print(f"   RESTOCK TARGET ${h['low']:.2f}  — surveillance, pas une valeur de marché")
                 if best: print(f"   BEST → {best[1]}  {best[5]}")
                 html.append((tier, status, icon, s, obs, best))
                 for o in obs:

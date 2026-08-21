@@ -11,7 +11,7 @@
   [mojobreak] status=reject \(qualifié sur données réelles → 0 sealed 2023-24\) → skip
   0 produits bruts, 0 rattachés à un SKU
 → RbiCru7 Collectibles (https://rbicru7.com)  [trust=trusted]
-  12546 produits bruts, 32 rattachés à un SKU
+  12537 produits bruts, 32 rattachés à un SKU
 → Layton Sports Cards (https://laytonsportscards.com)  [trust=trusted]
   [layton] type=breaks \(breaker, hors périmètre sealed\) → skip
   0 produits bruts, 0 rattachés à un SKU
@@ -29,9 +29,9 @@
   [grandslam] status=reject \(qualifié sur données réelles → 0 sealed 2023-24\) → skip
   0 produits bruts, 0 rattachés à un SKU
 → The Cardiacs (https://www.thecardiacs.com)  [trust=trusted]
-  5337 produits bruts, 32 rattachés à un SKU
+  5338 produits bruts, 32 rattachés à un SKU
 → Monmouth Cards (https://monmouthcards.com)  [trust=watch]
-  4875 produits bruts, 36 rattachés à un SKU
+  4871 produits bruts, 36 rattachés à un SKU
 → World Champion Sports Cards (https://www.worldchampionsportscards.org)  [trust=watch]
   3961 produits bruts, 60 rattachés à un SKU
 → Superior Sports Investments (https://superiorsportsinvestments.com)  [trust=watch]
@@ -65,12 +65,6 @@
   [millcreek] type=html non géré en v1 → skip
   0 produits bruts, 0 rattachés à un SKU
 (4 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
-
-========================================================================
-  🔔 RESTOCKS depuis le passage précédent
-========================================================================
-  🔔 RESTOCK  PANINI_2024-25_PRIZM_HOBBY  sportscardjunction  $525.00  https://sportscardjunction.com/products/pre-order-2024-25-panini-prizm-nba-basketball-hobby-box-releases-2-19-25
-  🔔 RESTOCK  TOPPS_2025-26_SIGNATURE_CLASS_HOBBY  bleecker  $450.00  https://bleeckertrading.com/products/2025-26-topps-signature-class-basketball-hobby-box-presale
 
 ========================================================================
   RETAIL
@@ -1212,8 +1206,8 @@
    RESTOCK TARGET $71.99  — surveillance, pas une valeur de marché
 
 · SUIVI   2024-25 Panini Prizm Hobby   [PANINI_2024-25_PRIZM_HOBBY]
-   1. sportscardjunction $  525.00  IN STOCK  landed≈€ 555.85  (score 1.00)  🔔
-        🔹RESTOCK +2j  🔹NEW_LOW  🔹PRICE_DROP -12%  YEAR2  VERIFY  cheapest of 6 in stock
+   1. sportscardjunction $  525.00  IN STOCK  landed≈€ 555.85  (score 1.00)
+        YEAR2  VERIFY  cheapest of 6 in stock
    2. awesome          $  559.75  IN STOCK  landed≈€ 591.79  (score 1.00)
         YEAR2
    3. ballgame         $  600.00  IN STOCK  landed≈€ 633.43  (score 1.00)
@@ -1808,5 +1802,5 @@
   2023-24 Panini Prizm EuroLeague Blaster        $    9.95 cardiacs          -60.2%  STRONG_DEAL -60%  (+3 autre(s) offre(s))
   2024-25 Panini Revolution Blaster              $   39.99 fancave           -27.3%  STRONG_DEAL -27%
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-08-21T18-48-27.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-08-21T19-08-00.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

@@ -1646,7 +1646,7 @@ skus:
     wemby_rc: true
     configuration_note: "Monster Box — configuration distincte"
     format: Value Box
-    configuration: null
+    configuration: "Monster Box"
     tier: retail
     status: WATCH
     licensed: nbpa
@@ -1667,7 +1667,7 @@ skus:
     wemby_rc: true
     configuration_note: "Sapphire Edition — configuration distincte"
     format: Hobby
-    configuration: null
+    configuration: "Sapphire Edition"
     tier: hobby
     status: WATCH
     licensed: nbpa
@@ -1691,8 +1691,8 @@ skus:
     tier: hobby
     status: WATCH
     licensed: nbpa
-    market_ask_from: [awesome]
-    market_ask_us: 9.00
+    market_ask_us: null
+    market_ask_purged: "9,00 $ relevé chez awesome le 18/08 — aberrant face au sold 187 $ (fiche ...-hobby-box-copy, probablement un doublon ou un placeholder). Purgé le 21/08, à relever proprement."
     market_sold_us: 187.00
     market_sold_source: stockx
     market_sold_n: 2

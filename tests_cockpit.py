@@ -120,6 +120,59 @@ check("U · 0 achat : les 4 sections restent visibles",
       all(x in h0 for x in ("🏀 Wemby Rookie 23/24", "⭐ Wemby Year 2 24/25",
                             "💎 Wemby Premium / Trophy", "📦 Autres opportunités")))
 
+# ================= complément : données, cohérence, anti-circularité, structure
+# 1a — aucun ask aberrant ne subsiste sur Cosmic Chrome Hobby
+cc = S["TOPPS_2023-24_COSMIC_CHROME_HOBBY"]
+check("1a · l'ask aberrant de Cosmic Chrome est purgé", cc.get("market_ask_us"), None)
+check("1a · la purge est tracée", bool(cc.get("market_ask_purged")))
+check("1a · plus aucun écart calculable dessus", hunt.market_ref(cc)[0] is None or cc.get("market_sold_us") is not None)
+
+# 1b — l'édition entre dans le libellé, partout
+check("1b · un SKU Sapphire ne s'affiche jamais « Chrome Hobby » tout court",
+      hunt.sku_label(S["TOPPS_2023-24_CHROME_SAPPHIRE"]) != hunt.sku_label(S["TOPPS_2023-24_CHROME_HOBBY"]))
+check("1b · Sapphire porte son édition", "Sapphire" in hunt.sku_label(S["TOPPS_2023-24_CHROME_SAPPHIRE"]))
+check("1b · Monster porte son édition", "Monster" in hunt.sku_label(S["TOPPS_2023-24_CHROME_MONSTER"]))
+labels = [hunt.sku_label(x) for x in cat["skus"]]
+check("1b · aucun libellé de SKU n'est ambigu", len(labels), len(set(labels)))
+
+# 1c — convention unique de landed sur les trois cases citées
+for sid in ("PANINI_2023-24_SELECT_MEGA_CASE", "PANINI_2023-24_OPTIC_MEGA_CASE",
+            "PANINI_2023-24_MOSAIC_FAST_BREAK_CASE"):
+    lp = hunt.landed_phrase(1400.0, S[sid].get("boxes_per_case") or 20, cat)
+    check(f"1c · {sid.split('_')[-2]} : total ET unitaire",
+          lp.startswith("case €") and "/boîte" in lp)
+check("1c · une boîte seule n'affiche pas de convention case",
+      "case" in hunt.landed_phrase(39.99, 1, cat), False)
+
+# 2 — la phrase de synthèse et les cartes viennent du même calcul
+hunt.write_html(cat, blocks, [], [], "2026-08-21T08:00:00", {"sh": "trusted"},
+                hot=[buy], entries=[buy, n1, r_ok], shopcount=[], health={})
+h2 = pathlib.Path("/Users/ju/Draft Class/wemby-hunt/out/index.html").read_text(encoding="utf-8")
+seg2 = h2[h2.index("<h2 id=acheter>"):h2.index("<h2 id=surveiller>")]
+declared = int(re.search(r"<b>(\d+)</b><span>à acheter", h2).group(1))
+check("2 · le compteur annoncé == le nombre de cartes ACHETER", declared, seg2.count("class=card"))
+check("2 · la phrase de synthèse annonce le même nombre",
+      f"{declared} opportunité" in h2 or (declared == 0 and "Aucun achat recommandé" in h2))
+
+# 3 — anti-circularité dans Surveiller
+self_src = entry("PANINI_2023-24_OPTIC_HANGER", 90.0, kind="ask", shop="superior")
+check("3 · référence relevée chez ce seul shop -> inexploitable", hunt.ref_is_usable(self_src), False)
+other_src = entry("PANINI_2023-24_OPTIC_HANGER", 90.0, kind="ask", shop="rbicru7")
+check("3 · même référence, autre shop -> exploitable", hunt.ref_is_usable(other_src), True)
+check("3 · un sold externe est toujours exploitable",
+      hunt.ref_is_usable(entry("PANINI_2023-24_PHOENIX_BLASTER", 40.0, kind="sold")), True)
+check("3 · la référence faible ne remonte pas dans Surveiller",
+      self_src in [e for _, e in hunt.near_buy_lines([self_src])], False)
+
+# 4 — les cartes sont rendues depuis une structure, pas assemblées à la main
+op = hunt.opportunity(buy, "buy", cat)
+check("4 · une opportunité est un objet typé", type(op).__name__, "Opportunity")
+check("4 · l'objet porte la décision", op.verdict, "STRONG DEAL")
+check("4 · l'objet porte l'URL produit", op.url.endswith("/products/mosaic-blaster"))
+check("4 · emplacement FR réservé mais vide", op.fr_price_eur, None)
+op.fr_price_eur, op.fr_source = 34.90, "Tanteo"
+check("4 · le gabarit affiche le bloc FR sans refonte", "🇫🇷 €34.90" in hunt.render_card(op))
+
 print(f"\nTOTAL : {len(total)} tests, {len(fails)} FAIL")
 for f in fails: print("  FAIL", f)
 sys.exit(1 if fails else 0)

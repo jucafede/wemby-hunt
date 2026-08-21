@@ -513,7 +513,14 @@ def sku_label(s: dict) -> str:
     bits = [s["season"]] + ([st] if st.lower().startswith(mfr.lower()) else [mfr, st])
     if s.get("league"): bits.append(s["league"])
     bits.append(str(s["format"]))
-    if s.get("configuration"): bits.append(f"({s['configuration']})")
+    # un Case doit dire de QUOI il est le case : cinq cases Bowman s'affichaient tous
+    # « 2025-26 Topps Bowman Case » et devenaient indistinguables (constaté le 21/08).
+    if s.get("case_of"): bits.append(f"de {s['case_of']}")
+    if s.get("boxes_per_case"): bits.append(f"({s['boxes_per_case']} boîtes)")
+    # l'édition distingue Sapphire / Monster / First Day Issue du produit standard : sans elle,
+    # deux blocs « 2023-24 Topps Chrome Hobby » coexistaient dans la page.
+    ed = s.get("configuration") or s.get("configuration_note")
+    if ed: bits.append(f"[{ed}]")
     return " ".join(str(b) for b in bits)
 
 def money(v, cur="$"):
@@ -1026,6 +1033,15 @@ def gap_phrase(e) -> str:
     if e.get("ref") is None or e.get("gap") is None: return "Marché insuffisant"
     return f"{e['gap']:+.0f} % vs {e['kind']}"
 
+def landed_phrase(price, qty, cat) -> str:
+    """Convention UNIQUE pour les lots et les cases : le total ET l'unitaire, toujours dans
+    cet ordre. La page mélangeait trois conventions (€/boîte, case entière, €/boîte)."""
+    if not price: return "—"
+    if qty and qty > 1:
+        return (f"case €{landed_eur(price / qty, cat) * qty:.2f} · "
+                f"€{landed_eur(price / qty, cat):.2f}/boîte")
+    return f"€{landed_eur(price, cat):.2f}"
+
 def money_or(v, dash="—"): 
     try: return f"${float(v):.2f}"
     except (TypeError, ValueError): return dash
@@ -1041,6 +1057,7 @@ def near_buy_lines(entries):
         if not e["available"] or not e["o"][3] or e["o"][3] <= 0: continue
         b = buy_target(e["sku"])
         if b is None or e["o"][3] <= b: continue
+        if not ref_is_usable(e): continue      # référence auto-sourcée -> Explorer, pas Surveiller
         # une ligne par produit : c'est l'offre la MOINS chère qui dit ce qu'il reste à attendre.
         # Sans cette déduplication, un produit vendu par 5 shops occupe 5 lignes de la même
         # information, et la section redevient un catalogue.
@@ -1075,6 +1092,87 @@ def why_phrase(e) -> str:
         if d.startswith("cheapest"): bits.append(d.replace("cheapest of", "le moins cher sur").replace("in stock", "en stock"))
     if e.get("other_offers"): bits.append(f"{e['other_offers']} autre(s) offre(s)")
     return " · ".join(bits)
+
+@dataclass
+class Opportunity:
+    """Structure de données d'une opportunité. Le rendu HTML en découle — jamais l'inverse.
+    C'est ce qui permettra d'insérer le bloc FR Market ou des alertes sans refondre la page :
+    on ajoutera des champs ici, les gabarits suivront."""
+    kind: str                      # "buy" | "near" | "restock"
+    bucket: str                    # rc | y2 | trophy | autre
+    sku: dict
+    label: str
+    shop: str
+    url: str
+    image: str | None
+    price: float | None
+    qty: int
+    verdict: str                   # STRONG DEAL | DEAL | SIGNAL | WATCH | RESTOCK
+    market: str                    # "-27 % vs ask" ou "Marché insuffisant"
+    ref_kind: str | None           # sold | ask | None
+    ref_ok: bool                   # référence non auto-sourcée -> exploitable pour attendre
+    buy_below: float | None
+    missing: float | None          # ce qu'il reste à attendre
+    hist_low: float | None
+    hist_at: str | None
+    why: str
+    landed: str
+    other_offers: int
+    # emplacements réservés, non alimentés tant que la couche FR n'existe pas
+    fr_price_eur: float | None = None
+    fr_source: str | None = None
+
+def opportunity(e, kind, cat) -> Opportunity:
+    s_ = e["sku"]; o = e["o"]
+    q = (o[11] if len(o) > 11 and o[11] else 1) or 1
+    b = buy_target(s_)
+    price = o[3]
+    verdict = ("STRONG DEAL" if any(t.startswith("STRONG_DEAL") for t in e["triggers"])
+               else "DEAL" if any(t.startswith("DEAL") for t in e["triggers"])
+               else "RESTOCK" if kind == "restock" else "WATCH" if kind == "near" else "SIGNAL")
+    hist = e.get("hist")
+    return Opportunity(
+        kind=kind, bucket=wemby_bucket(s_), sku=s_, label=sku_label(s_), shop=o[1], url=o[5],
+        image=(o[10] if len(o) > 10 else None), price=price, qty=q, verdict=verdict,
+        market=gap_phrase(e), ref_kind=e.get("kind"), ref_ok=ref_is_usable(e),
+        buy_below=b, missing=(price - b) if (b is not None and price and price > b) else None,
+        hist_low=(hist["low"] if hist else None), hist_at=(hist["at"][:10] if hist else None),
+        why=why_phrase(e), landed=landed_phrase(price, q, cat),
+        other_offers=e.get("other_offers", 0))
+
+def ref_is_usable(e) -> bool:
+    """3 — anti-circularité. Un seuil adossé à une référence relevée chez CE seul shop ne permet
+    pas de dire « attends -X $ » : on comparerait le prix du shop à son propre prix. La carte
+    reste visible, mais dans Explorer, pas dans Surveiller."""
+    if e.get("ref") is None: return False
+    if e.get("kind") == "sold": return True
+    froms = e["sku"].get("market_ask_from") or []
+    if not froms: return False
+    return not (len(froms) == 1 and froms[0] == e["o"][1])
+
+def render_card(op: Opportunity) -> str:
+    """Gabarit unique. Toute nouvelle information (FR Market, alerte) s'ajoute ici."""
+    img = (f"<img class=th src='{op.image}' alt='{(op.label or '')[:80]}' loading=\"lazy\" "
+           f"width=56 height=56>") if op.image else ""
+    r = [f"<div class=card>{img}<div class=cb>",
+         f"<div class=nm>{op.label}</div>",
+         f"<div class=pr>{money_or(op.price)} <span class=shop>· {op.shop}</span></div>",
+         f"<div><span class='v'>{op.verdict}</span> <span class=gap>{op.market}</span></div>"]
+    if op.buy_below is not None:
+        r.append(f"<div class=small>🎯 Acheter ≤ {money_or(op.buy_below)}</div>")
+    if op.missing is not None and op.ref_ok:
+        r.append(f"<div class=small><span class=miss>→ attendre {money_or(op.missing)}</span></div>")
+    if op.hist_low is not None:
+        r.append(f"<div class=small>Plus bas déjà vu : {money_or(op.hist_low)}"
+                 + (f" ({op.hist_at})" if op.hist_at else "") + "</div>")
+    if op.qty > 1:
+        r.append(f"<div class=small>{op.qty} boîtes · {op.landed}</div>")
+    if op.why:
+        r.append(f"<div class=small>Pourquoi ? {op.why}</div>")
+    if op.fr_price_eur is not None:
+        r.append(f"<div class=small>🇫🇷 €{op.fr_price_eur:.2f} · {op.fr_source or ''}</div>")
+    r.append(f"<div>{A(op.url, 'Voir l’offre', 'cta')}</div></div></div>")
+    return "".join(r)
 
 def buy_card(e) -> str:
     o = e["sku"]; l = e["o"]
@@ -1141,64 +1239,57 @@ def write_html(cat, blocks, restocks, review, seen_at, trust=None, hot=None, ent
                              ("explorer", "🔎 Explorer"), ("diag", "⚙️ Diagnostic")]) + "</nav>"]
 
     # ---------------- regroupements
-    buys = {k: [] for k, _, _ in WEMBY_SECTIONS}
-    for e in hot: buys[wemby_bucket(e["sku"])].append(e)
-    nb_buy = sum(len(v) for v in buys.values())
     near = near_buy_lines(entries)
     restk = restock_lines(entries)
+    # 2 : une seule source de vérité. La phrase de synthèse, les compteurs et les cartes
+    # dérivent tous des MÊMES listes d'objets — impossible d'annoncer 2 et d'en afficher 3.
+    ops_buy = [opportunity(e, "buy", cat) for e in hot]
+    ops_near = [opportunity(e, "near", cat) for _, e in near]
+    ops_rest = [opportunity(e, "restock", cat) for e in restk]
+    nb_buy = len(ops_buy)
+    rc = len([op for op in ops_buy if op.bucket == "rc"])
     watch_by = {k: 0 for k, _, _ in WEMBY_SECTIONS}
-    for _, e in near: watch_by[wemby_bucket(e["sku"])] += 1
-    for e in restk: watch_by[wemby_bucket(e["sku"])] += 1
+    for op in ops_near + ops_rest: watch_by[op.bucket] += 1
 
     # ---------------- C : aujourd'hui, une phrase issue des seules données
-    rc = len(buys["rc"])
     if nb_buy == 0:
         lede = "Aucun achat recommandé aujourd’hui."
-        if near: lede += f" {len(near)} produit(s) au-dessus de leur prix cible."
+        if ops_near: lede += f" {len(ops_near)} produit(s) au-dessus de leur prix cible."
     else:
         lede = f"{nb_buy} opportunité(s) vérifiée(s) aujourd’hui."
         lede += f" {rc} sur Wemby Rookie 23/24." if rc else " Aucune sur Wemby Rookie 23/24."
     h.append(f"<h2>🔥 Aujourd’hui</h2><p class=lede>{lede}</p>")
     h.append("<div class=kpis>"
              f"<div class=kpi><b>{nb_buy}</b><span>à acheter</span></div>"
-             f"<div class=kpi><b>{len(near)}</b><span>à surveiller</span></div>"
-             f"<div class=kpi><b>{len(restk)}</b><span>restock</span></div></div>")
+             f"<div class=kpi><b>{len(ops_near)}</b><span>à surveiller</span></div>"
+             f"<div class=kpi><b>{len(ops_rest)}</b><span>restock</span></div></div>")
 
-    # ---------------- D : ACHETER
+    # ---------------- D : ACHETER (rendu depuis les objets Opportunity)
     h.append("<h2 id=acheter>🔥 Acheter</h2>")
     for key, label, short in WEMBY_SECTIONS:
+        grp = [op for op in ops_buy if op.bucket == key]
         h.append(f"<h3>{label}</h3>")
-        if buys[key]:
-            h += [buy_card(e) for e in buys[key]]
+        if grp:
+            h += [render_card(op) for op in grp]
         else:
-            best = None
-            cands = [(d, e) for d, e in near if wemby_bucket(e["sku"]) == key]
-            if cands:
-                d, e = cands[0]
-                best = f"{sku_label(e['sku'])} — {money_or(d)} au-dessus du seuil"
+            cands = [op for op in ops_near if op.bucket == key]
+            best = (f"{cands[0].label} — {money_or(cands[0].missing)} au-dessus du seuil"
+                    if cands else None)
             h.append(empty_note(short, watch_by[key], best))
 
     # ---------------- H/I/J : SURVEILLER
     h.append("<h2 id=surveiller>👀 Surveiller</h2>")
     h.append("<h3>🎯 Proche du prix d’achat</h3>")
-    if near:
-        for d, e in near[:12]:
-            b = buy_target(e["sku"])
-            h.append(f"<div class=row><b>{sku_label(e['sku'])}</b><br>"
-                     f"{money_or(e['o'][3])} · {e['o'][1]} · 🎯 acheter ≤ {money_or(b)} "
-                     f"<span class=miss>→ {money_or(d)} trop cher</span> "
-                     f"{A(e['o'][5], 'voir', 'cta')}</div>")
+    if ops_near:
+        h += [render_card(op) for op in ops_near[:12]]
     else:
-        h.append("<p class=empty>Aucun produit en stock au-dessus de son prix cible.</p>")
-
+        h.append("<p class=empty>Aucun produit en stock au-dessus de son prix cible "
+                 "avec une référence marché exploitable.</p>")
     h.append("<h3>🔔 À guetter au restock</h3>")
-    if restk:
-        for e in restk[:12]:
-            hh = e["hist"]; b = buy_target(e["sku"])
-            h.append(f"<div class=row><b>{sku_label(e['sku'])}</b> <span class=small>🔴 OOS</span><br>"
-                     f"Dernier bon prix : {money_or(hh['low'])} <span class=small>({hh['at'][:10]})</span> · "
-                     f"🎯 acheter ≤ {money_or(b)} {A(e['o'][5], 'voir', 'cta')}</div>")
-        h.append("<p class=small>Un prix historique est une cible de surveillance, jamais une valeur de marché.</p>")
+    if ops_rest:
+        h += [render_card(op) for op in ops_rest[:12]]
+        h.append("<p class=small>Un prix historique est une cible de surveillance, "
+                 "jamais une valeur de marché.</p>")
     else:
         h.append("<p class=empty>Aucun produit en rupture avec une cible d’achat définie.</p>")
 
@@ -1280,7 +1371,7 @@ def detail_block(s, obs, cat, nb):
         r.append(f"<tr{cls}><td>{o[1]}</td><td>{A(o[5], (o[2] or '')[:52])}</td>"
                  f"<td>{money_or(o[3])}</td><td>{q}</td><td>{money_or(o[3] / q if q else o[3])}</td>"
                  f"<td>{'IN STOCK' if o[4] else 'sold out'}</td>"
-                 f"<td>€{landed_eur((o[3] or 0) / q if q else (o[3] or 0), cat):.2f}</td></tr>")
+                 f"<td>{landed_phrase(o[3], q, cat)}</td></tr>")
     r.append("</table></div>")
     he = next((e for e in obs if e.get("hist")), None)
     meta = [f"exact_comp : <code>{obs[0].get('key','')}</code>",

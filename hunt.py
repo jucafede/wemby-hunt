@@ -838,7 +838,10 @@ def report(cat: dict, conn: sqlite3.Connection, seen_at: str | None, trust: dict
             stale.append(r); continue
         by.setdefault(r[0], []).append(r)
         if r[4] == 1 and prev_state(conn, r[0], r[1], r[5], r[8], r[7]) == 0:
-            deal = r[3] <= skus.get(r[0], {}).get("buy_below_usd", 0)
+            # buy_below_usd est explicitement null sur les SKU WATCH/CANDIDATE : .get(clé, 0)
+            # renvoie None et non 0. Sans seuil, un restock n'est jamais un « restock deal ».
+            bb = skus.get(r[0], {}).get("buy_below_usd")
+            deal = bb is not None and r[3] is not None and r[3] <= bb
             restocks.append((r, deal))
     html = []          # lignes pour la page web
     all_entries = []   # toutes les lignes enrichies (mémoire + badges) pour HOT NOW et signals

@@ -111,6 +111,11 @@ check("la meilleure offre est retenue", _hn[0]["o"][3], 9.95)
 check("les autres offres sont comptées", _hn[0]["other_offers"], 2)
 check("les autres produits restent présents", len(_hn), 2)
 
+# un SKU sans seuil ne doit jamais faire planter la détection de restock deal
+_bb = {"buy_below_usd": None}.get("buy_below_usd")
+check("seuil null -> pas de restock deal, pas de TypeError",
+      _bb is not None and 30.0 <= (_bb or 0), False)
+
 # ---- HOT NOW : invariants
 def _mk(key, avail, trig, gap, ref, price=42.0):
     return {"available": avail, "triggers": trig, "gap": gap, "ref": ref, "key": key, "sid": key,

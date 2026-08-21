@@ -11,7 +11,7 @@
   [mojobreak] status=reject \(qualifié sur données réelles → 0 sealed 2023-24\) → skip
   0 produits bruts, 0 rattachés à un SKU
 → RbiCru7 Collectibles (https://rbicru7.com)  [trust=trusted]
-  12537 produits bruts, 32 rattachés à un SKU
+  12538 produits bruts, 32 rattachés à un SKU
 → Layton Sports Cards (https://laytonsportscards.com)  [trust=trusted]
   [layton] type=breaks \(breaker, hors périmètre sealed\) → skip
   0 produits bruts, 0 rattachés à un SKU
@@ -29,20 +29,20 @@
   [grandslam] status=reject \(qualifié sur données réelles → 0 sealed 2023-24\) → skip
   0 produits bruts, 0 rattachés à un SKU
 → The Cardiacs (https://www.thecardiacs.com)  [trust=trusted]
-  5338 produits bruts, 32 rattachés à un SKU
+  5340 produits bruts, 32 rattachés à un SKU
 → Monmouth Cards (https://monmouthcards.com)  [trust=watch]
-  4871 produits bruts, 36 rattachés à un SKU
+  4869 produits bruts, 36 rattachés à un SKU
 → World Champion Sports Cards (https://www.worldchampionsportscards.org)  [trust=watch]
   3961 produits bruts, 60 rattachés à un SKU
 → Superior Sports Investments (https://superiorsportsinvestments.com)  [trust=watch]
     collections : 8/84 retenues (filtre 'basketball|\\bnba\\b|hoops|prizm|mosaic|optic|select|phoenix|contenders|court.kings|revolution|premium.stock')
-  16294 produits bruts, 43 rattachés à un SKU
+  16295 produits bruts, 44 rattachés à un SKU
 → SJAY2K Trading Cards (https://www.sjay2k.com)  [trust=watch]
   602 produits bruts, 18 rattachés à un SKU
 → The Ballgame (https://theballgame.com)  [trust=watch]
   13892 produits bruts, 40 rattachés à un SKU
 → Bleecker Trading (https://bleeckertrading.com)  [trust=watch]
-  2204 produits bruts, 100 rattachés à un SKU
+  2205 produits bruts, 100 rattachés à un SKU
 → CB Hobby (https://cbhobby.com)  [trust=watch]
   663 produits bruts, 8 rattachés à un SKU
 → Box Seat Collectibles (https://boxseatcollectibles.com)  [trust=watch]
@@ -64,7 +64,7 @@
 → Mill Creek Sports (https://www.millcreeksports.com)  [trust=watch]
   [millcreek] type=html non géré en v1 → skip
   0 produits bruts, 0 rattachés à un SKU
-(4 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
+(3 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
 
 ========================================================================
   RETAIL
@@ -375,7 +375,7 @@
 — NO_DATA   2023-24 Panini Hoops Mega   [PANINI_2023-24_HOOPS_MEGA]
    ask n/a      sold n/a      | buy ≤ $40.00   | watch ≤ $50.00   | EU n/a
 
-⛔ NO_GO   2023-24 Panini Mosaic Mega (Target Reactive Yellow/Green)   [PANINI_2023-24_MOSAIC_MEGA_TARGET]
+⛔ NO_GO   2023-24 Panini Mosaic Mega [Target Reactive Yellow/Green]   [PANINI_2023-24_MOSAIC_MEGA_TARGET]
    1. rbicru7          $  100.00  IN STOCK  landed≈€ 116.23  (score 1.00)
         ONLY_STOCK_SEEN  RC_YEAR  MARKET DATA INSUFFICIENT
    ask n/a      sold n/a      | buy ≤ $70.00   | watch ≤ $80.00   | EU n/a
@@ -414,7 +414,7 @@
    HISTORICAL LOW $95.00 (le 2026-08-18, sportscardjunction, 6 shop(s) vus) | aucun live
    RESTOCK TARGET $95.00  — surveillance, pas une valeur de marché
 
-— NO_STOCK   2023-24 Panini Select Case   [PANINI_2023-24_SELECT_MEGA_CASE]
+— NO_STOCK   2023-24 Panini Select Case de Mega (20 boîtes)   [PANINI_2023-24_SELECT_MEGA_CASE]
    1. ballgame         $ 1300.00  (20 boîtes = $  65.00/boîte)  SOLD OUT  landed≈€  80.02  (score 1.00)
         RC_YEAR  VERIFY
    2. awesome          $ 1400.00  (20 boîtes = $  70.00/boîte)  SOLD OUT  landed≈€  85.20  (score 1.00)
@@ -423,10 +423,10 @@
    HISTORICAL LOW $65.00 (le 2026-08-18, ballgame, 2 shop(s) vus) | aucun live
    RESTOCK TARGET $65.00  — surveillance, pas une valeur de marché
 
-· CANDIDAT   2023-24 Panini Phoenix Case   [PANINI_2023-24_PHOENIX_BLASTER_CASE_20]
+· CANDIDAT   2023-24 Panini Phoenix Case de Blaster (20 boîtes)   [PANINI_2023-24_PHOENIX_BLASTER_CASE_20]
    ask n/a      sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
 
-· CANDIDAT   2023-24 Panini Donruss Optic Case   [PANINI_2023-24_OPTIC_MEGA_CASE]
+· CANDIDAT   2023-24 Panini Donruss Optic Case de Mega   [PANINI_2023-24_OPTIC_MEGA_CASE]
    1. ballgame         $ 1400.00  SOLD OUT  landed≈€1460.95  (score 1.00)
         RC_YEAR  VERIFY  MARKET DATA INSUFFICIENT
    2. rbicru7          $ 2197.00  SOLD OUT  landed≈€2285.36  (score 1.00)
@@ -435,7 +435,7 @@
    HISTORICAL LOW $1400.00 (le 2026-08-18, ballgame, 2 shop(s) vus) | aucun live
    RESTOCK TARGET $1400.00  — surveillance, pas une valeur de marché
 
-· CANDIDAT   2023-24 Panini Premium Stock Case   [PANINI_2023-24_PREMIUM_STOCK_BLASTER_CASE]
+· CANDIDAT   2023-24 Panini Premium Stock Case de Blaster   [PANINI_2023-24_PREMIUM_STOCK_BLASTER_CASE]
    ask n/a      sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
 
 ⚡ PRICE ANOMALY — NO SOLD DATA   2023-24 Panini Prizm EuroLeague Blaster   [PANINI_2023-24_PRIZM_EUROLEAGUE_BLASTER]  ⚑ euroleague
@@ -746,7 +746,7 @@
    HISTORICAL LOW $23.95 (le 2026-08-18, columbia, 5 shop(s) vus) | cheapest live $85.00
    BEST → superior  https://superiorsportsinvestments.com/products/2023-24-topps-chrome-basketball-hanger-box
 
-· SUIVI   2023-24 Topps Chrome Value Box   [TOPPS_2023-24_CHROME_MONSTER]  ⚑ nbpa
+· SUIVI   2023-24 Topps Chrome Value Box [Monster Box]   [TOPPS_2023-24_CHROME_MONSTER]  ⚑ nbpa
    ask $58.99   sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
 
 · SUIVI   2025-26 Topps Bowman Mega   [TOPPS_2025-26_BOWMAN_MEGA]
@@ -1187,7 +1187,7 @@
    HISTORICAL LOW $229.99 (le 2026-08-19, rlsports, 3 shop(s) vus) | aucun live
    RESTOCK TARGET $229.99  — surveillance, pas une valeur de marché
 
-— NO_STOCK   2023-24 Panini Mosaic Case   [PANINI_2023-24_MOSAIC_FAST_BREAK_CASE]
+— NO_STOCK   2023-24 Panini Mosaic Case de Fast Break (20 boîtes)   [PANINI_2023-24_MOSAIC_FAST_BREAK_CASE]
    1. awesome          $ 5945.00  (20 boîtes = $ 297.25/boîte)  SOLD OUT  landed≈€ 320.26  (score 1.00)
         RC_YEAR
    ask $5945.00 sold n/a      | buy ≤ $4800.00 | watch ≤ $5600.00 | EU n/a
@@ -1365,7 +1365,7 @@
    HISTORICAL LOW $369.95 (le 2026-08-18, cardiacs, 8 shop(s) vus) | aucun live
    RESTOCK TARGET $369.95  — surveillance, pas une valeur de marché
 
-· SUIVI   2023-24 Topps Chrome Hobby   [TOPPS_2023-24_CHROME_SAPPHIRE]  ⚑ nbpa
+· SUIVI   2023-24 Topps Chrome Hobby [Sapphire Edition]   [TOPPS_2023-24_CHROME_SAPPHIRE]  ⚑ nbpa
    1. bleecker         $  400.00  SOLD OUT  landed≈€ 426.55  (score 1.00)
         RC_YEAR  NBPA  VERIFY
    ask $400.00  sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
@@ -1385,7 +1385,7 @@
         RC_YEAR  NBPA  VERIFY
    6. worldchampion    $  275.00  SOLD OUT  landed≈€ 297.25  (score 1.00)
         RC_YEAR  NBPA  VERIFY
-   ask $9.00    sold $187.00  [stockx 2026-08-18] | buy ≤ n/a      | watch ≤ n/a      | EU n/a
+   ask n/a      sold $187.00  [stockx 2026-08-18] | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $159.75 (le 2026-08-18, awesome, 6 shop(s) vus) | aucun live
    RESTOCK TARGET $159.75  — surveillance, pas une valeur de marché
 
@@ -1509,7 +1509,7 @@
    HISTORICAL LOW $1700.00 (le 2026-08-19, hiddengems, 2 shop(s) vus) | aucun live
    RESTOCK TARGET $1700.00  — surveillance, pas une valeur de marché
 
-· CANDIDAT   2025-26 Topps Bowman Case   [TOPPS_2025-26_BOWMAN_HOBBY_CASE]
+· CANDIDAT   2025-26 Topps Bowman Case de Hobby (12 boîtes)   [TOPPS_2025-26_BOWMAN_HOBBY_CASE]
    1. boxseat          $ 7199.99  (12 boîtes = $ 600.00/boîte)  IN STOCK  landed≈€ 633.43  (score 1.00)
         VERIFY  cheapest of 2 in stock
    2. worldchampion    $10000.00  (12 boîtes = $ 833.33/boîte)  IN STOCK  landed≈€ 874.79  (score 1.00)
@@ -1523,23 +1523,23 @@
    HISTORICAL LOW $332.56 (le 2026-08-19, awesome, 3 shop(s) vus) | cheapest live $7199.99
    BEST → boxseat  https://boxseatcollectibles.com/products/2025-bowman-basketball-sealed-hobby-case-12-boxes
 
-· CANDIDAT   2025-26 Topps Bowman Case   [TOPPS_2025-26_BOWMAN_HOBBY_JUMBO_CASE]
+· CANDIDAT   2025-26 Topps Bowman Case de Jumbo (8 boîtes)   [TOPPS_2025-26_BOWMAN_HOBBY_JUMBO_CASE]
    ask $5175.75 sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
 
-· CANDIDAT   2025-26 Topps Bowman Case   [TOPPS_2025-26_BOWMAN_BREAKERS_DELIGHT_CASE]
+· CANDIDAT   2025-26 Topps Bowman Case de Delight (6 boîtes)   [TOPPS_2025-26_BOWMAN_BREAKERS_DELIGHT_CASE]
    1. sportscardjunction $ 9995.00  (6 boîtes = $1665.83/boîte)  SOLD OUT  landed≈€1735.93  (score 1.00)
         VERIFY  MARKET DATA INSUFFICIENT
    ask n/a      sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $1665.83 (le 2026-08-19, sportscardjunction, 1 shop(s) vus) | aucun live
    RESTOCK TARGET $1665.83  — surveillance, pas une valeur de marché
 
-· CANDIDAT   2025-26 Topps Bowman Case   [TOPPS_2025-26_BOWMAN_MEGA_CASE]
+· CANDIDAT   2025-26 Topps Bowman Case de Mega (20 boîtes)   [TOPPS_2025-26_BOWMAN_MEGA_CASE]
    1. awesome          $ 1699.75  (20 boîtes = $  84.99/boîte)  SOLD OUT  landed≈€ 100.70  (score 1.00)
    ask $1699.75 sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $84.99 (le 2026-08-19, awesome, 1 shop(s) vus) | aucun live
    RESTOCK TARGET $84.99  — surveillance, pas une valeur de marché
 
-· CANDIDAT   2025-26 Topps Bowman Case   [TOPPS_2025-26_BOWMAN_VALUE_BLASTER_CASE]
+· CANDIDAT   2025-26 Topps Bowman Case de Blaster (40 boîtes)   [TOPPS_2025-26_BOWMAN_VALUE_BLASTER_CASE]
    1. awesome          $ 1590.75  (40 boîtes = $  39.77/boîte)  SOLD OUT  landed≈€  53.92  (score 1.00)
    2. worldchampion    $ 2400.00  (40 boîtes = $  60.00/boîte)  SOLD OUT  landed≈€  74.85  (score 1.00)
         VERIFY
@@ -1579,10 +1579,10 @@
 · SUIVI   2025-26 Topps Chrome Breakers Delight   [TOPPS_2025-26_CHROME_BREAKERS_DELIGHT]
    ask $4499.75 sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
 
-· CANDIDAT   2025-26 Topps Chrome Hobby (First Day Issue)   [TOPPS_2025-26_CHROME_FIRST_DAY_ISSUE]
+· CANDIDAT   2025-26 Topps Chrome Hobby [First Day Issue]   [TOPPS_2025-26_CHROME_FIRST_DAY_ISSUE]
    ask $4000.00 sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
 
-· CANDIDAT   2025-26 Topps Chrome Hobby (Sapphire Edition)   [TOPPS_2025-26_CHROME_SAPPHIRE]
+· CANDIDAT   2025-26 Topps Chrome Hobby [Sapphire Edition]   [TOPPS_2025-26_CHROME_SAPPHIRE]
    ask $4999.75 sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
 
 · SUIVI   2025-26 Topps Chrome Update Hobby   [TOPPS_2025-26_CHROME_UPDATE_HOBBY]
@@ -1656,14 +1656,15 @@
 
 · CANDIDAT   2025-26 Topps Inception Hobby   [TOPPS_2025-26_INCEPTION_HOBBY]
    1. awesome          $  515.75  IN STOCK  landed≈€ 546.28  (score 1.00)
-        cheapest of 5 in stock
+        cheapest of 6 in stock
    2. collectorstore   $  524.95  IN STOCK  landed≈€ 555.80  (score 1.00)
    3. rbicru7          $  575.00  IN STOCK  landed≈€ 607.57  (score 1.00)
    4. sportscardjunction $  575.00  IN STOCK  landed≈€ 607.57  (score 1.00)
         VERIFY
    5. worldchampion    $  650.00  IN STOCK  landed≈€ 685.15  (score 1.00)
         VERIFY
-   6. columbia         $  477.99  SOLD OUT  landed≈€ 507.22  (score 1.00)
+   6. superior         $  670.00  IN STOCK  landed≈€ 705.84  (score 1.00)
+        VERIFY
    ask $515.75  sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $477.99 (le 2026-08-19, columbia, 14 shop(s) vus) | cheapest live $515.75
    BEST → awesome  https://theawesomecardshop.com/products/2025-26-topps-inception-basketball-hobby-box
@@ -1712,10 +1713,10 @@
    HISTORICAL LOW $879.99 (le 2026-08-19, columbia, 13 shop(s) vus) | cheapest live $989.95
    BEST → collectorstore  https://collectorstore.com/products/2025-26-topps-cosmic-chrome-basketball-hobby-box
 
-· CANDIDAT   2025-26 Topps Cosmic Chrome Hobby (First Day Issue)   [TOPPS_2025-26_COSMIC_CHROME_FIRST_DAY_ISSUE]
+· CANDIDAT   2025-26 Topps Cosmic Chrome Hobby [First Day Issue]   [TOPPS_2025-26_COSMIC_CHROME_FIRST_DAY_ISSUE]
    ask $1799.95 sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
 
-· SUIVI   2025-26 Topps Chrome Hobby (Cactus Jack)   [TOPPS_2025-26_CHROME_CACTUS_JACK_HOBBY]
+· SUIVI   2025-26 Topps Chrome Hobby [Cactus Jack]   [TOPPS_2025-26_CHROME_CACTUS_JACK_HOBBY]
    1. columbia         $  539.99  IN STOCK  landed≈€ 571.35  (score 1.00)
         cheapest of 8 in stock
    2. cardiacs         $  569.95  IN STOCK  landed≈€ 602.34  (score 1.00)
@@ -1802,5 +1803,5 @@
   2023-24 Panini Prizm EuroLeague Blaster        $    9.95 cardiacs          -60.2%  STRONG_DEAL -60%  (+3 autre(s) offre(s))
   2024-25 Panini Revolution Blaster              $   39.99 fancave           -27.3%  STRONG_DEAL -27%
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-08-21T19-08-00.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-08-21T19-27-57.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

@@ -92,16 +92,38 @@ check("ask relevé ailleurs -> SEUL_EN_STOCK reste déclencheur", "SEUL_EN_STOCK
 check("sold externe n'est jamais auto-sourcé",
       hunt.ref_self_sourced({"market_ask_from": ["superior"]}, "superior", "sold"), False)
 
+# prix nul : ni déclencheur, ni HOT — une précommande à 0 $ donnait -100 %
+_tg0, _d0, _g0, _r0, _k0 = hunt.compute_badges(O("bleecker", 0.0, True), None,
+    {"market_ask_us": 100, "market_ask_from": ["x"]}, "watch", [O("bleecker", 0.0, True)])
+check("prix 0 -> aucun déclencheur", _tg0, [])
+check("prix 0 -> descriptif NO_PRICE", "NO_PRICE" in _d0, True)
+_z = {"available": True, "triggers": ["STRONG_DEAL"], "gap": -100.0, "ref": 50, "key": "Z",
+      "sid": "Z", "o": ("S", "sh", "t", 0.0, 1, "u", 1.0, "2026-01-01T00:00:00", "")}
+check("prix 0 exclu de HOT NOW", _z in hunt.hot_now([_z]), False)
+
+# déduplication HOT NOW : un produit = une ligne + N autres offres
+def _E(key, price, gap):
+    return {"available": True, "triggers": ["STRONG_DEAL"], "gap": gap, "ref": 50, "key": key,
+            "sid": key, "o": ("S", f"sh{price}", "t", price, 1, "u", 1.0, "2026-01-01T00:00:00", "")}
+_hn = hunt.hot_now([_E("EURO", 9.95, -60.0), _E("EURO", 14.75, -41.0), _E("EURO", 15.0, -40.0), _E("AUTRE", 20.0, -20.0)])
+check("un produit n'occupe qu'une place HOT", len([e for e in _hn if e["key"] == "EURO"]), 1)
+check("la meilleure offre est retenue", _hn[0]["o"][3], 9.95)
+check("les autres offres sont comptées", _hn[0]["other_offers"], 2)
+check("les autres produits restent présents", len(_hn), 2)
+
 # ---- HOT NOW : invariants
-noref = {"available": True, "triggers": ["NEW_LOW"], "gap": None, "ref": None}
-ok    = {"available": True, "triggers": ["DEAL -12%"], "gap": -12.0, "ref": 50}
-over  = {"available": True, "triggers": ["RESTOCK +3j"], "gap": 8.0, "ref": 50}
-oos   = {"available": False, "triggers": ["NEW_LOW"], "gap": -30.0, "ref": 50}
+def _mk(key, avail, trig, gap, ref, price=42.0):
+    return {"available": avail, "triggers": trig, "gap": gap, "ref": ref, "key": key, "sid": key,
+            "o": ("S", "sh", "t", price, 1 if avail else 0, "u", 1.0, "2026-01-01T00:00:00", "")}
+noref = _mk("n", True,  ["NEW_LOW"],     None, None)
+ok    = _mk("o", True,  ["DEAL -12%"],  -12.0, 50)
+over  = _mk("v", True,  ["RESTOCK +3j"],  8.0, 50)
+oos   = _mk("s", False, ["NEW_LOW"],    -30.0, 50)
 hn = hunt.hot_now([noref, ok, over, oos])
 check("INVARIANT : ligne au-dessus de la référence exclue de HOT NOW", over not in hn, True)
 check("ligne sans référence exclue de HOT NOW", noref not in hn, True)
 check("ligne hors stock exclue de HOT NOW", oos not in hn, True)
-check("HOT NOW <= 15", len(hunt.hot_now([dict(ok) for _ in range(40)])) <= 15, True)
+check("HOT NOW <= 15", len(hunt.hot_now([_mk(f"k{i}", True, ["DEAL"], -12.0, 50) for i in range(40)])) <= 15, True)
 
 # ---- rejeu sur le run réel du 18/08 09:08
 f = sorted(glob.glob("/private/tmp/claude-501/-Users-ju-Draft-Class/34b24d58-a555-46bd-9b28-3b80e0afd7d5/scratchpad/rpt20/deals_*.csv"))
@@ -119,6 +141,8 @@ if f:
         if gap <= -20: tg.append("STRONG_DEAL")
         elif gap <= -10: tg.append("DEAL")
         if tg: ent.append({"available": True, "triggers": tg, "gap": gap, "ref": ref,
+                           "key": r["sku_id"] + r["shop"], "sid": r["sku_id"],
+                           "o": ("S", r["shop"], r["title"], pr, 1, r["url"], 1.0, r["seen_at"], ""),
                            "label": f"{r['sku_id'].replace('PANINI_2023-24_','')} {r['shop']} ${pr:.2f}"})
     hn = hunt.hot_now(ent)
     print(f"\n  rejeu 18/08 09:08 — HOT NOW = {len(hn)} ligne(s)")

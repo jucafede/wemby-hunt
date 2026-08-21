@@ -502,9 +502,10 @@ def sku_label(s: dict) -> str:
     """Libellé humain d'un SKU. Doit inclure league et configuration : sans elles, le Prizm
     EuroLeague s'affichait '2023-24 Panini Prizm Blaster', identique au Prizm NBA — trompeur
     sur une ligne GO."""
-    bits = [s["season"], s["manufacturer"], s["set"]]
+    mfr, st = str(s["manufacturer"]), str(s["set"])
+    bits = [s["season"]] + ([st] if st.lower().startswith(mfr.lower()) else [mfr, st])
     if s.get("league"): bits.append(s["league"])
-    bits.append(s["format"])
+    bits.append(str(s["format"]))
     if s.get("configuration"): bits.append(f"({s['configuration']})")
     return " ".join(str(b) for b in bits)
 
@@ -604,7 +605,7 @@ def historical_low(conn, key, upto=None):
     en stock. Strictement cloisonné par exact_comp_key et réservé aux lignes sealed=1 — un single,
     une autre configuration ou un lot de quantité différente ne peut pas le contaminer."""
     q = ("SELECT unit_price, seen_at, shop FROM observations "
-         "WHERE exact_comp_key=? AND sealed=1 AND unit_price IS NOT NULL")
+         "WHERE exact_comp_key=? AND sealed=1 AND unit_price IS NOT NULL AND unit_price > 0")
     args = [key]
     if upto: q += " AND seen_at<=?"; args.append(upto)
     rows = conn.execute(q + " ORDER BY unit_price", args).fetchall()
@@ -652,6 +653,10 @@ def ref_self_sourced(sku: dict, shop: str, kind: str | None) -> bool:
     return len(froms) == 1 and froms[0] == shop
 
 def compute_badges(o, mem, sku, trust_level, in_stock_lines):
+    # Un prix à 0 n'est pas un prix : précommande, fiche sans tarif, variante placeholder.
+    # Il produisait un STRONG_DEAL à -100 % (bleecker, run du 19/08). Aucun déclencheur possible.
+    if not o[3] or o[3] <= 0:
+        return [], ["NO_PRICE"], None, None, None
     """Renvoie (déclencheurs, descriptifs, gap_pct, ref, ref_kind). Aucun score composite :
     chaque badge est un fait vérifiable, et les descriptifs ne déclenchent jamais HOT NOW."""
     price, available = o[3], o[4]
@@ -772,9 +777,19 @@ def hot_now(entries, limit=15):
     # invariant : une ligne plus chère que la référence de marché n'est pas une opportunité,
     # quel que soit le déclencheur qui l'accompagne.
     elig = [e for e in entries if e["available"] and e["triggers"] and e["ref"] is not None
-            and e["gap"] is not None and e["gap"] <= 0]
+            and e["gap"] is not None and e["gap"] <= 0 and e["o"][3] and e["o"][3] > 0]
     elig.sort(key=lambda e: (-len(e["triggers"]), e["gap"] if e["gap"] is not None else 0))
-    return elig[:limit]
+    # une place HOT par produit : quatre shops sur le même EuroLeague Blaster, c'est UNE ligne
+    # et trois autres offres, pas quatre alertes.
+    best_by_key, others = [], {}
+    for e in elig:
+        k = e.get("key") or e["sid"]
+        if k in others:
+            others[k] += 1
+        else:
+            others[k] = 0; best_by_key.append(e)
+    for e in best_by_key: e["other_offers"] = others[e.get("key") or e["sid"]]
+    return best_by_key[:limit]
 
 def decide(status_active, gap, conf, comp, buy_below, price):
     """GO exige : SKU ACTIVE, comparaison EXACT, sold_confidence >= MEDIUM, et prix sous le seuil.
@@ -944,8 +959,9 @@ def report(cat: dict, conn: sqlite3.Connection, seen_at: str | None, trust: dict
     print("\n" + "="*72 + f"\n  🔥 HOT NOW — {len(hn)} ligne(s)\n" + "="*72)
     for e in hn:
         o = e["o"]
+        extra = f"  (+{e['other_offers']} autre(s) offre(s))" if e.get("other_offers") else ""
         print(f"  {sku_label(e['sku'])[:44]:<46} ${o[3]:>8.2f} {o[1]:<16} {e['gap']:>6.1f}%  "
-              + " ".join(e["triggers"]))
+              + " ".join(e["triggers"]) + extra)
     if not hn: print("  (aucune ligne en stock ne cumule un déclencheur et une référence de marché)")
     write_html(cat, html, restocks, q, seen_at, trust, hn, all_entries, SHOP_COUNTS)
     print(f"\nCSV → {csv_path}\nHTML → {OUT/'index.html'}")
@@ -1018,7 +1034,8 @@ def write_html(cat, blocks, restocks, review, seen_at, trust=None, hot=None, ent
         h.append("<div class=hot>" + thumb(e, always=True) +
                  f"<div class=hb><div class=nm>{A(o[5], sku_label(e['sku']))}</div>"
                  f"<div class=small>{o[1]}{' · ' + f'{e[chr(39)+chr(39)]}' if False else ''}"
-                 f" · réf {e['kind']} ${e['ref']:.2f} · écart {e['gap']:.1f} %</div>"
+                 f" · réf {e['kind']} ${e['ref']:.2f} · écart {e['gap']:.1f} %"
+                 + (f" · +{e['other_offers']} autre(s) offre(s)" if e.get("other_offers") else "") + "</div>"
                  f"<div>{badge_html(e)}</div></div>"
                  f"<div class=pr>${o[3]:.2f}</div></div>")
     extra = len([x for x in entries if x["available"] and x["triggers"]]) - len(hot)

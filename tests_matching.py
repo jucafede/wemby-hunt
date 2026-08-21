@@ -55,7 +55,7 @@ POS = [
  ("2023-24 Panini Mosaic Fast Break Basketball Hobby Box","MOSAIC_FAST_BREAK"),
  ("2023-24 Panini Mosaic Basketball Choice Box","MOSAIC_CHOICE"),
  ("2023-24 Panini Mosaic Basketball International Hobby Box","MOSAIC_INTERNATIONAL"),
- ("2023-24 Panini Phoenix Mega Box","PHOENIX_MEGA"),
+ ("2023-24 Panini Phoenix Basketball Mega Box","PHOENIX_MEGA"),
  ("2023/24 Panini Phoenix Basketball International Hobby Box","PHOENIX_INTERNATIONAL"),
  ("2023/24 Panini Premium Stock Basketball Hobby Box","PREMIUM_STOCK_HOBBY"),
  ("2023-24 Panini Contenders Basketball Blaster Box","CONTENDERS_BLASTER"),
@@ -106,6 +106,12 @@ P2 = [
  ("2023-24 Panini Select BasketballMega Box (Red/ Purple Cracked Ice)","SELECT_MEGA"),
 ]
 NEG = [
+ # sport indéterminé : sans preuve de basket, jamais de rattachement décisionnel
+ ("2025-26 Topps Chrome Bundesliga Value Blaster Box","Bundesliga = football, pas basket"),
+ ("2023-24 Panini Select Fifa Blaster Box","FIFA = football, pas basket"),
+ ("2025-26 Topps Chrome UEFA Champions League Blaster Box","UEFA = football"),
+ ("2023-24 Phoenix Debut Edition International box","aucune preuve de basket -> REVIEW, pas un match"),
+ ("2023-24 Panini Phoenix Mega Box","sans 'Basketball' : REVIEW, coût assumé du durcissement"),
  # H — configurations distinctes
  ("2023-24 Panini Prizm Basketball China Hobby Box","China Hobby n'est pas le Hobby standard"),
  ("2023-24 Panini Prizm Basketball Hanger Pack","Hanger Pack n'est pas Hanger Box"),

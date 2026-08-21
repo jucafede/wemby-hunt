@@ -76,7 +76,7 @@ def parse_exclusive(t: str) -> str | None:
         if re.search(rx, t): return name
     return None
 SEASON_RE = re.compile(r"(20\d{2})\s*[-/–]\s*(\d{2,4})|(?<!\d)(\d{2})\s*[-/–]\s*(\d{2})(?!\d)")
-SPORT_HINTS = {"basketball": ["basketball", "nba", "bball", "hoops"], "not_basketball": ["football", "nfl", "baseball", "mlb", "hockey", "nhl", "soccer", "wnba", "pokemon", "ufc", "wrestling", "f1", "euroleague", "golf", "nascar", "racing", "wwe", "tennis", "mma", "boxing", "pfl", "fighters", "college", "draft picks", "world cup", "premier league"]}
+SPORT_HINTS = {"basketball": ["basketball", "nba", "bball", "hoops"], "not_basketball": ["football", "nfl", "baseball", "mlb", "hockey", "nhl", "soccer", "wnba", "pokemon", "ufc", "wrestling", "f1", "euroleague", "golf", "nascar", "racing", "wwe", "tennis", "mma", "boxing", "pfl", "fighters", "bundesliga", "fifa", "la liga", "serie a", "ligue 1", "champions league", "\bmls\b", "eredivisie", "college", "draft picks", "world cup", "premier league"]}
 SEALED_RE = re.compile(r"\b(box|boxes|blaster|mega|hobby|case|pack|packs|tin|display|bundle|lot)\b")
 SINGLE_RE = re.compile(r"(#\s*\d+\b|\b\d{1,3}\s*/\s*\d{1,4}\b|\bpsa\b|\bbgs\b|\bsgc\b|\bauto\b|\bautograph\b|\brc\b\s*$|\bpatch\b|\brelic\b|\bslab)")
 # Parallèles nommés : une "Green Shock" ou une "Hyper Pink" n'est pas la boîte standard.
@@ -271,6 +271,13 @@ def match_title(title: str, skus: list[dict]) -> Match:
         else: continue                                        # mauvais format = jamais
         if eff_sport == "basketball": sc += 0.05
         elif eff_sport == "other": continue
+        else:
+            # sport indéterminé : aucune preuve de basket dans le titre. Blacklister les ligues
+            # une par une ne tient pas — il en existe trop. On plafonne sous le seuil de
+            # rattachement : la ligne reste visible en REVIEW mais n'atteint jamais la couche
+            # décisionnelle. Un 'Topps Chrome Bundesliga Value Blaster' sortait sinon à 0,97
+            # et occupait une place HOT NOW à -37,5 %.
+            sc = min(sc, 0.75)
         if s["manufacturer"].lower() in t: sc = min(1.0, sc + 0.02)
         cands.append((s["id"], round(sc, 2)))
     # sealed indécidable : plafonné sous le seuil de rattachement -> REVIEW, jamais décisionnel

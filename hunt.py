@@ -973,7 +973,7 @@ def report(cat: dict, conn: sqlite3.Connection, seen_at: str | None, trust: dict
         print(f"  {sku_label(e['sku'])[:44]:<46} ${o[3]:>8.2f} {o[1]:<16} {e['gap']:>6.1f}%  "
               + " ".join(e["triggers"]) + extra)
     if not hn: print("  (aucune ligne en stock ne cumule un déclencheur et une référence de marché)")
-    write_html(cat, html, restocks, q, seen_at, trust, hn, all_entries, SHOP_COUNTS)
+    write_html(cat, html, restocks, q, seen_at, trust, hn, all_entries, SHOP_COUNTS, health)
     print(f"\nCSV → {csv_path}\nHTML → {OUT/'index.html'}")
 
 BUCKETS = [("retail",  {"Blaster","Mega","Hanger","Retail Box","Pack","Value Box","Fat Pack","Cello"}),
@@ -1003,173 +1003,297 @@ def badge_html(e):
     out += "".join(f"<span class='b d'>{x}</span>" for x in e["descriptors"])
     return out
 
-def write_html(cat, blocks, restocks, review, seen_at, trust=None, hot=None, entries=None, shopcount=None):
-    trust = trust or {}; hot = hot or []; entries = entries or []; shopcount = shopcount or []
+# ---------------------------------------------------------------- restitution : cockpit
+# Doctrine UX : CONCLUSION FIRST, EVIDENCE SECOND, ENGINE LAST.
+# Aucune règle moteur n'est touchée ici : on ne fait que hiérarchiser ce qu'il a calculé.
+
+# (clé, titre de section, formulation courte pour l'état vide)
+WEMBY_SECTIONS = [("rc",     "🏀 Wemby Rookie 23/24",      "sur Wemby Rookie 23/24"),
+                  ("y2",     "⭐ Wemby Year 2 24/25",       "sur Wemby Year 2 24/25"),
+                  ("trophy", "💎 Wemby Premium / Trophy",   "sur Premium / Trophy"),
+                  ("autre",  "📦 Autres opportunités",      "hors Wemby")]
+
+def wemby_bucket(s: dict) -> str:
+    """Priorité d'AFFICHAGE uniquement. N'influence ni le calcul du deal, ni la référence
+    marché, ni les badges, ni la confiance."""
+    if s.get("trophy") or s.get("program") == "hot_box": return "trophy"
+    if s.get("wemby_year2"): return "y2"
+    if s.get("wemby_rc") and s.get("season") == "2023-24": return "rc"
+    return "autre"
+
+def gap_phrase(e) -> str:
+    """Jamais « -18 % marché » : la nature de la référence doit être lisible."""
+    if e.get("ref") is None or e.get("gap") is None: return "Marché insuffisant"
+    return f"{e['gap']:+.0f} % vs {e['kind']}"
+
+def money_or(v, dash="—"): 
+    try: return f"${float(v):.2f}"
+    except (TypeError, ValueError): return dash
+
+def buy_target(s: dict) -> float | None:
+    b = s.get("buy_below_usd")
+    return float(b) if b is not None else None
+
+def near_buy_lines(entries):
+    """En stock, un seuil d'achat existe, et le prix est au-dessus : combien manque-t-il ?"""
+    best = {}
+    for e in entries:
+        if not e["available"] or not e["o"][3] or e["o"][3] <= 0: continue
+        b = buy_target(e["sku"])
+        if b is None or e["o"][3] <= b: continue
+        # une ligne par produit : c'est l'offre la MOINS chère qui dit ce qu'il reste à attendre.
+        # Sans cette déduplication, un produit vendu par 5 shops occupe 5 lignes de la même
+        # information, et la section redevient un catalogue.
+        k = e.get("key") or e["sid"]
+        if k not in best or e["o"][3] < best[k]["o"][3]: best[k] = e
+    out = [(e["o"][3] - buy_target(e["sku"]), e) for e in best.values()]
+    out.sort(key=lambda x: (x[0], x[0] / buy_target(x[1]["sku"])))
+    return out
+
+def restock_lines(entries):
+    """OOS avec un historique ET un seuil : ce qu'on guette au retour en stock."""
+    seen, out = set(), []
+    for e in entries:
+        if e["available"] or not e.get("hist"): continue
+        k = e.get("key")
+        if k in seen: continue
+        seen.add(k)
+        if buy_target(e["sku"]) is None: continue
+        out.append(e)
+    out.sort(key=lambda e: e["hist"]["low"] - (buy_target(e["sku"]) or 0))
+    return out
+
+def why_phrase(e) -> str:
+    """Les raisons secondaires, en clair, sans jargon interne."""
+    bits = []
+    for t in e["triggers"]:
+        if t.startswith("RESTOCK"): bits.append("retour en stock" + t.replace("RESTOCK", "").replace("j", " j"))
+        elif t == "NEW_LOW": bits.append("plus bas jamais vu")
+        elif t.startswith("PRICE_DROP"): bits.append("baisse " + t.split()[-1])
+        elif t == "SEUL_EN_STOCK": bits.append("seul en stock")
+    for d in e["descriptors"]:
+        if d.startswith("cheapest"): bits.append(d.replace("cheapest of", "le moins cher sur").replace("in stock", "en stock"))
+    if e.get("other_offers"): bits.append(f"{e['other_offers']} autre(s) offre(s)")
+    return " · ".join(bits)
+
+def buy_card(e) -> str:
+    o = e["sku"]; l = e["o"]
+    verdict = "🟢 STRONG DEAL" if any(t.startswith("STRONG_DEAL") for t in e["triggers"]) else (
+              "🟢 DEAL" if any(t.startswith("DEAL") for t in e["triggers"]) else "🔵 SIGNAL")
+    b = buy_target(o)
+    why = why_phrase(e)
+    return (f"<div class=card>{thumb(e, True)}<div class=cb>"
+            f"<div class=nm>{sku_label(o)}</div>"
+            f"<div class=pr>{money_or(l[3])} <span class=shop>· {l[1]}</span></div>"
+            f"<div><span class='v'>{verdict}</span> <span class=gap>{gap_phrase(e)}</span></div>"
+            + (f"<div class=small>🎯 Acheter ≤ {money_or(b)}</div>" if b else "")
+            + (f"<div class=small>Pourquoi ? {why}</div>" if why else "")
+            + f"<div>{A(l[5], 'Voir l’offre', 'cta')}</div></div></div>")
+
+def empty_note(label, watched, best=None):
+    txt = f"<p class=empty>Aucune opportunité {label} actuellement."
+    if watched:
+        txt += f"<br><span class=small>👀 {watched} produit(s) surveillé(s)"
+        if best: txt += f" · meilleur candidat : {best}"
+        txt += "</span>"
+    return txt + "</p>"
+
+def write_html(cat, blocks, restocks, review, seen_at, trust=None, hot=None, entries=None,
+               shopcount=None, health=None):
+    trust = trust or {}; hot = hot or []; entries = entries or []
+    shopcount = shopcount or []; health = health or {}
     nb = cat["landed_cost"].get("bundle_boxes", 8)
-    col = {"GO":"#1b7f3b","WATCH":"#b8860b","NO_GO":"#b22222","NO_STOCK":"#666","NO_DATA":"#999",
-           "SUIVI":"#4a5568","CANDIDAT":"#8a8a8a"}
     h = ["<!doctype html><meta charset='utf-8'><meta name=viewport content='width=device-width,initial-scale=1'>",
          "<title>Wemby Hunt</title><style>",
-         ":root{--bg:#fff;--fg:#1a1a1a;--mut:#666;--line:#e5e5e5;--card:#fafafa}",
-         "@media(prefers-color-scheme:dark){:root{--bg:#141414;--fg:#ededed;--mut:#9a9a9a;--line:#2c2c2c;--card:#1c1c1c}}",
+         ":root{--bg:#fff;--fg:#141414;--mut:#6b6b6b;--line:#e6e6e6;--card:#fafafa;--go:#0f7b3d;--warn:#8a5a00}",
+         "@media(prefers-color-scheme:dark){:root{--bg:#111;--fg:#ededed;--mut:#9a9a9a;--line:#2a2a2a;--card:#191919}}",
          "*{box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;",
-         "max-width:780px;margin:0 auto;padding:12px;color:var(--fg);background:var(--bg);line-height:1.45}",
-         "h1{font-size:1.35rem;margin:.2em 0}h2{font-size:1.05rem;margin:1.6em 0 .5em;border-bottom:1px solid var(--line);padding-bottom:.3em}",
-         "h3{font-size:.85rem;text-transform:uppercase;letter-spacing:.04em;color:var(--mut);margin:1.1em 0 .4em}",
-         ".small{color:var(--mut);font-size:.8rem}",
-         ".hot{display:flex;gap:10px;align-items:center;padding:10px;border:1px solid var(--line);",
-         "border-radius:10px;margin:8px 0;background:var(--card)}",
-         ".th{border-radius:6px;object-fit:cover;flex:0 0 56px;background:var(--line)}",
-         ".hb{flex:1;min-width:0}.nm{font-weight:600;font-size:.92rem}",
-         ".pr{font-weight:700;font-size:1.05rem;white-space:nowrap}",
-         ".b{display:inline-block;font-size:.7rem;padding:1px 6px;border-radius:99px;margin:2px 3px 0 0}",
-         ".b.t{background:#1b7f3b;color:#fff}.b.d{background:var(--line);color:var(--mut)}",
-         ".st{font-weight:700;color:#fff;padding:1px 7px;border-radius:4px;font-size:.75rem}",
+         "max-width:720px;margin:0 auto;padding:12px 12px 48px;color:var(--fg);background:var(--bg);line-height:1.45}",
+         "h1{font-size:1.3rem;margin:.1em 0}h2{font-size:1.1rem;margin:1.5em 0 .4em}",
+         "h3{font-size:.92rem;margin:1.1em 0 .4em;color:var(--fg)}",
+         ".small{color:var(--mut);font-size:.8rem}.empty{color:var(--mut);font-size:.85rem;margin:.4em 0 1em}",
+         ".lede{font-size:1.02rem;margin:.3em 0 .2em}",
+         "nav{position:sticky;top:0;background:var(--bg);padding:8px 0;border-bottom:1px solid var(--line);z-index:9}",
+         "nav a{display:inline-block;margin-right:14px;font-size:.88rem;text-decoration:none;color:var(--fg)}",
+         ".kpis{display:flex;gap:8px;margin:10px 0 4px}",
+         ".kpi{flex:1;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px;text-align:center}",
+         ".kpi b{display:block;font-size:1.3rem}.kpi span{font-size:.7rem;color:var(--mut);text-transform:uppercase}",
+         ".card{display:flex;gap:10px;border:1px solid var(--line);border-radius:12px;padding:10px;",
+         "margin:8px 0;background:var(--card)}.cb{flex:1;min-width:0}",
+         ".th{border-radius:8px;object-fit:cover;flex:0 0 56px;background:var(--line)}",
+         ".nm{font-weight:600;font-size:.95rem}.pr{font-size:1.15rem;font-weight:700;margin:.15em 0}",
+         ".shop{font-size:.85rem;font-weight:400;color:var(--mut)}",
+         ".v{background:var(--go);color:#fff;font-size:.72rem;font-weight:700;padding:2px 7px;border-radius:99px}",
+         ".gap{font-size:.8rem;color:var(--mut);margin-left:4px}",
+         ".cta{display:inline-block;margin-top:6px;font-size:.82rem;font-weight:600;",
+         "border:1px solid var(--fg);border-radius:8px;padding:4px 10px;text-decoration:none}",
+         ".row{border-bottom:1px solid var(--line);padding:7px 0;font-size:.86rem}",
+         ".row b{font-weight:600}.miss{color:var(--warn);font-weight:600}",
+         "details{margin:.4em 0}summary{cursor:pointer;color:var(--mut);font-size:.85rem;padding:4px 0}",
          "table{width:100%;border-collapse:collapse}td,th{padding:4px 6px;border-bottom:1px solid var(--line);",
-         "text-align:left;font-size:.8rem}.oos{color:var(--mut)}",
-         ".sku{border:1px solid var(--line);border-radius:8px;padding:10px;margin:10px 0}",
-         "details{margin:.4em 0}summary{cursor:pointer;color:var(--mut);font-size:.85rem}",
-         "a{color:inherit}.wrap{overflow-x:auto}</style>",
+         "text-align:left;font-size:.78rem}.oos{color:var(--mut)}.wrap{overflow-x:auto}a{color:inherit}",
+         "</style>",
          "<h1>🏀 Wemby Hunt</h1>",
-         f"<p class=small>Dernier passage : {seen_at or ''} UTC · landed = coût rendu France ESTIMÉ par boîte "
-         f"dans un panier de {nb} boîtes.</p>"]
+         (f"<p class=small>Dernier passage : {seen_at[:16].replace('T', ' ')} UTC</p>"
+          if seen_at else "<p class=small>Rapport hors passage (--report)</p>"),
+         "<nav>" + " ".join(f"<a href='#{i}'>{n}</a>" for i, n in
+                            [("acheter", "🔥 Acheter"), ("surveiller", "👀 Surveiller"),
+                             ("explorer", "🔎 Explorer"), ("diag", "⚙️ Diagnostic")]) + "</nav>"]
 
-    # ---------------- C : HOT NOW, en tête, format téléphone
-    h.append(f"<h2>🔥 Hot now — {len(hot)}</h2>")
-    if not hot:
-        h.append("<p class=small>Rien à faire aujourd'hui : aucune ligne en stock ne cumule un déclencheur "
-                 "et une référence de marché plus chère que le prix affiché.</p>")
-    for e in hot:
-        o = e["o"]
-        h.append("<div class=hot>" + thumb(e, always=True) +
-                 f"<div class=hb><div class=nm>{A(o[5], sku_label(e['sku']))}</div>"
-                 f"<div class=small>{o[1]}{' · ' + f'{e[chr(39)+chr(39)]}' if False else ''}"
-                 f" · réf {e['kind']} ${e['ref']:.2f} · écart {e['gap']:.1f} %"
-                 + (f" · +{e['other_offers']} autre(s) offre(s)" if e.get("other_offers") else "") + "</div>"
-                 f"<div>{badge_html(e)}</div></div>"
-                 f"<div class=pr>${o[3]:.2f}</div></div>")
-    extra = len([x for x in entries if x["available"] and x["triggers"]]) - len(hot)
-    if extra > 0:
-        h.append(f"<p class=small><a href='#complet'>Voir les {extra} opportunité(s) restantes →</a></p>")
+    # ---------------- regroupements
+    buys = {k: [] for k, _, _ in WEMBY_SECTIONS}
+    for e in hot: buys[wemby_bucket(e["sku"])].append(e)
+    nb_buy = sum(len(v) for v in buys.values())
+    near = near_buy_lines(entries)
+    restk = restock_lines(entries)
+    watch_by = {k: 0 for k, _, _ in WEMBY_SECTIONS}
+    for _, e in near: watch_by[wemby_bucket(e["sku"])] += 1
+    for e in restk: watch_by[wemby_bucket(e["sku"])] += 1
 
-    # ---------------- D : sections
-    def block_card(b, obs, show_thumb=False):
-        t, status, icon, s = b[0], b[1], b[2], b[3]
-        bg = col.get(status, "#8a5a00")
-        ask=s.get("market_ask_us"); sold=s.get("market_sold_us"); conf = sold_confidence(s)
-        r = [f"<div class=sku><span class=st style='background:{bg}'>{icon} {status}</span> "
-             f"<b>{sku_label(s)}</b>"
-             f"<div class=small>ask {money(ask)} · sold {money(sold)}"
-             f"{' (' + conf + ')' if conf else ''} · buy ≤ {money(s.get('buy_below_usd'))}"
-             f" · watch ≤ {money(s.get('watch_below_usd'))}</div>"]
-        if obs:
-            r.append("<div class=wrap><table><tr><th>Shop</th><th>Produit</th><th>Prix</th><th>Stock</th><th>Landed €</th></tr>")
-            seen = set()
-            for e in obs:
-                o = e["o"]
-                k = (o[1], o[5], o[8], round(o[3], 2), o[4])
-                if k in seen: continue
-                seen.add(k)
-                if len(seen) > 12: break
-                cls = "" if o[4] else " class=oos"
-                bpc = s.get("boxes_per_case")
-                r.append(f"<tr{cls}><td>{o[1]}</td><td>{thumb(e, show_thumb)}{A(o[5], o[2][:70])}"
-                         f"<div>{badge_html(e)}</div></td><td>${o[3]:.2f}</td>"
-                         f"<td>{'IN STOCK' if o[4] else 'sold out'}</td>"
-                         f"<td>€{landed_eur(o[3]/bpc if bpc else o[3], cat):.2f}</td></tr>")
-            r.append("</table></div>")
-        r.append("</div>")
-        return "".join(r)
+    # ---------------- C : aujourd'hui, une phrase issue des seules données
+    rc = len(buys["rc"])
+    if nb_buy == 0:
+        lede = "Aucun achat recommandé aujourd’hui."
+        if near: lede += f" {len(near)} produit(s) au-dessus de leur prix cible."
+    else:
+        lede = f"{nb_buy} opportunité(s) vérifiée(s) aujourd’hui."
+        lede += f" {rc} sur Wemby Rookie 23/24." if rc else " Aucune sur Wemby Rookie 23/24."
+    h.append(f"<h2>🔥 Aujourd’hui</h2><p class=lede>{lede}</p>")
+    h.append("<div class=kpis>"
+             f"<div class=kpi><b>{nb_buy}</b><span>à acheter</span></div>"
+             f"<div class=kpi><b>{len(near)}</b><span>à surveiller</span></div>"
+             f"<div class=kpi><b>{len(restk)}</b><span>restock</span></div></div>")
 
+    # ---------------- D : ACHETER
+    h.append("<h2 id=acheter>🔥 Acheter</h2>")
+    for key, label, short in WEMBY_SECTIONS:
+        h.append(f"<h3>{label}</h3>")
+        if buys[key]:
+            h += [buy_card(e) for e in buys[key]]
+        else:
+            best = None
+            cands = [(d, e) for d, e in near if wemby_bucket(e["sku"]) == key]
+            if cands:
+                d, e = cands[0]
+                best = f"{sku_label(e['sku'])} — {money_or(d)} au-dessus du seuil"
+            h.append(empty_note(short, watch_by[key], best))
+
+    # ---------------- H/I/J : SURVEILLER
+    h.append("<h2 id=surveiller>👀 Surveiller</h2>")
+    h.append("<h3>🎯 Proche du prix d’achat</h3>")
+    if near:
+        for d, e in near[:12]:
+            b = buy_target(e["sku"])
+            h.append(f"<div class=row><b>{sku_label(e['sku'])}</b><br>"
+                     f"{money_or(e['o'][3])} · {e['o'][1]} · 🎯 acheter ≤ {money_or(b)} "
+                     f"<span class=miss>→ {money_or(d)} trop cher</span> "
+                     f"{A(e['o'][5], 'voir', 'cta')}</div>")
+    else:
+        h.append("<p class=empty>Aucun produit en stock au-dessus de son prix cible.</p>")
+
+    h.append("<h3>🔔 À guetter au restock</h3>")
+    if restk:
+        for e in restk[:12]:
+            hh = e["hist"]; b = buy_target(e["sku"])
+            h.append(f"<div class=row><b>{sku_label(e['sku'])}</b> <span class=small>🔴 OOS</span><br>"
+                     f"Dernier bon prix : {money_or(hh['low'])} <span class=small>({hh['at'][:10]})</span> · "
+                     f"🎯 acheter ≤ {money_or(b)} {A(e['o'][5], 'voir', 'cta')}</div>")
+        h.append("<p class=small>Un prix historique est une cible de surveillance, jamais une valeur de marché.</p>")
+    else:
+        h.append("<p class=empty>Aucun produit en rupture avec une cible d’achat définie.</p>")
+
+    # ---------------- K/L : EXPLORER
+    h.append("<h2 id=explorer>🔎 Explorer le marché</h2>")
     by_sid = {}
     for e in entries: by_sid.setdefault(e["sid"], []).append(e)
-
-    def section(title, pred, show_thumb=False, note=None):
-        sel = [b for b in blocks if pred(b[3])]
-        h.append(f"<h2>{title} — {len(sel)}</h2>")
-        if note: h.append(f"<p class=small>{note}</p>")
-        if not sel: h.append("<p class=small>Aucun SKU dans cette section.</p>")
-        return sel
-
-    sel = section("🏀 Rookie 23/24", lambda s: s["season"] == "2023-24" and not s.get("trophy") and not s.get("wemby_year2"))
-    for bname, label in [("retail","Retail"),("premium","Premium"),("hobby","Hobby"),("ultra","Ultra")]:
-        grp = [b for b in sel if sku_bucket(b[3]) == bname]
+    for key, label, _short in WEMBY_SECTIONS:
+        grp = [b for b in blocks if wemby_bucket(b[3]) == key]
         if not grp: continue
-        h.append(f"<h3>{label} — {len(grp)}</h3>")
-        for b in grp: h.append(block_card(b, by_sid.get(b[3]['id'], [])))
+        h.append(f"<details><summary>{label} — {len(grp)} produit(s)</summary>")
+        for b in grp:
+            s = b[3]; obs = by_sid.get(s["id"], [])
+            ins = [e for e in obs if e["available"] and e["o"][3]]
+            prices = sorted(e["o"][3] for e in ins)
+            rng = (money_or(prices[0]) if len(prices) == 1
+                   else f"{money_or(prices[0])}–{money_or(prices[-1])}") if prices else "—"
+            shops = len({e["o"][1] for e in ins})
+            sold = s.get("market_sold_us")
+            conf = sold_confidence(s)
+            ref_txt = (f"sold {money_or(sold)}" + (f" ({conf})" if conf else "")) if sold is not None else (
+                      f"ask {money_or(s.get('market_ask_us'))}" if s.get("market_ask_us") and s.get("market_ask_from")
+                      else "⚪ marché insuffisant")
+            h.append(f"<div class=row><b>{sku_label(s)}</b><br><span class=small>"
+                     f"{rng} · {shops} shop(s) en stock · {ref_txt} · "
+                     f"🎯 {money_or(buy_target(s), 'pas de seuil')} · {b[1]}</span>"
+                     + detail_block(s, obs, cat, nb) + "</div>")
+        h.append("</details>")
 
-    for b in section("⭐ Year 2 24/25", lambda s: bool(s.get("wemby_year2"))):
-        h.append(block_card(b, by_sid.get(b[3]['id'], [])))
-    for b in section("💎 Trophy", lambda s: bool(s.get("trophy")), show_thumb=True,
-                     note="Affiché même sans vente réalisée : ces SKU portent MARKET DATA INSUFFICIENT tant que market_sold_us est vide."):
-        h.append(block_card(b, by_sid.get(b[3]['id'], []), True))
-
-    # 🔔 Mouvements récents
-    mv = [e for e in entries if any(t.startswith(("RESTOCK", "PRICE_DROP", "NEW_LOW")) for t in e["triggers"])]
-    h.append(f"<h2>🔔 Mouvements récents — {len(mv)}</h2>")
-    if not mv: h.append("<p class=small>Aucun mouvement depuis le passage précédent.</p>")
-    else:
-        h.append("<div class=wrap><table><tr><th>SKU</th><th>Shop</th><th>Prix</th><th>Mouvement</th></tr>")
-        for e in mv[:30]:
-            h.append(f"<tr><td>{A(e['o'][5], sku_label(e['sku'])[:40])}</td><td>{e['o'][1]}</td>"
-                     f"<td>${e['o'][3]:.2f}</td><td>{badge_html(e)}</td></tr>")
-        h.append("</table></div>")
-
-    # 👀 Watchlist en trois couches (N)
-    wprio, wlows, wrest = watchlist_layers(entries)
-    h.append(f"<h2>👀 Watchlist — {len(wprio)} prioritaire(s)</h2>")
-    h.append("<p class=small>Un ancien prix n'est jamais une valeur de marché. Une priorité n'est "
-             "affichée que si une référence de marché permet de la justifier.</p>")
-    def wl_table(items, cols_gap):
-        r = ["<div class=wrap><table><tr><th>Produit</th><th>Historical low</th><th>Vu le</th><th>Shops</th>"
-             + ("<th>vs réf</th>" if cols_gap else "") + "</tr>"]
-        for e in items:
-            hh = e["hist"]
-            r.append(f"<tr><td>{A(e['o'][5], sku_label(e['sku'])[:44])}</td><td>${hh['low']:.2f}</td>"
-                     f"<td class=small>{hh['at'][:10]}</td><td>{hh['n_shops']}</td>"
-                     + (f"<td>{e['restock_gap']:.1f} %</td>" if cols_gap else "") + "</tr>")
-        return "".join(r) + "</table></div>"
-    if wprio:
-        h.append("<h3>🔔 Restock priority</h3>" + wl_table(wprio[:20], True))
-    else:
-        h.append("<p class=small>Aucune priorité qualifiable aujourd'hui : sans référence de marché, "
-                 "un ancien prix bas ne suffit pas à justifier une surveillance.</p>")
-    if wlows:
-        h.append(f"<details><summary>📉 Historical lows — {len(wlows)}</summary>" + wl_table(wlows[:40], False) + "</details>")
-    if wrest:
-        h.append(f"<details><summary>🗂 Toutes les observations en rupture — {len(wrest)}</summary>"
-                 "<div class=wrap><table><tr><th>Produit</th><th>Shop</th><th>Dernier prix</th></tr>"
-                 + "".join(f"<tr><td>{A(e['o'][5], sku_label(e['sku'])[:44])}</td><td>{e['o'][1]}</td>"
-                           f"<td>${e['o'][3]:.2f}</td></tr>" for e in wrest[:60])
-                 + "</table></div></details>")
-
-    # 🔎 Shops découverts
-    # le fragment de discover.py porte son propre titre : on le retire pour garder l'ordre des sections
-    frag = ROOT / "discovered" / "candidates.html"
-    h.append("<h2>🔎 Shops découverts</h2>")
-    if frag.exists():
-        h.append(re.sub(r"<h2>.*?</h2>", "", frag.read_text(encoding="utf-8"), count=1, flags=re.S))
-    else:
-        h.append("<p class=small>Aucune prospection enregistrée.</p>")
-
-    # ⚠️ Review
-    h.append(f"<h2>⚠️ À revoir — {len(review)}</h2>")
+    # ---------------- N : DIAGNOSTIC
+    h.append("<h2 id=diag>⚙️ Diagnostic</h2>")
+    anomalies = {k: v for k, v in health.items() if v[0] not in ("HEALTHY", "SKIPPED", "UNKNOWN")}
+    h.append(f"<p class=small>{len(anomalies)} anomalie(s) de source · "
+             + " · ".join(f"{n} {st}" for st, n in
+                          __import__("collections").Counter(v[0] for v in health.values()).most_common()) + "</p>")
+    if anomalies:
+        h.append("<ul class=small>" + "".join(f"<li>{k} : {v[0]} — {v[1]}</li>" for k, v in sorted(anomalies.items())) + "</ul>")
+    stale = [s for s in cat["skus"] if threshold_age(s, seen_at)[1]]
+    if stale:
+        h.append(f"<details><summary>⏳ Seuils périmés — {len(stale)}</summary><p class=small>"
+                 + ", ".join(sku_label(s) for s in stale[:30]) + "</p></details>")
+    h.append(f"<details><summary>Compteurs par source — {len(shopcount)}</summary><div class=wrap><table>"
+             "<tr><th>Shop</th><th>trust</th><th>bruts</th><th>matchés</th></tr>"
+             + "".join(f"<tr><td>{k}</td><td>{tr}</td><td>{raw}</td><td>{mt}</td></tr>"
+                       for k, tr, raw, mt in shopcount) + "</table></div></details>")
     if review:
-        h.append("<div class=wrap><table><tr><th>Shop</th><th>Titre</th><th>Prix</th><th>Stock</th><th>Candidats</th></tr>")
-        for shop, title, price, av, cands, sc, url in review:
-            h.append(f"<tr><td>{shop}</td><td>{A(url, title[:70])}</td><td>${price:.2f}</td>"
-                     f"<td>{'IN' if av else 'OOS'}</td><td class=small>{cands}</td></tr>")
-        h.append("</table></div>")
+        h.append(f"<details><summary>⚠️ À revoir — {len(review)}</summary><div class=wrap><table>"
+                 "<tr><th>Shop</th><th>Titre</th><th>Prix</th><th>Candidats</th></tr>"
+                 + "".join(f"<tr><td>{shop}</td><td>{A(url, title[:60])}</td><td>${price:.2f}</td>"
+                           f"<td class=small>{cands}</td></tr>"
+                           for shop, title, price, av, cands, sc, url in review)
+                 + "</table></div></details>")
+    frag = ROOT / "discovered" / "candidates.html"
+    if frag.exists():
+        h.append("<details><summary>🔎 Shops découverts</summary>"
+                 + re.sub(r"<h2>.*?</h2>", "", frag.read_text(encoding="utf-8"), count=1, flags=re.S) + "</details>")
 
-    # 🗃 Rapport complet + compteurs techniques, hors premier écran
-    h.append("<h2 id=complet>🗃 Rapport complet</h2><details><summary>Tous les SKU et toutes les lignes</summary>")
-    for b in blocks: h.append(block_card(b, by_sid.get(b[3]['id'], [])))
-    h.append("</details><details><summary>Compteurs par source</summary><div class=wrap><table>"
-             "<tr><th>Shop</th><th>trust</th><th>bruts</th><th>matchés</th></tr>")
-    for k, tr, raw, mt in shopcount:
-        h.append(f"<tr><td>{k}</td><td>{tr}</td><td>{raw}</td><td>{mt}</td></tr>")
-    h.append("</table></div></details>")
+    # ---------------- M : rapport complet / audit
+    h.append("<h2 id=complet>🗃 Rapport complet / audit</h2>")
+    h.append("<p class=small>Vue exhaustive, pour l’audit et le contrôle du matching. "
+             "Ce n’est plus la surface de décision.</p>")
+    h.append("<details><summary>Tous les SKU, toutes les offres</summary>")
+    for b in blocks:
+        s = b[3]
+        h.append(f"<div class=row><b>{b[2]} {b[1]} · {sku_label(s)}</b>"
+                 + detail_block(s, by_sid.get(s["id"], []), cat, nb) + "</div>")
+    h.append("</details>")
     (OUT/"index.html").write_text("\n".join(h), encoding="utf-8")
+
+
+def detail_block(s, obs, cat, nb):
+    """L : la richesse n'est pas supprimée, elle passe derrière la décision."""
+    if not obs: return "<details><summary>détails</summary><p class=small>Aucune offre observée.</p></details>"
+    r = ["<details><summary>détails</summary><div class=wrap><table>",
+         "<tr><th>Shop</th><th>Produit</th><th>Prix</th><th>Qté</th><th>Unitaire</th><th>Stock</th><th>Landed €</th></tr>"]
+    for e in obs[:20]:
+        o = e["o"]; q = (o[11] if len(o) > 11 and o[11] else 1)
+        cls = "" if o[4] else " class=oos"
+        r.append(f"<tr{cls}><td>{o[1]}</td><td>{A(o[5], (o[2] or '')[:52])}</td>"
+                 f"<td>{money_or(o[3])}</td><td>{q}</td><td>{money_or(o[3] / q if q else o[3])}</td>"
+                 f"<td>{'IN STOCK' if o[4] else 'sold out'}</td>"
+                 f"<td>€{landed_eur((o[3] or 0) / q if q else (o[3] or 0), cat):.2f}</td></tr>")
+    r.append("</table></div>")
+    he = next((e for e in obs if e.get("hist")), None)
+    meta = [f"exact_comp : <code>{obs[0].get('key','')}</code>",
+            f"ask {money_or(s.get('market_ask_us'))}", f"sold {money_or(s.get('market_sold_us'))}",
+            f"confiance {sold_confidence(s) or '—'}",
+            f"buy ≤ {money_or(s.get('buy_below_usd'))}", f"watch ≤ {money_or(s.get('watch_below_usd'))}",
+            f"landed estimé par boîte dans un panier de {nb}"]
+    if he: meta.append(f"historical low {money_or(he['hist']['low'])} le {he['hist']['at'][:10]} "
+                       f"({he['hist']['n_shops']} shop(s)) — cible de surveillance, pas une valeur de marché")
+    if s.get("note"): meta.append(s["note"])
+    r.append("<p class=small>" + " · ".join(meta) + "</p></details>")
+    return "".join(r)
+
 
 # ---------------------------------------------------------------- main
 def main():

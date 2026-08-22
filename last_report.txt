@@ -31,14 +31,14 @@
 → The Cardiacs (https://www.thecardiacs.com)  [trust=trusted]
   5339 produits bruts, 32 rattachés à un SKU
 → Monmouth Cards (https://monmouthcards.com)  [trust=watch]
-  4720 produits bruts, 36 rattachés à un SKU
+  4710 produits bruts, 36 rattachés à un SKU
 → World Champion Sports Cards (https://www.worldchampionsportscards.org)  [trust=watch]
   4004 produits bruts, 60 rattachés à un SKU
 → Superior Sports Investments (https://superiorsportsinvestments.com)  [trust=watch]
     collections : 8/84 retenues (filtre 'basketball|\\bnba\\b|hoops|prizm|mosaic|optic|select|phoenix|contenders|court.kings|revolution|premium.stock')
-  16293 produits bruts, 44 rattachés à un SKU
+  16288 produits bruts, 44 rattachés à un SKU
 → SJAY2K Trading Cards (https://www.sjay2k.com)  [trust=watch]
-  600 produits bruts, 18 rattachés à un SKU
+  598 produits bruts, 18 rattachés à un SKU
 → The Ballgame (https://theballgame.com)  [trust=watch]
   12663 produits bruts, 4 rattachés à un SKU
 → Bleecker Trading (https://bleeckertrading.com)  [trust=watch]
@@ -1777,5 +1777,5 @@
   2023-24 Panini Prizm EuroLeague Blaster        $    9.95 cardiacs          -60.2%  STRONG_DEAL -60%  (+3 autre(s) offre(s))
   2024-25 Panini Revolution Blaster              $   39.99 fancave           -27.3%  STRONG_DEAL -27%
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-08-22T01-42-19.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-08-22T06-52-43.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

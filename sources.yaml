@@ -106,3 +106,40 @@ shops:
   - {key: rlsports, name: RL Sports Cards, base_url: https://rlsportscards.com, type: shopify_json, trust: watch, status: watch, notes: "Déjà remonté par discover.py (17 basket, 0 sealed 23-24 sur 250). Fiches Bowman 2025-26 vues le 18/08."}
   - {key: fancave, name: Fan Cave, base_url: https://fancave.com, type: shopify_json, trust: watch, status: watch, notes: "Fiches Bowman 2025-26 vues le 18/08."}
   - {key: millcreek, name: Mill Creek Sports, base_url: https://www.millcreeksports.com, type: html, trust: watch, status: watch, notes: "PAS Shopify : /products.json renvoie 404 après redirection vers www (testé 18/08). Collecteur html requis — non crawlé en v1. Fiches Bowman 2025-26 vues le 18/08."}
+  # --- EU : références de prix, NON CRAWLÉES dans cette version ------------------------------
+  # Hiérarchie d'achat EU pour les produits Topps :
+  #   1) fr.topps.com au MSRP à la release — preuves : Chrome Black 360 € contre une présale US
+  #      à 719,95 $ ; Update Value 45 € contre un sold US de 57,50 $
+  #   2) tracenchase — revendeur officiel, stock le jour de la sortie, DHL offert dès 299 €
+  #   3) TAASS / shopuscards — revendeurs, prime de commodité
+  # Toute nouvelle sortie Topps se compare à 1) et 2) AVANT de regarder le marché US.
+  # Les deux entrées ci-dessous rejoignent la file du futur collecteur html, avec DACW,
+  # Steel City, Blowout et Mill Creek. Aucun crawl ici.
+  - key: shopuscards
+    name: ShopUScards
+    base_url: https://shopuscards.eu
+    url: https://shopuscards.eu
+    type: eu_reference
+    platform: lightspeed          # pas de products.json — client du futur collecteur html
+    country: FR
+    ships_from: FR
+    free_shipping_threshold_eur: 35   # Mondial Relay France
+    payment: paypal (x4 possible)
+    price_display_warning: "prix affichés probablement HT (quasi tous ×1,2 = rond) — TOUT relevé doit être confirmé TTC au checkout avant usage décisionnel"
+    trust: watch
+    notes: "revendeur FR depuis 2020, catalogue large 23-24→25-26 + cases + EuroLeague. Rôle: baromètre fr_price_eur."
+  - key: tracenchase
+    name: Trace 'n Chase
+    base_url: https://tracenchase.com
+    url: https://tracenchase.com
+    type: eu_reference
+    platform: woocommerce         # client du futur collecteur html
+    country: GR
+    ships_from: GR
+    free_shipping_threshold_eur: 299   # DHL Express UE
+    official_retailer: [panini, topps, upper_deck, fanatics]
+    release_day_stock: true
+    promo_note: "-10% sitewide auto jusqu'au 2026-08-31 (+ code TRACE5+10 affiché 15%, à tester)"
+    trust: watch
+    notes: "gros acteur EU, Thessalonique, boutique physique, Trustpilot. Rôle: canal d'achat EU n°2 derrière fr.topps.com + source fr_price_eur."
+

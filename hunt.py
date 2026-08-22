@@ -434,6 +434,9 @@ def collect_shop(shop: dict, skus: list[dict], conn: sqlite3.Connection, seen_at
         return (0, 0, False)
     if shop.get("status") == "reject":
         return skip(f"status=reject \(qualifié sur données réelles → 0 sealed 2023-24\) → skip", "REJECT")
+    if shop["type"] == "eu_reference":
+        return skip(f"type=eu_reference ({shop.get('country','')}, {shop.get('platform','')}) "
+                    f"→ référence de prix EU, non crawlée", "EU_REFERENCE")
     if shop["type"] == "marketplace":
         return skip(f"type=marketplace \(source de market_sold / achat direct\) → skip", "MARKETPLACE")
     if shop["type"] == "breaks":

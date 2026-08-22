@@ -173,6 +173,32 @@ check("4 · emplacement FR réservé mais vide", op.fr_price_eur, None)
 op.fr_price_eur, op.fr_source = 34.90, "Tanteo"
 check("4 · le gabarit affiche le bloc FR sans refonte", "🇫🇷 €34.90" in hunt.render_card(op))
 
+# ================= couche EU : références de prix, jamais confondues avec le marché US
+src = yaml.safe_load(open("/Users/ju/Draft Class/wemby-hunt/sources.yaml", encoding="utf-8"))["shops"]
+eu = [x for x in src if x["type"] == "eu_reference"]
+check("EU · les deux sources de référence sont enregistrées", sorted(x["key"] for x in eu),
+      ["shopuscards", "tracenchase"])
+check("EU · elles ne sont pas crawlables", all(x["type"] == "eu_reference" for x in eu))
+check("EU · l'avertissement HT de ShopUScards est conservé",
+      "HT" in next(x for x in eu if x["key"] == "shopuscards")["price_display_warning"])
+
+refs = [x for x in cat["skus"] if x.get("eu_reference_from")]
+check("EU · chaque référence porte sa provenance ET sa date",
+      all(x.get("eu_reference_from") and x.get("eu_reference_checked_at") for x in refs))
+check("EU · les relevés ShopUScards sont marqués HT non confirmé",
+      all(x.get("eu_reference_ht_unconfirmed") for x in refs if x["eu_reference_from"] == "shopuscards"))
+check("EU · une référence EU n'alimente jamais le marché US",
+      any(x.get("eu_reference_eur") and x.get("market_ask_us") is None for x in refs))
+pb = S["PANINI_2023-24_PRIZM_BLASTER"]
+check("EU · la référence EU ne devient pas un ask US",
+      hunt.market_ref(pb)[1] != "eu")
+
+el = [x for x in cat["skus"] if "2025-26_EUROLEAGUE" in x["id"]]
+check("EU · 6 SKU EuroLeague 2025-26 créés", len(el), 6)
+check("EU · tous en CANDIDATE", {x["status"] for x in el}, {"CANDIDATE"})
+check("EU · aucun n'est marqué Wemby rookie", any(x.get("wemby_rc") for x in el), False)
+check("EU · tous portent le programme audience FR", {x.get("program") for x in el}, {"fr_audience"})
+
 print(f"\nTOTAL : {len(total)} tests, {len(fails)} FAIL")
 for f in fails: print("  FAIL", f)
 sys.exit(1 if fails else 0)

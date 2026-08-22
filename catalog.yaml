@@ -90,9 +90,11 @@ skus:
     thresholds_reviewed_at: 2026-08-17
     buy_below_usd: 60.00
     watch_below_usd: 80.00
-    eu_reference_eur: 150.00
-    eu_reference_source: "(GPT, à revérifier) – marché déjà arbitré"
-
+    eu_reference_eur: 116.66
+    eu_reference_from: shopuscards
+    eu_reference_checked_at: 2026-08-21
+    eu_reference_ht_unconfirmed: true
+    eu_reference_note: "premiere reference FR sourcee sur le rookie year ; remplace l'ancien 150,00 non source (GPT, a reverifier)"
   - id: PANINI_2023-24_OPTIC_BLASTER
     season: "2023-24"
     manufacturer: Panini
@@ -1938,6 +1940,11 @@ skus:
     buy_below_usd: null
     watch_below_usd: null
     note: "6 paquets x 7 cartes, 11 Mojo exclusifs Target."
+    eu_reference_eur: 91.66
+    eu_reference_from: shopuscards
+    eu_reference_checked_at: 2026-08-21
+    eu_reference_ht_unconfirmed: true
+    eu_reference_note: "fourchette 91,66-99,99 relevée, borne basse retenue ; OOS"
     url_proof: "https://ehcards.com/products/2025-26-bowman-basketball-6-pack-mega-box"
   - id: TOPPS_2025-26_BOWMAN_VALUE_BLASTER
     season: "2025-26"
@@ -1951,8 +1958,6 @@ skus:
     program: hot_box
     wemby_rc: false
     wemby_year2: false
-    eu_reference_source: "Amazon.fr — URL fournie par Julien, prix à relever"
-    eu_reference_eur: null
     market_ask_from: [topps]
     market_ask_us: 29.99
     market_sold_us: null
@@ -1963,6 +1968,10 @@ skus:
     buy_below_usd: null
     watch_below_usd: null
     note: "Value Blaster. ask 29,99 topps.com."
+    eu_reference_eur: 49.99
+    eu_reference_from: shopuscards
+    eu_reference_checked_at: 2026-08-21
+    eu_reference_ht_unconfirmed: true
     url_proof: "https://sportscardjunction.com/products/pre-order-2025-26-bowman-basketball-blaster-box-releases-4-22-26"
   - id: TOPPS_2025-26_BOWMAN_HOBBY_CASE
     season: "2025-26"
@@ -2326,6 +2335,11 @@ skus:
     market_sold_checked_at: null
     buy_below_usd: null
     watch_below_usd: null
+    eu_reference_eur: 133.33
+    eu_reference_from: shopuscards
+    eu_reference_checked_at: 2026-08-21
+    eu_reference_ht_unconfirmed: true
+    eu_reference_note: "OOS au relevé"
     url_proof: "https://www.hiddengemscardshop.com/products/2025-26-topps-chrome-update-series-basketball-mega-box"
   - id: TOPPS_2025-26_CHROME_UPDATE_BLASTER
     season: "2025-26"
@@ -2348,6 +2362,11 @@ skus:
     market_sold_checked_at: null
     buy_below_usd: null
     watch_below_usd: null
+    eu_reference_eur: 62.49
+    eu_reference_from: shopuscards
+    eu_reference_checked_at: 2026-08-21
+    eu_reference_ht_unconfirmed: true
+    eu_reference_note: "OOS au relevé (Update Value/Blaster)"
     url_proof: "https://superiorsportsinvestments.com/products/2025-26-topps-chrome-update-series-basketball-blaster-box"
   - id: TOPPS_2025-26_HOOPS_BLASTER
     season: "2025-26"
@@ -2370,6 +2389,11 @@ skus:
     market_sold_checked_at: null
     buy_below_usd: null
     watch_below_usd: null
+    eu_reference_eur: 37.49
+    eu_reference_from: shopuscards
+    eu_reference_checked_at: 2026-08-21
+    eu_reference_ht_unconfirmed: true
+    eu_reference_note: "relevé Hoops Value Box, rattaché au SKU Blaster existant"
     url_proof: "https://www.thecardiacs.com/products/2025-26-topps-nba-hoops-basketball-blaster-box"
   - id: TOPPS_2025-26_HOOPS_HOBBY
     season: "2025-26"
@@ -2392,6 +2416,10 @@ skus:
     market_sold_checked_at: null
     buy_below_usd: null
     watch_below_usd: null
+    eu_reference_eur: 249.99
+    eu_reference_from: shopuscards
+    eu_reference_checked_at: 2026-08-21
+    eu_reference_ht_unconfirmed: true
     url_proof: "https://collectorstore.com/products/2025-26-topps-nba-hoops-basketball-hobby-box"
   - id: TOPPS_2025-26_HOOPS_JUMBO
     season: "2025-26"
@@ -2572,3 +2600,177 @@ skus:
     watch_below_usd: null
     note: "Collab distincte. Preuve columbia 539,99 (20/08) ; Cardiacs 569,95 releve le 18/08."
     url_proof: "https://columbiasportscard.com/products/2025-26-topps-chrome-cactus-jack-basketball-hobby-box"
+  - id: PANINI_2025-26_EUROLEAGUE_ORIGINS_H2
+    season: "2025-26"
+    manufacturer: Panini
+    set: Origins
+    aliases: ["Turkish Airlines EuroLeague"]
+    league: EuroLeague
+    format: H2
+    configuration: null
+    tier: hobby
+    status: CANDIDATE
+    licensed: euroleague
+    program: fr_audience
+    wemby_rc: false
+    wemby_year2: false
+    personal_interest: 3
+    market_ask_us: null
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_n: null
+    market_sold_window_days: null
+    market_sold_checked_at: null
+    buy_below_usd: null
+    watch_below_usd: null
+    eu_reference_eur: 76.49
+    eu_reference_from: tracenchase
+    eu_reference_checked_at: 2026-08-21
+    eu_reference_note: "TTC, prix apres la remise -10 % sitewide valable jusqu au 31/08"
+    url_proof: "https://tracenchase.com"
+    url_proof_note: "page d accueil, pas une fiche produit — preuve plus faible, le SKU reste CANDIDATE"
+  - id: PANINI_2025-26_EUROLEAGUE_ORIGINS_HOBBY
+    season: "2025-26"
+    manufacturer: Panini
+    set: Origins
+    aliases: ["Turkish Airlines EuroLeague"]
+    league: EuroLeague
+    format: Hobby
+    configuration: null
+    tier: hobby
+    status: CANDIDATE
+    licensed: euroleague
+    program: fr_audience
+    wemby_rc: false
+    wemby_year2: false
+    personal_interest: 3
+    market_ask_us: null
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_n: null
+    market_sold_window_days: null
+    market_sold_checked_at: null
+    buy_below_usd: null
+    watch_below_usd: null
+    eu_reference_eur: 157.49
+    eu_reference_from: tracenchase
+    eu_reference_checked_at: 2026-08-21
+    eu_reference_note: "TTC, prix apres la remise -10 % sitewide valable jusqu au 31/08"
+    url_proof: "https://tracenchase.com"
+    url_proof_note: "page d accueil, pas une fiche produit — preuve plus faible, le SKU reste CANDIDATE"
+  - id: PANINI_2025-26_EUROLEAGUE_SELECT_HOBBY
+    season: "2025-26"
+    manufacturer: Panini
+    set: Select
+    aliases: ["Turkish Airlines EuroLeague"]
+    league: EuroLeague
+    format: Hobby
+    configuration: null
+    tier: hobby
+    status: CANDIDATE
+    licensed: euroleague
+    program: fr_audience
+    wemby_rc: false
+    wemby_year2: false
+    personal_interest: 3
+    market_ask_us: null
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_n: null
+    market_sold_window_days: null
+    market_sold_checked_at: null
+    buy_below_usd: null
+    watch_below_usd: null
+    eu_reference_eur: 170.99
+    eu_reference_from: tracenchase
+    eu_reference_checked_at: 2026-08-21
+    eu_reference_note: "TTC, prix apres la remise -10 % sitewide valable jusqu au 31/08"
+    url_proof: "https://tracenchase.com"
+    url_proof_note: "page d accueil, pas une fiche produit — preuve plus faible, le SKU reste CANDIDATE"
+  - id: PANINI_2025-26_EUROLEAGUE_SELECT_MEGA
+    season: "2025-26"
+    manufacturer: Panini
+    set: Select
+    aliases: ["Turkish Airlines EuroLeague"]
+    league: EuroLeague
+    format: Mega
+    configuration: null
+    tier: retail
+    status: CANDIDATE
+    licensed: euroleague
+    program: fr_audience
+    wemby_rc: false
+    wemby_year2: false
+    personal_interest: 3
+    market_ask_us: null
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_n: null
+    market_sold_window_days: null
+    market_sold_checked_at: null
+    buy_below_usd: null
+    watch_below_usd: null
+    eu_reference_eur: 53.99
+    eu_reference_from: tracenchase
+    eu_reference_checked_at: 2026-08-21
+    eu_reference_note: "TTC, prix apres la remise -10 % sitewide valable jusqu au 31/08"
+    url_proof: "https://tracenchase.com"
+    url_proof_note: "page d accueil, pas une fiche produit — preuve plus faible, le SKU reste CANDIDATE"
+  - id: PANINI_2025-26_EUROLEAGUE_SELECT_FOTL
+    season: "2025-26"
+    manufacturer: Panini
+    set: Select
+    aliases: ["Turkish Airlines EuroLeague"]
+    league: EuroLeague
+    format: FOTL
+    configuration: null
+    tier: hobby
+    status: CANDIDATE
+    licensed: euroleague
+    program: fr_audience
+    wemby_rc: false
+    wemby_year2: false
+    personal_interest: 3
+    market_ask_us: null
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_n: null
+    market_sold_window_days: null
+    market_sold_checked_at: null
+    buy_below_usd: null
+    watch_below_usd: null
+    eu_reference_eur: 269.99
+    eu_reference_from: tracenchase
+    eu_reference_checked_at: 2026-08-21
+    eu_reference_note: "TTC, prix apres la remise -10 % sitewide valable jusqu au 31/08"
+    url_proof: "https://tracenchase.com"
+    url_proof_note: "page d accueil, pas une fiche produit — preuve plus faible, le SKU reste CANDIDATE"
+  - id: PANINI_2025-26_EUROLEAGUE_CONTENDERS_MEGA
+    season: "2025-26"
+    manufacturer: Panini
+    set: Contenders
+    aliases: ["Turkish Airlines EuroLeague"]
+    league: EuroLeague
+    format: Mega
+    configuration: null
+    tier: retail
+    status: CANDIDATE
+    licensed: euroleague
+    program: fr_audience
+    wemby_rc: false
+    wemby_year2: false
+    personal_interest: 3
+    market_ask_us: null
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_n: null
+    market_sold_window_days: null
+    market_sold_checked_at: null
+    buy_below_usd: null
+    watch_below_usd: null
+    eu_reference_eur: 49.49
+    eu_reference_from: tracenchase
+    eu_reference_checked_at: 2026-08-21
+    eu_reference_note: "TTC, prix apres la remise -10 % sitewide valable jusqu au 31/08"
+    url_proof: "https://tracenchase.com"
+    url_proof_note: "page d accueil, pas une fiche produit — preuve plus faible, le SKU reste CANDIDATE"

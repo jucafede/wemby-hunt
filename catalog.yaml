@@ -26,7 +26,14 @@ skus:
     wemby_rc: true
     market_ask_from: [waxstat, ehcards]
     market_ask_us: 34.95
-    market_sold_us: 28.50
+    market_sold_us: 20.00
+    market_sold_source: ebay_sold
+    market_sold_n: 300
+    market_sold_window_days: 90
+    market_sold_checked_at: 2026-08-19
+    market_sold_note: "fourchette 17,99-21,95 ; 72 ventes a 17,99 le 14/08"
+    thresholds_review_needed: true
+    thresholds_review_reason: "buy 27,00 et watch 31,00 ont ete poses face a un sold de 28,50. Le sold sourcé du 19/08 est 20,00 : les deux seuils sont AU-DESSUS des ventes réalisées et ne peuvent plus déclencher d achat. Non recalculés automatiquement (doctrine Q) — à retrancher à la main."
     market_source: "ask: WaxStat 34,95 / EH Cards 34,99 live 17/08 ; sold: SportsCardsPro 23,50-30 (mai-juil), eBay Kruk 24,99"
     market_checked_at: 2026-08-17
     thresholds_reviewed_at: 2026-08-17
@@ -2306,6 +2313,8 @@ skus:
     wemby_year2: false
     market_ask_from: [rbicru7]
     market_ask_us: 2195.00
+    sold_needed: urgent
+    sold_needed_note: "cbhobby 2100 $ a -4 % de l ask — seul un sold StockX tranche entre cher et deal"
     market_sold_us: null
     market_sold_source: null
     market_sold_n: null

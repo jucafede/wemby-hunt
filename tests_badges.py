@@ -27,6 +27,16 @@ check("LOW -> pas de GO", hunt.decide(True, -20, "LOW", "EXACT", 50, 40), "PRICE
 check("sans sold -> pas de GO", hunt.decide(True, -20, None, "EXACT", 50, 40), "PRICE ANOMALY — NO SOLD DATA")
 check("RELATED -> pas de GO", hunt.decide(True, -20, "HIGH", "RELATED", 50, 40), "PRICE ANOMALY — RELATED COMP")
 check("au-dessus du seuil -> rien", hunt.decide(True, 10, "HIGH", "EXACT", 50, 60), None)
+# seuil incohérent : acheter au-dessus des ventes réalisées n'est pas un achat
+inco = {"market_sold_us": 20.0, "buy_below_usd": 27.0}
+coh  = {"market_sold_us": 30.0, "buy_below_usd": 27.0}
+check("buy au-dessus du sold -> seuil incohérent", hunt.threshold_coherent(inco), False)
+check("buy sous le sold -> cohérent", hunt.threshold_coherent(coh), True)
+check("sans sold, rien à vérifier", hunt.threshold_coherent({"buy_below_usd": 27.0}), True)
+check("seuil incohérent -> jamais GO",
+      hunt.decide(True, -10, "MEDIUM", "EXACT", 27.0, 25.0, inco), "SEUIL À REVOIR — buy au-dessus du sold")
+check("seuil cohérent -> GO possible",
+      hunt.decide(True, -10, "MEDIUM", "EXACT", 27.0, 25.0, coh), "GO")
 
 # ---- comp_type
 check("parallèle nommé sur SKU sans configuration -> RELATED",

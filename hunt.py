@@ -808,12 +808,23 @@ def hot_now(entries, limit=15):
     for e in best_by_key: e["other_offers"] = others[e.get("key") or e["sid"]]
     return best_by_key[:limit]
 
-def decide(status_active, gap, conf, comp, buy_below, price):
+def threshold_coherent(sku: dict) -> bool:
+    """Un seuil d'achat au-dessus des ventes réalisées n'est pas un seuil : il ordonnerait
+    d'acheter plus cher que le marché. Vécu le 22/08 sur Phoenix Blaster — le sold sourcé est
+    passé de 28,50 à 20,00 et le buy de 27,00 est devenu incohérent. On ne recalcule jamais un
+    seuil (doctrine Q), mais un seuil incohérent ne peut plus produire de GO."""
+    sold, buy = sku.get("market_sold_us"), sku.get("buy_below_usd")
+    if sold is None or buy is None: return True
+    return float(buy) <= float(sold)
+
+def decide(status_active, gap, conf, comp, buy_below, price, sku=None):
     """GO exige : SKU ACTIVE, comparaison EXACT, sold_confidence >= MEDIUM, et prix sous le seuil.
     Sans sold fiable, une anomalie de prix reste une anomalie — jamais un ordre d'achat."""
     if not status_active: return None
     under = buy_below is not None and price <= buy_below
     if not under: return None
+    if sku is not None and not threshold_coherent(sku):
+        return "SEUIL À REVOIR — buy au-dessus du sold"
     if comp != "EXACT": return "PRICE ANOMALY — RELATED COMP"
     if conf is None: return "PRICE ANOMALY — NO SOLD DATA"
     if conf == "LOW": return "PRICE ANOMALY — LOW MARKET CONFIDENCE"
@@ -901,7 +912,7 @@ def report(cat: dict, conn: sqlite3.Connection, seen_at: str | None, trust: dict
                 if sk_st != "ACTIVE":
                     status, icon = ("SUIVI" if sk_st == "WATCH" else "CANDIDAT"), "·"
                 elif best and s.get("buy_below_usd") and best[3] <= s["buy_below_usd"]:
-                    d = decide(True, None, conf, by_line[id(best)]["comp"], s.get("buy_below_usd"), best[3])
+                    d = decide(True, None, conf, by_line[id(best)]["comp"], s.get("buy_below_usd"), best[3], s)
                     status, icon = ("GO", "🔥") if d == "GO" else (d, "⚡")
                 elif best and s.get("watch_below_usd") and best[3] <= s["watch_below_usd"]: status, icon = "WATCH", "👀"
                 elif best: status, icon = "NO_GO", "⛔"

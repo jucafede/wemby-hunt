@@ -96,6 +96,11 @@ P2 = [
  ("2025-26 Topps Chrome Basketball Hobby Jumbo Box","TOPPS_2025-26_CHROME_HOBBY_JUMBO"),
  ("2025-26 Topps NBA Hoops Basketball Blaster Box","TOPPS_2025-26_HOOPS_BLASTER"),
  ("2025-26 Topps Signature Class Basketball Hobby Box","TOPPS_2025-26_SIGNATURE_CLASS_HOBBY"),
+ # EuroLeague 2025-26 : identités propres, jamais confondues avec la NBA
+ ("2025-26 Panini Contenders EuroLeague Basketball Mega Box","PANINI_2025-26_EUROLEAGUE_CONTENDERS_MEGA"),
+ ("2025-26 Panini Select EuroLeague Basketball FOTL Hobby Box","PANINI_2025-26_EUROLEAGUE_SELECT_FOTL"),
+ ("2025-26 Panini Origins EuroLeague Basketball H2 Box","PANINI_2025-26_EUROLEAGUE_ORIGINS_H2"),
+ ("2025-26 Panini Select EuroLeague Basketball Mega Box","PANINI_2025-26_EUROLEAGUE_SELECT_MEGA"),
  # Cosmic Chrome et Cactus Jack : identités propres, la saison tranche
  ("2025-26 Topps Cosmic Chrome Basketball Hobby Box","TOPPS_2025-26_COSMIC_CHROME_HOBBY"),
  ("2023-24 Topps Cosmic Chrome Basketball Hobby Box","TOPPS_2023-24_COSMIC_CHROME_HOBBY"),
@@ -155,7 +160,7 @@ fails = []
 print("--- POSITIFS ---")
 for t, exp in POS + [(a, b) for a, b in P2]:
     m = hunt.match_title(t, skus)
-    good = m.sku_id == (exp if exp.startswith("TOPPS") else P + exp)
+    good = m.sku_id == (exp if exp.startswith(("TOPPS", "PANINI_")) else P + exp)
     if not good: fails.append(("POS", t, exp, m.sku_id))
     print(f"{'PASS' if good else 'FAIL'} {m.score:4.2f} {str(m.sku_id).replace(P,''):<30} attendu={exp:<30} fmt={m.fmt}")
 print("\n--- NEGATIFS (aucun ne doit produire un MATCH) ---")

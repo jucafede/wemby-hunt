@@ -21,7 +21,10 @@ def entry(sid, price, avail=True, trig=(), desc=(), gap=-25.0, ref=50.0, kind="s
     # comme en production : exact_comp_key identifie le PRODUIT, pas l'annonce
     return {"o": o, "key": f"{sid}|std|x1", "sid": sid, "sku": sku(sid), "available": avail,
             "triggers": list(trig), "descriptors": list(desc), "gap": gap, "ref": ref,
-            "kind": kind, "mem": None, "comp": "EXACT", "hist": hist}
+            "kind": kind, "mem": None, "comp": "EXACT", "hist": hist,
+            # comme en production : le verdict et sa base de preuve accompagnent la ligne
+            "pv": {"verdict": "STRONG BUY", "basis": "sold", "gap": gap, "ref": ref,
+                   "confidence": "HIGH", "why": "7 vente(s) réalisée(s) sur 30 j · HIGH"}}
 
 # ---- 7/8/9 : classement Wemby
 check("7 · Wemby RC 23/24 correctement classé",
@@ -167,7 +170,8 @@ check("3 · la référence faible ne remonte pas dans Surveiller",
 # 4 — les cartes sont rendues depuis une structure, pas assemblées à la main
 op = hunt.opportunity(buy, "buy", cat)
 check("4 · une opportunité est un objet typé", type(op).__name__, "Opportunity")
-check("4 · l'objet porte la décision", op.verdict, "STRONG DEAL")
+check("4 · l'objet porte la décision", op.verdict, "🔥 STRONG BUY")
+check("4 · l'objet porte la base de preuve", "vente(s) réalisée(s)" in (op.evidence or ""))
 check("4 · l'objet porte l'URL produit", op.url.endswith("/products/mosaic-blaster"))
 check("4 · emplacement FR réservé mais vide", op.fr_price_eur, None)
 op.fr_price_eur, op.fr_source = 34.90, "Tanteo"

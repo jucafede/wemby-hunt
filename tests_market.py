@@ -143,6 +143,44 @@ check("le cas réel : 75 $ face à un marché à 64 $ n'est pas un deal", verdic
 check("à 55 $ ce serait un deal", verdict(55, 64), "DEAL")
 check("à 50 $ un strong deal", verdict(50, 64), "STRONG DEAL")
 
+# ---------------------------------------------------------------------------
+# HOT NOW : un verdict de marché défavorable est sans appel
+# ---------------------------------------------------------------------------
+def hn_entry(sid, price, pv, triggers=("RESTOCK",), gap=-38.0, ref=120.0, kind="ask"):
+    o = ("S", "sh", "titre", price, 1, f"https://x.test/{sid}", 1.0,
+         "2026-08-21T00:00:00", "", "EXACT", None, 1, price, f"{sid}|std|x1", "US", "USD")
+    return {"o": o, "key": f"{sid}|std|x1", "sid": sid, "sku": {}, "available": True,
+            "triggers": list(triggers), "descriptors": [], "gap": gap, "ref": ref,
+            "kind": kind, "mem": None, "comp": "EXACT", "hist": None, "region": "US", "pv": pv}
+
+def pvd(v, basis="sold", gap=0.0):
+    return {"verdict": v, "basis": basis, "gap": gap, "ref": {"value": 64.0},
+            "confidence": "HIGH", "why": "preuve"}
+
+# le cas réel : Topps Chrome à 75 $, restock + plus-bas historique + -38 % vs seuil manuel,
+# mais sept ventes réelles à 64 $. L'ancien moteur l'affichait en HOT NOW.
+cher = hn_entry("TOPPS_CHROME", 75.0, pvd("EXPENSIVE", "sold", 17.2))
+check("un EXPENSIVE sold-backed n'entre pas dans HOT NOW malgré ses déclencheurs",
+      hunt.hot_now([cher]), [])
+check("un ASK EXPENSIVE non plus",
+      hunt.hot_now([hn_entry("X", 75.0, pvd("ASK EXPENSIVE", "ask", 30.0))]), [])
+check("un ASK FAIR non plus",
+      hunt.hot_now([hn_entry("X", 75.0, pvd("ASK FAIR", "ask", 2.0))]), [])
+check("sans aucune preuve de marché, les déclencheurs historiques restent recevables",
+      len(hunt.hot_now([hn_entry("X", 39.99, pvd("DATA INSUFFICIENT", None, None))])), 1)
+check("un ASK DEAL entre dans HOT NOW sans aucun déclencheur historique",
+      len(hunt.hot_now([hn_entry("X", 10.0, pvd("ASK DEAL", "ask", -33.7),
+                                 triggers=(), gap=None, ref=None)])), 1)
+check("un BUY sold-backed passe devant un ASK DEAL plus généreux",
+      [e["sid"] for e in hunt.hot_now([
+          hn_entry("ASKD", 10.0, pvd("ASK DEAL", "ask", -33.7), triggers=(), gap=None, ref=None),
+          hn_entry("SOLDB", 50.0, pvd("BUY", "sold", -12.0), triggers=(), gap=None, ref=None)])],
+      ["SOLDB", "ASKD"])
+# l'écart affiché : celui du verdict quand il existe, jamais un plantage quand il manque
+check("un ASK DEAL sans gap historique ne fait pas planter le rapport",
+      hunt.hot_now([hn_entry("X", 10.0, pvd("ASK DEAL", "ask", -33.7),
+                             triggers=(), gap=None, ref=None)])[0]["gap"], None)
+
 print(f"\nTOTAL FINAL : {len(total)} tests, {len(fails)} FAIL")
 for f in fails: print("  FAIL", f)
 sys.exit(1 if fails else 0)

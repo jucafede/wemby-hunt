@@ -652,6 +652,71 @@ def _trim_outliers(vals):
     keep = [v for v in vals if m and 0.5 * m <= v <= 1.5 * m]
     return (keep, [v for v in vals if v not in keep]) if len(keep) >= 3 else (vals, [])
 
+_SOLD_CACHE = {}
+
+def load_sold():
+    """Ventes réalisées saisies à la main, cloisonnées par exact_comp_key. Le moteur LIT ce
+    fichier, il ne l'écrit jamais. Une vente sans date ni source est ignorée."""
+    if not _SOLD_CACHE:
+        f = ROOT / "sold.yaml"
+        d = (yaml.safe_load(f.read_text(encoding="utf-8")) or {}).get("sales", {}) if f.exists() else {}
+        _SOLD_CACHE.update(d or {})
+    return _SOLD_CACHE
+
+def sold_stats(key: str, now=None):
+    """Distribution des ventes réalisées par fenêtre. Renvoie None si aucune vente exploitable.
+
+    La confiance ne dépend PAS que de n : elle tient compte de la taille d'échantillon, de la
+    récence ET de la dispersion. Six ventes serrées sur 30 jours ne valent pas six ventes
+    éclatées de 600 à 1300 sur six mois."""
+    e = load_sold().get(key)
+    if not e or not e.get("items") or not e.get("source"): return None
+    ref = datetime.fromisoformat(str(now)[:10]) if now else datetime.now(timezone.utc).replace(tzinfo=None)
+    pts = []
+    for it in e["items"]:
+        if not it.get("date") or it.get("price") is None: continue
+        age = (ref - datetime.fromisoformat(str(it["date"])[:10])).days
+        pts.append((age, float(it["price"])))
+    if not pts: return None
+    out = {"source": e["source"], "source_url": e.get("source_url"),
+           "collected_at": str(e.get("collected_at") or ""), "windows": {}, "n_total": len(pts)}
+    for w in (30, 60, 90):
+        v = [p for a, p in pts if a <= w]
+        if v:
+            m = _median(v)
+            out["windows"][w] = {"n": len(v), "median": round(m, 2), "min": min(v), "max": max(v),
+                                 "dispersion": round((max(v) - min(v)) / m * 100, 1) if m else None}
+    # fenêtre de référence : la plus récente qui porte assez de ventes
+    ref_w = next((w for w in (30, 60, 90) if out["windows"].get(w, {}).get("n", 0) >= 5), None)
+    out["ref_window"] = ref_w
+    if ref_w:
+        d = out["windows"][ref_w]
+        out["value"] = d["median"]
+        n, disp = d["n"], d["dispersion"] or 0
+        if n >= 6 and ref_w <= 30 and disp <= 50: out["confidence"] = "HIGH"
+        elif n >= 5 and ref_w <= 60 and disp <= 80: out["confidence"] = "MEDIUM"
+        else: out["confidence"] = "LOW"
+    else:
+        out["value"], out["confidence"] = None, "LOW"
+    # tendance : simple constat, aucune prédiction
+    a, b = out["windows"].get(30, {}).get("median"), out["windows"].get(90, {}).get("median")
+    out["trend"] = "UNKNOWN"
+    if a and b:
+        delta = (a - b) / b * 100
+        out["trend"] = "UP" if delta > 10 else "DOWN" if delta < -10 else "FLAT"
+        out["trend_pct"] = round(delta, 1)
+    return out
+
+def buy_below_v2(cm: dict):
+    """« À quel prix est-ce une bonne opportunité AUJOURD'HUI ? », pas « quel était un bon prix
+    autrefois ». Dérivé du marché actuel et de sa confiance : on exige une marge plus large
+    quand on est moins sûr. Sans marché fiable, pas de seuil — UNKNOWN plutôt qu'un chiffre."""
+    if not cm or cm.get("value") is None: return None, "aucun marché actuel fiable"
+    conf = cm.get("confidence")
+    if conf == "HIGH":   return round(cm["value"] * 0.90, 2), "10 % sous la médiane des ventes récentes"
+    if conf == "MEDIUM": return round(cm["value"] * 0.85, 2), "15 % sous la médiane (confiance moyenne)"
+    return None, "confiance insuffisante pour fixer un seuil"
+
 def current_market(conn, sku: dict, key: str, now=None, region: str = "US"):
     """Référence de marché ACTUELLE, distincte de historical_low.
 
@@ -664,7 +729,18 @@ def current_market(conn, sku: dict, key: str, now=None, region: str = "US"):
            "confidence": "LOW", "freshness": "UNKNOWN", "dispersion": None,
            "shops": 0, "outliers": [], "age_days": None}
 
-    # 1) sold exact renseigné à la main, avec ses métadonnées
+    # 0) ventes réalisées datées : la meilleure base possible
+    st = sold_stats(key, now) if region == "US" else None
+    if st and st.get("value") is not None:
+        w = st["ref_window"]; d = st["windows"][w]
+        out.update(value=st["value"], basis="exact_sold", sample_size=d["n"], window_days=w,
+                   confidence=st["confidence"], freshness=freshness(w), dispersion=d["dispersion"],
+                   age_days=None)
+        out["trend"] = st.get("trend"); out["sold_source"] = st["source"]
+        out["windows"] = st["windows"]
+        return out
+
+    # 1) sold scalaire renseigné à la main, avec ses métadonnées
     sold, conf = sku.get("market_sold_us"), sold_confidence(sku)
     if sold is not None and conf in ("HIGH", "MEDIUM"):
         age = _age_days(sku.get("market_sold_checked_at"), now)
@@ -932,6 +1008,20 @@ def hot_now(entries, limit=15):
             others[k] = 0; best_by_key.append(e)
     for e in best_by_key: e["other_offers"] = others[e.get("key") or e["sid"]]
     return best_by_key[:limit]
+
+def threshold_vs_market(sku: dict, cm: dict):
+    """Un seuil manuel qui a décroché du marché actuel doit être signalé, jamais réécrit en
+    silence. Constaté le 23/08 : buy_below 35 $ face à des ventes récentes médianes à 64 $ —
+    le seuil rendait invisible toute offre entre 35 et 64 $."""
+    b = sku.get("buy_below_usd")
+    if b is None or not cm or cm.get("value") is None or cm.get("confidence") == "LOW":
+        return None
+    ratio = float(b) / cm["value"]
+    if ratio < 0.6: return ("OBSOLETE_LOW", f"seuil {b:.2f} $ contre un marché à {cm['value']:.2f} $ "
+                                            f"— trop bas de {100 * (1 - ratio):.0f} %, plus aucune offre ne peut le franchir")
+    if ratio > 1.1: return ("OBSOLETE_HIGH", f"seuil {b:.2f} $ AU-DESSUS du marché à {cm['value']:.2f} $ "
+                                             f"— déclencherait un achat au-dessus des ventes réelles")
+    return None
 
 def threshold_coherent(sku: dict) -> bool:
     """Un seuil d'achat au-dessus des ventes réalisées n'est pas un seuil : il ordonnerait

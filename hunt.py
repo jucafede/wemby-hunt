@@ -139,12 +139,17 @@ def parse_quantity(t: str, sku: dict | None = None) -> int:
 # le vivier se fragmente et la ligne passe en DATA INSUFFICIENT — jamais en faux deal.
 PREORDER_RE = re.compile(r"pre[- ]?order|pre[- ]?sale|presale|releases?\s+\d{1,2}[/-]\d{1,2}")
 
-def exact_comp_key(sku_id: str, t: str, sku: dict | None = None) -> str:
+def exact_comp_key(sku_id: str, t: str, sku: dict | None = None, url: str = "") -> str:
     """Cloison de comparabilité commerciale. SOLD, LIVE MARKET, cheapest, historique et signaux
-    ne doivent JAMAIS traverser cette clé. Deux offres de clés différentes ne se comparent pas."""
+    ne doivent JAMAIS traverser cette clé. Deux offres de clés différentes ne se comparent pas.
+
+    L'URL compte : sportscardjunction titre « 2025-26 Bowman Basketball Blaster Box » et range
+    le produit sous /products/pre-order-...-releases-4-22-26. Le titre ment par omission,
+    le slug dit la vérité."""
     qty = parse_quantity(t, sku)
     toks = [tok.replace(" ", "") for tok in EDITION_TOKENS if tok in t]
-    if PREORDER_RE.search(t): toks.append("preorder")
+    if PREORDER_RE.search(t) or PREORDER_RE.search((url or "").lower().replace("-", " ")):
+        toks.append("preorder")
     ed = "+".join(toks) or "std"
     return f"{sku_id}|{ed}|x{qty}"
 
@@ -525,7 +530,7 @@ def collect_shop(shop: dict, skus: list[dict], conn: sqlite3.Connection, seen_at
                 unit = round(price / qty, 2) if qty else price
                 conn.execute("INSERT OR REPLACE INTO observations (sku_id,shop,title,variant_title,price,available,url,match_score,seen_at,matcher_version,image_url,comp_type,quantity,unit_price,exact_comp_key,sealed,market_region,currency) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
                     (m.sku_id, shop["key"], full, vt_clean, price, available, url, m.score, seen_at,
-                     MATCHER_VERSION, image_url, ct, qty, unit, exact_comp_key(m.sku_id, tn, sku_obj),
+                     MATCHER_VERSION, image_url, ct, qty, unit, exact_comp_key(m.sku_id, tn, sku_obj, url),
                      1 if sealed_product(tn) else 0,
                      shop.get("market_region", "US"), shop.get("currency", "USD")))
                 n_obs += 1
@@ -637,15 +642,28 @@ def backfill_comp(conn, skus):
     """Les observations antérieures à H/I n'ont ni exact_comp_key ni sealed. On les recalcule une
     fois, sinon l'historique repartirait de zéro. Migration idempotente."""
     smap = {x["id"]: x for x in skus}
-    todo = conn.execute("SELECT rowid, sku_id, title, price FROM observations WHERE exact_comp_key IS NULL").fetchall()
-    for rid, sid, title, price in todo:
+    todo = conn.execute("SELECT rowid, sku_id, title, price, url FROM observations WHERE exact_comp_key IS NULL").fetchall()
+    for rid, sid, title, price, url in todo:
         tn = norm(title or "")
         sk = smap.get(sid, {})
         q = parse_quantity(tn, sk)
         conn.execute("UPDATE observations SET quantity=?, unit_price=?, exact_comp_key=?, sealed=? WHERE rowid=?",
                      (q, round((price or 0) / q, 2) if q else price,
-                      exact_comp_key(sid, tn, sk), 1 if sealed_product(tn) else 0, rid))
-    if todo: conn.commit()
+                      exact_comp_key(sid, tn, sk, url), 1 if sealed_product(tn) else 0, rid))
+    # Rattrapage des précommandes : leur clé a été calculée avant que le slug d'URL ne compte.
+    # Tant qu'elles gardent l'ancienne clé, elles continuent de peser sur la médiane demandée
+    # des boîtes réellement disponibles.
+    pre = conn.execute("SELECT rowid, sku_id, title, url, exact_comp_key FROM observations "
+                       "WHERE exact_comp_key IS NOT NULL AND exact_comp_key NOT LIKE '%preorder%'").fetchall()
+    n_pre = 0
+    for rid, sid, title, url, k in pre:
+        tn = norm(title or "")
+        nk = exact_comp_key(sid, tn, smap.get(sid, {}), url or "")
+        if nk != k:
+            conn.execute("UPDATE observations SET exact_comp_key=? WHERE rowid=?", (nk, rid))
+            n_pre += 1
+    if todo or n_pre: conn.commit()
+    if n_pre: print(f"({n_pre} observation(s) reclassées en précommande d'après leur URL)")
     return len(todo)
 
 # ================================================================ CURRENT MARKET
@@ -1233,7 +1251,7 @@ def report(cat: dict, conn: sqlite3.Connection, seen_at: str | None, trust: dict
                 for o in obs:
                     mem = line_memory(conn, sid, o[1], o[5], o[8], o[7])
                     tg, dsc, gap, ref, kind = compute_badges(o, mem, s, trust_of(o[1], trust), in_stock)
-                    key = o[13] if len(o) > 13 and o[13] else exact_comp_key(sid, norm(o[2]), s)
+                    key = o[13] if len(o) > 13 and o[13] else exact_comp_key(sid, norm(o[2]), s, o[5])
                     hist = historical_low(conn, key, o[7])
                     reg = o[14] if len(o) > 14 else "US"
                     cmk = current_market(conn, s, key, region=reg) if reg == "US" else None

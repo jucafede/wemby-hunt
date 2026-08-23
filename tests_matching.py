@@ -240,6 +240,19 @@ for _t in ("2025-26 Topps Bowman Basketball Blaster Box Releases 4/22/26",
         "preorder" in hunt.exact_comp_key("S", hunt.norm(_t)))
 _fp("une boîte disponible n'est pas marquée précommande",
     "preorder" not in hunt.exact_comp_key("S", hunt.norm("2025-26 Bowman Basketball 6-pack Mega Box")))
+# Le titre peut mentir par omission : sportscardjunction titre « 2025-26 Bowman Basketball
+# Blaster Box » et range le produit sous /products/pre-order-...-releases-4-22-26.
+_tb = hunt.norm("2025-26 Bowman Basketball Blaster Box")
+_fp("le slug d'URL trahit la précommande que le titre tait",
+    hunt.exact_comp_key("S", _tb, None,
+        "https://sportscardjunction.com/products/pre-order-2025-26-bowman-basketball-blaster-box-releases-4-22-26")
+    == "S|preorder|x1")
+_fp("la même boîte réellement disponible garde la cloison standard",
+    hunt.exact_comp_key("S", _tb, None,
+        "https://ehcards.com/products/2025-26-bowman-basketball-blaster-box") == "S|std|x1")
+_fp("précommande et stock ne se comparent jamais",
+    hunt.exact_comp_key("S", _tb, None, "https://x.test/products/pre-order-bowman")
+    != hunt.exact_comp_key("S", _tb, None, "https://x.test/products/bowman"))
 
 print(f"TOTAL AVEC SEALED : {len(POS)+len(P2)+len(NEG)+11+len(_FP)} tests, {len(fails)} FAIL")
 sys.exit(1 if fails else 0)

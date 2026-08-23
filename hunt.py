@@ -46,8 +46,10 @@ FORMATS = [
     ("International", r"\binternational\b|\bintl\b|\basia\b|\btmall\b"),
     ("Breakers Delight", r"breaker'?s?\s*delight"),
     ("Hobby Jumbo", r"\bjumbo\b"),
-    ("Hobby Mega", r"hobby\s*mega|mega\s*hobby"),
-    ("Hobby Blaster", r"hobby\s*blaster"),
+    # Le séparateur optionnel couvre les titres Shopify du type « Select Basketball Hobby, Mega Box » :
+    # la virgule sépare le canal du format réel, elle ne fait pas du produit une boîte hobby.
+    ("Hobby Mega", r"hobby\s*[,/&·-]?\s*mega|mega\s*[,/&·-]?\s*hobby"),
+    ("Hobby Blaster", r"hobby\s*[,/&·-]?\s*blaster|blaster\s*[,/&·-]?\s*hobby"),
     ("Hobby", r"\bhobby\b"),
     ("Mega", r"\bmega\b"),
     ("Blaster", r"\bblaster\b"),
@@ -109,7 +111,12 @@ def sealed_product(t: str) -> bool | None:
 # ---------------------------------------------------------------- H/I : EXACT_COMP et quantité
 # Jetons de configuration : un titre qui en porte un ne peut matcher QU'UN SKU qui le déclare,
 # et réciproquement. Vaut pour toutes les familles, pas seulement Topps.
-EDITION_TOKENS = ("sapphire", "monster", "first day", "cactus jack", "china", "gravity feed")
+# « chrome black » et non « black » : le mot seul apparaît partout (Black Friday, blackout).
+# Topps Chrome Black est une gamme premium distincte, autour de 700-1000 $ la boîte, contre
+# ~300 $ pour Chrome Hobby. Confondues, elles gonflaient la médiane demandée du Chrome Hobby
+# à 960 $ sur 11 vendeurs et faisaient passer une présale Chrome Black à 700 $ pour un deal.
+EDITION_TOKENS = ("sapphire", "monster", "first day", "cactus jack", "china", "gravity feed",
+                  "chrome black")
 
 QTY_RE = re.compile(r"(\d{1,3})\s*-?\s*box\b")
 LOT_RE = re.compile(r"\blot\b|\bbundle\b|\bcase\b|gravity\s*feed|\bdisplay\b")
@@ -126,11 +133,19 @@ def parse_quantity(t: str, sku: dict | None = None) -> int:
         return int(sku["boxes_per_case"])
     return 1
 
+# Une précommande n'est pas le même produit commercial qu'une boîte en stock : on paie
+# maintenant pour livraison dans plusieurs mois, avec le risque vendeur en prime. Elle rejoint
+# donc la dimension édition de la clé de comparabilité. Le sens de l'erreur est le bon : au pire
+# le vivier se fragmente et la ligne passe en DATA INSUFFICIENT — jamais en faux deal.
+PREORDER_RE = re.compile(r"pre[- ]?order|pre[- ]?sale|presale|releases?\s+\d{1,2}[/-]\d{1,2}")
+
 def exact_comp_key(sku_id: str, t: str, sku: dict | None = None) -> str:
     """Cloison de comparabilité commerciale. SOLD, LIVE MARKET, cheapest, historique et signaux
     ne doivent JAMAIS traverser cette clé. Deux offres de clés différentes ne se comparent pas."""
     qty = parse_quantity(t, sku)
-    ed = "+".join(tok.replace(" ", "") for tok in EDITION_TOKENS if tok in t) or "std"
+    toks = [tok.replace(" ", "") for tok in EDITION_TOKENS if tok in t]
+    if PREORDER_RE.search(t): toks.append("preorder")
+    ed = "+".join(toks) or "std"
     return f"{sku_id}|{ed}|x{qty}"
 
 def comp_type_of(title_norm: str, sku: dict) -> str:
@@ -162,6 +177,17 @@ def parse_format(t: str) -> str | None:
         if re.search(rx, t): return name
     return None
 
+# Un produit n'est jamais à la fois une boîte hobby et un format retail. Quand les deux mots
+# cohabitent, c'est le format retail qui décrit le produit et « hobby » qui décrit le canal.
+# Cas réel du 23/08 : « 2024-25 Panini Select Basketball Hobby, Blaster Box (Green & Red Mojo) »
+# à 38 $ était rattaché au SKU Select HOBBY, dont les vendeurs demandent 422 $ — soit un
+# faux ASK DEAL à -91 %.
+RETAIL_WITH_HOBBY = r"\b(blasters?|megas?|hangers?)\b"
+
+def format_guard_ok(fmt: str | None, t: str) -> bool:
+    """False si le format « Hobby » a été retenu alors que le titre nomme un format retail."""
+    return not (fmt == "Hobby" and re.search(RETAIL_WITH_HOBBY, t))
+
 def parse_sport(t: str) -> str:
     # Le dé-collage de norm() coupe les mots collés : "EuroLeague" -> "euro league". Un mot-clé
     # d'exclusion écrit en CamelCase par le shop cessait donc d'être reconnu — un blaster
@@ -191,6 +217,9 @@ class Match:
 def match_title(title: str, skus: list[dict]) -> Match:
     t = norm(title)
     season, fmt, sport, cfg = parse_season(t), parse_format(t), parse_sport(t), parse_config(t)
+    # « Hobby » + un mot de format retail dans le même titre : le produit est le format retail.
+    # Plutôt que de deviner lequel, on refuse le format — sans format, aucun SKU boîte ne matche.
+    if not format_guard_ok(fmt, t): fmt = None
     excl = parse_exclusive(t)
     league = parse_league(t)
     # pour un SKU de ligue, le sport se juge sur le titre débarrassé des tokens de ligue :

@@ -198,5 +198,48 @@ for _n, _c in [("lot de 6 et boite unique ne partagent pas la cloison", _k1 != _
                ("Sapphire et standard ne partagent pas la cloison", _k1 != _ks)]:
     if not _c: fails.append(("KEY", _n))
     print(f"{'PASS' if _c else 'FAIL'} {_n}")
-print(f"TOTAL AVEC SEALED : {len(POS)+len(P2)+len(NEG)+11} tests, {len(fails)} FAIL")
+# ---------------------------------------------------------------------------
+# Les trois faux positifs remontés par le run de production du 23/08
+# ---------------------------------------------------------------------------
+_FP = []
+def _fp(name, cond):
+    _FP.append(name)
+    if not cond: fails.append(("FP", name))
+    print(f"{'PASS' if cond else 'FAIL'} {name}")
+
+# 1. « Hobby, Blaster Box » : un blaster à 38 $ rattaché au SKU Hobby dont la médiane
+#    demandée est de 422 $, soit un ASK DEAL affiché à -91 %.
+_t1 = hunt.norm("2024-25 Panini Select Basketball Hobby, Blaster Box (Green & Red Mojo)")
+_fp("une virgule ne transforme pas un blaster en boîte hobby",
+    hunt.parse_format(_t1) == "Hobby Blaster")
+_fp("« Hobby Mega Box » reste un hobby mega",
+    hunt.parse_format(hunt.norm("2023-24 Panini Prizm Basketball Hobby Mega Box")) == "Hobby Mega")
+_fp("une vraie boîte hobby reste une boîte hobby",
+    hunt.parse_format(hunt.norm("2024-25 Panini Select Basketball Hobby Box")) == "Hobby")
+_fp("le garde-fou refuse « Hobby » dès qu'un format retail est nommé",
+    not hunt.format_guard_ok("Hobby", hunt.norm("Prizm Basketball Hobby Box Blaster")))
+_fp("il ne gêne pas une boîte hobby ordinaire",
+    hunt.format_guard_ok("Hobby", hunt.norm("2025-26 Topps Chrome Basketball Hobby Box")))
+
+# 2. Topps Chrome Black, gamme premium, confondue avec Chrome Hobby : médiane demandée
+#    gonflée à 960 $ sur 11 vendeurs, et une présale à 700 $ présentée comme un deal.
+_kb = hunt.exact_comp_key("TOPPS_2025-26_CHROME_HOBBY",
+                          hunt.norm("2025-26 Topps Chrome Black Basketball Hobby Box"))
+_ks2 = hunt.exact_comp_key("TOPPS_2025-26_CHROME_HOBBY",
+                           hunt.norm("2025-26 Topps Chrome Basketball Hobby Box"))
+_fp("Chrome Black ne partage pas la cloison du Chrome standard", _kb != _ks2)
+_fp("le Chrome standard garde bien la cloison standard", _ks2.endswith("|std|x1"))
+_fp("« Black Friday » ne crée pas une édition", "black" not in
+    hunt.exact_comp_key("S", hunt.norm("Topps Chrome Hobby Box Black Friday Sale")))
+
+# 3. Une précommande d'avril 2026 comparée à des boîtes disponibles aujourd'hui.
+for _t in ("2025-26 Topps Bowman Basketball Blaster Box Releases 4/22/26",
+           "2025-26 Topps Chrome Black Basketball Hobby Box (Presale)",
+           "2026 Topps Basketball Hobby Box Pre-Order"):
+    _fp(f"précommande cloisonnée : {_t[:44]}",
+        "preorder" in hunt.exact_comp_key("S", hunt.norm(_t)))
+_fp("une boîte disponible n'est pas marquée précommande",
+    "preorder" not in hunt.exact_comp_key("S", hunt.norm("2025-26 Bowman Basketball 6-pack Mega Box")))
+
+print(f"TOTAL AVEC SEALED : {len(POS)+len(P2)+len(NEG)+11+len(_FP)} tests, {len(fails)} FAIL")
 sys.exit(1 if fails else 0)

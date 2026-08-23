@@ -4,14 +4,14 @@
     collections : 4/126 retenues (filtre 'basketball|\\bnba\\b|hoops|prizm|mosaic|optic|select|phoenix|contenders|court.kings|revolution|premium.stock')
   751 produits bruts, 27 rattachés à un SKU
 → Hidden Gems Card Shop (https://www.hiddengemscardshop.com)  [trust=trusted]
-  2783 produits bruts, 46 rattachés à un SKU
+  2786 produits bruts, 46 rattachés à un SKU
 → The Awesome Card Shop (https://theawesomecardshop.com)  [trust=trusted]
   7282 produits bruts, 102 rattachés à un SKU
 → MojoBreak Shop (https://mojobreakshop.com)  [trust=trusted]
   [mojobreak] status=reject \(qualifié sur données réelles → 0 sealed 2023-24\) → skip
   0 produits bruts, 0 rattachés à un SKU
 → RbiCru7 Collectibles (https://rbicru7.com)  [trust=trusted]
-  12436 produits bruts, 35 rattachés à un SKU
+  12427 produits bruts, 35 rattachés à un SKU
 → Layton Sports Cards (https://laytonsportscards.com)  [trust=trusted]
   [layton] type=breaks \(breaker, hors périmètre sealed\) → skip
   0 produits bruts, 0 rattachés à un SKU
@@ -31,16 +31,16 @@
 → The Cardiacs (https://www.thecardiacs.com)  [trust=trusted]
   5319 produits bruts, 32 rattachés à un SKU
 → Monmouth Cards (https://monmouthcards.com)  [trust=watch]
-  4675 produits bruts, 36 rattachés à un SKU
+  4657 produits bruts, 36 rattachés à un SKU
 → World Champion Sports Cards (https://www.worldchampionsportscards.org)  [trust=watch]
   4002 produits bruts, 60 rattachés à un SKU
 → Superior Sports Investments (https://superiorsportsinvestments.com)  [trust=watch]
     collections : 8/84 retenues (filtre 'basketball|\\bnba\\b|hoops|prizm|mosaic|optic|select|phoenix|contenders|court.kings|revolution|premium.stock')
-  16285 produits bruts, 46 rattachés à un SKU
+  16294 produits bruts, 46 rattachés à un SKU
 → SJAY2K Trading Cards (https://www.sjay2k.com)  [trust=watch]
-  598 produits bruts, 19 rattachés à un SKU
+  596 produits bruts, 19 rattachés à un SKU
 → The Ballgame (https://theballgame.com)  [trust=watch]
-  12687 produits bruts, 4 rattachés à un SKU
+  12703 produits bruts, 4 rattachés à un SKU
 → Bleecker Trading (https://bleeckertrading.com)  [trust=watch]
   2203 produits bruts, 101 rattachés à un SKU
 → CB Hobby (https://cbhobby.com)  [trust=watch]
@@ -71,6 +71,13 @@
   [tracenchase] type=eu_reference (GR, woocommerce) → référence de prix EU, non crawlée
   0 produits bruts, 0 rattachés à un SKU
 (39 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
+
+========================================================================
+  🔔 RESTOCKS depuis le passage précédent
+========================================================================
+  🔔 RESTOCK  TOPPS_2025-26_BOWMAN_MEGA  awesome  $99.75  https://theawesomecardshop.com/products/2025-26-bowman-basketball-mega-box
+  🔔 RESTOCK  TOPPS_2025-26_CHROME_UPDATE_BLASTER  awesome  $89.75  https://theawesomecardshop.com/products/2025-26-topps-chrome-update-series-basketball-blaster-box
+  🔔 RESTOCK  TOPPS_2025-26_CHROME_UPDATE_MEGA  awesome  $174.75  https://theawesomecardshop.com/products/2025-26-topps-chrome-update-series-basketball-mega-box
 
 ========================================================================
   RETAIL
@@ -749,16 +756,16 @@
 
 · SUIVI   2025-26 Topps Bowman Mega   [TOPPS_2025-26_BOWMAN_MEGA]
    1. ehcards          $   79.99  IN STOCK  landed≈€  95.53  (score 1.00)
-        cheapest of 4 in stock
+        cheapest of 5 in stock
    2. sportscardjunction $   85.00  IN STOCK  landed≈€ 100.71  (score 1.00)
         VERIFY
-   3. fancave          $   99.99  IN STOCK  landed≈€ 116.22  (score 1.00)
+   3. awesome          $   99.75  IN STOCK  landed≈€ 115.97  (score 1.00)  🔔
+        🔹RESTOCK +3j
+   4. fancave          $   99.99  IN STOCK  landed≈€ 116.22  (score 1.00)
         VERIFY
-   4. superior         $  140.00  IN STOCK  landed≈€ 157.60  (score 1.00)
+   5. superior         $  140.00  IN STOCK  landed≈€ 157.60  (score 1.00)
         VERIFY
-   5. columbia         $   69.99  SOLD OUT  landed≈€  85.19  (score 1.00)
-   6. rlsports         $   69.99  SOLD OUT  landed≈€  85.19  (score 1.00)
-        VERIFY
+   6. columbia         $   69.99  SOLD OUT  landed≈€  85.19  (score 1.00)
    ask $59.99   sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU €91.66
    HISTORICAL LOW $69.99 (le 2026-08-19, columbia, 11 shop(s) vus) | cheapest live $79.99
    BEST → ehcards  https://ehcards.com/products/2025-26-bowman-basketball-6-pack-mega-box
@@ -819,33 +826,34 @@
    BEST → hiddengems  https://www.hiddengemscardshop.com/products/2025-26-topps-chrome-basketball-hanger-box
 
 · SUIVI   2025-26 Topps Chrome Update Mega   [TOPPS_2025-26_CHROME_UPDATE_MEGA]
-   1. hiddengems       $  180.00  IN STOCK  landed≈€ 198.98  (score 1.00)
-        cheapest of 3 in stock
-   2. collectorstore   $  189.99  IN STOCK  landed≈€ 209.31  (score 1.00)
-   3. superior         $  220.00  IN STOCK  landed≈€ 240.36  (score 1.00)
+   1. awesome          $  174.75  IN STOCK  landed≈€ 193.55  (score 1.00)  🔔
+        🔹RESTOCK +3j  🔹NEW_LOW  🔹PRICE_DROP -13%  cheapest of 4 in stock
+   2. hiddengems       $  180.00  IN STOCK  landed≈€ 198.98  (score 1.00)
+   3. collectorstore   $  189.99  IN STOCK  landed≈€ 209.31  (score 1.00)
+   4. superior         $  220.00  IN STOCK  landed≈€ 240.36  (score 1.00)
         VERIFY
-   4. rlsports         $   85.00  SOLD OUT  landed≈€ 100.71  (score 1.00)
+   5. rlsports         $   85.00  SOLD OUT  landed≈€ 100.71  (score 1.00)
         VERIFY
-   5. columbia         $  174.99  SOLD OUT  landed≈€ 193.80  (score 1.00)
-   6. awesome          $  199.75  SOLD OUT  landed≈€ 219.41  (score 1.00)
+   6. columbia         $  174.99  SOLD OUT  landed≈€ 193.80  (score 1.00)
    ask $180.00  sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU €133.33
-   HISTORICAL LOW $85.00 (le 2026-08-19, rlsports, 9 shop(s) vus) | cheapest live $180.00
-   BEST → hiddengems  https://www.hiddengemscardshop.com/products/2025-26-topps-chrome-update-series-basketball-mega-box
+   HISTORICAL LOW $85.00 (le 2026-08-19, rlsports, 9 shop(s) vus) | cheapest live $174.75
+   BEST → awesome  https://theawesomecardshop.com/products/2025-26-topps-chrome-update-series-basketball-mega-box
 
 · SUIVI   2025-26 Topps Chrome Update Blaster   [TOPPS_2025-26_CHROME_UPDATE_BLASTER]
-   1. superior         $  120.00  IN STOCK  landed≈€ 136.92  (score 1.00)
-        ONLY_STOCK_SEEN  VERIFY
-   2. bleecker         $   45.00  SOLD OUT  landed≈€  59.34  (score 1.00)
+   1. awesome          $   89.75  IN STOCK  landed≈€ 105.63  (score 1.00)  🔔
+        🔹RESTOCK +3j  🔹STRONG_DEAL -25%  cheapest of 2 in stock
+   2. superior         $  120.00  IN STOCK  landed≈€ 136.92  (score 1.00)
         VERIFY
-   3. sportscardjunction $   45.00  SOLD OUT  landed≈€  59.34  (score 1.00)
+   3. bleecker         $   45.00  SOLD OUT  landed≈€  59.34  (score 1.00)
         VERIFY
-   4. awesome          $   79.75  SOLD OUT  landed≈€  95.28  (score 1.00)
+   4. sportscardjunction $   45.00  SOLD OUT  landed≈€  59.34  (score 1.00)
+        VERIFY
    5. columbia         $   87.95  SOLD OUT  landed≈€ 103.76  (score 1.00)
    6. worldchampion    $  100.00  SOLD OUT  landed≈€ 116.23  (score 1.00)
         VERIFY
    ask $120.00  sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU €62.49
-   HISTORICAL LOW $45.00 (le 2026-08-19, sportscardjunction, 7 shop(s) vus) | cheapest live $120.00
-   BEST → superior  https://superiorsportsinvestments.com/products/2025-26-topps-chrome-update-series-basketball-blaster-box
+   HISTORICAL LOW $45.00 (le 2026-08-19, sportscardjunction, 7 shop(s) vus) | cheapest live $89.75
+   BEST → awesome  https://theawesomecardshop.com/products/2025-26-topps-chrome-update-series-basketball-blaster-box
 
 · SUIVI   2025-26 Topps Hoops Blaster   [TOPPS_2025-26_HOOPS_BLASTER]
    1. cardiacs         $   29.95  IN STOCK  landed≈€  43.77  (score 1.00)
@@ -1839,10 +1847,12 @@
   20 HEALTHY · 10 SKIPPED
 
 ========================================================================
-  🔥 HOT NOW — 2 ligne(s)
+  🔥 HOT NOW — 4 ligne(s)
 ========================================================================
+  2025-26 Topps Chrome Update Mega               $  174.75 awesome            -2.9%  RESTOCK +3j NEW_LOW PRICE_DROP -13%
+  2025-26 Topps Chrome Update Blaster            $   89.75 awesome           -25.2%  RESTOCK +3j STRONG_DEAL -25%
   2023-24 Panini Prizm EuroLeague Blaster        $    9.95 cardiacs          -60.2%  STRONG_DEAL -60%  (+3 autre(s) offre(s))
   2024-25 Panini Revolution Blaster              $   39.99 fancave           -27.3%  STRONG_DEAL -27%
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-08-22T20-26-06.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-08-23T01-52-22.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

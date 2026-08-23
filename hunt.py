@@ -318,7 +318,8 @@ def db() -> sqlite3.Connection:
             c.execute(f"ALTER TABLE crawl_runs ADD COLUMN {col}")
     cols = [r[1] for r in c.execute("PRAGMA table_info(observations)")]
     for col in ("matcher_version TEXT", "image_url TEXT", "comp_type TEXT",
-                "quantity INTEGER", "unit_price REAL", "exact_comp_key TEXT", "sealed INTEGER"):
+                "quantity INTEGER", "unit_price REAL", "exact_comp_key TEXT", "sealed INTEGER",
+                "market_region TEXT", "currency TEXT"):
         if col.split()[0] not in cols:
             c.execute(f"ALTER TABLE observations ADD COLUMN {col}")
     c.executescript("""
@@ -492,10 +493,11 @@ def collect_shop(shop: dict, skus: list[dict], conn: sqlite3.Connection, seen_at
                 qty = parse_quantity(tn, sku_obj)
                 # le prix collecté est TOUJOURS le total de l'offre ; l'unitaire en dérive
                 unit = round(price / qty, 2) if qty else price
-                conn.execute("INSERT OR REPLACE INTO observations (sku_id,shop,title,variant_title,price,available,url,match_score,seen_at,matcher_version,image_url,comp_type,quantity,unit_price,exact_comp_key,sealed) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                conn.execute("INSERT OR REPLACE INTO observations (sku_id,shop,title,variant_title,price,available,url,match_score,seen_at,matcher_version,image_url,comp_type,quantity,unit_price,exact_comp_key,sealed,market_region,currency) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
                     (m.sku_id, shop["key"], full, vt_clean, price, available, url, m.score, seen_at,
                      MATCHER_VERSION, image_url, ct, qty, unit, exact_comp_key(m.sku_id, tn, sku_obj),
-                     1 if sealed_product(tn) else 0))
+                     1 if sealed_product(tn) else 0,
+                     shop.get("market_region", "US"), shop.get("currency", "USD")))
                 n_obs += 1
     dur = time.monotonic() - t0
     if dur > SLOW_CRAWL_S:
@@ -616,14 +618,15 @@ def backfill_comp(conn, skus):
     if todo: conn.commit()
     return len(todo)
 
-def historical_low(conn, key, upto=None):
+def historical_low(conn, key, upto=None, region="US"):
     """Plus bas prix UNITAIRE jamais observé pour cette cloison de comparabilité.
     C'est un FAIT HISTORIQUE, jamais une valeur de marché : il ne sert qu'à surveiller un retour
     en stock. Strictement cloisonné par exact_comp_key et réservé aux lignes sealed=1 — un single,
     une autre configuration ou un lot de quantité différente ne peut pas le contaminer."""
     q = ("SELECT unit_price, seen_at, shop FROM observations "
-         "WHERE exact_comp_key=? AND sealed=1 AND unit_price IS NOT NULL AND unit_price > 0")
-    args = [key]
+         "WHERE exact_comp_key=? AND sealed=1 AND unit_price IS NOT NULL AND unit_price > 0 "
+         "AND COALESCE(market_region,'US')=?")
+    args = [key, region]
     if upto: q += " AND seen_at<=?"; args.append(upto)
     rows = conn.execute(q + " ORDER BY unit_price", args).fetchall()
     if not rows: return None
@@ -753,6 +756,42 @@ def source_health(conn, shop_keys, lookback=6):
         out[k] = ("HEALTHY", f"{n_raw} produits" + (f", {dur/60:.1f} min" if dur else ""))
     return out
 
+def best_fr(entries):
+    """Meilleure offre FR par cloison de comparabilité.
+
+    BEST FR = l'offre EXACTEMENT comparable la moins chère ACTUELLEMENT EN STOCK. Une offre en
+    rupture ne gagne jamais. Un pack ne gagne jamais contre une boîte — exact_comp_key l'interdit
+    déjà. Pour un lot, c'est l'unitaire qui départage, le total reste affiché.
+
+    Ce n'est PAS une valeur de marché : ça répond à « où acheter en France aujourd'hui ? »,
+    jamais à « combien vaut cette boîte ? »."""
+    by_key = {}
+    for e in entries:
+        if e.get("region") != "FR" or not e["available"]: continue
+        o = e["o"]
+        if not o[3] or o[3] <= 0: continue
+        k = e.get("key")
+        by_key.setdefault(k, []).append(e)
+    out = {}
+    for k, offers in by_key.items():
+        offers.sort(key=lambda e: (e["o"][12] or e["o"][3]))
+        best = offers[0]
+        out[k] = {"price": best["o"][3], "unit": best["o"][12] or best["o"][3], "shop": best["o"][1],
+                  "url": best["o"][5], "qty": best["o"][11] or 1, "checked_at": best["o"][7],
+                  "currency": best.get("currency", "EUR"), "others": len(offers) - 1,
+                  "all": [(e["o"][1], e["o"][3]) for e in offers]}
+    return out
+
+def fr_market_status(health, sources):
+    """Une panne d'un vendeur FR ne supprime pas le marché FR, mais on ne laisse pas croire que
+    les trois ont été vérifiés."""
+    fr = [x["key"] for x in sources if x.get("market_region") == "FR"]
+    bad = [k for k in fr if health.get(k, ("UNKNOWN",))[0] not in ("HEALTHY",)]
+    if not fr: return None
+    if not bad: return f"FR MARKET COMPLET ({len(fr)} source(s))"
+    return f"FR MARKET PARTIAL — {len(fr) - len(bad)}/{len(fr)} source(s) vérifiée(s) : " + ", ".join(
+        f"{k} {health.get(k, ('UNKNOWN', ''))[0]}" for k in bad)
+
 def watchlist_layers(entries):
     """N — trois couches, pour que la watchlist redevienne actionnable.
 
@@ -793,7 +832,10 @@ def hot_now(entries, limit=15):
     déclencheurs puis par écart croissant. Une ligne sans référence n'y entre jamais."""
     # invariant : une ligne plus chère que la référence de marché n'est pas une opportunité,
     # quel que soit le déclencheur qui l'accompagne.
-    elig = [e for e in entries if e["available"] and e["triggers"] and e["ref"] is not None
+    # HOT NOW est une décision sur le marché US : une offre FR est un canal d'achat, pas un
+    # signal de marché, et son prix est en euros. Le garde-fou est ICI, pas au point d'appel.
+    elig = [e for e in entries if e.get("region", "US") == "US"
+            and e["available"] and e["triggers"] and e["ref"] is not None
             and e["gap"] is not None and e["gap"] <= 0 and e["o"][3] and e["o"][3] > 0]
     elig.sort(key=lambda e: (-len(e["triggers"]), e["gap"] if e["gap"] is not None else 0))
     # une place HOT par produit : quatre shops sur le même EuroLeague Blaster, c'est UNE ligne
@@ -853,7 +895,7 @@ def report(cat: dict, conn: sqlite3.Connection, seen_at: str | None, trust: dict
         print(f"⚠️  [{sh}] passage {sa} PARTIAL ({nr} produits) — ignoré, référence = dernier passage complet")
     # dernière observation par (sku, shop, url, variante)
     rows = conn.execute("""
-      SELECT o.sku_id, o.shop, o.title, o.price, o.available, o.url, o.match_score, o.seen_at, o.variant_title, o.comp_type, o.image_url, o.quantity, o.unit_price, o.exact_comp_key
+      SELECT o.sku_id, o.shop, o.title, o.price, o.available, o.url, o.match_score, o.seen_at, o.variant_title, o.comp_type, o.image_url, o.quantity, o.unit_price, o.exact_comp_key, COALESCE(o.market_region,'US'), COALESCE(o.currency,'USD')
       FROM observations o
       JOIN (SELECT sku_id, shop, url, variant_title, MAX(seen_at) AS m FROM observations GROUP BY sku_id, shop, url, variant_title) l
         ON l.sku_id=o.sku_id AND l.shop=o.shop AND l.url=o.url AND l.variant_title=o.variant_title AND l.m=o.seen_at
@@ -900,7 +942,13 @@ def report(cat: dict, conn: sqlite3.Connection, seen_at: str | None, trust: dict
                     tg, dsc, gap, ref, kind = compute_badges(o, mem, s, trust_of(o[1], trust), in_stock)
                     key = o[13] if len(o) > 13 and o[13] else exact_comp_key(sid, norm(o[2]), s)
                     hist = historical_low(conn, key, o[7])
-                    entries.append({"o": o, "key": key, "hist": hist,
+                    region = o[14] if len(o) > 14 else "US"
+                    if region != "US":
+                        # un vendeur FR est un canal d'achat, pas un signal de marché US :
+                        # comparer un prix EUR à un ask USD n'aurait aucun sens.
+                        tg, dsc = [], dsc + ["FR"]
+                    entries.append({"o": o, "key": key, "hist": hist, "region": region,
+                                    "currency": (o[15] if len(o) > 15 else "USD"),
                                     "available": bool(o[4]), "triggers": tg, "descriptors": dsc,
                                     "gap": gap, "ref": ref, "kind": kind, "mem": mem,
                                     "comp": (o[9] or "EXACT"), "sku": s, "sid": sid})
@@ -986,7 +1034,8 @@ def report(cat: dict, conn: sqlite3.Connection, seen_at: str | None, trust: dict
     if not anomalies: print("  (aucune anomalie : toutes les sources crawlées ont rendu un passage complet)")
     import collections as _c
     print("  " + " · ".join(f"{n} {st}" for st, n in _c.Counter(v[0] for v in health.values()).most_common()))
-    hn = hot_now(all_entries)
+    fr_best = best_fr(all_entries)
+    hn = hot_now([e for e in all_entries if e.get("region", "US") == "US"])
     print("\n" + "="*72 + f"\n  🔥 HOT NOW — {len(hn)} ligne(s)\n" + "="*72)
     for e in hn:
         o = e["o"]
@@ -994,7 +1043,15 @@ def report(cat: dict, conn: sqlite3.Connection, seen_at: str | None, trust: dict
         print(f"  {sku_label(e['sku'])[:44]:<46} ${o[3]:>8.2f} {o[1]:<16} {e['gap']:>6.1f}%  "
               + " ".join(e["triggers"]) + extra)
     if not hn: print("  (aucune ligne en stock ne cumule un déclencheur et une référence de marché)")
-    write_html(cat, html, restocks, q, seen_at, trust, hn, all_entries, SHOP_COUNTS, health)
+    frs = fr_market_status(health, yaml.safe_load((ROOT/"sources.yaml").read_text(encoding="utf-8"))["shops"])
+    if fr_best:
+        print("\n" + "="*72 + f"\n  🇫🇷 MARCHÉ FR — {len(fr_best)} produit(s) avec une offre en stock\n" + "="*72)
+        if frs: print(f"  {frs}")
+        for k, b in sorted(fr_best.items(), key=lambda x: x[1]["unit"])[:20]:
+            extra = f"  (+{b['others']} autre(s) offre(s) FR)" if b["others"] else ""
+            print(f"  {k.split('|')[0].replace('PANINI_','').replace('TOPPS_','')[:38]:<40} "
+                  f"€{b['unit']:>8.2f}  {b['shop']:<12}{extra}")
+    write_html(cat, html, restocks, q, seen_at, trust, hn, all_entries, SHOP_COUNTS, health, fr_best)
     print(f"\nCSV → {csv_path}\nHTML → {OUT/'index.html'}")
 
 BUCKETS = [("retail",  {"Blaster","Mega","Hanger","Retail Box","Pack","Value Box","Fat Pack","Cello"}),
@@ -1135,8 +1192,11 @@ class Opportunity:
     # emplacements réservés, non alimentés tant que la couche FR n'existe pas
     fr_price_eur: float | None = None
     fr_source: str | None = None
+    fr_url: str | None = None
+    fr_other_offers: int = 0
+    fr_checked_at: str | None = None
 
-def opportunity(e, kind, cat) -> Opportunity:
+def opportunity(e, kind, cat, fr_best=None) -> Opportunity:
     s_ = e["sku"]; o = e["o"]
     q = (o[11] if len(o) > 11 and o[11] else 1) or 1
     b = buy_target(s_)
@@ -1152,7 +1212,15 @@ def opportunity(e, kind, cat) -> Opportunity:
         buy_below=b, missing=(price - b) if (b is not None and price and price > b) else None,
         hist_low=(hist["low"] if hist else None), hist_at=(hist["at"][:10] if hist else None),
         why=why_phrase(e), landed=landed_phrase(price, q, cat),
-        other_offers=e.get("other_offers", 0))
+        other_offers=e.get("other_offers", 0), **_fr_fields(e, fr_best))
+
+def _fr_fields(e, fr_best):
+    """Le bloc FR est une information de CANAL D'ACHAT, jamais une valeur de marché.
+    On ne convertit rien : le prix FR reste en euros, le prix US en dollars."""
+    b = (fr_best or {}).get(e.get("key"))
+    if not b: return {}
+    return {"fr_price_eur": b["unit"], "fr_source": b["shop"], "fr_url": b["url"],
+            "fr_other_offers": b["others"], "fr_checked_at": b["checked_at"][:10]}
 
 def ref_is_usable(e) -> bool:
     """3 — anti-circularité. Un seuil adossé à une référence relevée chez CE seul shop ne permet
@@ -1184,7 +1252,10 @@ def render_card(op: Opportunity) -> str:
     if op.why:
         r.append(f"<div class=small>Pourquoi ? {op.why}</div>")
     if op.fr_price_eur is not None:
-        r.append(f"<div class=small>🇫🇷 €{op.fr_price_eur:.2f} · {op.fr_source or ''}</div>")
+        # US et FR côte à côte, chacun dans sa devise : aucune conversion silencieuse.
+        extra = f" · +{op.fr_other_offers} autre(s) offre(s) FR" if op.fr_other_offers else ""
+        link = A(op.fr_url, "voir FR") if op.fr_url else ""
+        r.append(f"<div class=small>🇫🇷 €{op.fr_price_eur:.2f} · {op.fr_source or ''}{extra} {link}</div>")
     r.append(f"<div>{A(op.url, 'Voir l’offre', 'cta')}</div></div></div>")
     return "".join(r)
 
@@ -1211,9 +1282,9 @@ def empty_note(label, watched, best=None):
     return txt + "</p>"
 
 def write_html(cat, blocks, restocks, review, seen_at, trust=None, hot=None, entries=None,
-               shopcount=None, health=None):
+               shopcount=None, health=None, fr_best=None):
     trust = trust or {}; hot = hot or []; entries = entries or []
-    shopcount = shopcount or []; health = health or {}
+    shopcount = shopcount or []; health = health or {}; fr_best = fr_best or {}
     nb = cat["landed_cost"].get("bundle_boxes", 8)
     h = ["<!doctype html><meta charset='utf-8'><meta name=viewport content='width=device-width,initial-scale=1'>",
          "<title>Wemby Hunt</title><style>",
@@ -1250,16 +1321,17 @@ def write_html(cat, blocks, restocks, review, seen_at, trust=None, hot=None, ent
           if seen_at else "<p class=small>Rapport hors passage (--report)</p>"),
          "<nav>" + " ".join(f"<a href='#{i}'>{n}</a>" for i, n in
                             [("acheter", "🔥 Acheter"), ("surveiller", "👀 Surveiller"),
-                             ("explorer", "🔎 Explorer"), ("diag", "⚙️ Diagnostic")]) + "</nav>"]
+                             ("fr", "🇫🇷 FR"), ("explorer", "🔎 Explorer"),
+                             ("diag", "⚙️ Diagnostic")]) + "</nav>"]
 
     # ---------------- regroupements
     near = near_buy_lines(entries)
     restk = restock_lines(entries)
     # 2 : une seule source de vérité. La phrase de synthèse, les compteurs et les cartes
     # dérivent tous des MÊMES listes d'objets — impossible d'annoncer 2 et d'en afficher 3.
-    ops_buy = [opportunity(e, "buy", cat) for e in hot]
-    ops_near = [opportunity(e, "near", cat) for _, e in near]
-    ops_rest = [opportunity(e, "restock", cat) for e in restk]
+    ops_buy = [opportunity(e, "buy", cat, fr_best) for e in hot]
+    ops_near = [opportunity(e, "near", cat, fr_best) for _, e in near]
+    ops_rest = [opportunity(e, "restock", cat, fr_best) for e in restk]
     nb_buy = len(ops_buy)
     rc = len([op for op in ops_buy if op.bucket == "rc"])
     watch_by = {k: 0 for k, _, _ in WEMBY_SECTIONS}
@@ -1306,6 +1378,27 @@ def write_html(cat, blocks, restocks, review, seen_at, trust=None, hot=None, ent
                  "jamais une valeur de marché.</p>")
     else:
         h.append("<p class=empty>Aucun produit en rupture avec une cible d’achat définie.</p>")
+
+    # ---------------- 🇫🇷 marché FR
+    h.append(f"<h2 id=fr>🇫🇷 Marché FR — {len(fr_best)} produit(s) en stock</h2>")
+    frs = fr_market_status(health, yaml.safe_load((ROOT/"sources.yaml").read_text(encoding="utf-8"))["shops"])
+    if frs: h.append(f"<p class=small>{frs}</p>")
+    h.append("<p class=small>Meilleur prix achetable en France. Ce n'est pas une valeur de marché : "
+             "ces prix n'alimentent ni market_sold, ni market_ask, ni aucun seuil.</p>")
+    if fr_best:
+        sk_by_id = {x["id"]: x for x in cat["skus"]}
+        h.append("<div class=wrap><table><tr><th>Produit</th><th>Best FR</th><th>Shop</th>"
+                 "<th>Autres offres</th></tr>")
+        for k, b in sorted(fr_best.items(), key=lambda x: x[1]["unit"]):
+            sk = sk_by_id.get(k.split("|")[0])
+            lbl = sku_label(sk) if sk else k.split("|")[0]
+            oth = " · ".join(f"{sh} €{pr:.2f}" for sh, pr in b["all"][1:]) or "—"
+            h.append(f"<tr><td>{A(b['url'], lbl[:46])}</td><td>€{b['unit']:.2f}"
+                     + (f" <span class=small>({b['qty']} boîtes, total €{b['price']:.2f})</span>" if b["qty"] > 1 else "")
+                     + f"</td><td>{b['shop']}</td><td class=small>{oth}</td></tr>")
+        h.append("</table></div>")
+    else:
+        h.append("<p class=empty>Aucune offre FR en stock sur un produit du catalogue.</p>")
 
     # ---------------- K/L : EXPLORER
     h.append("<h2 id=explorer>🔎 Explorer le marché</h2>")

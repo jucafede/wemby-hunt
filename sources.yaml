@@ -142,4 +142,15 @@ shops:
     promo_note: "-10% sitewide auto jusqu'au 2026-08-31 (+ code TRACE5+10 affiché 15%, à tester)"
     trust: watch
     notes: "gros acteur EU, Thessalonique, boutique physique, Trustpilot. Rôle: canal d'achat EU n°2 derrière fr.topps.com + source fr_price_eur."
+  # --- MARCHÉ FR : vendeurs français crawlés, market_region: FR ------------------------------
+  # Ce sont des CANAUX D'ACHAT, pas une base de ventes réalisées. Leurs prix ne deviennent
+  # jamais market_sold_us, market_ask_us, ni une valeur de marché. Ils répondent uniquement à
+  # « quel est le meilleur prix achetable en France aujourd'hui ? ».
+  # Devise native EUR conservée telle quelle : aucune conversion dans l'observation brute.
+  - {key: qscards, name: QS Cards, base_url: https://qscards.com, type: shopify_json,
+     market_region: FR, currency: EUR, country: FR, trust: watch, status: watch,
+     notes: "Shopify EUR. Audit 22/08 : 364 produits, 401 variantes, 3 s de crawl."}
+  - {key: tanteo, name: Tanteo Cartes Collections, base_url: https://tanteocartescollections.com,
+     type: shopify_json, market_region: FR, currency: EUR, country: FR, trust: watch, status: watch,
+     notes: "Shopify EUR. Audit 22/08 : 390 produits, 394 variantes, 5 s de crawl."}
 

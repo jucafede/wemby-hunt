@@ -1592,6 +1592,7 @@ skus:
     aliases: ["Topps Chrome Value Blaster"]
     wemby_rc: true
     format: Blaster
+    format_aliases: ["Value Box"]   # les shops nomment ce produit "Value Box" ou "Blaster Box" ; aucune boutique observée ne liste les deux
     configuration: null
     tier: retail
     status: ACTIVE

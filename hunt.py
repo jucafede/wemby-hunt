@@ -266,7 +266,8 @@ def match_title(title: str, skus: list[dict]) -> Match:
         if season == s["season"]: sc += 0.30                  # saison
         elif season is None: sc += 0.05
         else: continue                                        # mauvaise saison = jamais
-        if fmt == s["format"]: sc += 0.25                     # format
+        fmt_ok = fmt == s["format"] or fmt in (s.get("format_aliases") or [])
+        if fmt_ok: sc += 0.25                                 # format
         elif fmt is None: sc += 0.0                           # format inconnu → jamais >= 0.80 → REVIEW
         else: continue                                        # mauvais format = jamais
         if eff_sport == "basketball": sc += 0.05
@@ -617,6 +618,88 @@ def backfill_comp(conn, skus):
                       exact_comp_key(sid, tn, sk), 1 if sealed_product(tn) else 0, rid))
     if todo: conn.commit()
     return len(todo)
+
+# ================================================================ CURRENT MARKET
+# Doctrine : CURRENT MARKET > STALE HISTORY · SOLD > ASK · RECENT > OLD ·
+#            MULTI-SAMPLE > SINGLE · MÉDIANE > MOYENNE · UNKNOWN > FAUSSE PRÉCISION.
+# Un plus-bas historique est un CONTEXTE, jamais la valeur actuelle.
+FRESH_D, AGING_D = 30, 90
+
+def freshness(age_days: int | None) -> str:
+    if age_days is None: return "UNKNOWN"
+    if age_days <= FRESH_D: return "FRESH"
+    if age_days <= AGING_D: return "AGING"
+    return "STALE"
+
+def _age_days(seen_at, now=None):
+    try:
+        a = datetime.fromisoformat(str(seen_at)[:19].replace("Z", ""))
+        b = datetime.fromisoformat(str(now)[:19]) if now else datetime.now(timezone.utc).replace(tzinfo=None)
+        return max(0, (b - a).days)
+    except Exception:
+        return None
+
+def _median(v):
+    v = sorted(v); n = len(v)
+    return v[n // 2] if n % 2 else (v[n // 2 - 1] + v[n // 2]) / 2
+
+def _trim_outliers(vals):
+    """Une observation aberrante ne doit jamais écraser la cote. On écarte ce qui s'éloigne
+    de plus de 50 % de la médiane — un ask à 9 $ face à un marché à 187 $, un blaster à 25 $
+    face à un cluster à 100 $. Sous 4 valeurs on ne coupe rien : trop peu pour juger."""
+    if len(vals) < 4: return vals, []
+    m = _median(vals)
+    keep = [v for v in vals if m and 0.5 * m <= v <= 1.5 * m]
+    return (keep, [v for v in vals if v not in keep]) if len(keep) >= 3 else (vals, [])
+
+def current_market(conn, sku: dict, key: str, now=None, region: str = "US"):
+    """Référence de marché ACTUELLE, distincte de historical_low.
+
+    Hiérarchie : un sold récent et exact prime sur tout ; sinon les asks courants observés
+    chez plusieurs boutiques ; sinon rien. On ne fabrique jamais une valeur à partir d'un
+    historique ancien, et on ne convertit jamais un ask en sold.
+    Cloisonné par exact_comp_key ET par région : une offre FR n'entre pas dans le marché US.
+    """
+    out = {"value": None, "basis": None, "sample_size": 0, "window_days": None,
+           "confidence": "LOW", "freshness": "UNKNOWN", "dispersion": None,
+           "shops": 0, "outliers": [], "age_days": None}
+
+    # 1) sold exact renseigné à la main, avec ses métadonnées
+    sold, conf = sku.get("market_sold_us"), sold_confidence(sku)
+    if sold is not None and conf in ("HIGH", "MEDIUM"):
+        age = _age_days(sku.get("market_sold_checked_at"), now)
+        out.update(value=float(sold), basis="exact_sold", sample_size=sku.get("market_sold_n") or 0,
+                   window_days=sku.get("market_sold_window_days"), confidence=conf,
+                   freshness=freshness(age), age_days=age)
+        return out
+
+    # 2) à défaut, les asks RÉELLEMENT observés chez nos boutiques, sur la même cloison
+    rows = conn.execute(
+        "SELECT unit_price, seen_at, shop, available FROM observations "
+        "WHERE exact_comp_key=? AND sealed=1 AND unit_price IS NOT NULL AND unit_price>0 "
+        "AND COALESCE(market_region,'US')=?", (key, region)).fetchall()
+    # `_age_days(...) or 999` serait faux : une observation du JOUR MÊME vaut 0, qui est falsy,
+    # et se ferait filtrer comme vieille de 999 jours.
+    def _age(sa):
+        a = _age_days(sa, now)
+        return 999 if a is None else a
+    fresh = [(u, sa, sh) for u, sa, sh, _ in rows if _age(sa) <= AGING_D]
+    if not fresh:
+        return out
+    vals = [u for u, _, _ in fresh]
+    keep, dropped = _trim_outliers(vals)
+    med = _median(keep)
+    shops = len({sh for _, _, sh in fresh})
+    ages = [_age(sa) for _, sa, _ in fresh]
+    disp = round((max(keep) - min(keep)) / med * 100, 1) if med else None
+    # la confiance monte avec le nombre de boutiques distinctes et la fraîcheur, pas avec le
+    # nombre de lignes : cinq annonces du même shop ne valent pas cinq boutiques.
+    conf = "LOW"
+    if shops >= 3 and min(ages) <= FRESH_D and (disp or 0) <= 60: conf = "MEDIUM"
+    out.update(value=round(med, 2), basis="observed_ask", sample_size=len(keep),
+               window_days=AGING_D, confidence=conf, freshness=freshness(min(ages)),
+               dispersion=disp, shops=shops, outliers=sorted(dropped), age_days=min(ages))
+    return out
 
 def historical_low(conn, key, upto=None, region="US"):
     """Plus bas prix UNITAIRE jamais observé pour cette cloison de comparabilité.

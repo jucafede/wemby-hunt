@@ -707,6 +707,74 @@ def sold_stats(key: str, now=None):
         out["trend_pct"] = round(delta, 1)
     return out
 
+ASK_DEAL_PCT, DEAL_PCT, STRONG_PCT, FAIR_PCT = -20.0, -10.0, -20.0, 10.0
+
+def current_ask_reference(conn, key, now=None, region="US", exclude_url=None):
+    """Référence des PRIX DEMANDÉS, quand aucune vente réalisée n'est disponible.
+
+    Ce n'est pas une valeur de marché : c'est « ce que les autres vendeurs demandent
+    aujourd'hui ». L'offre jugée est exclue de sa propre référence — se comparer à soi-même
+    ne prouve rien. Priorité au stock disponible ; les ruptures récentes ne servent de contexte
+    que si le stock ne suffit pas à constituer un échantillon."""
+    rows = conn.execute(
+        "SELECT unit_price, seen_at, shop, available, url FROM observations "
+        "WHERE exact_comp_key=? AND sealed=1 AND unit_price IS NOT NULL AND unit_price>0 "
+        "AND COALESCE(market_region,'US')=?", (key, region)).fetchall()
+    def age(sa):
+        a = _age_days(sa, now)
+        return 999 if a is None else a
+    rows = [r for r in rows if age(r[1]) <= AGING_D and r[4] != exclude_url]
+    ins = [r for r in rows if r[3]]
+    used, basis = (ins, "in_stock") if len({r[2] for r in ins}) >= 3 else (rows, "in_stock+oos")
+    if not used: return None
+    vals = [r[0] for r in used]
+    keep, dropped = _trim_outliers(vals)
+    med = _median(keep)
+    shops = len({r[2] for r in used})
+    ages = [age(r[1]) for r in used]
+    disp = round((max(keep) - min(keep)) / med * 100, 1) if med else None
+    conf = "LOW"
+    if shops >= 3 and min(ages) <= FRESH_D and (disp or 0) <= 80: conf = "HIGH" if shops >= 4 else "MEDIUM"
+    elif shops >= 2 and min(ages) <= AGING_D: conf = "LOW"
+    return {"value": round(med, 2), "sample_size": len(keep), "shops": shops, "basis": basis,
+            "confidence": conf, "dispersion": disp, "outliers": sorted(dropped),
+            "age_days": min(ages), "freshness": freshness(min(ages)),
+            "in_stock_n": len({r[2] for r in ins})}
+
+def price_verdict(price, cm, ask_ref):
+    """Deux niveaux de preuve, jamais confondus.
+
+    SOLD-BACKED : l'écart se mesure contre des ventes RÉALISÉES -> STRONG BUY / BUY / FAIR / EXPENSIVE.
+    ASK-BACKED  : aucune vente fiable, mais plusieurs vendeurs comparables -> ASK DEAL, qui dit
+                  « moins cher que ce que les autres DEMANDENT », jamais « sous la valeur ».
+    Sinon : DATA INSUFFICIENT. Un ASK DEAL n'est JAMAIS un BUY.
+    """
+    if price is None or price <= 0:
+        return {"verdict": "DATA INSUFFICIENT", "basis": None, "gap": None, "ref": None,
+                "why": "prix indisponible"}
+    if cm and cm.get("basis") == "exact_sold" and cm.get("confidence") in ("HIGH", "MEDIUM") \
+            and cm.get("value"):
+        g = round((price - cm["value"]) / cm["value"] * 100, 1)
+        v = ("STRONG BUY" if g <= STRONG_PCT else "BUY" if g <= DEAL_PCT
+             else "FAIR" if g <= FAIR_PCT else "EXPENSIVE")
+        n, w = cm.get("sample_size"), cm.get("window_days")
+        return {"verdict": v, "basis": "sold", "gap": g, "ref": cm["value"],
+                "confidence": cm["confidence"],
+                "why": f"{n} vente(s) réalisée(s) sur {w} j · médiane ${cm['value']:.2f} · {cm['confidence']}"}
+    if ask_ref and ask_ref["confidence"] in ("HIGH", "MEDIUM") and ask_ref.get("value"):
+        g = round((price - ask_ref["value"]) / ask_ref["value"] * 100, 1)
+        v = "ASK DEAL" if g <= ASK_DEAL_PCT else "ASK FAIR" if g <= FAIR_PCT else "ASK EXPENSIVE"
+        return {"verdict": v, "basis": "ask", "gap": g, "ref": ask_ref["value"],
+                "confidence": ask_ref["confidence"],
+                "why": (f"{ask_ref['shops']} vendeur(s) · médiane demandée ${ask_ref['value']:.2f} · "
+                        f"{ask_ref['confidence']} · AUCUNE VENTE RÉALISÉE CONNUE")}
+    return {"verdict": "DATA INSUFFICIENT", "basis": None, "gap": None, "ref": None,
+            "confidence": "LOW",
+            "why": "ni vente réalisée fiable, ni assez de vendeurs comparables"}
+
+VERDICT_RANK = {"STRONG BUY": 0, "BUY": 1, "ASK DEAL": 2, "ASK FAIR": 3, "FAIR": 3,
+                "ASK EXPENSIVE": 4, "EXPENSIVE": 4, "DATA INSUFFICIENT": 5}
+
 def buy_below_v2(cm: dict):
     """« À quel prix est-ce une bonne opportunité AUJOURD'HUI ? », pas « quel était un bon prix
     autrefois ». Dérivé du marché actuel et de sa confiance : on exige une marge plus large
@@ -993,10 +1061,25 @@ def hot_now(entries, limit=15):
     # quel que soit le déclencheur qui l'accompagne.
     # HOT NOW est une décision sur le marché US : une offre FR est un canal d'achat, pas un
     # signal de marché, et son prix est en euros. Le garde-fou est ICI, pas au point d'appel.
-    elig = [e for e in entries if e.get("region", "US") == "US"
-            and e["available"] and e["triggers"] and e["ref"] is not None
-            and e["gap"] is not None and e["gap"] <= 0 and e["o"][3] and e["o"][3] > 0]
-    elig.sort(key=lambda e: (-len(e["triggers"]), e["gap"] if e["gap"] is not None else 0))
+    # Une opportunité entre dans HOT NOW si elle est adossée à une PREUVE : des ventes
+    # réalisées (sold-backed) ou, à défaut, plusieurs vendeurs comparables (ask-backed).
+    # Un ASK DEAL n'est jamais un BUY, et ne passe jamais devant un deal sold-backed.
+    KEEP = {"STRONG BUY", "BUY", "ASK DEAL"}
+    elig = []
+    for e in entries:
+        if e.get("region", "US") != "US" or not e["available"]: continue
+        if not e["o"][3] or e["o"][3] <= 0: continue
+        pv = e.get("pv") or {}
+        if pv.get("verdict") in KEEP:
+            elig.append(e); continue
+        # les déclencheurs historiques (restock, new low) restent recevables s'ils sont
+        # accompagnés d'une référence et d'un écart favorable
+        if e["triggers"] and e["ref"] is not None and e["gap"] is not None and e["gap"] <= 0:
+            elig.append(e)
+    elig.sort(key=lambda e: (VERDICT_RANK.get((e.get("pv") or {}).get("verdict"), 5),
+                             -len(e["triggers"]),
+                             (e.get("pv") or {}).get("gap") if (e.get("pv") or {}).get("gap") is not None
+                             else (e["gap"] if e["gap"] is not None else 0)))
     # une place HOT par produit : quatre shops sur le même EuroLeague Blaster, c'est UNE ligne
     # et trois autres offres, pas quatre alertes.
     best_by_key, others = [], {}
@@ -1115,12 +1198,17 @@ def report(cat: dict, conn: sqlite3.Connection, seen_at: str | None, trust: dict
                     tg, dsc, gap, ref, kind = compute_badges(o, mem, s, trust_of(o[1], trust), in_stock)
                     key = o[13] if len(o) > 13 and o[13] else exact_comp_key(sid, norm(o[2]), s)
                     hist = historical_low(conn, key, o[7])
+                    reg = o[14] if len(o) > 14 else "US"
+                    cmk = current_market(conn, s, key, region=reg) if reg == "US" else None
+                    askr = current_ask_reference(conn, key, region=reg, exclude_url=o[5]) if reg == "US" else None
+                    pv = price_verdict(o[3], cmk, askr) if reg == "US" else None
                     region = o[14] if len(o) > 14 else "US"
                     if region != "US":
                         # un vendeur FR est un canal d'achat, pas un signal de marché US :
                         # comparer un prix EUR à un ask USD n'aurait aucun sens.
                         tg, dsc = [], dsc + ["FR"]
                     entries.append({"o": o, "key": key, "hist": hist, "region": region,
+                                    "cm": cmk, "ask_ref": askr, "pv": pv,
                                     "currency": (o[15] if len(o) > 15 else "USD"),
                                     "available": bool(o[4]), "triggers": tg, "descriptors": dsc,
                                     "gap": gap, "ref": ref, "kind": kind, "mem": mem,
@@ -1363,6 +1451,7 @@ class Opportunity:
     landed: str
     other_offers: int
     # emplacements réservés, non alimentés tant que la couche FR n'existe pas
+    evidence: str | None = None
     fr_price_eur: float | None = None
     fr_source: str | None = None
     fr_url: str | None = None
@@ -1374,14 +1463,19 @@ def opportunity(e, kind, cat, fr_best=None) -> Opportunity:
     q = (o[11] if len(o) > 11 and o[11] else 1) or 1
     b = buy_target(s_)
     price = o[3]
-    verdict = ("STRONG DEAL" if any(t.startswith("STRONG_DEAL") for t in e["triggers"])
-               else "DEAL" if any(t.startswith("DEAL") for t in e["triggers"])
-               else "RESTOCK" if kind == "restock" else "WATCH" if kind == "near" else "SIGNAL")
+    pv = e.get("pv") or {}
+    ICON = {"STRONG BUY": "🔥 STRONG BUY", "BUY": "🟢 BUY", "ASK DEAL": "🟣 ASK DEAL",
+            "FAIR": "⚪ FAIR", "ASK FAIR": "⚪ ASK FAIR", "EXPENSIVE": "🔴 EXPENSIVE",
+            "ASK EXPENSIVE": "🔴 ASK EXPENSIVE", "DATA INSUFFICIENT": "❓ DATA INSUFFICIENT"}
+    verdict = ICON.get(pv.get("verdict")) or (
+        "RESTOCK" if kind == "restock" else "WATCH" if kind == "near" else "SIGNAL")
     hist = e.get("hist")
     return Opportunity(
         kind=kind, bucket=wemby_bucket(s_), sku=s_, label=sku_label(s_), shop=o[1], url=o[5],
         image=(o[10] if len(o) > 10 else None), price=price, qty=q, verdict=verdict,
-        market=gap_phrase(e), ref_kind=e.get("kind"), ref_ok=ref_is_usable(e),
+        market=(f"{pv['gap']:+.0f} % vs {'ventes réalisées' if pv.get('basis') == 'sold' else 'prix demandés'}"
+                if pv.get("gap") is not None else gap_phrase(e)),
+        evidence=pv.get("why"), ref_kind=e.get("kind"), ref_ok=ref_is_usable(e),
         buy_below=b, missing=(price - b) if (b is not None and price and price > b) else None,
         hist_low=(hist["low"] if hist else None), hist_at=(hist["at"][:10] if hist else None),
         why=why_phrase(e), landed=landed_phrase(price, q, cat),
@@ -1413,8 +1507,11 @@ def render_card(op: Opportunity) -> str:
          f"<div class=nm>{op.label}</div>",
          f"<div class=pr>{money_or(op.price)} <span class=shop>· {op.shop}</span></div>",
          f"<div><span class='v'>{op.verdict}</span> <span class=gap>{op.market}</span></div>"]
+    if op.evidence:
+        r.append(f"<div class=small>{op.evidence}</div>")
     if op.buy_below is not None:
-        r.append(f"<div class=small>🎯 Acheter ≤ {money_or(op.buy_below)}</div>")
+        r.append(f"<div class=small>🎯 Seuil manuel ≤ {money_or(op.buy_below)} "
+                 "<span class=small>(contexte, ne pilote plus le verdict)</span></div>")
     if op.missing is not None and op.ref_ok:
         r.append(f"<div class=small><span class=miss>→ attendre {money_or(op.missing)}</span></div>")
     if op.hist_low is not None:

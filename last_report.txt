@@ -11,7 +11,7 @@
   [mojobreak] status=reject \(qualifié sur données réelles → 0 sealed 2023-24\) → skip
   0 produits bruts, 0 rattachés à un SKU
 → RbiCru7 Collectibles (https://rbicru7.com)  [trust=trusted]
-  12427 produits bruts, 34 rattachés à un SKU
+  12420 produits bruts, 34 rattachés à un SKU
 → Layton Sports Cards (https://laytonsportscards.com)  [trust=trusted]
   [layton] type=breaks \(breaker, hors périmètre sealed\) → skip
   0 produits bruts, 0 rattachés à un SKU
@@ -74,7 +74,6 @@
   401 produits bruts, 13 rattachés à un SKU
 → Tanteo Cartes Collections (https://tanteocartescollections.com)  [trust=watch]
   394 produits bruts, 17 rattachés à un SKU
-(purge : 192 observation(s) obsolètes retirées — matchées par une ancienne version du code)
 (37 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
 
 ========================================================================
@@ -1885,5 +1884,5 @@
   2025-26_INCEPTION_HOBBY                  €  599.00  qscards     
   2025-26_BOWMAN_HOBBY                     €  749.00  qscards     
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-08-23T12-28-50.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-08-23T12-54-38.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

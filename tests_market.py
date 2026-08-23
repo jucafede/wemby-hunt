@@ -100,6 +100,49 @@ for t, why in [("2023-24 Topps Chrome Basketball Hobby Box", "Hobby"),
     got = hunt.match_title(t, skus).sku_id
     check(f"N · Value Box ≠ {why}", got != "TOPPS_2023-24_CHROME_VALUE_BLASTER")
 
-print(f"\nTOTAL : {len(total)} tests, {len(fails)} FAIL")
+# ================= PR B : sold réels, buy_below_v2, marché baissier
+NOW2 = "2026-08-23"
+K_TC = "TOPPS_2023-24_CHROME_VALUE_BLASTER|std|x1"
+st = hunt.sold_stats(K_TC, NOW2)
+check("le jeu de ventes réelles est chargé", st is not None)
+check("fenêtre 30 j : 7 ventes", st["windows"][30]["n"], 7)
+check("médiane 30 j", st["windows"][30]["median"], 64.0)
+check("médiane 60 j supérieure à la 30 j (le marché redescend)",
+      st["windows"][60]["median"] > st["windows"][30]["median"])
+check("tendance constatée DOWN", st["trend"], "DOWN")
+check("source conservée", st["source"], "sportscardspro")
+check("confiance HIGH sur 7 ventes récentes peu dispersées", st["confidence"], "HIGH")
+
+cmTC = hunt.current_market(c, {}, K_TC, NOW2)
+check("les ventes réelles priment sur les asks observés", cmTC["basis"], "exact_sold")
+bb, _ = hunt.buy_below_v2(cmTC)
+check("buy_below_v2 dérive du marché actuel", bb, 57.6)
+check("buy_below_v2 est très au-dessus du seuil manuel de 35 $", bb > 35.0)
+check("sans marché fiable, aucun seuil n'est fabriqué",
+      hunt.buy_below_v2({"value": None})[0], None)
+check("confiance faible -> pas de seuil",
+      hunt.buy_below_v2({"value": 100, "confidence": "LOW"})[0], None)
+
+skTC = {"buy_below_usd": 35.0}
+flag = hunt.threshold_vs_market(skTC, cmTC)
+check("le seuil manuel obsolète est signalé", flag[0], "OBSOLETE_LOW")
+check("un seuil au-dessus du marché est signalé aussi",
+      hunt.threshold_vs_market({"buy_below_usd": 90.0}, cmTC)[0], "OBSOLETE_HIGH")
+check("un seuil cohérent n'est pas signalé",
+      hunt.threshold_vs_market({"buy_below_usd": 58.0}, cmTC), None)
+
+# TEST B — marché stable · TEST C — marché baissier
+def verdict(offer, ref):
+    g = (offer - ref) / ref * 100
+    return "STRONG DEAL" if g <= -20 else "DEAL" if g <= -10 else "FAIR" if g <= 10 else "CHER"
+check("B · marché stable : 90 face à 100 -> DEAL", verdict(90, 100), "DEAL")
+check("C · marché baissier : offre 110 face à un sold récent de 80 -> aucun deal",
+      verdict(110, 80), "CHER")
+check("C · un ancien ask élevé ne sauve pas l'offre", verdict(110, 80) != "DEAL")
+check("le cas réel : 75 $ face à un marché à 64 $ n'est pas un deal", verdict(75, 64), "CHER")
+check("à 55 $ ce serait un deal", verdict(55, 64), "DEAL")
+check("à 50 $ un strong deal", verdict(50, 64), "STRONG DEAL")
+
+print(f"\nTOTAL FINAL : {len(total)} tests, {len(fails)} FAIL")
 for f in fails: print("  FAIL", f)
 sys.exit(1 if fails else 0)

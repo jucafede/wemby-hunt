@@ -1605,6 +1605,8 @@ skus:
     market_sold_window_days: null
     market_sold_checked_at: null
     thresholds_reviewed_at: 2026-08-17
+    thresholds_review_needed: true
+    thresholds_review_reason: "buy 35 / watch 45 saisis le 17/08 depuis le prompt V2-c, sur des asks de 42-55 $. Les ventes realisees du 23/08 (n=7 sur 30 j, mediane 64 $) invalident ces seuils : aucune offre ne peut plus les franchir. Non recalcules automatiquement — buy_below_v2 propose 57,60 $."
     buy_below_usd: 35.00
     watch_below_usd: 45.00
     market_source: "ask: 42,95-55 relevés le 18/08 ; sold à relever"

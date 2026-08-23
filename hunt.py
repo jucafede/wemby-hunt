@@ -736,7 +736,8 @@ def current_ask_reference(conn, key, now=None, region="US", exclude_url=None):
     conf = "LOW"
     if shops >= 3 and min(ages) <= FRESH_D and (disp or 0) <= 80: conf = "HIGH" if shops >= 4 else "MEDIUM"
     elif shops >= 2 and min(ages) <= AGING_D: conf = "LOW"
-    return {"value": round(med, 2), "sample_size": len(keep), "shops": shops, "basis": basis,
+    return {"region": region, "currency": "USD" if region == "US" else "EUR",
+            "value": round(med, 2), "sample_size": len(keep), "shops": shops, "basis": basis,
             "confidence": conf, "dispersion": disp, "outliers": sorted(dropped),
             "age_days": min(ages), "freshness": freshness(min(ages)),
             "in_stock_n": len({r[2] for r in ins})}
@@ -795,7 +796,10 @@ def current_market(conn, sku: dict, key: str, now=None, region: str = "US"):
     """
     out = {"value": None, "basis": None, "sample_size": 0, "window_days": None,
            "confidence": "LOW", "freshness": "UNKNOWN", "dispersion": None,
-           "shops": 0, "outliers": [], "age_days": None}
+           "shops": 0, "outliers": [], "age_days": None,
+           # la zone et la devise voyagent avec la référence : un ask japonais ne se compare
+           # pas à des ventes eBay US, et la valeur seule ne dit pas dans quelle monnaie elle est
+           "region": region, "currency": "USD" if region == "US" else "EUR"}
 
     # 0) ventes réalisées datées : la meilleure base possible
     st = sold_stats(key, now) if region == "US" else None
@@ -1072,8 +1076,12 @@ def hot_now(entries, limit=15):
         pv = e.get("pv") or {}
         if pv.get("verdict") in KEEP:
             elig.append(e); continue
-        # les déclencheurs historiques (restock, new low) restent recevables s'ils sont
-        # accompagnés d'une référence et d'un écart favorable
+        # Un verdict de marché adverse est SANS APPEL : ni restock, ni plus-bas historique, ni
+        # seuil manuel ne remontent une offre que les ventes ou les prix demandés condamnent.
+        # Le Topps Chrome à 75 $ entrait ici par un -38 % vs seuil manuel, alors que sept ventes
+        # réelles le donnaient à 64 $.
+        if pv.get("verdict") and pv["verdict"] != "DATA INSUFFICIENT": continue
+        # sans aucune preuve de marché, les déclencheurs historiques restent recevables
         if e["triggers"] and e["ref"] is not None and e["gap"] is not None and e["gap"] <= 0:
             elig.append(e)
     elig.sort(key=lambda e: (VERDICT_RANK.get((e.get("pv") or {}).get("verdict"), 5),
@@ -1301,7 +1309,12 @@ def report(cat: dict, conn: sqlite3.Connection, seen_at: str | None, trust: dict
     for e in hn:
         o = e["o"]
         extra = f"  (+{e['other_offers']} autre(s) offre(s))" if e.get("other_offers") else ""
-        print(f"  {sku_label(e['sku'])[:44]:<46} ${o[3]:>8.2f} {o[1]:<16} {e['gap']:>6.1f}%  "
+        pv = e.get("pv") or {}
+        # l'écart affiché est celui du verdict quand il existe ; sinon celui du déclencheur
+        g = pv.get("gap") if pv.get("gap") is not None else e["gap"]
+        gs = f"{g:>6.1f}%" if g is not None else "     —"
+        tag = {"sold": "[ventes]", "ask": "[demandés]"}.get(pv.get("basis"), "")
+        print(f"  {sku_label(e['sku'])[:44]:<46} ${o[3]:>8.2f} {o[1]:<16} {gs} {tag:<10} "
               + " ".join(e["triggers"]) + extra)
     if not hn: print("  (aucune ligne en stock ne cumule un déclencheur et une référence de marché)")
     frs = fr_market_status(health, yaml.safe_load((ROOT/"sources.yaml").read_text(encoding="utf-8"))["shops"])
@@ -1452,6 +1465,13 @@ class Opportunity:
     other_offers: int
     # emplacements réservés, non alimentés tant que la couche FR n'existe pas
     evidence: str | None = None
+    # Préparation multi-devises. Une référence de marché n'a de sens que dans SA zone : on ne
+    # compare pas un ask japonais à des ventes eBay US. Les champs existent pour que l'ajout
+    # d'un shop non-US soit une question de collecte, pas de refonte du scoring.
+    region: str = "US"             # zone du marché auquel l'offre est comparée
+    currency: str = "USD"          # devise d'affichage de native_price
+    native_price: float | None = None   # prix tel que l'annonce l'affiche
+    usd_price: float | None = None      # même prix converti, ou None si aucun taux fiable
     fr_price_eur: float | None = None
     fr_source: str | None = None
     fr_url: str | None = None
@@ -1473,6 +1493,8 @@ def opportunity(e, kind, cat, fr_best=None) -> Opportunity:
     return Opportunity(
         kind=kind, bucket=wemby_bucket(s_), sku=s_, label=sku_label(s_), shop=o[1], url=o[5],
         image=(o[10] if len(o) > 10 else None), price=price, qty=q, verdict=verdict,
+        region=e.get("region", "US"), currency=e.get("currency", "USD"),
+        native_price=price, usd_price=(price if e.get("currency", "USD") == "USD" else None),
         market=(f"{pv['gap']:+.0f} % vs {'ventes réalisées' if pv.get('basis') == 'sold' else 'prix demandés'}"
                 if pv.get("gap") is not None else gap_phrase(e)),
         evidence=pv.get("why"), ref_kind=e.get("kind"), ref_ok=ref_is_usable(e),

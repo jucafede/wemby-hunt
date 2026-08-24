@@ -11,7 +11,7 @@
   [mojobreak] status=reject \(qualifié sur données réelles → 0 sealed 2023-24\) → skip
   0 produits bruts, 0 rattachés à un SKU
 → RbiCru7 Collectibles (https://rbicru7.com)  [trust=trusted]
-  12368 produits bruts, 34 rattachés à un SKU
+  12358 produits bruts, 34 rattachés à un SKU
 → Layton Sports Cards (https://laytonsportscards.com)  [trust=trusted]
   [layton] type=breaks \(breaker, hors périmètre sealed\) → skip
   0 produits bruts, 0 rattachés à un SKU
@@ -36,7 +36,7 @@
   3998 produits bruts, 60 rattachés à un SKU
 → Superior Sports Investments (https://superiorsportsinvestments.com)  [trust=watch]
     collections : 8/84 retenues (filtre 'basketball|\\bnba\\b|hoops|prizm|mosaic|optic|select|phoenix|contenders|court.kings|revolution|premium.stock')
-  16237 produits bruts, 43 rattachés à un SKU
+  16238 produits bruts, 44 rattachés à un SKU
 → SJAY2K Trading Cards (https://www.sjay2k.com)  [trust=watch]
   598 produits bruts, 19 rattachés à un SKU
 → The Ballgame (https://theballgame.com)  [trust=watch]
@@ -60,7 +60,7 @@
 → RL Sports Cards (https://rlsportscards.com)  [trust=watch]
   1731 produits bruts, 61 rattachés à un SKU
 → Fan Cave (https://fancave.com)  [trust=watch]
-  971 produits bruts, 5 rattachés à un SKU
+  970 produits bruts, 5 rattachés à un SKU
 → Mill Creek Sports (https://www.millcreeksports.com)  [trust=watch]
   [millcreek] type=html non géré en v1 → skip
   0 produits bruts, 0 rattachés à un SKU
@@ -71,10 +71,10 @@
   [tracenchase] type=eu_reference (GR, woocommerce) → référence de prix EU, non crawlée
   0 produits bruts, 0 rattachés à un SKU
 → QS Cards (https://qscards.com)  [trust=watch]
-  377 produits bruts, 12 rattachés à un SKU
+  381 produits bruts, 12 rattachés à un SKU
 → Tanteo Cartes Collections (https://tanteocartescollections.com)  [trust=watch]
   394 produits bruts, 17 rattachés à un SKU
-(40 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
+(39 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
 
 ========================================================================
   RETAIL
@@ -515,7 +515,7 @@
         YEAR2  cheapest of 7 in stock
    2. sportscardjunction $   40.00  IN STOCK  landed≈€  54.16  (score 1.00)
         YEAR2  VERIFY
-   3. rbicru7          $   45.00  IN STOCK  landed≈€  59.34  (score 1.00)
+   3. rbicru7          $   50.00  IN STOCK  landed≈€  64.51  (score 1.00)
         YEAR2
    4. awesome          $   54.75  IN STOCK  landed≈€  69.42  (score 1.00)
         YEAR2
@@ -612,17 +612,17 @@
 
 · SUIVI   2024-25 Panini Donruss Mega   [PANINI_2024-25_DONRUSS_MEGA]
    1. ehcards          $   44.99  IN STOCK  landed≈€  59.33  (score 1.00)
-        YEAR2  cheapest of 4 in stock
+        YEAR2  cheapest of 3 in stock
    2. monmouth         $   49.99  IN STOCK  landed≈€  64.50  (score 1.00)
         YEAR2  VERIFY
    3. tanteo           $   64.90  IN STOCK  landed≈€  79.92  (score 1.00)
         YEAR2  VERIFY  FR
-   4. sjay2k           $   85.00  IN STOCK  landed≈€ 100.71  (score 1.00)
+   4. hiddengems       $   25.00  SOLD OUT  landed≈€  38.65  (score 1.00)
+        YEAR2
+   5. cardiacs         $   34.95  SOLD OUT  landed≈€  48.94  (score 1.00)
+        YEAR2
+   6. boxseat          $   34.99  SOLD OUT  landed≈€  48.98  (score 1.00)
         YEAR2  VERIFY
-   5. hiddengems       $   25.00  SOLD OUT  landed≈€  38.65  (score 1.00)
-        YEAR2
-   6. cardiacs         $   34.95  SOLD OUT  landed≈€  48.94  (score 1.00)
-        YEAR2
    ask $44.99   sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $25.00 (le 2026-08-18, hiddengems, 8 shop(s) vus) | cheapest live $44.99
    BEST → ehcards  https://ehcards.com/products/2024-25-panini-donruss-nba-basketball-10-pack-mega-box-teal-laser-copy
@@ -1589,7 +1589,7 @@
 
 · SUIVI   2025-26 Topps Chrome Update Hobby   [TOPPS_2025-26_CHROME_UPDATE_HOBBY]
    1. cbhobby          $ 1000.00  IN STOCK  landed≈€1047.19  (score 1.00)
-        VERIFY  cheapest of 8 in stock
+        VERIFY  cheapest of 9 in stock
    2. rbicru7          $ 1095.00  IN STOCK  landed≈€1145.46  (score 1.00)
    3. cardiacs         $ 1099.95  IN STOCK  landed≈€1150.58  (score 1.00)
    4. collectorstore   $ 1099.95  IN STOCK  landed≈€1150.58  (score 1.00)
@@ -1885,5 +1885,5 @@
   2025-26_INCEPTION_HOBBY                  €  599.00  qscards     
   2025-26_BOWMAN_HOBBY                     €  749.00  qscards     
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-08-24T09-16-57.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-08-24T13-05-01.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

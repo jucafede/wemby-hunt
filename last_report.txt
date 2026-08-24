@@ -36,7 +36,7 @@
   3998 produits bruts, 60 rattachés à un SKU
 → Superior Sports Investments (https://superiorsportsinvestments.com)  [trust=watch]
     collections : 8/84 retenues (filtre 'basketball|\\bnba\\b|hoops|prizm|mosaic|optic|select|phoenix|contenders|court.kings|revolution|premium.stock')
-  16238 produits bruts, 43 rattachés à un SKU
+  16237 produits bruts, 43 rattachés à un SKU
 → SJAY2K Trading Cards (https://www.sjay2k.com)  [trust=watch]
   598 produits bruts, 19 rattachés à un SKU
 → The Ballgame (https://theballgame.com)  [trust=watch]
@@ -71,7 +71,7 @@
   [tracenchase] type=eu_reference (GR, woocommerce) → référence de prix EU, non crawlée
   0 produits bruts, 0 rattachés à un SKU
 → QS Cards (https://qscards.com)  [trust=watch]
-  378 produits bruts, 12 rattachés à un SKU
+  377 produits bruts, 12 rattachés à un SKU
 → Tanteo Cartes Collections (https://tanteocartescollections.com)  [trust=watch]
   394 produits bruts, 17 rattachés à un SKU
 (40 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
@@ -1885,5 +1885,5 @@
   2025-26_INCEPTION_HOBBY                  €  599.00  qscards     
   2025-26_BOWMAN_HOBBY                     €  749.00  qscards     
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-08-24T07-13-12.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-08-24T09-01-47.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

@@ -826,11 +826,16 @@ VERDICT_RANK = {"STRONG BUY": 0, "BUY": 1, "ASK DEAL": 2, "ASK FAIR": 3, "FAIR":
 def buy_below_v2(cm: dict):
     """« À quel prix est-ce une bonne opportunité AUJOURD'HUI ? », pas « quel était un bon prix
     autrefois ». Dérivé du marché actuel et de sa confiance : on exige une marge plus large
-    quand on est moins sûr. Sans marché fiable, pas de seuil — UNKNOWN plutôt qu'un chiffre."""
+    quand on est moins sûr. Sans marché fiable, pas de seuil — UNKNOWN plutôt qu'un chiffre.
+
+    La phrase nomme la nature de la référence. Écrire « sous la médiane des ventes récentes »
+    au-dessus d'un objectif calculé sur des prix DEMANDÉS serait précisément la confusion que
+    tout ce moteur existe pour empêcher."""
     if not cm or cm.get("value") is None: return None, "aucun marché actuel fiable"
+    quoi = "des prix demandés" if cm.get("basis") == "ask" else "des ventes récentes"
     conf = cm.get("confidence")
-    if conf == "HIGH":   return round(cm["value"] * 0.90, 2), "10 % sous la médiane des ventes récentes"
-    if conf == "MEDIUM": return round(cm["value"] * 0.85, 2), "15 % sous la médiane (confiance moyenne)"
+    if conf == "HIGH":   return round(cm["value"] * 0.90, 2), f"10 % sous la médiane {quoi}"
+    if conf == "MEDIUM": return round(cm["value"] * 0.85, 2), f"15 % sous la médiane {quoi} (confiance moyenne)"
     return None, "confiance insuffisante pour fixer un seuil"
 
 def current_market(conn, sku: dict, key: str, now=None, region: str = "US"):
@@ -1537,7 +1542,8 @@ def opportunity(e, kind, cat, fr_best=None) -> Opportunity:
     # qu'un contexte. On dérive donc l'objectif de prix de la référence qui a rendu le verdict.
     _ref = pv.get("ref")
     _refv = _ref.get("value") if isinstance(_ref, dict) else _ref
-    tgt, tgt_why = (buy_below_v2({"value": _refv, "confidence": pv.get("confidence")})
+    tgt, tgt_why = (buy_below_v2({"value": _refv, "confidence": pv.get("confidence"),
+                                  "basis": pv.get("basis")})
                     if _refv else (None, None))
     ICON = {"STRONG BUY": "🔥 STRONG BUY", "BUY": "🟢 BUY", "ASK DEAL": "🟣 ASK DEAL",
             "FAIR": "⚪ FAIR", "ASK FAIR": "⚪ ASK FAIR", "EXPENSIVE": "🔴 EXPENSIVE",

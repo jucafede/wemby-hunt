@@ -201,6 +201,17 @@ check("l'objectif de prix dérive du marché, pas du seuil manuel", _o.buy_targe
 check("ce qu'il reste à attendre se mesure sur cet objectif", round(_o.missing, 2), 17.4)
 check("le seuil manuel reste affiché comme contexte", _o.buy_below, 35.0)
 check("l'objectif porte sa justification", bool(_o.target_why))
+check("un objectif adossé aux ventes le dit", "ventes récentes" in _o.target_why)
+# écrire « ventes récentes » au-dessus d'un objectif calculé sur des prix demandés serait
+# exactement la confusion que tout ce moteur existe pour empêcher.
+_pva = {"verdict": "ASK DEAL", "basis": "ask", "gap": -33.7,
+        "ref": {"value": 15.0}, "confidence": "HIGH", "why": "4 vendeurs"}
+_oa = op_for(9.95, _pva, None)
+check("un objectif adossé aux prix demandés ne parle jamais de ventes",
+      "ventes" not in (op_for(20.0, _pva, None).target_why or ""))
+check("il nomme les prix demandés",
+      "prix demandés" in (op_for(20.0, _pva, None).target_why or ""))
+check("l'objectif ask suit la même règle de marge", op_for(20.0, _pva, None).buy_target_v2, 13.5)
 # confiance moyenne : marge exigée plus large
 _pvm = dict(_pv, confidence="MEDIUM")
 check("une confiance moyenne exige une marge plus large", op_for(75.0, _pvm, 35.0).buy_target_v2, 54.4)

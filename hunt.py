@@ -1512,6 +1512,8 @@ class Opportunity:
     other_offers: int
     # emplacements réservés, non alimentés tant que la couche FR n'existe pas
     evidence: str | None = None
+    buy_target_v2: float | None = None   # seuil dérivé du marché actuel, quand il existe
+    target_why: str | None = None
     # Préparation multi-devises. Une référence de marché n'a de sens que dans SA zone : on ne
     # compare pas un ask japonais à des ventes eBay US. Les champs existent pour que l'ajout
     # d'un shop non-US soit une question de collecte, pas de refonte du scoring.
@@ -1531,6 +1533,12 @@ def opportunity(e, kind, cat, fr_best=None) -> Opportunity:
     b = buy_target(s_)
     price = o[3]
     pv = e.get("pv") or {}
+    # Le seuil qui compte est celui que le marché actuel justifie ; le seuil manuel n'est plus
+    # qu'un contexte. On dérive donc l'objectif de prix de la référence qui a rendu le verdict.
+    _ref = pv.get("ref")
+    _refv = _ref.get("value") if isinstance(_ref, dict) else _ref
+    tgt, tgt_why = (buy_below_v2({"value": _refv, "confidence": pv.get("confidence")})
+                    if _refv else (None, None))
     ICON = {"STRONG BUY": "🔥 STRONG BUY", "BUY": "🟢 BUY", "ASK DEAL": "🟣 ASK DEAL",
             "FAIR": "⚪ FAIR", "ASK FAIR": "⚪ ASK FAIR", "EXPENSIVE": "🔴 EXPENSIVE",
             "ASK EXPENSIVE": "🔴 ASK EXPENSIVE", "DATA INSUFFICIENT": "❓ DATA INSUFFICIENT"}
@@ -1545,7 +1553,12 @@ def opportunity(e, kind, cat, fr_best=None) -> Opportunity:
         market=(f"{pv['gap']:+.0f} % vs {'ventes réalisées' if pv.get('basis') == 'sold' else 'prix demandés'}"
                 if pv.get("gap") is not None else gap_phrase(e)),
         evidence=pv.get("why"), ref_kind=e.get("kind"), ref_ok=ref_is_usable(e),
-        buy_below=b, missing=(price - b) if (b is not None and price and price > b) else None,
+        buy_below=b, buy_target_v2=tgt, target_why=tgt_why,
+        # « Attendre » se calcule sur le seuil dérivé du marché quand il existe. Le seuil manuel
+        # ne pilote plus le verdict : il ne doit pas piloter davantage l'objectif de prix.
+        missing=((price - tgt) if (tgt is not None and price and price > tgt)
+                 else (price - b) if (tgt is None and b is not None and price and price > b)
+                 else None),
         hist_low=(hist["low"] if hist else None), hist_at=(hist["at"][:10] if hist else None),
         why=why_phrase(e), landed=landed_phrase(price, q, cat),
         other_offers=e.get("other_offers", 0), **_fr_fields(e, fr_best))
@@ -1582,7 +1595,11 @@ def render_card(op: Opportunity) -> str:
         r.append(f"<div class=small>🎯 Seuil manuel ≤ {money_or(op.buy_below)} "
                  "<span class=small>(contexte, ne pilote plus le verdict)</span></div>")
     if op.missing is not None and op.ref_ok:
-        r.append(f"<div class=small><span class=miss>→ attendre {money_or(op.missing)}</span></div>")
+        tgt = op.buy_target_v2 if op.buy_target_v2 is not None else op.buy_below
+        src = (f"objectif {money_or(tgt)} — {op.target_why}" if op.buy_target_v2 is not None
+               else f"objectif {money_or(tgt)} — seuil manuel")
+        r.append(f"<div class=small><span class=miss>→ attendre {money_or(op.missing)}</span> "
+                 f"<span class=small>({src})</span></div>")
     if op.hist_low is not None:
         r.append(f"<div class=small>Plus bas déjà vu : {money_or(op.hist_low)}"
                  + (f" ({op.hist_at})" if op.hist_at else "") + "</div>")

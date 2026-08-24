@@ -181,6 +181,37 @@ check("un ASK DEAL sans gap historique ne fait pas planter le rapport",
       hunt.hot_now([hn_entry("X", 10.0, pvd("ASK DEAL", "ask", -33.7),
                              triggers=(), gap=None, ref=None)])[0]["gap"], None)
 
+# ---------------------------------------------------------------------------
+# L'objectif de prix suit le marché, pas le seuil manuel
+# ---------------------------------------------------------------------------
+def op_for(price, pv, buy_below):
+    e = hn_entry("X", price, pv, triggers=(), gap=None, ref=None)
+    e["sku"] = {"id": "X", "buy_below_usd": buy_below, "tier": "retail", "season": "2023-24",
+                "manufacturer": "Topps", "set": "Topps Chrome", "format": "Blaster"}
+    import yaml, pathlib as _pl
+    _cat = yaml.safe_load((_pl.Path(__file__).parent / "catalog.yaml").read_text(encoding="utf-8"))
+    return hunt.opportunity(e, "buy", _cat)
+
+# le cas réel : Topps Chrome à 75 $, seuil manuel 35 $, ventes réelles à 64 $.
+# L'ancien « attendre 40 $ » visait le seuil manuel. Le marché justifie 57,60 $.
+_pv = {"verdict": "EXPENSIVE", "basis": "sold", "gap": 17.2,
+       "ref": {"value": 64.0}, "confidence": "HIGH", "why": "7 ventes"}
+_o = op_for(75.0, _pv, 35.0)
+check("l'objectif de prix dérive du marché, pas du seuil manuel", _o.buy_target_v2, 57.6)
+check("ce qu'il reste à attendre se mesure sur cet objectif", round(_o.missing, 2), 17.4)
+check("le seuil manuel reste affiché comme contexte", _o.buy_below, 35.0)
+check("l'objectif porte sa justification", bool(_o.target_why))
+# confiance moyenne : marge exigée plus large
+_pvm = dict(_pv, confidence="MEDIUM")
+check("une confiance moyenne exige une marge plus large", op_for(75.0, _pvm, 35.0).buy_target_v2, 54.4)
+# sans marché, on retombe sur le seuil manuel plutôt que de ne rien dire
+_pvn = {"verdict": "DATA INSUFFICIENT", "basis": None, "gap": None, "ref": None,
+        "confidence": None, "why": None}
+_on = op_for(75.0, _pvn, 35.0)
+check("sans marché, l'objectif retombe sur le seuil manuel", _on.buy_target_v2, None)
+check("et l'attente se mesure alors sur ce seuil", _on.missing, 40.0)
+check("sans seuil ni marché, aucune attente n'est affichée", op_for(75.0, _pvn, None).missing, None)
+
 print(f"\nTOTAL FINAL : {len(total)} tests, {len(fails)} FAIL")
 for f in fails: print("  FAIL", f)
 sys.exit(1 if fails else 0)

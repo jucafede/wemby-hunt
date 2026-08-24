@@ -31,14 +31,14 @@
 → The Cardiacs (https://www.thecardiacs.com)  [trust=trusted]
   5320 produits bruts, 33 rattachés à un SKU
 → Monmouth Cards (https://monmouthcards.com)  [trust=watch]
-  4583 produits bruts, 36 rattachés à un SKU
+  4573 produits bruts, 36 rattachés à un SKU
 → World Champion Sports Cards (https://www.worldchampionsportscards.org)  [trust=watch]
-  3999 produits bruts, 60 rattachés à un SKU
+  3998 produits bruts, 60 rattachés à un SKU
 → Superior Sports Investments (https://superiorsportsinvestments.com)  [trust=watch]
     collections : 8/84 retenues (filtre 'basketball|\\bnba\\b|hoops|prizm|mosaic|optic|select|phoenix|contenders|court.kings|revolution|premium.stock')
-  16241 produits bruts, 43 rattachés à un SKU
+  16238 produits bruts, 43 rattachés à un SKU
 → SJAY2K Trading Cards (https://www.sjay2k.com)  [trust=watch]
-  590 produits bruts, 18 rattachés à un SKU
+  598 produits bruts, 19 rattachés à un SKU
 → The Ballgame (https://theballgame.com)  [trust=watch]
   12705 produits bruts, 4 rattachés à un SKU
 → Bleecker Trading (https://bleeckertrading.com)  [trust=watch]
@@ -75,11 +75,6 @@
 → Tanteo Cartes Collections (https://tanteocartescollections.com)  [trust=watch]
   394 produits bruts, 17 rattachés à un SKU
 (40 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
-
-========================================================================
-  🔔 RESTOCKS depuis le passage précédent
-========================================================================
-  🔔 RESTOCK  TOPPS_2025-26_COSMIC_CHROME_HOBBY  sjay2k  $1500.00  https://www.sjay2k.com/products/2025-26-topps-cosmic-chrome-basketball-hobby-box-pre-order-30th-april
 
 ========================================================================
   RETAIL
@@ -566,7 +561,7 @@
 
 · SUIVI   2024-25 Panini Mosaic Blaster   [PANINI_2024-25_MOSAIC_BLASTER]
    1. rbicru7          $   33.00  IN STOCK  landed≈€  46.92  (score 1.00)
-        YEAR2  cheapest of 6 in stock
+        YEAR2  cheapest of 7 in stock
    2. ehcards          $   34.99  IN STOCK  landed≈€  48.98  (score 1.00)
         YEAR2
    3. collectorstore   $   37.99  IN STOCK  landed≈€  52.08  (score 1.00)
@@ -578,7 +573,7 @@
    6. superior         $   50.00  IN STOCK  landed≈€  64.51  (score 1.00)
         YEAR2  VERIFY
    ask $33.00   sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
-   HISTORICAL LOW $25.00 (le 2026-08-18, hiddengems, 8 shop(s) vus) | cheapest live $33.00
+   HISTORICAL LOW $25.00 (le 2026-08-18, hiddengems, 9 shop(s) vus) | cheapest live $33.00
    BEST → rbicru7  https://rbicru7.com/products/2024-25-panini-mosaic-basketball-retail-blaster-box-capacity-insert
 
 · SUIVI   2024-25 Panini Mosaic Mega   [PANINI_2024-25_MOSAIC_MEGA]
@@ -834,7 +829,6 @@
    1. awesome          $  174.75  IN STOCK  landed≈€ 193.55  (score 1.00)
         cheapest of 4 in stock
    2. collectorstore   $  179.99  IN STOCK  landed≈€ 198.97  (score 1.00)
-        🔹NEW_LOW  🔹PRICE_DROP -5%
    3. hiddengems       $  180.00  IN STOCK  landed≈€ 198.98  (score 1.00)
    4. superior         $  240.00  IN STOCK  landed≈€ 261.04  (score 1.00)
         VERIFY
@@ -1679,7 +1673,6 @@
    1. qscards          $ 2999.00  IN STOCK  landed≈€3114.95  (score 1.00)
         VERIFY  cheapest of 8 in stock  FR
    2. columbia         $ 2999.99  IN STOCK  landed≈€3115.98  (score 1.00)
-        🔹NEW_LOW  🔹PRICE_DROP -1%
    3. sportscardjunction $ 3350.00  IN STOCK  landed≈€3478.03  (score 1.00)
         VERIFY
    4. awesome          $ 3399.75  IN STOCK  landed≈€3529.49  (score 1.00)
@@ -1739,7 +1732,7 @@
 
 · CANDIDAT   2025-26 Panini Origins EuroLeague H2   [PANINI_2025-26_EUROLEAGUE_ORIGINS_H2]  ⚑ euroleague
    1. columbia         $   38.99  (2 boîtes = $  19.50/boîte)  IN STOCK  landed≈€  53.12  (score 1.00)
-        🔹NEW_LOW  🔹PRICE_DROP -3%  EUROLEAGUE  cheapest of 6 in stock  MARKET DATA INSUFFICIENT
+        EUROLEAGUE  cheapest of 6 in stock  MARKET DATA INSUFFICIENT
    2. rlsports         $   39.99  (2 boîtes = $  20.00/boîte)  IN STOCK  landed≈€  54.15  (score 1.00)
         EUROLEAGUE  VERIFY  MARKET DATA INSUFFICIENT
    3. awesome          $   49.75  IN STOCK  landed≈€  64.25  (score 1.00)
@@ -1856,7 +1849,6 @@
 ========================================================================
   🔥 HOT NOW — 10 ligne(s)
 ========================================================================
-  2025-26 Topps Motif Hobby                      $ 2999.99 columbia          -20.0% [demandés] NEW_LOW PRICE_DROP -1%
   2023-24 Panini Prizm EuroLeague Blaster        $    9.95 cardiacs          -33.7% [demandés] STRONG_DEAL -60%
   2024-25 Panini Prizm Hobby                     $  559.75 awesome           -27.8% [demandés]   (+1 autre(s) offre(s))
   2024-25 Panini Select Mega                     $   39.95 cardiacs          -27.0% [demandés]   (+1 autre(s) offre(s))
@@ -1865,6 +1857,7 @@
   2024-25 Panini Select Blaster                  $   21.99 collectorstore    -24.1% [demandés]   (+1 autre(s) offre(s))
   2025-26 Panini Origins EuroLeague Hobby        $   78.99 columbia          -20.8% [demandés] 
   2025-26 Topps Bowman Mega                      $   79.99 ehcards           -20.0% [demandés] 
+  2025-26 Topps Motif Hobby                      $ 2999.99 columbia          -20.0% [demandés] 
   2025-26 Topps Chrome Update Blaster            $   89.75 awesome           -25.2%            STRONG_DEAL -25%
 
 ========================================================================
@@ -1892,5 +1885,5 @@
   2025-26_INCEPTION_HOBBY                  €  599.00  qscards     
   2025-26_BOWMAN_HOBBY                     €  749.00  qscards     
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-08-24T01-49-34.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-08-24T07-13-12.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

@@ -2,16 +2,16 @@
   943 produits bruts, 35 rattachés à un SKU
 → Collector Store LLC (https://collectorstore.com)  [trust=trusted]
     collections : 4/126 retenues (filtre 'basketball|\\bnba\\b|hoops|prizm|mosaic|optic|select|phoenix|contenders|court.kings|revolution|premium.stock')
-  751 produits bruts, 27 rattachés à un SKU
+  752 produits bruts, 27 rattachés à un SKU
 → Hidden Gems Card Shop (https://www.hiddengemscardshop.com)  [trust=trusted]
-  2787 produits bruts, 47 rattachés à un SKU
+  2788 produits bruts, 47 rattachés à un SKU
 → The Awesome Card Shop (https://theawesomecardshop.com)  [trust=trusted]
   7283 produits bruts, 101 rattachés à un SKU
 → MojoBreak Shop (https://mojobreakshop.com)  [trust=trusted]
   [mojobreak] status=reject \(qualifié sur données réelles → 0 sealed 2023-24\) → skip
   0 produits bruts, 0 rattachés à un SKU
 → RbiCru7 Collectibles (https://rbicru7.com)  [trust=trusted]
-  12358 produits bruts, 34 rattachés à un SKU
+  12412 produits bruts, 34 rattachés à un SKU
 → Layton Sports Cards (https://laytonsportscards.com)  [trust=trusted]
   [layton] type=breaks \(breaker, hors périmètre sealed\) → skip
   0 produits bruts, 0 rattachés à un SKU
@@ -29,20 +29,20 @@
   [grandslam] status=reject \(qualifié sur données réelles → 0 sealed 2023-24\) → skip
   0 produits bruts, 0 rattachés à un SKU
 → The Cardiacs (https://www.thecardiacs.com)  [trust=trusted]
-  5320 produits bruts, 33 rattachés à un SKU
+  5321 produits bruts, 33 rattachés à un SKU
 → Monmouth Cards (https://monmouthcards.com)  [trust=watch]
-  4573 produits bruts, 36 rattachés à un SKU
+  4680 produits bruts, 36 rattachés à un SKU
 → World Champion Sports Cards (https://www.worldchampionsportscards.org)  [trust=watch]
   3998 produits bruts, 60 rattachés à un SKU
 → Superior Sports Investments (https://superiorsportsinvestments.com)  [trust=watch]
     collections : 8/84 retenues (filtre 'basketball|\\bnba\\b|hoops|prizm|mosaic|optic|select|phoenix|contenders|court.kings|revolution|premium.stock')
-  16238 produits bruts, 44 rattachés à un SKU
+  16235 produits bruts, 44 rattachés à un SKU
 → SJAY2K Trading Cards (https://www.sjay2k.com)  [trust=watch]
   598 produits bruts, 19 rattachés à un SKU
 → The Ballgame (https://theballgame.com)  [trust=watch]
-  12705 produits bruts, 4 rattachés à un SKU
+  12726 produits bruts, 4 rattachés à un SKU
 → Bleecker Trading (https://bleeckertrading.com)  [trust=watch]
-  2203 produits bruts, 100 rattachés à un SKU
+  2199 produits bruts, 100 rattachés à un SKU
 → CB Hobby (https://cbhobby.com)  [trust=watch]
   663 produits bruts, 8 rattachés à un SKU
 → Box Seat Collectibles (https://boxseatcollectibles.com)  [trust=watch]
@@ -73,7 +73,7 @@
 → QS Cards (https://qscards.com)  [trust=watch]
   381 produits bruts, 12 rattachés à un SKU
 → Tanteo Cartes Collections (https://tanteocartescollections.com)  [trust=watch]
-  394 produits bruts, 17 rattachés à un SKU
+  397 produits bruts, 17 rattachés à un SKU
 (39 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
 
 ========================================================================
@@ -1671,13 +1671,14 @@
 
 · CANDIDAT   2025-26 Topps Motif Hobby   [TOPPS_2025-26_MOTIF_HOBBY]
    1. qscards          $ 2999.00  IN STOCK  landed≈€3114.95  (score 1.00)
-        VERIFY  cheapest of 8 in stock  FR
+        VERIFY  cheapest of 7 in stock  FR
    2. columbia         $ 2999.99  IN STOCK  landed≈€3115.98  (score 1.00)
    3. sportscardjunction $ 3350.00  IN STOCK  landed≈€3478.03  (score 1.00)
         VERIFY
-   4. awesome          $ 3399.75  IN STOCK  landed≈€3529.49  (score 1.00)
-   5. cardiacs         $ 3749.95  IN STOCK  landed≈€3891.74  (score 1.00)
-   6. bleecker         $ 3750.00  IN STOCK  landed≈€3891.79  (score 1.00)
+   4. cardiacs         $ 3749.95  IN STOCK  landed≈€3891.74  (score 1.00)
+   5. bleecker         $ 3750.00  IN STOCK  landed≈€3891.79  (score 1.00)
+        VERIFY
+   6. monmouth         $ 3999.99  IN STOCK  landed≈€4150.38  (score 1.00)
         VERIFY
    ask $2500.00 sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $2500.00 (le 2026-08-19, rlsports, 10 shop(s) vus) | cheapest live $2999.00
@@ -1885,5 +1886,5 @@
   2025-26_INCEPTION_HOBBY                  €  599.00  qscards     
   2025-26_BOWMAN_HOBBY                     €  749.00  qscards     
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-08-24T13-05-01.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-08-24T18-51-23.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

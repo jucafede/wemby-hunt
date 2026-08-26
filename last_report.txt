@@ -6,12 +6,12 @@
 → Hidden Gems Card Shop (https://www.hiddengemscardshop.com)  [trust=trusted]
   2799 produits bruts, 47 rattachés à un SKU
 → The Awesome Card Shop (https://theawesomecardshop.com)  [trust=trusted]
-  7297 produits bruts, 101 rattachés à un SKU
+  7301 produits bruts, 101 rattachés à un SKU
 → MojoBreak Shop (https://mojobreakshop.com)  [trust=trusted]
   [mojobreak] status=reject \(qualifié sur données réelles → 0 sealed 2023-24\) → skip
   0 produits bruts, 0 rattachés à un SKU
 → RbiCru7 Collectibles (https://rbicru7.com)  [trust=trusted]
-  12557 produits bruts, 34 rattachés à un SKU
+  12629 produits bruts, 34 rattachés à un SKU
 → Layton Sports Cards (https://laytonsportscards.com)  [trust=trusted]
   [layton] type=breaks \(breaker, hors périmètre sealed\) → skip
   0 produits bruts, 0 rattachés à un SKU
@@ -31,12 +31,12 @@
 → The Cardiacs (https://www.thecardiacs.com)  [trust=trusted]
   5336 produits bruts, 33 rattachés à un SKU
 → Monmouth Cards (https://monmouthcards.com)  [trust=watch]
-  4729 produits bruts, 36 rattachés à un SKU
+  4712 produits bruts, 36 rattachés à un SKU
 → World Champion Sports Cards (https://www.worldchampionsportscards.org)  [trust=watch]
   3994 produits bruts, 60 rattachés à un SKU
 → Superior Sports Investments (https://superiorsportsinvestments.com)  [trust=watch]
     collections : 8/84 retenues (filtre 'basketball|\\bnba\\b|hoops|prizm|mosaic|optic|select|phoenix|contenders|court.kings|revolution|premium.stock')
-  16216 produits bruts, 43 rattachés à un SKU
+  16211 produits bruts, 42 rattachés à un SKU
 → SJAY2K Trading Cards (https://www.sjay2k.com)  [trust=watch]
   591 produits bruts, 18 rattachés à un SKU
 → The Ballgame (https://theballgame.com)  [trust=watch]
@@ -60,7 +60,7 @@
 → RL Sports Cards (https://rlsportscards.com)  [trust=watch]
   1745 produits bruts, 61 rattachés à un SKU
 → Fan Cave (https://fancave.com)  [trust=watch]
-  953 produits bruts, 5 rattachés à un SKU
+  955 produits bruts, 5 rattachés à un SKU
 → Mill Creek Sports (https://www.millcreeksports.com)  [trust=watch]
   [millcreek] type=html non géré en v1 → skip
   0 produits bruts, 0 rattachés à un SKU
@@ -74,7 +74,7 @@
   381 produits bruts, 12 rattachés à un SKU
 → Tanteo Cartes Collections (https://tanteocartescollections.com)  [trust=watch]
   397 produits bruts, 17 rattachés à un SKU
-(43 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
+(44 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
 
 ========================================================================
   RETAIL
@@ -755,15 +755,15 @@
 
 · SUIVI   2025-26 Topps Bowman Mega   [TOPPS_2025-26_BOWMAN_MEGA]
    1. ehcards          $   79.99  IN STOCK  landed≈€  95.53  (score 1.00)
-        cheapest of 5 in stock
+        cheapest of 4 in stock
    2. sportscardjunction $   85.00  IN STOCK  landed≈€ 100.71  (score 1.00)
         VERIFY
    3. awesome          $   99.75  IN STOCK  landed≈€ 115.97  (score 1.00)
    4. fancave          $   99.99  IN STOCK  landed≈€ 116.22  (score 1.00)
         VERIFY
-   5. superior         $  140.00  IN STOCK  landed≈€ 157.60  (score 1.00)
+   5. columbia         $   69.99  SOLD OUT  landed≈€  85.19  (score 1.00)
+   6. rlsports         $   69.99  SOLD OUT  landed≈€  85.19  (score 1.00)
         VERIFY
-   6. columbia         $   69.99  SOLD OUT  landed≈€  85.19  (score 1.00)
    ask $59.99   sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU €91.66
    HISTORICAL LOW $69.99 (le 2026-08-19, columbia, 10 shop(s) vus) | cheapest live $79.99
    BEST → ehcards  https://ehcards.com/products/2025-26-bowman-basketball-6-pack-mega-box
@@ -1216,17 +1216,17 @@
 
 · SUIVI   2024-25 Panini Prizm Hobby   [PANINI_2024-25_PRIZM_HOBBY]
    1. sportscardjunction $  525.00  IN STOCK  landed≈€ 555.85  (score 1.00)
-        YEAR2  VERIFY  cheapest of 6 in stock
+        YEAR2  VERIFY  cheapest of 5 in stock
    2. ballgame         $  545.00  IN STOCK  landed≈€ 576.54  (score 1.00)
         YEAR2  VERIFY
    3. awesome          $  559.75  IN STOCK  landed≈€ 591.79  (score 1.00)
         YEAR2
    4. bleecker         $  625.00  IN STOCK  landed≈€ 659.29  (score 1.00)
         YEAR2  VERIFY
-   5. sjay2k           $  950.00  IN STOCK  landed≈€ 995.47  (score 1.00)
+   5. rlsports         $ 1800.00  IN STOCK  landed≈€1874.71  (score 1.00)
         YEAR2  VERIFY
-   6. rlsports         $ 1800.00  IN STOCK  landed≈€1874.71  (score 1.00)
-        YEAR2  VERIFY
+   6. columbia         $  439.99  SOLD OUT  landed≈€ 467.91  (score 1.00)
+        YEAR2
    ask $300.00  sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $525.00 (le 2026-08-21, sportscardjunction, 2 shop(s) vus) | cheapest live $525.00
    BEST → sportscardjunction  https://sportscardjunction.com/products/pre-order-2024-25-panini-prizm-nba-basketball-hobby-box-releases-2-19-25
@@ -1844,10 +1844,9 @@
   22 HEALTHY · 10 SKIPPED
 
 ========================================================================
-  🔥 HOT NOW — 9 ligne(s)
+  🔥 HOT NOW — 8 ligne(s)
 ========================================================================
   2023-24 Panini Prizm EuroLeague Blaster        $    9.95 cardiacs          -33.7% [demandés] STRONG_DEAL -60%
-  2024-25 Panini Prizm Hobby                     $  545.00 ballgame          -27.8% [demandés]   (+1 autre(s) offre(s))
   2024-25 Panini Select Mega                     $   39.95 cardiacs          -27.0% [demandés]   (+1 autre(s) offre(s))
   2024-25 Panini Hoops Blaster                   $   20.00 hiddengems        -26.9% [demandés] 
   2025-26 Topps Hoops Blaster                    $   29.95 cardiacs          -25.1% [demandés]   (+2 autre(s) offre(s))
@@ -1881,5 +1880,5 @@
   2025-26_INCEPTION_HOBBY                  €  599.00  qscards     
   2025-26_BOWMAN_HOBBY                     €  749.00  qscards     
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-08-26T01-49-29.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-08-26T07-00-55.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

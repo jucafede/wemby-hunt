@@ -1,9 +1,100 @@
-# Stock physique détenu. NON LU par le moteur pour l'instant — schéma posé pour V2.1+.
-# Chaque ligne : ce que tu as réellement acheté, à quel coût rendu, et où ça en est.
-#   sku: identifiant du catalogue
-#   qty: nombre de boîtes
-#   unit_cost_landed_eur: coût rendu France réel par boîte (pas l'estimation du moteur)
-#   source: clé du shop dans sources.yaml
-#   date: date d'achat (AAAA-MM-JJ)
-#   status: ordered | in_transit | received | listed | sold
-items: []
+# ─────────────────────────────────────────────────────────────────────────────
+#  INVENTAIRE — ce que je détiens réellement
+# ─────────────────────────────────────────────────────────────────────────────
+#
+#  Ce fichier est une SOURCE DE VÉRITÉ HUMAINE, au même titre que catalog.yaml.
+#  Le moteur le lit, ne l'écrit jamais.
+#
+#  RÈGLE CARDINALE — l'inventaire n'influence AUCUN verdict de marché.
+#  Ce que je possède ne change pas ce qu'un produit vaut. Mêler les deux créerait
+#  une circularité : mon coût d'achat deviendrait une référence de prix, et le
+#  radar finirait par se recommander à lui-même. L'inventaire s'AFFICHE à côté
+#  du verdict, jamais dedans.
+#
+#  Conséquence assumée : une ligne déjà en stock reste visible et gardera son
+#  ASK DEAL. Un restock à -60 % peut valoir un rachat — c'est ma décision, pas
+#  celle du moteur. Le badge « 📦 EN STOCK ×N » informe, il ne bloque pas.
+#
+#  Fichier absent ou vide = le radar fonctionne exactement comme avant.
+#
+# ─────────────────────────────────────────────────────────────────────────────
+#  CHAMPS
+# ─────────────────────────────────────────────────────────────────────────────
+#
+#  sku               obligatoire · doit exister dans catalog.yaml. Un sku inconnu
+#                    est signalé au rapport et ignoré — jamais deviné, jamais créé
+#                    en silence. C'est ce qui relie une boîte physique à un marché.
+#
+#  qty               obligatoire · entier > 0 · nombre de BOÎTES, jamais de cases.
+#                    Une case de 20 achetée se saisit qty: 20 sur le SKU boîte,
+#                    pas qty: 1 sur le SKU case — sinon le landed unitaire ment.
+#
+#  unit_landed_eur   obligatoire · coût rendu RÉEL par boîte, en euros, tout compris
+#                    (prix + port US + transitaire + port international + TVA +
+#                    douane). C'est un montant CONSTATÉ, pas l'estimation calculée
+#                    par landed_eur() — la doctrine dit qu'une valeur réelle
+#                    remplace toujours une hypothèse.
+#
+#  order_ref         obligatoire · référence de commande, telle qu'elle figure chez
+#                    le vendeur. C'est la pièce justificative : sans elle, une ligne
+#                    d'inventaire est une affirmation, pas un fait.
+#
+#  ordered_at        obligatoire · date de commande (AAAA-MM-JJ). Sert à mesurer le
+#                    temps de transit réel et l'âge du stock dormant.
+#
+#  status            obligatoire · une seule valeur parmi :
+#                      ordered       commandé, pas encore expédié
+#                      at_forwarder  arrivé chez le transitaire, pas encore en France
+#                      received      chez moi, scellé
+#                      opened        ouvert (sort du stock scellé — ne se revend plus tel quel)
+#                      listed        en vente
+#                      sold          vendu (conservé pour le P&L, hors stock courant)
+#                    Seuls ordered / at_forwarder / received comptent comme
+#                    « possédé scellé » et déclenchent le badge sur les cartes.
+#
+#  ─── facultatifs ───
+#  shop              vendeur d'origine, pour recouper avec les observations du radar
+#  note              tout ce qui ne rentre nulle part ailleurs
+#  sold_price_eur    prix de vente réel · À NE REMPLIR QUE sur status: sold.
+#                    Première brique du P&L réalisé : c'est la donnée que personne
+#                    d'autre n'a et que la doctrine nomme comme l'atout du projet.
+#  sold_at           date de vente (AAAA-MM-JJ) · idem
+#
+# ─────────────────────────────────────────────────────────────────────────────
+#  CE QUE LE RADAR EN FAIT
+# ─────────────────────────────────────────────────────────────────────────────
+#  1. Badge « 📦 EN STOCK ×N · 44,15 €/boîte » sur toute carte ACHETER ou
+#     SURVEILLER dont le SKU figure ici en ordered / at_forwarder / received.
+#  2. Section « 📦 Mon inventaire », entre Surveiller et le marché FR : par SKU,
+#     qty · landed/u · meilleur ask US actuel · sold si connu · écart vs mon coût.
+#  3. Un SKU inventorié sans aucune observation de marché s'affiche « — ».
+#     Aucune valeur n'est inventée pour combler un trou.
+#
+#  Les montants sont en euros (mon coût) face à des dollars (le marché US).
+#  Aucune conversion silencieuse : chaque colonne porte sa devise.
+# ─────────────────────────────────────────────────────────────────────────────
+
+lines:
+  - sku: PANINI_2024-25_SELECT_MEGA
+    qty: 3
+    unit_landed_eur: 44.15
+    shop: cardiacs
+    order_ref: NJHHDXG5V
+    ordered_at: 2026-08-18
+    status: at_forwarder
+
+  - sku: PANINI_2023-24_PRIZM_EUROLEAGUE_BLASTER
+    qty: 8
+    unit_landed_eur: 18.29
+    shop: cardiacs
+    order_ref: NJHHDXG5V
+    ordered_at: 2026-08-18
+    status: at_forwarder
+
+  - sku: TOPPS_2025-26_CHROME_UPDATE_VALUE
+    qty: 7
+    unit_landed_eur: 47.14
+    shop: topps
+    order_ref: FRA-76920-S
+    ordered_at: 2026-08-18
+    status: received

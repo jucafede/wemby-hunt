@@ -309,7 +309,15 @@ _mo("le sold Mosaic Blaster est en base", _bl.get("market_sold_us"), 38)
 _mo("sa confiance se DÉRIVE à LOW", hunt.sold_confidence(_bl), "LOW")
 _mo("un sold LOW ne peut pas rendre un verdict adossé aux ventes",
     hunt.price_verdict(30.0, {"value": 38, "confidence": "LOW", "basis": "exact_sold"}, None)["basis"] != "sold")
-_mo("le seuil d'achat au-dessus des ventes est signalé", _bl.get("thresholds_review_needed"), True)
+# Le signalement a fait son travail : le seuil a été tranché à la main le 30/08 (40 -> 32,
+# soit 15 % sous le sold de 38). Ce qu'on vérifie désormais, c'est le RÉSULTAT de la règle.
+_mo("le seuil d'achat est repassé sous les ventes réalisées",
+    _bl["buy_below_usd"] < _bl["market_sold_us"])
+# 38 x 0,85 = 32,30, arrondi à 32,00 : un seuil d'achat se retient de tête. On vérifie donc
+# la règle (~15 % sous les ventes, la marge exigée en confiance faible), pas la décimale.
+_mo("il vaut environ 15 % sous le sold, la marge exigée en confiance faible",
+    abs(_bl["buy_below_usd"] / _bl["market_sold_us"] - 0.85) < 0.02)
+_mo("et la revue est refermée", _bl.get("thresholds_review_needed"), False)
 _mo("le Mega reste sans sold exploitable",
     next(x for x in _SK if x["id"] == "PANINI_2023-24_MOSAIC_MEGA").get("market_sold_us"), None)
 

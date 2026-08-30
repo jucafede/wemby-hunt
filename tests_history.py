@@ -28,7 +28,16 @@ check("historical low : date conservée", h1["at"][:10], "2026-01-01")
 check("historical low : nombre de shops", h1["n_shops"], 2)
 
 h6 = hunt.historical_low(c, K6)
-check("un lot x6 ne contamine pas x1 (unitaire 50 vs 30)", h6["low"], 50.0)
+# L'historique parle dans l'unité de l'offre : 300 $ le lot, 50 $ la boîte. Rendre 50 face à
+# un prix live de 300 était le bug des SKU case (Mosaic Fast Break : « plus bas 297,25 » sous
+# un prix de 5 945). L'intention du test ne change pas : x6 ne contamine pas x1.
+check("un lot x6 ne contamine pas x1 (unitaire 50 vs 30)", h6["low_unit"], 50.0)
+check("l'historique d'un lot x6 s'exprime en prix de lot", h6["low"], 300.0)
+check("et porte sa quantité", h6["qty"], 6)
+check("une boîte seule reste une boîte seule", (h1["low"], h1["low_unit"], h1["qty"]), (30.0, 30.0, 1))
+check("convention d'affichage unique pour un lot",
+      hunt.hist_phrase(h6["low"], h6["qty"]), "case $300.00 · $50.00/boîte")
+check("et pour une boîte seule", hunt.hist_phrase(h1["low"], h1["qty"]), "$30.00")
 check("x1 et x6 sont deux historiques distincts", h1["low"] != h6["low"])
 hs = hunt.historical_low(c, KS)
 check("Sapphire a son propre historique", hs["low"], 900.0)

@@ -189,14 +189,45 @@ skus:
     tier: retail
     wemby_rc: true
     market_ask_us: null
-    market_sold_us: null
+    market_sold_us: 38
+    market_sold_source: ebay_sold
+    market_sold_n: 3
+    market_sold_window_days: 120
+    market_sold_checked_at: 2026-08-30
+    market_sold_note: "61,17 $ (oct., n=1 petit vendeur) · ~29-34 $ (BIN et offres acceptées récentes) · vendeur Livonia « 18 sold » prix masqué. Fourchette réelle 29-61, dispersion forte. Ask structurant : DACW (non crawlé) EN STOCK à 44,95, barré 54,95. À rafraîchir sous 30 j."
     market_source: ""
     market_checked_at: null
     thresholds_reviewed_at: 2026-08-17
+    thresholds_review_needed: true
+    thresholds_review_reason: "buy 40,00 et watch 50,00 ont été posés le 17/08 sans aucune référence. Le sold du 30/08 est 38,00 : le seuil d'achat est AU-DESSUS des ventes réalisées. Non recalculé automatiquement (doctrine Q) — à retrancher à la main."
     buy_below_usd: 40.00
     watch_below_usd: 50.00
     eu_reference_eur: null
     eu_reference_source: ""
+
+  # Identité révélée par l'audit du 30/08 : le garde-fou hobby/retail écarte à raison les
+  # « Hobby 6-Pack Blaster Box » du Hobby standard (334-500 $), mais sans SKU pour les
+  # accueillir ces observations réelles à 34,75-35 $ flottaient sans rattachement.
+  - id: PANINI_2023-24_MOSAIC_HOBBY_BLASTER
+    season: "2023-24"
+    manufacturer: Panini
+    set: Mosaic
+    format: Hobby Blaster
+    configuration: null
+    tier: retail
+    status: WATCH
+    licensed: true
+    wemby_rc: true
+    market_ask_from: [sportscardjunction, bleecker, ehcards]
+    market_ask_us: 44.99
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_checked_at: null
+    market_source: "ask: trois fiches live du 30/08 — sportscardjunction 35,00 (Green Prizm), bleecker 45,00, ehcards 44,99. Toutes OOS."
+    market_sold_note: "listing eBay 70 $ (2024). Les 34,75-35 $ awesome/ballgame relevés à l'audit portent des titres 2024-25, pas 2023-24 — ils alimentent le SKU de la saison suivante."
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://sportscardjunction.com/products/2023-24-panini-mosaic-basketball-hobby-blaster-box-green-prizm"
 
   - id: PANINI_2023-24_MOSAIC_MEGA
     season: "2023-24"
@@ -208,6 +239,7 @@ skus:
     wemby_rc: true
     market_ask_us: null
     market_sold_us: null
+    market_sold_note: "seul sold trouvé : 33 $ Probstein, juillet 2025 — 13 mois, antérieur à la remontée du marché, inutilisable. Asks de référence au 30/08 : DACW (non crawlé) EN STOCK Blue&Pink 74,95, Yellow&Green disponible, exemplaire « slightly damaged » 67,95. rbicru7 à 100 $ = +33 % vs DACW."
     market_source: ""
     market_checked_at: null
     thresholds_reviewed_at: 2026-08-17
@@ -1269,6 +1301,27 @@ skus:
     buy_below_usd: null
     watch_below_usd: null
     url_proof: "https://ehcards.com/products/2024-25-panini-mosaic-basketball-60-card-mega-box"
+  # Même identité, saison suivante. C'est ce SKU-ci qui recueille les fiches awesome (34,75)
+  # et ballgame (35,00) relevées à l'audit du 30/08 : leurs titres portent bien 2024-25.
+  - id: PANINI_2024-25_MOSAIC_HOBBY_BLASTER
+    season: "2024-25"
+    manufacturer: Panini
+    set: Mosaic
+    format: Hobby Blaster
+    configuration: null
+    tier: retail
+    status: WATCH
+    licensed: true
+    market_ask_from: [awesome, sportscardjunction, ehcards]
+    market_ask_us: 35.00
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_checked_at: null
+    market_source: "ask: trois fiches live du 30/08 — awesome 34,75, sportscardjunction 35,00, ehcards 39,99. Toutes OOS."
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://theawesomecardshop.com/products/2024-25-panini-mosaic-basketball-hobby-6-pack-blaster-box"
+
   - id: PANINI_2024-25_MOSAIC_HOBBY
     season: "2024-25"
     manufacturer: Panini

@@ -38,7 +38,9 @@ FORMATS = [
     ("Pack", r"(?<![\w-])packs?\b"),
     ("Case", r"\bcase\b|\d+\s*-?\s*box\s*case"),
     ("FOTL", r"(first|1st)\s*off\s*the\s*line|\bfotl\b"),
-    ("Fast Break", r"fast\s*break|fast\s*brk"),
+    # sportscardjunction écrit « Fast Brk », un vendeur écrit « Fst BRK » : trois graphies pour
+    # un seul produit. Le motif les couvre toutes, tirets et casse compris (norm() minuscule déjà).
+    ("Fast Break", r"f(?:a)?st[\s-]*br(?:ea)?k"),
     ("Choice", r"\bchoice\b"),
     ("H2", r"\bh2\b|hybrid"),
     ("Tin", r"\btin\b"),
@@ -49,7 +51,11 @@ FORMATS = [
     # Le séparateur optionnel couvre les titres Shopify du type « Select Basketball Hobby, Mega Box » :
     # la virgule sépare le canal du format réel, elle ne fait pas du produit une boîte hobby.
     ("Hobby Mega", r"hobby\s*[,/&·-]?\s*mega|mega\s*[,/&·-]?\s*hobby"),
-    ("Hobby Blaster", r"hobby\s*[,/&·-]?\s*blaster|blaster\s*[,/&·-]?\s*hobby"),
+    # Le compte de packs peut s'intercaler : « Hobby 6-Pack Blaster Box » chez awesome et
+    # ballgame. Sans cette tolérance, le format retombait sur « Hobby » et le garde-fou
+    # hobby/retail annulait tout — l'observation flottait sans identité.
+    ("Hobby Blaster", r"hobby\s*[,/&·-]?\s*(?:\d{1,2}\s*-?\s*pack\s*)?blaster"
+                      r"|blaster\s*[,/&·-]?\s*(?:\d{1,2}\s*-?\s*pack\s*)?hobby"),
     ("Hobby", r"\bhobby\b"),
     ("Mega", r"\bmega\b"),
     ("Blaster", r"\bblaster\b"),

@@ -254,5 +254,64 @@ _fp("précommande et stock ne se comparent jamais",
     hunt.exact_comp_key("S", _tb, None, "https://x.test/products/pre-order-bowman")
     != hunt.exact_comp_key("S", _tb, None, "https://x.test/products/bowman"))
 
-print(f"TOTAL AVEC SEALED : {len(POS)+len(P2)+len(NEG)+11+len(_FP)} tests, {len(fails)} FAIL")
+# ---------------------------------------------------------------------------
+# Clôture de l'audit Mosaic du 30/08
+# ---------------------------------------------------------------------------
+_MO = []
+def _mo(name, got, exp=True):
+    _MO.append(name); ok = (got == exp)
+    if not ok: fails.append(("MOSAIC", name, got, exp))
+    print(f"{'PASS' if ok else 'FAIL'} {name}")
+
+import yaml as _yaml
+_SK = _yaml.safe_load(open("catalog.yaml", encoding="utf-8"))["skus"]
+_m = lambda t: hunt.match_title(t, _SK)
+
+# 1. « Fst BRK » : troisième graphie d'un même produit, qui plafonnait à 0,77 en REVIEW.
+_r = _m("2023-24 Panini Mosaic Basketball Fst BRK Box")
+_mo("« Fst BRK » est rattaché au Fast Break", _r.sku_id, "PANINI_2023-24_MOSAIC_FAST_BREAK")
+_mo("et ne plafonne plus en REVIEW", _r.score >= 0.95)
+for _t in ("2023-24 Panini Mosaic Basketball Fast Break Box",
+           "2023-24 Panini Mosaic Basketball Fast Brk Box",
+           "2023-24 Panini Mosaic Basketball FST-BRK Box"):
+    _mo(f"graphie reconnue : {_t[-18:]}", _m(_t).sku_id, "PANINI_2023-24_MOSAIC_FAST_BREAK")
+
+# 2. Hobby Blaster : identité propre, jamais confondue avec Hobby ni avec Blaster.
+for _t in ("2023-24 Panini Mosaic Basketball Hobby 6-Pack Blaster Box",
+           "2023-24 Panini Mosaic Basketball Hobby Blaster Box (Green Prizm)",
+           "2023/24 Panini Mosaic Basketball 6-Pack Hobby Blaster Box"):
+    _mo(f"Hobby Blaster 23-24 : {_t[-26:]}", _m(_t).sku_id, "PANINI_2023-24_MOSAIC_HOBBY_BLASTER")
+for _t in ("2024-25 Panini Mosaic Basketball Hobby 6-Pack Blaster Box",
+           "2024-25 Panini Mosaic Basketball Hobby Blaster Box",
+           "2024/25 Panini Mosaic Basketball 6-Pack Hobby Blaster Box"):
+    _mo(f"Hobby Blaster 24-25 : {_t[-26:]}", _m(_t).sku_id, "PANINI_2024-25_MOSAIC_HOBBY_BLASTER")
+_mo("un Hobby Blaster n'est jamais un Hobby",
+    _m("2023-24 Panini Mosaic Basketball Hobby 6-Pack Blaster Box").sku_id != "PANINI_2023-24_MOSAIC_HOBBY")
+_mo("ni un Blaster",
+    _m("2023-24 Panini Mosaic Basketball Hobby 6-Pack Blaster Box").sku_id != "PANINI_2023-24_MOSAIC_BLASTER")
+
+# non-régression : les trois identités voisines ne bougent pas
+_mo("le Blaster reste le Blaster",
+    _m("2023-24 Panini Mosaic Basketball Blaster Box").sku_id, "PANINI_2023-24_MOSAIC_BLASTER")
+_mo("un 6-Pack Blaster sans « hobby » reste le Blaster",
+    _m("2023/24 Panini Mosaic Basketball 6-Pack Blaster Box").sku_id, "PANINI_2023-24_MOSAIC_BLASTER")
+_mo("le Hobby reste le Hobby",
+    _m("2023-24 Panini Mosaic Basketball Hobby Box").sku_id, "PANINI_2023-24_MOSAIC_HOBBY")
+_mo("l'Optic Hobby Blaster n'est pas perturbé",
+    _m("2023-24 Donruss Optic Basketball 6-Pack Hobby Blaster Box").sku_id,
+    "PANINI_2023-24_OPTIC_HOBBY_BLASTER")
+_mo("le Select « Hobby, Blaster Box » reste non rattaché",
+    _m("2024-25 Panini Select Basketball Hobby, Blaster Box (Green & Red Mojo)").sku_id, None)
+
+# 3. Le sold Mosaic Blaster du 30/08 : n=3 sur 120 j -> LOW, donc jamais sold-backed.
+_bl = next(x for x in _SK if x["id"] == "PANINI_2023-24_MOSAIC_BLASTER")
+_mo("le sold Mosaic Blaster est en base", _bl.get("market_sold_us"), 38)
+_mo("sa confiance se DÉRIVE à LOW", hunt.sold_confidence(_bl), "LOW")
+_mo("un sold LOW ne peut pas rendre un verdict adossé aux ventes",
+    hunt.price_verdict(30.0, {"value": 38, "confidence": "LOW", "basis": "exact_sold"}, None)["basis"] != "sold")
+_mo("le seuil d'achat au-dessus des ventes est signalé", _bl.get("thresholds_review_needed"), True)
+_mo("le Mega reste sans sold exploitable",
+    next(x for x in _SK if x["id"] == "PANINI_2023-24_MOSAIC_MEGA").get("market_sold_us"), None)
+
+print(f"TOTAL AVEC SEALED : {len(POS)+len(P2)+len(NEG)+11+len(_FP)+len(_MO)} tests, {len(fails)} FAIL")
 sys.exit(1 if fails else 0)

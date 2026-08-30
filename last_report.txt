@@ -31,7 +31,7 @@
 → The Cardiacs (https://www.thecardiacs.com)  [trust=trusted]
   5331 produits bruts, 34 rattachés à un SKU
 → Monmouth Cards (https://monmouthcards.com)  [trust=watch]
-  5099 produits bruts, 37 rattachés à un SKU
+  5098 produits bruts, 37 rattachés à un SKU
 → World Champion Sports Cards (https://www.worldchampionsportscards.org)  [trust=watch]
   3967 produits bruts, 60 rattachés à un SKU
 → Superior Sports Investments (https://superiorsportsinvestments.com)  [trust=watch]
@@ -60,7 +60,7 @@
 → RL Sports Cards (https://rlsportscards.com)  [trust=watch]
   1763 produits bruts, 63 rattachés à un SKU
 → Fan Cave (https://fancave.com)  [trust=watch]
-  932 produits bruts, 5 rattachés à un SKU
+  934 produits bruts, 5 rattachés à un SKU
 → Mill Creek Sports (https://www.millcreeksports.com)  [trust=watch]
   [millcreek] type=html non géré en v1 → skip
   0 produits bruts, 0 rattachés à un SKU
@@ -1919,5 +1919,5 @@
   2025-26_INCEPTION_HOBBY                  €  599.00  qscards     
   2025-26_BOWMAN_HOBBY                     €  749.00  qscards     
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-08-30T16-30-14.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-08-30T16-34-05.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

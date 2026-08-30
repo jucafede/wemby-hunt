@@ -124,7 +124,11 @@ def sealed_product(t: str) -> bool | None:
 EDITION_TOKENS = ("sapphire", "monster", "first day", "cactus jack", "china", "gravity feed",
                   "chrome black")
 
-QTY_RE = re.compile(r"(\d{1,3})\s*-?\s*box\b")
+# Le (?<![a-z]) est vital : sans lui, « Select Basketball H2 Box » livre le 2 de H2 suivi de
+# « Box » et le produit devient un lot de deux boîtes, prix divisé par deux. Constaté le 30/08
+# sur 6 observations de 11 — une Origins EuroLeague H2 à 38,99 $ entrait dans le moteur comme
+# deux boîtes à 19,50 $. C'est le genre de valeur qui finit en faux STRONG_DEAL.
+QTY_RE = re.compile(r"(?<![a-z])(\d{1,3})\s*-?\s*box\b")
 LOT_RE = re.compile(r"\blot\b|\bbundle\b|\bcase\b|gravity\s*feed|\bdisplay\b")
 
 def parse_quantity(t: str, sku: dict | None = None) -> int:
@@ -656,20 +660,29 @@ def backfill_comp(conn, skus):
         conn.execute("UPDATE observations SET quantity=?, unit_price=?, exact_comp_key=?, sealed=? WHERE rowid=?",
                      (q, round((price or 0) / q, 2) if q else price,
                       exact_comp_key(sid, tn, sk, url), 1 if sealed_product(tn) else 0, rid))
-    # Rattrapage des précommandes : leur clé a été calculée avant que le slug d'URL ne compte.
-    # Tant qu'elles gardent l'ancienne clé, elles continuent de peser sur la médiane demandée
-    # des boîtes réellement disponibles.
-    pre = conn.execute("SELECT rowid, sku_id, title, url, exact_comp_key FROM observations "
-                       "WHERE exact_comp_key IS NOT NULL AND exact_comp_key NOT LIKE '%preorder%'").fetchall()
-    n_pre = 0
-    for rid, sid, title, url, k in pre:
+    # Réconciliation de l'historique avec le matcher courant. Une observation garde à jamais la
+    # quantité et la cloison calculées le jour de sa collecte : quand une règle change, les
+    # anciennes lignes continuent de mentir. Elles pèsent sur les médianes et sur les plus-bas,
+    # c'est-à-dire précisément sur ce qui décide.
+    # Deux corrections vécues : la précommande lue dans le slug d'URL (23/08), et le « 2 » de
+    # H2 pris pour un lot de deux boîtes (30/08) — 6 observations dont le prix était divisé par
+    # deux, sur des produits jamais vendus par paire.
+    rows = conn.execute("SELECT rowid, sku_id, title, price, url, quantity, exact_comp_key "
+                        "FROM observations WHERE exact_comp_key IS NOT NULL").fetchall()
+    n_qty = n_key = 0
+    for rid, sid, title, price, url, q0, k0 in rows:
         tn = norm(title or "")
-        nk = exact_comp_key(sid, tn, smap.get(sid, {}), url or "")
-        if nk != k:
-            conn.execute("UPDATE observations SET exact_comp_key=? WHERE rowid=?", (nk, rid))
-            n_pre += 1
-    if todo or n_pre: conn.commit()
-    if n_pre: print(f"({n_pre} observation(s) reclassées en précommande d'après leur URL)")
+        sk = smap.get(sid, {})
+        q = parse_quantity(tn, sk)
+        k = exact_comp_key(sid, tn, sk, url or "")
+        if q == q0 and k == k0: continue
+        conn.execute("UPDATE observations SET quantity=?, unit_price=?, exact_comp_key=? WHERE rowid=?",
+                     (q, round((price or 0) / q, 2) if q else price, k, rid))
+        n_qty += (q != q0); n_key += (k != k0)
+    if todo or n_key or n_qty: conn.commit()
+    if n_key or n_qty:
+        print(f"({n_key} observation(s) recloisonnées, dont {n_qty} dont la quantité a changé — "
+              f"réconciliation avec les règles courantes)")
     return len(todo)
 
 # ================================================================ CURRENT MARKET

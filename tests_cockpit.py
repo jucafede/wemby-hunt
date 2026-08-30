@@ -44,12 +44,16 @@ check("4 · sans référence -> Marché insuffisant",
       hunt.gap_phrase(entry("PANINI_2023-24_PHOENIX_BLASTER", 20, gap=None, ref=None)), "Marché insuffisant")
 
 # ---- 11 : near buy
-n1 = entry("PANINI_2023-24_PHOENIX_BLASTER", 37.0)      # buy ≤ 27 -> 10 trop cher
-n2 = entry("PANINI_2023-24_MOSAIC_BLASTER", 45.0)       # buy ≤ 40 -> 5 trop cher
+n1 = entry("PANINI_2023-24_PHOENIX_BLASTER", 37.0)
+n2 = entry("PANINI_2023-24_MOSAIC_BLASTER", 45.0)
 under = entry("PANINI_2023-24_PHOENIX_BLASTER", 20.0, shop="b")
 oos = entry("PANINI_2023-24_MOSAIC_BLASTER", 45.0, avail=False, shop="c")
 near = hunt.near_buy_lines([n1, n2, under, oos])
-check("11a · trié par distance absolue croissante", [round(d) for d, _ in near], [5, 10])
+# Les distances se DÉDUISENT des seuils du catalogue, elles ne sont pas recopiées : un seuil
+# tranché à la main (Mosaic Blaster 40 -> 32 le 30/08) ne doit pas casser un test de tri.
+_att = sorted(round(e["o"][3] - hunt.buy_target(e["sku"])) for e in (n1, n2))
+check("11a · trié par distance absolue croissante", [round(d) for d, _ in near], _att)
+check("11a · deux lignes seulement : la moins chère et l'OOS sont exclues", len(near), 2)
 check("11b · un prix déjà sous le seuil n'est pas 'proche'", under not in [e for _, e in near])
 check("11c · un produit OOS n'est pas 'proche'", oos not in [e for _, e in near])
 dup = entry("PANINI_2023-24_PHOENIX_BLASTER", 60.0, shop="cher")
@@ -58,7 +62,11 @@ check("11d · un produit n'occupe qu'une ligne", len(near2), 1)
 check("11e · c'est l'offre la moins chère qui est retenue", near2[0][1]["o"][3], 37.0)
 
 # ---- 12 : restock targets
-H = {"low": 19.99, "at": "2026-08-17T00:00:00", "shop": "hiddengems", "n_shops": 8, "n_obs": 9}
+H = {"low": 19.99, "low_unit": 19.99, "qty": 1, "at": "2026-08-17T00:00:00",
+     "shop": "hiddengems", "n_shops": 8, "n_obs": 9}
+# le même historique vu sur un SKU case : c'est le total qui s'affiche, l'unitaire suit
+HC = {"low": 5945.00, "low_unit": 297.25, "qty": 20, "at": "2026-08-17T00:00:00",
+      "shop": "awesome", "n_shops": 1, "n_obs": 3}
 r_ok = entry("PANINI_2023-24_PHOENIX_BLASTER", 30.0, avail=False, hist=H, shop="x")
 r_nobuy = entry("PANINI_2023-24_PRIZM_EUROLEAGUE_HOBBY", 30.0, avail=False, hist=H, shop="y")
 r_instock = entry("PANINI_2023-24_PHOENIX_BLASTER", 30.0, avail=True, hist=H, shop="z")

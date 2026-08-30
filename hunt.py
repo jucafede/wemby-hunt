@@ -907,8 +907,22 @@ def current_market(conn, sku: dict, key: str, now=None, region: str = "US"):
                dispersion=disp, shops=shops, outliers=sorted(dropped), age_days=min(ages))
     return out
 
+def qty_of_key(key: str) -> int:
+    """Nombre de boîtes encodé dans la cloison de comparabilité (« ...|std|x20 » -> 20)."""
+    m = re.search(r"\|x(\d+)$", key or "")
+    return int(m.group(1)) if m else 1
+
 def historical_low(conn, key, upto=None, region="US"):
-    """Plus bas prix UNITAIRE jamais observé pour cette cloison de comparabilité.
+    """Plus bas prix jamais observé pour cette cloison de comparabilité, exprimé DANS L'UNITÉ DE
+    L'OFFRE — le prix de la case entière pour un SKU case, le prix de la boîte sinon.
+
+    La base stocke des prix unitaires ; les prix live, les seuils manuels et market_ask_us
+    parlent, eux, de l'offre entière. Rendre l'unitaire ici faisait comparer 297,25 $ (une boîte)
+    à 5 945 $ (la case) : la carte affichait « plus bas déjà vu : 297,25 » sous un prix de 5 945,
+    et surtout le calcul de priorité de restock voyait un -95 % permanent sur tous les SKU case.
+    On normalise donc à la hausse (unitaire × N), jamais l'inverse — un total ne se devine pas.
+    low_unit reste disponible pour la moitié « /boîte » de l'affichage.
+
     C'est un FAIT HISTORIQUE, jamais une valeur de marché : il ne sert qu'à surveiller un retour
     en stock. Strictement cloisonné par exact_comp_key et réservé aux lignes sealed=1 — un single,
     une autre configuration ou un lot de quantité différente ne peut pas le contaminer."""
@@ -919,8 +933,17 @@ def historical_low(conn, key, upto=None, region="US"):
     if upto: q += " AND seen_at<=?"; args.append(upto)
     rows = conn.execute(q + " ORDER BY unit_price", args).fetchall()
     if not rows: return None
-    return {"low": rows[0][0], "at": rows[0][1], "shop": rows[0][2],
+    qty = qty_of_key(key)
+    return {"low": round(rows[0][0] * qty, 2), "low_unit": rows[0][0], "qty": qty,
+            "at": rows[0][1], "shop": rows[0][2],
             "n_shops": len({r[2] for r in rows}), "n_obs": len(rows)}
+
+def hist_phrase(low_total, qty) -> str:
+    """Convention UNIQUE, la même que landed_phrase : le total ET l'unitaire, dans cet ordre."""
+    if low_total is None: return "—"
+    if qty and qty > 1:
+        return f"case ${low_total:.2f} · ${low_total / qty:.2f}/boîte"
+    return f"${low_total:.2f}"
 
 def line_memory(conn, sku_id, shop, url, vt, upto):
     """Restitution pure depuis observations — aucune collecte supplémentaire."""
@@ -1317,9 +1340,10 @@ def report(cat: dict, conn: sqlite3.Connection, seen_at: str | None, trust: dict
                 if he:
                     h = he["hist"]
                     live = min((x[3] for x in in_stock), default=None)
-                    print(f"   HISTORICAL LOW ${h['low']:.2f} (le {h['at'][:10]}, {h['shop']}, "
+                    print(f"   HISTORICAL LOW {hist_phrase(h['low'], h['qty'])} (le {h['at'][:10]}, {h['shop']}, "
                           f"{h['n_shops']} shop(s) vus)" + (f" | cheapest live ${live:.2f}" if live else " | aucun live"))
-                    if not in_stock: print(f"   RESTOCK TARGET ${h['low']:.2f}  — surveillance, pas une valeur de marché")
+                    if not in_stock:
+                        print(f"   RESTOCK TARGET {hist_phrase(h['low'], h['qty'])}  — surveillance, pas une valeur de marché")
                 if best: print(f"   BEST → {best[1]}  {best[5]}")
                 html.append((tier, status, icon, s, obs, best))
                 for o in obs:
@@ -1344,13 +1368,13 @@ def report(cat: dict, conn: sqlite3.Connection, seen_at: str | None, trust: dict
     print("\n" + "="*72 + f"\n  👀 WATCHLIST — {len(prio)} prioritaires / {len(lows)} historiques / {len(rest)} autres\n" + "="*72)
     for e in prio[:15]:
         h = e["hist"]
-        print(f"  🔔 RESTOCK PRIORITY  {sku_label(e['sku'])[:40]:<42} target ${h['low']:>8.2f} "
+        print(f"  🔔 RESTOCK PRIORITY  {sku_label(e['sku'])[:40]:<42} target {hist_phrase(h['low'], h['qty']):>30} "
               f"({h['at'][:10]}, {h['n_shops']} shop(s))  {e['restock_gap']:>6.1f}% vs {e['kind']} ${e['ref']:.2f}")
     if not prio:
         print("  (aucune priorité qualifiable : il faut une référence de marché pour dire qu'un ancien prix mérite surveillance)")
     for e in lows[:10]:
         h = e["hist"]
-        print(f"     historical low     {sku_label(e['sku'])[:40]:<42} ${h['low']:>8.2f} ({h['at'][:10]}, {h['n_shops']} shop(s))")
+        print(f"     historical low     {sku_label(e['sku'])[:40]:<42} {hist_phrase(h['low'], h['qty']):>30} ({h['at'][:10]}, {h['n_shops']} shop(s))")
     health = source_health(conn, [x["key"] for x in yaml.safe_load((ROOT/"sources.yaml").read_text(encoding="utf-8"))["shops"]])
     # UNKNOWN = aucun passage encore enregistré : absence de donnée, pas anomalie. Après un run
     # complet aucun shop crawlable ne reste UNKNOWN — le compteur de synthèse le montre.
@@ -1516,13 +1540,14 @@ class Opportunity:
     ref_ok: bool                   # référence non auto-sourcée -> exploitable pour attendre
     buy_below: float | None
     missing: float | None          # ce qu'il reste à attendre
-    hist_low: float | None
+    hist_low: float | None         # DANS L'UNITÉ DE L'OFFRE : la case entière pour un SKU case
     hist_at: str | None
     why: str
     landed: str
     other_offers: int
     # emplacements réservés, non alimentés tant que la couche FR n'existe pas
     evidence: str | None = None
+    hist_qty: int = 1                    # nombre de boîtes derrière hist_low
     buy_target_v2: float | None = None   # seuil dérivé du marché actuel, quand il existe
     target_why: str | None = None
     # Préparation multi-devises. Une référence de marché n'a de sens que dans SA zone : on ne
@@ -1572,6 +1597,7 @@ def opportunity(e, kind, cat, fr_best=None) -> Opportunity:
                  else (price - b) if (tgt is None and b is not None and price and price > b)
                  else None),
         hist_low=(hist["low"] if hist else None), hist_at=(hist["at"][:10] if hist else None),
+        hist_qty=(hist["qty"] if hist else 1),
         why=why_phrase(e), landed=landed_phrase(price, q, cat),
         other_offers=e.get("other_offers", 0), **_fr_fields(e, fr_best))
 
@@ -1613,7 +1639,7 @@ def render_card(op: Opportunity) -> str:
         r.append(f"<div class=small><span class=miss>→ attendre {money_or(op.missing)}</span> "
                  f"<span class=small>({src})</span></div>")
     if op.hist_low is not None:
-        r.append(f"<div class=small>Plus bas déjà vu : {money_or(op.hist_low)}"
+        r.append(f"<div class=small>Plus bas déjà vu : {hist_phrase(op.hist_low, op.hist_qty)}"
                  + (f" ({op.hist_at})" if op.hist_at else "") + "</div>")
     if op.qty > 1:
         r.append(f"<div class=small>{op.qty} boîtes · {op.landed}</div>")
@@ -1854,7 +1880,7 @@ def detail_block(s, obs, cat, nb):
             f"confiance {sold_confidence(s) or '—'}",
             f"buy ≤ {money_or(s.get('buy_below_usd'))}", f"watch ≤ {money_or(s.get('watch_below_usd'))}",
             f"landed estimé par boîte dans un panier de {nb}"]
-    if he: meta.append(f"historical low {money_or(he['hist']['low'])} le {he['hist']['at'][:10]} "
+    if he: meta.append(f"historical low {hist_phrase(he['hist']['low'], he['hist']['qty'])} le {he['hist']['at'][:10]} "
                        f"({he['hist']['n_shops']} shop(s)) — cible de surveillance, pas une valeur de marché")
     if s.get("note"): meta.append(s["note"])
     r.append("<p class=small>" + " · ".join(meta) + "</p></details>")

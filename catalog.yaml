@@ -197,10 +197,10 @@ skus:
     market_sold_note: "61,17 $ (oct., n=1 petit vendeur) · ~29-34 $ (BIN et offres acceptées récentes) · vendeur Livonia « 18 sold » prix masqué. Fourchette réelle 29-61, dispersion forte. Ask structurant : DACW (non crawlé) EN STOCK à 44,95, barré 54,95. À rafraîchir sous 30 j."
     market_source: ""
     market_checked_at: null
-    thresholds_reviewed_at: 2026-08-17
-    thresholds_review_needed: true
-    thresholds_review_reason: "buy 40,00 et watch 50,00 ont été posés le 17/08 sans aucune référence. Le sold du 30/08 est 38,00 : le seuil d'achat est AU-DESSUS des ventes réalisées. Non recalculé automatiquement (doctrine Q) — à retrancher à la main."
-    buy_below_usd: 40.00
+    thresholds_reviewed_at: 2026-08-30
+    thresholds_review_needed: false
+    thresholds_review_reason: "buy 40,00 posé le 17/08 sans aucune référence, soit AU-DESSUS du sold 38,00 relevé le 30/08. Tranché à la main le 30/08 : buy 32,00, soit 15 % sous les ventes réalisées — la marge exigée en confiance faible, cohérente avec la règle appliquée au Phoenix. Le sold reste LOW : ce seuil est un contexte, il ne rend aucun verdict."
+    buy_below_usd: 32.00
     watch_below_usd: 50.00
     eu_reference_eur: null
     eu_reference_source: ""
@@ -1303,6 +1303,28 @@ skus:
     url_proof: "https://ehcards.com/products/2024-25-panini-mosaic-basketball-60-card-mega-box"
   # Même identité, saison suivante. C'est ce SKU-ci qui recueille les fiches awesome (34,75)
   # et ballgame (35,00) relevées à l'audit du 30/08 : leurs titres portent bien 2024-25.
+  # Créé le 30/08 : le format est détecté depuis le correctif « fst brk », l'observation
+  # existe chez quatre vendeurs, l'identité manquait. Un produit vu sans identité est un SKU
+  # en attente — la règle appliquée depuis la famille Bowman.
+  - id: PANINI_2024-25_MOSAIC_FAST_BREAK
+    season: "2024-25"
+    manufacturer: Panini
+    set: Mosaic
+    format: Fast Break
+    configuration: null
+    tier: hobby
+    status: WATCH
+    licensed: true
+    market_ask_from: [awesome, columbia, sportscardjunction]
+    market_ask_us: 199.99
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_checked_at: null
+    market_source: "ask: quatre fiches live du 30/08 — awesome 199,75, columbia 199,99, sportscardjunction 200,00 (titrée « Fst BRK »), bleecker 275,00 en présale. Toutes OOS."
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://theawesomecardshop.com/products/2024-25-panini-mosaic-basketball-fast-break-box"
+
   - id: PANINI_2024-25_MOSAIC_HOBBY_BLASTER
     season: "2024-25"
     manufacturer: Panini
@@ -2406,6 +2428,33 @@ skus:
     eu_reference_ht_unconfirmed: true
     eu_reference_note: "OOS au relevé"
     url_proof: "https://www.hiddengemscardshop.com/products/2025-26-topps-chrome-update-series-basketball-mega-box"
+  # Identité Topps-direct (canal européen), créée le 30/08. NE PAS fusionner avec le Blaster US :
+  # « Value Box » FGC006726-DB à 45 € MSRP EU n'est PAS prouvé identique au Blaster US à 44,99 $
+  # MSRP — le compte de packs n'a jamais été vérifié. Topps décline ses formats par canal
+  # (les Mega européens partent sans film plastique). Fusionner sur une ressemblance de prix
+  # serait le raccourci que le matcher passe ses journées à refuser.
+  # Aucun LCS américain ne liste ce format : la colonne marché US affichera « — », et c'est
+  # le comportement voulu. Si un LCS en liste un jour, il aura sa cloison prête.
+  - id: TOPPS_2025-26_CHROME_UPDATE_VALUE
+    season: "2025-26"
+    manufacturer: Topps
+    set: Topps Chrome Update
+    format: Value Box
+    configuration: null
+    channel: topps_direct_eu
+    tier: retail
+    status: WATCH
+    licensed: true
+    market_ask_from: []
+    market_ask_us: null
+    market_sold_us: null
+    market_sold_source: null
+    market_sold_checked_at: null
+    market_source: "aucun vendeur US : format exclusif au canal Topps direct. MSRP EU 45 € (réf. FGC006726-DB). Balayage de 4 boutiques le 30/08 : zéro fiche « Update Value » côté LCS."
+    buy_below_usd: null
+    watch_below_usd: null
+    note: "compte de packs non vérifié face au Blaster US — à confirmer avant toute comparaison entre les deux."
+
   - id: TOPPS_2025-26_CHROME_UPDATE_BLASTER
     season: "2025-26"
     manufacturer: Topps

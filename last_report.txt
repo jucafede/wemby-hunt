@@ -6,12 +6,12 @@
 → Hidden Gems Card Shop (https://www.hiddengemscardshop.com)  [trust=trusted]
   2820 produits bruts, 47 rattachés à un SKU
 → The Awesome Card Shop (https://theawesomecardshop.com)  [trust=trusted]
-  7327 produits bruts, 101 rattachés à un SKU
+  7326 produits bruts, 101 rattachés à un SKU
 → MojoBreak Shop (https://mojobreakshop.com)  [trust=trusted]
   [mojobreak] status=reject \(qualifié sur données réelles → 0 sealed 2023-24\) → skip
   0 produits bruts, 0 rattachés à un SKU
 → RbiCru7 Collectibles (https://rbicru7.com)  [trust=trusted]
-  12513 produits bruts, 34 rattachés à un SKU
+  12506 produits bruts, 34 rattachés à un SKU
 → Layton Sports Cards (https://laytonsportscards.com)  [trust=trusted]
   [layton] type=breaks \(breaker, hors périmètre sealed\) → skip
   0 produits bruts, 0 rattachés à un SKU
@@ -29,24 +29,24 @@
   [grandslam] status=reject \(qualifié sur données réelles → 0 sealed 2023-24\) → skip
   0 produits bruts, 0 rattachés à un SKU
 → The Cardiacs (https://www.thecardiacs.com)  [trust=trusted]
-  5333 produits bruts, 32 rattachés à un SKU
+  5331 produits bruts, 32 rattachés à un SKU
 → Monmouth Cards (https://monmouthcards.com)  [trust=watch]
-  5143 produits bruts, 36 rattachés à un SKU
+  5117 produits bruts, 36 rattachés à un SKU
 → World Champion Sports Cards (https://www.worldchampionsportscards.org)  [trust=watch]
   3967 produits bruts, 60 rattachés à un SKU
 → Superior Sports Investments (https://superiorsportsinvestments.com)  [trust=watch]
     collections : 8/84 retenues (filtre 'basketball|\\bnba\\b|hoops|prizm|mosaic|optic|select|phoenix|contenders|court.kings|revolution|premium.stock')
-  16259 produits bruts, 43 rattachés à un SKU
+  16256 produits bruts, 43 rattachés à un SKU
 → SJAY2K Trading Cards (https://www.sjay2k.com)  [trust=watch]
   571 produits bruts, 18 rattachés à un SKU
 → The Ballgame (https://theballgame.com)  [trust=watch]
   12924 produits bruts, 4 rattachés à un SKU
 → Bleecker Trading (https://bleeckertrading.com)  [trust=watch]
-  2222 produits bruts, 100 rattachés à un SKU
+  2225 produits bruts, 100 rattachés à un SKU
 → CB Hobby (https://cbhobby.com)  [trust=watch]
   633 produits bruts, 7 rattachés à un SKU
 → Box Seat Collectibles (https://boxseatcollectibles.com)  [trust=watch]
-  2087 produits bruts, 23 rattachés à un SKU
+  2086 produits bruts, 23 rattachés à un SKU
 → E5 Sports (https://e5sports.com)  [trust=watch]
   1073 produits bruts, 10 rattachés à un SKU
 → SportCards.com (https://sportcards.com)  [trust=watch]
@@ -58,9 +58,9 @@
   [blowout] type=html non géré en v1 → skip
   0 produits bruts, 0 rattachés à un SKU
 → RL Sports Cards (https://rlsportscards.com)  [trust=watch]
-  1757 produits bruts, 61 rattachés à un SKU
+  1763 produits bruts, 61 rattachés à un SKU
 → Fan Cave (https://fancave.com)  [trust=watch]
-  948 produits bruts, 5 rattachés à un SKU
+  944 produits bruts, 5 rattachés à un SKU
 → Mill Creek Sports (https://www.millcreeksports.com)  [trust=watch]
   [millcreek] type=html non géré en v1 → skip
   0 produits bruts, 0 rattachés à un SKU
@@ -75,11 +75,6 @@
 → Tanteo Cartes Collections (https://tanteocartescollections.com)  [trust=watch]
   397 produits bruts, 17 rattachés à un SKU
 (48 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
-
-========================================================================
-  🔔 RESTOCKS depuis le passage précédent
-========================================================================
-  🔔 RESTOCK  TOPPS_2025-26_SIGNATURE_CLASS_HOBBY  worldchampion  $485.00  https://www.worldchampionsportscards.org/products/2025-26-topps-signature-class-basketball-hobby-box-presell
 
 ========================================================================
   RETAIL
@@ -1648,7 +1643,7 @@
 
 · SUIVI   2025-26 Topps Signature Class Hobby   [TOPPS_2025-26_SIGNATURE_CLASS_HOBBY]
    1. rlsports         $  389.00  IN STOCK  landed≈€ 415.17  (score 1.00)
-        VERIFY  cheapest of 16 in stock
+        VERIFY  cheapest of 15 in stock
    2. sportscardjunction $  395.00  IN STOCK  landed≈€ 421.38  (score 1.00)
         VERIFY
    3. awesome          $  399.75  IN STOCK  landed≈€ 426.29  (score 1.00)
@@ -1832,7 +1827,7 @@
   [bleecker] 2020 Panini Contenders Basketball Blaster Box *Anthony Edwards, LaMelo RC*  $35.00 OOS  → [["PANINI_2023-24_CONTENDERS_BLASTER", 0.77]]
 
 ========================================================================
-  👀 WATCHLIST — 2 prioritaires / 137 historiques / 0 autres
+  👀 WATCHLIST — 2 prioritaires / 138 historiques / 0 autres
 ========================================================================
   🔔 RESTOCK PRIORITY  2023-24 Panini Premium Stock Blaster       target $   20.00 (2026-08-17, 8 shop(s))   -42.8% vs ask $34.96
   🔔 RESTOCK PRIORITY  2023-24 Topps Cosmic Chrome Hobby          target $  159.75 (2026-08-18, 6 shop(s))   -14.6% vs sold $187.00
@@ -1890,5 +1885,5 @@
   2025-26_INCEPTION_HOBBY                  €  599.00  qscards     
   2025-26_BOWMAN_HOBBY                     €  749.00  qscards     
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-08-29T20-50-34.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-08-30T05-09-09.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

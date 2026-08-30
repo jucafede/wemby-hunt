@@ -85,14 +85,26 @@ check("un sold US renseigné est bien une référence",
 srcs = yaml.safe_load(open("/Users/ju/Draft Class/wemby-hunt/sources.yaml", encoding="utf-8"))["shops"]
 check("6 · une source FR morte n'efface pas le marché FR",
       "PARTIAL" in (hunt.fr_market_status({"tanteo": ("DEAD", "x"), "qscards": ("HEALTHY", "y")}, srcs) or ""))
+# « Complet » veut dire : TOUTES les sources FR déclarées sont saines. Le fixture se construit
+# donc depuis sources.yaml — sinon l'ajout d'une troisième source FR ferait échouer un test qui
+# n'a rien à dire sur elle.
+_all_fr = {x["key"]: ("HEALTHY", "x") for x in srcs if x.get("market_region") == "FR"}
 check("7 · toutes saines -> marché FR complet",
-      "COMPLET" in (hunt.fr_market_status({"tanteo": ("HEALTHY", "x"), "qscards": ("HEALTHY", "y")}, srcs) or ""))
+      "COMPLET" in (hunt.fr_market_status(_all_fr, srcs) or ""))
+check("7b · une seule source en panne suffit à retirer le « complet »",
+      "COMPLET" not in (hunt.fr_market_status({**_all_fr, sorted(_all_fr)[0]: ("DEAD", "x")}, srcs) or ""))
 
 # ---- 18 : aucune régression sur le moteur US
 check("18 · une observation FR est exclue de HOT NOW",
       hunt.hot_now([{**E(K, "tanteo", 20.0), "triggers": ["DEAL"], "gap": -30.0, "ref": 40.0}]), [])
-check("les deux sources FR sont enregistrées en market_region FR",
-      sorted(x["key"] for x in srcs if x.get("market_region") == "FR"), ["qscards", "tanteo"])
+# La liste des sources FR s'allonge (shopuscards rejoint tanteo et qscards le 30/08). Ce qui
+# doit rester vrai, c'est la PROPRIÉTÉ, pas le décompte : toute source FR se déclare comme
+# telle, en euros, et aucune ne se fait passer pour une source US.
+_fr = sorted(x["key"] for x in srcs if x.get("market_region") == "FR")
+check("au moins deux sources FR sont enregistrées", len(_fr) >= 2)
+check("tanteo et qscards en font toujours partie", {"tanteo", "qscards"} <= set(_fr))
+check("aucune source FR n'est déclarée en dollars",
+      [x["key"] for x in srcs if x.get("market_region") == "FR" and x.get("currency") != "EUR"], [])
 check("elles conservent leur devise native",
       {x["currency"] for x in srcs if x.get("market_region") == "FR"}, {"EUR"})
 

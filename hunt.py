@@ -17,6 +17,7 @@ from pathlib import Path
 
 import requests
 import yaml
+import html_adapters
 
 ROOT = Path(__file__).parent
 DB = ROOT / "hunt.db"
@@ -471,6 +472,97 @@ def shopify_products(base: str, session: requests.Session, deadline=None) -> tup
         if out: break
     return out, partial
 
+HTML_DELAY_S = 1.0   # une requête par seconde et par boutique, jamais plus
+
+def collect_html(shop, ad, skus, conn, seen_at):
+    """Collecte d'une boutique sans products.json, via son adaptateur.
+
+    Une fiche = une observation. Pas de variantes : les sites HTML que nous lisons vendent une
+    boîte par page. Le matching, le sealed gate et les cloisons sont EXACTEMENT ceux du
+    collecteur Shopify — un adaptateur ne rend qu'un titre, un prix et une disponibilité.
+    """
+    s = requests.Session(); s.headers["User-Agent"] = UA
+    t0 = time.monotonic(); deadline = t0 + HARD_TIMEOUT_S
+    last = [0.0]
+
+    stats = {"timeout": 0, "http": 0, "noparse": 0}
+
+    def fetch(url, tries=3):
+        """1 req/s, et une lecture ratée n'est pas une fiche absente. shopuscards a rendu 120
+        timeouts sur 223 fiches au premier essai : sans nouvelle tentative, on aurait conclu
+        que la moitié du catalogue n'existe pas."""
+        for k in range(tries):
+            wait = HTML_DELAY_S - (time.monotonic() - last[0])
+            if wait > 0: time.sleep(wait)
+            last[0] = time.monotonic()
+            try:
+                r = s.get(url, timeout=30)
+            except Exception:
+                if k == tries - 1: stats["timeout"] += 1
+                time.sleep(2 * (k + 1))     # backoff : le site est lent, pas hostile
+                continue
+            if r.status_code == 200:
+                return r.text
+            if r.status_code in (404, 410):
+                stats["http"] += 1; return None      # fiche retirée : inutile d'insister
+            if k == tries - 1: stats["http"] += 1
+            time.sleep(2 * (k + 1))
+        return None
+
+    try:
+        urls = ad.enumerate(fetch)
+    except Exception as e:
+        dur = time.monotonic() - t0
+        print(f"  [{shop['key']}] erreur d'énumération: {e}")
+        conn.execute("INSERT OR REPLACE INTO crawl_runs VALUES (?,?,?,?,?,?)",
+                     (shop["key"], seen_at, 1, 0, dur, f"ERROR:{e.__class__.__name__}")); conn.commit()
+        return (0, 0, True)
+    print(f"    {len(urls)} fiche(s) retenues au filtre de slug (1 req/s, budget {HARD_TIMEOUT_S//60} min)")
+
+    n_raw = n_obs = n_fail = 0
+    partial = False
+    for u in urls:
+        if time.monotonic() > deadline:
+            # budget épuisé : ce qui a été lu reste en base mais le passage est PARTIAL, donc
+            # jamais retenu comme dernier passage réussi — mécanisme déjà en place.
+            print(f"  [{shop['key']}] ⏱ budget écoulé après {n_raw} fiche(s) → PARTIAL")
+            partial = True
+            break
+        body = fetch(u)
+        if not body:
+            n_fail += 1; continue
+        rec = ad.parse(body, u)
+        if not rec:
+            stats["noparse"] += 1; n_fail += 1; continue
+        full = rec["title"]
+        price = rec["price"] or 0.0
+        available = 1 if rec["available"] else 0
+        m = match_title(full, skus)
+        conn.execute("INSERT OR REPLACE INTO products_raw VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+            (shop["key"], u.rstrip("/").split("/")[-1], full, "", None, None, price, None, available, u,
+             m.season, m.fmt, m.sport, m.config, m.sku_id, m.score, json.dumps(m.candidates), seen_at))
+        n_raw += 1
+        if m.sku_id:
+            sku_obj = next((x for x in skus if x["id"] == m.sku_id), {})
+            tn = norm(full)
+            qty = parse_quantity(tn, sku_obj)
+            unit = round(price / qty, 2) if qty else price
+            conn.execute("INSERT OR REPLACE INTO observations (sku_id,shop,title,variant_title,price,available,url,match_score,seen_at,matcher_version,image_url,comp_type,quantity,unit_price,exact_comp_key,sealed,market_region,currency) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                (m.sku_id, shop["key"], full, "", price, available, u, m.score, seen_at,
+                 MATCHER_VERSION, None, comp_type_of(tn, sku_obj), qty, unit,
+                 exact_comp_key(m.sku_id, tn, sku_obj, u), 1 if sealed_product(tn) else 0,
+                 shop.get("market_region", ad.market_region), shop.get("currency", ad.currency)))
+            n_obs += 1
+    conn.commit()
+    dur = time.monotonic() - t0
+    if n_fail:
+        print(f"    {n_fail} fiche(s) non lues — {stats['timeout']} délai dépassé, "
+              f"{stats['http']} absentes ou en erreur, {stats['noparse']} sans donnée structurée")
+    conn.execute("INSERT OR REPLACE INTO crawl_runs VALUES (?,?,?,?,?,?)",
+                 (shop["key"], seen_at, 1 if partial else 0, n_raw, dur,
+                  "PARTIAL:BUDGET" if partial else None)); conn.commit()
+    return (n_raw, n_obs, partial)
+
 def collect_shop(shop: dict, skus: list[dict], conn: sqlite3.Connection, seen_at: str) -> tuple[int, int, bool]:
     s = requests.Session(); s.headers["User-Agent"] = UA
     def skip(msg, why):
@@ -487,6 +579,11 @@ def collect_shop(shop: dict, skus: list[dict], conn: sqlite3.Connection, seen_at
         return skip(f"type=marketplace \(source de market_sold / achat direct\) → skip", "MARKETPLACE")
     if shop["type"] == "breaks":
         return skip(f"type=breaks \(breaker, hors périmètre sealed\) → skip", "BREAKS")
+    if shop["type"] == "html":
+        ad = html_adapters.adapter_for(shop["key"])
+        if not ad:
+            return skip(f"type=html sans adaptateur écrit → skip", "NO_ADAPTER")
+        return collect_html(shop, ad, skus, conn, seen_at)
     if shop["type"] != "shopify_json":
         return skip(f"type={shop['type']} non géré en v1 → skip", "UNSUPPORTED_TYPE")
     t0 = time.monotonic()
@@ -1081,6 +1178,16 @@ def source_health(conn, shop_keys, lookback=6):
         out[k] = ("HEALTHY", f"{n_raw} produits" + (f", {dur/60:.1f} min" if dur else ""))
     return out
 
+# Boutiques dont l'affichage HT/TTC n'est pas confirmé au checkout. Alimenté depuis
+# sources.yaml (price_display_warning) : déclaratif, vérifiable, et levé le jour où une
+# commande réelle tranche.
+HT_UNCONFIRMED = set()
+
+def load_ht_unconfirmed(sources):
+    global HT_UNCONFIRMED
+    HT_UNCONFIRMED = {s["key"] for s in sources if s.get("price_display_warning")}
+    return HT_UNCONFIRMED
+
 def best_fr(entries):
     """Meilleure offre FR par cloison de comparabilité.
 
@@ -1093,6 +1200,10 @@ def best_fr(entries):
     by_key = {}
     for e in entries:
         if e.get("region") != "FR" or not e["available"]: continue
+        # Une boutique dont on ne sait pas si ses prix sont HT ou TTC ne peut pas remporter un
+        # « meilleur prix en France » : comparer un HT à un TTC, c'est offrir 20 % de remise
+        # imaginaire. Ses observations sont collectées et conservées, elles ne CLASSENT pas.
+        if e["o"][1] in HT_UNCONFIRMED: continue
         o = e["o"]
         if not o[3] or o[3] <= 0: continue
         k = e.get("key")
@@ -1487,6 +1598,7 @@ def report(cat: dict, conn: sqlite3.Connection, seen_at: str | None, trust: dict
     if not anomalies: print("  (aucune anomalie : toutes les sources crawlées ont rendu un passage complet)")
     import collections as _c
     print("  " + " · ".join(f"{n} {st}" for st, n in _c.Counter(v[0] for v in health.values()).most_common()))
+    load_ht_unconfirmed(yaml.safe_load((ROOT / "sources.yaml").read_text(encoding="utf-8"))["shops"])
     fr_best = best_fr(all_entries)
     hn = hot_now([e for e in all_entries if e.get("region", "US") == "US"])
     print("\n" + "="*72 + f"\n  🔥 HOT NOW — {len(hn)} ligne(s)\n" + "="*72)

@@ -119,8 +119,12 @@ shops:
     name: ShopUScards
     base_url: https://shopuscards.eu
     url: https://shopuscards.eu
-    type: eu_reference
-    platform: lightspeed          # pas de products.json — client du futur collecteur html
+    type: html                    # premier client du collecteur HTML (adaptateur du 30/08)
+    platform: ecwid               # ec-instant-site, boutique 32676041 — fiches en schema.org
+    market_region: FR
+    currency: EUR
+    robots_checked_at: 2026-08-30
+    robots_note: "aucune directive visant notre agent ; seules les pages panier/compte/paiement sont interdites. Collecte via le sitemap publié."
     country: FR
     ships_from: FR
     free_shipping_threshold_eur: 35   # Mondial Relay France

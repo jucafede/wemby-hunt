@@ -64,12 +64,22 @@ check("un titre FR hors basket est rejeté",
       hunt.match_title("2025-26 Panini Select Ligue 1 Football Blaster Box", skus).sku_id, None)
 
 # ---- 8/9/10 : un prix FR ne contamine rien
-mos = S["PANINI_2023-24_MOSAIC_BLASTER"]
+# Le SKU témoin doit être vendu chez Tanteo ET dépourvu de sold US. Le Mosaic Blaster 23-24
+# jouait ce rôle jusqu'à ce qu'il reçoive un vrai sold le 30/08 : la garde ci-dessous fait
+# échouer le test si le témoin cesse d'être valide, plutôt que de le laisser mentir.
+# Témoin : un SKU qui porte un prix EUROPÉEN et RIEN d'américain. C'est le seul cas où
+# l'assertion prouve quelque chose — sur un SKU sans données du tout, elle est triviale.
+mos = S["PANINI_2023-24_PREMIUM_STOCK_MEGA"]
+check("le témoin porte bien un prix européen", bool(mos.get("eu_reference_eur")), True)
+check("et rien du côté américain", (mos.get("market_sold_us"), mos.get("market_ask_us")), (None, None))
 check("8 · un prix FR ne crée pas de market_sold_us", mos.get("market_sold_us"), None)
 check("9 · un prix FR ne crée pas de sold_confidence", hunt.sold_confidence(mos), None)
 check("10 · un prix FR seul ne produit aucun GO",
       hunt.decide(True, -50, None, "EXACT", 40.0, 20.0, mos), "PRICE ANOMALY — NO SOLD DATA")
 check("un prix FR n'est jamais une référence marché", hunt.market_ref(mos), (None, None))
+# et réciproquement : un vrai sold US, lui, EST une référence — sinon la garde ne prouve rien
+check("un sold US renseigné est bien une référence",
+      hunt.market_ref(S["PANINI_2023-24_MOSAIC_BLASTER"]), (38.0, "sold"))
 
 # ---- 6/7 : santé du marché FR
 srcs = yaml.safe_load(open("/Users/ju/Draft Class/wemby-hunt/sources.yaml", encoding="utf-8"))["shops"]

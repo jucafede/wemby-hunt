@@ -6,7 +6,7 @@
 → Hidden Gems Card Shop (https://www.hiddengemscardshop.com)  [trust=trusted]
   2820 produits bruts, 47 rattachés à un SKU
 → The Awesome Card Shop (https://theawesomecardshop.com)  [trust=trusted]
-  7326 produits bruts, 101 rattachés à un SKU
+  7325 produits bruts, 101 rattachés à un SKU
 → MojoBreak Shop (https://mojobreakshop.com)  [trust=trusted]
   [mojobreak] status=reject \(qualifié sur données réelles → 0 sealed 2023-24\) → skip
   0 produits bruts, 0 rattachés à un SKU
@@ -31,14 +31,14 @@
 → The Cardiacs (https://www.thecardiacs.com)  [trust=trusted]
   5331 produits bruts, 32 rattachés à un SKU
 → Monmouth Cards (https://monmouthcards.com)  [trust=watch]
-  5117 produits bruts, 36 rattachés à un SKU
+  5107 produits bruts, 36 rattachés à un SKU
 → World Champion Sports Cards (https://www.worldchampionsportscards.org)  [trust=watch]
   3967 produits bruts, 60 rattachés à un SKU
 → Superior Sports Investments (https://superiorsportsinvestments.com)  [trust=watch]
     collections : 8/84 retenues (filtre 'basketball|\\bnba\\b|hoops|prizm|mosaic|optic|select|phoenix|contenders|court.kings|revolution|premium.stock')
-  16256 produits bruts, 43 rattachés à un SKU
+  16253 produits bruts, 43 rattachés à un SKU
 → SJAY2K Trading Cards (https://www.sjay2k.com)  [trust=watch]
-  571 produits bruts, 18 rattachés à un SKU
+  570 produits bruts, 18 rattachés à un SKU
 → The Ballgame (https://theballgame.com)  [trust=watch]
   12924 produits bruts, 4 rattachés à un SKU
 → Bleecker Trading (https://bleeckertrading.com)  [trust=watch]
@@ -71,7 +71,7 @@
   [tracenchase] type=eu_reference (GR, woocommerce) → référence de prix EU, non crawlée
   0 produits bruts, 0 rattachés à un SKU
 → QS Cards (https://qscards.com)  [trust=watch]
-  379 produits bruts, 12 rattachés à un SKU
+  380 produits bruts, 12 rattachés à un SKU
 → Tanteo Cartes Collections (https://tanteocartescollections.com)  [trust=watch]
   397 produits bruts, 17 rattachés à un SKU
 (48 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
@@ -1885,5 +1885,5 @@
   2025-26_INCEPTION_HOBBY                  €  599.00  qscards     
   2025-26_BOWMAN_HOBBY                     €  749.00  qscards     
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-08-30T05-09-09.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-08-30T11-46-11.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

@@ -2541,8 +2541,10 @@ skus:
   # MSRP — le compte de packs n'a jamais été vérifié. Topps décline ses formats par canal
   # (les Mega européens partent sans film plastique). Fusionner sur une ressemblance de prix
   # serait le raccourci que le matcher passe ses journées à refuser.
-  # Aucun LCS américain ne liste ce format : la colonne marché US affichera « — », et c'est
-  # le comportement voulu. Si un LCS en liste un jour, il aura sa cloison prête.
+  # CORRECTION 30/08 : j'avais écrit « aucun LCS américain ne liste ce format », d'après un
+  # balayage manuel de 8 boutiques plafonné à 3 000 produits chacune. Le crawl complet, 22
+  # sources, en a trouvé trois. Le canal d'ACHAT reste Topps direct ; le marché de RÉFÉRENCE,
+  # lui, existe bel et bien aux États-Unis. Un balayage plafonné n'est pas un recensement.
   # « chrome black » est un jeton d'édition depuis le 23/08, après qu'une présale à 700 $ eut
   # gonflé la médiane du Chrome Hobby à 960 $ sur 11 vendeurs. L'identité manquait ; elle existe
   # désormais, et la cloison qui la sépare du Chrome standard tient toute seule.
@@ -2575,12 +2577,12 @@ skus:
     tier: retail
     status: WATCH
     licensed: true
-    market_ask_from: []
-    market_ask_us: null
+    market_ask_from: [hiddengems, rlsports]
+    market_ask_us: 65.00
     market_sold_us: null
     market_sold_source: null
     market_sold_checked_at: null
-    market_source: "aucun vendeur US : format exclusif au canal Topps direct. MSRP EU 45 € (réf. FGC006726-DB). Balayage de 4 boutiques le 30/08 : zéro fiche « Update Value » côté LCS."
+    market_source: "ask: crawl du 30/08 — hiddengems 85,00 EN STOCK · rlsports 44,99 OOS. Canal d'achat FR : qscards 75,00 € EN STOCK. MSRP EU 45 € (réf. FGC006726-DB)."
     buy_below_usd: null
     watch_below_usd: null
     note: "compte de packs non vérifié face au Blaster US — à confirmer avant toute comparaison entre les deux."
@@ -2639,9 +2641,10 @@ skus:
     eu_reference_ht_unconfirmed: true
     eu_reference_note: "relevé Hoops Value Box, rattaché au SKU Blaster existant"
     url_proof: "https://www.thecardiacs.com/products/2025-26-topps-nba-hoops-basketball-blaster-box"
-  # Deuxième identité du canal Topps direct, après CHROME_UPDATE_VALUE. Aucun vendeur US ne la
-  # liste : balayage de 9 boutiques le 30/08, zéro fiche. Distincte du Hoops Blaster US, dont
-  # rien ne prouve qu'elle partage le contenu — même raisonnement, même refus de fusionner.
+  # Distincte du Hoops Blaster US, dont rien ne prouve qu'elle partage le contenu — même
+  # raisonnement, même refus de fusionner que pour CHROME_UPDATE_VALUE.
+  # CORRECTION 30/08 : annoncée sans vendeur US sur la foi du même balayage partiel. Le crawl
+  # complet en a trouvé trois, tous EN STOCK.
   - id: TOPPS_2025-26_HOOPS_VALUE_BOX
     season: "2025-26"
     manufacturer: Topps
@@ -2652,10 +2655,10 @@ skus:
     tier: retail
     status: WATCH
     licensed: true
-    market_ask_from: []
-    market_ask_us: null
+    market_ask_from: [rlsports, hiddengems, boxseat]
+    market_ask_us: 29.99
     market_sold_us: null
-    market_source: "aucun vendeur US au 30/08 (9 boutiques balayées). Format exclusif au canal Topps direct européen."
+    market_source: "ask: crawl du 30/08 — rlsports 27,99 · hiddengems 29,99 · boxseat 39,99, les trois EN STOCK."
     buy_below_usd: null
     watch_below_usd: null
     note: "contenu non comparé au Hoops Blaster US — ne pas fusionner sans vérification du compte de packs."

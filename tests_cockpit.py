@@ -107,8 +107,10 @@ check("N · santé des sources dans Diagnostic",
 check("F · jamais « % marché » sans nature de référence", "% marché" in h, False)
 check("13 · historical low présenté comme cible, pas comme valeur",
       "pas une valeur de marché" in h)
-check("T · aucun tableau dans le premier écran (avant Explorer)",
-      "<table" in h[:h.index("<h2 id=explorer>")], False)
+# Voir tests_ui : la garde est recalée sur la zone de décision, seule zone où le tableau est
+# proscrit. Inventaire et FR sont des zones de LECTURE, où le tableau est la bonne forme.
+_zone = h[:h.index("<h2 id=inventaire>")] if "<h2 id=inventaire>" in h else h[:h.index("<h2 id=fr>")]
+check("T · aucun tableau dans la zone de décision", "<table" in _zone, False)
 check("Q · un SKU sans donnée marché est affiché « marché insuffisant »",
       "marché insuffisant" in h)
 

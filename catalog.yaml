@@ -1109,6 +1109,24 @@ skus:
     buy_below_usd: null
     watch_below_usd: null
     url_proof: "https://grandslamcollectibles.com/products/2024-25-panini-prizm-basketball-nba-mega-box"
+  - id: PANINI_2024-25_MONOPOLY_PRIZM_BLASTER
+    season: "2024-25"
+    manufacturer: Panini
+    set: Prizm Monopoly
+    aliases: ["Monopoly Prizm", "Prizm Monopoly"]
+    format: Blaster
+    configuration: null
+    tier: retail
+    status: WATCH
+    licensed: true
+    market_ask_from: [bleecker]
+    market_ask_us: 27.50
+    market_sold_us: null
+    market_source: "ask: bleecker 25,00 (Black) et 30,00 (Grey) le 30/08, toutes deux OOS. Attention : une des deux fiches porte un slug 2023-24 pour un titre 2024-25."
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://bleeckertrading.com/products/2024-25-panini-prizm-basketball-monopoly-blaster-box"
+
   - id: PANINI_2024-25_PRIZM_HOBBY
     season: "2024-25"
     manufacturer: Panini
@@ -1151,6 +1169,26 @@ skus:
     buy_below_usd: null
     watch_below_usd: null
     url_proof: "https://www.thecardiacs.com/products/2024-25-panini-select-basketball-blaster-pack-flash-prizms"
+  # L'identité qui manquait le 23/08, quand « Select Basketball Hobby, Blaster Box » à 38 $ se
+  # rattachait au Select HOBBY à 422 $ et sortait en ASK DEAL -91 %. Le garde-fou l'a écartée ;
+  # voici enfin où la ranger.
+  - id: PANINI_2024-25_SELECT_HOBBY_BLASTER
+    season: "2024-25"
+    manufacturer: Panini
+    set: Select
+    format: Hobby Blaster
+    configuration: null
+    tier: retail
+    status: WATCH
+    licensed: true
+    market_ask_from: [sportscardjunction, awesome]
+    market_ask_us: 32.38
+    market_sold_us: null
+    market_source: "ask: fiches live du 30/08 — sportscardjunction 30,00 EN STOCK · awesome 34,75 OOS"
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://sportscardjunction.com/products/2024-25-panini-select-basketball-hobby-blaster-box"
+
   - id: PANINI_2024-25_SELECT_MEGA
     season: "2024-25"
     manufacturer: Panini
@@ -1324,6 +1362,25 @@ skus:
     buy_below_usd: null
     watch_below_usd: null
     url_proof: "https://theawesomecardshop.com/products/2024-25-panini-mosaic-basketball-fast-break-box"
+
+  - id: PANINI_2024-25_MOSAIC_FAST_BREAK_CASE
+    season: "2024-25"
+    manufacturer: Panini
+    set: Mosaic
+    format: Case
+    case_of: Fast Break
+    boxes_per_case: 20
+    configuration: null
+    tier: hobby
+    status: CANDIDATE
+    licensed: true
+    market_ask_from: [awesome]
+    market_ask_us: 5949.75
+    market_sold_us: null
+    market_source: "ask: awesome 5 949,75 le 30/08 (OOS). Un seul vendeur — CANDIDATE tant qu'une deuxième source ne confirme pas."
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://theawesomecardshop.com/products/2024-25-panini-mosaic-basketball-fast-break-20-box-case"
 
   - id: PANINI_2024-25_MOSAIC_HOBBY_BLASTER
     season: "2024-25"
@@ -1596,6 +1653,40 @@ skus:
     buy_below_usd: null
     watch_below_usd: null
     url_proof: "https://superiorsportsinvestments.com/products/2024-25-panini-revolution-basketball-6-pack-blaster-box"
+  - id: PANINI_2024-25_REVOLUTION_CNY
+    season: "2024-25"
+    manufacturer: Panini
+    set: Revolution
+    format: Chinese New Year
+    configuration: null
+    tier: retail
+    status: WATCH
+    licensed: true
+    market_ask_from: [bleecker]
+    market_ask_us: 100.00
+    market_sold_us: null
+    market_source: "ask: bleecker 100,00 le 30/08 (OOS). awesome liste la fiche sans prix."
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://bleeckertrading.com/products/2024-25-panini-revolution-chinese-new-year-basketball-box"
+
+  - id: PANINI_2023-24_REVOLUTION_TIN
+    season: "2023-24"
+    manufacturer: Panini
+    set: Revolution
+    format: Tin
+    configuration: null
+    tier: retail
+    status: WATCH
+    licensed: true
+    market_ask_from: [columbia, bleecker, sportscardjunction]
+    market_ask_us: 20.00
+    market_sold_us: null
+    market_source: "ask: fiches live du 30/08 — columbia 9,99 · bleecker 20,00 · sportscardjunction 20,00. Toutes OOS. Le produit est titré « Winter Tin » chez deux vendeurs sur trois."
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://sportscardjunction.com/products/2023-24-panini-revolution-basketball-winter-tin"
+
   - id: PANINI_2024-25_REVOLUTION_MEGA
     season: "2024-25"
     manufacturer: Panini
@@ -2244,6 +2335,23 @@ skus:
     buy_below_usd: null
     watch_below_usd: null
     url_proof: "https://theawesomecardshop.com/products/2025-26-topps-chrome-basketball-mega-box"
+  - id: TOPPS_2024-25_CHROME_BLASTER
+    season: "2024-25"
+    manufacturer: Topps
+    set: Topps Chrome
+    format: Blaster
+    configuration: null
+    tier: retail
+    status: WATCH
+    licensed: true
+    market_ask_from: [columbia, sportscardjunction, awesome]
+    market_ask_us: 20.00
+    market_sold_us: null
+    market_source: "ask: fiches live du 30/08 — columbia 14,99 (8-pack) · sportscardjunction 20,00 · awesome 29,75 EN STOCK"
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://theawesomecardshop.com/products/2024-25-topps-chrome-basketball-blaster-box"
+
   - id: TOPPS_2025-26_CHROME_BLASTER
     season: "2025-26"
     manufacturer: Topps
@@ -2435,6 +2543,28 @@ skus:
   # serait le raccourci que le matcher passe ses journées à refuser.
   # Aucun LCS américain ne liste ce format : la colonne marché US affichera « — », et c'est
   # le comportement voulu. Si un LCS en liste un jour, il aura sa cloison prête.
+  # « chrome black » est un jeton d'édition depuis le 23/08, après qu'une présale à 700 $ eut
+  # gonflé la médiane du Chrome Hobby à 960 $ sur 11 vendeurs. L'identité manquait ; elle existe
+  # désormais, et la cloison qui la sépare du Chrome standard tient toute seule.
+  - id: TOPPS_2025-26_CHROME_BLACK_HOBBY
+    season: "2025-26"
+    manufacturer: Topps
+    set: Topps Chrome Black
+    format: Hobby
+    # déclarée comme les autres éditions (Sapphire, Cactus Jack) : c'est ce champ, et non l'id,
+    # que lit le contrôle de symétrie des jetons d'édition
+    configuration: "Chrome Black"
+    tier: hobby
+    status: WATCH
+    licensed: true
+    market_ask_from: [columbia, sportscardjunction, bleecker, awesome]
+    market_ask_us: 637.50
+    market_sold_us: null
+    market_source: "ask: quatre fiches live du 30/08, toutes EN STOCK — columbia 524,99 · sportscardjunction 575,00 · bleecker 700,00 · awesome 709,75. Dispersion 35 %."
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://columbiasportscard.com/products/2025-26-topps-chrome-black-basketball-hobby-box"
+
   - id: TOPPS_2025-26_CHROME_UPDATE_VALUE
     season: "2025-26"
     manufacturer: Topps
@@ -2509,6 +2639,27 @@ skus:
     eu_reference_ht_unconfirmed: true
     eu_reference_note: "relevé Hoops Value Box, rattaché au SKU Blaster existant"
     url_proof: "https://www.thecardiacs.com/products/2025-26-topps-nba-hoops-basketball-blaster-box"
+  # Deuxième identité du canal Topps direct, après CHROME_UPDATE_VALUE. Aucun vendeur US ne la
+  # liste : balayage de 9 boutiques le 30/08, zéro fiche. Distincte du Hoops Blaster US, dont
+  # rien ne prouve qu'elle partage le contenu — même raisonnement, même refus de fusionner.
+  - id: TOPPS_2025-26_HOOPS_VALUE_BOX
+    season: "2025-26"
+    manufacturer: Topps
+    set: Hoops
+    format: Value Box
+    configuration: null
+    channel: topps_direct_eu
+    tier: retail
+    status: WATCH
+    licensed: true
+    market_ask_from: []
+    market_ask_us: null
+    market_sold_us: null
+    market_source: "aucun vendeur US au 30/08 (9 boutiques balayées). Format exclusif au canal Topps direct européen."
+    buy_below_usd: null
+    watch_below_usd: null
+    note: "contenu non comparé au Hoops Blaster US — ne pas fusionner sans vérification du compte de packs."
+
   - id: TOPPS_2025-26_HOOPS_HOBBY
     season: "2025-26"
     manufacturer: Topps
@@ -2557,6 +2708,23 @@ skus:
     buy_below_usd: null
     watch_below_usd: null
     url_proof: "https://sportscardjunction.com/products/2025-26-topps-hoops-basketball-jumbo-box"
+  - id: TOPPS_2025-26_SIGNATURE_CLASS_BLASTER
+    season: "2025-26"
+    manufacturer: Topps
+    set: Signature Class
+    format: Blaster
+    configuration: null
+    tier: retail
+    status: WATCH
+    licensed: true
+    market_ask_from: [columbia, awesome, sportscardjunction]
+    market_ask_us: 39.75
+    market_sold_us: null
+    market_source: "ask: fiches live du 30/08 — columbia 34,95 · awesome 39,75 EN STOCK · sportscardjunction 40,00 EN STOCK · bleecker 45,00 en présale"
+    buy_below_usd: null
+    watch_below_usd: null
+    url_proof: "https://theawesomecardshop.com/products/2025-26-topps-signature-class-basketball-blaster-box"
+
   - id: TOPPS_2025-26_SIGNATURE_CLASS_HOBBY
     season: "2025-26"
     manufacturer: Topps

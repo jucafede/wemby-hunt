@@ -17,6 +17,12 @@
 #
 #  Fichier absent ou vide = le radar fonctionne exactement comme avant.
 #
+#  Inventaire réel au 30/08/2026. Coûts CONSTATÉS (produit + part de port + part d'import).
+#  Cardiacs et Hidden Gems : import MyUS ESTIMÉ à 340 € pour 35 unités, inclus dans le landed —
+#  à remplacer par la facture DHL dès qu'elle arrive. Blowout porte un import UPS RÉEL.
+#  Exclus volontairement : la carte Panini Instant Wemby (collection personnelle) et deux
+#  Donruss Fat-Packs — ce ne sont pas des boîtes scellées.
+#
 # ─────────────────────────────────────────────────────────────────────────────
 #  CHAMPS
 # ─────────────────────────────────────────────────────────────────────────────
@@ -46,7 +52,11 @@
 #                      ordered       commandé, pas encore expédié
 #                      at_forwarder  arrivé chez le transitaire, pas encore en France
 #                      received      chez moi, scellé
-#                      opened        ouvert (sort du stock scellé — ne se revend plus tel quel)
+#                      opened        ouvert (sort du stock scellé — ne se revend plus tel quel).
+#                                    Une boîte ouverte n'est pas sortie du business : elle est
+#                                    convertie en singles ou en spots de break. Le P&L la
+#                                    retrouvera par sold_price_eur au niveau du break, pas de
+#                                    la boîte — reste à construire.
 #                      listed        en vente
 #                      sold          vendu (conservé pour le P&L, hors stock courant)
 #                    Seuls ordered / at_forwarder / received comptent comme
@@ -75,26 +85,28 @@
 # ─────────────────────────────────────────────────────────────────────────────
 
 lines:
-  - sku: PANINI_2024-25_SELECT_MEGA
-    qty: 3
-    unit_landed_eur: 44.15
-    shop: cardiacs
-    order_ref: NJHHDXG5V
-    ordered_at: 2026-08-18
-    status: at_forwarder
+  # ─── reçues ───────────────────────────────────────────────────────────────
+  - {sku: TOPPS_2025-26_SIGNATURE_CLASS_BLASTER, qty: 2, unit_landed_eur: 69.35, shop: taass, order_ref: RE26045340, ordered_at: 2026-07-26, status: received}
+  - {sku: TOPPS_2025-26_CHROME_UPDATE_VALUE, qty: 7, unit_landed_eur: 47.14, shop: topps_eu, order_ref: FRA-76920-S, ordered_at: 2026-08-06, status: received, note: "acheté MSRP jour de sortie"}
+  - {sku: TOPPS_2025-26_HOOPS_VALUE_BOX, qty: 3, unit_landed_eur: 34.54, shop: topps_es, order_ref: S5410011816059290, ordered_at: 2026-08-01, status: received, note: "même canal topps_direct_eu que Update Value — même traitement"}
+  - {sku: TOPPS_2025-26_HOOPS_VALUE_BOX, qty: 1, unit_landed_eur: 34.54, shop: topps_es, order_ref: S5410011816059290, ordered_at: 2026-08-01, status: opened}
+  - {sku: PANINI_2024-25_REVOLUTION_CNY, qty: 1, unit_landed_eur: 67.50, shop: ohlicards, order_ref: "5154", ordered_at: 2026-08-05, status: received}
+  - {sku: PANINI_2024-25_SELECT_MEGA, qty: 2, unit_landed_eur: 65.00, shop: ohlicards, order_ref: "5154", ordered_at: 2026-08-05, status: received, note: "main propre PT — même SKU payé 39,95$ chez cardiacs 10j après"}
+  - {sku: PANINI_2023-24_OPTIC_MEGA, qty: 1, unit_landed_eur: 170.58, shop: taass, order_ref: EC1206918, ordered_at: 2026-08-08, status: received}
+  - {sku: PANINI_2023-24_PREMIUM_STOCK_MEGA, qty: 1, unit_landed_eur: 150.58, shop: taass, order_ref: EC1206918, ordered_at: 2026-08-08, status: received}
+  - {sku: PANINI_2023-24_PHOENIX_BLASTER, qty: 1, unit_landed_eur: 60.58, shop: taass, order_ref: EC1206918, ordered_at: 2026-08-08, status: received}
+  - {sku: PANINI_2023-24_PHOENIX_MEGA, qty: 2, unit_landed_eur: 91.20, shop: blowout, order_ref: "100828274", ordered_at: 2026-08-18, status: received, note: "import UPS réel 144,10€ réparti /8"}
+  - {sku: PANINI_2023-24_PHOENIX_BLASTER, qty: 3, unit_landed_eur: 56.68, shop: blowout, order_ref: "100828274", ordered_at: 2026-08-18, status: received}
+  - {sku: PANINI_2023-24_PREMIUM_STOCK_BLASTER, qty: 2, unit_landed_eur: 61.02, shop: blowout, order_ref: "100828274", ordered_at: 2026-08-18, status: received}
 
-  - sku: PANINI_2023-24_PRIZM_EUROLEAGUE_BLASTER
-    qty: 8
-    unit_landed_eur: 18.29
-    shop: cardiacs
-    order_ref: NJHHDXG5V
-    ordered_at: 2026-08-18
-    status: at_forwarder
+  # ─── commandée, non reçue ─────────────────────────────────────────────────
+  - {sku: TOPPS_2025-26_CHROME_BLACK_HOBBY, qty: 2, unit_landed_eur: 360.00, shop: topps_eu, order_ref: FRA-75606-S, ordered_at: 2026-07-28, status: ordered, note: "release 27/08 — présale US DACW 719,95$"}
 
-  - sku: TOPPS_2025-26_CHROME_UPDATE_VALUE
-    qty: 7
-    unit_landed_eur: 47.14
-    shop: topps
-    order_ref: FRA-76920-S
-    ordered_at: 2026-08-18
-    status: received
+  # ─── chez le transitaire ──────────────────────────────────────────────────
+  - {sku: PANINI_2023-24_PRIZM_EUROLEAGUE_BLASTER, qty: 8, unit_landed_eur: 18.29, shop: cardiacs, order_ref: NJHHDXG5V, ordered_at: 2026-08-18, status: at_forwarder}
+  - {sku: PANINI_2024-25_SELECT_HOBBY_BLASTER, qty: 3, unit_landed_eur: 35.53, shop: cardiacs, order_ref: NJHHDXG5V, ordered_at: 2026-08-18, status: at_forwarder}
+  - {sku: PANINI_2024-25_SELECT_MEGA, qty: 3, unit_landed_eur: 44.15, shop: cardiacs, order_ref: NJHHDXG5V, ordered_at: 2026-08-18, status: at_forwarder, note: "Cracked Ice Mix"}
+  - {sku: PANINI_2023-24_REVOLUTION_TIN, qty: 6, unit_landed_eur: 20.88, shop: cardiacs, order_ref: NJHHDXG5V, ordered_at: 2026-08-18, status: at_forwarder}
+  - {sku: PANINI_2024-25_MONOPOLY_PRIZM_BLASTER, qty: 3, unit_landed_eur: 32.62, shop: hiddengems, order_ref: "24111", ordered_at: 2026-08-17, status: at_forwarder}
+  - {sku: PANINI_2024-25_HOOPS_BLASTER, qty: 6, unit_landed_eur: 28.31, shop: hiddengems, order_ref: "24111", ordered_at: 2026-08-17, status: at_forwarder}
+  - {sku: TOPPS_2024-25_CHROME_BLASTER, qty: 6, unit_landed_eur: 28.30, shop: hiddengems, order_ref: "24111", ordered_at: 2026-08-17, status: at_forwarder, note: "8-pack blaster — hobby 24-25 sold 160$"}

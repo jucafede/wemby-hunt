@@ -300,8 +300,19 @@ _mo("le Hobby reste le Hobby",
 _mo("l'Optic Hobby Blaster n'est pas perturbé",
     _m("2023-24 Donruss Optic Basketball 6-Pack Hobby Blaster Box").sku_id,
     "PANINI_2023-24_OPTIC_HOBBY_BLASTER")
-_mo("le Select « Hobby, Blaster Box » reste non rattaché",
-    _m("2024-25 Panini Select Basketball Hobby, Blaster Box (Green & Red Mojo)").sku_id, None)
+# Boucle bouclée sur le faux positif du 23/08. Trois états successifs de la même annonce :
+# rattachée au Select HOBBY à 422 $ et sortie en ASK DEAL -91 % · écartée par le garde-fou,
+# donc muette · rattachée à sa propre identité depuis le 30/08.
+_sel = _m("2024-25 Panini Select Basketball Hobby, Blaster Box (Green & Red Mojo)")
+_mo("le Select « Hobby, Blaster Box » a enfin son identité",
+    _sel.sku_id, "PANINI_2024-25_SELECT_HOBBY_BLASTER")
+_mo("et n'est toujours pas la boîte hobby à 422 $", _sel.sku_id != "PANINI_2024-25_SELECT_HOBBY")
+_mo("le vrai Select Hobby reste intact",
+    _m("2024-25 Panini Select Basketball Hobby Box").sku_id, "PANINI_2024-25_SELECT_HOBBY")
+_mo("le Select Blaster reste intact",
+    _m("2024-25 Panini Select Basketball Blaster Box").sku_id, "PANINI_2024-25_SELECT_BLASTER")
+_mo("le WNBA Select Hobby Blaster reste hors périmètre",
+    _m("2025 Panini Select WNBA Basketball Hobby Blaster Box").sku_id, None)
 
 # 3. Le sold Mosaic Blaster du 30/08 : n=3 sur 120 j -> LOW, donc jamais sold-backed.
 _bl = next(x for x in _SK if x["id"] == "PANINI_2023-24_MOSAIC_BLASTER")

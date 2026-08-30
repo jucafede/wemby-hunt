@@ -1152,6 +1152,95 @@ def watchlist_layers(entries):
     lows.sort(key=lambda e: e["hist"]["low"])
     return prio, lows, rest
 
+# ================================================================ INVENTAIRE
+# GARDE-FOU CARDINAL : l'inventaire n'entre dans AUCUN calcul de marché. Ce que je possède ne
+# change pas ce qu'un produit vaut. Mêler les deux créerait une circularité — mon coût d'achat
+# deviendrait une référence de prix et le radar finirait par se recommander à lui-même.
+# Aucune fonction de ce bloc n'est appelée depuis price_verdict, current_market,
+# current_ask_reference, compute_badges, decide ni hot_now. Elle s'affiche À CÔTÉ du verdict.
+OWNED_STATUSES = ("ordered", "at_forwarder", "received")
+
+def load_inventory(path=None):
+    """Lecture seule. Fichier absent, vide ou illisible -> inventaire vide, radar inchangé."""
+    f = path or (ROOT / "inventory.yaml")
+    try:
+        raw = yaml.safe_load(f.read_text(encoding="utf-8")) or {}
+    except FileNotFoundError:
+        return []
+    except Exception as e:
+        print(f"⚠️  inventory.yaml illisible ({e}) — inventaire ignoré, le radar continue")
+        return []
+    lines = raw.get("lines") or []
+    out = []
+    for i, l in enumerate(lines, 1):
+        try:
+            q = int(l["qty"]); c = float(l["unit_landed_eur"])
+            if q <= 0: raise ValueError("qty <= 0")
+            out.append({"sku": l["sku"], "qty": q, "unit_landed_eur": c,
+                        "status": l.get("status", "received"), "shop": l.get("shop"),
+                        "order_ref": l.get("order_ref"), "ordered_at": l.get("ordered_at"),
+                        "note": l.get("note"), "sold_price_eur": l.get("sold_price_eur")})
+        except Exception as e:
+            print(f"⚠️  inventory.yaml ligne {i} ignorée ({e})")
+    return out
+
+def inventory_by_sku(inv, known_ids=None):
+    """Agrège le stock SCELLÉ POSSÉDÉ par SKU. Un sku absent du catalogue est signalé et écarté :
+    jamais deviné, jamais créé en silence — c'est ce qui relie une boîte physique à un marché."""
+    out, unknown = {}, []
+    for l in inv:
+        if known_ids is not None and l["sku"] not in known_ids:
+            unknown.append(l["sku"]); continue
+        if l["status"] not in OWNED_STATUSES: continue
+        a = out.setdefault(l["sku"], {"qty": 0, "cost": 0.0, "lots": []})
+        a["qty"] += l["qty"]
+        a["cost"] += l["qty"] * l["unit_landed_eur"]
+        a["lots"].append(l)
+    for a in out.values():
+        a["unit_landed_eur"] = round(a["cost"] / a["qty"], 2) if a["qty"] else None
+        a["cost"] = round(a["cost"], 2)
+    return out, sorted(set(unknown))
+
+def inventory_rows(owned, entries, cat, fr_best=None):
+    """Une ligne par SKU possédé : coût face au marché du jour. Aucune valeur n'est inventée —
+    un SKU sans observation exploitable rend None, que l'affichage traduit par « — »."""
+    by_sku = {}
+    for e in entries:
+        by_sku.setdefault(e["sid"], []).append(e)
+    sk_by_id = {x["id"]: x for x in cat["skus"]}
+    rows = []
+    for sid, a in owned.items():
+        obs = by_sku.get(sid, [])
+        us = [e for e in obs if e.get("region", "US") == "US" and e["o"][3] and e["o"][3] > 0]
+        live = [e for e in us if e["available"]]
+        best = min((e["o"][3] for e in live), default=None)
+        # la référence de marché vient du moteur, jamais de l'inventaire
+        pv = next((e["pv"] for e in live if (e.get("pv") or {}).get("ref")), None) \
+             or next((e["pv"] for e in us if (e.get("pv") or {}).get("ref")), None)
+        ref = (pv or {}).get("ref") if pv else None
+        ref_v = ref.get("value") if isinstance(ref, dict) else ref
+        sold = sk_by_id.get(sid, {}).get("market_sold_us")
+        # Le marché FR est le seul qui se compare SANS conversion à un coût en euros, et c'est
+        # aussi le marché où ces boîtes se revendent. Il prime donc pour l'écart quand il existe.
+        frb = next((b for k, b in (fr_best or {}).items() if k.split("|")[0] == sid), None)
+        fr_eur = frb["unit"] if frb else None
+        fx = cat.get("fx_usd_eur")
+        cmp_usd = best if best is not None else ref_v
+        us_eur = (cmp_usd * float(fx)) if (cmp_usd is not None and fx) else None
+        # priorité au marché FR : euro contre euro, aucune conversion, et c'est le débouché réel
+        base_eur, base_src = (fr_eur, "FR") if fr_eur is not None else (us_eur, "US")
+        spread = (round((base_eur - a["unit_landed_eur"]) / a["unit_landed_eur"] * 100, 1)
+                  if base_eur is not None else None)
+        rows.append({"sid": sid, "sku": sk_by_id.get(sid, {}), "qty": a["qty"],
+                     "unit_landed_eur": a["unit_landed_eur"], "cost": a["cost"],
+                     "best_ask_usd": best, "ref_usd": ref_v,
+                     "ref_basis": (pv or {}).get("basis"), "sold_usd": sold,
+                     "fr_eur": fr_eur, "fr_shop": (frb or {}).get("shop"),
+                     "spread_pct": spread, "spread_src": base_src if spread is not None else None,
+                     "n_live": len(live), "lots": a["lots"]})
+    rows.sort(key=lambda r: -r["cost"])
+    return rows
+
 def hot_now(entries, limit=15):
     """Lignes EN STOCK avec >=1 déclencheur ET une référence de marché. Triées par nombre de
     déclencheurs puis par écart croissant. Une ligne sans référence n'y entre jamais."""
@@ -1560,6 +1649,10 @@ class Opportunity:
     other_offers: int
     # emplacements réservés, non alimentés tant que la couche FR n'existe pas
     evidence: str | None = None
+    # inventaire : information, jamais décision. La carte reste visible et garde son verdict —
+    # un restock à -60 % peut valoir un rachat, c'est une décision humaine.
+    owned_qty: int = 0
+    owned_landed_eur: float | None = None
     hist_qty: int = 1                    # nombre de boîtes derrière hist_low
     buy_target_v2: float | None = None   # seuil dérivé du marché actuel, quand il existe
     target_why: str | None = None
@@ -1576,7 +1669,7 @@ class Opportunity:
     fr_other_offers: int = 0
     fr_checked_at: str | None = None
 
-def opportunity(e, kind, cat, fr_best=None) -> Opportunity:
+def opportunity(e, kind, cat, fr_best=None, owned=None) -> Opportunity:
     s_ = e["sku"]; o = e["o"]
     q = (o[11] if len(o) > 11 and o[11] else 1) or 1
     b = buy_target(s_)
@@ -1603,6 +1696,8 @@ def opportunity(e, kind, cat, fr_best=None) -> Opportunity:
         market=(f"{pv['gap']:+.0f} % vs {'ventes réalisées' if pv.get('basis') == 'sold' else 'prix demandés'}"
                 if pv.get("gap") is not None else gap_phrase(e)),
         evidence=pv.get("why"), ref_kind=e.get("kind"), ref_ok=ref_is_usable(e),
+        owned_qty=((owned or {}).get(e["sid"], {}).get("qty") or 0),
+        owned_landed_eur=((owned or {}).get(e["sid"], {}).get("unit_landed_eur")),
         buy_below=b, buy_target_v2=tgt, target_why=tgt_why,
         # « Attendre » se calcule sur le seuil dérivé du marché quand il existe. Le seuil manuel
         # ne pilote plus le verdict : il ne doit pas piloter davantage l'objectif de prix.
@@ -1640,6 +1735,9 @@ def render_card(op: Opportunity) -> str:
          f"<div class=nm>{op.label}</div>",
          f"<div class=pr>{money_or(op.price)} <span class=shop>· {op.shop}</span></div>",
          f"<div><span class='v'>{op.verdict}</span> <span class=gap>{op.market}</span></div>"]
+    if op.owned_qty:
+        cost = f" · {op.owned_landed_eur:.2f} €/boîte payés" if op.owned_landed_eur else ""
+        r.append(f"<div class=small><span class=own>📦 EN STOCK ×{op.owned_qty}</span>{cost}</div>")
     if op.evidence:
         r.append(f"<div class=small>{op.evidence}</div>")
     if op.buy_below is not None:
@@ -1695,8 +1793,9 @@ def write_html(cat, blocks, restocks, review, seen_at, trust=None, hot=None, ent
     nb = cat["landed_cost"].get("bundle_boxes", 8)
     h = ["<!doctype html><meta charset='utf-8'><meta name=viewport content='width=device-width,initial-scale=1'>",
          "<title>Wemby Hunt</title><style>",
-         ":root{--bg:#fff;--fg:#141414;--mut:#6b6b6b;--line:#e6e6e6;--card:#fafafa;--go:#0f7b3d;--warn:#8a5a00}",
-         "@media(prefers-color-scheme:dark){:root{--bg:#111;--fg:#ededed;--mut:#9a9a9a;--line:#2a2a2a;--card:#191919}}",
+         ":root{--bg:#fff;--fg:#141414;--mut:#6b6b6b;--line:#e6e6e6;--card:#fafafa;--go:#0f7b3d;--warn:#8a5a00;--own:#5b4bb8}",
+         "@media(prefers-color-scheme:dark){:root{--bg:#111;--fg:#ededed;--mut:#9a9a9a;--line:#2a2a2a;--card:#191919;--own:#a99cf0}}",
+         ".own{color:var(--own);font-weight:600}",
          "*{box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;",
          "max-width:720px;margin:0 auto;padding:12px 12px 48px;color:var(--fg);background:var(--bg);line-height:1.45}",
          "h1{font-size:1.3rem;margin:.1em 0}h2{font-size:1.1rem;margin:1.5em 0 .4em}",
@@ -1728,6 +1827,7 @@ def write_html(cat, blocks, restocks, review, seen_at, trust=None, hot=None, ent
           if seen_at else "<p class=small>Rapport hors passage (--report)</p>"),
          "<nav>" + " ".join(f"<a href='#{i}'>{n}</a>" for i, n in
                             [("acheter", "🔥 Acheter"), ("surveiller", "👀 Surveiller"),
+                             ("inventaire", "📦 Mon inventaire"),
                              ("fr", "🇫🇷 FR"), ("explorer", "🔎 Explorer"),
                              ("diag", "⚙️ Diagnostic")]) + "</nav>"]
 
@@ -1736,9 +1836,16 @@ def write_html(cat, blocks, restocks, review, seen_at, trust=None, hot=None, ent
     restk = restock_lines(entries)
     # 2 : une seule source de vérité. La phrase de synthèse, les compteurs et les cartes
     # dérivent tous des MÊMES listes d'objets — impossible d'annoncer 2 et d'en afficher 3.
-    ops_buy = [opportunity(e, "buy", cat, fr_best) for e in hot]
-    ops_near = [opportunity(e, "near", cat, fr_best) for _, e in near]
-    ops_rest = [opportunity(e, "restock", cat, fr_best) for e in restk]
+    # L'inventaire arrive ICI, après que tous les verdicts ont été rendus. Il ne peut donc, par
+    # construction, en modifier aucun : les cartes sont déjà décidées quand on leur colle le badge.
+    inv = load_inventory()
+    owned, inv_unknown = inventory_by_sku(inv, {x["id"] for x in cat["skus"]})
+    for u in inv_unknown:
+        print(f"⚠️  inventory.yaml : sku « {u} » absent du catalogue — ligne ignorée, aucune identité devinée")
+    ops_buy = [opportunity(e, "buy", cat, fr_best, owned) for e in hot]
+    ops_near = [opportunity(e, "near", cat, fr_best, owned) for _, e in near]
+    ops_rest = [opportunity(e, "restock", cat, fr_best, owned) for e in restk]
+    inv_rows = inventory_rows(owned, entries, cat, fr_best)
     nb_buy = len(ops_buy)
     rc = len([op for op in ops_buy if op.bucket == "rc"])
     watch_by = {k: 0 for k, _, _ in WEMBY_SECTIONS}
@@ -1785,6 +1892,45 @@ def write_html(cat, blocks, restocks, review, seen_at, trust=None, hot=None, ent
                  "jamais une valeur de marché.</p>")
     else:
         h.append("<p class=empty>Aucun produit en rupture avec une cible d’achat définie.</p>")
+
+    # ---------------- 📦 mon inventaire
+    tot_q = sum(r["qty"] for r in inv_rows)
+    tot_c = sum(r["cost"] for r in inv_rows)
+    h.append(f"<h2 id=inventaire>📦 Mon inventaire — {tot_q} boîte(s), {tot_c:.0f} € de coût</h2>")
+    if inv_rows:
+        h.append("<p class=small>Ce que je détiens face à ce que ça vaut aujourd'hui. "
+                 "L'inventaire n'entre dans aucun calcul de marché : il s'affiche à côté des "
+                 "verdicts, jamais dedans. Un SKU sans observation exploitable affiche « — » — "
+                 "aucune valeur n'est inventée pour combler un trou.</p>")
+        h.append("<div class=wrap><table><tr><th>Produit</th><th>Qté</th><th>Payé /boîte</th>"
+                 "<th>Coût total</th><th>Meilleur ask US</th><th>Référence US</th><th>Sold US</th>"
+                 "<th>Best FR</th><th>Écart vs mon coût</th></tr>")
+        for r in inv_rows:
+            lbl = sku_label(r["sku"]) if r["sku"] else r["sid"]
+            ask = money_or(r["best_ask_usd"])
+            ref = (f"{money_or(r['ref_usd'])} "
+                   f"<span class=small>{'ventes' if r['ref_basis'] == 'sold' else 'demandés'}</span>"
+                   if r["ref_usd"] is not None else "—")
+            sp = r["spread_pct"]
+            spc = "go" if (sp or 0) > 0 else "miss"
+            spread = (f"<span class={spc}>{sp:+.0f} %</span>" if sp is not None else "—")
+            fr = (f"€{r['fr_eur']:.2f} <span class=small>{r['fr_shop'] or ''}</span>"
+                  if r["fr_eur"] is not None else "—")
+            h.append(f"<tr><td>{lbl}</td><td>{r['qty']}</td><td>{r['unit_landed_eur']:.2f} €</td>"
+                     f"<td>{r['cost']:.2f} €</td><td>{ask}</td><td>{ref}</td>"
+                     f"<td>{money_or(r['sold_usd'])}</td><td>{fr}</td>"
+                     f"<td>{spread} <span class=small>{r['spread_src'] or ''}</span></td></tr>")
+        h.append("</table></div>")
+        h.append(f"<p class=small>L'écart se mesure contre le marché FR quand il existe — euro "
+                 f"contre euro, sans conversion, et c'est là que ces boîtes se revendent. À défaut, "
+                 f"contre le meilleur ask US converti au taux du catalogue ({cat.get('fx_usd_eur')}), "
+                 f"ce qui compare un prix de gros américain à un coût rendu en France : "
+                 f"structurellement défavorable, et ce n'est pas le prix auquel je vendrais. "
+                 f"C'est une information, pas une valorisation — ni frais de vente, ni port sortant, "
+                 f"ni liquidité réelle n'y figurent.</p>")
+    else:
+        h.append("<p class=empty>Aucun inventaire déclaré. Renseignez inventory.yaml "
+                 "pour voir vos coûts face au marché.</p>")
 
     # ---------------- 🇫🇷 marché FR
     h.append(f"<h2 id=fr>🇫🇷 Marché FR — {len(fr_best)} produit(s) en stock</h2>")

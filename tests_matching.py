@@ -321,5 +321,36 @@ _mo("et la revue est refermée", _bl.get("thresholds_review_needed"), False)
 _mo("le Mega reste sans sold exploitable",
     next(x for x in _SK if x["id"] == "PANINI_2023-24_MOSAIC_MEGA").get("market_sold_us"), None)
 
-print(f"TOTAL AVEC SEALED : {len(POS)+len(P2)+len(NEG)+11+len(_FP)+len(_MO)} tests, {len(fails)} FAIL")
+# ---------------------------------------------------------------------------
+# Le « 2 » de H2 n'est pas une quantité
+# ---------------------------------------------------------------------------
+_H2 = []
+def _h2(t, exp):
+    _H2.append(t); got = hunt.parse_quantity(hunt.norm(t))
+    if got != exp: fails.append(("H2", t, got, exp))
+    print(f"{'PASS' if got == exp else 'FAIL'} quantité x{exp} : {t}")
+
+# un chiffre collé à une lettre appartient au nom du produit, pas au conditionnement
+_h2("2023-24 Panini Select Basketball H2 Box", 1)
+_h2("2023-24 Panini Select Basketball H2 Hobby Hybrid Box", 1)
+_h2("2025-26 Panini Origins EuroLeague Basketball H2 Box", 1)
+# ... et un chiffre isolé reste une quantité
+_h2("2023-24 Panini Select Basketball 2-Box Lot", 2)
+_h2("2023-24 Panini Mosaic Fast Break 20-Box Case", 20)
+_h2("2025-26 Bowman Basketball Hobby 12-Box Case", 12)
+# le cas croisé : les deux dans le même titre, seul le second compte
+_h2("2023-24 Panini Select H2 2-Box Lot", 2)
+
+# et la conséquence : deux graphies du même produit retombent dans la MÊME cloison
+_k_a = hunt.exact_comp_key("SEL_H2", hunt.norm("2023-24 Panini Select Basketball H2 Box"))
+_k_b = hunt.exact_comp_key("SEL_H2", hunt.norm("2023-24 Panini Select Basketball H2 Hobby Hybrid Box"))
+_H2.append("cloison")
+if _k_a != _k_b: fails.append(("H2", "cloison", _k_a, _k_b))
+print(f"{'PASS' if _k_a == _k_b else 'FAIL'} « H2 Box » et « H2 Hobby Hybrid Box » partagent la cloison")
+_H2.append("lot distinct")
+_k_lot = hunt.exact_comp_key("SEL_H2", hunt.norm("2023-24 Panini Select H2 2-Box Lot"))
+if _k_lot == _k_a: fails.append(("H2", "lot distinct", _k_lot, "≠ " + _k_a))
+print(f"{'PASS' if _k_lot != _k_a else 'FAIL'} un vrai lot de deux garde sa cloison à part")
+
+print(f"TOTAL AVEC SEALED : {len(POS)+len(P2)+len(NEG)+11+len(_FP)+len(_MO)+len(_H2)} tests, {len(fails)} FAIL")
 sys.exit(1 if fails else 0)

@@ -1,52 +1,40 @@
-generated_at: '2026-08-24T05:58:14+00:00'
+generated_at: '2026-08-31T11:46:17+00:00'
 engine: ddg
 skus_queried: 10
 metrics:
-  nouvelles_sources_qualifiees: 8
-  dont_au_moins_1_match_in_stock: 4
+  nouvelles_sources_qualifiees: 7
+  dont_au_moins_1_match_in_stock: 3
 note: Prospection automatique. sources.yaml n'est JAMAIS modifié par ce module.
 candidates:
-- domain: fastbreaktradingcards.com
-  shopify: true
-  products_sampled: 250
-  basketball: 33
-  sealed_2023_24: 1
-  matched: 13
-  matched_in_stock: 5
-  error: null
-  base_url: https://fastbreaktradingcards.com
-  seen_for:
-  - PANINI_2023-24_CONTENDERS_BLASTER
 - domain: scorebigcollectibles.com
   shopify: true
   products_sampled: 73
   basketball: 6
   sealed_2023_24: 1
-  matched: 1
+  matched: 2
   matched_in_stock: 0
   error: null
   base_url: https://scorebigcollectibles.com
   seen_for:
   - PANINI_2023-24_REVOLUTION_HOBBY
-- domain: shoppieceofthegame.com
+- domain: eastsidecollectables.com.au
   shopify: true
   products_sampled: 250
-  basketball: 6
-  sealed_2023_24: 1
-  matched: 1
-  matched_in_stock: 1
+  basketball: 30
+  sealed_2023_24: 0
+  matched: 3
+  matched_in_stock: 3
   error: null
-  base_url: https://shoppieceofthegame.com
+  base_url: https://eastsidecollectables.com.au
   seen_for:
-  - PANINI_2023-24_OPTIC_HOBBY
-  - PANINI_2023-24_OPTIC_HOBBY_BLASTER
+  - PANINI_2023-24_PREMIUM_STOCK_BLASTER
 - domain: portcitysportscollectibles.com
   shopify: true
-  products_sampled: 221
-  basketball: 21
+  products_sampled: 213
+  basketball: 19
   sealed_2023_24: 0
   matched: 8
-  matched_in_stock: 7
+  matched_in_stock: 8
   error: null
   base_url: https://portcitysportscollectibles.com
   seen_for:
@@ -54,10 +42,10 @@ candidates:
 - domain: threestarssportscards.com
   shopify: true
   products_sampled: 250
-  basketball: 9
+  basketball: 12
   sealed_2023_24: 0
-  matched: 2
-  matched_in_stock: 1
+  matched: 3
+  matched_in_stock: 2
   error: null
   base_url: https://threestarssportscards.com
   seen_for:
@@ -67,7 +55,7 @@ candidates:
 - domain: cmbcollectibles.com
   shopify: true
   products_sampled: 250
-  basketball: 9
+  basketball: 8
   sealed_2023_24: 0
   matched: 0
   matched_in_stock: 0
@@ -75,21 +63,22 @@ candidates:
   base_url: https://cmbcollectibles.com
   seen_for:
   - PANINI_2023-24_PREMIUM_STOCK_BLASTER
-- domain: greatamericansportscards.com
+- domain: shoppieceofthegame.com
   shopify: true
   products_sampled: 250
-  basketball: 4
+  basketball: 5
   sealed_2023_24: 0
   matched: 0
   matched_in_stock: 0
   error: null
-  base_url: https://greatamericansportscards.com
+  base_url: https://shoppieceofthegame.com
   seen_for:
-  - PANINI_2023-24_CONTENDERS_BLASTER
+  - PANINI_2023-24_OPTIC_HOBBY
+  - PANINI_2023-24_OPTIC_HOBBY_BLASTER
 - domain: cardpopusa.com
   shopify: true
   products_sampled: 250
-  basketball: 3
+  basketball: 1
   sealed_2023_24: 0
   matched: 0
   matched_in_stock: 0

@@ -31,14 +31,14 @@
 → The Cardiacs (https://www.thecardiacs.com)  [trust=trusted]
   5329 produits bruts, 40 rattachés à un SKU
 → Monmouth Cards (https://monmouthcards.com)  [trust=watch]
-  5264 produits bruts, 39 rattachés à un SKU
+  5261 produits bruts, 39 rattachés à un SKU
 → World Champion Sports Cards (https://www.worldchampionsportscards.org)  [trust=watch]
   4015 produits bruts, 66 rattachés à un SKU
 → Superior Sports Investments (https://superiorsportsinvestments.com)  [trust=watch]
     collections : 8/84 retenues (filtre 'basketball|\\bnba\\b|hoops|prizm|mosaic|optic|select|phoenix|contenders|court.kings|revolution|premium.stock')
-  16183 produits bruts, 45 rattachés à un SKU
+  16184 produits bruts, 45 rattachés à un SKU
 → SJAY2K Trading Cards (https://www.sjay2k.com)  [trust=watch]
-  565 produits bruts, 16 rattachés à un SKU
+  563 produits bruts, 15 rattachés à un SKU
 → The Ballgame (https://theballgame.com)  [trust=watch]
   12930 produits bruts, 4 rattachés à un SKU
 → Bleecker Trading (https://bleeckertrading.com)  [trust=watch]
@@ -74,13 +74,12 @@
   381 produits bruts, 14 rattachés à un SKU
 → Tanteo Cartes Collections (https://tanteocartescollections.com)  [trust=watch]
   397 produits bruts, 20 rattachés à un SKU
-(56 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
+(57 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
 
 ========================================================================
   🔔 RESTOCKS depuis le passage précédent
 ========================================================================
-  🔔 RESTOCK  PANINI_2023-24_CONTENDERS_BLASTER  collectorstore  $49.99  https://collectorstore.com/products/2023-24-panini-contenders-basketball-blaster-box
-  🔔 RESTOCK  PANINI_2024-25_SELECT_MEGA  sjay2k  $90.00  https://www.sjay2k.com/products/2024-25-panini-select-basketball-h2-hybrid-box-copy
+  🔔 RESTOCK  PANINI_2024-25_PRIZM_BLASTER  sjay2k  $60.00  https://www.sjay2k.com/products/2024-25-panini-prizm-basketball-6-pack-blaster-box
 
 ========================================================================
   RETAIL
@@ -359,8 +358,8 @@
    RESTOCK TARGET $100.00  — surveillance, pas une valeur de marché
 
 ⛔ NO_GO   2023-24 Panini Contenders Blaster   [PANINI_2023-24_CONTENDERS_BLASTER]
-   1. collectorstore   $   49.99  IN STOCK  landed≈€  64.50  (score 1.00)  🔔
-        🔹RESTOCK +7j  RC_YEAR  cheapest of 2 in stock
+   1. collectorstore   $   49.99  IN STOCK  landed≈€  64.50  (score 1.00)
+        RC_YEAR  cheapest of 2 in stock
    2. tanteo           $   57.90  IN STOCK  landed≈€  72.68  (score 1.00)
         RC_YEAR  VERIFY  FR
    3. hiddengems       $   30.00  SOLD OUT  landed≈€  43.82  (score 1.00)
@@ -484,17 +483,17 @@
 
 · SUIVI   2024-25 Panini Prizm Blaster   [PANINI_2024-25_PRIZM_BLASTER]
    1. ehcards          $   29.99  IN STOCK  landed≈€  43.81  (score 1.00)
-        YEAR2  cheapest of 2 in stock
+        YEAR2  cheapest of 3 in stock
    2. tanteo           $   34.50  IN STOCK  landed≈€  48.47  (score 1.00)
         YEAR2  VERIFY  FR
-   3. sportscardjunction $   10.00  SOLD OUT  landed≈€  23.13  (score 1.00)
+   3. sjay2k           $   60.00  IN STOCK  landed≈€  74.85  (score 1.00)  🔔
+        🔹RESTOCK +0j  YEAR2  VERIFY
+   4. sportscardjunction $   10.00  SOLD OUT  landed≈€  23.13  (score 1.00)
         YEAR2  VERIFY
-   4. cardiacs         $   19.95  SOLD OUT  landed≈€  33.42  (score 1.00)
+   5. cardiacs         $   19.95  SOLD OUT  landed≈€  33.42  (score 1.00)
         YEAR2
-   5. awesome          $   23.75  SOLD OUT  landed≈€  37.35  (score 1.00)
+   6. awesome          $   23.75  SOLD OUT  landed≈€  37.35  (score 1.00)
         YEAR2
-   6. bleecker         $   30.00  SOLD OUT  landed≈€  43.82  (score 1.00)
-        YEAR2  VERIFY
    ask $15.00   sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $10.00 (le 2026-08-18, sportscardjunction, 7 shop(s) vus) | cheapest live $29.99
    BEST → ehcards  https://ehcards.com/products/2024-25-panini-prizm-nba-basketball-6-pack-blaster-box
@@ -1906,7 +1905,7 @@
 
 · CANDIDAT   2025-26 Panini Origins EuroLeague H2   [PANINI_2025-26_EUROLEAGUE_ORIGINS_H2]  ⚑ euroleague
    1. rlsports         $   34.99  IN STOCK  landed≈€  48.98  (score 1.00)
-        🔹NEW_LOW  🔹PRICE_DROP -13%  EUROLEAGUE  VERIFY  cheapest of 6 in stock  MARKET DATA INSUFFICIENT
+        EUROLEAGUE  VERIFY  cheapest of 6 in stock  MARKET DATA INSUFFICIENT
    2. columbia         $   38.99  IN STOCK  landed≈€  53.12  (score 1.00)
         EUROLEAGUE  MARKET DATA INSUFFICIENT
    3. awesome          $   49.75  IN STOCK  landed≈€  64.25  (score 1.00)
@@ -2031,10 +2030,10 @@
 ========================================================================
   🔥 HOT NOW — 11 ligne(s)
 ========================================================================
-  2025-26 Panini Origins EuroLeague H2           $   34.99 rlsports          -29.9% [demandés] NEW_LOW PRICE_DROP -13%  (+1 autre(s) offre(s))
   2023-24 Panini Prizm EuroLeague Blaster        $    9.95 cardiacs          -33.7% [demandés] STRONG_DEAL -60%
   2025-26 Topps Chrome Black Hobby [Chrome Bla   $  524.99 columbia          -22.2% [demandés] DEAL -18%  (+1 autre(s) offre(s))
   2024-25 Topps Chrome Blaster                   $   19.99 hiddengems        -42.9% [demandés] 
+  2025-26 Panini Origins EuroLeague H2           $   34.99 rlsports          -29.9% [demandés]   (+1 autre(s) offre(s))
   2024-25 Panini Select Mega                     $   39.95 cardiacs          -27.0% [demandés]   (+1 autre(s) offre(s))
   2024-25 Panini Hoops Blaster                   $   20.00 hiddengems        -26.9% [demandés] 
   2024-25 Panini Select Blaster                  $   21.99 collectorstore    -26.7% [demandés] 
@@ -2068,5 +2067,5 @@
   2024-25_MOSAIC_FAST_BREAK                €  359.90  tanteo      
   2025-26_CHROME_BLACK_HOBBY               €  499.00  qscards     
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-09-02T04-12-43.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-09-02T11-07-34.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

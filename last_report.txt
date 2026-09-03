@@ -4,14 +4,14 @@
     collections : 4/126 retenues (filtre 'basketball|\\bnba\\b|hoops|prizm|mosaic|optic|select|phoenix|contenders|court.kings|revolution|premium.stock')
   766 produits bruts, 31 rattachés à un SKU
 → Hidden Gems Card Shop (https://www.hiddengemscardshop.com)  [trust=trusted]
-  2830 produits bruts, 53 rattachés à un SKU
+  2835 produits bruts, 53 rattachés à un SKU
 → The Awesome Card Shop (https://theawesomecardshop.com)  [trust=trusted]
-  7386 produits bruts, 111 rattachés à un SKU
+  7388 produits bruts, 111 rattachés à un SKU
 → MojoBreak Shop (https://mojobreakshop.com)  [trust=trusted]
   [mojobreak] status=reject \(qualifié sur données réelles → 0 sealed 2023-24\) → skip
   0 produits bruts, 0 rattachés à un SKU
 → RbiCru7 Collectibles (https://rbicru7.com)  [trust=trusted]
-  12707 produits bruts, 40 rattachés à un SKU
+  12730 produits bruts, 40 rattachés à un SKU
 → Layton Sports Cards (https://laytonsportscards.com)  [trust=trusted]
   [layton] type=breaks \(breaker, hors périmètre sealed\) → skip
   0 produits bruts, 0 rattachés à un SKU
@@ -22,31 +22,31 @@
   [dacw] type=html non géré en v1 → skip
   0 produits bruts, 0 rattachés à un SKU
 → Columbia Sports Cards (https://columbiasportscard.com)  [trust=trusted]
-  2953 produits bruts, 76 rattachés à un SKU
+  1781 produits bruts, 42 rattachés à un SKU
 → Sports Card Junction (https://sportscardjunction.com)  [trust=watch]
   3780 produits bruts, 73 rattachés à un SKU
 → Grand Slam Collectibles (https://grandslamcollectibles.com)  [trust=watch]
   [grandslam] status=reject \(qualifié sur données réelles → 0 sealed 2023-24\) → skip
   0 produits bruts, 0 rattachés à un SKU
 → The Cardiacs (https://www.thecardiacs.com)  [trust=trusted]
-  5333 produits bruts, 40 rattachés à un SKU
+  5335 produits bruts, 40 rattachés à un SKU
 → Monmouth Cards (https://monmouthcards.com)  [trust=watch]
-  5325 produits bruts, 39 rattachés à un SKU
+  5520 produits bruts, 39 rattachés à un SKU
 → World Champion Sports Cards (https://www.worldchampionsportscards.org)  [trust=watch]
-  4017 produits bruts, 66 rattachés à un SKU
+  4016 produits bruts, 66 rattachés à un SKU
 → Superior Sports Investments (https://superiorsportsinvestments.com)  [trust=watch]
     collections : 8/84 retenues (filtre 'basketball|\\bnba\\b|hoops|prizm|mosaic|optic|select|phoenix|contenders|court.kings|revolution|premium.stock')
-  16190 produits bruts, 45 rattachés à un SKU
+  16248 produits bruts, 45 rattachés à un SKU
 → SJAY2K Trading Cards (https://www.sjay2k.com)  [trust=watch]
-  571 produits bruts, 17 rattachés à un SKU
+  570 produits bruts, 17 rattachés à un SKU
 → The Ballgame (https://theballgame.com)  [trust=watch]
-  12930 produits bruts, 4 rattachés à un SKU
+  12933 produits bruts, 4 rattachés à un SKU
 → Bleecker Trading (https://bleeckertrading.com)  [trust=watch]
   2226 produits bruts, 110 rattachés à un SKU
 → CB Hobby (https://cbhobby.com)  [trust=watch]
-  624 produits bruts, 9 rattachés à un SKU
+  623 produits bruts, 9 rattachés à un SKU
 → Box Seat Collectibles (https://boxseatcollectibles.com)  [trust=watch]
-  2087 produits bruts, 28 rattachés à un SKU
+  2084 produits bruts, 28 rattachés à un SKU
 → E5 Sports (https://e5sports.com)  [trust=watch]
   1073 produits bruts, 10 rattachés à un SKU
 → SportCards.com (https://sportcards.com)  [trust=watch]
@@ -60,7 +60,7 @@
 → RL Sports Cards (https://rlsportscards.com)  [trust=watch]
   1781 produits bruts, 68 rattachés à un SKU
 → Fan Cave (https://fancave.com)  [trust=watch]
-  915 produits bruts, 4 rattachés à un SKU
+  923 produits bruts, 4 rattachés à un SKU
 → Mill Creek Sports (https://www.millcreeksports.com)  [trust=watch]
   [millcreek] type=html non géré en v1 → skip
   0 produits bruts, 0 rattachés à un SKU
@@ -71,10 +71,10 @@
   [tracenchase] type=eu_reference (GR, woocommerce) → référence de prix EU, non crawlée
   0 produits bruts, 0 rattachés à un SKU
 → QS Cards (https://qscards.com)  [trust=watch]
-  386 produits bruts, 15 rattachés à un SKU
+  407 produits bruts, 15 rattachés à un SKU
 → Tanteo Cartes Collections (https://tanteocartescollections.com)  [trust=watch]
-  397 produits bruts, 20 rattachés à un SKU
-(55 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
+  398 produits bruts, 20 rattachés à un SKU
+(89 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
 
 ========================================================================
   RETAIL
@@ -109,7 +109,7 @@
    5. worldchampion    $   35.00  SOLD OUT  landed≈€  48.99  (score 1.00)
         RC_YEAR  VERIFY
    6. monmouth         $   37.99  SOLD OUT  landed≈€  52.08  (score 1.00)
-        🔹PRICE_DROP -5%  RC_YEAR  VERIFY
+        RC_YEAR  VERIFY
    ask $34.96   sold n/a      | buy ≤ $30.00   | watch ≤ $35.00   | EU n/a
    HISTORICAL LOW $20.00 (le 2026-08-17, hiddengems, 8 shop(s) vus) | cheapest live $44.99
    BEST → ehcards  https://ehcards.com/products/2023-24-panini-premium-stock-basketball-blaster-box
@@ -122,7 +122,7 @@
    3. e5sports         $   50.00  SOLD OUT  landed≈€  64.51  (score 1.00)
         RC_YEAR  VERIFY  MARKET DATA INSUFFICIENT
    4. monmouth         $   52.24  SOLD OUT  landed≈€  66.82  (score 1.00)
-        🔹PRICE_DROP -5%  RC_YEAR  VERIFY  MARKET DATA INSUFFICIENT
+        RC_YEAR  VERIFY  MARKET DATA INSUFFICIENT
    5. sportcards       $   59.95  SOLD OUT  landed≈€  74.80  (score 1.00)
         RC_YEAR  VERIFY  MARKET DATA INSUFFICIENT
    6. bleecker         $   60.00  SOLD OUT  landed≈€  74.85  (score 1.00)
@@ -136,13 +136,13 @@
         RC_YEAR
    2. awesome          $   62.75  SOLD OUT  landed≈€  77.70  (score 1.00)
         RC_YEAR
-   3. columbia         $   69.95  SOLD OUT  landed≈€  85.14  (score 1.00)
-        RC_YEAR
-   4. rlsports         $   69.95  SOLD OUT  landed≈€  85.14  (score 1.00)
+   3. rlsports         $   69.95  SOLD OUT  landed≈€  85.14  (score 1.00)
         RC_YEAR  VERIFY
-   5. worldchampion    $   70.00  SOLD OUT  landed≈€  85.20  (score 1.00)
+   4. worldchampion    $   70.00  SOLD OUT  landed≈€  85.20  (score 1.00)
         RC_YEAR  VERIFY
-   6. rlsports         $   74.95  SOLD OUT  landed≈€  90.32  (score 1.00)
+   5. rlsports         $   74.95  SOLD OUT  landed≈€  90.32  (score 1.00)
+        RC_YEAR  VERIFY
+   6. bleecker         $   80.00  SOLD OUT  landed≈€  95.54  (score 1.00)
         RC_YEAR  VERIFY
    ask $119.95  sold n/a      | buy ≤ $60.00   | watch ≤ $80.00   | EU €116.66
    HISTORICAL LOW $60.00 (le 2026-08-17, awesome, 5 shop(s) vus) | aucun live
@@ -157,10 +157,10 @@
         RC_YEAR  VERIFY  MARKET DATA INSUFFICIENT
    4. awesome          $   45.00  SOLD OUT  landed≈€  59.34  (score 1.00)
         RC_YEAR  MARKET DATA INSUFFICIENT
-   5. columbia         $   49.95  SOLD OUT  landed≈€  64.46  (score 1.00)
-        RC_YEAR  MARKET DATA INSUFFICIENT
-   6. bleecker         $   50.00  SOLD OUT  landed≈€  64.51  (score 1.00)
+   5. bleecker         $   50.00  SOLD OUT  landed≈€  64.51  (score 1.00)
         RC_YEAR  VERIFY  MARKET DATA INSUFFICIENT
+   6. tanteo           $   67.50  SOLD OUT  landed≈€  82.61  (score 1.00)
+        RC_YEAR  VERIFY  MARKET DATA INSUFFICIENT  FR
    ask n/a      sold n/a      | buy ≤ $40.00   | watch ≤ $45.00   | EU n/a
    HISTORICAL LOW $35.00 (le 2026-08-17, hiddengems, 6 shop(s) vus) | cheapest live $59.99
    BEST → ehcards  https://ehcards.com/products/2023-24-panini-donruss-optic-basketball-6-pack-blaster-box
@@ -176,7 +176,7 @@
         RC_YEAR  VERIFY
    5. worldchampion    $   60.00  SOLD OUT  landed≈€  74.85  (score 1.00)
         RC_YEAR  VERIFY
-   6. columbia         $   64.99  SOLD OUT  landed≈€  80.01  (score 1.00)
+   6. awesome          $   70.00  SOLD OUT  landed≈€  85.20  (score 1.00)
         RC_YEAR
    ask $63.95   sold $60.00   | buy ≤ $65.00   | watch ≤ $75.00   | EU €99.00
    HISTORICAL LOW $59.99 (le 2026-08-17, ehcards, 9 shop(s) vus) | cheapest live $110.00
@@ -191,9 +191,7 @@
         RC_YEAR  VERIFY  MARKET DATA INSUFFICIENT
    4. awesome          $   49.75  SOLD OUT  landed≈€  64.25  (score 1.00)
         RC_YEAR  MARKET DATA INSUFFICIENT
-   5. columbia         $   49.95  SOLD OUT  landed≈€  64.46  (score 1.00)
-        RC_YEAR  MARKET DATA INSUFFICIENT
-   6. rlsports         $   54.95  SOLD OUT  landed≈€  69.63  (score 1.00)
+   5. rlsports         $   54.95  SOLD OUT  landed≈€  69.63  (score 1.00)
         RC_YEAR  VERIFY  MARKET DATA INSUFFICIENT
    ask n/a      sold n/a      | buy ≤ $45.00   | watch ≤ $55.00   | EU n/a
    HISTORICAL LOW $45.00 (le 2026-08-17, worldchampion, 7 shop(s) vus) | cheapest live $89.99
@@ -282,7 +280,7 @@
    3. awesome          $   49.75  SOLD OUT  landed≈€  64.25  (score 1.00)
         RC_YEAR
    4. monmouth         $   56.99  SOLD OUT  landed≈€  71.74  (score 1.00)
-        🔹PRICE_DROP -5%  RC_YEAR  VERIFY
+        RC_YEAR  VERIFY
    5. sportscardjunction $   60.00  SOLD OUT  landed≈€  74.85  (score 1.00)
         RC_YEAR  VERIFY
    6. bleecker         $   65.00  SOLD OUT  landed≈€  80.02  (score 1.00)
@@ -299,8 +297,6 @@
    3. rlsports         $   54.95  SOLD OUT  landed≈€  69.63  (score 1.00)
         RC_YEAR  VERIFY
    4. ehcards          $   54.99  SOLD OUT  landed≈€  69.67  (score 1.00)
-        RC_YEAR
-   5. columbia         $   59.95  SOLD OUT  landed≈€  74.80  (score 1.00)
         RC_YEAR
    ask $54.99   sold n/a      | buy ≤ $40.00   | watch ≤ $50.00   | EU n/a
    HISTORICAL LOW $40.00 (le 2026-08-18, sportscardjunction, 6 shop(s) vus) | aucun live
@@ -372,11 +368,9 @@
 — NO_STOCK   2023-24 Panini Prizm Retail Box   [PANINI_2023-24_PRIZM_RETAIL_BOX]
    1. awesome          $  149.94  SOLD OUT  landed≈€ 167.89  (score 1.00)
         RC_YEAR
-   2. columbia         $  154.95  SOLD OUT  landed≈€ 173.07  (score 1.00)
-        RC_YEAR
-   3. monmouth         $  179.99  SOLD OUT  landed≈€ 198.97  (score 1.00)
+   2. monmouth         $  179.99  SOLD OUT  landed≈€ 198.97  (score 1.00)
         RC_YEAR  VERIFY
-   4. bleecker         $  240.00  SOLD OUT  landed≈€ 261.04  (score 1.00)
+   3. bleecker         $  240.00  SOLD OUT  landed≈€ 261.04  (score 1.00)
         RC_YEAR  VERIFY
    ask $149.94  sold n/a      | buy ≤ $110.00  | watch ≤ $140.00  | EU n/a
    HISTORICAL LOW $149.94 (le 2026-08-18, awesome, 4 shop(s) vus) | aucun live
@@ -416,8 +410,6 @@
         RC_YEAR
    3. sportscardjunction $   80.00  SOLD OUT  landed≈€  95.54  (score 1.00)
         RC_YEAR  VERIFY
-   4. columbia         $   89.95  SOLD OUT  landed≈€ 105.83  (score 1.00)
-        RC_YEAR
    ask $250.00  sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $75.00 (le 2026-08-18, ballgame, 5 shop(s) vus) | cheapest live $250.00
    BEST → superior  https://superiorsportsinvestments.com/products/2023-24-panini-donruss-optic-basketball-mega-hobby-box-hyper-green-prizms
@@ -429,11 +421,9 @@
         RC_YEAR  VERIFY
    3. awesome          $  109.75  SOLD OUT  landed≈€ 126.31  (score 1.00)
         RC_YEAR
-   4. columbia         $  109.99  SOLD OUT  landed≈€ 126.56  (score 1.00)
-        RC_YEAR
-   5. worldchampion    $  120.00  SOLD OUT  landed≈€ 136.92  (score 1.00)
+   4. worldchampion    $  120.00  SOLD OUT  landed≈€ 136.92  (score 1.00)
         RC_YEAR  VERIFY
-   6. bleecker         $  140.00  SOLD OUT  landed≈€ 157.60  (score 1.00)
+   5. bleecker         $  140.00  SOLD OUT  landed≈€ 157.60  (score 1.00)
         RC_YEAR  VERIFY
    ask $109.75  sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $95.00 (le 2026-08-18, sportscardjunction, 6 shop(s) vus) | aucun live
@@ -534,7 +524,7 @@
    3. ehcards          $   29.99  IN STOCK  landed≈€  43.81  (score 1.00)
         YEAR2
    4. monmouth         $   33.24  IN STOCK  landed≈€  47.17  (score 1.00)
-        🔹NEW_LOW  🔹PRICE_DROP -5%  YEAR2  VERIFY
+        YEAR2  VERIFY
    5. tanteo           $   36.90  IN STOCK  landed≈€  50.96  (score 1.00)
         YEAR2  VERIFY  FR
    6. superior         $   45.00  IN STOCK  landed≈€  59.34  (score 1.00)
@@ -595,7 +585,7 @@
    1. superior         $   88.00  IN STOCK  landed≈€ 103.81  (score 1.00)
         ONLY_STOCK_SEEN  YEAR2  VERIFY
    2. monmouth         $   47.49  SOLD OUT  landed≈€  61.91  (score 1.00)
-        🔹PRICE_DROP -5%  YEAR2  VERIFY
+        YEAR2  VERIFY
    3. hiddengems       $   59.99  SOLD OUT  landed≈€  74.84  (score 1.00)
         YEAR2
    4. bleecker         $   60.00  SOLD OUT  landed≈€  74.85  (score 1.00)
@@ -612,7 +602,7 @@
    3. collectorstore   $   37.99  IN STOCK  landed≈€  52.08  (score 1.00)
         YEAR2
    4. monmouth         $   37.99  IN STOCK  landed≈€  52.08  (score 1.00)
-        🔹NEW_LOW  🔹PRICE_DROP -5%  YEAR2  VERIFY
+        YEAR2  VERIFY
    5. tanteo           $   44.90  IN STOCK  landed≈€  59.23  (score 1.00)
         YEAR2  VERIFY  FR
    6. superior         $   50.00  IN STOCK  landed≈€  64.51  (score 1.00)
@@ -631,7 +621,7 @@
    4. cardiacs         $   44.95  SOLD OUT  landed≈€  59.28  (score 1.00)
         YEAR2
    5. monmouth         $   52.24  SOLD OUT  landed≈€  66.82  (score 1.00)
-        🔹PRICE_DROP -5%  YEAR2  VERIFY
+        YEAR2  VERIFY
    6. sportscardjunction $   60.00  SOLD OUT  landed≈€  74.85  (score 1.00)
         YEAR2  VERIFY
    ask $59.99   sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
@@ -643,7 +633,7 @@
         VERIFY  cheapest of 3 in stock
    2. rbicru7          $   40.00  IN STOCK  landed≈€  54.16  (score 1.00)
    3. monmouth         $   47.49  IN STOCK  landed≈€  61.91  (score 1.00)
-        🔹NEW_LOW  🔹PRICE_DROP -5%  VERIFY
+        VERIFY
    4. cardiacs         $   22.95  SOLD OUT  landed≈€  36.53  (score 1.00)
    5. rlsports         $   29.99  SOLD OUT  landed≈€  43.81  (score 1.00)
         VERIFY
@@ -673,7 +663,7 @@
    1. ehcards          $   44.99  IN STOCK  landed≈€  59.33  (score 1.00)
         YEAR2  cheapest of 3 in stock
    2. monmouth         $   47.49  IN STOCK  landed≈€  61.91  (score 1.00)
-        🔹NEW_LOW  🔹PRICE_DROP -5%  YEAR2  VERIFY
+        YEAR2  VERIFY
    3. tanteo           $   64.90  IN STOCK  landed≈€  79.92  (score 1.00)
         YEAR2  VERIFY  FR
    4. hiddengems       $   25.00  SOLD OUT  landed≈€  38.65  (score 1.00)
@@ -688,16 +678,16 @@
 
 · SUIVI   2024-25 Panini Hoops Blaster   [PANINI_2024-25_HOOPS_BLASTER]
    1. hiddengems       $   20.00  IN STOCK  landed≈€  33.48  (score 1.00)
-        YEAR2  cheapest of 5 in stock
+        YEAR2  cheapest of 3 in stock
    2. ehcards          $   24.99  IN STOCK  landed≈€  38.64  (score 1.00)
         YEAR2
-   3. tanteo           $   41.00  IN STOCK  landed≈€  55.20  (score 1.00)
-        YEAR2  VERIFY  FR
-   4. tanteo           $   52.90  IN STOCK  landed≈€  67.51  (score 1.00)
-        YEAR2  VERIFY  FR
-   5. sjay2k           $   60.00  IN STOCK  landed≈€  74.85  (score 1.00)
+   3. sjay2k           $   60.00  IN STOCK  landed≈€  74.85  (score 1.00)
         YEAR2  VERIFY
-   6. cardiacs         $   19.95  SOLD OUT  landed≈€  33.42  (score 1.00)
+   4. cardiacs         $   19.95  SOLD OUT  landed≈€  33.42  (score 1.00)
+        YEAR2
+   5. hiddengems       $   24.99  SOLD OUT  landed≈€  38.64  (score 1.00)
+        YEAR2
+   6. awesome          $   29.75  SOLD OUT  landed≈€  43.56  (score 1.00)
         YEAR2
    ask $20.00   sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $19.95 (le 2026-08-18, cardiacs, 7 shop(s) vus) | cheapest live $20.00
@@ -770,28 +760,28 @@
    3. boxseat          $   14.99  IN STOCK  landed≈€  28.29  (score 1.00)
         🔹STRONG_DEAL -25%  VERIFY
    4. rbicru7          $   20.00  IN STOCK  landed≈€  33.48  (score 1.00)
-   5. columbia         $    9.99  SOLD OUT  landed≈€  23.12  (score 1.00)
-   6. hiddengems       $   11.99  SOLD OUT  landed≈€  25.19  (score 1.00)
+   5. hiddengems       $   11.99  SOLD OUT  landed≈€  25.19  (score 1.00)
+   6. awesome          $   14.75  SOLD OUT  landed≈€  28.05  (score 1.00)
    ask $20.00   sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $9.99 (le 2026-08-30, columbia, 10 shop(s) vus) | cheapest live $12.00
    BEST → cbhobby  https://cbhobby.com/products/2023-24-panini-revolution-basketball-stocking-stuffer-tin
 
 · SUIVI   2024-25 Panini Revolution Mega   [PANINI_2024-25_REVOLUTION_MEGA]
-   1. monmouth         $   56.99  IN STOCK  landed≈€  71.74  (score 1.00)
-        🔹NEW_LOW  🔹PRICE_DROP -5%  🔹STRONG_DEAL -37%  YEAR2  VERIFY  cheapest of 2 in stock
-   2. superior         $   90.00  IN STOCK  landed≈€ 105.88  (score 1.00)
+   1. superior         $   90.00  IN STOCK  landed≈€ 105.88  (score 1.00)
+        ONLY_STOCK_SEEN  YEAR2  VERIFY
+   2. hiddengems       $   34.99  SOLD OUT  landed≈€  48.98  (score 1.00)
+        YEAR2
+   3. columbia         $   44.99  SOLD OUT  landed≈€  59.33  (score 1.00)
+        YEAR2
+   4. awesome          $   49.75  SOLD OUT  landed≈€  64.25  (score 1.00)
+        YEAR2
+   5. boxseat          $   49.99  SOLD OUT  landed≈€  64.50  (score 1.00)
         YEAR2  VERIFY
-   3. hiddengems       $   34.99  SOLD OUT  landed≈€  48.98  (score 1.00)
-        YEAR2
-   4. columbia         $   44.99  SOLD OUT  landed≈€  59.33  (score 1.00)
-        YEAR2
-   5. awesome          $   49.75  SOLD OUT  landed≈€  64.25  (score 1.00)
-        YEAR2
    6. boxseat          $   49.99  SOLD OUT  landed≈€  64.50  (score 1.00)
         YEAR2  VERIFY
    ask $90.00   sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
-   HISTORICAL LOW $34.99 (le 2026-08-18, hiddengems, 10 shop(s) vus) | cheapest live $56.99
-   BEST → monmouth  https://monmouthcards.com/products/2024-25-panini-revolution-basketball-mega-box
+   HISTORICAL LOW $34.99 (le 2026-08-18, hiddengems, 10 shop(s) vus) | cheapest live $90.00
+   BEST → superior  https://superiorsportsinvestments.com/products/2024-25-panini-revolution-basketball-mega-box-scope-parallels
 
 ⛔ NO_GO   2023-24 Topps Chrome Blaster   [TOPPS_2023-24_CHROME_VALUE_BLASTER]  ⚑ nbpa
    1. hiddengems       $   75.00  IN STOCK  landed≈€  90.37  (score 1.00)
@@ -804,8 +794,8 @@
         RC_YEAR  NBPA  VERIFY
    5. cardiacs         $   29.95  SOLD OUT  landed≈€  43.77  (score 1.00)
         RC_YEAR  NBPA
-   6. columbia         $   33.99  SOLD OUT  landed≈€  47.95  (score 1.00)
-        RC_YEAR  NBPA
+   6. worldchampion    $   40.00  SOLD OUT  landed≈€  54.16  (score 1.00)
+        RC_YEAR  NBPA  VERIFY
    ask $120.00  sold n/a      | buy ≤ $35.00   | watch ≤ $45.00   | EU n/a
    HISTORICAL LOW $23.99 (le 2026-08-23, rlsports, 10 shop(s) vus) | cheapest live $75.00
    BEST → hiddengems  https://www.hiddengemscardshop.com/products/2023-24-topps-chrome-nba-basketball-value-box-sealed
@@ -816,7 +806,7 @@
    2. awesome          $   65.00  SOLD OUT  landed≈€  80.02  (score 1.00)
         RC_YEAR  NBPA
    3. monmouth         $   75.99  SOLD OUT  landed≈€  91.39  (score 1.00)
-        🔹PRICE_DROP -5%  RC_YEAR  NBPA  VERIFY
+        RC_YEAR  NBPA  VERIFY
    4. worldchampion    $   80.00  SOLD OUT  landed≈€  95.54  (score 1.00)
         RC_YEAR  NBPA  VERIFY
    ask $60.00   sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
@@ -826,13 +816,11 @@
 · SUIVI   2023-24 Topps Chrome Hanger   [TOPPS_2023-24_CHROME_HANGER]  ⚑ nbpa
    1. superior         $   85.00  IN STOCK  landed≈€ 100.71  (score 1.00)
         ONLY_STOCK_SEEN  RC_YEAR  NBPA  VERIFY
-   2. columbia         $   23.95  SOLD OUT  landed≈€  37.56  (score 1.00)
+   2. awesome          $   24.00  SOLD OUT  landed≈€  37.61  (score 1.00)
         RC_YEAR  NBPA
-   3. awesome          $   24.00  SOLD OUT  landed≈€  37.61  (score 1.00)
-        RC_YEAR  NBPA
-   4. sportscardjunction $   25.00  SOLD OUT  landed≈€  38.65  (score 1.00)
+   3. sportscardjunction $   25.00  SOLD OUT  landed≈€  38.65  (score 1.00)
         RC_YEAR  NBPA  VERIFY
-   5. worldchampion    $   30.00  SOLD OUT  landed≈€  43.82  (score 1.00)
+   4. worldchampion    $   30.00  SOLD OUT  landed≈€  43.82  (score 1.00)
         RC_YEAR  NBPA  VERIFY
    ask $85.00   sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $23.95 (le 2026-08-18, columbia, 5 shop(s) vus) | cheapest live $85.00
@@ -860,7 +848,7 @@
    1. rbicru7          $   45.00  IN STOCK  landed≈€  59.34  (score 1.00)
         cheapest of 3 in stock
    2. monmouth         $   47.49  IN STOCK  landed≈€  61.91  (score 1.00)
-        🔹NEW_LOW  🔹PRICE_DROP -5%  VERIFY
+        VERIFY
    3. superior         $   55.00  IN STOCK  landed≈€  69.68  (score 1.00)
         VERIFY
    4. columbia         $   32.79  SOLD OUT  landed≈€  46.71  (score 1.00)
@@ -945,7 +933,7 @@
 · SUIVI   2025-26 Topps Chrome Update Value Box   [TOPPS_2025-26_CHROME_UPDATE_VALUE]
    1. qscards          $   75.00  IN STOCK  landed≈€  90.37  (score 1.00)
         VERIFY  cheapest of 2 in stock  FR
-   2. hiddengems       $   85.00  IN STOCK  landed≈€ 100.71  (score 1.00)
+   2. hiddengems       $   90.00  IN STOCK  landed≈€ 105.88  (score 1.00)
    3. rlsports         $   44.99  SOLD OUT  landed≈€  59.33  (score 1.00)
         VERIFY
    ask $65.00   sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
@@ -973,7 +961,7 @@
    2. sportscardjunction $   30.00  IN STOCK  landed≈€  43.82  (score 1.00)
         VERIFY  cheapest of 9 in stock
    3. monmouth         $   37.99  IN STOCK  landed≈€  52.08  (score 1.00)
-        🔹NEW_LOW  🔹PRICE_DROP -5%  VERIFY
+        VERIFY
    4. ehcards          $   39.99  IN STOCK  landed≈€  54.15  (score 1.00)
    5. bleecker         $   40.00  IN STOCK  landed≈€  54.16  (score 1.00)
         VERIFY
@@ -1012,7 +1000,7 @@
 
 · CANDIDAT   2025-26 Panini Contenders EuroLeague Mega   [PANINI_2025-26_EUROLEAGUE_CONTENDERS_MEGA]  ⚑ euroleague
    1. collectorstore   $   19.99  IN STOCK  landed≈€  33.47  (score 1.00)
-        🔹NEW_LOW  🔹PRICE_DROP -20%  EUROLEAGUE  cheapest of 2 in stock  MARKET DATA INSUFFICIENT
+        EUROLEAGUE  cheapest of 2 in stock  MARKET DATA INSUFFICIENT
    2. bleecker         $   35.00  IN STOCK  landed≈€  48.99  (score 1.00)
         EUROLEAGUE  VERIFY  MARKET DATA INSUFFICIENT
    3. awesome          $   47.75  SOLD OUT  landed≈€  62.18  (score 1.00)
@@ -1028,15 +1016,13 @@
 — NO_STOCK   2023-24 Panini Court Kings Hobby   [PANINI_2023-24_COURT_KINGS_HOBBY]
    1. sportscardjunction $  200.00  SOLD OUT  landed≈€ 219.67  (score 1.00)
         RC_YEAR  VERIFY  MARKET DATA INSUFFICIENT
-   2. columbia         $  209.99  SOLD OUT  landed≈€ 230.00  (score 1.00)
-        RC_YEAR  MARKET DATA INSUFFICIENT
-   3. rlsports         $  219.95  SOLD OUT  landed≈€ 240.30  (score 1.00)
+   2. rlsports         $  219.95  SOLD OUT  landed≈€ 240.30  (score 1.00)
         RC_YEAR  VERIFY  MARKET DATA INSUFFICIENT
-   4. bleecker         $  235.00  SOLD OUT  landed≈€ 255.87  (score 1.00)
+   3. bleecker         $  235.00  SOLD OUT  landed≈€ 255.87  (score 1.00)
         RC_YEAR  VERIFY  MARKET DATA INSUFFICIENT
-   5. worldchampion    $  250.00  SOLD OUT  landed≈€ 271.39  (score 1.00)
+   4. worldchampion    $  250.00  SOLD OUT  landed≈€ 271.39  (score 1.00)
         RC_YEAR  VERIFY  MARKET DATA INSUFFICIENT
-   6. awesome          $  680.75  SOLD OUT  landed≈€ 716.96  (score 1.00)
+   5. awesome          $  680.75  SOLD OUT  landed≈€ 716.96  (score 1.00)
         RC_YEAR  MARKET DATA INSUFFICIENT
    ask n/a      sold n/a      | buy ≤ $250.00  | watch ≤ $300.00  | EU n/a
    HISTORICAL LOW $200.00 (le 2026-08-17, sportscardjunction, 6 shop(s) vus) | aucun live
@@ -1066,9 +1052,9 @@
         RC_YEAR  VERIFY  MARKET DATA INSUFFICIENT
    4. sportscardjunction $  500.00  SOLD OUT  landed≈€ 529.99  (score 1.00)
         RC_YEAR  VERIFY  MARKET DATA INSUFFICIENT
-   5. columbia         $  519.99  SOLD OUT  landed≈€ 550.67  (score 1.00)
-        RC_YEAR  MARKET DATA INSUFFICIENT
-   6. worldchampion    $  550.00  SOLD OUT  landed≈€ 581.71  (score 1.00)
+   5. worldchampion    $  550.00  SOLD OUT  landed≈€ 581.71  (score 1.00)
+        RC_YEAR  VERIFY  MARKET DATA INSUFFICIENT
+   6. bleecker         $  700.00  SOLD OUT  landed≈€ 736.87  (score 1.00)
         RC_YEAR  VERIFY  MARKET DATA INSUFFICIENT
    ask n/a      sold n/a      | buy ≤ $250.00  | watch ≤ $300.00  | EU n/a
    HISTORICAL LOW $459.99 (le 2026-08-19, rlsports, 8 shop(s) vus) | aucun live
@@ -1077,15 +1063,13 @@
 — NO_STOCK   2023-24 Panini Select Hobby   [PANINI_2023-24_SELECT_HOBBY]
    1. awesome          $  534.00  SOLD OUT  landed≈€ 565.16  (score 1.00)
         RC_YEAR  MARKET DATA INSUFFICIENT
-   2. columbia         $  544.99  SOLD OUT  landed≈€ 576.53  (score 1.00)
-        RC_YEAR  MARKET DATA INSUFFICIENT
-   3. rlsports         $  564.99  SOLD OUT  landed≈€ 597.21  (score 1.00)
+   2. rlsports         $  564.99  SOLD OUT  landed≈€ 597.21  (score 1.00)
         RC_YEAR  VERIFY  MARKET DATA INSUFFICIENT
-   4. sportscardjunction $  565.00  SOLD OUT  landed≈€ 597.22  (score 1.00)
+   3. sportscardjunction $  565.00  SOLD OUT  landed≈€ 597.22  (score 1.00)
         RC_YEAR  VERIFY  MARKET DATA INSUFFICIENT
-   5. worldchampion    $  675.00  SOLD OUT  landed≈€ 711.01  (score 1.00)
+   4. worldchampion    $  675.00  SOLD OUT  landed≈€ 711.01  (score 1.00)
         RC_YEAR  VERIFY  MARKET DATA INSUFFICIENT
-   6. bleecker         $  850.00  SOLD OUT  landed≈€ 892.03  (score 1.00)
+   5. bleecker         $  850.00  SOLD OUT  landed≈€ 892.03  (score 1.00)
         RC_YEAR  VERIFY  MARKET DATA INSUFFICIENT
    ask n/a      sold n/a      | buy ≤ $300.00  | watch ≤ $350.00  | EU n/a
    HISTORICAL LOW $534.00 (le 2026-08-17, awesome, 6 shop(s) vus) | aucun live
@@ -1094,15 +1078,13 @@
 — NO_STOCK   2023-24 Panini Prizm Hobby   [PANINI_2023-24_PRIZM_HOBBY]
    1. sportscardjunction $  950.00  SOLD OUT  landed≈€ 995.47  (score 1.00)
         RC_YEAR  VERIFY  MARKET DATA INSUFFICIENT
-   2. columbia         $ 1149.00  SOLD OUT  landed≈€1201.31  (score 1.00)
+   2. awesome          $ 1275.00  SOLD OUT  landed≈€1331.65  (score 1.00)
         RC_YEAR  MARKET DATA INSUFFICIENT
-   3. awesome          $ 1275.00  SOLD OUT  landed≈€1331.65  (score 1.00)
-        RC_YEAR  MARKET DATA INSUFFICIENT
-   4. worldchampion    $ 1400.00  SOLD OUT  landed≈€1460.95  (score 1.00)
+   3. worldchampion    $ 1400.00  SOLD OUT  landed≈€1460.95  (score 1.00)
         RC_YEAR  VERIFY  MARKET DATA INSUFFICIENT
-   5. rlsports         $ 1449.99  SOLD OUT  landed≈€1512.66  (score 1.00)
+   4. rlsports         $ 1449.99  SOLD OUT  landed≈€1512.66  (score 1.00)
         RC_YEAR  VERIFY  MARKET DATA INSUFFICIENT
-   6. bleecker         $ 1500.00  SOLD OUT  landed≈€1564.39  (score 1.00)
+   5. bleecker         $ 1500.00  SOLD OUT  landed≈€1564.39  (score 1.00)
         RC_YEAR  VERIFY  MARKET DATA INSUFFICIENT
    ask n/a      sold n/a      | buy ≤ $900.00  | watch ≤ $1000.00 | EU n/a
    HISTORICAL LOW $950.00 (le 2026-08-17, sportscardjunction, 1 shop(s) vus) | aucun live
@@ -1113,14 +1095,14 @@
         RC_YEAR  cheapest of 2 in stock
    2. rbicru7          $  550.00  IN STOCK  landed≈€ 581.71  (score 1.00)
         RC_YEAR
-   3. columbia         $  324.99  SOLD OUT  landed≈€ 348.96  (score 1.00)
-        RC_YEAR
-   4. sportscardjunction $  340.00  SOLD OUT  landed≈€ 364.48  (score 1.00)
+   3. sportscardjunction $  340.00  SOLD OUT  landed≈€ 364.48  (score 1.00)
         RC_YEAR  VERIFY
-   5. rlsports         $  379.95  SOLD OUT  landed≈€ 405.81  (score 1.00)
+   4. rlsports         $  379.95  SOLD OUT  landed≈€ 405.81  (score 1.00)
         RC_YEAR  VERIFY
-   6. awesome          $  399.75  SOLD OUT  landed≈€ 426.29  (score 1.00)
+   5. awesome          $  399.75  SOLD OUT  landed≈€ 426.29  (score 1.00)
         RC_YEAR
+   6. worldchampion    $  425.00  SOLD OUT  landed≈€ 452.41  (score 1.00)
+        RC_YEAR  VERIFY
    ask $439.95  sold n/a      | buy ≤ $350.00  | watch ≤ $400.00  | EU n/a
    HISTORICAL LOW $324.99 (le 2026-08-17, columbia, 9 shop(s) vus) | cheapest live $439.95
    BEST → collectorstore  https://collectorstore.com/products/2023-24-panini-contenders-basketball-hobby-box
@@ -1128,8 +1110,6 @@
 · SUIVI   2023-24 Panini Donruss Optic FOTL   [PANINI_2023-24_OPTIC_FOTL]
    1. boxseat          $  899.99  SOLD OUT  landed≈€ 943.74  (score 1.00)
         RC_YEAR  VERIFY
-   2. columbia         $  949.98  SOLD OUT  landed≈€ 995.45  (score 1.00)
-        RC_YEAR
    ask $949.98  sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $899.99 (le 2026-08-18, boxseat, 2 shop(s) vus) | aucun live
    RESTOCK TARGET $899.99  — surveillance, pas une valeur de marché
@@ -1148,15 +1128,13 @@
    BEST → sjay2k  https://www.sjay2k.com/products/2023-24-panini-donruss-optic-basketball-choice-box
 
 · SUIVI   2023-24 Panini Donruss Optic Fast Break   [PANINI_2023-24_OPTIC_FAST_BREAK]
-   1. columbia         $  179.99  SOLD OUT  landed≈€ 198.97  (score 1.00)
+   1. awesome          $  254.75  SOLD OUT  landed≈€ 276.30  (score 1.00)
         RC_YEAR
-   2. awesome          $  254.75  SOLD OUT  landed≈€ 276.30  (score 1.00)
-        RC_YEAR
-   3. worldchampion    $  300.00  SOLD OUT  landed≈€ 323.11  (score 1.00)
+   2. worldchampion    $  300.00  SOLD OUT  landed≈€ 323.11  (score 1.00)
         RC_YEAR  VERIFY
-   4. bleecker         $  315.00  SOLD OUT  landed≈€ 338.62  (score 1.00)
+   3. bleecker         $  315.00  SOLD OUT  landed≈€ 338.62  (score 1.00)
         RC_YEAR  VERIFY
-   5. sportscardjunction $  325.00  SOLD OUT  landed≈€ 348.97  (score 1.00)
+   4. sportscardjunction $  325.00  SOLD OUT  landed≈€ 348.97  (score 1.00)
         RC_YEAR  VERIFY
    ask $254.75  sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $179.99 (le 2026-08-18, columbia, 5 shop(s) vus) | aucun live
@@ -1167,11 +1145,9 @@
         RC_YEAR  VERIFY
    2. e5sports         $  500.00  SOLD OUT  landed≈€ 529.99  (score 1.00)
         RC_YEAR  VERIFY
-   3. columbia         $  518.95  SOLD OUT  landed≈€ 549.59  (score 1.00)
+   3. awesome          $  520.00  SOLD OUT  landed≈€ 550.68  (score 1.00)
         RC_YEAR
-   4. awesome          $  520.00  SOLD OUT  landed≈€ 550.68  (score 1.00)
-        RC_YEAR
-   5. rlsports         $  609.99  SOLD OUT  landed≈€ 643.76  (score 1.00)
+   4. rlsports         $  609.99  SOLD OUT  landed≈€ 643.76  (score 1.00)
         RC_YEAR  VERIFY
    ask $520.00  sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $495.00 (le 2026-08-18, sportscardjunction, 5 shop(s) vus) | aucun live
@@ -1182,9 +1158,7 @@
         RC_YEAR
    2. rlsports         $  599.95  SOLD OUT  landed≈€ 633.38  (score 1.00)
         RC_YEAR  VERIFY
-   3. columbia         $  623.99  SOLD OUT  landed≈€ 658.24  (score 1.00)
-        RC_YEAR
-   4. bleecker         $  650.00  SOLD OUT  landed≈€ 685.15  (score 1.00)
+   3. bleecker         $  650.00  SOLD OUT  landed≈€ 685.15  (score 1.00)
         RC_YEAR  VERIFY
    ask $529.75  sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $529.75 (le 2026-08-18, awesome, 4 shop(s) vus) | aucun live
@@ -1193,11 +1167,9 @@
 · SUIVI   2023-24 Panini Prizm International   [PANINI_2023-24_PRIZM_INTERNATIONAL]
    1. awesome          $  274.75  SOLD OUT  landed≈€ 296.99  (score 1.00)
         RC_YEAR
-   2. columbia         $  289.99  SOLD OUT  landed≈€ 312.75  (score 1.00)
-        RC_YEAR
-   3. rlsports         $  299.99  SOLD OUT  landed≈€ 323.10  (score 1.00)
+   2. rlsports         $  299.99  SOLD OUT  landed≈€ 323.10  (score 1.00)
         RC_YEAR  VERIFY
-   4. bleecker         $  325.00  SOLD OUT  landed≈€ 348.97  (score 1.00)
+   3. bleecker         $  325.00  SOLD OUT  landed≈€ 348.97  (score 1.00)
         RC_YEAR  VERIFY
    ask $274.75  sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $274.75 (le 2026-08-18, awesome, 5 shop(s) vus) | aucun live
@@ -1208,11 +1180,9 @@
         ONLY_STOCK_SEEN  RC_YEAR  VERIFY
    2. sportscardjunction $  285.00  SOLD OUT  landed≈€ 307.59  (score 1.00)
         RC_YEAR  VERIFY
-   3. columbia         $  299.99  SOLD OUT  landed≈€ 323.10  (score 1.00)
-        RC_YEAR
-   4. bleecker         $  370.00  SOLD OUT  landed≈€ 395.52  (score 1.00)
+   3. bleecker         $  370.00  SOLD OUT  landed≈€ 395.52  (score 1.00)
         RC_YEAR  VERIFY
-   5. rlsports         $  389.95  SOLD OUT  landed≈€ 416.15  (score 1.00)
+   4. rlsports         $  389.95  SOLD OUT  landed≈€ 416.15  (score 1.00)
         RC_YEAR  VERIFY
    ask $620.00  sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $299.99 (le 2026-08-18, columbia, 5 shop(s) vus) | cheapest live $620.00
@@ -1225,9 +1195,7 @@
         RC_YEAR
    3. sportcards       $  229.95  SOLD OUT  landed≈€ 250.65  (score 1.00)
         RC_YEAR  VERIFY
-   4. columbia         $  229.99  SOLD OUT  landed≈€ 250.69  (score 1.00)
-        RC_YEAR
-   5. bleecker         $  300.00  SOLD OUT  landed≈€ 323.11  (score 1.00)
+   4. bleecker         $  300.00  SOLD OUT  landed≈€ 323.11  (score 1.00)
         RC_YEAR  VERIFY
    ask $209.75  sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $200.00 (le 2026-08-18, sportscardjunction, 5 shop(s) vus) | aucun live
@@ -1240,11 +1208,9 @@
         RC_YEAR  VERIFY
    3. monmouth         $  399.99  SOLD OUT  landed≈€ 426.54  (score 1.00)
         RC_YEAR  VERIFY
-   4. columbia         $  424.99  SOLD OUT  landed≈€ 452.40  (score 1.00)
-        RC_YEAR
-   5. bleecker         $  465.00  SOLD OUT  landed≈€ 493.78  (score 1.00)
+   4. bleecker         $  465.00  SOLD OUT  landed≈€ 493.78  (score 1.00)
         RC_YEAR  VERIFY
-   6. worldchampion    $  500.00  SOLD OUT  landed≈€ 529.99  (score 1.00)
+   5. worldchampion    $  500.00  SOLD OUT  landed≈€ 529.99  (score 1.00)
         RC_YEAR  VERIFY
    ask $334.75  sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $334.75 (le 2026-08-18, awesome, 7 shop(s) vus) | aucun live
@@ -1279,9 +1245,7 @@
         RC_YEAR  VERIFY
    4. worldchampion    $  230.00  SOLD OUT  landed≈€ 250.70  (score 1.00)
         RC_YEAR  VERIFY
-   5. columbia         $  254.99  SOLD OUT  landed≈€ 276.55  (score 1.00)
-        RC_YEAR
-   6. bleecker         $  350.00  SOLD OUT  landed≈€ 374.83  (score 1.00)
+   5. bleecker         $  350.00  SOLD OUT  landed≈€ 374.83  (score 1.00)
         RC_YEAR  VERIFY
    ask $188.00  sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $188.00 (le 2026-08-18, awesome, 6 shop(s) vus) | aucun live
@@ -1290,22 +1254,18 @@
 · SUIVI   2023-24 Panini Mosaic International   [PANINI_2023-24_MOSAIC_INTERNATIONAL]
    1. sportscardjunction $  160.00  SOLD OUT  landed≈€ 178.29  (score 1.00)
         RC_YEAR  VERIFY
-   2. columbia         $  189.99  SOLD OUT  landed≈€ 209.31  (score 1.00)
-        RC_YEAR
-   3. bleecker         $  225.00  SOLD OUT  landed≈€ 245.53  (score 1.00)
+   2. bleecker         $  225.00  SOLD OUT  landed≈€ 245.53  (score 1.00)
         RC_YEAR  VERIFY
    ask $189.99  sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $160.00 (le 2026-08-18, sportscardjunction, 4 shop(s) vus) | aucun live
    RESTOCK TARGET $160.00  — surveillance, pas une valeur de marché
 
 · SUIVI   2023-24 Panini Phoenix International   [PANINI_2023-24_PHOENIX_INTERNATIONAL]
-   1. columbia         $  164.99  SOLD OUT  landed≈€ 183.45  (score 1.00)
+   1. awesome          $  174.75  SOLD OUT  landed≈€ 193.55  (score 1.00)
         RC_YEAR
-   2. awesome          $  174.75  SOLD OUT  landed≈€ 193.55  (score 1.00)
-        RC_YEAR
-   3. bleecker         $  200.00  SOLD OUT  landed≈€ 219.67  (score 1.00)
+   2. bleecker         $  200.00  SOLD OUT  landed≈€ 219.67  (score 1.00)
         RC_YEAR  VERIFY
-   4. rlsports         $  259.99  SOLD OUT  landed≈€ 281.72  (score 1.00)
+   3. rlsports         $  259.99  SOLD OUT  landed≈€ 281.72  (score 1.00)
         RC_YEAR  VERIFY
    ask $174.75  sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $164.99 (le 2026-08-18, columbia, 4 shop(s) vus) | aucun live
@@ -1520,11 +1480,11 @@
         RC_YEAR  NBPA  VERIFY
    3. awesome          $  408.00  SOLD OUT  landed≈€ 434.82  (score 1.00)
         RC_YEAR  NBPA
-   4. columbia         $  419.99  SOLD OUT  landed≈€ 447.23  (score 1.00)
-        RC_YEAR  NBPA
-   5. bleecker         $  500.00  SOLD OUT  landed≈€ 529.99  (score 1.00)
+   4. bleecker         $  500.00  SOLD OUT  landed≈€ 529.99  (score 1.00)
         RC_YEAR  NBPA  VERIFY
-   6. worldchampion    $  525.00  SOLD OUT  landed≈€ 555.85  (score 1.00)
+   5. worldchampion    $  525.00  SOLD OUT  landed≈€ 555.85  (score 1.00)
+        RC_YEAR  NBPA  VERIFY
+   6. rlsports         $  549.99  SOLD OUT  landed≈€ 581.70  (score 1.00)
         RC_YEAR  NBPA  VERIFY
    ask $369.95  sold $300.00  [stockx 2026-08-18] | buy ≤ $260.00  | watch ≤ $300.00  | EU n/a
    HISTORICAL LOW $369.95 (le 2026-08-18, cardiacs, 8 shop(s) vus) | aucun live
@@ -1542,26 +1502,22 @@
         RC_YEAR  NBPA
    2. rlsports         $  169.99  SOLD OUT  landed≈€ 188.63  (score 1.00)
         RC_YEAR  NBPA  VERIFY
-   3. columbia         $  174.99  SOLD OUT  landed≈€ 193.80  (score 1.00)
+   3. hiddengems       $  175.00  SOLD OUT  landed≈€ 193.81  (score 1.00)
         RC_YEAR  NBPA
-   4. hiddengems       $  175.00  SOLD OUT  landed≈€ 193.81  (score 1.00)
-        RC_YEAR  NBPA
-   5. worldchampion    $  275.00  SOLD OUT  landed≈€ 297.25  (score 1.00)
+   4. worldchampion    $  275.00  SOLD OUT  landed≈€ 297.25  (score 1.00)
         RC_YEAR  NBPA  VERIFY
    ask n/a      sold $187.00  [stockx 2026-08-18] | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $159.75 (le 2026-08-18, awesome, 6 shop(s) vus) | aucun live
    RESTOCK TARGET $159.75  — surveillance, pas une valeur de marché
 
 · CANDIDAT   2023-24 Panini National Treasures Hobby   [PANINI_2023-24_NATIONAL_TREASURES_HOBBY]
-   1. columbia         $ 2989.99  SOLD OUT  landed≈€3105.63  (score 1.00)
+   1. awesome          $ 2999.75  SOLD OUT  landed≈€3115.73  (score 1.00)
         RC_YEAR  TROPHY
-   2. awesome          $ 2999.75  SOLD OUT  landed≈€3115.73  (score 1.00)
-        RC_YEAR  TROPHY
-   3. rlsports         $ 2999.99  SOLD OUT  landed≈€3115.98  (score 1.00)
+   2. rlsports         $ 2999.99  SOLD OUT  landed≈€3115.98  (score 1.00)
         RC_YEAR  TROPHY  VERIFY
-   4. bleecker         $ 3000.00  SOLD OUT  landed≈€3115.99  (score 1.00)
+   3. bleecker         $ 3000.00  SOLD OUT  landed≈€3115.99  (score 1.00)
         RC_YEAR  TROPHY  VERIFY
-   5. sportscardjunction $ 3400.00  SOLD OUT  landed≈€3529.75  (score 1.00)
+   4. sportscardjunction $ 3400.00  SOLD OUT  landed≈€3529.75  (score 1.00)
         RC_YEAR  TROPHY  VERIFY
    ask $2800.00 sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $2800.00 (le 2026-08-18, ballgame, 6 shop(s) vus) | aucun live
@@ -1582,15 +1538,13 @@
 · CANDIDAT   2023-24 Panini Noir Hobby   [PANINI_2023-24_NOIR_HOBBY]
    1. superior         $ 3500.00  IN STOCK  landed≈€3633.19  (score 1.00)
         ONLY_STOCK_SEEN  RC_YEAR  TROPHY  VERIFY
-   2. columbia         $ 1874.99  SOLD OUT  landed≈€1952.28  (score 1.00)
+   2. cardiacs         $ 1899.95  SOLD OUT  landed≈€1978.10  (score 1.00)
         RC_YEAR  TROPHY
-   3. cardiacs         $ 1899.95  SOLD OUT  landed≈€1978.10  (score 1.00)
-        RC_YEAR  TROPHY
-   4. rlsports         $ 2099.99  SOLD OUT  landed≈€2185.02  (score 1.00)
+   3. rlsports         $ 2099.99  SOLD OUT  landed≈€2185.02  (score 1.00)
         RC_YEAR  TROPHY  VERIFY
-   5. awesome          $ 2499.75  SOLD OUT  landed≈€2598.53  (score 1.00)
+   4. awesome          $ 2499.75  SOLD OUT  landed≈€2598.53  (score 1.00)
         RC_YEAR  TROPHY
-   6. sportscardjunction $ 3150.00  SOLD OUT  landed≈€3271.15  (score 1.00)
+   5. sportscardjunction $ 3150.00  SOLD OUT  landed≈€3271.15  (score 1.00)
         RC_YEAR  TROPHY  VERIFY
    ask $3500.00 sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $1874.99 (le 2026-08-18, columbia, 6 shop(s) vus) | cheapest live $3500.00
@@ -1599,13 +1553,11 @@
 · CANDIDAT   2023-24 Panini One and One Hobby   [PANINI_2023-24_ONE_AND_ONE_HOBBY]
    1. superior         $ 1650.00  IN STOCK  landed≈€1719.55  (score 1.00)
         ONLY_STOCK_SEEN  RC_YEAR  TROPHY  VERIFY
-   2. columbia         $  679.99  SOLD OUT  landed≈€ 716.17  (score 1.00)
-        RC_YEAR  TROPHY
-   3. sportscardjunction $  700.00  SOLD OUT  landed≈€ 736.87  (score 1.00)
+   2. sportscardjunction $  700.00  SOLD OUT  landed≈€ 736.87  (score 1.00)
         RC_YEAR  TROPHY  VERIFY
-   4. rlsports         $  799.99  SOLD OUT  landed≈€ 840.30  (score 1.00)
+   3. rlsports         $  799.99  SOLD OUT  landed≈€ 840.30  (score 1.00)
         RC_YEAR  TROPHY  VERIFY
-   5. bleecker         $  800.00  SOLD OUT  landed≈€ 840.31  (score 1.00)
+   4. bleecker         $  800.00  SOLD OUT  landed≈€ 840.31  (score 1.00)
         RC_YEAR  TROPHY  VERIFY
    ask $1650.00 sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $679.99 (le 2026-08-18, columbia, 6 shop(s) vus) | cheapest live $1650.00
@@ -1618,11 +1570,11 @@
         RC_YEAR  TROPHY  NBPA  VERIFY
    3. awesome          $  199.75  SOLD OUT  landed≈€ 219.41  (score 1.00)
         RC_YEAR  TROPHY  NBPA
-   4. columbia         $  199.99  SOLD OUT  landed≈€ 219.66  (score 1.00)
-        RC_YEAR  TROPHY  NBPA
-   5. rlsports         $  199.99  SOLD OUT  landed≈€ 219.66  (score 1.00)
+   4. rlsports         $  199.99  SOLD OUT  landed≈€ 219.66  (score 1.00)
         RC_YEAR  TROPHY  NBPA  VERIFY
-   6. monmouth         $  229.99  SOLD OUT  landed≈€ 250.69  (score 1.00)
+   5. monmouth         $  229.99  SOLD OUT  landed≈€ 250.69  (score 1.00)
+        RC_YEAR  TROPHY  NBPA  VERIFY
+   6. bleecker         $  250.00  SOLD OUT  landed≈€ 271.39  (score 1.00)
         RC_YEAR  TROPHY  NBPA  VERIFY
    ask $695.00  sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $195.00 (le 2026-08-18, sportscardjunction, 10 shop(s) vus) | cheapest live $695.00
@@ -1746,7 +1698,6 @@
    1. qscards          $  849.00  IN STOCK  landed≈€ 890.99  (score 1.00)
         VERIFY  cheapest of 9 in stock  FR
    2. collectorstore   $  999.95  IN STOCK  landed≈€1047.14  (score 1.00)
-        🔹NEW_LOW  🔹PRICE_DROP -9%
    3. cbhobby          $ 1000.00  IN STOCK  landed≈€1047.19  (score 1.00)
         VERIFY
    4. rbicru7          $ 1095.00  IN STOCK  landed≈€1145.46  (score 1.00)
@@ -1933,7 +1884,7 @@
 
 · CANDIDAT   2025-26 Panini Select EuroLeague Hobby   [PANINI_2025-26_EUROLEAGUE_SELECT_HOBBY]  ⚑ euroleague
    1. collectorstore   $   79.95  IN STOCK  landed≈€  95.49  (score 1.00)
-        🔹NEW_LOW  🔹PRICE_DROP -20%  EUROLEAGUE  cheapest of 6 in stock  MARKET DATA INSUFFICIENT
+        EUROLEAGUE  cheapest of 6 in stock  MARKET DATA INSUFFICIENT
    2. rbicru7          $  110.00  IN STOCK  landed≈€ 126.57  (score 1.00)
         EUROLEAGUE  MARKET DATA INSUFFICIENT
    3. sportscardjunction $  110.00  IN STOCK  landed≈€ 126.57  (score 1.00)
@@ -2028,11 +1979,11 @@
 ========================================================================
   🔥 HOT NOW — 12 ligne(s)
 ========================================================================
-  2025-26 Panini Select EuroLeague Hobby         $   79.95 collectorstore    -29.8% [demandés] NEW_LOW PRICE_DROP -20%
   2023-24 Panini Prizm EuroLeague Blaster        $    9.95 cardiacs          -33.7% [demandés] STRONG_DEAL -60%
   2025-26 Topps Chrome Black Hobby [Chrome Bla   $  502.99 columbia          -22.6% [demandés] STRONG_DEAL -21%
   2024-25 Topps Chrome Blaster                   $   19.99 hiddengems        -42.9% [demandés] 
   2025-26 Topps Motif Hobby                      $ 2599.99 columbia          -30.7% [demandés] 
+  2025-26 Panini Select EuroLeague Hobby         $   79.95 collectorstore    -29.8% [demandés] 
   2025-26 Panini Origins EuroLeague H2           $   34.99 columbia          -29.7% [demandés]   (+1 autre(s) offre(s))
   2024-25 Panini Select Mega                     $   39.95 cardiacs          -27.0% [demandés]   (+1 autre(s) offre(s))
   2024-25 Panini Hoops Blaster                   $   20.00 hiddengems        -26.9% [demandés] 
@@ -2042,14 +1993,13 @@
   2024-25 Panini Revolution Chinese New Year     $   85.00 rbicru7           -15.0%            SEUL_EN_STOCK DEAL -15%
 
 ========================================================================
-  🇫🇷 MARCHÉ FR — 30 produit(s) avec une offre en stock
+  🇫🇷 MARCHÉ FR — 29 produit(s) avec une offre en stock
 ========================================================================
   FR MARKET COMPLET (2 source(s))
   2024-25_PRIZM_BLASTER                    €   34.50  tanteo      
   2024-25_DONRUSS_BLASTER                  €   34.90  tanteo      
   2024-25_SELECT_BLASTER                   €   36.90  tanteo      
   2024-25_TOTALLY_CERTIFIED_BLASTER        €   39.95  tanteo      
-  2024-25_HOOPS_BLASTER                    €   41.00  tanteo        (+1 autre(s) offre(s) FR)
   2023-24_PHOENIX_BLASTER                  €   41.90  tanteo      
   2024-25_MOSAIC_BLASTER                   €   44.90  tanteo      
   2024-25_OPTIC_BLASTER                    €   47.90  tanteo      
@@ -2065,6 +2015,7 @@
   2025-26_HOOPS_HOBBY                      €  299.00  qscards     
   2024-25_MOSAIC_FAST_BREAK                €  359.90  tanteo      
   2025-26_CHROME_BLACK_HOBBY               €  499.00  qscards     
+  2025-26_HOOPS_JUMBO                      €  549.00  qscards     
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-09-03T16-18-09.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-09-03T20-54-21.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

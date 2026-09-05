@@ -471,6 +471,28 @@ def shopify_products(base: str, session: requests.Session, deadline=None) -> tup
         if out: break
     return out, partial
 
+# ---------------------------------------------------------------- blocklist
+# Des domaines qualifiés frauduleux ou dissous à la main, preuve et date à l'appui. Ils ne
+# repassent pas par le jugement du moteur : ni crawlés, ni suggérés, ni jamais réexaminés
+# tant que la ligne n'est pas retirée de sources.yaml. Le motif daté est obligatoire — sans
+# lui, personne ne saura dans six mois pourquoi un domaine y figure.
+BLOCKLIST = {}
+
+def load_blocklist(src):
+    global BLOCKLIST
+    BLOCKLIST = {}
+    for b in (src.get("blocklist") or []):
+        d = b["domain"].lower()
+        if d.startswith("www."): d = d[4:]
+        BLOCKLIST[d] = f"{b['reason']} [preuve du {b['evidence_date']}]"
+    return BLOCKLIST
+
+def blocklisted(url: str) -> str | None:
+    h = (url or "").split("//")[-1].split("/")[0].lower()
+    if h.startswith("www."): h = h[4:]
+    if h in BLOCKLIST: return BLOCKLIST[h]
+    return next((v for k, v in BLOCKLIST.items() if h.endswith("." + k)), None)
+
 def collect_shop(shop: dict, skus: list[dict], conn: sqlite3.Connection, seen_at: str) -> tuple[int, int, bool]:
     s = requests.Session(); s.headers["User-Agent"] = UA
     def skip(msg, why):
@@ -478,6 +500,8 @@ def collect_shop(shop: dict, skus: list[dict], conn: sqlite3.Connection, seen_at
         conn.execute("INSERT OR REPLACE INTO crawl_runs VALUES (?,?,?,?,?,?)",
                      (shop["key"], seen_at, 0, 0, 0.0, f"SKIPPED:{why}")); conn.commit()
         return (0, 0, False)
+    if blocklisted(shop.get("base_url", "")):
+        return skip(f"BLOCKLIST — {blocklisted(shop['base_url'])} → jamais crawlé", "BLOCKLIST")
     if shop.get("status") == "reject":
         return skip(f"status=reject \(qualifié sur données réelles → 0 sealed 2023-24\) → skip", "REJECT")
     if shop["type"] == "eu_reference":
@@ -1110,7 +1134,11 @@ def best_fr(entries):
 def fr_market_status(health, sources):
     """Une panne d'un vendeur FR ne supprime pas le marché FR, mais on ne laisse pas croire que
     les trois ont été vérifiés."""
-    fr = [x["key"] for x in sources if x.get("market_region") == "FR"]
+    # Seules les sources CRAWLÉES entrent dans le décompte. Une référence de prix relevée à la
+    # main ne peut par nature jamais être « saine » : l'inclure ferait afficher PARTIAL à vie
+    # dès qu'on ajoute un acteur FR à surveiller — constaté le 04/09 avec les trois nouveaux.
+    fr = [x["key"] for x in sources
+          if x.get("market_region") == "FR" and x.get("type") != "eu_reference"]
     bad = [k for k in fr if health.get(k, ("UNKNOWN",))[0] not in ("HEALTHY",)]
     if not fr: return None
     if not bad: return f"FR MARKET COMPLET ({len(fr)} source(s))"
@@ -1487,6 +1515,10 @@ def report(cat: dict, conn: sqlite3.Connection, seen_at: str | None, trust: dict
     if not anomalies: print("  (aucune anomalie : toutes les sources crawlées ont rendu un passage complet)")
     import collections as _c
     print("  " + " · ".join(f"{n} {st}" for st, n in _c.Counter(v[0] for v in health.values()).most_common()))
+    if BLOCKLIST:
+        print("\n" + "="*72 + f"\n  ⛔ BLOCKLIST — {len(BLOCKLIST)} domaine(s) jamais crawlés\n" + "="*72)
+        for d, why in sorted(BLOCKLIST.items()):
+            print(f"  {d}\n     {why}")
     fr_best = best_fr(all_entries)
     hn = hot_now([e for e in all_entries if e.get("region", "US") == "US"])
     print("\n" + "="*72 + f"\n  🔥 HOT NOW — {len(hn)} ligne(s)\n" + "="*72)
@@ -2077,6 +2109,7 @@ def main():
         print(f"[{a.diag}] {tot[0]} bruts | {tot[1]} détectés basket | {tot[2]} avec un format sealed détecté")
         for t in rows: print(f"  {t[6]:.2f} {str(t[3]):<8} {str(t[4]):<12} {t[5]:<10} ${t[1]:>8.2f} {'IN ' if t[2] else 'OOS'}  {t[0][:90]}")
         return
+    load_blocklist(src)
     trust = {sh["key"]: sh.get("trust", "trusted") for sh in src["shops"]}
     if not a.report:
         seen_at = datetime.now(timezone.utc).isoformat(timespec="seconds")

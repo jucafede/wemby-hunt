@@ -85,14 +85,30 @@ check("un sold US renseigné est bien une référence",
 srcs = yaml.safe_load(open("/Users/ju/Draft Class/wemby-hunt/sources.yaml", encoding="utf-8"))["shops"]
 check("6 · une source FR morte n'efface pas le marché FR",
       "PARTIAL" in (hunt.fr_market_status({"tanteo": ("DEAD", "x"), "qscards": ("HEALTHY", "y")}, srcs) or ""))
+# « Complet » veut dire : TOUTES les sources FR crawlées sont saines. Le fixture se construit
+# donc depuis sources.yaml — sinon l'ajout d'une source FR ferait échouer un test qui n'a rien
+# à dire sur elle.
+_crawlable_fr = {x["key"]: ("HEALTHY", "x") for x in srcs
+                 if x.get("market_region") == "FR" and x["type"] != "eu_reference"}
 check("7 · toutes saines -> marché FR complet",
-      "COMPLET" in (hunt.fr_market_status({"tanteo": ("HEALTHY", "x"), "qscards": ("HEALTHY", "y")}, srcs) or ""))
+      "COMPLET" in (hunt.fr_market_status(_crawlable_fr, srcs) or ""))
+check("7c · une référence de prix non crawlée ne compte pas dans la santé du marché FR",
+      "COMPLET" in (hunt.fr_market_status(_crawlable_fr, srcs) or "")
+      and "ludotrotter" not in (hunt.fr_market_status(_crawlable_fr, srcs) or ""))
+check("7b · une source en panne retire le « complet »",
+      "COMPLET" not in (hunt.fr_market_status(
+          {**_crawlable_fr, sorted(_crawlable_fr)[0]: ("DEAD", "x")}, srcs) or ""))
 
 # ---- 18 : aucune régression sur le moteur US
 check("18 · une observation FR est exclue de HOT NOW",
       hunt.hot_now([{**E(K, "tanteo", 20.0), "triggers": ["DEAL"], "gap": -30.0, "ref": 40.0}]), [])
-check("les deux sources FR sont enregistrées en market_region FR",
-      sorted(x["key"] for x in srcs if x.get("market_region") == "FR"), ["qscards", "tanteo"])
+# Même raison qu'au cockpit : la liste FR s'allonge à chaque session de prospection. On teste
+# la propriété — toute source FR se déclare en euros — pas le décompte.
+_fr = sorted(x["key"] for x in srcs if x.get("market_region") == "FR")
+check("au moins deux sources FR sont enregistrées", len(_fr) >= 2)
+check("les deux boutiques FR crawlées en font partie", {"qscards", "tanteo"} <= set(_fr))
+check("aucune source FR n'est déclarée en dollars",
+      [x["key"] for x in srcs if x.get("market_region") == "FR" and x.get("currency") != "EUR"], [])
 check("elles conservent leur devise native",
       {x["currency"] for x in srcs if x.get("market_region") == "FR"}, {"EUR"})
 

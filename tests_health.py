@@ -41,6 +41,48 @@ check("skip volontaire -> SKIPPED, jamais DEAD", h["skipped"][0], "SKIPPED")
 check("aucun passage -> UNKNOWN", h["jamais"][0], "UNKNOWN")
 check("une source ne disparaît jamais en silence", len(h), 7)
 
+# ---------------------------------------------------------------------------
+# Blocklist — un jugement humain que le moteur ne rediscute pas
+# ---------------------------------------------------------------------------
+import yaml as _y, discover as _d
+_src = _y.safe_load(open("/Users/ju/Draft Class/wemby-hunt/sources.yaml", encoding="utf-8"))
+_bl = hunt.load_blocklist(_src)
+
+check("la blocklist est chargée", len(_bl), 2)
+check("chaque entrée porte un motif ET sa date",
+      all("[preuve du 2026-" in v for v in _bl.values()))
+check("le domaine dissous est bloqué", bool(hunt.blocklisted("https://toyboxbarnsleymarket.co.uk")))
+check("le storefront de 4 jours est bloqué", bool(hunt.blocklisted("https://jojosbazar.shop")))
+check("le www. ne contourne pas la blocklist", bool(hunt.blocklisted("https://www.jojosbazar.shop")))
+check("un sous-domaine non plus", bool(hunt.blocklisted("https://shop.jojosbazar.shop/products/x")))
+check("une boutique légitime n'est pas bloquée", hunt.blocklisted("https://ehcards.com"), None)
+check("un domaine qui CONTIENT le nom bloqué ne l'est pas",
+      hunt.blocklisted("https://notjojosbazar.shop"), None)
+check("le motif est restitué, pas seulement le rejet",
+      "Companies House" in hunt.blocklisted("https://toyboxbarnsleymarket.co.uk"))
+
+# discover : rejet AVANT le sondage — on ne dépense pas une requête sur un domaine jugé
+_bd = _d.blocklist_of(_src)
+check("discover partage la même blocklist", sorted(_bd), sorted(_bl))
+check("discover rejette le domaine bloqué",
+      (_d.is_excluded("jojosbazar.shop", set(), _bd) or "").startswith("BLOCKLIST"))
+check("et le motif voyage avec le rejet",
+      "Giant Sports Cards" in _d.is_excluded("jojosbazar.shop", set(), _bd))
+check("discover laisse passer un inconnu légitime",
+      _d.is_excluded("uneboutiqueinconnue.fr", set(), _bd), None)
+check("la blocklist prime sur « déjà connu »",
+      (_d.is_excluded("jojosbazar.shop", {"jojosbazar.shop"}, _bd) or "").startswith("BLOCKLIST"))
+
+# les trois sources FR du 04/09 : déclarées, datées, non crawlées
+_by = {x["key"]: x for x in _src["shops"]}
+for _k in ("ludotrotter", "hikarudistribution", "mafiosicards"):
+    check(f"source FR déclarée : {_k}", _by[_k]["type"], "eu_reference")
+    check(f"{_k} porte sa date de vérification", bool(_by[_k].get("legitimacy_checked_at")))
+    check(f"{_k} est en région FR", _by[_k]["market_region"], "FR")
+check("le breaker concurrent est signalé comme tel", _by["mafiosicards"]["competitor_breaker"], True)
+check("aucune des trois n'est crawlable en l'état",
+      [k for k in ("ludotrotter", "hikarudistribution", "mafiosicards") if _by[k]["type"] != "eu_reference"], [])
+
 print(f"\nTOTAL : {len(total)} tests, {len(fails)} FAIL")
 for f in fails: print("  FAIL", f)
 sys.exit(1 if fails else 0)

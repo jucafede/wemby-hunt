@@ -363,5 +363,39 @@ _k_lot = hunt.exact_comp_key("SEL_H2", hunt.norm("2023-24 Panini Select H2 2-Box
 if _k_lot == _k_a: fails.append(("H2", "lot distinct", _k_lot, "≠ " + _k_a))
 print(f"{'PASS' if _k_lot != _k_a else 'FAIL'} un vrai lot de deux garde sa cloison à part")
 
-print(f"TOTAL AVEC SEALED : {len(POS)+len(P2)+len(NEG)+11+len(_FP)+len(_MO)+len(_H2)} tests, {len(fails)} FAIL")
+# ---------------------------------------------------------------------------
+# Signature Class : trois formats, trois identités, aucune fusion sur la ressemblance
+# ---------------------------------------------------------------------------
+_SC = []
+def _sc(name, got, exp=True):
+    _SC.append(name)
+    if got != exp: fails.append(("SC", name, got, exp))
+    print(f"{'PASS' if got == exp else 'FAIL'} {name}")
+
+_SKC = _yaml.safe_load(open("catalog.yaml", encoding="utf-8"))["skus"] if False else _SK
+_sc("le Value Box a son identité",
+    hunt.match_title("2025-26 Topps Signature Class Basketball Value Box", _SK).sku_id,
+    "TOPPS_2025-26_SIGNATURE_CLASS_VALUE_BOX")
+_sc("le Blaster garde la sienne",
+    hunt.match_title("2025-26 Topps Signature Class Basketball Blaster Box", _SK).sku_id,
+    "TOPPS_2025-26_SIGNATURE_CLASS_BLASTER")
+_sc("les deux ne se confondent jamais",
+    hunt.match_title("2025-26 Topps Signature Class Basketball Value Box", _SK).sku_id
+    != hunt.match_title("2025-26 Topps Signature Class Basketball Blaster Box", _SK).sku_id)
+_vb = next(x for x in _SK if x["id"] == "TOPPS_2025-26_SIGNATURE_CLASS_VALUE_BOX")
+_sc("il porte sa référence FR datée",
+    (_vb["eu_reference_eur"], str(_vb["eu_reference_checked_at"])), (39.00, "2026-09-04"))
+_sc("et l'avertissement sur le compte de packs", "compte de packs" in _vb["note"])
+_sc("aucun ask US n'est inventé", _vb["market_ask_us"], None)
+# les deux autres références FR du 04/09
+for _id, _eur in (("TOPPS_2025-26_CHROME_UPDATE_VALUE", 70.00),
+                  ("TOPPS_2025-26_HOOPS_VALUE_BOX", 39.00)):
+    _s = next(x for x in _SK if x["id"] == _id)
+    _sc(f"référence FR posée : {_id[:38]}", _s["eu_reference_eur"], _eur)
+    _sc(f"et datée : {_id[:38]}", str(_s["eu_reference_checked_at"]), "2026-09-04")
+# garde-fou de doctrine : une référence EU ne devient jamais une référence de marché US
+_sc("une référence EU ne remplace pas un marché US",
+    hunt.market_ref(_vb), (None, None))
+
+print(f"TOTAL AVEC SEALED : {len(POS)+len(P2)+len(NEG)+11+len(_FP)+len(_MO)+len(_H2)+len(_SC)} tests, {len(fails)} FAIL")
 sys.exit(1 if fails else 0)

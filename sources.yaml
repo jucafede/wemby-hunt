@@ -6,6 +6,23 @@
 #
 # NON CRAWLÉ — BlackTree Sports Cards : à documenter high_risk (litiges livraison/remboursement rapportés).
 #   Ne pas ajouter au crawl tant que ce n'est pas tranché. Si un jour ajouté : trust: high_risk obligatoire.
+# ─────────────────────────────────────────────────────────────────────────────
+#  BLOCKLIST — domaines jamais crawlés, jamais suggérés, REJECT motivé si rencontrés
+# ─────────────────────────────────────────────────────────────────────────────
+#  Ces domaines ont été qualifiés à la main, preuve à l'appui. Ils ne repassent pas
+#  par le jugement du moteur : discover les rejette avant même de les sonder, et
+#  collect_shop refuserait de les crawler si quelqu'un les ajoutait par erreur.
+#  Le motif et sa DATE sont obligatoires : une blocklist sans preuve ni date devient
+#  une liste d'opinions, et personne ne saura plus dans six mois pourquoi un domaine
+#  y figure ni s'il est temps de l'en retirer.
+blocklist:
+  - domain: toyboxbarnsleymarket.co.uk
+    reason: "société dissoute 19/05/2026 (Companies House 16912635), identité d'un vrai stand de Barnsley usurpée, template volé (Nevaland toys)"
+    evidence_date: 2026-08-22
+  - domain: jojosbazar.shop
+    reason: "storefront créé ~31/08/2026 (timestamps assets), description copiée de Giant Sports Cards avec nom d'opérateur résiduel, fausse promo sur EuroLeague Hobby 23-24 introuvable ailleurs"
+    evidence_date: 2026-09-04
+
 shops:
   - name: EH Cards & Collectibles
     key: ehcards
@@ -142,6 +159,45 @@ shops:
     promo_note: "-10% sitewide auto jusqu'au 2026-08-31 (+ code TRACE5+10 affiché 15%, à tester)"
     trust: watch
     notes: "gros acteur EU, Thessalonique, boutique physique, Trustpilot. Rôle: canal d'achat EU n°2 derrière fr.topps.com + source fr_price_eur."
+  # --- FILON FR du 04/09 : trois acteurs français, RÉFÉRENCES DE PRIX, non crawlés ----------
+  # Même statut que les acteurs EU : on relève leurs prix à la main, le collecteur viendra plus
+  # tard. Aucune de ces lignes n'entre dans un verdict de marché.
+  - key: ludotrotter
+    name: Ludo Trotter
+    base_url: https://ludotrotter.fr
+    url: https://ludotrotter.fr
+    type: eu_reference
+    platform: woocommerce
+    market_region: FR
+    currency: EUR
+    country: FR
+    trust: watch
+    legitimacy_checked_at: 2026-09-04
+    notes: "chaîne franchisée, 12 boutiques FR+BE dont Lille. Légitimité vérifiée le 04/09 : mentions légales, couverture presse, tournois organisés."
+    crawl_note: "AVANT d'écrire un adaptateur : tester /wp-json/wc/store/v1/products. L'API Store de WooCommerce est publique par défaut et rend du JSON structuré — si elle répond, la boutique se collecte sans scraper une seule page HTML."
+  - key: hikarudistribution
+    name: Hikaru Distribution
+    base_url: https://hikarudistribution.com
+    url: https://hikarudistribution.com
+    type: eu_reference
+    market_region: FR
+    currency: EUR
+    country: FR
+    trust: watch
+    legitimacy_checked_at: 2026-09-04
+    notes: "boutique Pokémon Île-de-France (2022) devenue revendeur Topps, catalogue sport en construction. Profil « TCG opportuniste » : présence NBA à confirmer avant tout crawl."
+  - key: mafiosicards
+    name: Mafiosi Cards
+    base_url: https://mafiosicards.com
+    url: https://mafiosicards.com
+    type: eu_reference
+    market_region: FR
+    currency: EUR
+    country: FR
+    trust: watch
+    legitimacy_checked_at: 2026-09-04
+    competitor_breaker: true
+    notes: "« Official Topps Retailer » FR, vend en breaks sur Voggt (pas Whatnot). Double statut : source de prix ET premier concurrent breaker agréé identifié — à suivre pour ses formats de break et ses prix de spot, pas seulement pour son catalogue."
   # --- MARCHÉ FR : vendeurs français crawlés, market_region: FR ------------------------------
   # Ce sont des CANAUX D'ACHAT, pas une base de ventes réalisées. Leurs prix ne deviennent
   # jamais market_sold_us, market_ask_us, ni une valeur de marché. Ils répondent uniquement à

@@ -55,8 +55,18 @@ def registrable(host: str) -> str:
     return h
 
 
-def is_excluded(host: str, known: set[str]) -> str | None:
+def blocklist_of(src: dict) -> dict:
+    """{domaine: motif daté}. Un domaine blocklisté n'est jamais sondé : on ne consacre pas une
+    requête à une boutique dont on a déjà établi qu'elle est frauduleuse ou dissoute."""
+    return {registrable(b["domain"]): f"{b['reason']} [preuve du {b['evidence_date']}]"
+            for b in (src.get("blocklist") or [])}
+
+
+def is_excluded(host: str, known: set[str], blocked: dict | None = None) -> str | None:
     if not host: return "vide"
+    # la blocklist prime sur tout le reste : c'est un jugement humain, pas une heuristique
+    if (blocked or {}).get(host): return f"BLOCKLIST — {blocked[host]}"
+    if any(host.endswith("." + b) for b in (blocked or {})): return "BLOCKLIST — sous-domaine"
     if host.endswith(GIANT_SUFFIXES): return "institutionnel"
     if host in known: return "déjà dans sources.yaml"
     if host in GIANTS: return "géant/marketplace"
@@ -190,12 +200,14 @@ def main():
     src = yaml.safe_load((ROOT / "sources.yaml").read_text(encoding="utf-8"))
     skus = cat["skus"]
     known = {registrable(urlparse(s["base_url"]).netloc) for s in src["shops"]}
+    blocked = blocklist_of(src)
 
     key = os.environ.get("SERPAPI_KEY") or None
     engine = a.engine or ("serpapi" if key else "ddg")
     if engine == "serpapi" and not key:
         print("SERPAPI_KEY absent → bascule sur DuckDuckGo"); engine = "ddg"
-    print(f"moteur : {engine} | {len(known)} domaines déjà connus | {len(GIANTS)} géants exclus")
+    print(f"moteur : {engine} | {len(known)} domaines déjà connus | {len(GIANTS)} géants exclus "
+          f"| {len(blocked)} domaine(s) en blocklist")
 
     all_active = [s for s in skus if s.get("status", "ACTIVE") == "ACTIVE"]
     active = all_active[a.offset:]
@@ -213,7 +225,11 @@ def main():
         for q in queries:
             for url in search(q, engine, key):
                 host = registrable(urlparse(url).netloc)
-                if is_excluded(host, known): continue
+                why = is_excluded(host, known, blocked)
+                if why:
+                    if why.startswith("BLOCKLIST"):
+                        print(f"  ⛔ REJECT {host} — {why[12:]}")
+                    continue
                 found.setdefault(host, set()).add(s["id"])
     print(f"\n{len(found)} domaine(s) nouveaux après exclusions")
 

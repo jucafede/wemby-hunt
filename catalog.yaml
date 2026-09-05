@@ -2583,6 +2583,9 @@ skus:
     market_sold_source: null
     market_sold_checked_at: null
     market_source: "ask: crawl du 30/08 — hiddengems 85,00 EN STOCK · rlsports 44,99 OOS. Canal d'achat FR : qscards 75,00 € EN STOCK. MSRP EU 45 € (réf. FGC006726-DB)."
+    eu_reference_eur: 70.0
+    eu_reference_source: "ludotrotter.fr, EN STOCK — 3e référence FR après qscards 75,00 et le MSRP Topps 45,00"
+    eu_reference_checked_at: 2026-09-04
     buy_below_usd: null
     watch_below_usd: null
     note: "compte de packs non vérifié face au Blaster US — à confirmer avant toute comparaison entre les deux."
@@ -2659,6 +2662,9 @@ skus:
     market_ask_us: 29.99
     market_sold_us: null
     market_source: "ask: crawl du 30/08 — rlsports 27,99 · hiddengems 29,99 · boxseat 39,99, les trois EN STOCK."
+    eu_reference_eur: 39.0
+    eu_reference_source: "ludotrotter.fr, EN STOCK"
+    eu_reference_checked_at: 2026-09-04
     buy_below_usd: null
     watch_below_usd: null
     note: "contenu non comparé au Hoops Blaster US — ne pas fusionner sans vérification du compte de packs."
@@ -2711,6 +2717,30 @@ skus:
     buy_below_usd: null
     watch_below_usd: null
     url_proof: "https://sportscardjunction.com/products/2025-26-topps-hoops-basketball-jumbo-box"
+  # Troisième format de la famille, créé le 04/09 sur preuve visuelle : les images produit de
+  # Ludo Trotter montrent Mega, Blaster ET Value Box côte à côte. Même règle que Chrome Update
+  # Value — le compte de packs n'a PAS été vérifié, donc pas de fusion avec le Blaster sur une
+  # ressemblance de nom ou de prix. Les deux coexistent tant que personne n'a ouvert les deux.
+  - id: TOPPS_2025-26_SIGNATURE_CLASS_VALUE_BOX
+    season: "2025-26"
+    manufacturer: Topps
+    set: Signature Class
+    format: Value Box
+    configuration: null
+    tier: retail
+    status: WATCH
+    licensed: true
+    market_ask_from: []
+    market_ask_us: null
+    market_sold_us: null
+    market_source: "aucun relevé US au 04/09. Preuve d'existence : fiches et images produit Ludo Trotter (FR), qui distingue explicitement Mega / Blaster / Value Box."
+    eu_reference_eur: 39.00
+    eu_reference_source: "ludotrotter.fr, EN STOCK"
+    eu_reference_checked_at: 2026-09-04
+    buy_below_usd: null
+    watch_below_usd: null
+    note: "compte de packs NON vérifié face au Signature Class Blaster — ne pas fusionner sans avoir ouvert les deux ou lu deux fiches détaillées."
+
   - id: TOPPS_2025-26_SIGNATURE_CLASS_BLASTER
     season: "2025-26"
     manufacturer: Topps

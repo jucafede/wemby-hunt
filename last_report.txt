@@ -11,7 +11,7 @@
   [mojobreak] status=reject \(qualifié sur données réelles → 0 sealed 2023-24\) → skip
   0 produits bruts, 0 rattachés à un SKU
 → RbiCru7 Collectibles (https://rbicru7.com)  [trust=trusted]
-  12762 produits bruts, 40 rattachés à un SKU
+  12748 produits bruts, 40 rattachés à un SKU
 → Layton Sports Cards (https://laytonsportscards.com)  [trust=trusted]
   [layton] type=breaks \(breaker, hors périmètre sealed\) → skip
   0 produits bruts, 0 rattachés à un SKU
@@ -31,12 +31,12 @@
 → The Cardiacs (https://www.thecardiacs.com)  [trust=trusted]
   5333 produits bruts, 40 rattachés à un SKU
 → Monmouth Cards (https://monmouthcards.com)  [trust=watch]
-  5696 produits bruts, 39 rattachés à un SKU
+  5683 produits bruts, 39 rattachés à un SKU
 → World Champion Sports Cards (https://www.worldchampionsportscards.org)  [trust=watch]
   4017 produits bruts, 66 rattachés à un SKU
 → Superior Sports Investments (https://superiorsportsinvestments.com)  [trust=watch]
     collections : 8/84 retenues (filtre 'basketball|\\bnba\\b|hoops|prizm|mosaic|optic|select|phoenix|contenders|court.kings|revolution|premium.stock')
-  16297 produits bruts, 46 rattachés à un SKU
+  16296 produits bruts, 46 rattachés à un SKU
 → SJAY2K Trading Cards (https://www.sjay2k.com)  [trust=watch]
   569 produits bruts, 20 rattachés à un SKU
 → The Ballgame (https://theballgame.com)  [trust=watch]
@@ -60,7 +60,7 @@
 → RL Sports Cards (https://rlsportscards.com)  [trust=watch]
   1796 produits bruts, 68 rattachés à un SKU
 → Fan Cave (https://fancave.com)  [trust=watch]
-  945 produits bruts, 4 rattachés à un SKU
+  949 produits bruts, 4 rattachés à un SKU
 → Mill Creek Sports (https://www.millcreeksports.com)  [trust=watch]
   [millcreek] type=html non géré en v1 → skip
   0 produits bruts, 0 rattachés à un SKU
@@ -73,7 +73,7 @@
 → QS Cards (https://qscards.com)  [trust=watch]
   376 produits bruts, 14 rattachés à un SKU
 → Tanteo Cartes Collections (https://tanteocartescollections.com)  [trust=watch]
-  399 produits bruts, 20 rattachés à un SKU
+  408 produits bruts, 20 rattachés à un SKU
 (90 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
 
 ========================================================================
@@ -2013,5 +2013,5 @@
   2025-26_HOOPS_JUMBO                      €  549.00  qscards     
   2025-26_SIGNATURE_CLASS_HOBBY            €  595.00  qscards     
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-09-05T10-27-19.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-09-05T15-01-28.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

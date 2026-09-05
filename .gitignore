@@ -6,5 +6,3 @@ venv/
 hunt.db
 out/
 
-# l'annuaire Topps est de la matière de prospection, relevée à la main : jamais commité
-topps_stores.json

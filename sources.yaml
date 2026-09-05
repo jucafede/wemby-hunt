@@ -173,6 +173,8 @@ shops:
     country: FR
     trust: watch
     legitimacy_checked_at: 2026-09-04
+    official_topps_retailer: true      # confirmé par l'annuaire officiel Topps, 05/09
+    topps_directory_sites: 5           # Lille/Lomme, Metz, Blois, Tours, Angers
     notes: "chaîne franchisée, 12 boutiques FR+BE dont Lille. Légitimité vérifiée le 04/09 : mentions légales, couverture presse, tournois organisés."
     crawl_note: "AVANT d'écrire un adaptateur : tester /wp-json/wc/store/v1/products. L'API Store de WooCommerce est publique par défaut et rend du JSON structuré — si elle répond, la boutique se collecte sans scraper une seule page HTML."
   - key: hikarudistribution
@@ -203,9 +205,17 @@ shops:
   # jamais market_sold_us, market_ask_us, ni une valeur de marché. Ils répondent uniquement à
   # « quel est le meilleur prix achetable en France aujourd'hui ? ».
   # Devise native EUR conservée telle quelle : aucune conversion dans l'observation brute.
+  # CORRECTION 05/09 : Q's Cards est NÉERLANDAISE, pas française. Rigaweg 33, 3825PP
+  # Amersfoort — confirmé par l'annuaire officiel Topps, par les mentions du site et par son
+  # numéro de téléphone (+31). Elle était déclarée country: FR depuis le sprint FR : ses prix
+  # alimentaient donc le classement « meilleur prix achetable en France ».
+  # market_region reste FR EN ATTENDANT ARBITRAGE : c'est un canal d'achat en euros livrable
+  # en France, mais ce n'est pas la France. Décision à prendre — voir le compte rendu du 05/09.
   - {key: qscards, name: QS Cards, base_url: https://qscards.com, type: shopify_json,
-     market_region: FR, currency: EUR, country: FR, trust: watch, status: watch,
-     notes: "Shopify EUR. Audit 22/08 : 364 produits, 401 variantes, 3 s de crawl."}
+     market_region: FR, currency: EUR, country: NL, trust: watch, status: watch,
+     country_corrected_at: 2026-09-05,
+     official_topps_retailer: true,
+     notes: "Shopify EUR, basée à Amersfoort (NL). Audit 22/08 : 364 produits, 401 variantes, 3 s de crawl. Revendeur Topps agréé (annuaire officiel, 05/09)."}
   - {key: tanteo, name: Tanteo Cartes Collections, base_url: https://tanteocartescollections.com,
      type: shopify_json, market_region: FR, currency: EUR, country: FR, trust: watch, status: watch,
      notes: "Shopify EUR. Audit 22/08 : 390 produits, 394 variantes, 5 s de crawl."}

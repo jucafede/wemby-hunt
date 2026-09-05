@@ -83,6 +83,19 @@ check("le breaker concurrent est signalé comme tel", _by["mafiosicards"]["compe
 check("aucune des trois n'est crawlable en l'état",
       [k for k in ("ludotrotter", "hikarudistribution", "mafiosicards") if _by[k]["type"] != "eu_reference"], [])
 
+# ---------------------------------------------------------------------------
+# Annuaire Topps du 05/09 : ce qu'il a corrigé dans nos propres données
+# ---------------------------------------------------------------------------
+_q = _by["qscards"]
+check("Q's Cards est déclarée néerlandaise", _q["country"], "NL")
+check("la correction est datée", str(_q["country_corrected_at"]), "2026-09-05")
+check("elle reste un canal d'achat en euros", _q["currency"], "EUR")
+check("ludotrotter est marquée revendeur Topps agréé", _by["ludotrotter"]["official_topps_retailer"], True)
+# garde-fou : aucune source ne peut prétendre être en France sans l'être
+check("toute source déclarée country FR l'est vraiment",
+      [x["key"] for x in _src["shops"]
+       if x.get("country") == "FR" and "+31" in str(x.get("notes", ""))], [])
+
 print(f"\nTOTAL : {len(total)} tests, {len(fails)} FAIL")
 for f in fails: print("  FAIL", f)
 sys.exit(1 if fails else 0)

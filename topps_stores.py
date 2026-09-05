@@ -58,6 +58,9 @@ CHAMPS = {
     "email":       ("email", "mail", "e_mail"),
     "lat":         ("lat", "latitude"),
     "lng":         ("lng", "lon", "long", "longitude"),
+    # Storepoint rend une distance déjà calculée quand la recherche part d'une adresse. Elle
+    # remplace avantageusement le calcul à vol d'oiseau : c'est le chiffre que le site affiche.
+    "distance_km": ("distance_km", "distance", "dist"),
 }
 
 # Codes / libellés vers ISO-2, pour compter sans se laisser piéger par « France » vs « FR ».
@@ -104,7 +107,7 @@ def normalise(raw: dict) -> dict:
     out = {k: pick(raw, alias) for k, alias in CHAMPS.items()}
     p = str(out.get("country") or "").strip().lower()
     out["country"] = PAYS.get(p, (out.get("country") or "").strip().upper()[:2] or None)
-    for k in ("lat", "lng"):
+    for k in ("lat", "lng", "distance_km"):
         try: out[k] = float(out[k])
         except (TypeError, ValueError): out[k] = None
     cp = str(out.get("postal_code") or "").strip()
@@ -155,8 +158,21 @@ def synthese(stores: list[dict]) -> None:
     nord = [s for s in frbe if departement(s) == "59"]
     print(f"\n  Département 59 : {len(nord)} boutique(s)")
 
-    avec_gps = [s for s in stores if s["lat"] and s["lng"]]
     print(f"\n{'='*72}\n  RAYON {RAYON_KM} km AUTOUR DE WASQUEHAL\n{'='*72}")
+    dejacalc = [s for s in stores if s.get("distance_km") is not None]
+    if dejacalc:
+        # le locator a déjà fait le calcul depuis l'adresse cherchée : on lui fait confiance
+        proches = sorted((s for s in dejacalc if s["distance_km"] <= RAYON_KM),
+                         key=lambda s: s["distance_km"])
+        print(f"  {len(proches)} boutique(s) à moins de {RAYON_KM} km "
+              f"(distances rendues par le locator) :")
+        for s in proches:
+            print(f"    {s['distance_km']:>6.1f} km  {(s['name'] or '?')[:34]:<36} "
+                  f"{(s['postal_code'] or ''):<8} {(s['city'] or '')[:20]:<22}{s.get('website') or ''}")
+        suiv = min((s["distance_km"] for s in dejacalc if s["distance_km"] > RAYON_KM), default=None)
+        if suiv: print(f"    (la suivante est à {suiv:.0f} km)")
+        return
+    avec_gps = [s for s in stores if s["lat"] and s["lng"]]
     if not avec_gps:
         print("  (aucune coordonnée dans le dataset — rayon non calculable)")
         print(f"  Repli : les {len(nord)} boutique(s) du 59 ci-dessus, plus le 62 et la Belgique")

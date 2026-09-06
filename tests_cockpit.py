@@ -190,17 +190,18 @@ check("4 · le gabarit affiche le bloc FR sans refonte", "🇫🇷 €34.90" in 
 # ================= couche EU : références de prix, jamais confondues avec le marché US
 src = yaml.safe_load(open("/Users/ju/Draft Class/wemby-hunt/sources.yaml", encoding="utf-8"))["shops"]
 eu = [x for x in src if x["type"] == "eu_reference"]
-# La liste des références EU s'allonge (trois acteurs FR ajoutés le 04/09). Ce qui doit rester
-# vrai, c'est la PROPRIÉTÉ — chacune est déclarée, non crawlée, et porte de quoi la juger —
-# pas le décompte, qui changera à chaque session de prospection.
-_eu_keys = sorted(x["key"] for x in eu)
-check("EU · les références historiques sont toujours là",
-      {"shopuscards", "tracenchase"} <= set(_eu_keys))
 check("EU · aucune référence n'est crawlée", all(x["type"] == "eu_reference" for x in eu))
 check("EU · chacune porte un pays", all(x.get("country") for x in eu))
-check("EU · elles ne sont pas crawlables", all(x["type"] == "eu_reference" for x in eu))
-check("EU · l'avertissement HT de ShopUScards est conservé",
-      "HT" in next(x for x in eu if x["key"] == "shopuscards")["price_display_warning"])
+check("EU · les sources de référence non crawlables restent déclarées comme telles",
+      all(x["type"] == "eu_reference" for x in eu))
+check("EU · tracenchase en fait toujours partie", "tracenchase" in {x["key"] for x in eu})
+# shopuscards est passée de référence à source crawlée le 30/08. L'avertissement HT/TTC, lui,
+# ne disparaît pas — il devient PLUS important, puisque ses prix entrent maintenant en base.
+_sus = next(x for x in src if x["key"] == "shopuscards")
+check("EU · ShopUScards est désormais crawlée", _sus["type"], "html")
+check("EU · son avertissement HT est conservé", "HT" in _sus["price_display_warning"])
+check("EU · et il l'exclut du classement « meilleur prix FR »",
+      "shopuscards" in hunt.load_ht_unconfirmed(src))
 
 refs = [x for x in cat["skus"] if x.get("eu_reference_from")]
 check("EU · chaque référence porte sa provenance ET sa date",

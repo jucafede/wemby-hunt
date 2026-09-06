@@ -187,7 +187,16 @@ def parse_season(t: str) -> str | None:
     if (y1 % 100 + 1) % 100 != y2: return None  # doit être consécutif (23-24)
     return f"{y1}-{y2:02d}"
 
+# Un pack vendu à l'unité porte souvent le nom de la boîte dont il est extrait :
+# « Donruss Optic Basketball Retail Box - Single Pack », relevé chez fancave à 5,99 $ et
+# rattaché au SKU Retail Box. Le nom de la boîte décrit l'ORIGINE du pack, pas le produit.
+SINGLE_PACK_RE = re.compile(r"single\s*pack|(?<![\w-])(?:1|one)\s*pack(?!s)|loose\s*pack|pack\s*only")
+
 def parse_format(t: str) -> str | None:
+    # ce garde-fou passe AVANT tout le reste : quand une fiche dit qu'elle vend un pack,
+    # elle vend un pack, quel que soit le nom de boîte qu'elle cite
+    if SINGLE_PACK_RE.search(t) and not re.search(r"\d{1,2}\s*-?\s*pack", t):
+        return "Pack"
     for name, rx in FORMATS:
         if re.search(rx, t): return name
     return None

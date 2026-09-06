@@ -1,0 +1,200 @@
+[
+  {
+    "domain": "ludotrotter.fr",
+    "country": "FR",
+    "platform": "WooCommerce (api fermée)",
+    "catalog": null
+  },
+  {
+    "domain": "manga-story.fr",
+    "country": "FR",
+    "platform": "woocommerce",
+    "catalog": 100
+  },
+  {
+    "domain": "dioib.fr",
+    "country": "FR",
+    "platform": "shopify",
+    "catalog": 250
+  },
+  {
+    "domain": "play-in.com",
+    "country": "FR",
+    "platform": "injoignable",
+    "catalog": null
+  },
+  {
+    "domain": "geekfactory.games",
+    "country": "FR",
+    "platform": "WooCommerce (api fermée)",
+    "catalog": null
+  },
+  {
+    "domain": "cavernedugobelin.fr",
+    "country": "FR",
+    "platform": "autre",
+    "catalog": null
+  },
+  {
+    "domain": "philibertnet.com",
+    "country": "FR",
+    "platform": "autre",
+    "catalog": null
+  },
+  {
+    "domain": "dacardworld.eu",
+    "country": "NL",
+    "platform": "shopify",
+    "catalog": 250
+  },
+  {
+    "domain": "pokefamily.nl",
+    "country": "NL",
+    "platform": "shopify",
+    "catalog": 250
+  },
+  {
+    "domain": "american-sportstore.com",
+    "country": "NL",
+    "platform": "shopify",
+    "catalog": 250
+  },
+  {
+    "domain": "qscards.com",
+    "country": "NL",
+    "platform": "shopify",
+    "catalog": 250
+  },
+  {
+    "domain": "sportstradingcardsuk.com",
+    "country": "GB",
+    "platform": "shopify",
+    "catalog": 250
+  },
+  {
+    "domain": "kaboomcards.co.uk",
+    "country": "GB",
+    "platform": "shopify",
+    "catalog": 98
+  },
+  {
+    "domain": "tradewiicards.com",
+    "country": "GB",
+    "platform": "shopify",
+    "catalog": 190
+  },
+  {
+    "domain": "jakesbreaks.co.uk",
+    "country": "GB",
+    "platform": "shopify",
+    "catalog": 250
+  },
+  {
+    "domain": "junksplayground.de",
+    "country": "DE",
+    "platform": "autre",
+    "catalog": null
+  },
+  {
+    "domain": "bbrothersstore.com",
+    "country": "DE",
+    "platform": "WooCommerce (api fermée)",
+    "catalog": null
+  },
+  {
+    "domain": "hallofcollect.de",
+    "country": "DE",
+    "platform": "shopify",
+    "catalog": 250
+  },
+  {
+    "domain": "inside-the-box.de",
+    "country": "DE",
+    "platform": "autre",
+    "catalog": null
+  },
+  {
+    "domain": "jk-entertainment.de",
+    "country": "DE",
+    "platform": "Shopware",
+    "catalog": null
+  },
+  {
+    "domain": "collect-it.de",
+    "country": "DE",
+    "platform": "injoignable",
+    "catalog": null
+  },
+  {
+    "domain": "deichcards.de",
+    "country": "DE",
+    "platform": "shopify",
+    "catalog": 250
+  },
+  {
+    "domain": "dennistheripper.de",
+    "country": "DE",
+    "platform": "shopify",
+    "catalog": 250
+  },
+  {
+    "domain": "cardsandmore-shop.de",
+    "country": "DE",
+    "platform": "injoignable",
+    "catalog": null
+  },
+  {
+    "domain": "ofcs-shop.de",
+    "country": "DE",
+    "platform": "autre",
+    "catalog": null
+  },
+  {
+    "domain": "tracenchase.com",
+    "country": "GR",
+    "platform": "woocommerce",
+    "catalog": 100
+  },
+  {
+    "domain": "shopuscards.eu",
+    "country": "FR",
+    "platform": "autre",
+    "catalog": null
+  },
+  {
+    "domain": "bigcards.eu",
+    "country": "EU",
+    "platform": "woocommerce",
+    "catalog": 100
+  },
+  {
+    "domain": "lotticards.de",
+    "country": "DE",
+    "platform": "⛔ anti-robot",
+    "catalog": null
+  },
+  {
+    "domain": "ruhrpottsportscards.de",
+    "country": "DE",
+    "platform": "autre",
+    "catalog": null
+  },
+  {
+    "domain": "collectorscards.de",
+    "country": "DE",
+    "platform": "autre",
+    "catalog": null
+  },
+  {
+    "domain": "mafiosicards.com",
+    "country": "FR",
+    "platform": "shopify",
+    "catalog": 207
+  },
+  {
+    "domain": "hikarudistribution.com",
+    "country": "FR",
+    "platform": "shopify",
+    "catalog": 250
+  }
+]

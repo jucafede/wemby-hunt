@@ -1,0 +1,354 @@
+[
+  {
+    "domain": "stickerpoint.fr",
+    "platform": "autre",
+    "catalog": null,
+    "reachable": true,
+    "note": "",
+    "country": "FR"
+  },
+  {
+    "domain": "stickerpoint.de",
+    "platform": "autre",
+    "catalog": null,
+    "reachable": true,
+    "note": "",
+    "country": "DE"
+  },
+  {
+    "domain": "stickerpoint.ch",
+    "platform": "autre",
+    "catalog": null,
+    "reachable": true,
+    "note": "",
+    "country": "CH"
+  },
+  {
+    "domain": "sportsclassiccards.com",
+    "platform": null,
+    "catalog": null,
+    "reachable": false,
+    "note": "<urlopen error [Errno 8] nodename nor se",
+    "country": "FR"
+  },
+  {
+    "domain": "cardcorner.fr",
+    "platform": null,
+    "catalog": null,
+    "reachable": false,
+    "note": "<urlopen error [Errno 8] nodename nor se",
+    "country": "FR"
+  },
+  {
+    "domain": "lacartotheque.fr",
+    "platform": null,
+    "catalog": null,
+    "reachable": false,
+    "note": "<urlopen error [Errno 8] nodename nor se",
+    "country": "FR"
+  },
+  {
+    "domain": "cartesuniverse.fr",
+    "platform": null,
+    "catalog": null,
+    "reachable": false,
+    "note": "<urlopen error [Errno 8] nodename nor se",
+    "country": "FR"
+  },
+  {
+    "domain": "thecardshop.fr",
+    "platform": null,
+    "catalog": null,
+    "reachable": false,
+    "note": "<urlopen error [Errno 8] nodename nor se",
+    "country": "FR"
+  },
+  {
+    "domain": "mycardsshop.fr",
+    "platform": null,
+    "catalog": null,
+    "reachable": false,
+    "note": "<urlopen error [Errno 8] nodename nor se",
+    "country": "FR"
+  },
+  {
+    "domain": "magiccorporation.com",
+    "platform": "autre",
+    "catalog": null,
+    "reachable": true,
+    "note": "",
+    "country": "FR"
+  },
+  {
+    "domain": "ludifolie.com",
+    "platform": "PrestaShop",
+    "catalog": null,
+    "reachable": true,
+    "note": "",
+    "country": "FR"
+  },
+  {
+    "domain": "originalcards.fr",
+    "platform": null,
+    "catalog": null,
+    "reachable": false,
+    "note": "<urlopen error [Errno 8] nodename nor se",
+    "country": "FR"
+  },
+  {
+    "domain": "cardcorner.de",
+    "platform": null,
+    "catalog": null,
+    "reachable": false,
+    "note": "<urlopen error [SSL: TLSV1_ALERT_INTERNA",
+    "country": "DE"
+  },
+  {
+    "domain": "sportscards24.de",
+    "platform": null,
+    "catalog": null,
+    "reachable": false,
+    "note": "HTTP Error 403: Forbidden",
+    "country": "DE"
+  },
+  {
+    "domain": "cardmarket-shop.de",
+    "platform": null,
+    "catalog": null,
+    "reachable": false,
+    "note": "<urlopen error [Errno 8] nodename nor se",
+    "country": "DE"
+  },
+  {
+    "domain": "tradingcards.de",
+    "platform": "autre",
+    "catalog": null,
+    "reachable": true,
+    "note": "",
+    "country": "DE"
+  },
+  {
+    "domain": "kartenhalle.de",
+    "platform": "autre",
+    "catalog": null,
+    "reachable": true,
+    "note": "",
+    "country": "DE"
+  },
+  {
+    "domain": "sammelkarten.de",
+    "platform": null,
+    "catalog": null,
+    "reachable": false,
+    "note": "<urlopen error [SSL: WRONG_VERSION_NUMBE",
+    "country": "DE"
+  },
+  {
+    "domain": "cardsandmore.de",
+    "platform": null,
+    "catalog": null,
+    "reachable": false,
+    "note": "HTTP Error 403: Forbidden",
+    "country": "DE"
+  },
+  {
+    "domain": "breakpoint-cards.de",
+    "platform": null,
+    "catalog": null,
+    "reachable": false,
+    "note": "<urlopen error [Errno 8] nodename nor se",
+    "country": "DE"
+  },
+  {
+    "domain": "hobbybox.at",
+    "platform": null,
+    "catalog": null,
+    "reachable": false,
+    "note": "HTTP Error 404: Not Found",
+    "country": "AT"
+  },
+  {
+    "domain": "cardsandcollectibles.be",
+    "platform": null,
+    "catalog": null,
+    "reachable": false,
+    "note": "<urlopen error [Errno 8] nodename nor se",
+    "country": "BE"
+  },
+  {
+    "domain": "thecardvault.be",
+    "platform": null,
+    "catalog": null,
+    "reachable": false,
+    "note": "<urlopen error [Errno 8] nodename nor se",
+    "country": "BE"
+  },
+  {
+    "domain": "sportcards.nl",
+    "platform": "autre",
+    "catalog": null,
+    "reachable": true,
+    "note": "",
+    "country": "NL"
+  },
+  {
+    "domain": "cardzone.nl",
+    "platform": null,
+    "catalog": null,
+    "reachable": false,
+    "note": "<urlopen error timed out>",
+    "country": "NL"
+  },
+  {
+    "domain": "tradingcardshop.nl",
+    "platform": null,
+    "catalog": null,
+    "reachable": false,
+    "note": "<urlopen error timed out>",
+    "country": "NL"
+  },
+  {
+    "domain": "hobbycards.lu",
+    "platform": null,
+    "catalog": null,
+    "reachable": false,
+    "note": "<urlopen error [Errno 8] nodename nor se",
+    "country": "LU"
+  },
+  {
+    "domain": "cardtrader.com",
+    "platform": "autre",
+    "catalog": null,
+    "reachable": true,
+    "note": "",
+    "country": "IT"
+  },
+  {
+    "domain": "sportscards.it",
+    "platform": null,
+    "catalog": null,
+    "reachable": false,
+    "note": "<urlopen error [Errno 8] nodename nor se",
+    "country": "IT"
+  },
+  {
+    "domain": "cromosycartas.es",
+    "platform": null,
+    "catalog": null,
+    "reachable": false,
+    "note": "<urlopen error [Errno 8] nodename nor se",
+    "country": "ES"
+  },
+  {
+    "domain": "tradingcards.es",
+    "platform": null,
+    "catalog": null,
+    "reachable": false,
+    "note": "<urlopen error [Errno 8] nodename nor se",
+    "country": "ES"
+  },
+  {
+    "domain": "cardsplanet.pt",
+    "platform": null,
+    "catalog": null,
+    "reachable": false,
+    "note": "<urlopen error [Errno 8] nodename nor se",
+    "country": "PT"
+  },
+  {
+    "domain": "colecionaveis.pt",
+    "platform": null,
+    "catalog": null,
+    "reachable": false,
+    "note": "<urlopen error [Errno 8] nodename nor se",
+    "country": "PT"
+  },
+  {
+    "domain": "dacardworld.eu",
+    "platform": "shopify",
+    "catalog": 250,
+    "reachable": true,
+    "note": "",
+    "country": "NL"
+  },
+  {
+    "domain": "steelcitycollectibles.com",
+    "platform": null,
+    "catalog": null,
+    "reachable": false,
+    "note": "HTTP Error 403: Forbidden",
+    "country": "US"
+  },
+  {
+    "domain": "cardsmithsbreaks.com",
+    "platform": "woocommerce",
+    "catalog": 100,
+    "reachable": true,
+    "note": "",
+    "country": "US"
+  },
+  {
+    "domain": "collectorscache.com",
+    "platform": null,
+    "catalog": null,
+    "reachable": false,
+    "note": "Remote end closed connection without res",
+    "country": "US"
+  },
+  {
+    "domain": "cashcardsunlimited.com",
+    "platform": "shopify",
+    "catalog": 250,
+    "reachable": true,
+    "note": "",
+    "country": "US"
+  },
+  {
+    "domain": "giantsportscards.com",
+    "platform": "shopify",
+    "catalog": 250,
+    "reachable": true,
+    "note": "",
+    "country": "US"
+  },
+  {
+    "domain": "threestarssportscards.com",
+    "platform": "shopify",
+    "catalog": 250,
+    "reachable": true,
+    "note": "",
+    "country": "US"
+  },
+  {
+    "domain": "aamintcards.com",
+    "platform": "autre",
+    "catalog": null,
+    "reachable": true,
+    "note": "",
+    "country": "US"
+  },
+  {
+    "domain": "piecesofthegame.com",
+    "platform": null,
+    "catalog": null,
+    "reachable": false,
+    "note": "<urlopen error [Errno 8] nodename nor se",
+    "country": "US"
+  },
+  {
+    "domain": "itstimecards.com",
+    "platform": "shopify",
+    "catalog": 250,
+    "reachable": true,
+    "note": "",
+    "country": "US"
+  },
+  {
+    "domain": "skyboxcollectibles.com",
+    "platform": null,
+    "catalog": null,
+    "reachable": false,
+    "note": "<urlopen error timed out>",
+    "country": "US"
+  }
+]

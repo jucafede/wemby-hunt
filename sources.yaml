@@ -220,3 +220,225 @@ shops:
      type: shopify_json, market_region: FR, currency: EUR, country: FR, trust: watch, status: watch,
      notes: "Shopify EUR. Audit 22/08 : 390 produits, 394 variantes, 5 s de crawl."}
 
+  # ═══════════════════════════════════════════════════════════════════════════
+  #  PROSPECTION VENDEURS DU 06/09/2026 — 16 boutiques crawlables découvertes
+  # ═══════════════════════════════════════════════════════════════════════════
+  #  Toutes issues de l'annuaire OFFICIEL des revendeurs Topps, pas de domaines devinés :
+  #  ma première tentative avait fabriqué 44 noms plausibles dont 38 n'existaient pas.
+  #  Une source réelle se trouve, elle ne s'invente pas.
+  #
+  #  Trace 'n Chase mérite une note : son HTML est derrière un « Security Shield » qui nous
+  #  refuse, mais son API Store WooCommerce répond en clair. Un site fermé à la lecture de
+  #  pages peut rester ouvert à la lecture de données.
+  #  Toutes en trust: watch — aucune n'a encore d'historique chez nous.
+
+  - key: stcuk
+    name: Sports Trading Cards UK
+    base_url: https://sportstradingcardsuk.com
+    type: shopify_json
+    platform: shopify
+    market_region: EU
+    currency: GBP
+    country: GB
+    trust: watch
+    status: watch
+    discovered_at: 2026-09-06
+    official_topps_retailer: true
+    notes: "découverte du 06/09 via l'annuaire officiel Topps · shopify · 250 fiches en 1re page"
+
+  - key: kaboom
+    name: Kaboom Cards
+    base_url: https://kaboomcards.co.uk
+    type: shopify_json
+    platform: shopify
+    market_region: EU
+    currency: GBP
+    country: GB
+    trust: watch
+    status: watch
+    discovered_at: 2026-09-06
+    official_topps_retailer: true
+    notes: "découverte du 06/09 via l'annuaire officiel Topps · shopify · 98 fiches en 1re page"
+
+  - key: tradewii
+    name: Trade Wii Cards
+    base_url: https://tradewiicards.com
+    type: shopify_json
+    platform: shopify
+    market_region: EU
+    currency: GBP
+    country: GB
+    trust: watch
+    status: watch
+    discovered_at: 2026-09-06
+    official_topps_retailer: true
+    notes: "découverte du 06/09 via l'annuaire officiel Topps · shopify · 190 fiches en 1re page"
+
+  - key: jakesbreaks
+    name: Jakes Breaks
+    base_url: https://jakesbreaks.co.uk
+    type: shopify_json
+    platform: shopify
+    market_region: EU
+    currency: GBP
+    country: GB
+    trust: watch
+    status: watch
+    discovered_at: 2026-09-06
+    official_topps_retailer: true
+    notes: "découverte du 06/09 via l'annuaire officiel Topps · shopify · 250 fiches en 1re page"
+
+  - key: hallofcollect
+    name: Hall of Collect
+    base_url: https://hallofcollect.de
+    type: shopify_json
+    platform: shopify
+    market_region: EU
+    currency: EUR
+    country: DE
+    trust: watch
+    status: watch
+    discovered_at: 2026-09-06
+    official_topps_retailer: true
+    notes: "découverte du 06/09 via l'annuaire officiel Topps · shopify · 250 fiches en 1re page"
+
+  - key: deichcards
+    name: Deichcards
+    base_url: https://deichcards.de
+    type: shopify_json
+    platform: shopify
+    market_region: EU
+    currency: EUR
+    country: DE
+    trust: watch
+    status: watch
+    discovered_at: 2026-09-06
+    official_topps_retailer: true
+    notes: "découverte du 06/09 via l'annuaire officiel Topps · shopify · 250 fiches en 1re page"
+
+  - key: dennistheripper
+    name: Dennis the Ripper
+    base_url: https://dennistheripper.de
+    type: shopify_json
+    platform: shopify
+    market_region: EU
+    currency: EUR
+    country: DE
+    trust: watch
+    status: watch
+    discovered_at: 2026-09-06
+    official_topps_retailer: true
+    notes: "découverte du 06/09 via l'annuaire officiel Topps · shopify · 250 fiches en 1re page"
+
+  - key: bigcards
+    name: Big Cards
+    base_url: https://bigcards.eu
+    type: html
+    platform: woocommerce
+    market_region: EU
+    currency: EUR
+    country: EU
+    trust: watch
+    status: watch
+    discovered_at: 2026-09-06
+    official_topps_retailer: true
+    notes: "découverte du 06/09 via l'annuaire officiel Topps · woocommerce · 100 fiches en 1re page"
+
+  - key: dacardworldeu
+    name: Dave & Adam's Card World Europe
+    base_url: https://dacardworld.eu
+    type: shopify_json
+    platform: shopify
+    market_region: EU
+    currency: EUR
+    country: NL
+    trust: watch
+    status: watch
+    discovered_at: 2026-09-06
+    official_topps_retailer: true
+    notes: "découverte du 06/09 via l'annuaire officiel Topps · shopify · 250 fiches en 1re page"
+
+  - key: americansportstore
+    name: American Sportstore
+    base_url: https://american-sportstore.com
+    type: shopify_json
+    platform: shopify
+    market_region: EU
+    currency: EUR
+    country: NL
+    trust: watch
+    status: watch
+    discovered_at: 2026-09-06
+    official_topps_retailer: true
+    notes: "découverte du 06/09 via l'annuaire officiel Topps · shopify · 250 fiches en 1re page"
+
+  - key: pokefamily
+    name: Pokefamily
+    base_url: https://pokefamily.nl
+    type: shopify_json
+    platform: shopify
+    market_region: EU
+    currency: EUR
+    country: NL
+    trust: watch
+    status: watch
+    discovered_at: 2026-09-06
+    official_topps_retailer: true
+    notes: "découverte du 06/09 via l'annuaire officiel Topps · shopify · 250 fiches en 1re page"
+
+  - key: mangastory
+    name: Manga Story
+    base_url: https://manga-story.fr
+    type: html
+    platform: woocommerce
+    market_region: EU
+    currency: EUR
+    country: FR
+    trust: watch
+    status: watch
+    discovered_at: 2026-09-06
+    official_topps_retailer: true
+    notes: "découverte du 06/09 via l'annuaire officiel Topps · woocommerce · 100 fiches en 1re page"
+
+  - key: dioib
+    name: DIOIB
+    base_url: https://dioib.fr
+    type: shopify_json
+    platform: shopify
+    market_region: EU
+    currency: EUR
+    country: FR
+    trust: watch
+    status: watch
+    discovered_at: 2026-09-06
+    official_topps_retailer: true
+    notes: "découverte du 06/09 via l'annuaire officiel Topps · shopify · 250 fiches en 1re page"
+
+  - key: mafiosicards_shop
+    name: Mafiosi Cards
+    base_url: https://mafiosicards.com
+    type: shopify_json
+    platform: shopify
+    market_region: EU
+    currency: EUR
+    country: FR
+    trust: watch
+    status: watch
+    discovered_at: 2026-09-06
+    official_topps_retailer: true
+    notes: "découverte du 06/09 via l'annuaire officiel Topps · shopify · 207 fiches en 1re page"
+
+  - key: hikaru_shop
+    name: Hikaru Distribution
+    base_url: https://hikarudistribution.com
+    type: shopify_json
+    platform: shopify
+    market_region: EU
+    currency: EUR
+    country: FR
+    trust: watch
+    status: watch
+    discovered_at: 2026-09-06
+    official_topps_retailer: true
+    notes: "découverte du 06/09 via l'annuaire officiel Topps · shopify · 250 fiches en 1re page"
+

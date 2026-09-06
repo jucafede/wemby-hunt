@@ -119,7 +119,6 @@ NEG = [
  ("2023-24 Panini Phoenix Mega Box","sans 'Basketball' : REVIEW, coût assumé du durcissement"),
  # H — configurations distinctes
  ("2023-24 Panini Prizm Basketball China Hobby Box","China Hobby n'est pas le Hobby standard"),
- ("2023-24 Panini Prizm Basketball Hanger Pack","Hanger Pack n'est pas Hanger Box"),
  # G — sealed gate (P0) : aucun single ne peut alimenter la couche décisionnelle
  ("2025-26 Cooper Flagg Bowman Hobby Stars Rookie RC HS-3","single Cooper Flagg : pas une Bowman Hobby Box"),
  ("Trayce Jackson-Davis 2023-24 Panini Mosaic #PM-TJD Pictographs Mosaic Choice","single : pas une Mosaic Choice Box"),
@@ -138,11 +137,8 @@ NEG = [
  ("2025-26 Topps Chrome Basketball Sapphire Edition Box","Sapphire sans format explicite -> REVIEW"),
  ("2023-24 Topps Chrome G-League Basketball Hobby Box","G-League exclu"),
  ("2023-24 Panini Prizm EuroLeague Soccer Blaster Box","EuroLeague mais pas basket -> aucun SKU"),
- ("2023/24 Panini Contenders Optic Basketball Hobby, Box","Contenders Optic ≠ Optic ni Contenders"),
  ("2023/24 Panini Prizm Deca Basketball Hobby Box","Deca ≠ Prizm"),
- ("2023-24 Panini Prizm Monopoly 6-Pack Basketball Blaster Box","Monopoly ≠ Prizm"),
  ("2023-24 Panini Contenders Basketball Hobby, Pack","Pack ≠ Box (le 4e nouveau)"),
- ("2023-24 Panini Prizm Basketball 4-Card Pack","Pack ≠ Box"),
  ("2023-24 Panini Contenders Basketball Value Pack","Value Pack ≠ Box"),
  ("2023-24 Panini Mosaic Basketball 20-Box Case","Case générique : ni Mega ni Fast Break → REVIEW"),
  ("2026 Panini Contenders Professional Fighters League PFL Hobby Box","PFL ≠ basket (doit être REJECT, plus REVIEW)"),
@@ -396,6 +392,57 @@ for _id, _eur in (("TOPPS_2025-26_CHROME_UPDATE_VALUE", 70.00),
 # garde-fou de doctrine : une référence EU ne devient jamais une référence de marché US
 _sc("une référence EU ne remplace pas un marché US",
     hunt.market_ref(_vb), (None, None))
+
+# ---------------------------------------------------------------------------
+# Prospection du 06/09 : quatre titres qui n'avaient nulle part où aller en ont un
+# ---------------------------------------------------------------------------
+# Ces assertions étaient « ne matche rien », faute d'identité au catalogue. La garde n'est pas
+# relâchée, elle est DÉPLACÉE : on vérifie maintenant qu'ils tombent sur la BONNE identité,
+# et surtout jamais sur la voisine — c'est le vrai risque.
+_PR = []
+def _pr(name, got, exp):
+    _PR.append(name)
+    if got != exp: fails.append(("PROSPECT", name, got, exp))
+    print(f"{'PASS' if got == exp else 'FAIL'} {name}")
+
+_pr("un Hanger Pack est un Pack, jamais un Hanger Box",
+    _m("2023-24 Panini Prizm Basketball Hanger Pack").sku_id, "PANINI_2023-24_PRIZM_PACK")
+_pr("et le Hanger Box reste le Hanger Box",
+    _m("2023-24 Panini Prizm Basketball Hanger Box").sku_id, "PANINI_2023-24_PRIZM_HANGER")
+_pr("un 4-Card Pack est un Pack",
+    _m("2023-24 Panini Prizm Basketball 4-Card Pack").sku_id, "PANINI_2023-24_PRIZM_PACK")
+_pr("Contenders Optic a enfin sa propre identité",
+    _m("2023/24 Panini Contenders Optic Basketball Hobby, Box").sku_id,
+    "PANINI_2023-24_CONTENDERS_OPTIC_HOBBY")
+_pr("et ce n'est ni Contenders, ni Optic",
+    _m("2023/24 Panini Contenders Optic Basketball Hobby, Box").sku_id
+    not in ("PANINI_2023-24_CONTENDERS_HOBBY", "PANINI_2023-24_OPTIC_HOBBY"), True)
+_pr("Prizm Monopoly est un produit à part",
+    _m("2023-24 Panini Prizm Monopoly 6-Pack Basketball Blaster Box").sku_id,
+    "PANINI_2023-24_PRIZM_MONOPOLY_BLASTER")
+_pr("et surtout pas le Prizm Blaster standard",
+    _m("2023-24 Panini Prizm Monopoly 6-Pack Basketball Blaster Box").sku_id
+    != "PANINI_2023-24_PRIZM_BLASTER", True)
+_pr("Deca reste sans identité — un seul vendeur, preuve insuffisante",
+    _m("2023/24 Panini Prizm Deca Basketball Hobby Box").sku_id, None)
+
+# La distinction de ligue, exigence n°6 : trois marchés qu'on ne doit jamais confondre.
+_by = {x["id"]: x for x in _SK}
+_pr("le Prizm EuroLeague porte enfin sa ligue",
+    _by["PANINI_2023-24_PRIZM_EUROLEAGUE_HOBBY"].get("league"), "EuroLeague")
+_pr("le Prizm NBA n'en porte pas", _by["PANINI_2023-24_PRIZM_HOBBY"].get("league"), None)
+_pr("Draft Picks est étiqueté collegiate",
+    _by["PANINI_2023-24_PRIZM_DRAFT_PICKS_DRAFT_BLASTER"].get("league"), "Collegiate/Draft")
+_pr("et n'est PAS crédité d'une RC NBA",
+    _by["PANINI_2023-24_PRIZM_DRAFT_PICKS_DRAFT_BLASTER"].get("wemby_rc"), False)
+_pr("alors que le Prizm NBA l'est",
+    _by["PANINI_2023-24_PRIZM_HOBBY"].get("wemby_rc"), True)
+_pr("le NBL australien est marqué sans Wembanyama",
+    _by["TOPPS_2023-24_TOPPS_CHROME_NBL_HOBBY"].get("wemby_present"), False)
+_pr("chaque identité découverte porte sa preuve",
+    [x["id"] for x in _SK if x.get("discovered_at") and not x.get("url_proof")], [])
+_pr("et le nombre de vendeurs qui l'attestent",
+    all(x.get("discovery_evidence", 0) >= 2 for x in _SK if x.get("discovered_at")), True)
 
 print(f"TOTAL AVEC SEALED : {len(POS)+len(P2)+len(NEG)+11+len(_FP)+len(_MO)+len(_H2)+len(_SC)} tests, {len(fails)} FAIL")
 sys.exit(1 if fails else 0)

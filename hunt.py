@@ -2014,7 +2014,7 @@ def write_html(cat, blocks, restocks, review, seen_at, trust=None, hot=None, ent
           if seen_at else "<p class=small>Rapport hors passage (--report)</p>"),
          "<nav>" + " ".join(f"<a href='#{i}'>{n}</a>" for i, n in
                             [("acheter", "🔥 Acheter"), ("surveiller", "👀 Surveiller"),
-                             ("inventaire", "📦 Mon inventaire"),
+                             ("prizm", "🎯 Prizm Core"), ("inventaire", "📦 Mon inventaire"),
                              ("fr", "🇫🇷 FR"), ("explorer", "🔎 Explorer"),
                              ("diag", "⚙️ Diagnostic")]) + "</nav>"]
 
@@ -2079,6 +2079,46 @@ def write_html(cat, blocks, restocks, review, seen_at, trust=None, hot=None, ent
                  "jamais une valeur de marché.</p>")
     else:
         h.append("<p class=empty>Aucun produit en rupture avec une cible d’achat définie.</p>")
+
+    # ---------------- 🎯 PRIZM_WEMBY_CORE
+    # Le produit central de la chasse a sa propre section, en tête de la zone de lecture.
+    # Il était surveillé par un moteur dédié depuis le 06/09 sans que rien n'en paraisse à
+    # l'écran : un tableau de bord qui n'affiche pas ce que le moteur sait ne sert à rien.
+    core = ROOT / "discovered" / "prizm_core.json"
+    h.append("<h2 id=prizm>🎯 Prizm Wemby Core — 2023-24 Panini Prizm NBA</h2>")
+    if core.exists():
+        import collections as _pc
+        pc = json.loads(core.read_text(encoding="utf-8"))
+        sk_by = {x["id"]: x for x in cat["skus"]}
+        lst = [r for r in pc.get("listings", []) if r.get("sku_id")
+               and re.match(r"PANINI_2023-24_PRIZM_(?!EUROLEAGUE|DRAFT|MONOPOLY)", r["sku_id"])]
+        by_fmt = _pc.defaultdict(list)
+        for r in lst:
+            by_fmt[(sk_by.get(r["sku_id"]) or {}).get("format") or "?"].append(r)
+        # les formats attestés par une source de référence, même sans offre : un zéro se montre
+        for f in ("Hobby", "FOTL", "Choice", "Fast Break", "International", "Mega",
+                  "Blaster", "Retail Box", "Hanger", "Pack", "Hobby Blaster", "Premium Factory Set"):
+            by_fmt.setdefault(f, [])
+        h.append(f"<p class=small>Dernier balayage dédié : {pc.get('generated_at','?')[:16].replace('T',' ')} UTC · "
+                 f"{len(pc.get('sources_read') or [])} source(s) lues · "
+                 f"{len(pc.get('sources_lost') or [])} perdue(s). "
+                 f"Un zéro signifie « cherché et rien trouvé », jamais « boutique inconnue ».</p>")
+        h.append("<div class=wrap><table><tr><th>Format</th><th>Listings connus</th><th>Live</th>"
+                 "<th>OOS</th><th>Meilleur prix live</th><th>Vendeur</th><th>Confiance stock</th></tr>")
+        for f in sorted(by_fmt, key=lambda k: (-len(by_fmt[k]), k)):
+            rows = by_fmt[f]
+            ins = [r for r in rows if r.get("available")]
+            best = min(ins, key=lambda r: r["price"]) if ins else None
+            conf = {"CONFIRMED_IN_STOCK": "✅ confirmé", "PROBABLY_IN_STOCK": "⚠️ probable"}.get(
+                (best or {}).get("stock_confidence"), "—")
+            h.append(f"<tr><td>{f}</td><td>{len(rows)}</td>"
+                     f"<td>{'<span class=go>' + str(len(ins)) + '</span>' if ins else '0'}</td>"
+                     f"<td>{len(rows) - len(ins)}</td>"
+                     f"<td>{money_or(best['price']) if best else '—'}</td>"
+                     f"<td>{best['shop'] if best else '—'}</td><td>{conf}</td></tr>")
+        h.append("</table></div>")
+    else:
+        h.append("<p class=empty>Aucun balayage Prizm dédié dans ce passage — lancez prizm_core.py.</p>")
 
     # ---------------- 📦 mon inventaire
     tot_q = sum(r["qty"] for r in inv_rows)

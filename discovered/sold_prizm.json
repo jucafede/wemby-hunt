@@ -1,0 +1,74 @@
+{
+  "generated_at": "2026-09-06",
+  "records": {
+    "FOTL": {
+      "LAST_SALE": 2799,
+      "MEDIAN_90D": null,
+      "AVG_90D": 2818,
+      "N_90D": 19,
+      "RANGE_90D": null,
+      "MEDIAN_30D": null,
+      "N_30D": null,
+      "SOURCE": "StockX",
+      "URL": "https://stockx.com/2023-24-panini-prizm-basketball-1st-off-the-line-hobby-box",
+      "METHOD": "relevé navigateur utilisateur",
+      "FETCHED_AT": "2026-09-06",
+      "CONFIDENCE": "HIGH"
+    },
+    "Mega": {
+      "LAST_SALE": 350,
+      "MEDIAN_90D": null,
+      "AVG_90D": 199,
+      "N_90D": 4,
+      "RANGE_90D": null,
+      "MEDIAN_30D": null,
+      "N_30D": null,
+      "SOURCE": "StockX",
+      "URL": "https://stockx.com/2023-24-panini-prizm-basketball-mega-box-pink-prizms",
+      "METHOD": "relevé navigateur utilisateur",
+      "FETCHED_AT": "2026-09-06",
+      "CONFIDENCE": "MEDIUM"
+    },
+    "Blaster": {
+      "LAST_SALE": 86,
+      "MEDIAN_90D": null,
+      "AVG_90D": null,
+      "N_90D": null,
+      "RANGE_90D": null,
+      "MEDIAN_30D": null,
+      "N_30D": null,
+      "SOURCE": "StockX",
+      "URL": "https://stockx.com/2023-24-panini-prizm-basketball-blaster-box",
+      "METHOD": "relevé navigateur utilisateur — liquidité récente très faible",
+      "FETCHED_AT": "2026-09-06",
+      "CONFIDENCE": "LOW"
+    },
+    "International": {
+      "LAST_SALE": 673.95,
+      "MEDIAN_90D": 524.95,
+      "AVG_90D": 555.0,
+      "N_90D": 3,
+      "RANGE_90D": [
+        466.09,
+        673.95
+      ],
+      "MEDIAN_30D": null,
+      "N_30D": null,
+      "SOURCE": "SportsCardsPro + relevés manuels",
+      "URL": null,
+      "METHOD": "relevé navigateur utilisateur",
+      "FETCHED_AT": "2026-09-06",
+      "CONFIDENCE": "MEDIUM"
+    }
+  },
+  "retracted": {
+    "values": {
+      "Hobby": 876,
+      "Fast Break": 625,
+      "Choice": 867,
+      "Mega": 134,
+      "Blaster": 56
+    },
+    "why": "extraits de snippets de moteur de recherche, non datés, présentés à tort comme transactionnels. Mega et Blaster invalidés par relevé direct."
+  }
+}

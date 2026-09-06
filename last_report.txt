@@ -11,7 +11,7 @@
   [mojobreak] status=reject \(qualifié sur données réelles → 0 sealed 2023-24\) → skip
   0 produits bruts, 0 rattachés à un SKU
 → RbiCru7 Collectibles (https://rbicru7.com)  [trust=trusted]
-  12702 produits bruts, 40 rattachés à un SKU
+  12770 produits bruts, 40 rattachés à un SKU
 → Layton Sports Cards (https://laytonsportscards.com)  [trust=trusted]
   [layton] type=breaks \(breaker, hors périmètre sealed\) → skip
   0 produits bruts, 0 rattachés à un SKU
@@ -29,22 +29,22 @@
   [grandslam] status=reject \(qualifié sur données réelles → 0 sealed 2023-24\) → skip
   0 produits bruts, 0 rattachés à un SKU
 → The Cardiacs (https://www.thecardiacs.com)  [trust=trusted]
-  5333 produits bruts, 40 rattachés à un SKU
+  5330 produits bruts, 40 rattachés à un SKU
 → Monmouth Cards (https://monmouthcards.com)  [trust=watch]
-  5648 produits bruts, 39 rattachés à un SKU
+  5627 produits bruts, 39 rattachés à un SKU
 → World Champion Sports Cards (https://www.worldchampionsportscards.org)  [trust=watch]
   4017 produits bruts, 66 rattachés à un SKU
 → Superior Sports Investments (https://superiorsportsinvestments.com)  [trust=watch]
     collections : 8/84 retenues (filtre 'basketball|\\bnba\\b|hoops|prizm|mosaic|optic|select|phoenix|contenders|court.kings|revolution|premium.stock')
-  16295 produits bruts, 46 rattachés à un SKU
+  16288 produits bruts, 46 rattachés à un SKU
 → SJAY2K Trading Cards (https://www.sjay2k.com)  [trust=watch]
-  569 produits bruts, 20 rattachés à un SKU
+  563 produits bruts, 18 rattachés à un SKU
 → The Ballgame (https://theballgame.com)  [trust=watch]
   12950 produits bruts, 4 rattachés à un SKU
 → Bleecker Trading (https://bleeckertrading.com)  [trust=watch]
   2229 produits bruts, 110 rattachés à un SKU
 → CB Hobby (https://cbhobby.com)  [trust=watch]
-  619 produits bruts, 9 rattachés à un SKU
+  621 produits bruts, 9 rattachés à un SKU
 → Box Seat Collectibles (https://boxseatcollectibles.com)  [trust=watch]
   2086 produits bruts, 28 rattachés à un SKU
 → E5 Sports (https://e5sports.com)  [trust=watch]
@@ -58,9 +58,9 @@
   [blowout] type=html non géré en v1 → skip
   0 produits bruts, 0 rattachés à un SKU
 → RL Sports Cards (https://rlsportscards.com)  [trust=watch]
-  1796 produits bruts, 68 rattachés à un SKU
+  1802 produits bruts, 68 rattachés à un SKU
 → Fan Cave (https://fancave.com)  [trust=watch]
-  948 produits bruts, 4 rattachés à un SKU
+  945 produits bruts, 4 rattachés à un SKU
 → Mill Creek Sports (https://www.millcreeksports.com)  [trust=watch]
   [millcreek] type=html non géré en v1 → skip
   0 produits bruts, 0 rattachés à un SKU
@@ -74,7 +74,7 @@
   376 produits bruts, 14 rattachés à un SKU
 → Tanteo Cartes Collections (https://tanteocartescollections.com)  [trust=watch]
   408 produits bruts, 20 rattachés à un SKU
-(90 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
+(92 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
 
 ========================================================================
   RETAIL
@@ -396,12 +396,12 @@
 — NO_DATA   2023-24 Panini Hoops Mega   [PANINI_2023-24_HOOPS_MEGA]
    ask n/a      sold n/a      | buy ≤ $40.00   | watch ≤ $50.00   | EU n/a
 
-⛔ NO_GO   2023-24 Panini Mosaic Mega [Target Reactive Yellow/Green]   [PANINI_2023-24_MOSAIC_MEGA_TARGET]
-   1. rbicru7          $  100.00  IN STOCK  landed≈€ 116.23  (score 1.00)
-        ONLY_STOCK_SEEN  RC_YEAR  MARKET DATA INSUFFICIENT
+— NO_STOCK   2023-24 Panini Mosaic Mega [Target Reactive Yellow/Green]   [PANINI_2023-24_MOSAIC_MEGA_TARGET]
+   1. rbicru7          $  100.00  SOLD OUT  landed≈€ 116.23  (score 1.00)
+        RC_YEAR  MARKET DATA INSUFFICIENT
    ask n/a      sold n/a      | buy ≤ $70.00   | watch ≤ $80.00   | EU n/a
-   HISTORICAL LOW $100.00 (le 2026-08-18, rbicru7, 1 shop(s) vus) | cheapest live $100.00
-   BEST → rbicru7  https://rbicru7.com/products/2023-24-panini-mosaic-basketball-target-mega-box-reactive-yellow-green-fluorescent
+   HISTORICAL LOW $100.00 (le 2026-08-18, rbicru7, 1 shop(s) vus) | aucun live
+   RESTOCK TARGET $100.00  — surveillance, pas une valeur de marché
 
 · SUIVI   2023-24 Panini Donruss Optic Hobby Mega   [PANINI_2023-24_OPTIC_HOBBY_MEGA]
    1. superior         $  250.00  IN STOCK  landed≈€ 271.39  (score 1.00)
@@ -1762,7 +1762,7 @@
 
 · SUIVI   2025-26 Topps Signature Class Hobby   [TOPPS_2025-26_SIGNATURE_CLASS_HOBBY]
    1. sportscardjunction $  395.00  IN STOCK  landed≈€ 421.38  (score 1.00)
-        VERIFY  cheapest of 14 in stock
+        VERIFY  cheapest of 13 in stock
    2. cardiacs         $  399.95  IN STOCK  landed≈€ 426.50  (score 1.00)
    3. collectorstore   $  399.95  IN STOCK  landed≈€ 426.50  (score 1.00)
    4. rbicru7          $  410.00  IN STOCK  landed≈€ 436.89  (score 1.00)
@@ -1806,14 +1806,14 @@
 
 · CANDIDAT   2025-26 Topps Finest Hobby   [TOPPS_2025-26_FINEST_HOBBY]
    1. awesome          $  799.75  IN STOCK  landed≈€ 840.05  (score 1.00)
-        cheapest of 6 in stock
+        cheapest of 5 in stock
    2. collectorstore   $  799.95  IN STOCK  landed≈€ 840.26  (score 1.00)
    3. qscards          $  899.00  IN STOCK  landed≈€ 942.71  (score 1.00)
         VERIFY  FR
    4. cardiacs         $  899.95  IN STOCK  landed≈€ 943.70  (score 1.00)
    5. superior         $ 1150.00  IN STOCK  landed≈€1202.35  (score 1.00)
         VERIFY
-   6. sjay2k           $ 1250.00  IN STOCK  landed≈€1305.79  (score 1.00)
+   6. rlsports         $  770.00  SOLD OUT  landed≈€ 809.28  (score 1.00)
         VERIFY
    ask $799.75  sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $770.00 (le 2026-08-19, rlsports, 10 shop(s) vus) | cheapest live $799.75
@@ -1944,7 +1944,7 @@
   [bleecker] 2014-14 Panini Court Kings Basketball Hobby Box  $225.00 OOS  → [["PANINI_2023-24_COURT_KINGS_HOBBY", 0.77], ["PANINI_2024-25_COURT_KINGS_HOBBY", 0.77]]
 
 ========================================================================
-  👀 WATCHLIST — 10 prioritaires / 142 historiques / 0 autres
+  👀 WATCHLIST — 10 prioritaires / 143 historiques / 0 autres
 ========================================================================
   🔔 RESTOCK PRIORITY  2023-24 Panini Revolution Tin              target                          $9.99 (2026-08-30, 10 shop(s))   -50.0% vs ask $20.00
   🔔 RESTOCK PRIORITY  2023-24 Panini Mosaic Blaster              target                         $19.99 (2026-08-17, 9 shop(s))   -47.4% vs sold $38.00
@@ -2013,5 +2013,5 @@
   2025-26_HOOPS_JUMBO                      €  549.00  qscards     
   2025-26_SIGNATURE_CLASS_HOBBY            €  595.00  qscards     
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-09-05T20-15-10.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-09-06T04-19-49.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

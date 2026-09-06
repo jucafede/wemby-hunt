@@ -446,3 +446,18 @@ shops:
     official_topps_retailer: true
     notes: "découverte du 06/09 via l'annuaire officiel Topps · shopify · 250 fiches en 1re page"
 
+  # La boutique qui a déclenché la mission du 06/09 : spécialiste stickers/albums, 43 de ses
+  # 52 références NBA épuisées, et du fond de rayon 2022-23/2023-24 que personne ne surveillait.
+  - key: stickerpoint
+    name: Stickerpoint
+    base_url: https://www.stickerpoint.fr
+    type: html
+    platform: oscommerce
+    market_region: FR
+    currency: EUR
+    country: FR
+    trust: watch
+    status: watch
+    discovered_at: 2026-09-06
+    robots_checked_at: 2026-09-06
+    notes: "osCommerce, décliné en .fr/.de/.ch, DHL Premium, certifié Trusted Shops. Les fiches se lisent depuis le listing : deux pages pour tout le rayon NBA."

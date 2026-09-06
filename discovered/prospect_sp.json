@@ -1,0 +1,142 @@
+{
+  "generated_at": "2026-09-06T16:54:33+00:00",
+  "stats": {
+    "lus": 58,
+    "déjà au catalogue": 2
+  },
+  "rejets": {
+    "non scellé (single, lot de cartes)": 30,
+    "antérieur à Wemby (2022-23)": 9,
+    "antérieur à Wemby (2021-22)": 9,
+    "antérieur à Wemby (2020-21)": 2
+  },
+  "shops": {
+    "stickerpoint": {
+      "items": 58,
+      "platform": "adaptateur",
+      "seconds": 3.7
+    }
+  },
+  "candidates": [
+    {
+      "kind": "UNKNOWN_PRODUCT",
+      "season": "2024",
+      "league": "NBA",
+      "manufacturer": "Panini",
+      "set": "limited",
+      "exact_product_name": "Panini Boston Celtics 2024 NBA Champions Limited Edition Set - Blaster Box",
+      "formats_detected": [
+        "blaster"
+      ],
+      "price": 44.99,
+      "currency": "EUR",
+      "available": false,
+      "shop": "stickerpoint",
+      "country": "FR",
+      "url": "https://www.stickerpoint.fr/panini-boston-celtics-2024-nba-champions-limited-edition-set-blaster-box-p-5878.html",
+      "published_at": null,
+      "match_score": 0.0,
+      "seen_at": "2026-09-06T16:54:33+00:00"
+    },
+    {
+      "kind": "UNKNOWN_PRODUCT",
+      "season": "2022",
+      "league": "Collegiate/Draft",
+      "manufacturer": "Panini",
+      "set": "chronicles",
+      "exact_product_name": "Panini Chronicles Draft Picks Basketball NBA 2022 - Blaster Box",
+      "formats_detected": [
+        "blaster"
+      ],
+      "price": 15.99,
+      "currency": "EUR",
+      "available": false,
+      "shop": "stickerpoint",
+      "country": "FR",
+      "url": "https://www.stickerpoint.fr/panini-chronicles-draft-picks-basketball-nba-2022-blaster-box-p-5618.html",
+      "published_at": null,
+      "match_score": 0.0,
+      "seen_at": "2026-09-06T16:54:33+00:00"
+    },
+    {
+      "kind": "UNKNOWN_PRODUCT",
+      "season": "2021",
+      "league": "Collegiate/Draft",
+      "manufacturer": "Panini",
+      "set": "prizm draft picks",
+      "exact_product_name": "Panini Prizm Draft Picks 2021 Basketball NBA - Mega Box",
+      "formats_detected": [
+        "mega"
+      ],
+      "price": 29.99,
+      "currency": "EUR",
+      "available": false,
+      "shop": "stickerpoint",
+      "country": "FR",
+      "url": "https://www.stickerpoint.fr/panini-prizm-draft-picks-2021-basketball-nba-mega-box-p-5349.html",
+      "published_at": null,
+      "match_score": 0.0,
+      "seen_at": "2026-09-06T16:54:33+00:00"
+    },
+    {
+      "kind": "UNKNOWN_PRODUCT",
+      "season": "2022",
+      "league": "Collegiate/Draft",
+      "manufacturer": "Panini",
+      "set": "prizm draft picks",
+      "exact_product_name": "Panini Prizm Draft Picks Basketball NBA 2022 - Blaster Box",
+      "formats_detected": [
+        "blaster"
+      ],
+      "price": 25.99,
+      "currency": "EUR",
+      "available": false,
+      "shop": "stickerpoint",
+      "country": "FR",
+      "url": "https://www.stickerpoint.fr/panini-prizm-draft-picks-basketball-nba-2022-blaster-box-p-5793.html",
+      "published_at": null,
+      "match_score": 0.0,
+      "seen_at": "2026-09-06T16:54:33+00:00"
+    },
+    {
+      "kind": "UNKNOWN_PRODUCT",
+      "season": "2024",
+      "league": "NBA",
+      "manufacturer": "Panini",
+      "set": null,
+      "exact_product_name": "Panini NBA Top Class 2024 Trading Cards - Collectors Tin",
+      "formats_detected": [
+        "tin"
+      ],
+      "price": 24.99,
+      "currency": "EUR",
+      "available": false,
+      "shop": "stickerpoint",
+      "country": "FR",
+      "url": "https://www.stickerpoint.fr/panini-nba-top-class-2024-trading-cards-collectors-tin-p-5482.html",
+      "published_at": null,
+      "match_score": 0.0,
+      "seen_at": "2026-09-06T16:54:33+00:00"
+    },
+    {
+      "kind": "UNKNOWN_PRODUCT",
+      "season": "2024",
+      "league": "NBA",
+      "manufacturer": "Panini",
+      "set": null,
+      "exact_product_name": "Panini NBA Top Class 2024 Trading Cards - Starter Pack",
+      "formats_detected": [
+        "pack"
+      ],
+      "price": 10.9,
+      "currency": "EUR",
+      "available": false,
+      "shop": "stickerpoint",
+      "country": "FR",
+      "url": "https://www.stickerpoint.fr/panini-nba-top-class-2024-trading-cards-starter-pack-p-5432.html",
+      "published_at": null,
+      "match_score": 0.0,
+      "seen_at": "2026-09-06T16:54:33+00:00"
+    }
+  ]
+}

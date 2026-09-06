@@ -209,3 +209,105 @@ def implausible(price: float | None, sold_median: float | None, ref_ask: float |
         return (f"prix à {price / ref * 100:.0f} % de la référence — invraisemblable. "
                 f"Fiche erronée, mauvais produit, ou appât : à vérifier à la main avant tout achat.")
     return None
+
+
+# ---------------------------------------------------------------- référence de marché graduée
+# Les ventes réalisées restent inaccessibles à l'échelle : sportscardspro, 130point et
+# cardladder refusent tout client automatisé, pricecharting ne couvre pas le scellé. Plutôt que
+# de laisser 307 SKU sans aucune intelligence prix, on gradue ce qu'on SAIT, en nommant à chaque
+# fois la nature de la donnée. Une médiane d'asks n'est pas une cote — mais dire « huit vendeurs
+# demandent entre 340 et 500, celui-ci en demande 210 » est une information utile et vraie.
+REF_LEVELS = ("SOLD_MEDIAN", "SOLD_RANGE", "MARKET_ESTIMATE", "ASK_ONLY", "UNKNOWN")
+
+
+def market_reference(*, sold_median=None, sold_confidence=None, sold_n=0,
+                     asks: list[float] | None = None, n_sellers: int = 0):
+    """Le meilleur niveau de référence disponible, et sa confiance.
+
+    SOLD_MEDIAN      des ventes réelles, en nombre et récentes            HIGH
+    SOLD_RANGE       des ventes réelles mais peu nombreuses ou dispersées MEDIUM
+    MARKET_ESTIMATE  pas de vente, mais assez de vendeurs pour cerner     MEDIUM/LOW
+    ASK_ONLY         un ou deux prix demandés, rien de plus               LOW
+    UNKNOWN          rien                                                 —
+    """
+    if sold_median and sold_confidence in ("HIGH", "MEDIUM") and sold_n >= 5:
+        return {"level": "SOLD_MEDIAN", "value": sold_median, "confidence": "HIGH",
+                "n": sold_n, "why": f"{sold_n} ventes réalisées"}
+    if sold_median and sold_n >= 2:
+        return {"level": "SOLD_RANGE", "value": sold_median, "confidence": "MEDIUM",
+                "n": sold_n, "why": f"seulement {sold_n} vente(s) réalisée(s) — fourchette, pas cote"}
+    a = sorted(x for x in (asks or []) if x and x > 0)
+    if len(a) >= 4 and n_sellers >= 4:
+        med = a[len(a) // 2]
+        disp = (a[-1] - a[0]) / med if med else 9
+        return {"level": "MARKET_ESTIMATE", "value": med,
+                "confidence": "MEDIUM" if disp <= 1.0 else "LOW", "n": len(a),
+                "why": f"{n_sellers} vendeurs, aucune vente connue — estimation sur prix demandés",
+                "low": a[0], "high": a[-1], "dispersion": round(disp, 2)}
+    if a:
+        return {"level": "ASK_ONLY", "value": a[len(a) // 2], "confidence": "LOW", "n": len(a),
+                "why": f"{len(a)} prix demandé(s) seulement", "low": a[0], "high": a[-1]}
+    return {"level": "UNKNOWN", "value": None, "confidence": None, "n": 0,
+            "why": "aucune donnée de prix"}
+
+
+def cross_retailer_low(price: float, asks: list[float], n_sellers: int,
+                       seuil: float = 0.60) -> dict | None:
+    """L'anomalie qui ne demande AUCUNE vente réalisée pour être visible.
+
+    Quand huit marchands demandent entre 335 et 799 et qu'un neuvième affiche 335, la question
+    n'est pas « quelle est la cote ». C'est qu'un vendeur est très loin de tous les autres, et
+    cela mérite un regard — dans les deux sens : soit c'est l'affaire, soit c'est une erreur.
+
+    Il faut au moins quatre vendeurs : à trois, l'écart peut n'être qu'un vendeur cher qui tire
+    la médiane, pas un vendeur bon marché.
+    """
+    others = sorted(x for x in asks if x and x > 0 and abs(x - price) > 1e-9)
+    if len(others) < 3 or n_sellers < 4:
+        return None
+    med = others[len(others) // 2]
+    if not med or price >= med * seuil:
+        return None
+    return {"type": "CROSS_RETAILER_LOW", "price": price, "peer_median": round(med, 2),
+            "peer_low": others[0], "peer_high": others[-1], "n_peers": len(others),
+            "pct_of_peers": round(price / med * 100, 1),
+            "why": (f"{price:.2f} contre une médiane de {med:.2f} sur {len(others)} autres "
+                    f"vendeurs ({price / med * 100:.0f} %) — anomalie à vérifier avant achat, "
+                    f"pas une remise établie")}
+
+
+def below_dealer_buy(price: float, dealer_buy: float | None) -> dict | None:
+    """Sous le prix auquel un marchand RACHÈTE, c'est-à-dire sous le plancher du marché.
+
+    Un dealer buy price est la donnée la plus dure qui existe hors ventes réalisées : c'est un
+    professionnel qui s'engage à payer ce montant. Passer dessous n'arrive normalement pas.
+    """
+    if not price or not dealer_buy or price >= dealer_buy:
+        return None
+    return {"type": "BELOW_DEALER_BUY_PRICE", "price": price, "dealer_buy": dealer_buy,
+            "why": (f"{price:.2f} sous le prix de rachat marchand connu ({dealer_buy:.2f}) — "
+                    f"vérification renforcée du vendeur obligatoire avant toute commande")}
+
+
+# ---------------------------------------------------------------- confiance vendeur
+# Une affirmation du vendeur sur lui-même n'est jamais une preuve. « 100% authentic »,
+# « verified US business », « authorized dealer » sur sa propre page ne pèsent rien : ce sont
+# des mots qu'il a écrits. Seuls comptent les signaux VÉRIFIABLES AILLEURS.
+def seller_confidence(shop: dict) -> tuple[str, list[str]]:
+    pts, why = 0, []
+    if shop.get("official_topps_retailer"):
+        pts += 2; why.append("figure à l'annuaire officiel Topps (source tierce)")
+    if shop.get("legitimacy_checked_at") or shop.get("country_corrected_at"):
+        pts += 1; why.append("identité vérifiée à la main")
+    if shop.get("payment_passes") == "yes":
+        pts += 1; why.append("commande réelle passée et honorée")
+    if shop.get("trust") == "trusted":
+        pts += 1; why.append("historique de crawl sans anomalie")
+    elif shop.get("trust") == "high_risk":
+        pts -= 3; why.append("marqué à risque")
+    if shop.get("price_display_warning"):
+        pts -= 1; why.append("affichage HT/TTC non confirmé")
+    if shop.get("status") == "watch" and not shop.get("official_topps_retailer"):
+        why.append("aucun historique chez nous")
+    lvl = "HIGH" if pts >= 3 else "MEDIUM" if pts >= 2 else "LOW" if pts >= 1 else "UNVERIFIED"
+    return lvl, why

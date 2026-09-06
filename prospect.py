@@ -166,8 +166,32 @@ def woo_catalog(base: str, log=print):
     return out
 
 
-def read_catalog(base: str, hint: str | None = None, log=print):
-    """Shopify d'abord, WooCommerce ensuite. Rend (items, plateforme)."""
+def adapter_catalog(key: str, log=print):
+    """Boutique servie par un adaptateur HTML écrit à la main (osCommerce, thèmes fermés)."""
+    import html_adapters as ha
+    ad = ha.adapter_for(key)
+    if not ad:
+        return []
+    out = []
+    for seed in ad.seeds:
+        body = fetch(seed)
+        if not body:
+            continue
+        got = ad.parse(body, seed)
+        for it in (got if isinstance(got, list) else [got] if got else []):
+            out.append({"title": it["title"], "price": it.get("price") or 0,
+                        "available": bool(it.get("available")), "url": it.get("url", ""),
+                        "vendor": None, "ptype": None, "published_at": None})
+        time.sleep(DELAY)
+    return out
+
+
+def read_catalog(base: str, hint: str | None = None, log=print, key: str | None = None):
+    """Adaptateur dédié d'abord s'il en existe un, sinon Shopify, sinon WooCommerce."""
+    if key:
+        items = adapter_catalog(key, log)
+        if items:
+            return items, "adaptateur"
     if hint != "woocommerce":
         items = shopify_catalog(base, log)
         if items:
@@ -263,7 +287,7 @@ def prospect(sources, skus, only=None, log=print):
             log(f"  ⛔ {key} en blocklist — ignoré")
             continue
         t0 = time.monotonic()
-        items, plat = read_catalog(sh["base_url"], sh.get("platform"), log)
+        items, plat = read_catalog(sh["base_url"], sh.get("platform"), log, key)
         dur = time.monotonic() - t0
         per_shop[key] = {"items": len(items), "platform": plat, "seconds": round(dur, 1)}
         if not items:

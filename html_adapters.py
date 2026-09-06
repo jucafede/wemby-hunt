@@ -131,6 +131,8 @@ class Adapter:
     def parse(self, html: str, url: str):
         if self.parse_fn == "jsonld":
             return from_jsonld(html)
+        if self.parse_fn == "stickerpoint":
+            return stickerpoint_listing(html)   # rend une LISTE : le listing porte les fiches
         raise ValueError(f"stratégie de lecture inconnue : {self.parse_fn}")
 
 
@@ -151,7 +153,65 @@ SHOPUSCARDS = Adapter(
           "notre agent, seules les pages panier/compte/paiement sont interdites.",
 )
 
-ADAPTERS = {a.key: a for a in (SHOPUSCARDS,)}
+# --- Stickerpoint — osCommerce, spécialiste stickers/albums FR/DE/CH -----------------------
+# La boutique qui a déclenché la mission du 06/09 : 43 de ses 52 références NBA sont épuisées,
+# et ce qui reste est du fond de rayon que personne ne surveillait.
+#
+# Ni JSON ni schema.org : du osCommerce classique. La fiche se lit dans la page de LISTING,
+# ce qui évite une requête par produit — deux pages pour tout le rayon NBA.
+#   lien + nom     <a class="prod_list" href="...-p-<id>.html">Nom</a>
+#   prix normal    <span class="productPrice">3,50&nbsp;€</span>
+#   prix barré     <span class="productSpecialPrice">   promotion en cours
+#   rupture        le libellé « ÉPUISÉ » dans la carte produit
+STICKERPOINT_CATS = [
+    "https://www.stickerpoint.fr/panini-nba-stickers-cards-c-1_98.html",
+    "https://www.stickerpoint.fr/panini-nba-top-class-c-1_251.html",
+]
+
+_SP_CARD = re.compile(r'class="[^"]*wrapper_prods[^"]*"(.*?)(?=class="[^"]*wrapper_prods|\Z)', re.S)
+_SP_LINK = re.compile(r'<a[^>]+class="prod_list"[^>]+href="([^"]+)"[^>]*>(.*?)</a>', re.S)
+_SP_PRICE = re.compile(r'class="(productPrice|productSpecialPrice)"[^>]*>\s*([0-9]+[.,][0-9]{2})')
+_SP_OOS = re.compile(r"[ée]puis[ée]|ausverkauft|sold\s*out", re.I)
+
+
+def stickerpoint_listing(html_text: str):
+    """Toutes les fiches d'une page de listing osCommerce.
+
+    Un prix barré signifie promotion : c'est le prix SPÉCIAL qui est payable, l'autre n'est
+    qu'un tarif de référence. Les confondre ferait passer une promo pour un prix normal — et
+    fabriquerait de faux plus-bas historiques."""
+    import html as _h
+    out = []
+    for m in _SP_CARD.finditer(html_text):
+        blk = m.group(1)
+        lk = _SP_LINK.search(blk)
+        if not lk:
+            continue
+        name = re.sub(r"\s+", " ", _h.unescape(re.sub(r"<[^>]+>", "", lk.group(2)))).strip()
+        prices = _SP_PRICE.findall(blk)
+        if not name or not prices:
+            continue
+        special = next((p for k, p in prices if k == "productSpecialPrice"), None)
+        normal = next((p for k, p in prices if k == "productPrice"), None)
+        payable = special or normal
+        out.append({"title": name, "price": float(payable.replace(",", ".")),
+                    "list_price": float(normal.replace(",", ".")) if (special and normal) else None,
+                    "on_sale": bool(special), "currency": "EUR",
+                    "available": not bool(_SP_OOS.search(blk)),
+                    "url": lk.group(1).strip()})
+    return out
+
+
+STICKERPOINT = Adapter(
+    key="stickerpoint", name="Stickerpoint", base_url="https://www.stickerpoint.fr",
+    currency="EUR", market_region="FR",
+    seeds=STICKERPOINT_CATS, seed_kind="listing",
+    product_re=r"-p-\d+\.html", parse_fn="stickerpoint",
+    notes="osCommerce, décliné en .fr/.de/.ch. Les fiches se lisent depuis le listing : deux "
+          "pages suffisent pour tout le rayon NBA, au lieu d'une requête par produit.",
+)
+
+ADAPTERS = {a.key: a for a in (SHOPUSCARDS, STICKERPOINT)}
 
 
 def adapter_for(shop_key: str):

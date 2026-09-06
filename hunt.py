@@ -74,9 +74,27 @@ EXCLUSIVES = [
 # et un SKU avec `league` n'accepte QUE cette ligue.
 LEAGUES = [("EuroLeague", r"euro\s*league|turkish\s*airlines")]
 LEAGUE_STRIP = re.compile(r"euro\s*league|turkish\s*airlines")
+# « draft picks » et « collegiate » sont dans la liste d'exclusion de sport : ce sont
+# précisément les mots qui signalent un produit NON-NBA. Mais depuis que le catalogue porte des
+# identités Collegiate/Draft, ils doivent cesser d'exclure CES identités-là — exactement le
+# raisonnement appliqué à EuroLeague le 20/08. On retire le token avant de juger le sport,
+# uniquement quand le SKU candidat revendique cette ligue.
+DRAFT_STRIP = re.compile(r"draft\s*picks|collegiate|\bncaa\b")
+
+# Ligues ajoutées le 06/09 avec les identités correspondantes. Sans elles, parse_league rend
+# None sur « Prizm Draft Picks », le SKU déclare « Collegiate/Draft », et le garde-fou de
+# concordance rejette le produit — il était impossible de rattacher la moindre fiche draft.
+LEAGUES_EXTRA = [
+    ("Collegiate/Draft", r"draft\s*picks|collegiate|\bncaa\b|university"),
+    ("NBL", r"\bnbl\b"),
+    ("OTE", r"overtime\s*elite|\bote\b"),
+    ("G-League", r"g[- ]league"),
+]
 
 def parse_league(t: str) -> str | None:
     for name, rx in LEAGUES:
+        if re.search(rx, t): return name
+    for name, rx in LEAGUES_EXTRA:
         if re.search(rx, t): return name
     return None
 
@@ -239,9 +257,23 @@ class Match:
     sport: str
     config: str | None
 
+# Les produits de draft sont datés d'une SEULE année par les vendeurs — « Prizm Draft Picks
+# Basketball NBA 2023 » chez Stickerpoint — alors que le catalogue les nomme 2023-24. Le
+# millésime unique est la convention du produit, pas une erreur du marchand.
+BARE_YEAR_RE = re.compile(r"(?<!\d)(20[12]\d)(?![\d/-])")
+DRAFT_SET_RE = re.compile(r"draft\s*picks|collegiate")
+
+def season_from_bare_year(t: str) -> str | None:
+    m = BARE_YEAR_RE.search(t)
+    if not m or not DRAFT_SET_RE.search(t): return None
+    y = int(m.group(1))
+    return f"{y}-{(y + 1) % 100:02d}"
+
 def match_title(title: str, skus: list[dict]) -> Match:
     t = norm(title)
     season, fmt, sport, cfg = parse_season(t), parse_format(t), parse_sport(t), parse_config(t)
+    if season is None:
+        season = season_from_bare_year(t)
     # « Hobby » + un mot de format retail dans le même titre : le produit est le format retail.
     # Plutôt que de deviner lequel, on refuse le format — sans format, aucun SKU boîte ne matche.
     if not format_guard_ok(fmt, t): fmt = None
@@ -250,6 +282,7 @@ def match_title(title: str, skus: list[dict]) -> Match:
     # pour un SKU de ligue, le sport se juge sur le titre débarrassé des tokens de ligue :
     # sinon "euroleague" (exclusion sport) rejetterait son propre SKU.
     sport_noleague = parse_sport(LEAGUE_STRIP.sub(" ", t)) if league else sport
+    sport_nodraft = parse_sport(DRAFT_STRIP.sub(" ", t))
     cands = []
     # likely_single : signaux forts de carte individuelle SANS signal sealed → ignoré (pas même en REVIEW).
     # Un titre sans "Box" mais sans signal single (ex. "2023-24 Panini Phoenix Basketball") reste candidat → REVIEW.
@@ -307,6 +340,8 @@ def match_title(title: str, skus: list[dict]) -> Match:
         sku_league = s.get("league")
         if bool(sku_league) != bool(league) or (sku_league and sku_league != league): continue
         eff_sport = sport_noleague if sku_league else sport
+        if str(sku_league or "").startswith("Collegiate"):
+            eff_sport = sport_nodraft
         sku_cfg = (s.get("configuration") or "")
         if excl:
             if excl.lower() not in sku_cfg.lower(): continue

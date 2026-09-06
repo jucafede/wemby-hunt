@@ -461,3 +461,24 @@ shops:
     discovered_at: 2026-09-06
     robots_checked_at: 2026-09-06
     notes: "osCommerce, décliné en .fr/.de/.ch, DHL Premium, certifié Trusted Shops. Les fiches se lisent depuis le listing : deux pages pour tout le rayon NBA."
+
+  # BUG CRITIQUE DU 06/09 : cette boutique n'était pas enregistrée, et mon sondage de
+  # découverte testait /products.json (Shopify) puis abandonnait. Kutogo est WooCommerce.
+  # Elle porte le Prizm International Hobby 23-24 à 334,95 $ — le produit exact que
+  # j'ai déclaré introuvable. Domaine créé en 2016, pages légales présentes.
+  # RÉSERVE : 737 produits sur 737 déclarés « en stock », aucune rupture sur tout le
+  # catalogue. Invraisemblable pour un marchand de cartes. Soit le stock n'est pas géré,
+  # soit c'est de la commande sur demande. Stock jamais CONFIRMED sans vérification page.
+  - key: kutogo
+    name: Kutogo
+    base_url: https://kutogo.com
+    type: shopify_json
+    platform: woocommerce
+    market_region: US
+    currency: USD
+    country: US
+    trust: watch
+    status: watch
+    discovered_at: 2026-09-06
+    stock_reliability: low
+    notes: "WooCommerce, API Store ouverte, 737 produits. Domaine 2016. Stock déclaré 100 % disponible — à vérifier page par page avant tout achat."

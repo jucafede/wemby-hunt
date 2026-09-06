@@ -192,10 +192,13 @@ def read_catalog(base: str, hint: str | None = None, log=print, key: str | None 
         items = adapter_catalog(key, log)
         if items:
             return items, "adaptateur"
-    if hint != "woocommerce":
-        items = shopify_catalog(base, log)
-        if items:
-            return items, "shopify"
+    # On essaie les DEUX, toujours, quel que soit l'indice de plateforme. Kutogo a été manquée
+    # le 06/09 parce que le sondage testait Shopify, recevait un 404, et concluait « illisible » :
+    # c'est du WooCommerce, et son API Store était ouverte depuis le début. Un 404 sur une
+    # plateforme n'est pas un verdict sur la boutique.
+    items = shopify_catalog(base, log)
+    if items:
+        return items, "shopify"
     items = woo_catalog(base, log)
     if items:
         return items, "woocommerce"

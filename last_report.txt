@@ -31,7 +31,7 @@
 → The Cardiacs (https://www.thecardiacs.com)  [trust=trusted]
   5330 produits bruts, 40 rattachés à un SKU
 → Monmouth Cards (https://monmouthcards.com)  [trust=watch]
-  5627 produits bruts, 39 rattachés à un SKU
+  5620 produits bruts, 39 rattachés à un SKU
 → World Champion Sports Cards (https://www.worldchampionsportscards.org)  [trust=watch]
   4017 produits bruts, 66 rattachés à un SKU
 → Superior Sports Investments (https://superiorsportsinvestments.com)  [trust=watch]
@@ -2013,5 +2013,5 @@
   2025-26_HOOPS_JUMBO                      €  549.00  qscards     
   2025-26_SIGNATURE_CLASS_HOBBY            €  595.00  qscards     
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-09-06T04-19-49.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-09-06T10-46-02.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

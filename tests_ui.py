@@ -38,7 +38,10 @@ check("thème sombre pris en charge", "prefers-color-scheme:dark" in h)
 # jamais par tableaux. Elle était écrite « avant Explorer », ce qui ne mordait pas : la section
 # FR rend un tableau et se trouve avant Explorer. Sur la page publiée du 30/08, un tableau
 # passait donc déjà la garde. Recalée sur l'ancre exacte, elle mord enfin.
-_zone = h[:h.index("<h2 id=inventaire>")] if "<h2 id=inventaire>" in h else h[:h.index("<h2 id=fr>")]
+# la zone de décision s'arrête à la PREMIÈRE section de lecture, quelle qu'elle soit :
+# Prizm Core est arrivée entre Surveiller et Inventaire le 06/09
+_fin = next((h.index(a) for a in ("<h2 id=prizm>", "<h2 id=inventaire>", "<h2 id=fr>") if a in h), len(h))
+_zone = h[:_fin]
 check("aucun tableau dans la zone de décision (Acheter + Surveiller)", "<table" in _zone, False)
 check("la zone de décision contient bien des cartes", "class=card" in _zone)
 check("le prix est mis en avant sur la carte", 'class=pr' in h)

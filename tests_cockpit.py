@@ -109,7 +109,10 @@ check("13 · historical low présenté comme cible, pas comme valeur",
       "pas une valeur de marché" in h)
 # Voir tests_ui : la garde est recalée sur la zone de décision, seule zone où le tableau est
 # proscrit. Inventaire et FR sont des zones de LECTURE, où le tableau est la bonne forme.
-_zone = h[:h.index("<h2 id=inventaire>")] if "<h2 id=inventaire>" in h else h[:h.index("<h2 id=fr>")]
+# la zone de décision s'arrête à la PREMIÈRE section de lecture, quelle qu'elle soit :
+# Prizm Core est arrivée entre Surveiller et Inventaire le 06/09
+_fin = next((h.index(a) for a in ("<h2 id=prizm>", "<h2 id=inventaire>", "<h2 id=fr>") if a in h), len(h))
+_zone = h[:_fin]
 check("T · aucun tableau dans la zone de décision", "<table" in _zone, False)
 check("Q · un SKU sans donnée marché est affiché « marché insuffisant »",
       "marché insuffisant" in h)

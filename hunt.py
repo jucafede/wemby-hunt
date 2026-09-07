@@ -1790,7 +1790,7 @@ def report(cat: dict, conn: sqlite3.Connection, seen_at: str | None, trust: dict
             extra = f"  (+{b['others']} autre(s) offre(s) FR)" if b["others"] else ""
             print(f"  {k.split('|')[0].replace('PANINI_','').replace('TOPPS_','')[:38]:<40} "
                   f"€{b['unit']:>8.2f}  {b['shop']:<12}{extra}")
-    write_html(cat, html, restocks, q, seen_at, trust, hn, all_entries, SHOP_COUNTS, health, fr_best)
+    write_html(cat, html, restocks, q, seen_at, trust, hn, all_entries, SHOP_COUNTS, health, fr_best, conn)
     print(f"\nCSV → {csv_path}\nHTML → {OUT/'index.html'}")
 
 BUCKETS = [("retail",  {"Blaster","Mega","Hanger","Retail Box","Pack","Value Box","Fat Pack","Cello"}),
@@ -2067,6 +2067,19 @@ def empty_note(label, watched, best=None):
         txt += "</span>"
     return txt + "</p>"
 
+def last_crawl_at(conn) -> str | None:
+    """La date du dernier passage de crawl, relue dans la base.
+
+    Elle existe toujours : `crawl_runs` la consigne à chaque boutique. La faire dépendre d'un
+    argument passé au rapport, c'était la perdre dès qu'on régénère la page sans recrawler —
+    exactement ce que fait le passage autonome pour publier les couches calculées après.
+    """
+    try:
+        return conn.execute("SELECT MAX(seen_at) FROM crawl_runs").fetchone()[0]
+    except Exception:
+        return None
+
+
 def dataset_freshness() -> str:
     """La date de chaque couche, et surtout la plus ancienne. Un tableau de bord qui agrège des
     données de fraîcheurs différentes sous un seul horodatage ment par omission : le 06/09, la
@@ -2094,7 +2107,7 @@ def dataset_freshness() -> str:
 
 
 def write_html(cat, blocks, restocks, review, seen_at, trust=None, hot=None, entries=None,
-               shopcount=None, health=None, fr_best=None):
+               shopcount=None, health=None, fr_best=None, conn=None):
     trust = trust or {}; hot = hot or []; entries = entries or []
     shopcount = shopcount or []; health = health or {}; fr_best = fr_best or {}
     nb = cat["landed_cost"].get("bundle_boxes", 8)
@@ -2135,9 +2148,15 @@ def write_html(cat, blocks, restocks, review, seen_at, trust=None, hot=None, ent
          # seul horodatage laissait croire que tout datait du même moment. Chaque couche porte
          # désormais le sien, et l'en-tête annonce le plus ANCIEN — c'est lui qui gouverne la
          # confiance qu'on peut accorder à l'ensemble.
-         (f"<p class=small>Crawl des sources : {seen_at[:16].replace('T', ' ')} UTC"
-          f"{dataset_freshness()}</p>"
-          if seen_at else "<p class=small>Rapport hors passage (--report)</p>"),
+         # Le rendu final du passage autonome tourne en --report, pour publier une page qui
+         # inclut les couches externes calculées APRÈS le crawl. Sans le repli ci-dessous, il
+         # affichait « Rapport hors passage » et plus une seule date : le passage devenait
+         # techniquement plus frais et publiquement moins lisible. La date du crawl se relit
+         # dans la base, elle n'a pas besoin d'être passée en argument.
+         (f"<p class=small>Crawl des sources : "
+          f"{(seen_at or (last_crawl_at(conn) if conn else None) or '?')[:16].replace('T', ' ')} UTC"
+          f"{'' if seen_at else ' <span class=small>(page régénérée après le crawl)</span>'}"
+          f"{dataset_freshness()}</p>"),
          "<nav>" + " ".join(f"<a href='#{i}'>{n}</a>" for i, n in
                             [("acheter", "🔥 Acheter"), ("surveiller", "👀 Surveiller"),
                              ("prizm", "🎯 Prizm Core"), ("inventaire", "📦 Mon inventaire"),

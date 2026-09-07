@@ -239,6 +239,18 @@ check("le fichier dit son seuil de péremption", ex.get("stale_after_hours"), 24
 check("le rapport de passage distingue revalidation et découverte",
       {"known_urls_checked", "web_searches", "new_listings"} <= set(ex["run"]))
 
+# ------------------------------------------------ l'en-tête garde ses dates en --report
+# Le passage autonome publie la page en --report, pour inclure les couches calculées APRÈS
+# le crawl. Si l'en-tête perd ses horodatages dans ce mode, la page devient techniquement
+# plus fraîche et publiquement moins lisible — c'est ce qui s'est produit au run du 07/09.
+_page = pathlib.Path("out/index.html")
+if _page.exists():
+    _h = _page.read_text(encoding="utf-8")
+    check("l'en-tête annonce la date du crawl même hors passage", "Crawl des sources" in _h)
+    check("et ne se contente pas de « hors passage »", "Rapport hors passage" not in _h)
+    check("chaque couche porte sa date", "web/marketplace" in _h and "Prizm core" in _h)
+    check("et la plus ancienne est nommée", "donnée la plus ancienne" in _h)
+
 print(f"\nTOTAL : {len(total)} tests, {len(fails)} FAIL")
 for f in fails: print("  FAIL", f)
 sys.exit(1 if fails else 0)

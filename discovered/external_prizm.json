@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-07T11:15:38+00:00",
+  "generated_at": "2026-09-07T12:39:08+00:00",
   "method": "automatique · KNOWN URL REFRESH, puis NEW LISTING DISCOVERY par recherche web ET par balayage des catalogues candidats",
   "stale_after_hours": 24,
   "note": "Une annonce non VÉRIFIÉE depuis plus de 24 h passe STALE : visible, datée, mais ni live, ni meilleur prix, ni déclencheur d'achat. eBay, StockX et les sites de cotation refusent toute lecture automatisée (403) — leurs annonces ne peuvent donc pas être confirmées ici, et ne le prétendent pas.",
@@ -78,30 +78,12 @@
       }
     ],
     "lost": [],
-    "urls_seen": 316,
-    "urls_probed": 4,
-    "rejected": 4,
+    "urls_seen": 325,
+    "urls_probed": 0,
+    "rejected": 0,
     "engine_attempts": [
       {
         "query": "2023-24 Panini Prizm Basketball Hobby Box buy",
-        "format": "Hobby",
-        "canal": "web",
-        "attempts": [
-          {
-            "engine": "brave-api",
-            "outcome": "SANS_CLÉ",
-            "why": "BRAVE_API_KEY absent",
-            "n": 0
-          },
-          {
-            "engine": "brave",
-            "outcome": "OK",
-            "n": 21
-          }
-        ]
-      },
-      {
-        "query": "2023/24 Panini Prizm Hobby basketball box in stock",
         "format": "Hobby",
         "canal": "web",
         "attempts": [
@@ -131,7 +113,42 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 14
+            "n": 7
+          }
+        ]
+      },
+      {
+        "query": "2023/24 Panini Prizm Hobby basketball box in stock",
+        "format": "Hobby",
+        "canal": "web",
+        "attempts": [
+          {
+            "engine": "brave-api",
+            "outcome": "SANS_CLÉ",
+            "why": "BRAVE_API_KEY absent",
+            "n": 0
+          },
+          {
+            "engine": "brave",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "mojeek",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "duckduckgo",
+            "outcome": "VIDE",
+            "n": 0
+          },
+          {
+            "engine": "bing",
+            "outcome": "OK",
+            "n": 7
           }
         ]
       },
@@ -201,7 +218,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 13
+            "n": 7
           }
         ]
       },
@@ -272,7 +289,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 6
+            "n": 7
           }
         ]
       },
@@ -308,7 +325,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 6
+            "n": 7
           }
         ]
       },
@@ -380,7 +397,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 6
+            "n": 7
           }
         ]
       },
@@ -416,7 +433,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 6
+            "n": 7
           }
         ]
       },
@@ -452,7 +469,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 6
+            "n": 7
           }
         ]
       },
@@ -488,7 +505,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 6
+            "n": 7
           }
         ]
       },
@@ -524,7 +541,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 6
+            "n": 7
           }
         ]
       },
@@ -560,7 +577,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 6
+            "n": 7
           }
         ]
       },
@@ -596,7 +613,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 6
+            "n": 7
           }
         ]
       },
@@ -632,7 +649,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 6
+            "n": 7
           }
         ]
       },
@@ -668,7 +685,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 6
+            "n": 7
           }
         ]
       },
@@ -704,7 +721,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 6
+            "n": 7
           }
         ]
       },
@@ -740,7 +757,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 6
+            "n": 7
           }
         ]
       },
@@ -776,7 +793,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 6
+            "n": 7
           }
         ]
       },
@@ -848,7 +865,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 6
+            "n": 7
           }
         ]
       },
@@ -884,7 +901,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 6
+            "n": 7
           }
         ]
       },
@@ -920,7 +937,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 6
+            "n": 7
           }
         ]
       },
@@ -956,7 +973,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 6
+            "n": 7
           }
         ]
       },
@@ -992,7 +1009,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 6
+            "n": 7
           }
         ]
       },
@@ -1028,7 +1045,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 6
+            "n": 7
           }
         ]
       },
@@ -1064,7 +1081,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 6
+            "n": 7
           }
         ]
       },
@@ -1100,7 +1117,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 6
+            "n": 7
           }
         ]
       },
@@ -1136,7 +1153,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 6
+            "n": 7
           }
         ]
       },
@@ -1172,7 +1189,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 6
+            "n": 7
           }
         ]
       },
@@ -1208,7 +1225,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 6
+            "n": 7
           }
         ]
       },
@@ -1244,7 +1261,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 6
+            "n": 7
           }
         ]
       },
@@ -1280,7 +1297,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 6
+            "n": 7
           }
         ]
       },
@@ -1316,7 +1333,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 6
+            "n": 7
           }
         ]
       },
@@ -1352,7 +1369,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 6
+            "n": 7
           }
         ]
       },
@@ -1388,7 +1405,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 6
+            "n": 7
           }
         ]
       },
@@ -1424,7 +1441,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 6
+            "n": 7
           }
         ]
       },
@@ -1460,7 +1477,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 6
+            "n": 7
           }
         ]
       },
@@ -1496,7 +1513,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 6
+            "n": 7
           }
         ]
       },
@@ -1532,7 +1549,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 6
+            "n": 7
           }
         ]
       },
@@ -1568,7 +1585,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 6
+            "n": 7
           }
         ]
       },
@@ -1604,7 +1621,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 6
+            "n": 7
           }
         ]
       }
@@ -1614,7 +1631,7 @@
     {
       "format": "FOTL",
       "first_seen": "2026-09-06",
-      "last_checked": "2026-09-07T11:08:08+00:00",
+      "last_checked": "2026-09-07T12:31:39+00:00",
       "last_seen_live": "2026-09-06",
       "price": null,
       "currency": "USD",
@@ -1634,7 +1651,7 @@
     {
       "format": "Mega",
       "first_seen": "2026-09-06",
-      "last_checked": "2026-09-07T11:08:09+00:00",
+      "last_checked": "2026-09-07T12:31:40+00:00",
       "last_seen_live": "2026-09-06",
       "price": 239.99,
       "currency": "USD",
@@ -1654,7 +1671,7 @@
     {
       "format": "Mega",
       "first_seen": "2026-09-06",
-      "last_checked": "2026-09-07T11:08:09+00:00",
+      "last_checked": "2026-09-07T12:31:40+00:00",
       "last_seen_live": "2026-09-06",
       "price": 230.99,
       "currency": "USD",
@@ -1674,7 +1691,7 @@
     {
       "format": "Mega",
       "first_seen": "2026-09-06",
-      "last_checked": "2026-09-07T11:08:09+00:00",
+      "last_checked": "2026-09-07T12:31:40+00:00",
       "last_seen_live": "2026-09-06",
       "price": 134.0,
       "currency": "USD",
@@ -1694,7 +1711,7 @@
     {
       "format": "Blaster",
       "first_seen": "2026-09-06",
-      "last_checked": "2026-09-07T11:08:09+00:00",
+      "last_checked": "2026-09-07T12:31:40+00:00",
       "last_seen_live": "2026-09-06",
       "price": 129.95,
       "currency": "USD",
@@ -1714,7 +1731,7 @@
     {
       "format": "Blaster",
       "first_seen": "2026-09-06",
-      "last_checked": "2026-09-07T11:08:09+00:00",
+      "last_checked": "2026-09-07T12:31:40+00:00",
       "last_seen_live": "2026-09-06",
       "price": 74.0,
       "currency": "USD",
@@ -1734,7 +1751,7 @@
     {
       "format": "Retail Box",
       "first_seen": "2026-09-06",
-      "last_checked": "2026-09-07T11:08:09+00:00",
+      "last_checked": "2026-09-07T12:31:40+00:00",
       "last_seen_live": "2026-09-06",
       "price": 299.98,
       "currency": "USD",
@@ -1754,7 +1771,7 @@
     {
       "format": "Choice",
       "first_seen": "2026-09-06",
-      "last_checked": "2026-09-07T11:08:09+00:00",
+      "last_checked": "2026-09-07T12:31:40+00:00",
       "last_seen_live": "2026-09-06",
       "price": 867.0,
       "currency": "USD",
@@ -1774,7 +1791,7 @@
     {
       "format": "Hobby",
       "first_seen": "2026-09-06",
-      "last_checked": "2026-09-07T11:08:09+00:00",
+      "last_checked": "2026-09-07T12:31:40+00:00",
       "last_seen_live": "2026-09-06",
       "price": 874.0,
       "currency": "USD",
@@ -1794,7 +1811,7 @@
     {
       "format": "Premium Factory Set",
       "first_seen": "2026-09-06",
-      "last_checked": "2026-09-07T11:08:09+00:00",
+      "last_checked": "2026-09-07T12:31:40+00:00",
       "last_seen_live": null,
       "price": null,
       "currency": "USD",
@@ -1814,7 +1831,7 @@
     {
       "format": "Mega",
       "first_seen": "2026-09-06",
-      "last_checked": "2026-09-07T11:08:10+00:00",
+      "last_checked": "2026-09-07T12:31:40+00:00",
       "last_seen_live": null,
       "price": null,
       "currency": "USD",
@@ -1834,7 +1851,7 @@
     {
       "format": "Mega",
       "first_seen": "2026-09-06",
-      "last_checked": "2026-09-07T11:08:12+00:00",
+      "last_checked": "2026-09-07T12:31:40+00:00",
       "last_seen_live": null,
       "price": null,
       "currency": "USD",
@@ -1848,13 +1865,13 @@
       "note": "cible RESTOCK",
       "probe": {
         "raw": "AMBIGUOUS",
-        "why": "place de marché : aucun stock structuré"
+        "why": "défi anti-robot"
       }
     },
     {
       "format": "Hobby",
       "first_seen": "2026-09-07T09:07:17+00:00",
-      "last_checked": "2026-09-07T11:08:13+00:00",
+      "last_checked": "2026-09-07T12:31:42+00:00",
       "last_seen_live": null,
       "price": 1199.99,
       "currency": "CAD",
@@ -1874,7 +1891,7 @@
     {
       "format": "International",
       "first_seen": "2026-09-07T09:40:30+00:00",
-      "last_checked": "2026-09-07T11:13:54+00:00",
+      "last_checked": "2026-09-07T12:37:30+00:00",
       "last_seen_live": null,
       "price": 334.95,
       "currency": "USD",
@@ -1897,7 +1914,7 @@
     {
       "format": "Choice",
       "first_seen": "2026-09-07T09:40:30+00:00",
-      "last_checked": "2026-09-07T11:13:54+00:00",
+      "last_checked": "2026-09-07T12:37:30+00:00",
       "last_seen_live": null,
       "price": 10599.95,
       "currency": "USD",
@@ -1919,7 +1936,7 @@
     {
       "format": "Fast Break",
       "first_seen": "2026-09-07T09:40:30+00:00",
-      "last_checked": "2026-09-07T11:13:54+00:00",
+      "last_checked": "2026-09-07T12:37:30+00:00",
       "last_seen_live": null,
       "price": 12499.95,
       "currency": "USD",
@@ -1941,7 +1958,7 @@
     {
       "format": "Fast Break",
       "first_seen": "2026-09-07T09:40:30+00:00",
-      "last_checked": "2026-09-07T11:13:54+00:00",
+      "last_checked": "2026-09-07T12:37:30+00:00",
       "last_seen_live": null,
       "price": 549.95,
       "currency": "USD",
@@ -1964,7 +1981,7 @@
     {
       "format": "Hobby",
       "first_seen": "2026-09-07T09:40:30+00:00",
-      "last_checked": "2026-09-07T11:13:54+00:00",
+      "last_checked": "2026-09-07T12:37:30+00:00",
       "last_seen_live": null,
       "price": 13549.95,
       "currency": "USD",
@@ -1986,8 +2003,8 @@
     {
       "format": "Hobby",
       "first_seen": "2026-09-07T09:40:30+00:00",
-      "last_checked": "2026-09-07T11:13:54+00:00",
-      "last_seen_live": "2026-09-07T11:13:54+00:00",
+      "last_checked": "2026-09-07T12:37:30+00:00",
+      "last_seen_live": "2026-09-07T12:37:30+00:00",
       "price": 3349.95,
       "currency": "USD",
       "seller": "giantsportscards.com",
@@ -2009,7 +2026,7 @@
     {
       "format": "Blaster",
       "first_seen": "2026-09-07T09:41:43+00:00",
-      "last_checked": "2026-09-07T11:14:12+00:00",
+      "last_checked": "2026-09-07T12:37:48+00:00",
       "last_seen_live": null,
       "price": 64.99,
       "currency": "USD",
@@ -2032,7 +2049,7 @@
     {
       "format": "Pack",
       "first_seen": "2026-09-07T09:42:49+00:00",
-      "last_checked": "2026-09-07T11:15:18+00:00",
+      "last_checked": "2026-09-07T12:38:50+00:00",
       "last_seen_live": null,
       "price": 19.99,
       "currency": "USD",
@@ -2054,7 +2071,7 @@
     {
       "format": "Mega",
       "first_seen": "2026-09-07T09:42:49+00:00",
-      "last_checked": "2026-09-07T11:15:18+00:00",
+      "last_checked": "2026-09-07T12:38:50+00:00",
       "last_seen_live": null,
       "price": 89.99,
       "currency": "USD",
@@ -2077,7 +2094,7 @@
     {
       "format": "Retail Box",
       "first_seen": "2026-09-07T09:42:49+00:00",
-      "last_checked": "2026-09-07T11:15:18+00:00",
+      "last_checked": "2026-09-07T12:38:50+00:00",
       "last_seen_live": null,
       "price": 8.99,
       "currency": "USD",
@@ -2100,7 +2117,7 @@
     {
       "format": "Blaster",
       "first_seen": "2026-09-07T09:42:49+00:00",
-      "last_checked": "2026-09-07T11:15:18+00:00",
+      "last_checked": "2026-09-07T12:38:50+00:00",
       "last_seen_live": null,
       "price": 39.99,
       "currency": "USD",

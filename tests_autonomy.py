@@ -50,6 +50,18 @@ check("aucune fonction de crawl ne subsiste dans le module",
 check("hunt.py sait lire WooCommerce", callable(getattr(hunt, "woocommerce_products", None)))
 check("hunt.py sait lire Shopify", callable(getattr(hunt, "shopify_products", None)))
 
+# une boutique enregistrée ne doit JAMAIS être rebalayée : c'est la garantie « une visite »
+_reg = {"domains": [{"domain": "kutogo.com", "base_url": "https://kutogo.com", "reachable": True},
+                    {"domain": "inconnue.test", "base_url": "https://inconnue.test",
+                     "reachable": True}]}
+_vus = []
+_faux, _st = xe.sweep_domains(_reg, log=lambda *a: None, deja_crawles={"kutogo.com"},
+                              limit=0)
+check("une source déjà crawlée est écartée du balayage",
+      _st["ecartes_deja_crawles"], ["kutogo.com"])
+check("les domaines enregistrés se relisent depuis sources.yaml à chaque passage",
+      "kutogo.com" in xe.registered_hosts())
+
 # ------------------------------------------------ états et règle des 24 h
 check("les six états existent", set(xe.STATES),
       {"CONFIRMED_LIVE", "PROBABLE_LIVE", "OOS", "STALE", "LOST", "AMBIGUOUS"})

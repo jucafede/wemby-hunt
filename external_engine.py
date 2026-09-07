@@ -546,7 +546,15 @@ def identify(title: str):
 SWEEP_PAR_PASSAGE = 8   # domaines balayés par passage, les plus anciennement vus d'abord
 
 
-def sweep_domains(registry: dict, log=print, limit: int | None = SWEEP_PAR_PASSAGE):
+def registered_hosts() -> set:
+    """Les domaines déjà crawlés par hunt.py. Le balayage ne doit JAMAIS les rouvrir."""
+    import yaml
+    src = yaml.safe_load((ROOT / "sources.yaml").read_text(encoding="utf-8"))
+    return {seller_of(sh.get("base_url", "")) for sh in src["shops"]}
+
+
+def sweep_domains(registry: dict, log=print, limit: int | None = SWEEP_PAR_PASSAGE,
+                  deja_crawles: set | None = None):
     """DOMAIN SWEEP — lire le catalogue des marchands connus mais non enregistrés.
 
     Par ROTATION, du domaine vu il y a le plus longtemps au plus récent. Lire vingt et un
@@ -555,17 +563,26 @@ def sweep_domains(registry: dict, log=print, limit: int | None = SWEEP_PAR_PASSA
     dépasse son budget finit coupé, et un balayage coupé ne couvre rien du tout.
     """
     import prizm_core
+    # LA GARANTIE « UNE SEULE VISITE PAR PASSAGE », appliquée ici et pas seulement promise.
+    # Un domaine peut entrer au registre un jour et devenir une source enregistrée le
+    # lendemain ; sans ce filtre relu à chaque passage, il serait alors lu deux fois — par
+    # hunt.py puis par le balayage — et la mission serait défaite en silence par une simple
+    # ligne ajoutée à sources.yaml.
+    deja = deja_crawles if deja_crawles is not None else registered_hosts()
     # Un domaine injoignable est mis de côté, PAS radié : on le réessaie une fois par semaine.
     # Une boutique en maintenance le jour du balayage ne doit pas disparaître pour toujours du
     # champ de recherche — c'est ainsi qu'on perd une source sans jamais s'en apercevoir.
     doms = [d for d in registry.get("domains", [])
-            if d.get("reachable") is not False
-            or (_age_h(d.get("last_checked")) or 1e9) > 24 * 7]
+            if d["domain"] not in deja
+            and (d.get("reachable") is not False
+                 or (_age_h(d.get("last_checked")) or 1e9) > 24 * 7)]
     doms.sort(key=lambda d: d.get("last_checked") or "")
     if limit:
         doms = doms[:limit]
     found, stats = [], {"domains_swept": 0, "domains_reachable": 0, "catalog_items": 0,
-                        "hits": 0, "unreachable": []}
+                        "hits": 0, "unreachable": [],
+                        "ecartes_deja_crawles": sorted(
+                            d["domain"] for d in registry.get("domains", []) if d["domain"] in deja)}
     for d in doms:
         base = d.get("base_url") or f"https://{d['domain']}"
         items, plat = read_catalog(base)
@@ -865,7 +882,7 @@ def main(argv=None):
         print(f"\nÉTAPE 3 · NEW LISTING DISCOVERY (balayage catalogue) — "
               f"{SWEEP_PAR_PASSAGE} sur {len(registry.get('domains', []))} domaine(s) candidat(s), "
               f"par rotation")
-        swept, sstats = sweep_domains(registry)
+        swept, sstats = sweep_domains(registry, deja_crawles=skip)
 
     listings = dedupe(listings + news + swept)
     registry["generated_at"] = now_iso()
@@ -887,6 +904,7 @@ def main(argv=None):
                 "web_searches": dstats["web_searches"],
                 "marketplace_searches": dstats["marketplace_searches"],
                 "domains_swept": sstats["domains_swept"],
+                "ecartes_deja_crawles": sstats.get("ecartes_deja_crawles", []),
                 "domains_reachable": sstats["domains_reachable"],
                 "catalog_items_read": sstats["catalog_items"],
                 "new_domains": dstats["new_domains"],

@@ -42,11 +42,13 @@ def main():
     dernier = conn.execute("SELECT MAX(seen_at) FROM crawl_runs").fetchone()[0]
     shops = conn.execute("SELECT shop, COUNT(*) FROM crawl_runs WHERE seen_at=? GROUP BY shop",
                          (dernier,)).fetchall()
-    doubles = [s for s, n in shops if n > 1]
     print(f"\nCOLLECTE RETAILER (passage {str(dernier)[:16].replace('T', ' ')})")
-    print(f"  sources crawlées                    {len(shops)}")
-    print(f"  sources visitées DEUX fois          {len(doubles)}"
-          + (f"  ⚠️ {doubles}" if doubles else "   ✅"))
+    print(f"  sources crawlées par hunt.py        {len(shops)}")
+    print(f"  requêtes de prizm_core aux boutiques  0   (lecture de products_raw — "
+          f"tests_autonomy l'appelle sockets coupées)")
+    ecartes = (ext.get("run", {}) or {}).get("ecartes_deja_crawles") or []
+    print(f"  domaines écartés du balayage        {len(ecartes)}"
+          f"   (déjà crawlés par hunt.py)" + (f" {ecartes}" if ecartes else ""))
     print(f"  lecture du noyau Prizm              {core.get('collection', '?')}")
     print(f"  listings Prizm core                 {len(core.get('listings', []))}"
           f" · {len(core.get('sources_read', []))} source(s) lue(s)")

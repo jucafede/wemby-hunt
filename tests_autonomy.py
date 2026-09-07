@@ -129,6 +129,17 @@ check("le moteur lui-même n'est jamais un résultat",
 check("le bruit social non plus", all("youtube" not in u for u in liens))
 check("la vraie fiche marchande est retenue", liens, ["https://boutique.com/products/panini-prizm-mega"])
 
+# ------------------------------------------------ recherche marketplace explicite
+check("chaque format est aussi cherché sur les places de marché",
+      len(xe.marketplace_queries("Mega")), 2)
+check("une fiche eBay est identifiable",
+      bool(xe.MARKETPLACE_ITEM.search("https://www.ebay.com/itm/236057571659")))
+# une page de RÉSULTATS n'est pas une annonce : son contenu change à chaque visite
+check("une page de recherche eBay n'en est pas une",
+      bool(xe.MARKETPLACE_ITEM.search("https://www.ebay.com/sch/i.html?_nkw=prizm")), False)
+check("une fiche StockX est identifiable",
+      bool(xe.MARKETPLACE_ITEM.search("https://stockx.com/2023-24-panini-prizm-mega-box-pink")))
+
 # ------------------------------------------------ format lu depuis un titre
 check("International n'est pas classé Hobby",
       xe.fmt_of("2023/24 Panini Prizm Basketball International Hobby Box"), "International")

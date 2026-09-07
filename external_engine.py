@@ -436,6 +436,23 @@ def queries_for(fmt: str, upc: str | None) -> list[str]:
     return qs
 
 
+def marketplace_queries(fmt: str) -> list[str]:
+    """Les mêmes produits, cherchés explicitement sur les places de marché.
+
+    Elles ne se laissent pas relire (403), donc rien de ce qu'on y trouve ne pourra être
+    confirmé. Ce n'est pas une raison de ne pas chercher : savoir qu'une annonce eBay existe,
+    à quel prix affiché et depuis quand, reste une information de marché — elle entre STALE,
+    elle ne ment sur rien.
+    """
+    return [f"site:ebay.com 2023-24 Panini Prizm Basketball {fmt} Box",
+            f"site:stockx.com 2023-24 Panini Prizm Basketball {fmt}"]
+
+
+# Une URL de place de marché n'est retenue que si c'est une FICHE : une page de résultats de
+# recherche n'est pas une annonce, et son contenu change à chaque visite.
+MARKETPLACE_ITEM = re.compile(r"ebay\.[a-z.]+/(?:itm|p)/\d+|stockx\.com/[a-z0-9-]{8,}$", re.I)
+
+
 MARKETPLACES = ("ebay.", "stockx.", "goldin.", "pwccmarketplace.", "comc.", "mercari.",
                 "whatnot.", "alt.xyz", "amazon.", "walmart.")
 
@@ -769,12 +786,13 @@ def discover(formats: dict, upc: dict, known_urls: set, skip_hosts: set, log=pri
     for fmt in formats:
         cands = []
         log(f"  … {fmt}")
-        for q in queries_for(fmt, upc.get(fmt)):
+        requetes = ([(q, "web") for q in queries_for(fmt, upc.get(fmt))]
+                    + [(q, "marketplace") for q in marketplace_queries(fmt)])
+        for q, canal in requetes:
             urls, attempts = search(q, log=log)
-            stats["engine_attempts"].append({"query": q, "format": fmt, "attempts": attempts})
-            stats["web_searches"] += 1
-            if any(layer_of(u) == "marketplace" for u in urls):
-                stats["marketplace_searches"] += 1
+            stats["engine_attempts"].append({"query": q, "format": fmt, "canal": canal,
+                                             "attempts": attempts})
+            stats["web_searches" if canal == "web" else "marketplace_searches"] += 1
             for u in urls:
                 u = u.split("#")[0]
                 host = seller_of(u)
@@ -792,6 +810,22 @@ def discover(formats: dict, upc: dict, known_urls: set, skip_hosts: set, log=pri
         for u, q in cands[:max_probe_per_format]:
             raw, price, cur, title, why = probe(u)
             stats["urls_probed"] += 1
+            if layer_of(u) == "marketplace":
+                # illisible par construction : on la garde si c'est une fiche identifiable,
+                # et elle entre STALE — connue, datée, jamais comptée comme disponible
+                if not MARKETPLACE_ITEM.search(u):
+                    stats["rejected"] += 1
+                    continue
+                news.append({"format": fmt, "first_seen": now_iso(), "last_checked": now_iso(),
+                             "last_seen_live": None, "price": price, "currency": cur or "USD",
+                             "seller": seller_of(u), "seller_type": seller_type_of(u), "url": u,
+                             "discovery_method": f"recherche marketplace · {q}",
+                             "stock_status": STALE, "confidence": "LOW", "layer": "marketplace",
+                             "probe": {"raw": raw, "why": why or "lecture refusée par le site"},
+                             "title_lu": (title or "")[:140]})
+                known_urls.add(u)
+                log(f"  ✚ {STALE:<15} {fmt:<14} {seller_of(u):<28} (place de marché, non vérifiable)")
+                continue
             if raw == LOST or not title:
                 stats["rejected"] += 1
                 continue

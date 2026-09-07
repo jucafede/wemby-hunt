@@ -649,18 +649,68 @@ def load_blocklist(src):
 # Vérifié le 07/09. Son « en stock » est une valeur par défaut, pas une information — ses
 # offres ne peuvent donc pas fonder une décision d'achat, quel que soit leur prix.
 STOCK_UNRELIABLE = set()
+SELLER_RISK = {}            # clé boutique -> "HIGH" | "MEDIUM" | ...
+SELLER_VERIFICATION = {}    # clé boutique -> "UNVERIFIED" | "VERIFIED" | ...
 
 
 def load_stock_unreliable(src):
-    """Boutiques dont le stock déclaré n'est pas exploitable pour décider."""
-    global STOCK_UNRELIABLE
+    """Boutiques dont le stock déclaré n'est pas exploitable, et niveau de risque vendeur.
+
+    Le risque et la vérification sont DÉCLARÉS dans sources.yaml, avec leur date et leur motif.
+    Ils ne se déduisent pas d'un prix : une offre très basse est un signal à vérifier, jamais
+    une preuve de fraude — et une offre normale chez un vendeur non vérifié ne le rend pas sûr.
+    """
+    global STOCK_UNRELIABLE, SELLER_RISK, SELLER_VERIFICATION
     STOCK_UNRELIABLE = {sh["key"] for sh in src.get("shops", [])
                         if sh.get("stock_reliability") == "low"}
+    SELLER_RISK = {sh["key"]: sh.get("seller_risk") for sh in src.get("shops", [])
+                   if sh.get("seller_risk")}
+    SELLER_VERIFICATION = {sh["key"]: sh.get("seller_verification")
+                           for sh in src.get("shops", []) if sh.get("seller_verification")}
     return STOCK_UNRELIABLE
 
 
 def stock_provable(shop: str) -> bool:
     return shop not in STOCK_UNRELIABLE
+
+
+def high_risk(shop: str) -> bool:
+    return SELLER_RISK.get(shop) == "HIGH"
+
+
+def unverified(shop: str) -> bool:
+    return SELLER_VERIFICATION.get(shop) == "UNVERIFIED"
+
+
+def seller_flag(shop: str) -> str | None:
+    """L'étiquette à afficher à côté de chaque offre d'un vendeur à risque."""
+    if high_risk(shop) and unverified(shop):
+        return "HIGH-RISK / UNVERIFIED SELLER"
+    if high_risk(shop):
+        return "HIGH-RISK SELLER"
+    if unverified(shop):
+        return "UNVERIFIED SELLER"
+    return None
+
+
+def cap_verdict(pv: dict | None, shop: str) -> dict | None:
+    """Un vendeur à risque élevé ne produit JAMAIS de verdict d'achat.
+
+    Le prix reste affiché, l'écart reste calculé — ils sont utiles comme signal de marché.
+    Mais aucune donnée de marché, si solide soit-elle, ne peut compenser l'incertitude sur le
+    vendeur lui-même : une boîte à 334,95 $ contre 525 $ de ventes réalisées n'est une affaire
+    que si elle arrive. Le verdict devient VERIFY BEFORE BUYING, qui dit exactement quoi faire.
+    """
+    if not pv or not high_risk(shop):
+        return pv
+    if pv.get("verdict") in ("STRONG BUY", "BUY"):
+        out = dict(pv)
+        out["verdict"] = "VERIFY BEFORE BUYING"
+        out["capped_from"] = pv["verdict"]
+        out["why"] = (f"{pv.get('why', '')} — MAIS vendeur à risque élevé et non vérifié : "
+                      f"le prix ne vaut que si la commande arrive.").strip(" —")
+        return out
+    return pv
 
 
 def blocklisted(url: str) -> str | None:
@@ -1183,7 +1233,7 @@ def price_verdict(price, cm, ask_ref):
 
 # Les paliers ASK ont disparu du vocabulaire : ils prétendaient classer sans preuve.
 VERDICT_RANK = {"STRONG BUY": 0, "BUY": 1, "FAIR": 3, "EXPENSIVE": 4,
-                "INSUFFICIENT DATA": 5, "DATA INSUFFICIENT": 5}
+                "VERIFY BEFORE BUYING": 5, "INSUFFICIENT DATA": 5, "DATA INSUFFICIENT": 5}
 
 def buy_below_v2(cm: dict):
     """« À quel prix est-ce une bonne opportunité AUJOURD'HUI ? », pas « quel était un bon prix
@@ -1763,6 +1813,9 @@ def report(cat: dict, conn: sqlite3.Connection, seen_at: str | None, trust: dict
                     cmk = current_market(conn, s, key, region=reg) if reg == "US" else None
                     askr = current_ask_reference(conn, key, region=reg, exclude_url=o[5]) if reg == "US" else None
                     pv = price_verdict(o[3], cmk, askr) if reg == "US" else None
+                    # le risque vendeur s'applique APRÈS le calcul de marché : on veut garder
+                    # l'écart mesuré, on lui retire seulement le droit de conclure à un achat
+                    pv = cap_verdict(pv, o[1])
                     region = o[14] if len(o) > 14 else "US"
                     if region != "US":
                         # un vendeur FR est un canal d'achat, pas un signal de marché US :
@@ -1970,11 +2023,15 @@ def price_anomalies(entries, limit=20):
     for e in entries:
         if not e["available"] or e.get("region", "US") != "US":
             continue
+        shop = e["o"][1]
         pv = e.get("pv") or {}
         gap = pv.get("ask_gap")
-        douteux = not stock_provable(e["o"][1])
-        # soit l'écart contre les prix demandés est net, soit le vendeur impose la vérification
-        if pv.get("basis") == "ask_only" and gap is not None and gap <= -15:
+        douteux = not stock_provable(shop) or high_risk(shop)
+        # Un verdict d'achat plafonné par le risque vendeur atterrit ICI : c'est précisément
+        # le cas qu'il ne faut pas rater — un prix spectaculaire chez un vendeur non vérifié.
+        if pv.get("capped_from"):
+            out.append((pv.get("gap") or 0, f"{pv['capped_from']} annulé — vendeur à risque", e))
+        elif pv.get("basis") == "ask_only" and gap is not None and gap <= -15:
             out.append((gap, "prix très inférieur aux autres vendeurs", e))
         elif douteux and pv.get("verdict") in ("STRONG BUY", "BUY"):
             out.append((pv.get("gap") or 0, "stock du vendeur non prouvable", e))
@@ -2057,6 +2114,7 @@ class Opportunity:
     other_offers: int
     # emplacements réservés, non alimentés tant que la couche FR n'existe pas
     evidence: str | None = None
+    seller_flag: str | None = None       # "HIGH-RISK / UNVERIFIED SELLER" le cas échéant
     # inventaire : information, jamais décision. La carte reste visible et garde son verdict —
     # un restock à -60 % peut valoir un rachat, c'est une décision humaine.
     owned_qty: int = 0
@@ -2092,6 +2150,7 @@ def opportunity(e, kind, cat, fr_best=None, owned=None) -> Opportunity:
                     if _refv else (None, None))
     ICON = {"STRONG BUY": "🔥 STRONG BUY", "BUY": "🟢 BUY",
             "FAIR": "⚪ FAIR", "EXPENSIVE": "🔴 EXPENSIVE",
+            "VERIFY BEFORE BUYING": "⚠️ VERIFY BEFORE BUYING",
             "INSUFFICIENT DATA": "❓ INSUFFICIENT DATA", "DATA INSUFFICIENT": "❓ INSUFFICIENT DATA"}
     verdict = ICON.get(pv.get("verdict")) or (
         "RESTOCK" if kind == "restock" else "WATCH" if kind == "near" else "SIGNAL")
@@ -2115,6 +2174,7 @@ def opportunity(e, kind, cat, fr_best=None, owned=None) -> Opportunity:
         hist_low=(hist["low"] if hist else None), hist_at=(hist["at"][:10] if hist else None),
         hist_qty=(hist["qty"] if hist else 1),
         why=why_phrase(e), landed=landed_phrase(price, q, cat),
+        seller_flag=seller_flag(o[1]),
         other_offers=e.get("other_offers", 0), **_fr_fields(e, fr_best))
 
 def _fr_fields(e, fr_best):
@@ -2143,6 +2203,12 @@ def render_card(op: Opportunity) -> str:
          f"<div class=nm>{op.label}</div>",
          f"<div class=pr>{money_or(op.price)} <span class=shop>· {op.shop}</span></div>",
          f"<div><span class='v'>{op.verdict}</span> <span class=gap>{op.market}</span></div>"]
+    # L'étiquette de risque suit l'offre PARTOUT où elle s'affiche. Un vendeur non vérifié
+    # croisé dans « Surveiller » doit se signaler exactement comme dans les anomalies.
+    if op.seller_flag:
+        r.append(f"<div class=small><b class=miss>⚠️ {op.seller_flag}</b> — "
+                 "aucune source indépendante ne confirme cette boutique ; vérifier avant "
+                 "de payer.</div>")
     if op.owned_qty:
         cost = f" · {op.owned_landed_eur:.2f} €/boîte payés" if op.owned_landed_eur else ""
         r.append(f"<div class=small><span class=own>📦 EN STOCK ×{op.owned_qty}</span>{cost}</div>")
@@ -2362,18 +2428,29 @@ def write_html(cat, blocks, restocks, review, seen_at, trust=None, hot=None, ent
                  "restent ici et n’entrent jamais dans BUY NOW.</p>")
     if anomalies:
         h.append("<div class=wrap><table><tr><th>Produit</th><th>Prix</th><th>Vendeur</th>"
-                 "<th>Écart vs prix demandés</th><th>Vendeurs comparés</th><th>Motif</th></tr>")
+                 "<th>Risque vendeur</th><th>Stock</th><th>Écart</th><th>Réf.</th>"
+                 "<th>Verdict</th></tr>")
         for gap, motif, e in anomalies:
             pv = e.get("pv") or {}
+            shop = e["o"][1]
             sk = next((x for x in cat["skus"] if x["id"] == e.get("sid")), None)
             lbl = sku_label(sk) if sk else (e["o"][2] or "produit non identifié")
-            n_shops = pv.get("ask_shops")
-            h.append(f"<tr><td>{A(e['o'][6], lbl[:58])}</td><td>{money_or(e['o'][3])}</td>"
-                     f"<td>{e['o'][1]}</td>"
-                     f"<td>{gap:+.0f} %</td>"
-                     f"<td>{n_shops if n_shops else '—'}</td>"
-                     f"<td><span class=small>{motif}</span></td></tr>")
+            flag = seller_flag(shop)
+            risque = (f"<b class=miss>{flag}</b>" if flag else "—")
+            stock = "LOW" if not stock_provable(shop) else "—"
+            base = ("ventes réalisées" if pv.get("basis") == "sold"
+                    else f"{pv.get('ask_shops')} prix demandés" if pv.get("ask_shops") else "—")
+            verdict = "VERIFY BEFORE BUYING" if pv.get("capped_from") or flag else "à vérifier"
+            h.append(f"<tr><td>{A(e['o'][6], lbl[:52])}</td><td>{money_or(e['o'][3])}</td>"
+                     f"<td>{shop}</td><td><span class=small>{risque}</span></td>"
+                     f"<td>{stock}</td><td>{gap:+.0f} %</td>"
+                     f"<td><span class=small>{base}</span></td>"
+                     f"<td><span class=small>{verdict}</span></td></tr>")
         h.append("</table></div>")
+        h.append("<p class=small>Un vendeur « HIGH-RISK / UNVERIFIED » n'est PAS qualifié de "
+                 "fraudeur : il signifie qu'aucune source indépendante ne confirme son activité. "
+                 "Ses prix restent affichés parce qu'ils informent le marché — ils ne peuvent "
+                 "simplement pas fonder un achat.</p>")
         h.append("<p class=small>« Écart vs prix demandés » compare à ce que d’autres vendeurs "
                  "AFFICHENT. Ce n’est pas un marché : personne n’a constaté qu’une boîte se soit "
                  "vendue à ce prix.</p>")
@@ -2489,8 +2566,8 @@ def write_html(cat, blocks, restocks, review, seen_at, trust=None, hot=None, ent
              "ne peut pas porter le meilleur prix. eBay et StockX bloquent toute relecture "
              "automatisée : leurs lignes sont donc structurellement STALE ici.</p>")
     h.append("<div class=wrap><table><tr><th>Format</th><th>Connus</th><th>Live</th><th>OOS</th>"
-             "<th>STALE</th><th>Meilleur live</th><th>Vendeur</th><th>Provenance</th>"
-             "<th>Stock</th><th>SOLD</th></tr>")
+             "<th>STALE</th><th>Meilleur live VÉRIFIÉ</th><th>Vendeur</th>"
+             "<th>Moins cher non vérifié</th><th>Provenance</th><th>Stock</th><th>SOLD</th></tr>")
 
     def _live(rows):
         return [r for r in rows if xe.counts_as_live(r.get("stock_status") or "")]
@@ -2506,7 +2583,16 @@ def write_html(cat, blocks, restocks, review, seen_at, trust=None, hot=None, ent
             return r.get("unit_price") or r.get("price")
         elig = [r for r in vivants if xe.can_be_best_live(r.get("stock_status") or "")
                 and (_unit(r) or 0) > 0]
-        best = min(elig, key=_unit) if elig else None
+        # BEST VERIFIED LIVE : le meilleur prix chez un vendeur qu'on peut prendre au sérieux.
+        # Un vendeur à risque élevé ou au stock non prouvable est écarté de ce classement —
+        # sinon la colonne « meilleur prix » devient une invitation à acheter chez celui dont
+        # on sait le moins de choses, ce qui est exactement le contraire de son but.
+        verif = [r for r in elig
+                 if not high_risk(r.get("shop") or "") and stock_provable(r.get("shop") or "")]
+        best = min(verif, key=_unit) if verif else None
+        best_risque = min(elig, key=_unit) if elig else None
+        risque_moins_cher = (best_risque is not None
+                             and (best is None or _unit(best_risque) < _unit(best)))
         prov = "+".join(sorted({r.get("layer") or "?" for r in rows})) or "—"
         conf = {xe.CONFIRMED_LIVE: "✅ confirmé", xe.PROBABLE_LIVE: "⚠️ probable",
                 xe.OOS: "—", xe.STALE: "🕓 périmé", xe.LOST: "✖ disparu",
@@ -2530,6 +2616,9 @@ def write_html(cat, blocks, restocks, review, seen_at, trust=None, hot=None, ent
                  f"<td>{money_or(_unit(best)) if best else '—'}"
                  f"{(' <span class=small>×' + str(best['quantity']) + ' boîtes</span>') if best and (best.get('quantity') or 1) > 1 else ''}</td>"
                  f"<td>{(best or {}).get('shop') or '—'}</td>"
+                 f"<td><span class=small>"
+                 f"{(money_or(_unit(best_risque)) + ' · ' + str(best_risque.get('shop')) + ' ⚠️') if risque_moins_cher else '—'}"
+                 f"</span></td>"
                  f"<td><span class=small>{prov}</span></td><td>{conf}</td>"
                  f"<td><span class=small>{stxt}</span></td></tr>")
     h.append("</table></div>")

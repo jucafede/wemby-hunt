@@ -100,6 +100,40 @@ check("kutogo est reconnu comme non prouvable", hunt.stock_provable("kutogo"), F
 check("une boutique ordinaire l'est", hunt.stock_provable("rbicru7"))
 check("le registre vient de sources.yaml", "kutogo" in hunt.STOCK_UNRELIABLE)
 
+# ---------------------------------------------- 6. risque vendeur : Kutogo, 07/09
+# Vérification manuelle : l'adresse revendiquée (Pueblo West, Colorado) montre en Street View
+# de septembre 2023 un bâtiment industriel sans enseigne ; les photos récentes du card shop
+# sont publiées par le propriétaire lui-même. Flickr et Instagram ne contiennent que ses
+# propres visuels. Aucune source INDÉPENDANTE ne confirme l'établissement. Ce n'est pas une
+# preuve de fraude — c'est une absence de preuve d'activité, et cela suffit à retirer à ce
+# vendeur le droit de conclure un achat.
+check("kutogo est déclaré à risque élevé", hunt.high_risk("kutogo"))
+check("et non vérifié", hunt.unverified("kutogo"))
+check("l'étiquette affichée est explicite",
+      hunt.seller_flag("kutogo"), "HIGH-RISK / UNVERIFIED SELLER")
+check("une boutique ordinaire ne porte aucune étiquette", hunt.seller_flag("rbicru7"), None)
+
+_sold = {"verdict": "STRONG BUY", "basis": "sold", "gap": -36.2, "ref": 525.0,
+         "confidence": "MEDIUM", "why": "3 ventes réalisées sur 90 j"}
+check("un STRONG BUY chez kutogo est annulé",
+      hunt.cap_verdict(_sold, "kutogo")["verdict"], "VERIFY BEFORE BUYING")
+check("un BUY aussi",
+      hunt.cap_verdict(dict(_sold, verdict="BUY"), "kutogo")["verdict"], "VERIFY BEFORE BUYING")
+check("le verdict d'origine est conservé, pas effacé",
+      hunt.cap_verdict(_sold, "kutogo")["capped_from"], "STRONG BUY")
+check("l'écart de marché reste calculé — c'est un signal utile",
+      hunt.cap_verdict(_sold, "kutogo")["gap"], -36.2)
+check("et la raison dit ce qui bloque",
+      "le prix ne vaut que si la commande arrive" in hunt.cap_verdict(_sold, "kutogo")["why"])
+check("le même verdict ailleurs n'est pas touché",
+      hunt.cap_verdict(_sold, "rbicru7")["verdict"], "STRONG BUY")
+check("un EXPENSIVE n'a pas besoin d'être plafonné",
+      hunt.cap_verdict(dict(_sold, verdict="EXPENSIVE"), "kutogo")["verdict"], "EXPENSIVE")
+check("VERIFY BEFORE BUYING n'ouvre jamais BUY NOW",
+      hunt.VERDICT_RANK["VERIFY BEFORE BUYING"], hunt.VERDICT_RANK["INSUFFICIENT DATA"])
+# le stock déclaré par WooCommerce ne suffit jamais à confirmer chez ce vendeur
+check("le stock de kutogo n'est pas prouvable", hunt.stock_provable("kutogo"), False)
+
 print(f"\nTOTAL : {len(total)} tests, {len(fails)} FAIL")
 for f in fails: print("  FAIL", f)
 sys.exit(1 if fails else 0)

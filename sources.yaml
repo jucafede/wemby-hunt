@@ -481,4 +481,23 @@ shops:
     status: watch
     discovered_at: 2026-09-06
     stock_reliability: low
+    seller_risk: HIGH
+    seller_verification: UNVERIFIED
+    risk_reviewed_at: 2026-09-07
+    risk_reason: >-
+      Aucune preuve INDÉPENDANTE d'activité commerciale réelle à ce jour. Tout ce que nous
+      avons vient du vendeur lui-même : photos Google Maps publiées par Kutogo LLC, compte
+      Flickr très récent ne contenant que ses propres visuels promotionnels, Instagram
+      promotionnel, page About Us. Le Street View de septembre 2023 montre un bâtiment
+      industriel sans enseigne à l'adresse revendiquée (Pueblo West, Colorado) ; les photos
+      récentes fournies par le propriétaire montrent un card shop avec une grande enseigne,
+      et présentent des différences visuelles inhabituelles (géométrie du bâtiment,
+      environnement, véhicule). Nous ne pouvons PAS prouver qu'elles sont générées ou
+      retouchées et ne l'affirmons pas — nous constatons seulement qu'aucune source
+      indépendante ne corrobore l'établissement. S'y ajoute le fait technique déjà établi :
+      737 produits sur 737 déclarés disponibles, gestion des quantités désactivée, donc un
+      « in stock » qui ne prouve rien. Et plusieurs prix très inférieurs au reste du marché,
+      notamment sur du sealed ancien.
+      NE PAS retenir le Trustpilot de ktwogroupllc.com : autre domaine, lien non démontré.
+      Statut : NI blanchi, NI qualifié frauduleux. Non vérifié, donc non décisionnel.
     notes: "WooCommerce, API Store ouverte, 737 produits. Domaine 2016. Stock déclaré 100 % disponible — à vérifier page par page avant tout achat."

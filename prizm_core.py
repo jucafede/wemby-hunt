@@ -7,7 +7,7 @@ POURQUOI CETTE FAMILLE A SON PROPRE MOTEUR
 produit autour duquel tout le reste gravite, et il ne doit pas dépendre d'une découverte
 généraliste qui ratisse trois cents références et peut manquer la seule qui compte.
 
-Le 06/09, elle l'a manquée : une boîte International Hobby à 334,95 \$, achetable, chez un
+Le 06/09, elle l'a manquée : une boîte International Hobby à 334,95 $, achetable, chez un
 marchand actif depuis 2016. Deux défauts cumulés — la boutique n'était pas enregistrée, et le
 sondage de plateforme testait Shopify, recevait un 404, et concluait « illisible » alors que
 l'API WooCommerce répondait. Ce module existe pour que cela ne se reproduise pas.
@@ -31,8 +31,8 @@ où elle profite à tout le catalogue au lieu du seul Prizm.
 
 LA RÈGLE QUI GOUVERNE TOUT
 --------------------------
-Le prix n'est JAMAIS un filtre de découverte. Une International Hobby à 989 \$ doit apparaître
-au même titre qu'une à 334,95 \$. Découvrir et juger sont deux étapes, et les confondre revient
+Le prix n'est JAMAIS un filtre de découverte. Une International Hobby à 989 $ doit apparaître
+au même titre qu'une à 334,95 $. Découvrir et juger sont deux étapes, et les confondre revient
 à décider qu'on ne veut pas savoir.
 """
 from __future__ import annotations

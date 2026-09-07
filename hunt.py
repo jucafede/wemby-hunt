@@ -708,14 +708,14 @@ def collect_shop(shop: dict, skus: list[dict], conn: sqlite3.Connection, seen_at
     if blocklisted(shop.get("base_url", "")):
         return skip(f"BLOCKLIST — {blocklisted(shop['base_url'])} → jamais crawlé", "BLOCKLIST")
     if shop.get("status") == "reject":
-        return skip(f"status=reject \(qualifié sur données réelles → 0 sealed 2023-24\) → skip", "REJECT")
+        return skip(f"status=reject (qualifié sur données réelles → 0 sealed 2023-24) → skip", "REJECT")
     if shop["type"] == "eu_reference":
         return skip(f"type=eu_reference ({shop.get('country','')}, {shop.get('platform','')}) "
                     f"→ référence de prix EU, non crawlée", "EU_REFERENCE")
     if shop["type"] == "marketplace":
-        return skip(f"type=marketplace \(source de market_sold / achat direct\) → skip", "MARKETPLACE")
+        return skip(f"type=marketplace (source de market_sold / achat direct) → skip", "MARKETPLACE")
     if shop["type"] == "breaks":
-        return skip(f"type=breaks \(breaker, hors périmètre sealed\) → skip", "BREAKS")
+        return skip(f"type=breaks (breaker, hors périmètre sealed) → skip", "BREAKS")
     if shop["type"] == "html":
         ad = html_adapters.adapter_for(shop["key"])
         if not ad:

@@ -162,24 +162,46 @@ def pvd(v, basis="sold", gap=0.0):
 cher = hn_entry("TOPPS_CHROME", 75.0, pvd("EXPENSIVE", "sold", 17.2))
 check("un EXPENSIVE sold-backed n'entre pas dans HOT NOW malgré ses déclencheurs",
       hunt.hot_now([cher]), [])
-check("un ASK EXPENSIVE non plus",
-      hunt.hot_now([hn_entry("X", 75.0, pvd("ASK EXPENSIVE", "ask", 30.0))]), [])
-check("un ASK FAIR non plus",
-      hunt.hot_now([hn_entry("X", 75.0, pvd("ASK FAIR", "ask", 2.0))]), [])
 check("sans aucune preuve de marché, les déclencheurs historiques restent recevables",
-      len(hunt.hot_now([hn_entry("X", 39.99, pvd("DATA INSUFFICIENT", None, None))])), 1)
-check("un ASK DEAL entre dans HOT NOW sans aucun déclencheur historique",
-      len(hunt.hot_now([hn_entry("X", 10.0, pvd("ASK DEAL", "ask", -33.7),
-                                 triggers=(), gap=None, ref=None)])), 1)
-check("un BUY sold-backed passe devant un ASK DEAL plus généreux",
+      len(hunt.hot_now([hn_entry("X", 39.99, pvd("INSUFFICIENT DATA", None, None))])), 1)
+
+# ---------------------------------------------------------------------------
+# BUY NOW n'accepte QUE des ventes réalisées (règle du 07/09)
+# ---------------------------------------------------------------------------
+# Le 07/09, 258 boîtes Wemby étaient en stock, toutes classées « ASK DEAL », et pas une seule
+# n'avait de transaction derrière. Un tableau où tout est une affaire ne dit rien. L'écart
+# contre des prix demandés est conservé — il SIGNALE une anomalie à vérifier — mais il ne
+# conclut plus.
+_askonly = pvd("INSUFFICIENT DATA", "ask_only", None)
+_askonly["ask_gap"], _askonly["ask_shops"] = -33.7, 4
+check("une remise contre des prix demandés n'ouvre PAS BUY NOW",
+      hunt.hot_now([hn_entry("X", 10.0, _askonly, triggers=(), gap=None, ref=None)]), [])
+check("mais elle apparaît en anomalie à vérifier",
+      len(hunt.price_anomalies([hn_entry("X", 10.0, _askonly)])), 1)
+check("une remise trop faible n'est pas une anomalie",
+      hunt.price_anomalies([hn_entry("X", 10.0, dict(_askonly, ask_gap=-3.0))]), [])
+check("seul un verdict adossé aux ventes entre dans BUY NOW",
       [e["sid"] for e in hunt.hot_now([
-          hn_entry("ASKD", 10.0, pvd("ASK DEAL", "ask", -33.7), triggers=(), gap=None, ref=None),
+          hn_entry("ASKD", 10.0, _askonly, triggers=(), gap=None, ref=None),
           hn_entry("SOLDB", 50.0, pvd("BUY", "sold", -12.0), triggers=(), gap=None, ref=None)])],
-      ["SOLDB", "ASKD"])
-# l'écart affiché : celui du verdict quand il existe, jamais un plantage quand il manque
-check("un ASK DEAL sans gap historique ne fait pas planter le rapport",
-      hunt.hot_now([hn_entry("X", 10.0, pvd("ASK DEAL", "ask", -33.7),
-                             triggers=(), gap=None, ref=None)])[0]["gap"], None)
+      ["SOLDB"])
+
+# ---------------------------------------------------------------------------
+# Un vendeur dont le stock ne prouve rien ne décide de rien
+# ---------------------------------------------------------------------------
+hunt.STOCK_UNRELIABLE = {"kutogo"}
+_k = hn_entry("K", 50.0, pvd("BUY", "sold", -12.0), triggers=(), gap=None, ref=None)
+_k["o"] = ("S", "kutogo") + _k["o"][2:]
+check("une offre au stock non prouvable n'entre jamais dans BUY NOW", hunt.hot_now([_k]), [])
+check("elle est redirigée vers les anomalies à vérifier", len(hunt.price_anomalies([_k])), 1)
+check("et le motif est nommé", hunt.price_anomalies([_k])[0][1], "stock du vendeur non prouvable")
+_ok = hn_entry("OK", 50.0, pvd("BUY", "sold", -12.0), triggers=(), gap=None, ref=None)
+check("un vendeur ordinaire reste éligible", len(hunt.hot_now([_ok])), 1)
+# une ligne sans identité produit ne peut pas être achetée
+_noid = hn_entry("Z", 50.0, pvd("BUY", "sold", -12.0), triggers=(), gap=None, ref=None)
+_noid["sid"] = None
+check("une ligne sans identité produit n'entre pas dans BUY NOW", hunt.hot_now([_noid]), [])
+hunt.STOCK_UNRELIABLE = set()
 
 # ---------------------------------------------------------------------------
 # L'objectif de prix suit le marché, pas le seuil manuel
@@ -204,7 +226,7 @@ check("l'objectif porte sa justification", bool(_o.target_why))
 check("un objectif adossé aux ventes le dit", "ventes récentes" in _o.target_why)
 # écrire « ventes récentes » au-dessus d'un objectif calculé sur des prix demandés serait
 # exactement la confusion que tout ce moteur existe pour empêcher.
-_pva = {"verdict": "ASK DEAL", "basis": "ask", "gap": -33.7,
+_pva = {"verdict": "INSUFFICIENT DATA", "basis": "ask_only", "gap": -33.7,
         "ref": {"value": 15.0}, "confidence": "HIGH", "why": "4 vendeurs"}
 _oa = op_for(9.95, _pva, None)
 check("un objectif adossé aux prix demandés ne parle jamais de ventes",
@@ -216,7 +238,7 @@ check("l'objectif ask suit la même règle de marge", op_for(20.0, _pva, None).b
 _pvm = dict(_pv, confidence="MEDIUM")
 check("une confiance moyenne exige une marge plus large", op_for(75.0, _pvm, 35.0).buy_target_v2, 54.4)
 # sans marché, on retombe sur le seuil manuel plutôt que de ne rien dire
-_pvn = {"verdict": "DATA INSUFFICIENT", "basis": None, "gap": None, "ref": None,
+_pvn = {"verdict": "INSUFFICIENT DATA", "basis": None, "gap": None, "ref": None,
         "confidence": None, "why": None}
 _on = op_for(75.0, _pvn, 35.0)
 check("sans marché, l'objectif retombe sur le seuil manuel", _on.buy_target_v2, None)

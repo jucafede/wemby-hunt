@@ -81,6 +81,51 @@ LEAGUE_STRIP = re.compile(r"euro\s*league|turkish\s*airlines")
 # uniquement quand le SKU candidat revendique cette ligue.
 DRAFT_STRIP = re.compile(r"draft\s*picks|collegiate|\bncaa\b")
 
+# GAMMES DISTINCTES QUI PORTENT LE NOM D'UNE AUTRE GAMME
+# ------------------------------------------------------
+# « 2023/24 Topps Chrome McDonald's All-American Basketball Hobby Box » a été rattachée à
+# TOPPS_2023-24_CHROME_HOBBY avec un score de 1,0, puis affichée comme la meilleure affaire de
+# tout le catalogue — 42 % de sa référence de vente. Le McDonald's All-American est un match de
+# lycéens américains : Wembanyama est français, il n'y a jamais joué, aucune carte de lui n'y
+# figure. Le prix était bas parce que ce n'était pas le produit.
+#
+# La règle : ces mots désignent une gamme à part entière. S'ils apparaissent dans le titre, le
+# SKU visé doit les porter AUSSI, sinon le rattachement est refusé. Une remise inexplicable est
+# presque toujours un produit différent, jamais une aubaine.
+FOREIGN_SETS = [
+    # norm() insère une espace dans « McDonald's » et garde le trait d'union d'« All-American » :
+    # les motifs sont écrits sur ce que le moteur produit, pas sur ce que le vendeur a tapé.
+    ("mcdonald's all-american", r"mc\s*donald'?s|all[\s-]*american"),
+    ("overtime elite",          r"overtime\s*elite|\bote\b"),
+    ("rising stars",            r"rising\s*stars"),
+    ("finest flashback",        r"finest\s*flashback"),
+    ("chrome sapphire",         r"sapphire"),
+    ("chrome black",            r"chrome\s*black"),
+    ("merlin",                  r"\bmerlin\b"),
+    ("museum collection",       r"museum\s*collection"),
+]
+
+
+def sku_haystack(s: dict) -> str:
+    """Tout ce qui identifie un SKU, en un seul texte comparable.
+
+    L'identifiant compte autant que le nom de gamme : « Topps Chrome Sapphire » porte set =
+    « Topps Chrome » et ne se distingue de la gamme de base que par son id. Comparer au seul
+    `set` faisait refuser un SKU parfaitement légitime.
+    """
+    parts = [str(s.get("id", "")).replace("_", " "), str(s.get("set", "")),
+             str(s.get("edition") or ""), " ".join(s.get("aliases") or [])]
+    return " ".join(parts).lower()
+
+
+def foreign_set(t: str, haystack: str) -> str | None:
+    """Le nom de gamme étrangère présent dans le titre mais absent du SKU visé, ou None."""
+    hs = (haystack or "").lower()
+    for nom, rx in FOREIGN_SETS:
+        if re.search(rx, t) and not re.search(rx, hs):
+            return nom
+    return None
+
 # Ligues ajoutées le 06/09 avec les identités correspondantes. Sans elles, parse_league rend
 # None sur « Prizm Draft Picks », le SKU déclare « Collegiate/Draft », et le garde-fou de
 # concordance rejette le produit — il était impossible de rattacher la moindre fiche draft.
@@ -297,6 +342,8 @@ def match_title(title: str, skus: list[dict]) -> Match:
         names = [s["set"].lower()] + [a.lower() for a in s.get("aliases", [])]
         set_hit = any(re.search(rf"\b{re.escape(n)}\b", t) for n in names)
         if not set_hit: continue
+        # une gamme distincte ne se replie jamais sur la gamme dont elle emprunte le nom
+        if foreign_set(t, sku_haystack(s)): continue
         # garde-fous : "Donruss Optic" vs "Donruss" seul, "Prizm" vs "Prizm Monopoly", "Hoops Premium Stock" vs "Hoops"
         if s["set"].lower() == "prizm":
             if any(k in t for k in ("monopoly", "draft", "deca", "emergent", "flashback", "collegiate")): continue
@@ -595,6 +642,26 @@ def load_blocklist(src):
         if d.startswith("www."): d = d[4:]
         BLOCKLIST[d] = f"{b['reason']} [preuve du {b['evidence_date']}]"
     return BLOCKLIST
+
+# VENDEURS DONT LA DISPONIBILITÉ NE PROUVE RIEN
+# ---------------------------------------------
+# Kutogo déclare 737 produits sur 737 en stock, dont une Select Hobby 2018-19 à 1 899 $.
+# Vérifié le 07/09. Son « en stock » est une valeur par défaut, pas une information — ses
+# offres ne peuvent donc pas fonder une décision d'achat, quel que soit leur prix.
+STOCK_UNRELIABLE = set()
+
+
+def load_stock_unreliable(src):
+    """Boutiques dont le stock déclaré n'est pas exploitable pour décider."""
+    global STOCK_UNRELIABLE
+    STOCK_UNRELIABLE = {sh["key"] for sh in src.get("shops", [])
+                        if sh.get("stock_reliability") == "low"}
+    return STOCK_UNRELIABLE
+
+
+def stock_provable(shop: str) -> bool:
+    return shop not in STOCK_UNRELIABLE
+
 
 def blocklisted(url: str) -> str | None:
     h = (url or "").split("//")[-1].split("/")[0].lower()
@@ -1066,16 +1133,26 @@ def current_ask_reference(conn, key, now=None, region="US", exclude_url=None):
             "age_days": min(ages), "freshness": freshness(min(ages)),
             "in_stock_n": len({r[2] for r in ins})}
 
+# Une « moyenne » de deux prix demandés n'est pas un marché : c'est deux vendeurs. En dessous
+# de ce seuil, aucune référence d'ask n'est publiée — ni chiffre, ni écart, ni palier.
+ASK_REF_MIN_SHOPS = 3
+
+
 def price_verdict(price, cm, ask_ref):
-    """Deux niveaux de preuve, jamais confondus.
+    """Deux niveaux de preuve, et un seul autorise un verdict d'achat.
 
     SOLD-BACKED : l'écart se mesure contre des ventes RÉALISÉES -> STRONG BUY / BUY / FAIR / EXPENSIVE.
-    ASK-BACKED  : aucune vente fiable, mais plusieurs vendeurs comparables -> ASK DEAL, qui dit
-                  « moins cher que ce que les autres DEMANDENT », jamais « sous la valeur ».
-    Sinon : DATA INSUFFICIENT. Un ASK DEAL n'est JAMAIS un BUY.
+    ASK-ONLY    : aucune vente fiable. Le verdict est INSUFFICIENT DATA, quelle que soit la
+                  remise apparente. On conserve l'écart contre les prix demandés — il sert à
+                  SIGNALER une anomalie à vérifier — mais il ne conclut rien.
+
+    Le 07/09, les 258 boîtes Wemby en stock affichaient toutes un palier ASK DEAL et aucune
+    n'avait la moindre vente réalisée en base. Un tableau où tout est une affaire ne dit rien.
+    Pire : plusieurs de ces « remises » se mesuraient contre deux vendeurs, et l'une d'elles
+    contre un produit qui ne contenait pas Wembanyama.
     """
     if price is None or price <= 0:
-        return {"verdict": "DATA INSUFFICIENT", "basis": None, "gap": None, "ref": None,
+        return {"verdict": "INSUFFICIENT DATA", "basis": None, "gap": None, "ref": None,
                 "why": "prix indisponible"}
     if cm and cm.get("basis") == "exact_sold" and cm.get("confidence") in ("HIGH", "MEDIUM") \
             and cm.get("value"):
@@ -1086,19 +1163,27 @@ def price_verdict(price, cm, ask_ref):
         return {"verdict": v, "basis": "sold", "gap": g, "ref": cm["value"],
                 "confidence": cm["confidence"],
                 "why": f"{n} vente(s) réalisée(s) sur {w} j · médiane ${cm['value']:.2f} · {cm['confidence']}"}
-    if ask_ref and ask_ref["confidence"] in ("HIGH", "MEDIUM") and ask_ref.get("value"):
+    # ---- à partir d'ici, aucune vente réalisée fiable n'existe : aucun verdict d'achat.
+    if ask_ref and ask_ref.get("value") and (ask_ref.get("shops") or 0) >= ASK_REF_MIN_SHOPS:
         g = round((price - ask_ref["value"]) / ask_ref["value"] * 100, 1)
-        v = "ASK DEAL" if g <= ASK_DEAL_PCT else "ASK FAIR" if g <= FAIR_PCT else "ASK EXPENSIVE"
-        return {"verdict": v, "basis": "ask", "gap": g, "ref": ask_ref["value"],
-                "confidence": ask_ref["confidence"],
-                "why": (f"{ask_ref['shops']} vendeur(s) · médiane demandée ${ask_ref['value']:.2f} · "
-                        f"{ask_ref['confidence']} · AUCUNE VENTE RÉALISÉE CONNUE")}
-    return {"verdict": "DATA INSUFFICIENT", "basis": None, "gap": None, "ref": None,
+        return {"verdict": "INSUFFICIENT DATA", "basis": "ask_only", "gap": g,
+                "ref": ask_ref["value"], "confidence": ask_ref["confidence"],
+                "ask_gap": g, "ask_shops": ask_ref["shops"],
+                "why": (f"ASK REFERENCE ONLY — {ask_ref['shops']} vendeurs demandent "
+                        f"${ask_ref['value']:.2f} en médiane. AUCUNE VENTE RÉALISÉE CONNUE : "
+                        f"cet écart signale une anomalie à vérifier, il ne vaut pas valorisation.")}
+    if ask_ref and ask_ref.get("value"):
+        return {"verdict": "INSUFFICIENT DATA", "basis": None, "gap": None, "ref": None,
+                "confidence": "LOW",
+                "why": (f"seulement {ask_ref.get('shops')} vendeur(s) comparables — "
+                        f"trop peu pour une référence, et aucune vente réalisée")}
+    return {"verdict": "INSUFFICIENT DATA", "basis": None, "gap": None, "ref": None,
             "confidence": "LOW",
             "why": "ni vente réalisée fiable, ni assez de vendeurs comparables"}
 
-VERDICT_RANK = {"STRONG BUY": 0, "BUY": 1, "ASK DEAL": 2, "ASK FAIR": 3, "FAIR": 3,
-                "ASK EXPENSIVE": 4, "EXPENSIVE": 4, "DATA INSUFFICIENT": 5}
+# Les paliers ASK ont disparu du vocabulaire : ils prétendaient classer sans preuve.
+VERDICT_RANK = {"STRONG BUY": 0, "BUY": 1, "FAIR": 3, "EXPENSIVE": 4,
+                "INSUFFICIENT DATA": 5, "DATA INSUFFICIENT": 5}
 
 def buy_below_v2(cm: dict):
     """« À quel prix est-ce une bonne opportunité AUJOURD'HUI ? », pas « quel était un bon prix
@@ -1109,7 +1194,11 @@ def buy_below_v2(cm: dict):
     au-dessus d'un objectif calculé sur des prix DEMANDÉS serait précisément la confusion que
     tout ce moteur existe pour empêcher."""
     if not cm or cm.get("value") is None: return None, "aucun marché actuel fiable"
-    quoi = "des prix demandés" if cm.get("basis") == "ask" else "des ventes récentes"
+    # « ask » (référence de marché) et « ask_only » (verdict) désignent la même nature de
+    # preuve : des prix DEMANDÉS. Écrire « ventes récentes » au-dessus d'un objectif calculé
+    # sur des asks serait exactement la confusion que tout ce moteur existe pour empêcher.
+    quoi = ("des prix demandés" if cm.get("basis") in ("ask", "ask_only")
+            else "des ventes récentes")
     conf = cm.get("confidence")
     if conf == "HIGH":   return round(cm["value"] * 0.90, 2), f"10 % sous la médiane {quoi}"
     if conf == "MEDIUM": return round(cm["value"] * 0.85, 2), f"15 % sous la médiane {quoi} (confiance moyenne)"
@@ -1524,14 +1613,19 @@ def hot_now(entries, limit=15):
     # quel que soit le déclencheur qui l'accompagne.
     # HOT NOW est une décision sur le marché US : une offre FR est un canal d'achat, pas un
     # signal de marché, et son prix est en euros. Le garde-fou est ICI, pas au point d'appel.
-    # Une opportunité entre dans HOT NOW si elle est adossée à une PREUVE : des ventes
-    # réalisées (sold-backed) ou, à défaut, plusieurs vendeurs comparables (ask-backed).
-    # Un ASK DEAL n'est jamais un BUY, et ne passe jamais devant un deal sold-backed.
-    KEEP = {"STRONG BUY", "BUY", "ASK DEAL"}
+    # BUY NOW n'accepte QUE des ventes réalisées. Les paliers ASK y entraient auparavant :
+    # le 07/09, cela remplissait la zone de décision de 258 « affaires » dont pas une seule
+    # n'avait de transaction derrière. Un écart contre des prix demandés signale une anomalie
+    # à vérifier — c'est utile, ce n'est pas une décision d'achat.
+    KEEP = {"STRONG BUY", "BUY"}
     elig = []
     for e in entries:
         if e.get("region", "US") != "US" or not e["available"]: continue
         if not e["o"][3] or e["o"][3] <= 0: continue
+        # un vendeur dont le stock ne prouve rien ne peut pas porter une décision d'achat
+        if not stock_provable(e["o"][1]): continue
+        # identité incertaine : le produit n'est pas identifié, donc pas achetable ici
+        if not e.get("sid"): continue
         pv = e.get("pv") or {}
         if pv.get("verdict") in KEEP:
             elig.append(e); continue
@@ -1539,7 +1633,7 @@ def hot_now(entries, limit=15):
         # seuil manuel ne remontent une offre que les ventes ou les prix demandés condamnent.
         # Le Topps Chrome à 75 $ entrait ici par un -38 % vs seuil manuel, alors que sept ventes
         # réelles le donnaient à 64 $.
-        if pv.get("verdict") and pv["verdict"] != "DATA INSUFFICIENT": continue
+        if pv.get("verdict") and pv["verdict"] != "INSUFFICIENT DATA": continue
         # sans aucune preuve de marché, les déclencheurs historiques restent recevables
         if e["triggers"] and e["ref"] is not None and e["gap"] is not None and e["gap"] <= 0:
             elig.append(e)
@@ -1860,6 +1954,39 @@ def buy_target(s: dict) -> float | None:
     b = s.get("buy_below_usd")
     return float(b) if b is not None else None
 
+def price_anomalies(entries, limit=20):
+    """PRICE ANOMALIES TO VERIFY — un prix nettement sous les autres, SANS vente réalisée.
+
+    Ces lignes ne sont pas des achats : ce sont des questions. Un prix très inférieur aux
+    autres vendeurs a deux explications, et le moteur ne sait pas les distinguer — une vraie
+    occasion, ou une fiche que personne n'a mise à jour. Le 07/09, Obsidian Hobby était à
+    424,95 $ chez un vendeur et 1 100 $ chez le seul autre : un écart pareil se vérifie à la
+    main avant de payer, il ne se conclut pas depuis un tableau.
+
+    Les offres d'un vendeur au stock non prouvable atterrissent TOUJOURS ici, jamais dans
+    BUY NOW, même quand une vente réalisée existerait.
+    """
+    out = []
+    for e in entries:
+        if not e["available"] or e.get("region", "US") != "US":
+            continue
+        pv = e.get("pv") or {}
+        gap = pv.get("ask_gap")
+        douteux = not stock_provable(e["o"][1])
+        # soit l'écart contre les prix demandés est net, soit le vendeur impose la vérification
+        if pv.get("basis") == "ask_only" and gap is not None and gap <= -15:
+            out.append((gap, "prix très inférieur aux autres vendeurs", e))
+        elif douteux and pv.get("verdict") in ("STRONG BUY", "BUY"):
+            out.append((pv.get("gap") or 0, "stock du vendeur non prouvable", e))
+    out.sort(key=lambda x: x[0])
+    return out[:limit]
+
+
+def unreliable_shops_present(entries) -> list:
+    return sorted({e["o"][1] for e in entries
+                   if e["available"] and not stock_provable(e["o"][1])})
+
+
 def near_buy_lines(entries):
     """En stock, un seuil d'achat existe, et le prix est au-dessus : combien manque-t-il ?"""
     best = {}
@@ -1963,9 +2090,9 @@ def opportunity(e, kind, cat, fr_best=None, owned=None) -> Opportunity:
     tgt, tgt_why = (buy_below_v2({"value": _refv, "confidence": pv.get("confidence"),
                                   "basis": pv.get("basis")})
                     if _refv else (None, None))
-    ICON = {"STRONG BUY": "🔥 STRONG BUY", "BUY": "🟢 BUY", "ASK DEAL": "🟣 ASK DEAL",
-            "FAIR": "⚪ FAIR", "ASK FAIR": "⚪ ASK FAIR", "EXPENSIVE": "🔴 EXPENSIVE",
-            "ASK EXPENSIVE": "🔴 ASK EXPENSIVE", "DATA INSUFFICIENT": "❓ DATA INSUFFICIENT"}
+    ICON = {"STRONG BUY": "🔥 STRONG BUY", "BUY": "🟢 BUY",
+            "FAIR": "⚪ FAIR", "EXPENSIVE": "🔴 EXPENSIVE",
+            "INSUFFICIENT DATA": "❓ INSUFFICIENT DATA", "DATA INSUFFICIENT": "❓ INSUFFICIENT DATA"}
     verdict = ICON.get(pv.get("verdict")) or (
         "RESTOCK" if kind == "restock" else "WATCH" if kind == "near" else "SIGNAL")
     hist = e.get("hist")
@@ -2158,7 +2285,8 @@ def write_html(cat, blocks, restocks, review, seen_at, trust=None, hot=None, ent
           f"{'' if seen_at else ' <span class=small>(page régénérée après le crawl)</span>'}"
           f"{dataset_freshness()}</p>"),
          "<nav>" + " ".join(f"<a href='#{i}'>{n}</a>" for i, n in
-                            [("acheter", "🔥 Acheter"), ("surveiller", "👀 Surveiller"),
+                            [("acheter", "🔥 BUY NOW"), ("anomalies", "🔍 Anomalies"),
+                             ("insuffisant", "❓ Données"), ("surveiller", "👀 Surveiller"),
                              ("prizm", "🎯 Prizm Core"), ("inventaire", "📦 Mon inventaire"),
                              ("fr", "🇫🇷 FR"), ("explorer", "🔎 Explorer"),
                              ("diag", "⚙️ Diagnostic")]) + "</nav>"]
@@ -2166,6 +2294,10 @@ def write_html(cat, blocks, restocks, review, seen_at, trust=None, hot=None, ent
     # ---------------- regroupements
     near = near_buy_lines(entries)
     restk = restock_lines(entries)
+    anomalies = price_anomalies(entries)
+    douteux = unreliable_shops_present(entries)
+    n_insuff = sum(1 for e in entries if e["available"]
+                   and (e.get("pv") or {}).get("verdict") == "INSUFFICIENT DATA")
     # 2 : une seule source de vérité. La phrase de synthèse, les compteurs et les cartes
     # dérivent tous des MÊMES listes d'objets — impossible d'annoncer 2 et d'en afficher 3.
     # L'inventaire arrive ICI, après que tous les verdicts ont été rendus. Il ne peut donc, par
@@ -2185,19 +2317,26 @@ def write_html(cat, blocks, restocks, review, seen_at, trust=None, hot=None, ent
 
     # ---------------- C : aujourd'hui, une phrase issue des seules données
     if nb_buy == 0:
-        lede = "Aucun achat recommandé aujourd’hui."
-        if ops_near: lede += f" {len(ops_near)} produit(s) au-dessus de leur prix cible."
+        lede = ("Aucun achat recommandé aujourd’hui : aucune offre ne réunit une identité "
+                "produit certaine et un marché de ventes RÉALISÉES.")
+        if anomalies:
+            lede += f" {len(anomalies)} anomalie(s) de prix à vérifier à la main."
     else:
-        lede = f"{nb_buy} opportunité(s) vérifiée(s) aujourd’hui."
+        lede = f"{nb_buy} achat(s) adossé(s) à des ventes réalisées."
         lede += f" {rc} sur Wemby Rookie 23/24." if rc else " Aucune sur Wemby Rookie 23/24."
     h.append(f"<h2>🔥 Aujourd’hui</h2><p class=lede>{lede}</p>")
     h.append("<div class=kpis>"
-             f"<div class=kpi><b>{nb_buy}</b><span>à acheter</span></div>"
-             f"<div class=kpi><b>{len(ops_near)}</b><span>à surveiller</span></div>"
-             f"<div class=kpi><b>{len(ops_rest)}</b><span>restock</span></div></div>")
+             f"<div class=kpi><b>{nb_buy}</b><span>BUY NOW</span></div>"
+             f"<div class=kpi><b>{len(anomalies)}</b><span>anomalies à vérifier</span></div>"
+             f"<div class=kpi><b>{n_insuff}</b><span>données insuffisantes</span></div></div>")
 
     # ---------------- D : ACHETER (rendu depuis les objets Opportunity)
-    h.append("<h2 id=acheter>🔥 Acheter</h2>")
+    h.append("<h2 id=acheter>🔥 BUY NOW</h2>")
+    h.append("<p class=small>Une ligne n’entre ici que si TROIS conditions sont réunies : "
+             "l’identité du produit est certaine (le moteur lui a attribué un SKU), la référence "
+             "de prix vient de VENTES RÉALISÉES, et le vendeur prouve son stock. Un écart calculé "
+             "contre des prix demandés n’ouvre jamais cette section — il descend dans "
+             "« anomalies à vérifier ».</p>")
     for key, label, short in WEMBY_SECTIONS:
         grp = [op for op in ops_buy if op.bucket == key]
         h.append(f"<h3>{label}</h3>")
@@ -2208,6 +2347,51 @@ def write_html(cat, blocks, restocks, review, seen_at, trust=None, hot=None, ent
             best = (f"{cands[0].label} — {money_or(cands[0].missing)} au-dessus du seuil"
                     if cands else None)
             h.append(empty_note(short, watch_by[key], best))
+
+    # ---------------- PRICE ANOMALIES TO VERIFY
+    h.append("<h2 id=anomalies>🔍 PRICE ANOMALIES TO VERIFY</h2>")
+    h.append("<p class=small>Des prix nettement inférieurs aux autres vendeurs, <b>sans aucune "
+             "vente réalisée</b> pour trancher. Ce ne sont pas des achats : ce sont des questions. "
+             "Un écart de cette taille est soit une vraie occasion, soit une fiche jamais mise à "
+             "jour — et depuis un tableau, rien ne permet de le savoir. À vérifier auprès du "
+             "vendeur avant tout paiement.</p>")
+    if douteux:
+        h.append("<p class=small>⚠️ Stock non prouvable chez : <b>"
+                 + ", ".join(douteux) + "</b>. Ces boutiques déclarent la quasi-totalité de leur "
+                 "catalogue disponible, y compris des produits de saisons révolues. Leurs offres "
+                 "restent ici et n’entrent jamais dans BUY NOW.</p>")
+    if anomalies:
+        h.append("<div class=wrap><table><tr><th>Produit</th><th>Prix</th><th>Vendeur</th>"
+                 "<th>Écart vs prix demandés</th><th>Vendeurs comparés</th><th>Motif</th></tr>")
+        for gap, motif, e in anomalies:
+            pv = e.get("pv") or {}
+            sk = next((x for x in cat["skus"] if x["id"] == e.get("sid")), None)
+            lbl = sku_label(sk) if sk else (e["o"][2] or "produit non identifié")
+            n_shops = pv.get("ask_shops")
+            h.append(f"<tr><td>{A(e['o'][6], lbl[:58])}</td><td>{money_or(e['o'][3])}</td>"
+                     f"<td>{e['o'][1]}</td>"
+                     f"<td>{gap:+.0f} %</td>"
+                     f"<td>{n_shops if n_shops else '—'}</td>"
+                     f"<td><span class=small>{motif}</span></td></tr>")
+        h.append("</table></div>")
+        h.append("<p class=small>« Écart vs prix demandés » compare à ce que d’autres vendeurs "
+                 "AFFICHENT. Ce n’est pas un marché : personne n’a constaté qu’une boîte se soit "
+                 "vendue à ce prix.</p>")
+    else:
+        h.append("<p class=empty>Aucune anomalie de prix à vérifier.</p>")
+
+    # ---------------- INSUFFICIENT DATA
+    h.append("<h2 id=insuffisant>❓ INSUFFICIENT DATA</h2>")
+    h.append(f"<p class=small><b>{n_insuff}</b> offre(s) en stock sur lesquelles le moteur "
+             "n’a pas de quoi conclure. Deux cas : aucune vente réalisée connue, ou trop peu de "
+             "vendeurs comparables pour établir la moindre référence. "
+             f"Une référence de prix demandés exige au moins {ASK_REF_MIN_SHOPS} vendeurs — "
+             "en dessous, une « moyenne » n’est que deux boutiques, et le moteur n’en publie "
+             "aucun chiffre.</p>")
+    sold_ok = sum(1 for e in entries if (e.get("pv") or {}).get("basis") == "sold")
+    h.append(f"<p class=small>Sur l’ensemble des offres en stock, <b>{sold_ok}</b> "
+             "s’appuient sur des ventes réalisées. C’est ce chiffre qui limite aujourd’hui la "
+             "taille de BUY NOW, et rien d’autre.</p>")
 
     # ---------------- H/I/J : SURVEILLER
     h.append("<h2 id=surveiller>👀 Surveiller</h2>")
@@ -2535,6 +2719,7 @@ def main():
         for t in rows: print(f"  {t[6]:.2f} {str(t[3]):<8} {str(t[4]):<12} {t[5]:<10} ${t[1]:>8.2f} {'IN ' if t[2] else 'OOS'}  {t[0][:90]}")
         return
     load_blocklist(src)
+    load_stock_unreliable(src)
     trust = {sh["key"]: sh.get("trust", "trusted") for sh in src["shops"]}
     if not a.report:
         seen_at = datetime.now(timezone.utc).isoformat(timespec="seconds")

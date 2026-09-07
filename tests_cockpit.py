@@ -99,9 +99,9 @@ check("16 · les opportunités sont des cartes, pas un tableau", "class=card" in
 check("10a · RC non vide -> la carte est là, pas d'état vide",
       "Aucune opportunité sur Wemby Rookie 23/24" in h, False)
 check("C · phrase de synthèse générée depuis les données",
-      "opportunité(s) vérifiée(s) aujourd’hui" in h)
+      "adossé(s) à des ventes réalisées" in h)
 check("O · compteurs métier en tête, techniques en bas",
-      h.index("à acheter") < h.index("Compteurs par source"))
+      h.index("BUY NOW") < h.index("Compteurs par source"))
 check("N · santé des sources dans Diagnostic",
       h.index("anomalie(s) de source") > h.index("<h2 id=diag>"))
 check("F · jamais « % marché » sans nature de référence", "% marché" in h, False)
@@ -130,7 +130,9 @@ h0 = pathlib.Path("/Users/ju/Draft Class/wemby-hunt/out/index.html").read_text(e
 check("U/10 · 0 achat : état vide Wemby RC explicite",
       "Aucune opportunité sur Wemby Rookie 23/24 actuellement." in h0)
 check("U · 0 achat : la page le dit franchement",
-      "Aucun achat recommandé aujourd’hui." in h0)
+      "Aucun achat recommandé aujourd’hui" in h0)
+# et elle dit POURQUOI : sans ventes réalisées, aucune décision d'achat n'est possible
+check("U · 0 achat : la raison est donnée", "ventes RÉALISÉES" in h0)
 check("U · 0 achat : l'état vide oriente vers la surveillance", "produit(s) surveillé(s)" in h0)
 check("U · 0 achat : les 4 sections restent visibles",
       all(x in h0 for x in ("🏀 Wemby Rookie 23/24", "⭐ Wemby Year 2 24/25",
@@ -164,11 +166,11 @@ check("1c · une boîte seule n'affiche pas de convention case",
 hunt.write_html(cat, blocks, [], [], "2026-08-21T08:00:00", {"sh": "trusted"},
                 hot=[buy], entries=[buy, n1, r_ok], shopcount=[], health={})
 h2 = pathlib.Path("/Users/ju/Draft Class/wemby-hunt/out/index.html").read_text(encoding="utf-8")
-seg2 = h2[h2.index("<h2 id=acheter>"):h2.index("<h2 id=surveiller>")]
-declared = int(re.search(r"<b>(\d+)</b><span>à acheter", h2).group(1))
+seg2 = h2[h2.index("<h2 id=acheter>"):h2.index("<h2 id=anomalies>")]
+declared = int(re.search(r"<b>(\d+)</b><span>BUY NOW", h2).group(1))
 check("2 · le compteur annoncé == le nombre de cartes ACHETER", declared, seg2.count("class=card"))
 check("2 · la phrase de synthèse annonce le même nombre",
-      f"{declared} opportunité" in h2 or (declared == 0 and "Aucun achat recommandé" in h2))
+      f"{declared} achat(s) adossé(s)" in h2 or (declared == 0 and "Aucun achat recommandé" in h2))
 
 # 3 — anti-circularité dans Surveiller
 self_src = entry("PANINI_2023-24_OPTIC_HANGER", 90.0, kind="ask", shop="superior")

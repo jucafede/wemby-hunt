@@ -103,10 +103,14 @@ def wemby_score(sku: dict, tier: str, ratio: float | None, seller_trust: str | N
     """
     why, score = [], 0
     present = sku.get("wemby_present")
-    if present is False:
-        return 5, [f"aucun Wembanyama ({sku.get('league') or 'NBA'}) — hors chasse"]
-    if present is None:
-        why.append("présence de Wembanyama NON VÉRIFIÉE — plafond à 45")
+    # LA PRÉSENCE SE VÉRIFIE, ELLE NE SE PRÉSUME PAS.
+    # Un score d'intérêt Wemby sur un produit dont on n'a jamais vérifié qu'il contient une
+    # carte de lui est une opinion déguisée en mesure. « Non vérifié » et « absent » méritent
+    # la même note — zéro — parce qu'aucun des deux n'est une raison d'acheter.
+    if present is not True:
+        motif = ("aucun Wembanyama dans ce produit" if present is False
+                 else "présence de Wembanyama JAMAIS VÉRIFIÉE")
+        return 0, [f"{motif} ({sku.get('league') or 'NBA'}) — aucun intérêt Wemby attribué"]
 
     # 1. la remise, seule composante qui peut valoir beaucoup, et seulement si elle est prouvée
     if ratio is not None:

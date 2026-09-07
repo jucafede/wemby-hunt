@@ -5,7 +5,7 @@
 # écrites, jamais exécutées avant un commit. Une suite absente de ce script ne protège rien.
 set -uo pipefail
 fail=0
-for t in tests_matching tests_robustness tests_badges tests_ui tests_history tests_health tests_thresholds tests_cockpit tests_fr tests_market tests_inventory tests_html tests_alerts tests_sold tests_autonomy; do
+for t in tests_matching tests_robustness tests_badges tests_ui tests_history tests_health tests_thresholds tests_cockpit tests_fr tests_market tests_inventory tests_html tests_alerts tests_sold tests_autonomy tests_guardrails; do
   out=$(./.venv/bin/python "$t.py" 2>&1 | grep -v "NotOpenSSL\|warnings.warn" | tail -1)
   code=${PIPESTATUS[0]}
   printf "%-20s %s\n" "$t" "$out"

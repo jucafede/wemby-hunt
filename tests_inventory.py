@@ -72,8 +72,11 @@ def entry(sid, price, avail=True):
             "sku": next(x for x in CAT["skus"] if x["id"] == sid),
             "triggers": [], "descriptors": [], "gap": None, "ref": None, "kind": None,
             "mem": None, "comp": "EXACT", "hist": None, "region": "US", "currency": "USD",
-            "pv": {"verdict": "ASK DEAL", "basis": "ask", "gap": -30.0, "ref": 50.0,
-                   "confidence": "HIGH", "why": "4 vendeurs"}}
+            # verdict adossé aux VENTES : depuis le 07/09, lui seul ouvre BUY NOW. Ce test
+            # porte sur l'inventaire, pas sur le niveau de preuve — il doit vérifier qu'une
+            # ligne possédée reste éligible, sans dépendre d'un palier ask qui n'existe plus.
+            "pv": {"verdict": "BUY", "basis": "sold", "gap": -30.0, "ref": 50.0,
+                   "confidence": "HIGH", "why": "7 ventes réalisées"}}
 
 e = entry("PANINI_2023-24_PHOENIX_BLASTER", 35.0)
 op_own = hunt.opportunity(e, "buy", CAT, None, owned)

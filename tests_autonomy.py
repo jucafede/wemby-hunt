@@ -85,6 +85,24 @@ check("un marchand ordinaire est du web", xe.layer_of("https://kutogo.com/produc
 check("le texte d'une page de place de marché ne prouve aucun stock",
       xe.probe.__doc__ is not None and "place de marché" in open("external_engine.py").read())
 
+# ------------------------------------------------ robots.txt : un refus est une réponse
+# On ne teste pas le réseau, on teste la DÉCISION prise à partir d'un robots.txt donné.
+import urllib.robotparser
+def _robots(txt, url):
+    rp = urllib.robotparser.RobotFileParser()
+    rp.parse(txt.splitlines())
+    xe._robots["https://exemple.test"] = rp
+    return xe.robots_ok(url)
+check("un site qui interdit tout n'est pas lu",
+      _robots("User-agent: *\nDisallow: /", "https://exemple.test/products/x"), False)
+check("un site qui n'interdit rien est lu",
+      _robots("User-agent: *\nDisallow:", "https://exemple.test/products/x"), True)
+check("une interdiction ciblée est respectée",
+      _robots("User-agent: *\nDisallow: /admin/", "https://exemple.test/admin/x"), False)
+check("et ne déborde pas sur le reste du site",
+      _robots("User-agent: *\nDisallow: /admin/", "https://exemple.test/products/x"), True)
+xe._robots.pop("https://exemple.test", None)
+
 # ------------------------------------------------ extraction de liens de moteur
 check("un emballage DuckDuckGo est déplié",
       xe._unwrap("https://duckduckgo.com/l/?uddg=https%3A%2F%2Fx.com%2Fp%2F1"),

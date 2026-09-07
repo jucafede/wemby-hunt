@@ -152,6 +152,33 @@ def fetch(url: str, timeout: int = 12):
         return None, "", e.__class__.__name__
 
 
+# ---------------------------------------------------------------- robots.txt
+# Ce projet ne lit pas ce qu'un site lui interdit de lire. Blowout nomme ClaudeBot avec
+# `Disallow: /` et n'est donc pas crawlé, alors même que son catalogue nous intéresserait.
+# La règle vaut pour la découverte comme pour le crawl : sonder une fiche produit reste une
+# lecture automatisée. Un refus n'est pas un obstacle à contourner, c'est une réponse.
+_robots: dict = {}
+
+
+def robots_ok(url: str) -> bool:
+    import urllib.robotparser
+    parts = urllib.parse.urlsplit(url)
+    origine = f"{parts.scheme}://{parts.netloc}"
+    if origine not in _robots:
+        rp = urllib.robotparser.RobotFileParser()
+        rp.set_url(origine + "/robots.txt")
+        try:
+            rp.read()
+        except Exception:
+            # robots.txt illisible : on ne présume pas d'une interdiction qui n'est pas écrite
+            rp = None
+        _robots[origine] = rp
+    rp = _robots[origine]
+    if rp is None:
+        return True
+    return rp.can_fetch(UA, url) or rp.can_fetch("*", url)
+
+
 CHALLENGE = re.compile(r"just a moment|cf-browser-verification|captcha|are you a human|"
                        r"robot or human|enable javascript and cookies|access denied|"
                        r"unusual traffic|verify you are a human", re.I)
@@ -223,6 +250,8 @@ def read_offer(body: str):
 
 def probe(url: str):
     """Sonde une annonce. Rend (statut_brut, prix, devise, titre, motif)."""
+    if not robots_ok(url):
+        return AMBIGUOUS, None, None, None, "robots.txt interdit la lecture"
     st, body, why = fetch(url)
     if st in (404, 410):
         return LOST, None, None, None, why
@@ -465,6 +494,8 @@ def read_catalog(base: str, budget_s: float = SWEEP_BUDGET_S):
     """
     import requests
     import hunt
+    if not robots_ok(base + "/products.json"):
+        return [], "robots.txt"
     s = requests.Session()
     s.headers["User-Agent"] = UA
     fin = time.monotonic() + budget_s

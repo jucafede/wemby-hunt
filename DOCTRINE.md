@@ -38,3 +38,41 @@ V1.1 : premier crawl réel → corriger la section REVIEW → accumuler l'histor
 V2   : `personal / market / business` dans catalog.yaml, deux vues (🎯 Wemby | 💎 Radar), bannière "🚨 N deals aujourd'hui",
        collecteur html (DACW, Steel City, Blowout, Chicagoland), eBay Browse API, alertes Telegram.
 On ne touche à rien avant le premier crawl réel.
+
+## Autonomie du noyau Prizm (07/09/2026)
+
+Trois fichiers étaient tenus à la main : les annonces externes, les ventes réalisées, et le
+balayage Prizm qui recrawlait ce que le moteur venait de lire. Un tableau de bord dont les
+données dépendent d'une intervention humaine n'est pas un outil, c'est un rapport.
+
+**Une boutique se lit une fois.** `hunt.py` interroge Shopify ET WooCommerce sur chaque source
+et dépose tout dans `products_raw` ; `prizm_core.py` y puise. La preuve n'est pas une relecture
+de code — `tests_autonomy` coupe les sockets avant de l'appeler. Et le balayage de découverte
+relit `sources.yaml` à chaque passage pour écarter les domaines déjà crawlés : sans ce filtre,
+une ligne ajoutée aux sources suffisait à faire lire un marchand deux fois.
+
+**Chercher et revérifier sont deux étapes.** Revalider les URL connues répond à « celle-ci
+tient-elle ? ». Découvrir répond à « qu'avons-nous raté ? ». Un moteur qui ne fait que la
+première ne trouvera jamais la treizième annonce.
+
+**Six états, dont STALE.** Une annonce non vérifiée depuis plus de 24 h reste affichée, datée,
+mais ne compte pas comme disponible, ne peut pas porter le meilleur prix et ne déclenche aucun
+achat. La règle vaut pour TOUTES les couches, y compris les sources enregistrées : la couche la
+mieux instrumentée ne doit pas être la seule autorisée à mentir sur sa fraîcheur.
+
+**Ce qu'on ne peut pas lire, on ne le prétend pas.** eBay, StockX, SportsCardsPro et 130point
+répondent 403 à toute lecture automatisée. On ne contourne pas une protection anti-robot, et
+robots.txt est respecté même quand le catalogue nous intéresse (Blowout nomme ClaudeBot avec
+`Disallow: /`). Conséquence assumée : les lignes de ces sites sont structurellement STALE.
+
+**La découverte ne repose pas sur un seul canal.** Aucun moteur de recherche généraliste ne
+nous est acquis — Brave bloque l'IP à la deuxième requête, Bing lit le tiret de « 2023-24 »
+comme un opérateur d'exclusion. Un second canal balaie par rotation le catalogue des marchands
+connus mais non enregistrés, par API publique, où la disponibilité est une donnée structurée.
+Chaque interrogation est journalisée avec son issue : un « 0 trouvé » ne doit jamais pouvoir se
+confondre avec un « 0 cherché ».
+
+**Les ventes sont des transactions.** `sold_ledger.json` conserve chaque vente — date, prix,
+source, URL. `sold_prizm.json` en est la sortie calculée à chaque passage. `LAST_SALE` n'est
+jamais une médiane : c'est un point, souvent le plus bruyant de la série. Un relevé agrégé
+qu'on ne peut pas décomposer se cite comme tel et ne se déplie pas en fausses transactions.

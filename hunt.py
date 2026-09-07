@@ -10,7 +10,7 @@ Usage:
   python hunt.py --dry-run       # normalise des titres de test (sans réseau)
 """
 from __future__ import annotations
-import argparse, csv, json, re, sqlite3, sys, time
+import argparse, csv, html, json, re, sqlite3, sys, time
 from dataclasses import dataclass, asdict
 from datetime import datetime, timezone
 from pathlib import Path
@@ -406,6 +406,13 @@ def db() -> sqlite3.Connection:
     for col in ("duration_s REAL", "reason TEXT"):
         if col.split()[0] not in cr:
             c.execute(f"ALTER TABLE crawl_runs ADD COLUMN {col}")
+    # products_raw gagne ce que la lecture WooCommerce apporte en plus : le code produit du
+    # vendeur (un UPC suffit à qualifier une fiche mal titrée), le libellé de disponibilité
+    # (vide = boutique qui ne gère pas ses quantités) et la plateforme réellement lue.
+    pr_cols = [r[1] for r in c.execute("PRAGMA table_info(products_raw)")]
+    for col in ("vendor_sku TEXT", "stock_text TEXT", "platform TEXT"):
+        if col.split()[0] not in pr_cols:
+            c.execute(f"ALTER TABLE products_raw ADD COLUMN {col}")
     cols = [r[1] for r in c.execute("PRAGMA table_info(observations)")]
     for col in ("matcher_version TEXT", "image_url TEXT", "comp_type TEXT",
                 "quantity INTEGER", "unit_price REAL", "exact_comp_key TEXT", "sealed INTEGER",
@@ -443,6 +450,11 @@ def fetch_json(session, url, params, label, deadline=None):
             if r.status_code == 200:
                 return r.json(), True
             last = f"HTTP {r.status_code}"
+            # 404/410 : la boutique répond, cette route n'existe pas. Ce n'est pas une panne
+            # passagère, c'est une réponse — la réessayer trois fois avec backoff coûte vingt
+            # secondes par plateforme absente et ne changera jamais rien.
+            if r.status_code in (404, 410):
+                return None, False
         except Exception as e:
             last = e.__class__.__name__
         if i < RETRIES - 1:
@@ -514,6 +526,49 @@ def shopify_products(base: str, session: requests.Session, deadline=None) -> tup
             if len(items) < 250: break
             page += 1
         if out: break
+    return out, partial
+
+
+def woocommerce_products(base: str, session: requests.Session, deadline=None) -> tuple[list[dict], bool]:
+    """L'API Store de WooCommerce, normalisée dans la forme d'un produit Shopify.
+
+    Elle est publique par défaut et rend du JSON structuré : aucune raison de scraper du HTML.
+    Ce collecteur existe parce que Kutogo, boutique WooCommerce, était lisible par le module
+    Prizm mais invisible pour le moteur général — deux crawls, deux vérités. Une boutique se
+    lit UNE fois, et par le même chemin pour tout le monde.
+
+    Le champ `stock_availability` est conservé tel quel : vide, il signale une boutique qui ne
+    gère pas ses quantités, et son « en stock » ne vaut alors pas confirmation.
+    """
+    out, partial, page = [], False, 1
+    while True:
+        data, ok = fetch_json(session, f"{base}/wp-json/wc/store/v1/products",
+                              {"per_page": 100, "page": page}, f"wc/store page {page}", deadline)
+        if not ok:
+            partial = bool(out)
+            break
+        if not isinstance(data, list) or not data:
+            break
+        for x in data:
+            pr = x.get("prices") or {}
+            minor = int(pr.get("currency_minor_unit", 2) or 2)
+            price = float(pr.get("price") or 0) / (10 ** minor)
+            imgs = x.get("images") or []
+            out.append({
+                "title": html.unescape(x.get("name", "")),
+                "handle": x.get("slug", "") or str(x.get("id", "")),
+                "url": x.get("permalink", ""),
+                "vendor": None,
+                "product_type": ", ".join(c.get("name", "") for c in (x.get("categories") or [])) or None,
+                "images": [{"src": (imgs[0] or {}).get("src")}] if imgs else [],
+                "vendor_sku": x.get("sku") or None,
+                "stock_text": ((x.get("stock_availability") or {}).get("text") or ""),
+                "variants": [{"title": "", "price": price, "compare_at_price": None,
+                              "available": bool(x.get("is_in_stock"))}],
+            })
+        if len(data) < 100:
+            break
+        page += 1
     return out, partial
 
 # ---------------------------------------------------------------- blocklist
@@ -603,9 +658,15 @@ def collect_html(shop, ad, skus, conn, seen_at):
         price = rec["price"] or 0.0
         available = 1 if rec["available"] else 0
         m = match_title(full, skus)
-        conn.execute("INSERT OR REPLACE INTO products_raw VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+        # colonnes nommées : un INSERT positionnel se casse en silence à la première colonne
+        # ajoutée, et c'est l'insertion qui tombe, pas la lecture — donc un shop entier disparaît
+        conn.execute(
+            "INSERT OR REPLACE INTO products_raw (shop,handle,title,variant_title,vendor,product_type,"
+            "price,compare_at,available,url,season,fmt,sport,config,sku_id,match_score,candidates,"
+            "seen_at,vendor_sku,stock_text,platform) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
             (shop["key"], u.rstrip("/").split("/")[-1], full, "", None, None, price, None, available, u,
-             m.season, m.fmt, m.sport, m.config, m.sku_id, m.score, json.dumps(m.candidates), seen_at))
+             m.season, m.fmt, m.sport, m.config, m.sku_id, m.score, json.dumps(m.candidates), seen_at,
+             None, None, "html"))
         n_raw += 1
         if m.sku_id:
             sku_obj = next((x for x in skus if x["id"] == m.sku_id), {})
@@ -656,11 +717,28 @@ def collect_shop(shop: dict, skus: list[dict], conn: sqlite3.Connection, seen_at
     t0 = time.monotonic()
     deadline = t0 + HARD_TIMEOUT_S
     reason = None
+    base = shop["base_url"]
+    plat = shop.get("platform")
     try:
-        if shop.get("paginate") == "collections":
-            prods, partial = shopify_by_collections(shop["base_url"], s, shop.get("collections_match"), deadline)
+        # Une boutique n'est PAS définie par la première plateforme qui répond. Le 06/09, un 404
+        # sur /products.json a fait conclure « illisible » pour une boutique WooCommerce dont
+        # l'API Store répondait — 25 boîtes Prizm invisibles. On essaie les deux, toujours.
+        if plat == "woocommerce":
+            prods, partial = woocommerce_products(base, s, deadline)
+            used = "woocommerce"
+        elif shop.get("paginate") == "collections":
+            prods, partial = shopify_by_collections(base, s, shop.get("collections_match"), deadline)
+            used = "shopify"
         else:
-            prods, partial = shopify_products(shop["base_url"], s, deadline)
+            prods, partial = shopify_products(base, s, deadline)
+            used = "shopify"
+        if not prods:
+            if used == "shopify":
+                alt, alt_partial = woocommerce_products(base, s, deadline)
+                if alt: prods, partial, used = alt, alt_partial, "woocommerce"
+            else:
+                alt, alt_partial = shopify_products(base, s, deadline)
+                if alt: prods, partial, used = alt, alt_partial, "shopify"
     except ShopTimeout as e:
         # budget épuisé : ce shop s'arrête, le run global continue. Tout ce qui a été collecté
         # avant l'interruption est PARTIAL et ne deviendra jamais un passage de référence.
@@ -680,7 +758,8 @@ def collect_shop(shop: dict, skus: list[dict], conn: sqlite3.Connection, seen_at
         title = p.get("title", ""); handle = p.get("handle", "")
         variants = p.get("variants") or []
         if not variants: continue
-        url = f"{shop['base_url']}/products/{handle}"
+        # WooCommerce donne un permalien complet ; Shopify se reconstruit depuis le handle.
+        url = p.get("url") or f"{shop['base_url']}/products/{handle}"
         imgs = p.get("images") or []
         image_url = (imgs[0].get("src") if imgs else None)
         # Une ligne PAR VARIANTE : on matche titre + variant_title (garde-fou Blaster/Mega dans les variantes)
@@ -691,9 +770,13 @@ def collect_shop(shop: dict, skus: list[dict], conn: sqlite3.Connection, seen_at
             price = float(v.get("price") or 0); cmp_at = float(v.get("compare_at_price") or 0) or None
             available = 1 if v.get("available") else 0
             m = match_title(full, skus)
-            conn.execute("INSERT OR REPLACE INTO products_raw VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+            conn.execute(
+                "INSERT OR REPLACE INTO products_raw (shop,handle,title,variant_title,vendor,product_type,"
+                "price,compare_at,available,url,season,fmt,sport,config,sku_id,match_score,candidates,"
+                "seen_at,vendor_sku,stock_text,platform) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
                 (shop["key"], handle, full, vt_clean, p.get("vendor"), p.get("product_type"), price, cmp_at, available, url,
-                 m.season, m.fmt, m.sport, m.config, m.sku_id, m.score, json.dumps(m.candidates), seen_at))
+                 m.season, m.fmt, m.sport, m.config, m.sku_id, m.score, json.dumps(m.candidates), seen_at,
+                 p.get("vendor_sku"), p.get("stock_text"), used))
             n_raw += 1
             if m.sku_id:
                 sku_obj = next((x for x in skus if x["id"] == m.sku_id), {})
@@ -713,6 +796,8 @@ def collect_shop(shop: dict, skus: list[dict], conn: sqlite3.Connection, seen_at
         reason = "SLOW_CRAWL"
         print(f"  [{shop['key']}] ⚠️ SLOW_CRAWL : {dur/60:.1f} min (> {SLOW_CRAWL_S//60} min)")
     if partial and not reason: reason = "PAGINATION_INCOMPLETE"
+    if used != (plat or "shopify"):
+        print(f"  [{shop['key']}] plateforme lue : {used} (déclarée : {plat or 'shopify'})")
     conn.execute("INSERT OR REPLACE INTO crawl_runs VALUES (?,?,?,?,?,?)",
                  (shop["key"], seen_at, 1 if partial else 0, n_raw, dur, reason))
     conn.commit()
@@ -2125,31 +2210,51 @@ def write_html(cat, blocks, restocks, review, seen_at, trust=None, hot=None, ent
                              ("prizm_core.json", "external_prizm.json", "sold_prizm.json"))
     layers, rows_all = [], []
     sk_by = {x["id"]: x for x in cat["skus"]}
+    import external_engine as xe
+    now_dt = datetime.now(timezone.utc)
+
+    def _statut_crawler(r):
+        """Une fiche de boutique enregistrée, traduite dans le vocabulaire d'états commun.
+
+        La règle des 24 h vaut pour TOUTES les couches, pas seulement pour le web : une fiche
+        lue il y a trois semaines chez un marchand dont le crawl a échoué depuis n'est pas
+        « en stock », elle est vieille. Sans cette traduction, la couche la mieux instrumentée
+        serait aussi la seule autorisée à mentir sur sa fraîcheur.
+        """
+        age = xe._age_h(r.get("seen_at"), now_dt)
+        if age is not None and age > xe.STALE_H:
+            return xe.STALE
+        if not r.get("available"):
+            return xe.OOS
+        return {"CONFIRMED_IN_STOCK": xe.CONFIRMED_LIVE,
+                "PROBABLY_IN_STOCK": xe.PROBABLE_LIVE}.get(r.get("stock_confidence"), xe.AMBIGUOUS)
+
     if core_p.exists():
         pc = json.loads(core_p.read_text(encoding="utf-8"))
         cr = [r for r in pc.get("listings", []) if r.get("sku_id")
               and re.match(r"PANINI_2023-24_PRIZM_(?!EUROLEAGUE|DRAFT|MONOPOLY)", r["sku_id"])]
         for r in cr:
             rows_all.append({**r, "layer": "crawler",
+                             "stock_status": _statut_crawler(r),
                              "format": (sk_by.get(r["sku_id"]) or {}).get("format") or "?"})
         layers.append(("REGISTERED SOURCES", "prizm_core.json", len(cr),
                        pc.get("generated_at", "?")[:16].replace("T", " "), True))
     if ext_p.exists():
         ex = json.loads(ext_p.read_text(encoding="utf-8"))
         for r in ex.get("listings", []):
-            rows_all.append({**r, "shop": r["seller"]})
-        layers.append(("EXTERNAL WEB", "external_prizm.json",
-                       sum(1 for r in ex["listings"] if r["layer"] == "web"),
-                       ex.get("generated_at", "?")[:16].replace("T", " "), True))
-        layers.append(("MARKETPLACE", "external_prizm.json",
-                       sum(1 for r in ex["listings"] if r["layer"] == "marketplace"),
-                       ex.get("generated_at", "?")[:16].replace("T", " "), True))
+            rows_all.append({**r, "shop": r.get("seller"),
+                             "layer": r.get("layer") or xe.layer_of(r.get("url", ""))})
+        for nom, lay in (("EXTERNAL WEB", "web"), ("MARKETPLACE", "marketplace")):
+            layers.append((nom, "external_prizm.json",
+                           sum(1 for r in ex["listings"]
+                               if (r.get("layer") or xe.layer_of(r.get("url", ""))) == lay),
+                           ex.get("generated_at", "?")[:16].replace("T", " "), True))
     sold = {}
     if sold_p.exists():
         sj = json.loads(sold_p.read_text(encoding="utf-8"))
         sold = sj.get("records", {})
         layers.append(("SOLD", "sold_prizm.json", len(sold),
-                       str(sj.get("generated_at", "?"))[:16], True))
+                       str(sj.get("generated_at", "?"))[:16].replace("T", " "), True))
 
     h.append("<div class=wrap><table><tr><th>Couche</th><th>Fichier</th><th>Listings</th>"
              "<th>Dernière exécution</th><th>Consommée ici</th></tr>")
@@ -2165,29 +2270,53 @@ def write_html(cat, blocks, restocks, review, seen_at, trust=None, hot=None, ent
     for f in ("Hobby", "FOTL", "Choice", "Fast Break", "International", "Mega",
               "Blaster", "Retail Box", "Hanger", "Pack", "Hobby Blaster", "Premium Factory Set"):
         by_fmt.setdefault(f, [])
-    h.append("<p class=small>Un « 0 live » ci-dessous est le résultat des TROIS couches d'offre "
-             "réunies — sources enregistrées, recherche web et places de marché. Les lignes web "
-             "et marketplace ne sont pas revérifiées à chaque passage : leur stock est daté, "
-             "jamais confirmé.</p>")
+    h.append("<p class=small>« Live » réunit les TROIS couches d'offre — sources enregistrées, "
+             "recherche web et places de marché — et ne compte que ce qui a été VÉRIFIÉ depuis "
+             "moins de 24 h. Une annonce plus ancienne, ou qu'un site refuse de nous laisser "
+             "relire, passe STALE : elle reste affichée, elle ne compte pas comme disponible et "
+             "ne peut pas porter le meilleur prix. eBay et StockX bloquent toute relecture "
+             "automatisée : leurs lignes sont donc structurellement STALE ici.</p>")
     h.append("<div class=wrap><table><tr><th>Format</th><th>Connus</th><th>Live</th><th>OOS</th>"
-             "<th>Meilleur live</th><th>Vendeur</th><th>Provenance</th><th>Stock</th>"
-             "<th>SOLD</th></tr>")
-    for f in sorted(by_fmt, key=lambda k: (-len([r for r in by_fmt[k] if r.get("available")]),
-                                           -len(by_fmt[k]), k)):
+             "<th>STALE</th><th>Meilleur live</th><th>Vendeur</th><th>Provenance</th>"
+             "<th>Stock</th><th>SOLD</th></tr>")
+
+    def _live(rows):
+        return [r for r in rows if xe.counts_as_live(r.get("stock_status") or "")]
+
+    for f in sorted(by_fmt, key=lambda k: (-len(_live(by_fmt[k])), -len(by_fmt[k]), k)):
         rows = by_fmt[f]
-        ins = [r for r in rows if r.get("available") and (r.get("price") or 0) > 0]
-        best = min(ins, key=lambda r: r["price"]) if ins else None
-        prov = "+".join(sorted({r["layer"] for r in rows})) or "—"
-        conf = {"CONFIRMED_IN_STOCK": "✅ confirmé", "PROBABLY_IN_STOCK": "⚠️ probable",
-                "OOS": "—", "AMBIGUOUS": "❓ ambigu"}.get((best or {}).get("stock_confidence"), "—")
+        vivants = _live(rows)
+        # Le meilleur prix ne se prend QUE parmi les lignes vérifiées — c'est le garde-fou qui
+        # empêche un relevé de mardi de servir de meilleure offre le jeudi — et il se compare
+        # À L'UNITÉ. Un case de douze boîtes affiche un total qui n'a rien à voir avec le prix
+        # d'une boîte ; les classer ensemble sur le total ment dans les deux sens.
+        def _unit(r):
+            return r.get("unit_price") or r.get("price")
+        elig = [r for r in vivants if xe.can_be_best_live(r.get("stock_status") or "")
+                and (_unit(r) or 0) > 0]
+        best = min(elig, key=_unit) if elig else None
+        prov = "+".join(sorted({r.get("layer") or "?" for r in rows})) or "—"
+        conf = {xe.CONFIRMED_LIVE: "✅ confirmé", xe.PROBABLE_LIVE: "⚠️ probable",
+                xe.OOS: "—", xe.STALE: "🕓 périmé", xe.LOST: "✖ disparu",
+                xe.AMBIGUOUS: "❓ ambigu"}.get((best or {}).get("stock_status"), "—")
         sd = sold.get(f) or {}
-        sv = sd.get("MEDIAN_90D") or sd.get("AVG_90D") or sd.get("LAST_SALE")
-        stxt = (f"{sv:.0f} $ · n={sd.get('N_90D') or '?'} · {sd.get('CONFIDENCE','')}"
-                if sv else "—")
+        # MEDIAN d'abord, AVG ensuite. LAST_SALE n'est PAS une référence : c'est un point,
+        # souvent le plus bruyant de la série. Il ne s'affiche qu'en dernier recours et dit
+        # alors ce qu'il est.
+        sv, base_sold = sd.get("MEDIAN_90D"), "médiane 90 j"
+        if sv is None:
+            sv, base_sold = sd.get("AVG_90D"), "moyenne 90 j"
+        if sv is None:
+            sv, base_sold = sd.get("LAST_SALE"), "dernière vente"
+        stxt = (f"{sv:.0f} $ · {base_sold} · n={sd.get('N_90D') if sd.get('N_90D') is not None else '?'}"
+                f" · {sd.get('SOLD_CONFIDENCE') or sd.get('CONFIDENCE', '')}" if sv else "—")
+        nliv = len(vivants)
         h.append(f"<tr><td>{f}</td><td>{len(rows)}</td>"
-                 f"<td>{'<span class=go>' + str(len([r for r in rows if r.get('available')])) + '</span>' if any(r.get('available') for r in rows) else '0'}</td>"
-                 f"<td>{sum(1 for r in rows if r.get('available') is False)}</td>"
-                 f"<td>{money_or(best['price']) if best else '—'}</td>"
+                 f"<td>{'<span class=go>' + str(nliv) + '</span>' if nliv else '0'}</td>"
+                 f"<td>{sum(1 for r in rows if (r.get('stock_status') or '') == xe.OOS)}</td>"
+                 f"<td>{sum(1 for r in rows if (r.get('stock_status') or '') == xe.STALE)}</td>"
+                 f"<td>{money_or(_unit(best)) if best else '—'}"
+                 f"{(' <span class=small>×' + str(best['quantity']) + ' boîtes</span>') if best and (best.get('quantity') or 1) > 1 else ''}</td>"
                  f"<td>{(best or {}).get('shop') or '—'}</td>"
                  f"<td><span class=small>{prov}</span></td><td>{conf}</td>"
                  f"<td><span class=small>{stxt}</span></td></tr>")

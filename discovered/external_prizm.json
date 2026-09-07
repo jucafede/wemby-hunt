@@ -1,167 +1,1373 @@
 {
-  "generated_at": "2026-09-06T20:00:00+00:00",
-  "method": "recherche web ciblée par format + marketplaces, relevés navigateur",
-  "note": "Aucune de ces lignes n'est crawlable par nos sources enregistrées. Les prix sont ceux affichés au relevé ; le stock n'est PAS revérifié à chaque passage, d'où une confiance de stock plafonnée à PROBABLY_IN_STOCK.",
+  "generated_at": "2026-09-07T09:44:43+00:00",
+  "method": "automatique · KNOWN URL REFRESH, puis NEW LISTING DISCOVERY par recherche web ET par balayage des catalogues candidats",
+  "stale_after_hours": 24,
+  "note": "Une annonce non VÉRIFIÉE depuis plus de 24 h passe STALE : visible, datée, mais ni live, ni meilleur prix, ni déclencheur d'achat. eBay, StockX et les sites de cotation refusent toute lecture automatisée (403) — leurs annonces ne peuvent donc pas être confirmées ici, et ne le prétendent pas.",
+  "states": {
+    "CONFIRMED_LIVE": 1,
+    "PROBABLE_LIVE": 0,
+    "OOS": 11,
+    "STALE": 12,
+    "LOST": 0,
+    "AMBIGUOUS": 0
+  },
+  "run": {
+    "known_urls_checked": 13,
+    "unreadable": 12,
+    "web_searches": 23,
+    "marketplace_searches": 0,
+    "domains_swept": 21,
+    "domains_reachable": 8,
+    "catalog_items_read": 21034,
+    "new_domains": [],
+    "new_listings": 11,
+    "new_by_search": 0,
+    "new_by_sweep": 11,
+    "price_changes": [],
+    "live_to_oos": [],
+    "oos_to_live": [],
+    "became_stale": [
+      {
+        "url": "https://stockx.com/2023-24-panini-prizm-basketball-1st-off-the-line-hobby-box",
+        "format": "FOTL"
+      },
+      {
+        "url": "https://www.ebay.com/p/3066131729",
+        "format": "Mega"
+      },
+      {
+        "url": "https://www.ebay.com/itm/236057571659",
+        "format": "Mega"
+      },
+      {
+        "url": "https://stockx.com/2023-24-panini-prizm-basketball-mega-box-pink-prizms",
+        "format": "Mega"
+      },
+      {
+        "url": "https://www.ebay.com/sch/i.html?_nkw=2023-24+panini+prizm+basketball+blaster+box",
+        "format": "Blaster"
+      },
+      {
+        "url": "https://stockx.com/2023-24-panini-prizm-basketball-blaster-box",
+        "format": "Blaster"
+      },
+      {
+        "url": "https://www.ebay.com/sch/i.html?_nkw=2023-24+panini+prizm+basketball+retail+box",
+        "format": "Retail Box"
+      },
+      {
+        "url": "https://stockx.com/2023-24-panini-prizm-basketball-choice-box",
+        "format": "Choice"
+      },
+      {
+        "url": "https://stockx.com/2023-24-panini-prizm-basketball-hobby-box",
+        "format": "Hobby"
+      },
+      {
+        "url": "https://www.dacardworld.com/sports-cards/2023-24-panini-prizm-basketball-premium-factory-set-box",
+        "format": "Premium Factory Set"
+      },
+      {
+        "url": "https://www.walmart.com/ip/2023-24-Panini-Prizm-Basketball-Mega-Box-Trading-Cards/5166665988",
+        "format": "Mega"
+      },
+      {
+        "url": "https://www.amazon.com/2023-24-Panini-Prizm-Basketball-Mega/dp/B0CY5NX4FM",
+        "format": "Mega"
+      }
+    ],
+    "lost": [],
+    "urls_seen": 196,
+    "urls_probed": 0,
+    "rejected": 0,
+    "engine_attempts": [
+      {
+        "query": "2023-24 Panini Prizm Basketball Hobby Box buy",
+        "format": "Hobby",
+        "attempts": [
+          {
+            "engine": "brave-api",
+            "outcome": "SANS_CLÉ",
+            "why": "BRAVE_API_KEY absent",
+            "n": 0
+          },
+          {
+            "engine": "brave",
+            "outcome": "BLOQUÉ",
+            "why": "HTTP 429",
+            "n": 0
+          },
+          {
+            "engine": "mojeek",
+            "outcome": "BLOQUÉ",
+            "why": "défi anti-robot",
+            "n": 0
+          },
+          {
+            "engine": "duckduckgo",
+            "outcome": "BLOQUÉ",
+            "why": "défi anti-robot",
+            "n": 0
+          },
+          {
+            "engine": "bing",
+            "outcome": "OK",
+            "n": 8
+          }
+        ]
+      },
+      {
+        "query": "2023/24 Panini Prizm Hobby basketball box in stock",
+        "format": "Hobby",
+        "attempts": [
+          {
+            "engine": "brave-api",
+            "outcome": "SANS_CLÉ",
+            "why": "BRAVE_API_KEY absent",
+            "n": 0
+          },
+          {
+            "engine": "brave",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "mojeek",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "duckduckgo",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "bing",
+            "outcome": "OK",
+            "n": 8
+          }
+        ]
+      },
+      {
+        "query": "\"746134150678\" Panini Prizm Hobby",
+        "format": "Hobby",
+        "attempts": [
+          {
+            "engine": "brave-api",
+            "outcome": "SANS_CLÉ",
+            "why": "BRAVE_API_KEY absent",
+            "n": 0
+          },
+          {
+            "engine": "brave",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "mojeek",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "duckduckgo",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "bing",
+            "outcome": "OK",
+            "n": 11
+          }
+        ]
+      },
+      {
+        "query": "2023-24 Panini Prizm Basketball Fast Break Box buy",
+        "format": "Fast Break",
+        "attempts": [
+          {
+            "engine": "brave-api",
+            "outcome": "SANS_CLÉ",
+            "why": "BRAVE_API_KEY absent",
+            "n": 0
+          },
+          {
+            "engine": "brave",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "mojeek",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "duckduckgo",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "bing",
+            "outcome": "OK",
+            "n": 8
+          }
+        ]
+      },
+      {
+        "query": "2023/24 Panini Prizm Fast Break basketball box in stock",
+        "format": "Fast Break",
+        "attempts": [
+          {
+            "engine": "brave-api",
+            "outcome": "SANS_CLÉ",
+            "why": "BRAVE_API_KEY absent",
+            "n": 0
+          },
+          {
+            "engine": "brave",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "mojeek",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "duckduckgo",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "bing",
+            "outcome": "OK",
+            "n": 8
+          }
+        ]
+      },
+      {
+        "query": "\"746134150753\" Panini Prizm Fast Break",
+        "format": "Fast Break",
+        "attempts": [
+          {
+            "engine": "brave-api",
+            "outcome": "SANS_CLÉ",
+            "why": "BRAVE_API_KEY absent",
+            "n": 0
+          },
+          {
+            "engine": "brave",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "mojeek",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "duckduckgo",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "bing",
+            "outcome": "OK",
+            "n": 12
+          }
+        ]
+      },
+      {
+        "query": "2023-24 Panini Prizm Basketball Choice Box buy",
+        "format": "Choice",
+        "attempts": [
+          {
+            "engine": "brave-api",
+            "outcome": "SANS_CLÉ",
+            "why": "BRAVE_API_KEY absent",
+            "n": 0
+          },
+          {
+            "engine": "brave",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "mojeek",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "duckduckgo",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "bing",
+            "outcome": "OK",
+            "n": 8
+          }
+        ]
+      },
+      {
+        "query": "2023/24 Panini Prizm Choice basketball box in stock",
+        "format": "Choice",
+        "attempts": [
+          {
+            "engine": "brave-api",
+            "outcome": "SANS_CLÉ",
+            "why": "BRAVE_API_KEY absent",
+            "n": 0
+          },
+          {
+            "engine": "brave",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "mojeek",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "duckduckgo",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "bing",
+            "outcome": "OK",
+            "n": 8
+          }
+        ]
+      },
+      {
+        "query": "2023-24 Panini Prizm Basketball Mega Box buy",
+        "format": "Mega",
+        "attempts": [
+          {
+            "engine": "brave-api",
+            "outcome": "SANS_CLÉ",
+            "why": "BRAVE_API_KEY absent",
+            "n": 0
+          },
+          {
+            "engine": "brave",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "mojeek",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "duckduckgo",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "bing",
+            "outcome": "OK",
+            "n": 8
+          }
+        ]
+      },
+      {
+        "query": "2023/24 Panini Prizm Mega basketball box in stock",
+        "format": "Mega",
+        "attempts": [
+          {
+            "engine": "brave-api",
+            "outcome": "SANS_CLÉ",
+            "why": "BRAVE_API_KEY absent",
+            "n": 0
+          },
+          {
+            "engine": "brave",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "mojeek",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "duckduckgo",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "bing",
+            "outcome": "OK",
+            "n": 8
+          }
+        ]
+      },
+      {
+        "query": "2023-24 Panini Prizm Basketball International Box buy",
+        "format": "International",
+        "attempts": [
+          {
+            "engine": "brave-api",
+            "outcome": "SANS_CLÉ",
+            "why": "BRAVE_API_KEY absent",
+            "n": 0
+          },
+          {
+            "engine": "brave",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "mojeek",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "duckduckgo",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "bing",
+            "outcome": "OK",
+            "n": 8
+          }
+        ]
+      },
+      {
+        "query": "2023/24 Panini Prizm International basketball box in stock",
+        "format": "International",
+        "attempts": [
+          {
+            "engine": "brave-api",
+            "outcome": "SANS_CLÉ",
+            "why": "BRAVE_API_KEY absent",
+            "n": 0
+          },
+          {
+            "engine": "brave",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "mojeek",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "duckduckgo",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "bing",
+            "outcome": "OK",
+            "n": 8
+          }
+        ]
+      },
+      {
+        "query": "\"746134150784\" Panini Prizm International",
+        "format": "International",
+        "attempts": [
+          {
+            "engine": "brave-api",
+            "outcome": "SANS_CLÉ",
+            "why": "BRAVE_API_KEY absent",
+            "n": 0
+          },
+          {
+            "engine": "brave",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "mojeek",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "duckduckgo",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "bing",
+            "outcome": "OK",
+            "n": 13
+          }
+        ]
+      },
+      {
+        "query": "2023-24 Panini Prizm Basketball Blaster Box buy",
+        "format": "Blaster",
+        "attempts": [
+          {
+            "engine": "brave-api",
+            "outcome": "SANS_CLÉ",
+            "why": "BRAVE_API_KEY absent",
+            "n": 0
+          },
+          {
+            "engine": "brave",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "mojeek",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "duckduckgo",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "bing",
+            "outcome": "OK",
+            "n": 8
+          }
+        ]
+      },
+      {
+        "query": "2023/24 Panini Prizm Blaster basketball box in stock",
+        "format": "Blaster",
+        "attempts": [
+          {
+            "engine": "brave-api",
+            "outcome": "SANS_CLÉ",
+            "why": "BRAVE_API_KEY absent",
+            "n": 0
+          },
+          {
+            "engine": "brave",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "mojeek",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "duckduckgo",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "bing",
+            "outcome": "OK",
+            "n": 8
+          }
+        ]
+      },
+      {
+        "query": "2023-24 Panini Prizm Basketball Retail Box Box buy",
+        "format": "Retail Box",
+        "attempts": [
+          {
+            "engine": "brave-api",
+            "outcome": "SANS_CLÉ",
+            "why": "BRAVE_API_KEY absent",
+            "n": 0
+          },
+          {
+            "engine": "brave",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "mojeek",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "duckduckgo",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "bing",
+            "outcome": "OK",
+            "n": 8
+          }
+        ]
+      },
+      {
+        "query": "2023/24 Panini Prizm Retail Box basketball box in stock",
+        "format": "Retail Box",
+        "attempts": [
+          {
+            "engine": "brave-api",
+            "outcome": "SANS_CLÉ",
+            "why": "BRAVE_API_KEY absent",
+            "n": 0
+          },
+          {
+            "engine": "brave",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "mojeek",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "duckduckgo",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "bing",
+            "outcome": "OK",
+            "n": 8
+          }
+        ]
+      },
+      {
+        "query": "2023-24 Panini Prizm Basketball Hanger Box buy",
+        "format": "Hanger",
+        "attempts": [
+          {
+            "engine": "brave-api",
+            "outcome": "SANS_CLÉ",
+            "why": "BRAVE_API_KEY absent",
+            "n": 0
+          },
+          {
+            "engine": "brave",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "mojeek",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "duckduckgo",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "bing",
+            "outcome": "OK",
+            "n": 8
+          }
+        ]
+      },
+      {
+        "query": "2023/24 Panini Prizm Hanger basketball box in stock",
+        "format": "Hanger",
+        "attempts": [
+          {
+            "engine": "brave-api",
+            "outcome": "SANS_CLÉ",
+            "why": "BRAVE_API_KEY absent",
+            "n": 0
+          },
+          {
+            "engine": "brave",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "mojeek",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "duckduckgo",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "bing",
+            "outcome": "OK",
+            "n": 8
+          }
+        ]
+      },
+      {
+        "query": "2023-24 Panini Prizm Basketball Pack Box buy",
+        "format": "Pack",
+        "attempts": [
+          {
+            "engine": "brave-api",
+            "outcome": "SANS_CLÉ",
+            "why": "BRAVE_API_KEY absent",
+            "n": 0
+          },
+          {
+            "engine": "brave",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "mojeek",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "duckduckgo",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "bing",
+            "outcome": "OK",
+            "n": 8
+          }
+        ]
+      },
+      {
+        "query": "2023/24 Panini Prizm Pack basketball box in stock",
+        "format": "Pack",
+        "attempts": [
+          {
+            "engine": "brave-api",
+            "outcome": "SANS_CLÉ",
+            "why": "BRAVE_API_KEY absent",
+            "n": 0
+          },
+          {
+            "engine": "brave",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "mojeek",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "duckduckgo",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "bing",
+            "outcome": "OK",
+            "n": 8
+          }
+        ]
+      },
+      {
+        "query": "2023-24 Panini Prizm Basketball FOTL Box buy",
+        "format": "FOTL",
+        "attempts": [
+          {
+            "engine": "brave-api",
+            "outcome": "SANS_CLÉ",
+            "why": "BRAVE_API_KEY absent",
+            "n": 0
+          },
+          {
+            "engine": "brave",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "mojeek",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "duckduckgo",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "bing",
+            "outcome": "OK",
+            "n": 8
+          }
+        ]
+      },
+      {
+        "query": "2023/24 Panini Prizm FOTL basketball box in stock",
+        "format": "FOTL",
+        "attempts": [
+          {
+            "engine": "brave-api",
+            "outcome": "SANS_CLÉ",
+            "why": "BRAVE_API_KEY absent",
+            "n": 0
+          },
+          {
+            "engine": "brave",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "mojeek",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "duckduckgo",
+            "outcome": "ÉCARTÉ",
+            "why": "bloqué plus tôt dans ce passage",
+            "n": 0
+          },
+          {
+            "engine": "bing",
+            "outcome": "OK",
+            "n": 8
+          }
+        ]
+      }
+    ]
+  },
   "listings": [
     {
       "format": "FOTL",
-      "seller": "StockX",
-      "layer": "marketplace",
-      "seller_type": "MARKETPLACE_PRO",
-      "country": "US",
+      "first_seen": "2026-09-06",
+      "last_checked": "2026-09-07T09:34:28+00:00",
+      "last_seen_live": "2026-09-06",
       "price": null,
       "currency": "USD",
-      "available": true,
-      "stock_confidence": "PROBABLY_IN_STOCK",
+      "seller": "StockX",
+      "seller_type": "MARKETPLACE_PRO",
       "url": "https://stockx.com/2023-24-panini-prizm-basketball-1st-off-the-line-hobby-box",
+      "discovery_method": "relevé manuel 06/09",
+      "stock_status": "STALE",
+      "confidence": "LOW",
+      "country": "US",
       "note": "page produit confirmée, retail 2250 $. Chiffres de marché en JS, non lisibles ici.",
-      "seen_at": "2026-09-06"
+      "probe": {
+        "raw": "AMBIGUOUS",
+        "why": "HTTP 403"
+      }
     },
     {
       "format": "Mega",
-      "seller": "eBay (Pink Ice)",
-      "layer": "marketplace",
-      "seller_type": "MARKETPLACE_PRIVATE",
-      "country": "US",
+      "first_seen": "2026-09-06",
+      "last_checked": "2026-09-07T09:34:29+00:00",
+      "last_seen_live": "2026-09-06",
       "price": 239.99,
       "currency": "USD",
-      "available": true,
-      "stock_confidence": "PROBABLY_IN_STOCK",
+      "seller": "eBay (Pink Ice)",
+      "seller_type": "MARKETPLACE_PRIVATE",
       "url": "https://www.ebay.com/p/3066131729",
-      "seen_at": "2026-09-06"
+      "discovery_method": "relevé manuel 06/09",
+      "stock_status": "STALE",
+      "confidence": "LOW",
+      "country": "US",
+      "note": null,
+      "probe": {
+        "raw": "AMBIGUOUS",
+        "why": "place de marché : aucun stock structuré"
+      }
     },
     {
       "format": "Mega",
-      "seller": "eBay (Red Ice)",
-      "layer": "marketplace",
-      "seller_type": "MARKETPLACE_PRIVATE",
-      "country": "US",
+      "first_seen": "2026-09-06",
+      "last_checked": "2026-09-07T09:34:29+00:00",
+      "last_seen_live": "2026-09-06",
       "price": 230.99,
       "currency": "USD",
-      "available": true,
-      "stock_confidence": "PROBABLY_IN_STOCK",
+      "seller": "eBay (Red Ice)",
+      "seller_type": "MARKETPLACE_PRIVATE",
       "url": "https://www.ebay.com/itm/236057571659",
-      "seen_at": "2026-09-06"
+      "discovery_method": "relevé manuel 06/09",
+      "stock_status": "STALE",
+      "confidence": "LOW",
+      "country": "US",
+      "note": null,
+      "probe": {
+        "raw": "AMBIGUOUS",
+        "why": "HTTP 403"
+      }
     },
     {
       "format": "Mega",
-      "seller": "StockX (Pink Prizms)",
-      "layer": "marketplace",
-      "seller_type": "MARKETPLACE_PRO",
-      "country": "US",
+      "first_seen": "2026-09-06",
+      "last_checked": "2026-09-07T09:34:29+00:00",
+      "last_seen_live": "2026-09-06",
       "price": 134.0,
       "currency": "USD",
-      "available": true,
-      "stock_confidence": "PROBABLY_IN_STOCK",
+      "seller": "StockX (Pink Prizms)",
+      "seller_type": "MARKETPLACE_PRO",
       "url": "https://stockx.com/2023-24-panini-prizm-basketball-mega-box-pink-prizms",
-      "seen_at": "2026-09-06"
+      "discovery_method": "relevé manuel 06/09",
+      "stock_status": "STALE",
+      "confidence": "LOW",
+      "country": "US",
+      "note": null,
+      "probe": {
+        "raw": "AMBIGUOUS",
+        "why": "HTTP 403"
+      }
     },
     {
       "format": "Blaster",
-      "seller": "eBay",
-      "layer": "marketplace",
-      "seller_type": "MARKETPLACE_PRIVATE",
-      "country": "US",
+      "first_seen": "2026-09-06",
+      "last_checked": "2026-09-07T09:34:30+00:00",
+      "last_seen_live": "2026-09-06",
       "price": 129.95,
       "currency": "USD",
-      "available": true,
-      "stock_confidence": "PROBABLY_IN_STOCK",
+      "seller": "eBay",
+      "seller_type": "MARKETPLACE_PRIVATE",
       "url": "https://www.ebay.com/sch/i.html?_nkw=2023-24+panini+prizm+basketball+blaster+box",
-      "seen_at": "2026-09-06"
+      "discovery_method": "relevé manuel 06/09",
+      "stock_status": "STALE",
+      "confidence": "LOW",
+      "country": "US",
+      "note": null,
+      "probe": {
+        "raw": "AMBIGUOUS",
+        "why": "HTTP 403"
+      }
     },
     {
       "format": "Blaster",
-      "seller": "StockX (Ice Prizms)",
-      "layer": "marketplace",
-      "seller_type": "MARKETPLACE_PRO",
-      "country": "US",
+      "first_seen": "2026-09-06",
+      "last_checked": "2026-09-07T09:34:30+00:00",
+      "last_seen_live": "2026-09-06",
       "price": 74.0,
       "currency": "USD",
-      "available": true,
-      "stock_confidence": "PROBABLY_IN_STOCK",
+      "seller": "StockX (Ice Prizms)",
+      "seller_type": "MARKETPLACE_PRO",
       "url": "https://stockx.com/2023-24-panini-prizm-basketball-blaster-box",
-      "seen_at": "2026-09-06"
+      "discovery_method": "relevé manuel 06/09",
+      "stock_status": "STALE",
+      "confidence": "LOW",
+      "country": "US",
+      "note": null,
+      "probe": {
+        "raw": "AMBIGUOUS",
+        "why": "HTTP 403"
+      }
     },
     {
       "format": "Retail Box",
-      "seller": "eBay",
-      "layer": "marketplace",
-      "seller_type": "MARKETPLACE_PRIVATE",
-      "country": "US",
+      "first_seen": "2026-09-06",
+      "last_checked": "2026-09-07T09:34:31+00:00",
+      "last_seen_live": "2026-09-06",
       "price": 299.98,
       "currency": "USD",
-      "available": true,
-      "stock_confidence": "PROBABLY_IN_STOCK",
+      "seller": "eBay",
+      "seller_type": "MARKETPLACE_PRIVATE",
       "url": "https://www.ebay.com/sch/i.html?_nkw=2023-24+panini+prizm+basketball+retail+box",
-      "seen_at": "2026-09-06"
+      "discovery_method": "relevé manuel 06/09",
+      "stock_status": "STALE",
+      "confidence": "LOW",
+      "country": "US",
+      "note": null,
+      "probe": {
+        "raw": "AMBIGUOUS",
+        "why": "HTTP 403"
+      }
     },
     {
       "format": "Choice",
-      "seller": "StockX",
-      "layer": "marketplace",
-      "seller_type": "MARKETPLACE_PRO",
-      "country": "US",
+      "first_seen": "2026-09-06",
+      "last_checked": "2026-09-07T09:34:32+00:00",
+      "last_seen_live": "2026-09-06",
       "price": 867.0,
       "currency": "USD",
-      "available": true,
-      "stock_confidence": "PROBABLY_IN_STOCK",
+      "seller": "StockX",
+      "seller_type": "MARKETPLACE_PRO",
       "url": "https://stockx.com/2023-24-panini-prizm-basketball-choice-box",
-      "seen_at": "2026-09-06"
+      "discovery_method": "relevé manuel 06/09",
+      "stock_status": "STALE",
+      "confidence": "LOW",
+      "country": "US",
+      "note": null,
+      "probe": {
+        "raw": "AMBIGUOUS",
+        "why": "HTTP 403"
+      }
     },
     {
       "format": "Hobby",
-      "seller": "StockX",
-      "layer": "marketplace",
-      "seller_type": "MARKETPLACE_PRO",
-      "country": "US",
+      "first_seen": "2026-09-06",
+      "last_checked": "2026-09-07T09:34:33+00:00",
+      "last_seen_live": "2026-09-06",
       "price": 874.0,
       "currency": "USD",
-      "available": true,
-      "stock_confidence": "PROBABLY_IN_STOCK",
+      "seller": "StockX",
+      "seller_type": "MARKETPLACE_PRO",
       "url": "https://stockx.com/2023-24-panini-prizm-basketball-hobby-box",
-      "seen_at": "2026-09-06"
+      "discovery_method": "relevé manuel 06/09",
+      "stock_status": "STALE",
+      "confidence": "LOW",
+      "country": "US",
+      "note": null,
+      "probe": {
+        "raw": "AMBIGUOUS",
+        "why": "HTTP 403"
+      }
     },
     {
       "format": "Premium Factory Set",
+      "first_seen": "2026-09-06",
+      "last_checked": "2026-09-07T09:34:33+00:00",
+      "last_seen_live": null,
+      "price": null,
+      "currency": "USD",
       "seller": "DA Card World",
-      "layer": "web",
       "seller_type": "RETAILER",
-      "country": "US",
-      "price": null,
-      "currency": "USD",
-      "available": null,
-      "stock_confidence": "AMBIGUOUS",
       "url": "https://www.dacardworld.com/sports-cards/2023-24-panini-prizm-basketball-premium-factory-set-box",
+      "discovery_method": "relevé manuel 06/09",
+      "stock_status": "STALE",
+      "confidence": "LOW",
+      "country": "US",
       "note": "301 cartes, base complète sur stock Pandora /150, 1 Franchise Favorites Signatures /10. Page derrière Cloudflare : prix et stock non lisibles.",
-      "seen_at": "2026-09-06"
+      "probe": {
+        "raw": "AMBIGUOUS",
+        "why": "HTTP 403"
+      }
     },
     {
       "format": "Mega",
+      "first_seen": "2026-09-06",
+      "last_checked": "2026-09-07T09:34:33+00:00",
+      "last_seen_live": null,
+      "price": null,
+      "currency": "USD",
       "seller": "Walmart",
-      "layer": "web",
       "seller_type": "RETAILER",
-      "country": "US",
-      "price": null,
-      "currency": "USD",
-      "available": false,
-      "stock_confidence": "OOS",
       "url": "https://www.walmart.com/ip/2023-24-Panini-Prizm-Basketball-Mega-Box-Trading-Cards/5166665988",
+      "discovery_method": "relevé manuel 06/09",
+      "stock_status": "STALE",
+      "confidence": "LOW",
+      "country": "US",
       "note": "cible RESTOCK, suivie par hotstock.io",
-      "seen_at": "2026-09-06"
+      "probe": {
+        "raw": "AMBIGUOUS",
+        "why": "défi anti-robot"
+      }
     },
     {
       "format": "Mega",
-      "seller": "Amazon",
-      "layer": "web",
-      "seller_type": "RETAILER",
-      "country": "US",
+      "first_seen": "2026-09-06",
+      "last_checked": "2026-09-07T09:34:35+00:00",
+      "last_seen_live": null,
       "price": null,
       "currency": "USD",
-      "available": false,
-      "stock_confidence": "OOS",
+      "seller": "Amazon",
+      "seller_type": "RETAILER",
       "url": "https://www.amazon.com/2023-24-Panini-Prizm-Basketball-Mega/dp/B0CY5NX4FM",
+      "discovery_method": "relevé manuel 06/09",
+      "stock_status": "STALE",
+      "confidence": "LOW",
+      "country": "US",
       "note": "cible RESTOCK",
-      "seen_at": "2026-09-06"
+      "probe": {
+        "raw": "AMBIGUOUS",
+        "why": "place de marché : aucun stock structuré"
+      }
+    },
+    {
+      "format": "Hobby",
+      "first_seen": "2026-09-07T09:07:17+00:00",
+      "last_checked": "2026-09-07T09:34:37+00:00",
+      "last_seen_live": null,
+      "price": 1199.99,
+      "currency": "CAD",
+      "seller": "breakawaysc.com",
+      "seller_type": "RETAILER_EXTERNE",
+      "url": "https://breakawaysc.com/product/2023-24-panini-prizm-basketball-hobby-box/",
+      "discovery_method": "recherche web · \"2023-24 Panini Prizm Basketball Hobby Box\" buy",
+      "stock_status": "OOS",
+      "confidence": "HIGH",
+      "layer": "web",
+      "probe": {
+        "raw": "OOS",
+        "why": null
+      },
+      "title_lu": "2023-24 PANINI PRIZM BASKETBALL HOBBY BOX - Breakaway Sports Cards"
+    },
+    {
+      "format": "International",
+      "first_seen": "2026-09-07T09:40:30+00:00",
+      "last_checked": "2026-09-07T09:40:30+00:00",
+      "last_seen_live": null,
+      "price": 334.95,
+      "currency": "USD",
+      "seller": "giantsportscards.com",
+      "seller_type": "RETAILER_EXTERNE",
+      "url": "https://giantsportscards.com/products/2023-24-panini-prizm-basketball-international-hobby-box",
+      "discovery_method": "balayage catalogue · shopify",
+      "stock_status": "OOS",
+      "confidence": "HIGH",
+      "layer": "web",
+      "title_lu": "2023/24 Panini Prizm Basketball International Hobby Box",
+      "probe": {
+        "raw": "OOS",
+        "why": "disponibilité structurée de l'API"
+      }
+    },
+    {
+      "format": "Choice",
+      "first_seen": "2026-09-07T09:40:30+00:00",
+      "last_checked": "2026-09-07T09:40:30+00:00",
+      "last_seen_live": null,
+      "price": 10599.95,
+      "currency": "USD",
+      "seller": "giantsportscards.com",
+      "seller_type": "RETAILER_EXTERNE",
+      "url": "https://giantsportscards.com/products/2023-24-panini-prizm-basketball-choice-20-box-case",
+      "discovery_method": "balayage catalogue · shopify",
+      "stock_status": "OOS",
+      "confidence": "HIGH",
+      "layer": "web",
+      "title_lu": "2023/24 Panini Prizm Basketball Choice 20 Box Case",
+      "probe": {
+        "raw": "OOS",
+        "why": "disponibilité structurée de l'API"
+      }
+    },
+    {
+      "format": "Fast Break",
+      "first_seen": "2026-09-07T09:40:30+00:00",
+      "last_checked": "2026-09-07T09:40:30+00:00",
+      "last_seen_live": null,
+      "price": 12499.95,
+      "currency": "USD",
+      "seller": "giantsportscards.com",
+      "seller_type": "RETAILER_EXTERNE",
+      "url": "https://giantsportscards.com/products/2023-24-panini-prizm-fast-break-basketball-20-box-case",
+      "discovery_method": "balayage catalogue · shopify",
+      "stock_status": "OOS",
+      "confidence": "HIGH",
+      "layer": "web",
+      "title_lu": "2023/24 Panini Prizm Fast Break Basketball 20 Box Case",
+      "probe": {
+        "raw": "OOS",
+        "why": "disponibilité structurée de l'API"
+      }
+    },
+    {
+      "format": "Fast Break",
+      "first_seen": "2026-09-07T09:40:30+00:00",
+      "last_checked": "2026-09-07T09:40:30+00:00",
+      "last_seen_live": null,
+      "price": 549.95,
+      "currency": "USD",
+      "seller": "giantsportscards.com",
+      "seller_type": "RETAILER_EXTERNE",
+      "url": "https://giantsportscards.com/products/2023-24-panini-prizm-fast-break-basketball-box",
+      "discovery_method": "balayage catalogue · shopify",
+      "stock_status": "OOS",
+      "confidence": "HIGH",
+      "layer": "web",
+      "title_lu": "2023/24 Panini Prizm Fast Break Basketball Box",
+      "probe": {
+        "raw": "OOS",
+        "why": "disponibilité structurée de l'API"
+      }
+    },
+    {
+      "format": "Hobby",
+      "first_seen": "2026-09-07T09:40:30+00:00",
+      "last_checked": "2026-09-07T09:40:30+00:00",
+      "last_seen_live": null,
+      "price": 13549.95,
+      "currency": "USD",
+      "seller": "giantsportscards.com",
+      "seller_type": "RETAILER_EXTERNE",
+      "url": "https://giantsportscards.com/products/2023-24-panini-prizm-basketball-hobby-12-box-case",
+      "discovery_method": "balayage catalogue · shopify",
+      "stock_status": "OOS",
+      "confidence": "HIGH",
+      "layer": "web",
+      "title_lu": "2023/24 Panini Prizm Basketball Hobby 12 Box Case",
+      "probe": {
+        "raw": "OOS",
+        "why": "disponibilité structurée de l'API"
+      }
+    },
+    {
+      "format": "Hobby",
+      "first_seen": "2026-09-07T09:40:30+00:00",
+      "last_checked": "2026-09-07T09:40:30+00:00",
+      "last_seen_live": "2026-09-07T09:40:30+00:00",
+      "price": 3349.95,
+      "currency": "USD",
+      "seller": "giantsportscards.com",
+      "seller_type": "RETAILER_EXTERNE",
+      "url": "https://giantsportscards.com/products/2023-24-panini-prizm-basketball-hobby-box",
+      "discovery_method": "balayage catalogue · shopify",
+      "stock_status": "CONFIRMED_LIVE",
+      "confidence": "HIGH",
+      "layer": "web",
+      "title_lu": "2023/24 Panini Prizm Basketball Hobby Box",
+      "probe": {
+        "raw": "CONFIRMED_LIVE",
+        "why": "disponibilité structurée de l'API"
+      }
+    },
+    {
+      "format": "Blaster",
+      "first_seen": "2026-09-07T09:41:43+00:00",
+      "last_checked": "2026-09-07T09:41:43+00:00",
+      "last_seen_live": null,
+      "price": 64.99,
+      "currency": "USD",
+      "seller": "itstimecards.com",
+      "seller_type": "RETAILER_EXTERNE",
+      "url": "https://itstimecards.com/products/2023-24-panini-prizm-ice-basketball-blaster-box",
+      "discovery_method": "balayage catalogue · shopify",
+      "stock_status": "OOS",
+      "confidence": "HIGH",
+      "layer": "web",
+      "title_lu": "2023-24 Panini Prizm Ice Basketball Blaster Box",
+      "probe": {
+        "raw": "OOS",
+        "why": "disponibilité structurée de l'API"
+      }
+    },
+    {
+      "format": "Pack",
+      "first_seen": "2026-09-07T09:42:49+00:00",
+      "last_checked": "2026-09-07T09:42:49+00:00",
+      "last_seen_live": null,
+      "price": 19.99,
+      "currency": "USD",
+      "seller": "cmbcollectibles.com",
+      "seller_type": "RETAILER_EXTERNE",
+      "url": "https://cmbcollectibles.com/products/2023-24-panini-prizm-nba-value-pack-new-15-cards-red-white-and-blue-prizms",
+      "discovery_method": "balayage catalogue · shopify",
+      "stock_status": "OOS",
+      "confidence": "HIGH",
+      "layer": "web",
+      "title_lu": "2023-24 Panini Prizm NBA Value Pack. New. 15 Cards. Red, White and Blue Prizms!",
+      "probe": {
+        "raw": "OOS",
+        "why": "disponibilité structurée de l'API"
+      }
+    },
+    {
+      "format": "Mega",
+      "first_seen": "2026-09-07T09:42:49+00:00",
+      "last_checked": "2026-09-07T09:42:49+00:00",
+      "last_seen_live": null,
+      "price": 89.99,
+      "currency": "USD",
+      "seller": "cmbcollectibles.com",
+      "seller_type": "RETAILER_EXTERNE",
+      "url": "https://cmbcollectibles.com/products/2023-24-panini-prizm-basketball-mega-box-new",
+      "discovery_method": "balayage catalogue · shopify",
+      "stock_status": "OOS",
+      "confidence": "HIGH",
+      "layer": "web",
+      "title_lu": "2023-24 Panini Prizm Basketball Mega Box. New.",
+      "probe": {
+        "raw": "OOS",
+        "why": "disponibilité structurée de l'API"
+      }
+    },
+    {
+      "format": "Retail Box",
+      "first_seen": "2026-09-07T09:42:49+00:00",
+      "last_checked": "2026-09-07T09:42:49+00:00",
+      "last_seen_live": null,
+      "price": 8.99,
+      "currency": "USD",
+      "seller": "cmbcollectibles.com",
+      "seller_type": "RETAILER_EXTERNE",
+      "url": "https://cmbcollectibles.com/products/2023-24-panini-prizm-nba-sealed-pack-retail-box",
+      "discovery_method": "balayage catalogue · shopify",
+      "stock_status": "OOS",
+      "confidence": "HIGH",
+      "layer": "web",
+      "title_lu": "2023-24 Panini Prizm NBA sealed pack. Retail Box.",
+      "probe": {
+        "raw": "OOS",
+        "why": "disponibilité structurée de l'API"
+      }
+    },
+    {
+      "format": "Blaster",
+      "first_seen": "2026-09-07T09:42:49+00:00",
+      "last_checked": "2026-09-07T09:42:49+00:00",
+      "last_seen_live": null,
+      "price": 39.99,
+      "currency": "USD",
+      "seller": "cmbcollectibles.com",
+      "seller_type": "RETAILER_EXTERNE",
+      "url": "https://cmbcollectibles.com/products/2023-24-panini-prizm-nba-blaster-box-new",
+      "discovery_method": "balayage catalogue · shopify",
+      "stock_status": "OOS",
+      "confidence": "HIGH",
+      "layer": "web",
+      "title_lu": "2023-24 Panini Prizm NBA Blaster Box.",
+      "probe": {
+        "raw": "OOS",
+        "why": "disponibilité structurée de l'API"
+      }
     }
   ]
 }

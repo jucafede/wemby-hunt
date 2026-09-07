@@ -1,0 +1,105 @@
+{
+  "generated_at": "2026-09-07T09:20:37+00:00",
+  "transactions": [
+    {
+      "sold_date": "2026-07-10",
+      "sold_price": 673.95,
+      "currency": "USD",
+      "source": "relevé navigateur utilisateur (06/09)",
+      "url": null,
+      "format": "International",
+      "variant": "2023-24 Prizm International Hobby Box",
+      "condition": "sealed",
+      "confidence": "HIGH",
+      "ingested_at": "2026-09-07T09:20:36+00:00"
+    },
+    {
+      "sold_date": null,
+      "sold_price": 466.09,
+      "currency": "USD",
+      "source": "relevé navigateur utilisateur (06/09)",
+      "url": null,
+      "format": "International",
+      "variant": "2023-24 Prizm International Hobby Box",
+      "condition": "sealed",
+      "confidence": "MEDIUM",
+      "ingested_at": "2026-09-07T09:20:36+00:00",
+      "note": "date non relevée — conservée hors fenêtre plutôt que datée au jugé"
+    },
+    {
+      "sold_date": null,
+      "sold_price": 524.95,
+      "currency": "USD",
+      "source": "relevé navigateur utilisateur (06/09)",
+      "url": null,
+      "format": "International",
+      "variant": "2023-24 Prizm International Hobby Box",
+      "condition": "sealed",
+      "confidence": "MEDIUM",
+      "ingested_at": "2026-09-07T09:20:36+00:00",
+      "note": "date non relevée — conservée hors fenêtre plutôt que datée au jugé"
+    }
+  ],
+  "aggregate_reports": {
+    "FOTL": {
+      "LAST_SALE": 2799,
+      "MEDIAN_30D": null,
+      "MEDIAN_90D": null,
+      "AVG_90D": 2818,
+      "N_30D": null,
+      "N_90D": 19,
+      "RANGE_90D": null,
+      "SOURCE": "StockX",
+      "URL": "https://stockx.com/2023-24-panini-prizm-basketball-1st-off-the-line-hobby-box",
+      "METHOD": "relevé navigateur utilisateur",
+      "FETCHED_AT": "2026-09-06",
+      "CONFIDENCE": "HIGH"
+    },
+    "Mega": {
+      "LAST_SALE": 350,
+      "MEDIAN_30D": null,
+      "MEDIAN_90D": null,
+      "AVG_90D": 199,
+      "N_30D": null,
+      "N_90D": 4,
+      "RANGE_90D": null,
+      "SOURCE": "StockX",
+      "URL": "https://stockx.com/2023-24-panini-prizm-basketball-mega-box-pink-prizms",
+      "METHOD": "relevé navigateur utilisateur",
+      "FETCHED_AT": "2026-09-06",
+      "CONFIDENCE": "MEDIUM"
+    },
+    "Blaster": {
+      "LAST_SALE": 86,
+      "MEDIAN_30D": null,
+      "MEDIAN_90D": null,
+      "AVG_90D": null,
+      "N_30D": null,
+      "N_90D": null,
+      "RANGE_90D": null,
+      "SOURCE": "StockX",
+      "URL": "https://stockx.com/2023-24-panini-prizm-basketball-blaster-box",
+      "METHOD": "relevé navigateur utilisateur — liquidité récente très faible",
+      "FETCHED_AT": "2026-09-06",
+      "CONFIDENCE": "LOW"
+    },
+    "International": {
+      "LAST_SALE": 673.95,
+      "MEDIAN_30D": null,
+      "MEDIAN_90D": 524.95,
+      "AVG_90D": 555.0,
+      "N_30D": null,
+      "N_90D": 3,
+      "RANGE_90D": [
+        466.09,
+        673.95
+      ],
+      "SOURCE": "SportsCardsPro + relevés manuels",
+      "URL": null,
+      "METHOD": "relevé navigateur utilisateur",
+      "FETCHED_AT": "2026-09-06",
+      "CONFIDENCE": "MEDIUM"
+    }
+  },
+  "note": "Transactions individuelles. Ce registre est la SOURCE ; sold_prizm.json en est la sortie calculée. Aucun prix demandé n'entre ici."
+}

@@ -14,10 +14,20 @@ l'API WooCommerce répondait. Ce module existe pour que cela ne se reproduise pa
 
 CE QU'IL FAIT DE PLUS QUE LE HUNT GÉNÉRAL
 -----------------------------------------
-· il interroge TOUTES les plateformes sur chaque boutique, jamais la première qui répond
 · il conserve les ruptures : un OOS est une information, pas un vide
 · il cherche par UPC autant que par nom — un vendeur mal référencé titre mal, mais saisit juste
 · il distingue « nous avons cherché et rien trouvé » de « nous ne connaissons pas la boutique »
+
+CE QU'IL NE FAIT PLUS : CRAWLER
+-------------------------------
+Il lisait lui-même les 52 boutiques que `hunt.py` venait de lire, doublant la durée du run et
+la charge imposée aux marchands pour obtenir exactement les mêmes fiches. Il consomme désormais
+`products_raw`, la table où `hunt.py` dépose TOUT ce qu'il a lu — rattaché à un SKU ou non.
+Ce module ne fait plus une seule requête réseau ; `tests_autonomy` le vérifie en coupant
+les sockets avant de l'appeler.
+
+La lecture des deux plateformes, elle, n'a pas disparu : elle a été remontée dans `hunt.py`,
+où elle profite à tout le catalogue au lieu du seul Prizm.
 
 LA RÈGLE QUI GOUVERNE TOUT
 --------------------------
@@ -28,9 +38,7 @@ au même titre qu'une à 334,95 \$. Découvrir et juger sont deux étapes, et le
 from __future__ import annotations
 import json
 import re
-import ssl
-import time
-import urllib.request
+import sqlite3
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -40,12 +48,6 @@ import hunt
 
 ROOT = Path(__file__).parent
 OUT = ROOT / "discovered"
-CTX = ssl.create_default_context()
-CTX.check_hostname = False
-CTX.verify_mode = ssl.CERT_NONE
-UA = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
-                    "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"}
-
 # Formats confirmés par Beckett et Cardboard Connection. Un format n'entre ici QUE si une
 # source de référence en atteste la configuration — le reste est marqué non confirmé et
 # surveillé quand même, parce qu'un format non documenté peut exister quand même.
@@ -89,56 +91,6 @@ def now() -> str:
     return datetime.now(timezone.utc).isoformat(timespec="seconds")
 
 
-def get(url, timeout=25):
-    try:
-        return json.load(urllib.request.urlopen(
-            urllib.request.Request(url, headers=UA), timeout=timeout, context=CTX))
-    except Exception:
-        return None
-
-
-def read_all_platforms(base: str):
-    """Shopify ET WooCommerce, systématiquement. C'est la correction du 06/09 : s'arrêter à la
-    première plateforme qui répond 404 fait manquer des boutiques entières."""
-    items, plat = [], None
-    for p in range(1, 16):
-        j = get(f"{base}/products.json?limit=250&page={p}")
-        pr = (j or {}).get("products") or []
-        if not pr:
-            break
-        plat = "shopify"
-        for x in pr:
-            for v in x.get("variants") or []:
-                vt = v.get("title") or ""
-                vt = "" if vt.lower() in ("default title", "default") else vt
-                items.append({"title": f"{x['title']} {vt}".strip(),
-                              "price": float(v.get("price") or 0),
-                              "available": bool(v.get("available")),
-                              "sku": v.get("sku"),
-                              "url": f"{base}/products/{x.get('handle','')}"})
-        time.sleep(0.4)
-    if items:
-        return items, plat
-    import html as _h
-    for p in range(1, 16):
-        j = get(f"{base}/wp-json/wc/store/v1/products?per_page=100&page={p}")
-        if not isinstance(j, list) or not j:
-            break
-        plat = "woocommerce"
-        for x in j:
-            pr = x.get("prices") or {}
-            mn = int(pr.get("currency_minor_unit", 2) or 2)
-            items.append({"title": _h.unescape(x.get("name", "")),
-                          "price": float(pr.get("price") or 0) / (10 ** mn),
-                          "available": bool(x.get("is_in_stock")),
-                          "sku": x.get("sku"),
-                          # ce champ dit si la boutique GÈRE ses stocks : vide = non géré
-                          "stock_text": ((x.get("stock_availability") or {}).get("text") or ""),
-                          "url": x.get("permalink", "")})
-        time.sleep(0.4)
-    return items, plat
-
-
 def stock_confidence(item: dict, shop: dict) -> str:
     """CONFIRMED_IN_STOCK ne se donne pas à la légère.
 
@@ -175,30 +127,53 @@ def is_core(title: str, sku: str | None) -> bool:
     return bool(hunt.sealed_product(hunt.norm(title)))
 
 
-def run(sources, skus, log=print):
-    seen, lost, rows = [], [], []
-    for sh in sources:
-        if sh.get("status") == "reject" or sh["type"] not in ("shopify_json", "html"):
+def run(conn, sources, skus, log=print):
+    """Le noyau Prizm, extrait de ce que `hunt.py` vient de lire. Aucune requête réseau.
+
+    On prend, boutique par boutique, le DERNIER passage présent dans `products_raw`. Un
+    passage plus ancien qu'un autre n'est pas une erreur : une boutique interrompue en cours
+    de run garde ses fiches de la veille, et il vaut mieux une fiche datée qu'un trou.
+    """
+    shops = {sh["key"]: sh for sh in sources}
+    rows, seen, lost = [], [], []
+    attendus = [sh for sh in sources
+                if sh.get("status") != "reject" and sh["type"] in ("shopify_json", "html")
+                and not hunt.blocklisted(sh.get("base_url", ""))]
+    for sh in attendus:
+        k = sh["key"]
+        last = conn.execute("SELECT MAX(seen_at) FROM products_raw WHERE shop=?", (k,)).fetchone()[0]
+        if not last:
+            lost.append(k)
             continue
-        if hunt.blocklisted(sh.get("base_url", "")):
+        fiches = conn.execute(
+            "SELECT title, price, available, url, vendor_sku, stock_text, platform, sku_id, seen_at "
+            "FROM products_raw WHERE shop=? AND seen_at=?", (k, last)).fetchall()
+        if not fiches:
+            lost.append(k)
             continue
-        items, plat = read_all_platforms(sh["base_url"])
-        if not items:
-            lost.append(sh["key"])
-            continue
-        seen.append(sh["key"])
+        seen.append(k)
         n = 0
-        for it in items:
-            if not is_core(it["title"], it.get("sku")):
+        for title, price, avail, url, vsku, stext, plat, sku_id, sa in fiches:
+            if not is_core(title or "", vsku):
                 continue
-            m = hunt.match_title(it["title"], skus)
-            rows.append({**it, "shop": sh["key"], "country": sh.get("country", "US"),
+            # le sku_id stocké vient du matcher du crawl ; on le recalcule si la fiche n'en
+            # portait pas (une fiche qualifiée par son seul UPC n'en a jamais eu)
+            sid = sku_id or hunt.match_title(title, skus).sku_id
+            # un « 12 Box Case » à 13 549 $ n'est pas une boîte : sans la quantité, il se
+            # compare aux 874 $ d'une Hobby seule et fait passer le marché pour fou
+            qte = max(1, hunt.parse_quantity(hunt.norm(title)) or 1)
+            px = float(price or 0)
+            item = {"title": title, "price": px, "available": bool(avail),
+                    "sku": vsku, "stock_text": stext, "url": url,
+                    "quantity": qte, "unit_price": round(px / qte, 2) if px else None}
+            rows.append({**item, "shop": k, "country": sh.get("country", "US"),
                          "currency": sh.get("currency", "USD"),
-                         "sku_id": m.sku_id, "platform": plat,
-                         "stock_confidence": stock_confidence(it, {**sh, "platform": plat}),
-                         "seen_at": now()})
+                         "sku_id": sid, "platform": plat,
+                         "stock_confidence": stock_confidence(item, {**sh, "platform": plat}),
+                         "seen_at": sa, "source_layer": "REGISTERED_SOURCES",
+                         "read_from": "hunt.db/products_raw"})
             n += 1
-        log(f"  {sh['key']:<22} {len(items):>5} fiches · {n:>2} Prizm core · {plat}")
+        log(f"  {k:<22} {len(fiches):>5} fiches ({last[:16]}) · {n:>2} Prizm core · {plat or '?'}")
     return rows, seen, lost
 
 
@@ -207,8 +182,12 @@ def main():
     src = yaml.safe_load((ROOT / "sources.yaml").read_text(encoding="utf-8"))
     hunt.load_blocklist(src)
     OUT.mkdir(exist_ok=True)
-    print("PRIZM_WEMBY_CORE — 2023-24 Panini Prizm Basketball NBA\n")
-    rows, seen, lost = run(src["shops"], cat["skus"])
+    print("PRIZM_WEMBY_CORE — 2023-24 Panini Prizm Basketball NBA")
+    print("lecture de hunt.db/products_raw — aucune boutique n'est recontactée\n")
+    # hunt.db() et non sqlite3.connect : la migration douce doit tourner, la base
+    # peut dater d'avant les colonnes plateforme.
+    conn = hunt.db()
+    rows, seen, lost = run(conn, src["shops"], cat["skus"])
     prev_path = OUT / "prizm_core.json"
     prev = {}
     if prev_path.exists():
@@ -233,8 +212,9 @@ def main():
                            "why": "la boutique ne gère pas ses quantités — à vérifier à la main"})
     for k in lost:
         alerts.append({"type": "PRIZM_SOURCE_LOST", "url": k,
-                       "why": "aucune fiche lue : boutique injoignable ou plateforme changée"})
-    payload = {"generated_at": now(), "sources_read": seen, "sources_lost": lost,
+                       "why": "aucune fiche dans products_raw : le crawl n'a rien rapporté de cette boutique"})
+    payload = {"generated_at": now(), "collection": "hunt.db/products_raw (aucun crawl propre)",
+               "sources_read": seen, "sources_lost": lost,
                "formats": FORMATS, "upc": UPC, "listings": rows, "alerts": alerts}
     prev_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"\n{len(rows)} listing(s) Prizm core · {len(seen)} source(s) lues · {len(lost)} perdue(s)")

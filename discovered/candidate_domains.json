@@ -1,0 +1,237 @@
+{
+  "generated_at": "2026-09-07T09:44:43+00:00",
+  "domains": [
+    {
+      "domain": "stickerpoint.de",
+      "base_url": "https://stickerpoint.de",
+      "first_seen": "2026-09-07T09:15:18+00:00",
+      "last_checked": "2026-09-07T09:37:13+00:00",
+      "platform": null,
+      "reachable": false,
+      "n_catalog": 0,
+      "prizm_core_hits": null,
+      "discovered_by": "sondage sellers_probe.json (joignable)"
+    },
+    {
+      "domain": "stickerpoint.ch",
+      "base_url": "https://stickerpoint.ch",
+      "first_seen": "2026-09-07T09:15:18+00:00",
+      "last_checked": "2026-09-07T09:37:18+00:00",
+      "platform": null,
+      "reachable": false,
+      "n_catalog": 0,
+      "prizm_core_hits": null,
+      "discovered_by": "sondage sellers_probe.json (joignable)"
+    },
+    {
+      "domain": "magiccorporation.com",
+      "base_url": "https://magiccorporation.com",
+      "first_seen": "2026-09-07T09:15:18+00:00",
+      "last_checked": "2026-09-07T09:37:40+00:00",
+      "platform": null,
+      "reachable": false,
+      "n_catalog": 0,
+      "prizm_core_hits": null,
+      "discovered_by": "sondage sellers_probe.json (joignable)"
+    },
+    {
+      "domain": "ludifolie.com",
+      "base_url": "https://ludifolie.com",
+      "first_seen": "2026-09-07T09:15:18+00:00",
+      "last_checked": "2026-09-07T09:37:44+00:00",
+      "platform": null,
+      "reachable": false,
+      "n_catalog": 0,
+      "prizm_core_hits": null,
+      "discovered_by": "sondage sellers_probe.json (joignable)"
+    },
+    {
+      "domain": "tradingcards.de",
+      "base_url": "https://tradingcards.de",
+      "first_seen": "2026-09-07T09:15:18+00:00",
+      "last_checked": "2026-09-07T09:37:47+00:00",
+      "platform": null,
+      "reachable": false,
+      "n_catalog": 0,
+      "prizm_core_hits": null,
+      "discovered_by": "sondage sellers_probe.json (joignable)"
+    },
+    {
+      "domain": "kartenhalle.de",
+      "base_url": "https://kartenhalle.de",
+      "first_seen": "2026-09-07T09:15:18+00:00",
+      "last_checked": "2026-09-07T09:38:18+00:00",
+      "platform": null,
+      "reachable": false,
+      "n_catalog": 0,
+      "prizm_core_hits": null,
+      "discovered_by": "sondage sellers_probe.json (joignable)"
+    },
+    {
+      "domain": "sportcards.nl",
+      "base_url": "https://sportcards.nl",
+      "first_seen": "2026-09-07T09:15:18+00:00",
+      "last_checked": "2026-09-07T09:38:50+00:00",
+      "platform": null,
+      "reachable": false,
+      "n_catalog": 0,
+      "prizm_core_hits": null,
+      "discovered_by": "sondage sellers_probe.json (joignable)"
+    },
+    {
+      "domain": "cardtrader.com",
+      "base_url": "https://cardtrader.com",
+      "first_seen": "2026-09-07T09:15:18+00:00",
+      "last_checked": "2026-09-07T09:38:54+00:00",
+      "platform": null,
+      "reachable": false,
+      "n_catalog": 0,
+      "prizm_core_hits": null,
+      "discovered_by": "sondage sellers_probe.json (joignable)"
+    },
+    {
+      "domain": "cardsmithsbreaks.com",
+      "base_url": "https://cardsmithsbreaks.com",
+      "first_seen": "2026-09-07T09:15:18+00:00",
+      "last_checked": "2026-09-07T09:39:41+00:00",
+      "platform": "woocommerce (budget épuisé)",
+      "reachable": false,
+      "n_catalog": 0,
+      "prizm_core_hits": null,
+      "discovered_by": "sondage sellers_probe.json (joignable)"
+    },
+    {
+      "domain": "cashcardsunlimited.com",
+      "base_url": "https://cashcardsunlimited.com",
+      "first_seen": "2026-09-07T09:15:18+00:00",
+      "last_checked": "2026-09-07T09:40:17+00:00",
+      "platform": "shopify",
+      "reachable": true,
+      "n_catalog": 4282,
+      "prizm_core_hits": 0,
+      "discovered_by": "sondage sellers_probe.json (joignable)"
+    },
+    {
+      "domain": "giantsportscards.com",
+      "base_url": "https://giantsportscards.com",
+      "first_seen": "2026-09-07T09:15:18+00:00",
+      "last_checked": "2026-09-07T09:40:30+00:00",
+      "platform": "shopify",
+      "reachable": true,
+      "n_catalog": 1392,
+      "prizm_core_hits": 6,
+      "discovered_by": "sondage sellers_probe.json (joignable)"
+    },
+    {
+      "domain": "threestarssportscards.com",
+      "base_url": "https://threestarssportscards.com",
+      "first_seen": "2026-09-07T09:15:18+00:00",
+      "last_checked": "2026-09-07T09:41:16+00:00",
+      "platform": "shopify (budget épuisé)",
+      "reachable": false,
+      "n_catalog": 0,
+      "prizm_core_hits": null,
+      "discovered_by": "sondage sellers_probe.json (joignable)"
+    },
+    {
+      "domain": "aamintcards.com",
+      "base_url": "https://aamintcards.com",
+      "first_seen": "2026-09-07T09:15:18+00:00",
+      "last_checked": "2026-09-07T09:41:21+00:00",
+      "platform": null,
+      "reachable": false,
+      "n_catalog": 0,
+      "prizm_core_hits": null,
+      "discovered_by": "sondage sellers_probe.json (joignable)"
+    },
+    {
+      "domain": "itstimecards.com",
+      "base_url": "https://itstimecards.com",
+      "first_seen": "2026-09-07T09:15:18+00:00",
+      "last_checked": "2026-09-07T09:41:43+00:00",
+      "platform": "shopify",
+      "reachable": true,
+      "n_catalog": 3026,
+      "prizm_core_hits": 1,
+      "discovered_by": "sondage sellers_probe.json (joignable)"
+    },
+    {
+      "domain": "scorebigcollectibles.com",
+      "base_url": "https://scorebigcollectibles.com",
+      "first_seen": "2026-09-07T09:15:18+00:00",
+      "last_checked": "2026-09-07T09:41:45+00:00",
+      "platform": "shopify",
+      "reachable": true,
+      "n_catalog": 73,
+      "prizm_core_hits": 0,
+      "discovered_by": "prospection (catalogue échantillonné)"
+    },
+    {
+      "domain": "eastsidecollectables.com.au",
+      "base_url": "https://eastsidecollectables.com.au",
+      "first_seen": "2026-09-07T09:15:18+00:00",
+      "last_checked": "2026-09-07T09:42:09+00:00",
+      "platform": "shopify",
+      "reachable": true,
+      "n_catalog": 3566,
+      "prizm_core_hits": 0,
+      "discovered_by": "prospection (catalogue échantillonné)"
+    },
+    {
+      "domain": "portcitysportscollectibles.com",
+      "base_url": "https://portcitysportscollectibles.com",
+      "first_seen": "2026-09-07T09:15:18+00:00",
+      "last_checked": "2026-09-07T09:42:10+00:00",
+      "platform": "shopify",
+      "reachable": true,
+      "n_catalog": 207,
+      "prizm_core_hits": 0,
+      "discovered_by": "prospection (catalogue échantillonné)"
+    },
+    {
+      "domain": "cmbcollectibles.com",
+      "base_url": "https://cmbcollectibles.com",
+      "first_seen": "2026-09-07T09:15:18+00:00",
+      "last_checked": "2026-09-07T09:42:49+00:00",
+      "platform": "shopify",
+      "reachable": true,
+      "n_catalog": 5497,
+      "prizm_core_hits": 4,
+      "discovered_by": "prospection (catalogue échantillonné)"
+    },
+    {
+      "domain": "shoppieceofthegame.com",
+      "base_url": "https://shoppieceofthegame.com",
+      "first_seen": "2026-09-07T09:15:18+00:00",
+      "last_checked": "2026-09-07T09:43:35+00:00",
+      "platform": "shopify (budget épuisé)",
+      "reachable": false,
+      "n_catalog": 0,
+      "prizm_core_hits": null,
+      "discovered_by": "prospection (catalogue échantillonné)"
+    },
+    {
+      "domain": "cardpopusa.com",
+      "base_url": "https://cardpopusa.com",
+      "first_seen": "2026-09-07T09:15:18+00:00",
+      "last_checked": "2026-09-07T09:43:57+00:00",
+      "platform": "shopify",
+      "reachable": true,
+      "n_catalog": 2991,
+      "prizm_core_hits": 0,
+      "discovered_by": "prospection (catalogue échantillonné)"
+    },
+    {
+      "domain": "breakawaysc.com",
+      "base_url": "https://breakawaysc.com",
+      "first_seen": "2026-09-07T09:15:18+00:00",
+      "last_checked": "2026-09-07T09:44:43+00:00",
+      "platform": "woocommerce (budget épuisé)",
+      "reachable": false,
+      "n_catalog": 0,
+      "prizm_core_hits": null,
+      "discovered_by": "annonce externe déjà vérifiée"
+    }
+  ],
+  "note": "Domaines marchands connus mais NON enregistrés comme sources. Chacun porte sa provenance et la date de son dernier balayage. Un domaine injoignable reste inscrit, marqué injoignable — l'effacer ferait reperdre l'information."
+}

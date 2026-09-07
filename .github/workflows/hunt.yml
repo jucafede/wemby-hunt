@@ -38,12 +38,54 @@ jobs:
       # Le balayage Prizm dédié tourne à CHAQUE passage. Sans cela son fichier reste un
       # instantané committé une fois, et son horodatage gèle pendant que la page prétend
       # afficher des données fraîches — constaté le 06/09.
-      - name: Balayage Prizm dédié
+      # L'ORDRE COMPTE, et il n'est pas arbitraire :
+      #   1. hunt.py crawle les sources enregistrées — UNE seule fois, Shopify ET WooCommerce ;
+      #   2. les couches externes se rafraîchissent et cherchent du nouveau ;
+      #   3. les ventes se recalculent depuis le registre de transactions ;
+      #   4. prizm_core lit ce que hunt.py a déposé en base, sans recontacter personne ;
+      #   5. hunt.py --report régénère la page avec les quatre couches fraîches, sans recrawler.
+      # C'est l'étape 5 qui manquait : sans elle la page publiée précède de plusieurs minutes
+      # les données qu'elle prétend afficher.
+      - name: Couches externes (revalidation + découverte)
         shell: bash
         continue-on-error: true
+        env:
+          BRAVE_API_KEY: ${{ secrets.BRAVE_API_KEY }}
         run: |
           set -o pipefail
-          python prizm_core.py 2>&1 | tail -20
+          python -u external_engine.py 2>&1 | tail -40
+      - name: Ventes réalisées (recalcul)
+        shell: bash
+        continue-on-error: true
+        env:
+          PRICECHARTING_TOKEN: ${{ secrets.PRICECHARTING_TOKEN }}
+          EBAY_OAUTH_TOKEN: ${{ secrets.EBAY_OAUTH_TOKEN }}
+        run: |
+          set -o pipefail
+          python -u sold_auto.py 2>&1 | tail -20
+      - name: Noyau Prizm (lecture de la base, aucun crawl)
+        shell: bash
+        run: |
+          set -o pipefail
+          python -u prizm_core.py 2>&1 | tail -20
+      - name: Rapport final avec les quatre couches
+        shell: bash
+        run: |
+          set -o pipefail
+          python -u hunt.py --report | tee out/last_report.txt
+      - name: Persister les découvertes
+        shell: bash
+        run: |
+          # Une découverte qui n'est pas committée n'existe pas au passage suivant : le
+          # registre de domaines, les annonces externes et les transactions doivent survivre
+          # au conteneur qui les a produits.
+          git config user.name "wemby-hunt"
+          git config user.email "bot@users.noreply.github.com"
+          git add -f discovered/external_prizm.json discovered/sold_prizm.json \
+                     discovered/sold_ledger.json discovered/candidate_domains.json \
+                     discovered/prizm_core.json || true
+          git diff --cached --quiet || git commit -m "Passage autonome : couches externes, ventes et noyau Prizm"
+          git push || echo "push impossible — les fichiers restent dans l'artefact"
 
       - uses: actions/upload-artifact@v4
         with:

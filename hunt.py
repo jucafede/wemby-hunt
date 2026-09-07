@@ -1973,6 +1973,32 @@ def empty_note(label, watched, best=None):
         txt += "</span>"
     return txt + "</p>"
 
+def dataset_freshness() -> str:
+    """La date de chaque couche, et surtout la plus ancienne. Un tableau de bord qui agrège des
+    données de fraîcheurs différentes sous un seul horodatage ment par omission : le 06/09, la
+    section Prizm affichait 18:33 quand l'en-tête disait 15:22, sans que rien n'explique l'écart.
+    """
+    import json as _j
+    parts, dates = [], []
+    for nom, f, k in (("web/marketplace", "external_prizm.json", "generated_at"),
+                      ("Prizm core", "prizm_core.json", "generated_at"),
+                      ("ventes", "sold_prizm.json", "generated_at")):
+        p = ROOT / "discovered" / f
+        if not p.exists():
+            continue
+        try:
+            d = str((_j.loads(p.read_text(encoding="utf-8")) or {}).get(k) or "")[:16]
+        except Exception:
+            continue
+        if d:
+            parts.append(f"{nom} {d.replace('T', ' ')}")
+            dates.append(d)
+    if not parts:
+        return ""
+    return (" · " + " · ".join(parts)
+            + f" — donnée la plus ancienne : {min(dates).replace('T', ' ')}")
+
+
 def write_html(cat, blocks, restocks, review, seen_at, trust=None, hot=None, entries=None,
                shopcount=None, health=None, fr_best=None):
     trust = trust or {}; hot = hot or []; entries = entries or []
@@ -2010,7 +2036,13 @@ def write_html(cat, blocks, restocks, review, seen_at, trust=None, hot=None, ent
          "text-align:left;font-size:.78rem}.oos{color:var(--mut)}.wrap{overflow-x:auto}a{color:inherit}",
          "</style>",
          "<h1>🏀 Wemby Hunt</h1>",
-         (f"<p class=small>Dernier passage : {seen_at[:16].replace('T', ' ')} UTC</p>"
+         # Le tableau de bord agrège des couches de fraîcheurs DIFFÉRENTES : le crawl date de
+         # ce passage, les relevés web et marketplace d'un relevé manuel antérieur. Afficher un
+         # seul horodatage laissait croire que tout datait du même moment. Chaque couche porte
+         # désormais le sien, et l'en-tête annonce le plus ANCIEN — c'est lui qui gouverne la
+         # confiance qu'on peut accorder à l'ensemble.
+         (f"<p class=small>Crawl des sources : {seen_at[:16].replace('T', ' ')} UTC"
+          f"{dataset_freshness()}</p>"
           if seen_at else "<p class=small>Rapport hors passage (--report)</p>"),
          "<nav>" + " ".join(f"<a href='#{i}'>{n}</a>" for i, n in
                             [("acheter", "🔥 Acheter"), ("surveiller", "👀 Surveiller"),
@@ -2081,44 +2113,85 @@ def write_html(cat, blocks, restocks, review, seen_at, trust=None, hot=None, ent
         h.append("<p class=empty>Aucun produit en rupture avec une cible d’achat définie.</p>")
 
     # ---------------- 🎯 PRIZM_WEMBY_CORE
-    # Le produit central de la chasse a sa propre section, en tête de la zone de lecture.
-    # Il était surveillé par un moteur dédié depuis le 06/09 sans que rien n'en paraisse à
-    # l'écran : un tableau de bord qui n'affiche pas ce que le moteur sait ne sert à rien.
-    core = ROOT / "discovered" / "prizm_core.json"
+    # QUATRE COUCHES, agrégées ici et nulle part ailleurs. Le 06/09 la production affichait
+    # « Mega : 0 live » alors que trois offres étaient connues : elles vivaient dans une
+    # conversation, pas dans un fichier. Une découverte qui n'est pas persistée n'existe pas.
+    #   crawler      sources enregistrées, relues à chaque passage
+    #   web          pages trouvées par recherche, relevées à la main
+    #   marketplace  eBay, StockX — offres réelles, stock non revérifié à chaque passage
+    #   sold         ventes réalisées, jamais mélangées aux offres
     h.append("<h2 id=prizm>🎯 Prizm Wemby Core — 2023-24 Panini Prizm NBA</h2>")
-    if core.exists():
-        import collections as _pc
-        pc = json.loads(core.read_text(encoding="utf-8"))
-        sk_by = {x["id"]: x for x in cat["skus"]}
-        lst = [r for r in pc.get("listings", []) if r.get("sku_id")
-               and re.match(r"PANINI_2023-24_PRIZM_(?!EUROLEAGUE|DRAFT|MONOPOLY)", r["sku_id"])]
-        by_fmt = _pc.defaultdict(list)
-        for r in lst:
-            by_fmt[(sk_by.get(r["sku_id"]) or {}).get("format") or "?"].append(r)
-        # les formats attestés par une source de référence, même sans offre : un zéro se montre
-        for f in ("Hobby", "FOTL", "Choice", "Fast Break", "International", "Mega",
-                  "Blaster", "Retail Box", "Hanger", "Pack", "Hobby Blaster", "Premium Factory Set"):
-            by_fmt.setdefault(f, [])
-        h.append(f"<p class=small>Dernier balayage dédié : {pc.get('generated_at','?')[:16].replace('T',' ')} UTC · "
-                 f"{len(pc.get('sources_read') or [])} source(s) lues · "
-                 f"{len(pc.get('sources_lost') or [])} perdue(s). "
-                 f"Un zéro signifie « cherché et rien trouvé », jamais « boutique inconnue ».</p>")
-        h.append("<div class=wrap><table><tr><th>Format</th><th>Listings connus</th><th>Live</th>"
-                 "<th>OOS</th><th>Meilleur prix live</th><th>Vendeur</th><th>Confiance stock</th></tr>")
-        for f in sorted(by_fmt, key=lambda k: (-len(by_fmt[k]), k)):
-            rows = by_fmt[f]
-            ins = [r for r in rows if r.get("available")]
-            best = min(ins, key=lambda r: r["price"]) if ins else None
-            conf = {"CONFIRMED_IN_STOCK": "✅ confirmé", "PROBABLY_IN_STOCK": "⚠️ probable"}.get(
-                (best or {}).get("stock_confidence"), "—")
-            h.append(f"<tr><td>{f}</td><td>{len(rows)}</td>"
-                     f"<td>{'<span class=go>' + str(len(ins)) + '</span>' if ins else '0'}</td>"
-                     f"<td>{len(rows) - len(ins)}</td>"
-                     f"<td>{money_or(best['price']) if best else '—'}</td>"
-                     f"<td>{best['shop'] if best else '—'}</td><td>{conf}</td></tr>")
-        h.append("</table></div>")
-    else:
-        h.append("<p class=empty>Aucun balayage Prizm dédié dans ce passage — lancez prizm_core.py.</p>")
+    core_p, ext_p, sold_p = (ROOT / "discovered" / n for n in
+                             ("prizm_core.json", "external_prizm.json", "sold_prizm.json"))
+    layers, rows_all = [], []
+    sk_by = {x["id"]: x for x in cat["skus"]}
+    if core_p.exists():
+        pc = json.loads(core_p.read_text(encoding="utf-8"))
+        cr = [r for r in pc.get("listings", []) if r.get("sku_id")
+              and re.match(r"PANINI_2023-24_PRIZM_(?!EUROLEAGUE|DRAFT|MONOPOLY)", r["sku_id"])]
+        for r in cr:
+            rows_all.append({**r, "layer": "crawler",
+                             "format": (sk_by.get(r["sku_id"]) or {}).get("format") or "?"})
+        layers.append(("REGISTERED SOURCES", "prizm_core.json", len(cr),
+                       pc.get("generated_at", "?")[:16].replace("T", " "), True))
+    if ext_p.exists():
+        ex = json.loads(ext_p.read_text(encoding="utf-8"))
+        for r in ex.get("listings", []):
+            rows_all.append({**r, "shop": r["seller"]})
+        layers.append(("EXTERNAL WEB", "external_prizm.json",
+                       sum(1 for r in ex["listings"] if r["layer"] == "web"),
+                       ex.get("generated_at", "?")[:16].replace("T", " "), True))
+        layers.append(("MARKETPLACE", "external_prizm.json",
+                       sum(1 for r in ex["listings"] if r["layer"] == "marketplace"),
+                       ex.get("generated_at", "?")[:16].replace("T", " "), True))
+    sold = {}
+    if sold_p.exists():
+        sj = json.loads(sold_p.read_text(encoding="utf-8"))
+        sold = sj.get("records", {})
+        layers.append(("SOLD", "sold_prizm.json", len(sold),
+                       str(sj.get("generated_at", "?"))[:16], True))
+
+    h.append("<div class=wrap><table><tr><th>Couche</th><th>Fichier</th><th>Listings</th>"
+             "<th>Dernière exécution</th><th>Consommée ici</th></tr>")
+    for nom, f, n, ts, used in layers:
+        h.append(f"<tr><td>{nom}</td><td><code>{f}</code></td><td>{n}</td><td>{ts}</td>"
+                 f"<td>{'✅' if used else '❌'}</td></tr>")
+    h.append("</table></div>")
+
+    import collections as _pc
+    by_fmt = _pc.defaultdict(list)
+    for r in rows_all:
+        by_fmt[r.get("format") or "?"].append(r)
+    for f in ("Hobby", "FOTL", "Choice", "Fast Break", "International", "Mega",
+              "Blaster", "Retail Box", "Hanger", "Pack", "Hobby Blaster", "Premium Factory Set"):
+        by_fmt.setdefault(f, [])
+    h.append("<p class=small>Un « 0 live » ci-dessous est le résultat des TROIS couches d'offre "
+             "réunies — sources enregistrées, recherche web et places de marché. Les lignes web "
+             "et marketplace ne sont pas revérifiées à chaque passage : leur stock est daté, "
+             "jamais confirmé.</p>")
+    h.append("<div class=wrap><table><tr><th>Format</th><th>Connus</th><th>Live</th><th>OOS</th>"
+             "<th>Meilleur live</th><th>Vendeur</th><th>Provenance</th><th>Stock</th>"
+             "<th>SOLD</th></tr>")
+    for f in sorted(by_fmt, key=lambda k: (-len([r for r in by_fmt[k] if r.get("available")]),
+                                           -len(by_fmt[k]), k)):
+        rows = by_fmt[f]
+        ins = [r for r in rows if r.get("available") and (r.get("price") or 0) > 0]
+        best = min(ins, key=lambda r: r["price"]) if ins else None
+        prov = "+".join(sorted({r["layer"] for r in rows})) or "—"
+        conf = {"CONFIRMED_IN_STOCK": "✅ confirmé", "PROBABLY_IN_STOCK": "⚠️ probable",
+                "OOS": "—", "AMBIGUOUS": "❓ ambigu"}.get((best or {}).get("stock_confidence"), "—")
+        sd = sold.get(f) or {}
+        sv = sd.get("MEDIAN_90D") or sd.get("AVG_90D") or sd.get("LAST_SALE")
+        stxt = (f"{sv:.0f} $ · n={sd.get('N_90D') or '?'} · {sd.get('CONFIDENCE','')}"
+                if sv else "—")
+        h.append(f"<tr><td>{f}</td><td>{len(rows)}</td>"
+                 f"<td>{'<span class=go>' + str(len([r for r in rows if r.get('available')])) + '</span>' if any(r.get('available') for r in rows) else '0'}</td>"
+                 f"<td>{sum(1 for r in rows if r.get('available') is False)}</td>"
+                 f"<td>{money_or(best['price']) if best else '—'}</td>"
+                 f"<td>{(best or {}).get('shop') or '—'}</td>"
+                 f"<td><span class=small>{prov}</span></td><td>{conf}</td>"
+                 f"<td><span class=small>{stxt}</span></td></tr>")
+    h.append("</table></div>")
 
     # ---------------- 📦 mon inventaire
     tot_q = sum(r["qty"] for r in inv_rows)

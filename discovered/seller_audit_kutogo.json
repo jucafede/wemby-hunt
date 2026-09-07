@@ -1,0 +1,123 @@
+{
+  "seller": "kutogo",
+  "domain": "kutogo.com",
+  "audited_at": "2026-09-07T12:10:03+00:00",
+  "verdict": {
+    "seller_risk": "HIGH",
+    "seller_verification": "UNVERIFIED",
+    "stock_reliability": "LOW",
+    "note": "NI blanchi, NI qualifié frauduleux. Nous ne disposons d'aucune preuve de fraude et n'en affirmons aucune. Nous constatons une ABSENCE de preuve indépendante d'activité commerciale réelle, ce qui suffit à retirer à ce vendeur le droit de conclure un achat — pas à l'accuser."
+  },
+  "self_claimed_evidence": [
+    {
+      "element": "raison sociale",
+      "valeur": "Kutogo LLC",
+      "source": "kutogo.com/contact"
+    },
+    {
+      "element": "adresse",
+      "valeur": "160 E Croyden Dr, Pueblo West, CO 81007, USA",
+      "source": "kutogo.com/contact",
+      "note": "présentée comme « OUR HEADQUARTERS »"
+    },
+    {
+      "element": "email",
+      "valeur": "contact@kutogo.com",
+      "source": "kutogo.com/contact"
+    },
+    {
+      "element": "téléphone",
+      "valeur": null,
+      "note": "AUCUN numéro de téléphone trouvé sur la page contact"
+    },
+    {
+      "element": "photos du magasin",
+      "valeur": "card shop avec grande enseigne Kutogo",
+      "source": "Google Maps, publiées par Kutogo LLC",
+      "note": "Différences visuelles inhabituelles avec le Street View de 09/2023 : géométrie du bâtiment, environnement extérieur, véhicule. Nous ne pouvons pas prouver qu'elles sont générées ou retouchées et NE L'AFFIRMONS PAS. Elles restent des photos fournies par le propriétaire, donc sans valeur de validation."
+    },
+    {
+      "element": "Flickr Kutogo LLC",
+      "valeur": "compte très récent, visuels promotionnels propres",
+      "note": "self-published"
+    },
+    {
+      "element": "Instagram",
+      "valeur": "contenu promotionnel Kutogo",
+      "note": "self-published"
+    },
+    {
+      "element": "catalogue",
+      "valeur": "737 produits, 737 déclarés disponibles",
+      "source": "WooCommerce Store API, vérifié le 07/09",
+      "note": "gestion des quantités désactivée ; une Select Hobby 2018-19 à 1 899 $ est déclarée en stock. « in stock » ne prouve donc rien."
+    }
+  ],
+  "independent_evidence": [
+    {
+      "element": "enregistrement du domaine",
+      "valeur": "2016-04-20",
+      "source": "RDAP Verisign (rdap.verisign.com)",
+      "verified_at": "2026-09-07T12:10:03+00:00",
+      "portee": "Le domaine est réellement ancien. Cela ne dit RIEN de l'activité du card shop : un domaine se rachète et se réaffecte."
+    },
+    {
+      "element": "registrar",
+      "valeur": "GoDaddy.com, LLC",
+      "source": "RDAP Verisign"
+    },
+    {
+      "element": "dernière modification du domaine",
+      "valeur": "2026-06-02",
+      "source": "RDAP Verisign",
+      "portee": "trois mois avant l'audit"
+    },
+    {
+      "element": "serveurs de noms",
+      "valeur": [
+        "HORIZON.DNS-PARKING.COM",
+        "ORBIT.DNS-PARKING.COM"
+      ],
+      "source": "RDAP Verisign",
+      "portee": "hébergement mutualisé, aucune conclusion"
+    },
+    {
+      "element": "Street View 09/2023 à l'adresse revendiquée",
+      "valeur": "bâtiment industriel sans enseigne Kutogo",
+      "source": "Google Street View, relevé manuel de l'utilisateur le 07/09",
+      "portee": "Antérieur aux photos du magasin : ne prouve pas qu'il n'existe pas aujourd'hui, prouve qu'il n'existait pas sous cette forme en 09/2023."
+    }
+  ],
+  "unreachable_or_inconclusive": [
+    {
+      "source": "Colorado Secretary of State",
+      "resultat": "HTTP 403 sur l'API et le formulaire",
+      "note": "existence et date de création de Kutogo LLC NON vérifiées — à faire à la main"
+    },
+    {
+      "source": "Better Business Bureau",
+      "resultat": "HTTP 403"
+    },
+    {
+      "source": "Trustpilot (kutogo.com)",
+      "resultat": "HTTP 403"
+    },
+    {
+      "source": "moteurs de recherche",
+      "resultat": "Brave bloqué, Mojeek bloqué, DuckDuckGo vide, Bing a rendu des résultats SANS AUCUN RAPPORT avec les requêtes (compagnies aériennes, lignes de bus). Aucune recherche d'avis tiers n'a donc réellement abouti.",
+      "note": "À NE PAS LIRE COMME « aucun avis indépendant n'existe ». Nous n'avons pas pu chercher, ce qui n'est pas la même chose que chercher et ne rien trouver."
+    },
+    {
+      "source": "Trustpilot de ktwogroupllc.com",
+      "resultat": "ÉCARTÉ DÉLIBÉRÉMENT",
+      "note": "autre domaine ; aucun lien démontré avec Kutogo. Ne doit pas peser dans ce dossier."
+    }
+  ],
+  "a_faire_a_la_main": [
+    "Colorado SOS : existence de Kutogo LLC, date de création, adresse officielle, agent enregistré",
+    "Historique de l'adresse 160 E Croyden Dr (usage commercial ou résidentiel)",
+    "Présence eBay / Whatnot / autre marketplace avec historique transactionnel et avis",
+    "Avis de clients réels hors plateformes contrôlées par Kutogo",
+    "Une commande test de faible valeur reste la preuve la plus directe"
+  ]
+}

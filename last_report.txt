@@ -31,14 +31,14 @@
 → The Cardiacs (https://www.thecardiacs.com)  [trust=trusted]
   5330 produits bruts, 69 rattachés à un SKU
 → Monmouth Cards (https://monmouthcards.com)  [trust=watch]
-  5553 produits bruts, 64 rattachés à un SKU
+  5542 produits bruts, 64 rattachés à un SKU
 → World Champion Sports Cards (https://www.worldchampionsportscards.org)  [trust=watch]
   4018 produits bruts, 105 rattachés à un SKU
 → Superior Sports Investments (https://superiorsportsinvestments.com)  [trust=watch]
     collections : 8/84 retenues (filtre 'basketball|\\bnba\\b|hoops|prizm|mosaic|optic|select|phoenix|contenders|court.kings|revolution|premium.stock')
   16234 produits bruts, 78 rattachés à un SKU
 → SJAY2K Trading Cards (https://www.sjay2k.com)  [trust=watch]
-  566 produits bruts, 34 rattachés à un SKU
+  568 produits bruts, 34 rattachés à un SKU
 → The Ballgame (https://theballgame.com)  [trust=watch]
   12950 produits bruts, 9 rattachés à un SKU
 → Bleecker Trading (https://bleeckertrading.com)  [trust=watch]
@@ -66,9 +66,9 @@
   0 produits bruts, 0 rattachés à un SKU
 → ShopUScards (https://shopuscards.eu)  [trust=watch]
     212 fiche(s) retenues au filtre de slug (1 req/s, budget 8 min)
-  [shopuscards] ⏱ budget écoulé après 179 fiche(s) → PARTIAL
-    1 fiche(s) non lues — 0 délai dépassé, 0 absentes ou en erreur, 1 sans donnée structurée
-  179 produits bruts, 80 rattachés à un SKU  ⚠️ PARTIAL — passage NON retenu comme référence
+  [shopuscards] ⏱ budget écoulé après 174 fiche(s) → PARTIAL
+    2 fiche(s) non lues — 0 délai dépassé, 0 absentes ou en erreur, 2 sans donnée structurée
+  174 produits bruts, 81 rattachés à un SKU  ⚠️ PARTIAL — passage NON retenu comme référence
 → Trace 'n Chase (https://tracenchase.com)  [trust=watch]
   [tracenchase] type=eu_reference (GR, woocommerce) → référence de prix EU, non crawlée
   0 produits bruts, 0 rattachés à un SKU
@@ -103,7 +103,7 @@
   [bigcards] type=html sans adaptateur écrit → skip
   0 produits bruts, 0 rattachés à un SKU
 → Dave & Adam's Card World Europe (https://dacardworld.eu)  [trust=watch]
-  3271 produits bruts, 50 rattachés à un SKU
+  3266 produits bruts, 49 rattachés à un SKU
 → American Sportstore (https://american-sportstore.com)  [trust=watch]
   6241 produits bruts, 8 rattachés à un SKU
 → Pokefamily (https://pokefamily.nl)  [trust=watch]
@@ -125,13 +125,8 @@
     ⚠️  /products.json page 1 : 3 tentatives en échec (HTTP 404)
     ⚠️  /collections/all/products.json page 1 : 3 tentatives en échec (JSONDecodeError)
   0 produits bruts, 0 rattachés à un SKU
-⚠️  [shopuscards] passage 2026-09-07T04:18:56+00:00 PARTIAL (179 produits) — ignoré, référence = dernier passage complet
-(178 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
-
-========================================================================
-  🔔 RESTOCKS depuis le passage précédent
-========================================================================
-  🔔 RESTOCK  PANINI_2025-26_ORIGINS_HOBBY  sjay2k  $300.00  https://www.sjay2k.com/products/2025-26-panini-origins-basketball-hobby-box
+⚠️  [shopuscards] passage 2026-09-07T07:13:19+00:00 PARTIAL (174 produits) — ignoré, référence = dernier passage complet
+(179 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
 
 ========================================================================
   RETAIL
@@ -608,16 +603,16 @@
 
 · SUIVI   2024-25 Panini Select Mega   [PANINI_2024-25_SELECT_MEGA]
    1. cardiacs         $   39.95  IN STOCK  landed≈€  54.11  (score 1.00)
-        YEAR2  cheapest of 7 in stock
+        YEAR2  cheapest of 6 in stock
    2. sportscardjunction $   40.00  IN STOCK  landed≈€  54.16  (score 1.00)
         YEAR2  VERIFY
    3. rbicru7          $   50.00  IN STOCK  landed≈€  64.51  (score 1.00)
         YEAR2
-   4. dacardworldeu    $   53.00  IN STOCK  landed≈€  67.61  (score 1.00)
-        YEAR2  VERIFY  FR
-   5. awesome          $   54.75  IN STOCK  landed≈€  69.42  (score 1.00)
+   4. awesome          $   54.75  IN STOCK  landed≈€  69.42  (score 1.00)
         YEAR2
-   6. superior         $   72.00  IN STOCK  landed≈€  87.26  (score 1.00)
+   5. superior         $   72.00  IN STOCK  landed≈€  87.26  (score 1.00)
+        YEAR2  VERIFY
+   6. superior         $   75.00  IN STOCK  landed≈€  90.37  (score 1.00)
         YEAR2  VERIFY
    ask $39.95   sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $29.99 (le 2026-08-18, hiddengems, 13 shop(s) vus) | cheapest live $39.95
@@ -3730,9 +3725,9 @@
 ========================================================================
   🩺 SANTÉ DES SOURCES — 3 anomalie(s)
 ========================================================================
-  DEAD      kutogo               2 passages complets consécutifs à 0 produit
-  DEAD      shopuscards          4 passages complets consécutifs à 0 produit
-  DEAD      stickerpoint         2 passages complets consécutifs à 0 produit
+  DEAD      kutogo               3 passages complets consécutifs à 0 produit
+  DEAD      shopuscards          3 passages complets consécutifs à 0 produit
+  DEAD      stickerpoint         3 passages complets consécutifs à 0 produit
   35 HEALTHY · 14 SKIPPED · 3 DEAD
 
 ========================================================================
@@ -3746,7 +3741,7 @@
 ========================================================================
   🔥 HOT NOW — 15 ligne(s)
 ========================================================================
-  2024-25 Panini Hoops Pack                      $    0.75 rbicru7           -90.9% [demandés] STRONG_DEAL -93%  (+2 autre(s) offre(s))
+  2024-25 Panini Hoops Pack                      $    0.75 rbicru7           -90.9% [demandés] STRONG_DEAL -93%  (+1 autre(s) offre(s))
   2024-25 Panini Prizm Pack                      $    5.99 boxseat           -72.8% [demandés] STRONG_DEAL -57%  (+2 autre(s) offre(s))
   2025-26 Topps Bowman Pack                      $   16.00 superior          -47.5% [demandés] STRONG_DEAL -41%  (+1 autre(s) offre(s))
   2025-26 Panini Select EuroLeague Hobby Mega    $   24.99 collectorstore    -44.5% [demandés] STRONG_DEAL -44%  (+1 autre(s) offre(s))
@@ -3787,5 +3782,5 @@
   2025-26_CHROME_VALUE_BOX                 €   99.00  qscards     
   2024-25_DONRUSS_RETAIL_BOX               €  119.00  qscards     
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-09-07T04-18-56.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-09-07T07-13-19.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

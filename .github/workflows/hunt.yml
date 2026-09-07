@@ -85,7 +85,14 @@ jobs:
                      discovered/sold_ledger.json discovered/candidate_domains.json \
                      discovered/prizm_core.json || true
           git diff --cached --quiet || git commit -m "Passage autonome : couches externes, ventes et noyau Prizm"
-          git push || echo "push impossible — les fichiers restent dans l'artefact"
+          # Un commit poussé pendant le run rend ce push non fast-forward. On rebase et on
+          # réessaie : sans cela, une découverte est perdue pour la seule raison que quelqu'un
+          # a poussé du code pendant que le crawl tournait.
+          for essai in 1 2 3; do
+            git pull --rebase --autostash origin main && git push && break
+            echo "tentative $essai en échec, nouvel essai"
+            sleep 5
+          done
 
       - uses: actions/upload-artifact@v4
         with:

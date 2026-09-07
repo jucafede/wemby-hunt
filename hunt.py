@@ -540,8 +540,12 @@ def woocommerce_products(base: str, session: requests.Session, deadline=None) ->
     Le champ `stock_availability` est conservé tel quel : vide, il signale une boutique qui ne
     gère pas ses quantités, et son « en stock » ne vaut alors pas confirmation.
     """
-    out, partial, page = [], False, 1
-    while True:
+    out, partial, page, vus = [], False, 1, set()
+    # 60 pages = 6 000 fiches. Le plafond n'est pas une limite de goût : certaines boutiques
+    # mal configurées renvoient la MÊME page quel que soit le paramètre, et une boucle sans
+    # borne y tourne jusqu'au timeout du shop — huit minutes perdues, sans un produit de plus.
+    # La détection de répétition attrape le cas avant même le plafond.
+    while page <= 60:
         data, ok = fetch_json(session, f"{base}/wp-json/wc/store/v1/products",
                               {"per_page": 100, "page": page}, f"wc/store page {page}", deadline)
         if not ok:
@@ -549,6 +553,11 @@ def woocommerce_products(base: str, session: requests.Session, deadline=None) ->
             break
         if not isinstance(data, list) or not data:
             break
+        signature = tuple(sorted(x.get("id") for x in data if x.get("id") is not None))
+        if signature and signature in vus:
+            print(f"    ⚠️  wc/store page {page} identique à une page déjà lue → pagination ignorée")
+            break
+        vus.add(signature)
         for x in data:
             pr = x.get("prices") or {}
             minor = int(pr.get("currency_minor_unit", 2) or 2)

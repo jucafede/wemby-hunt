@@ -82,5 +82,51 @@
     "rlsports",
     "sportcards",
     "superior"
-  ]
+  ],
+  "updated_at": "2026-09-08T17:18:42+00:00",
+  "live_now": [
+    {
+      "titre": "2023 Hoops Rookie Special Victor Wembanyama PSA 10",
+      "variete": "BASE_CONFIRMED",
+      "variete_pourquoi": "étiquette PSA lue sur la photo : « 2023 NBA HOOPS · VICTOR WEMBANYAMA · ROOKIE SPECIAL · #3 · GEM MT 10 ». PSA nomme explicitement les parallèles sur ses étiquettes ; l'absence de « HOLO » désigne la base.",
+      "identite_pourquoi": "confirmée par le LABEL DU GRADER, pas par le titre du vendeur : produit, joueur, insert et numéro y figurent tous les quatre.",
+      "cert_psa": "90909040",
+      "cert_verifie": false,
+      "cert_note": "psacard.com répond 403 et l'API 429 — certificat NON vérifié indépendamment.",
+      "grade": "PSA 10 GEM MT",
+      "prix": 450.0,
+      "devise": "EUR",
+      "total_acheteur": 473.2,
+      "total_note": "protection acheteur + port inclus, affichés par Vinted",
+      "stock": "LIVE",
+      "stock_preuve": "JSON-LD availability = InStock, relu le 08/09",
+      "seller": "Vinted (particulier)",
+      "pays": "FR",
+      "seller_trust": "UNVERIFIED — particulier",
+      "url": "https://www.vinted.fr/items/9314343673-2023-hoops-rookie-special-victor-wembanyama-psa10",
+      "discovery_source": "marketplace Vinted — NOUVEAU canal, absent de Wemby Hunt jusqu'ici",
+      "sold_reference": "INSUFFICIENT SOLD DATA",
+      "sold_note": "aucune transaction PSA 10 de cette carte en base : le moteur ne possède que 3 ventes, toutes sur des boîtes scellées. 450 € ne peut être ni validé ni contesté — aucun prix de marché ne sera fabriqué à partir de prix demandés."
+    }
+  ],
+  "ou_j_ai_cherche_sans_rien_trouver": {
+    "boutiques": "65 domaines, 0 exemplaire live",
+    "leboncoin": "répond — uniquement des « Haunted Hoops » (autre insert)",
+    "delcampe": "répond — « No results » explicite",
+    "vinted_autres_pays": "be/es/nl/lu montrent la MÊME annonce ; de/it/pl/lt : aucune",
+    "bloques_403": [
+      "ebay",
+      "comc",
+      "cardmarket",
+      "tcdb",
+      "mercari",
+      "etsy",
+      "whatnot",
+      "pricecharting",
+      "sportscardspro",
+      "cardladder",
+      "psacard"
+    ],
+    "moteurs_web": "marginalia/bing rendent des liens, aucune fiche produit valide — 0 nouveau domaine"
+  }
 }

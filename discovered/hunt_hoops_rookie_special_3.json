@@ -1,0 +1,86 @@
+{
+  "generated_at": "2026-09-08T16:52:10+00:00",
+  "mission": "2023-24 Panini NBA Hoops Victor Wembanyama Rookie Special #3 (BASE et HOLO)",
+  "note": "Carte à l'UNITÉ. Wemby Hunt est un moteur de produits scellés et son sealed_product() rejette les singles par construction : cette chasse a réutilisé ses primitives de découverte (lecture polie 1 req/s, rotation de moteurs, recherche interne des boutiques) SANS son filtre d'identité. Aucune modification de l'architecture.",
+  "couverture": {
+    "domaines_connus": 65,
+    "interrogeables": 51,
+    "muets": [
+      "aamintcards.com",
+      "blowout",
+      "cardtrader.com",
+      "dacw",
+      "kartenhalle.de",
+      "ludifolie.com",
+      "magiccorporation.com",
+      "millcreek",
+      "shopuscards",
+      "sportcards.nl",
+      "stickerpoint",
+      "stickerpoint.ch",
+      "stickerpoint.de",
+      "tradingcards.de"
+    ],
+    "avec_wembanyama": 42,
+    "marketplaces": {
+      "ebay": 403,
+      "comc": 403,
+      "tcdb": 403,
+      "cardmarket": 403,
+      "commentaire": "aucune place de marché lisible : angle mort majeur pour un single"
+    },
+    "moteurs_web": "brave SANS_CLÉ/BLOQUÉ · mojeek BLOQUÉ · duckduckgo VIDE · bing OK mais aucune fiche produit valide au sondage — 0 nouveau domaine découvert"
+  },
+  "resultat": {
+    "rookie_special_trouvees": 1,
+    "achetables_maintenant": 0,
+    "cartes_hoops_wemby_vues": 44,
+    "fiches_wembanyama_examinees": 220,
+    "conclusion": "L'insert Rookie Special est ABSENT des stocks des marchands indépendants interrogeables. Une seule fiche existe et elle est épuisée. Ce n'est pas un défaut de couverture : 51 boutiques ont répondu et 42 détiennent du Wembanyama — l'insert lui-même ne circule pas chez eux."
+  },
+  "rookie_special": [
+    {
+      "titre": "Victor Wembanyama 2023 Hoops Rookie Special Holo",
+      "variete": "HOLO_CONFIRMED",
+      "variete_pourquoi": "mention explicite « Holo » dans le titre",
+      "grade": "RAW",
+      "prix": 95.0,
+      "devise": "USD",
+      "stock": "OOS",
+      "stock_preuve": "JSON-LD availability = OutOfStock, page relue le 08/09",
+      "seller": "threestarssportscards.com",
+      "seller_trust": "non enregistré · découvert par le moteur",
+      "url": "https://threestarssportscards.com/products/victor-wembanyama-2023-hoops-rookie-special-holo",
+      "discovery_source": "balayage boutique · domaine issu de candidate_domains.json"
+    }
+  ],
+  "faux_positifs_ecartes": [
+    {
+      "titre": "Victor Wembanyama Rookie 2023-24 Hoops Premium Stock Attack The Rack #3 PSA 10",
+      "seller": "superior",
+      "prix": 176.95,
+      "devise": "EUR",
+      "motif": "AUTRE INSERT. « Attack The Rack », produit Hoops Premium Stock. Retenu à tort par mon filtre parce qu'il contenait « Hoops » et « #3 ». Vérifié sur la page."
+    }
+  ],
+  "boutiques_porteuses_hoops_wemby": [
+    "cardiacs",
+    "collectorstore",
+    "e5sports",
+    "monmouth",
+    "rbicru7",
+    "rlsports",
+    "sportcards",
+    "superior",
+    "threestarssportscards.com",
+    "worldchampion"
+  ],
+  "boutiques_avec_stock": [
+    "cardiacs",
+    "monmouth",
+    "rbicru7",
+    "rlsports",
+    "sportcards",
+    "superior"
+  ]
+}

@@ -1,0 +1,331 @@
+{
+  "generated_at": "2026-09-08T16:52:10+00:00",
+  "note": "Quelles boutiques exposent une recherche interne exploitable pour les cartes à l'unité (Shopify /search/suggest.json ou WooCommerce ?search=). Sous-produit de la chasse RS-3 du 08/09 : évite de re-sonder 65 domaines à chaque recherche de single, et NOMME les zones aveugles au lieu de les laisser passer pour du vide.",
+  "shops": {
+    "ehcards": {
+      "interrogeable": true,
+      "cartes_wemby_vues": 5,
+      "http": 200
+    },
+    "collectorstore": {
+      "interrogeable": true,
+      "cartes_wemby_vues": 5,
+      "http": 200
+    },
+    "hiddengems": {
+      "interrogeable": true,
+      "cartes_wemby_vues": 5,
+      "http": 200
+    },
+    "awesome": {
+      "interrogeable": true,
+      "cartes_wemby_vues": 5,
+      "http": 200
+    },
+    "rbicru7": {
+      "interrogeable": true,
+      "cartes_wemby_vues": 5,
+      "http": 200
+    },
+    "layton": {
+      "interrogeable": true,
+      "cartes_wemby_vues": 5,
+      "http": 200
+    },
+    "dacw": {
+      "interrogeable": false,
+      "cartes_wemby_vues": 0,
+      "http": 403
+    },
+    "columbia": {
+      "interrogeable": true,
+      "cartes_wemby_vues": 5,
+      "http": 200
+    },
+    "sportscardjunction": {
+      "interrogeable": true,
+      "cartes_wemby_vues": 0,
+      "http": 200
+    },
+    "cardiacs": {
+      "interrogeable": true,
+      "cartes_wemby_vues": 5,
+      "http": 200
+    },
+    "monmouth": {
+      "interrogeable": true,
+      "cartes_wemby_vues": 5,
+      "http": 200
+    },
+    "worldchampion": {
+      "interrogeable": true,
+      "cartes_wemby_vues": 5,
+      "http": 200
+    },
+    "superior": {
+      "interrogeable": true,
+      "cartes_wemby_vues": 5,
+      "http": 200
+    },
+    "sjay2k": {
+      "interrogeable": true,
+      "cartes_wemby_vues": 5,
+      "http": 200
+    },
+    "ballgame": {
+      "interrogeable": true,
+      "cartes_wemby_vues": 5,
+      "http": 200
+    },
+    "bleecker": {
+      "interrogeable": true,
+      "cartes_wemby_vues": 5,
+      "http": 200
+    },
+    "cbhobby": {
+      "interrogeable": true,
+      "cartes_wemby_vues": 1,
+      "http": 200
+    },
+    "boxseat": {
+      "interrogeable": true,
+      "cartes_wemby_vues": 5,
+      "http": 200
+    },
+    "e5sports": {
+      "interrogeable": true,
+      "cartes_wemby_vues": 5,
+      "http": 200
+    },
+    "sportcards": {
+      "interrogeable": true,
+      "cartes_wemby_vues": 5,
+      "http": 200
+    },
+    "blowout": {
+      "interrogeable": false,
+      "cartes_wemby_vues": 0,
+      "http": 404
+    },
+    "rlsports": {
+      "interrogeable": true,
+      "cartes_wemby_vues": 2,
+      "http": 200
+    },
+    "fancave": {
+      "interrogeable": true,
+      "cartes_wemby_vues": 3,
+      "http": 200
+    },
+    "millcreek": {
+      "interrogeable": false,
+      "cartes_wemby_vues": 0,
+      "http": 404
+    },
+    "shopuscards": {
+      "interrogeable": false,
+      "cartes_wemby_vues": 0,
+      "http": 404
+    },
+    "qscards": {
+      "interrogeable": true,
+      "cartes_wemby_vues": 3,
+      "http": 200
+    },
+    "tanteo": {
+      "interrogeable": true,
+      "cartes_wemby_vues": 5,
+      "http": 200
+    },
+    "stcuk": {
+      "interrogeable": true,
+      "cartes_wemby_vues": 5,
+      "http": 200
+    },
+    "kaboom": {
+      "interrogeable": true,
+      "cartes_wemby_vues": 1,
+      "http": 200
+    },
+    "tradewii": {
+      "interrogeable": true,
+      "cartes_wemby_vues": 5,
+      "http": 200
+    },
+    "jakesbreaks": {
+      "interrogeable": true,
+      "cartes_wemby_vues": 3,
+      "http": 200
+    },
+    "hallofcollect": {
+      "interrogeable": true,
+      "cartes_wemby_vues": 0,
+      "http": 200
+    },
+    "deichcards": {
+      "interrogeable": true,
+      "cartes_wemby_vues": 5,
+      "http": 200
+    },
+    "dennistheripper": {
+      "interrogeable": true,
+      "cartes_wemby_vues": 4,
+      "http": 200
+    },
+    "bigcards": {
+      "interrogeable": true,
+      "cartes_wemby_vues": 4,
+      "http": 200
+    },
+    "dacardworldeu": {
+      "interrogeable": true,
+      "cartes_wemby_vues": 5,
+      "http": 200
+    },
+    "americansportstore": {
+      "interrogeable": true,
+      "cartes_wemby_vues": 3,
+      "http": 200
+    },
+    "pokefamily": {
+      "interrogeable": true,
+      "cartes_wemby_vues": 0,
+      "http": 200
+    },
+    "mangastory": {
+      "interrogeable": true,
+      "cartes_wemby_vues": 0,
+      "http": 200
+    },
+    "dioib": {
+      "interrogeable": true,
+      "cartes_wemby_vues": 5,
+      "http": 200
+    },
+    "mafiosicards_shop": {
+      "interrogeable": true,
+      "cartes_wemby_vues": 3,
+      "http": 200
+    },
+    "hikaru_shop": {
+      "interrogeable": true,
+      "cartes_wemby_vues": 5,
+      "http": 200
+    },
+    "stickerpoint": {
+      "interrogeable": false,
+      "cartes_wemby_vues": 0,
+      "http": 404
+    },
+    "kutogo": {
+      "interrogeable": true,
+      "cartes_wemby_vues": 0,
+      "http": 200
+    },
+    "stickerpoint.de": {
+      "interrogeable": false,
+      "cartes_wemby_vues": 0,
+      "http": 404
+    },
+    "stickerpoint.ch": {
+      "interrogeable": false,
+      "cartes_wemby_vues": 0,
+      "http": 404
+    },
+    "magiccorporation.com": {
+      "interrogeable": false,
+      "cartes_wemby_vues": 0,
+      "http": 404
+    },
+    "ludifolie.com": {
+      "interrogeable": false,
+      "cartes_wemby_vues": 0,
+      "http": 404
+    },
+    "tradingcards.de": {
+      "interrogeable": false,
+      "cartes_wemby_vues": 0,
+      "http": 404
+    },
+    "kartenhalle.de": {
+      "interrogeable": false,
+      "cartes_wemby_vues": 0,
+      "http": 200
+    },
+    "sportcards.nl": {
+      "interrogeable": false,
+      "cartes_wemby_vues": 0,
+      "http": 200
+    },
+    "cardtrader.com": {
+      "interrogeable": false,
+      "cartes_wemby_vues": 0,
+      "http": 406
+    },
+    "cardsmithsbreaks.com": {
+      "interrogeable": true,
+      "cartes_wemby_vues": 0,
+      "http": 200
+    },
+    "cashcardsunlimited.com": {
+      "interrogeable": true,
+      "cartes_wemby_vues": 5,
+      "http": 200
+    },
+    "giantsportscards.com": {
+      "interrogeable": true,
+      "cartes_wemby_vues": 5,
+      "http": 200
+    },
+    "threestarssportscards.com": {
+      "interrogeable": true,
+      "cartes_wemby_vues": 5,
+      "http": 200
+    },
+    "aamintcards.com": {
+      "interrogeable": false,
+      "cartes_wemby_vues": 0,
+      "http": 404
+    },
+    "itstimecards.com": {
+      "interrogeable": true,
+      "cartes_wemby_vues": 5,
+      "http": 200
+    },
+    "scorebigcollectibles.com": {
+      "interrogeable": true,
+      "cartes_wemby_vues": 0,
+      "http": 200
+    },
+    "eastsidecollectables.com.au": {
+      "interrogeable": true,
+      "cartes_wemby_vues": 5,
+      "http": 200
+    },
+    "portcitysportscollectibles.com": {
+      "interrogeable": true,
+      "cartes_wemby_vues": 0,
+      "http": 200
+    },
+    "cmbcollectibles.com": {
+      "interrogeable": true,
+      "cartes_wemby_vues": 5,
+      "http": 200
+    },
+    "shoppieceofthegame.com": {
+      "interrogeable": true,
+      "cartes_wemby_vues": 5,
+      "http": 200
+    },
+    "cardpopusa.com": {
+      "interrogeable": true,
+      "cartes_wemby_vues": 4,
+      "http": 200
+    },
+    "breakawaysc.com": {
+      "interrogeable": true,
+      "cartes_wemby_vues": 0,
+      "http": 200
+    }
+  }
+}

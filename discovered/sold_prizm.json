@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-08T11:40:39+00:00",
+  "generated_at": "2026-09-08T17:05:16+00:00",
   "computed_by": "sold_auto",
   "note": "Sortie CALCULÉE à chaque passage depuis sold_ledger.json. Ne pas éditer à la main : la prochaine exécution écrase le fichier. LAST_SALE est un point de la série, jamais une médiane ni une référence de valorisation.",
   "confidence_scale": "HIGH n>=10 · MEDIUM n 3-9 · LOW n 1-2 · NONE n=0 (fenêtre 90 j)",

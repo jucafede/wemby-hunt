@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-08T21:36:02+00:00",
+  "generated_at": "2026-09-09T05:01:40+00:00",
   "method": "automatique · KNOWN URL REFRESH, puis NEW LISTING DISCOVERY par recherche web ET par balayage des catalogues candidats",
   "stale_after_hours": 24,
   "note": "Une annonce non VÉRIFIÉE depuis plus de 24 h passe STALE : visible, datée, mais ni live, ni meilleur prix, ni déclencheur d'achat. eBay, StockX et les sites de cotation refusent toute lecture automatisée (403) — leurs annonces ne peuvent donc pas être confirmées ici, et ne le prétendent pas.",
@@ -18,12 +18,12 @@
     "marketplace_searches": 20,
     "domains_swept": 8,
     "ecartes_deja_crawles": [],
-    "domains_reachable": 8,
-    "catalog_items_read": 22918,
+    "domains_reachable": 7,
+    "catalog_items_read": 13959,
     "new_domains": [],
-    "new_listings": 13,
+    "new_listings": 9,
     "new_by_search": 0,
-    "new_by_sweep": 13,
+    "new_by_sweep": 9,
     "price_changes": [],
     "live_to_oos": [],
     "oos_to_live": [],
@@ -78,9 +78,9 @@
       }
     ],
     "lost": [],
-    "urls_seen": 290,
-    "urls_probed": 3,
-    "rejected": 3,
+    "urls_seen": 301,
+    "urls_probed": 4,
+    "rejected": 4,
     "engine_attempts": [
       {
         "query": "2023-24 Panini Prizm Basketball Hobby Box buy",
@@ -148,7 +148,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 6
+            "n": 14
           }
         ]
       },
@@ -183,7 +183,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 11
+            "n": 14
           }
         ]
       },
@@ -218,7 +218,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 6
+            "n": 13
           }
         ]
       },
@@ -361,7 +361,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 11
+            "n": 13
           }
         ]
       },
@@ -829,7 +829,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 13
+            "n": 4
           }
         ]
       },
@@ -1631,7 +1631,7 @@
     {
       "format": "FOTL",
       "first_seen": "2026-09-06",
-      "last_checked": "2026-09-08T21:28:15+00:00",
+      "last_checked": "2026-09-09T04:53:38+00:00",
       "last_seen_live": "2026-09-06",
       "price": null,
       "currency": "USD",
@@ -1651,7 +1651,7 @@
     {
       "format": "Mega",
       "first_seen": "2026-09-06",
-      "last_checked": "2026-09-08T21:28:16+00:00",
+      "last_checked": "2026-09-09T04:53:39+00:00",
       "last_seen_live": "2026-09-06",
       "price": 239.99,
       "currency": "USD",
@@ -1671,7 +1671,7 @@
     {
       "format": "Mega",
       "first_seen": "2026-09-06",
-      "last_checked": "2026-09-08T21:28:16+00:00",
+      "last_checked": "2026-09-09T04:53:40+00:00",
       "last_seen_live": "2026-09-06",
       "price": 230.99,
       "currency": "USD",
@@ -1691,7 +1691,7 @@
     {
       "format": "Mega",
       "first_seen": "2026-09-06",
-      "last_checked": "2026-09-08T21:28:16+00:00",
+      "last_checked": "2026-09-09T04:53:40+00:00",
       "last_seen_live": "2026-09-06",
       "price": 134.0,
       "currency": "USD",
@@ -1711,7 +1711,7 @@
     {
       "format": "Blaster",
       "first_seen": "2026-09-06",
-      "last_checked": "2026-09-08T21:28:16+00:00",
+      "last_checked": "2026-09-09T04:53:40+00:00",
       "last_seen_live": "2026-09-06",
       "price": 129.95,
       "currency": "USD",
@@ -1731,7 +1731,7 @@
     {
       "format": "Blaster",
       "first_seen": "2026-09-06",
-      "last_checked": "2026-09-08T21:28:16+00:00",
+      "last_checked": "2026-09-09T04:53:40+00:00",
       "last_seen_live": "2026-09-06",
       "price": 74.0,
       "currency": "USD",
@@ -1751,7 +1751,7 @@
     {
       "format": "Retail Box",
       "first_seen": "2026-09-06",
-      "last_checked": "2026-09-08T21:28:16+00:00",
+      "last_checked": "2026-09-09T04:53:40+00:00",
       "last_seen_live": "2026-09-06",
       "price": 299.98,
       "currency": "USD",
@@ -1771,7 +1771,7 @@
     {
       "format": "Choice",
       "first_seen": "2026-09-06",
-      "last_checked": "2026-09-08T21:28:16+00:00",
+      "last_checked": "2026-09-09T04:53:40+00:00",
       "last_seen_live": "2026-09-06",
       "price": 867.0,
       "currency": "USD",
@@ -1791,7 +1791,7 @@
     {
       "format": "Hobby",
       "first_seen": "2026-09-06",
-      "last_checked": "2026-09-08T21:28:16+00:00",
+      "last_checked": "2026-09-09T04:53:40+00:00",
       "last_seen_live": "2026-09-06",
       "price": 874.0,
       "currency": "USD",
@@ -1811,7 +1811,7 @@
     {
       "format": "Premium Factory Set",
       "first_seen": "2026-09-06",
-      "last_checked": "2026-09-08T21:28:16+00:00",
+      "last_checked": "2026-09-09T04:53:40+00:00",
       "last_seen_live": null,
       "price": null,
       "currency": "USD",
@@ -1831,7 +1831,7 @@
     {
       "format": "Mega",
       "first_seen": "2026-09-06",
-      "last_checked": "2026-09-08T21:28:17+00:00",
+      "last_checked": "2026-09-09T04:53:40+00:00",
       "last_seen_live": null,
       "price": null,
       "currency": "USD",
@@ -1851,7 +1851,7 @@
     {
       "format": "Mega",
       "first_seen": "2026-09-06",
-      "last_checked": "2026-09-08T21:28:17+00:00",
+      "last_checked": "2026-09-09T04:53:40+00:00",
       "last_seen_live": null,
       "price": null,
       "currency": "USD",
@@ -1871,7 +1871,7 @@
     {
       "format": "Hobby",
       "first_seen": "2026-09-07T09:07:17+00:00",
-      "last_checked": "2026-09-08T21:28:18+00:00",
+      "last_checked": "2026-09-09T04:53:42+00:00",
       "last_seen_live": null,
       "price": 1199.99,
       "currency": "CAD",
@@ -1891,7 +1891,7 @@
     {
       "format": "International",
       "first_seen": "2026-09-07T09:40:30+00:00",
-      "last_checked": "2026-09-08T21:35:15+00:00",
+      "last_checked": "2026-09-09T05:01:12+00:00",
       "last_seen_live": null,
       "price": 334.95,
       "currency": "USD",
@@ -1914,7 +1914,7 @@
     {
       "format": "Choice",
       "first_seen": "2026-09-07T09:40:30+00:00",
-      "last_checked": "2026-09-08T21:35:15+00:00",
+      "last_checked": "2026-09-09T05:01:12+00:00",
       "last_seen_live": null,
       "price": 10599.95,
       "currency": "USD",
@@ -1936,7 +1936,7 @@
     {
       "format": "Fast Break",
       "first_seen": "2026-09-07T09:40:30+00:00",
-      "last_checked": "2026-09-08T21:35:15+00:00",
+      "last_checked": "2026-09-09T05:01:12+00:00",
       "last_seen_live": null,
       "price": 12499.95,
       "currency": "USD",
@@ -1958,7 +1958,7 @@
     {
       "format": "Fast Break",
       "first_seen": "2026-09-07T09:40:30+00:00",
-      "last_checked": "2026-09-08T21:35:15+00:00",
+      "last_checked": "2026-09-09T05:01:12+00:00",
       "last_seen_live": null,
       "price": 549.95,
       "currency": "USD",
@@ -1981,7 +1981,7 @@
     {
       "format": "Hobby",
       "first_seen": "2026-09-07T09:40:30+00:00",
-      "last_checked": "2026-09-08T21:35:15+00:00",
+      "last_checked": "2026-09-09T05:01:12+00:00",
       "last_seen_live": null,
       "price": 13549.95,
       "currency": "USD",
@@ -2003,8 +2003,8 @@
     {
       "format": "Hobby",
       "first_seen": "2026-09-07T09:40:30+00:00",
-      "last_checked": "2026-09-08T21:35:15+00:00",
-      "last_seen_live": "2026-09-08T21:35:15+00:00",
+      "last_checked": "2026-09-09T05:01:12+00:00",
+      "last_seen_live": "2026-09-09T05:01:12+00:00",
       "price": 3349.95,
       "currency": "USD",
       "seller": "giantsportscards.com",
@@ -2026,7 +2026,7 @@
     {
       "format": "Blaster",
       "first_seen": "2026-09-07T09:41:43+00:00",
-      "last_checked": "2026-09-08T21:35:36+00:00",
+      "last_checked": "2026-09-09T05:01:36+00:00",
       "last_seen_live": null,
       "price": 64.99,
       "currency": "USD",
@@ -2049,7 +2049,7 @@
     {
       "format": "Pack",
       "first_seen": "2026-09-07T09:42:49+00:00",
-      "last_checked": "2026-09-08T21:34:09+00:00",
+      "last_checked": "2026-09-09T04:53:50+00:00",
       "last_seen_live": null,
       "price": 19.99,
       "currency": "USD",
@@ -2063,7 +2063,7 @@
       "title_lu": "2023-24 Panini Prizm NBA Value Pack. New. 15 Cards. Red, White and Blue Prizms!",
       "probe": {
         "raw": "OOS",
-        "why": "disponibilité structurée de l'API"
+        "why": null
       },
       "quantity": 1,
       "unit_price": 19.99
@@ -2071,7 +2071,7 @@
     {
       "format": "Mega",
       "first_seen": "2026-09-07T09:42:49+00:00",
-      "last_checked": "2026-09-08T21:34:09+00:00",
+      "last_checked": "2026-09-09T04:53:51+00:00",
       "last_seen_live": null,
       "price": 89.99,
       "currency": "USD",
@@ -2085,7 +2085,7 @@
       "title_lu": "2023-24 Panini Prizm Basketball Mega Box. New.",
       "probe": {
         "raw": "OOS",
-        "why": "disponibilité structurée de l'API"
+        "why": null
       },
       "quantity": 1,
       "sku_id": "PANINI_2023-24_PRIZM_MEGA",
@@ -2094,7 +2094,7 @@
     {
       "format": "Retail Box",
       "first_seen": "2026-09-07T09:42:49+00:00",
-      "last_checked": "2026-09-08T21:34:09+00:00",
+      "last_checked": "2026-09-09T04:53:52+00:00",
       "last_seen_live": null,
       "price": 8.99,
       "currency": "USD",
@@ -2108,7 +2108,7 @@
       "title_lu": "2023-24 Panini Prizm NBA sealed pack. Retail Box.",
       "probe": {
         "raw": "OOS",
-        "why": "disponibilité structurée de l'API"
+        "why": null
       },
       "quantity": 1,
       "sku_id": "PANINI_2023-24_PRIZM_RETAIL_BOX",
@@ -2117,7 +2117,7 @@
     {
       "format": "Blaster",
       "first_seen": "2026-09-07T09:42:49+00:00",
-      "last_checked": "2026-09-08T21:34:09+00:00",
+      "last_checked": "2026-09-09T04:53:53+00:00",
       "last_seen_live": null,
       "price": 39.99,
       "currency": "USD",
@@ -2131,7 +2131,7 @@
       "title_lu": "2023-24 Panini Prizm NBA Blaster Box.",
       "probe": {
         "raw": "OOS",
-        "why": "disponibilité structurée de l'API"
+        "why": null
       },
       "quantity": 1,
       "sku_id": "PANINI_2023-24_PRIZM_BLASTER",
@@ -2140,8 +2140,8 @@
     {
       "format": "Hobby",
       "first_seen": "2026-09-08T16:59:05+00:00",
-      "last_checked": "2026-09-08T21:28:29+00:00",
-      "last_seen_live": "2026-09-08T21:28:29+00:00",
+      "last_checked": "2026-09-09T04:53:53+00:00",
+      "last_seen_live": "2026-09-09T04:53:53+00:00",
       "price": 3400.0,
       "currency": "USD",
       "seller": "tradingcardmarket.com",
@@ -2160,8 +2160,8 @@
     {
       "format": "Hobby",
       "first_seen": "2026-09-08T16:59:05+00:00",
-      "last_checked": "2026-09-08T21:34:41+00:00",
-      "last_seen_live": "2026-09-08T21:34:41+00:00",
+      "last_checked": "2026-09-09T05:00:21+00:00",
+      "last_seen_live": "2026-09-09T05:00:21+00:00",
       "price": 2500.0,
       "currency": "USD",
       "seller": "collectorsclub.com",
@@ -2183,8 +2183,8 @@
     {
       "format": "FOTL",
       "first_seen": "2026-09-08T17:03:56+00:00",
-      "last_checked": "2026-09-08T21:34:41+00:00",
-      "last_seen_live": "2026-09-08T21:34:41+00:00",
+      "last_checked": "2026-09-09T05:00:21+00:00",
+      "last_seen_live": "2026-09-09T05:00:21+00:00",
       "quantity": 1,
       "sku_id": null,
       "unit_price": 5500.0,

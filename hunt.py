@@ -1683,10 +1683,15 @@ def hot_now(entries, limit=15):
         # seuil manuel ne remontent une offre que les ventes ou les prix demandés condamnent.
         # Le Topps Chrome à 75 $ entrait ici par un -38 % vs seuil manuel, alors que sept ventes
         # réelles le donnaient à 64 $.
-        if pv.get("verdict") and pv["verdict"] != "INSUFFICIENT DATA": continue
-        # sans aucune preuve de marché, les déclencheurs historiques restent recevables
-        if e["triggers"] and e["ref"] is not None and e["gap"] is not None and e["gap"] <= 0:
-            elig.append(e)
+        # ANCIENNE PORTE DÉROBÉE, REFERMÉE LE 10/09.
+        # Une offre sans vente réalisée pouvait encore entrer par ses seuls déclencheurs
+        # historiques — restock, plus-bas déjà vu. Résultat en production : BUY NOW affichait
+        # quinze cartes portant toutes « INSUFFICIENT DATA », sous un bandeau annonçant
+        # « 15 achats adossés à des ventes réalisées ». La section promettait une preuve
+        # qu'aucune de ses lignes ne portait, et c'étaient pour l'essentiel des sachets à 0,75 $.
+        #
+        # Un plus-bas historique reste une information : il descend en anomalie à vérifier,
+        # où il est présenté pour ce qu'il est — un signal, pas une valorisation.
     elig.sort(key=lambda e: (VERDICT_RANK.get((e.get("pv") or {}).get("verdict"), 5),
                              -len(e["triggers"]),
                              (e.get("pv") or {}).get("gap") if (e.get("pv") or {}).get("gap") is not None
@@ -2031,6 +2036,9 @@ def price_anomalies(entries, limit=20):
         # le cas qu'il ne faut pas rater — un prix spectaculaire chez un vendeur non vérifié.
         if pv.get("capped_from"):
             out.append((pv.get("gap") or 0, f"{pv['capped_from']} annulé — vendeur à risque", e))
+        elif (pv.get("verdict") == "INSUFFICIENT DATA" and e.get("triggers")
+              and e.get("gap") is not None and e["gap"] <= -15):
+            out.append((e["gap"], "plus-bas historique, aucune vente pour trancher", e))
         elif pv.get("basis") == "ask_only" and gap is not None and gap <= -15:
             out.append((gap, "prix très inférieur aux autres vendeurs", e))
         elif douteux and pv.get("verdict") in ("STRONG BUY", "BUY"):

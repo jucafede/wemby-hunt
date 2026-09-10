@@ -107,14 +107,19 @@ _tg0, _d0, _g0, _r0, _k0 = hunt.compute_badges(O("bleecker", 0.0, True), None,
     {"market_ask_us": 100, "market_ask_from": ["x"]}, "watch", [O("bleecker", 0.0, True)])
 check("prix 0 -> aucun déclencheur", _tg0, [])
 check("prix 0 -> descriptif NO_PRICE", "NO_PRICE" in _d0, True)
+# depuis le 10/09, BUY NOW n'accepte QUE des verdicts adossés à des ventes réalisées :
+# ces entrées en portent un, sinon elles testeraient un chemin qui n'existe plus.
+_PV = {"verdict": "BUY", "basis": "sold", "gap": -20.0, "ref": 62.0,
+       "confidence": "HIGH", "why": "7 ventes réalisées"}
 _z = {"available": True, "triggers": ["STRONG_DEAL"], "gap": -100.0, "ref": 50, "key": "Z",
-      "sid": "Z", "o": ("S", "sh", "t", 0.0, 1, "u", 1.0, "2026-01-01T00:00:00", "")}
+      "sid": "Z", "pv": _PV, "o": ("S", "sh", "t", 0.0, 1, "u", 1.0, "2026-01-01T00:00:00", "")}
 check("prix 0 exclu de HOT NOW", _z in hunt.hot_now([_z]), False)
 
 # déduplication HOT NOW : un produit = une ligne + N autres offres
 def _E(key, price, gap):
     return {"available": True, "triggers": ["STRONG_DEAL"], "gap": gap, "ref": 50, "key": key,
-            "sid": key, "o": ("S", f"sh{price}", "t", price, 1, "u", 1.0, "2026-01-01T00:00:00", "")}
+            "sid": key, "pv": dict(_PV, gap=gap),
+            "o": ("S", f"sh{price}", "t", price, 1, "u", 1.0, "2026-01-01T00:00:00", "")}
 _hn = hunt.hot_now([_E("EURO", 9.95, -60.0), _E("EURO", 14.75, -41.0), _E("EURO", 15.0, -40.0), _E("AUTRE", 20.0, -20.0)])
 check("un produit n'occupe qu'une place HOT", len([e for e in _hn if e["key"] == "EURO"]), 1)
 check("la meilleure offre est retenue", _hn[0]["o"][3], 9.95)
@@ -128,7 +133,13 @@ check("seuil null -> pas de restock deal, pas de TypeError",
 
 # ---- HOT NOW : invariants
 def _mk(key, avail, trig, gap, ref, price=42.0):
+    # gap positif = plus cher que la référence : le verdict le dit, et il est SANS APPEL
+    pv = dict(_PV, gap=gap) if (gap is not None and gap <= 0) else (
+        dict(_PV, verdict="EXPENSIVE", gap=gap) if gap is not None else
+        {"verdict": "INSUFFICIENT DATA", "basis": None, "gap": None, "ref": None,
+         "confidence": "LOW", "why": "aucune référence"})
     return {"available": avail, "triggers": trig, "gap": gap, "ref": ref, "key": key, "sid": key,
+            "pv": pv,
             "o": ("S", "sh", "t", price, 1 if avail else 0, "u", 1.0, "2026-01-01T00:00:00", "")}
 noref = _mk("n", True,  ["NEW_LOW"],     None, None)
 ok    = _mk("o", True,  ["DEAL -12%"],  -12.0, 50)

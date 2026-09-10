@@ -134,6 +134,28 @@ check("VERIFY BEFORE BUYING n'ouvre jamais BUY NOW",
 # le stock déclaré par WooCommerce ne suffit jamais à confirmer chez ce vendeur
 check("le stock de kutogo n'est pas prouvable", hunt.stock_provable("kutogo"), False)
 
+# ---------------------------------------------- 7. la porte dérobée des déclencheurs, 10/09
+# En production, BUY NOW affichait quinze cartes portant TOUTES « INSUFFICIENT DATA », sous un
+# bandeau annonçant « 15 achats adossés à des ventes réalisées ». Elles entraient par leurs
+# seuls déclencheurs historiques — restock, plus-bas déjà vu — hérités d'avant la règle.
+def _e(sid, prix, pv, triggers=(), gap=None, ref=None, shop="sh"):
+    o = ("S", shop, "titre", prix, 1, f"https://x.test/{sid}", 1.0, "2026-09-10T00:00:00",
+         "", "EXACT", None, 1, prix, f"{sid}|std|x1", "US", "USD")
+    return {"o": o, "key": f"{sid}|std|x1", "sid": sid, "sku": {}, "available": True,
+            "triggers": list(triggers), "descriptors": [], "gap": gap, "ref": ref,
+            "kind": None, "mem": None, "comp": "EXACT", "hist": None, "region": "US", "pv": pv}
+
+_insuff = {"verdict": "INSUFFICIENT DATA", "basis": None, "gap": None, "ref": None,
+           "confidence": "LOW", "why": "aucune vente"}
+_avec_decl = _e("X", 4.99, _insuff, triggers=["NEW_LOW"], gap=-40.0, ref=8.25)
+check("un plus-bas historique SANS vente n'ouvre plus BUY NOW", hunt.hot_now([_avec_decl]), [])
+check("il descend en anomalie à vérifier", len(hunt.price_anomalies([_avec_decl])), 1)
+check("et son motif le nomme",
+      hunt.price_anomalies([_avec_decl])[0][1], "plus-bas historique, aucune vente pour trancher")
+check("une vente réalisée ouvre toujours BUY NOW",
+      len(hunt.hot_now([_e("Y", 50.0, {"verdict": "BUY", "basis": "sold", "gap": -20.0,
+                                       "ref": 62.0, "confidence": "HIGH", "why": "7 ventes"})])), 1)
+
 print(f"\nTOTAL : {len(total)} tests, {len(fails)} FAIL")
 for f in fails: print("  FAIL", f)
 sys.exit(1 if fails else 0)

@@ -162,8 +162,12 @@ def pvd(v, basis="sold", gap=0.0):
 cher = hn_entry("TOPPS_CHROME", 75.0, pvd("EXPENSIVE", "sold", 17.2))
 check("un EXPENSIVE sold-backed n'entre pas dans HOT NOW malgré ses déclencheurs",
       hunt.hot_now([cher]), [])
-check("sans aucune preuve de marché, les déclencheurs historiques restent recevables",
-      len(hunt.hot_now([hn_entry("X", 39.99, pvd("INSUFFICIENT DATA", None, None))])), 1)
+# RÈGLE INVERSÉE LE 10/09. Elle disait : « sans preuve de marché, les déclencheurs historiques
+# restent recevables ». En production, cette phrase remplissait BUY NOW de quinze cartes portant
+# toutes INSUFFICIENT DATA — dont des sachets à 0,75 $ — sous un bandeau annonçant quinze achats
+# adossés à des ventes réalisées. Un plus-bas historique est un signal, pas une preuve d'achat.
+check("un déclencheur historique seul n'ouvre plus BUY NOW",
+      hunt.hot_now([hn_entry("X", 39.99, pvd("INSUFFICIENT DATA", None, None))]), [])
 
 # ---------------------------------------------------------------------------
 # BUY NOW n'accepte QUE des ventes réalisées (règle du 07/09)
@@ -179,7 +183,8 @@ check("une remise contre des prix demandés n'ouvre PAS BUY NOW",
 check("mais elle apparaît en anomalie à vérifier",
       len(hunt.price_anomalies([hn_entry("X", 10.0, _askonly)])), 1)
 check("une remise trop faible n'est pas une anomalie",
-      hunt.price_anomalies([hn_entry("X", 10.0, dict(_askonly, ask_gap=-3.0))]), [])
+      hunt.price_anomalies([hn_entry("X", 10.0, dict(_askonly, ask_gap=-3.0),
+                                     triggers=(), gap=None, ref=None)]), [])
 check("seul un verdict adossé aux ventes entre dans BUY NOW",
       [e["sid"] for e in hunt.hot_now([
           hn_entry("ASKD", 10.0, _askonly, triggers=(), gap=None, ref=None),

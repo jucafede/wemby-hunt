@@ -1,10 +1,5 @@
-⚠️  [shopuscards] passage 2026-09-10T07:46:15+00:00 PARTIAL (127 produits) — ignoré, référence = dernier passage complet
+⚠️  [shopuscards] passage 2026-09-10T11:06:52+00:00 PARTIAL (179 produits) — ignoré, référence = dernier passage complet
 (200 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
-
-========================================================================
-  🔔 RESTOCKS depuis le passage précédent
-========================================================================
-  🔔 RESTOCK  PANINI_2023-24_SELECT_MEGA  fancave  $129.99  https://fancave.com/products/2023-24-panini-select-basketball-mega-box
 
 ========================================================================
   RETAIL
@@ -130,8 +125,8 @@
 ⛔ NO_GO   2023-24 Panini Select Mega   [PANINI_2023-24_SELECT_MEGA]
    1. rbicru7          $  110.00  IN STOCK  landed≈€ 126.57  (score 1.00)
         RC_YEAR  cheapest of 2 in stock
-   2. fancave          $  129.99  IN STOCK  landed≈€ 147.25  (score 1.00)  🔔
-        🔹RESTOCK +21j  RC_YEAR  VERIFY
+   2. fancave          $  129.99  IN STOCK  landed≈€ 147.25  (score 1.00)
+        RC_YEAR  VERIFY
    3. rlsports         $   64.95  SOLD OUT  landed≈€  79.97  (score 1.00)
         RC_YEAR  VERIFY
    4. e5sports         $   65.00  SOLD OUT  landed≈€  80.02  (score 1.00)
@@ -1495,16 +1490,18 @@
    BEST → hiddengems  https://www.hiddengemscardshop.com/products/2025-26-hoops-basketball-hanger-box
 
 · SUIVI   2025-26 Panini Hoops Pack   [PANINI_2025-26_HOOPS_PACK]
-   1. boxseat          $   14.99  IN STOCK  landed≈€  28.29  (score 1.00)
-        VERIFY  cheapest of 4 in stock
-   2. rbicru7          $   16.00  IN STOCK  landed≈€  29.34  (score 1.00)
-   3. cardiacs         $   20.00  IN STOCK  landed≈€  33.48  (score 1.00)
-   4. rbicru7          $   42.00  IN STOCK  landed≈€  56.23  (score 1.00)
-   5. sportscardjunction $    5.00  SOLD OUT  landed≈€  17.96  (score 1.00)
+   1. stcuk            $    0.00  IN STOCK  landed≈€  12.79  (score 1.00)
+        NO_PRICE  FR
+   2. boxseat          $   14.99  IN STOCK  landed≈€  28.29  (score 1.00)
+        VERIFY
+   3. rbicru7          $   16.00  IN STOCK  landed≈€  29.34  (score 1.00)
+   4. cardiacs         $   20.00  IN STOCK  landed≈€  33.48  (score 1.00)
+   5. rbicru7          $   42.00  IN STOCK  landed≈€  56.23  (score 1.00)
+   6. sportscardjunction $    5.00  SOLD OUT  landed≈€  17.96  (score 1.00)
         VERIFY
    ask $15.00   sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
-   HISTORICAL LOW $5.00 (le 2026-09-06, sportscardjunction, 4 shop(s) vus) | cheapest live $14.99
-   BEST → boxseat  https://boxseatcollectibles.com/products/2025-26-topps-nba-hoops-hobby-pack
+   HISTORICAL LOW $5.00 (le 2026-09-06, sportscardjunction, 4 shop(s) vus) | aucun live
+   BEST → stcuk  https://sportstradingcardsuk.com/products/2025-26-topps-hoops-basketball-hobby-pack
 
 · SUIVI   2025-26 Panini Origins EuroLeague Pack   [PANINI_2025-26_ORIGINS_EUROLEAGUE_PACK]  ⚑ False
    1. rbicru7          $    8.00  IN STOCK  landed≈€  21.06  (score 1.00)
@@ -1548,15 +1545,16 @@
    BEST → hiddengems  https://www.hiddengemscardshop.com/products/2025-26-panini-prizm-basketball-mega-box
 
 · SUIVI   2025-26 Panini Prizm Pack   [PANINI_2025-26_PRIZM_PACK]
-   1. rbicru7          $   23.00  IN STOCK  landed≈€  36.58  (score 1.00)
-        cheapest of 2 in stock
-   2. boxseat          $   39.99  IN STOCK  landed≈€  54.15  (score 1.00)
+   1. stcuk            $    0.00  IN STOCK  landed≈€  12.79  (score 1.00)
+        NO_PRICE  FR
+   2. rbicru7          $   23.00  IN STOCK  landed≈€  36.58  (score 1.00)
+   3. boxseat          $   39.99  IN STOCK  landed≈€  54.15  (score 1.00)
         VERIFY
-   3. dacardworldeu    $    7.00  SOLD OUT  landed≈€  20.03  (score 1.00)
+   4. dacardworldeu    $    7.00  SOLD OUT  landed≈€  20.03  (score 1.00)
         VERIFY  FR
    ask $23.00   sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
-   HISTORICAL LOW $23.00 (le 2026-09-06, rbicru7, 2 shop(s) vus) | cheapest live $23.00
-   BEST → rbicru7  https://rbicru7.com/products/2025-26-panini-prizm-basketball-hobby-pack
+   HISTORICAL LOW $23.00 (le 2026-09-06, rbicru7, 2 shop(s) vus) | aucun live
+   BEST → stcuk  https://sportstradingcardsuk.com/products/2025-26-panini-prizm-basketball-hobby-pack
 
 · SUIVI   2025-26 Panini Select EuroLeague Hobby Mega   [PANINI_2025-26_SELECT_EUROLEAGUE_HOBBY_MEGA]  ⚑ False
    1. collectorstore   $   24.99  IN STOCK  landed≈€  38.64  (score 1.00)
@@ -3604,6 +3602,7 @@
   [bleecker] 2022 Panini Obsidian Basketball Hobby Box  $275.00 OOS  → [["PANINI_2023-24_OBSIDIAN_HOBBY", 0.77], ["PANINI_2024-25_OBSIDIAN_HOBBY", 0.77]]
   [rlsports] 2023-24 Panini Haunted Hoops Basketball Bundle  $13.99 OOS  → [["PANINI_2023-24_HOOPS_BLASTER", 0.77], ["PANINI_2023-24_HOOPS_MEGA", 0.77], ["PANINI_2023-24_HOOPS_HOBBY", 0.77]]
   [rlsports] 2023-24 Topps Chrome Basketball Monster Box  $94.99 OOS  → [["TOPPS_2023-24_CHROME_MONSTER", 0.77]]
+  [shopuscards] 2023/24 Panini Haunted Hoops Basketball 40-Pack Bundle  $29.16 IN  → [["PANINI_2023-24_HOOPS_BLASTER", 0.77], ["PANINI_2023-24_HOOPS_MEGA", 0.77], ["PANINI_2023-24_HOOPS_HOBBY", 0.77]]
   [tanteo] 2023-24 Panini Phoenix Cartes Basketball NBA Méga Box  $89.90 IN  → [["PANINI_2023-24_PHOENIX_BLASTER", 0.77], ["PANINI_2023-24_PHOENIX_MEGA", 0.77], ["PANINI_2023-24_PHOENIX_INTERNATIONAL", 0.77]]
   [kaboom] Topps Chrome Black Basketball 2026 - Hobby Box  $340.00 IN  → [["TOPPS_2025-26_CHROME_BLACK_HOBBY", 0.77]]
   [deichcards] Topps Chrome UWCL Blaster Box 2023/2024  $25.00 IN  → [["TOPPS_2023-24_CHROME_VALUE_BLASTER", 0.77]]
@@ -3620,7 +3619,6 @@
   [bleecker] 1998-99 Skybox Hoops Basketball Hobby Box  $1200.00 OOS  → [["PANINI_2024-25_HOOPS_HOBBY", 0.75], ["TOPPS_2025-26_HOOPS_HOBBY", 0.75], ["PANINI_2023-24_HOOPS_HOBBY", 0.75]]
   [bleecker] 2012 Prizm Basketball Hobby Box  $17500.00 OOS  → [["PANINI_2023-24_PRIZM_HOBBY", 0.75], ["PANINI_2024-25_PRIZM_HOBBY", 0.75], ["PANINI_2025-26_PRIZM_HOBBY", 0.75]]
   [bleecker] 2022 Prizm NBA Basketball Hobby Box  $850.00 OOS  → [["PANINI_2023-24_PRIZM_HOBBY", 0.75], ["PANINI_2024-25_PRIZM_HOBBY", 0.75], ["PANINI_2025-26_PRIZM_HOBBY", 0.75]]
-  [boxseat] 1990-91 NBA Hoops Pack  $3.99 IN  → [["PANINI_2023-24_HOOPS_PACK", 0.75], ["PANINI_2024-25_HOOPS_PACK", 0.75], ["PANINI_2025-26_HOOPS_PACK", 0.75]]
 
 ========================================================================
   👀 WATCHLIST — 94 prioritaires / 188 historiques / 5 autres
@@ -3696,5 +3694,5 @@
   2025-26_CHROME_VALUE_BOX                 €   99.00  qscards     
   2024-25_DONRUSS_RETAIL_BOX               €  119.00  qscards     
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-09-10T08-24-54.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-09-10T11-44-54.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

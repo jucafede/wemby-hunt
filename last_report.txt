@@ -1,10 +1,5 @@
-⚠️  [shopuscards] passage 2026-09-13T04:34:17+00:00 PARTIAL (172 produits) — ignoré, référence = dernier passage complet
+⚠️  [shopuscards] passage 2026-09-13T11:37:54+00:00 PARTIAL (158 produits) — ignoré, référence = dernier passage complet
 (215 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
-
-========================================================================
-  🔔 RESTOCKS depuis le passage précédent
-========================================================================
-  🔔 RESTOCK  TOPPS_2025-26_BOWMAN_VALUE_BLASTER  fancave  $49.99  https://fancave.com/products/2025-26-bowman-basketball-blaster-box
 
 ========================================================================
   RETAIL
@@ -791,8 +786,8 @@
 · SUIVI   2025-26 Topps Bowman Blaster   [TOPPS_2025-26_BOWMAN_VALUE_BLASTER]
    1. sportscardjunction $   40.00  IN STOCK  landed≈€  54.16  (score 1.00)
         VERIFY  cheapest of 4 in stock
-   2. fancave          $   49.99  IN STOCK  landed≈€  64.50  (score 1.00)  🔔
-        🔹RESTOCK +12j  VERIFY
+   2. fancave          $   49.99  IN STOCK  landed≈€  64.50  (score 1.00)
+        VERIFY
    3. rbicru7          $   50.00  IN STOCK  landed≈€  64.51  (score 1.00)
    4. tanteo           $   67.90  IN STOCK  landed≈€  83.02  (score 1.00)
         VERIFY  FR
@@ -3700,5 +3695,5 @@
   2023-24_HOOPS_BLASTER                    €   67.90  tanteo      
   2025-26_BOWMAN_VALUE_BLASTER             €   67.90  tanteo      
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-09-13T05-15-55.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-09-13T12-16-36.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

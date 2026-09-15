@@ -62,6 +62,20 @@ check("javascript: non plus", "<a" in hunt.A("javascript:alert(1)", "x"), False)
 check("le libellé survit quand le lien tombe", "Prizm Hobby" in hunt.A("1.0", "Prizm Hobby"))
 check("et il est rendu en span", "<span" in hunt.A("1.0", "Prizm Hobby"))
 
+# ---------------------------------------------- le tableau Prizm doit être cliquable
+# C'est la section la plus consultée, et elle n'offrait AUCUN moyen d'atteindre la fiche :
+# il fallait relever le nom du vendeur puis retrouver le produit à la main sur son site.
+import pathlib as _pl
+_pg = _pl.Path(__file__).parent / "out" / "index.html"
+if _pg.exists():
+    _h = _pg.read_text(encoding="utf-8")
+    _seg = _h[_h.find("Prizm Wemby Core"):][:12000]
+    import re as _re
+    _liens = _re.findall(r"href='(https?://[^']+)'", _seg)
+    check("le tableau Prizm porte des liens produit", len(_liens) > 0)
+    check("et ils sortent tous vers une vraie boutique",
+          all(not u.startswith("https://jucafede.github.io") for u in _liens))
+
 print(f"\nTOTAL : {len(total)} tests, {len(fails)} FAIL")
 for f in fails: print("  FAIL", f)
 sys.exit(1 if fails else 0)

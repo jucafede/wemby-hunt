@@ -2030,38 +2030,61 @@ def buy_target(s: dict) -> float | None:
     b = s.get("buy_below_usd")
     return float(b) if b is not None else None
 
-def price_anomalies(entries, limit=20):
-    """PRICE ANOMALIES TO VERIFY — un prix nettement sous les autres, SANS vente réalisée.
+# Une anomalie doit MÉRITER d'être vérifiée à la main. Chaque ligne coûte un déplacement chez
+# un marchand, un mail, une attente. Vingt lignes dont douze sachets à 5 $ ne sont pas une
+# liste de vérifications : c'est du bruit qui fait abandonner la section entière.
+ANOMALIE_ECART_MIN = -25        # en dessous de 25 % d'écart, ce n'est pas une anomalie
+ANOMALIE_VENDEURS_MIN = 4       # trois prix demandés ne font pas une médiane
+ANOMALIE_VALEUR_MIN = 20.0      # en dollars : en dessous, l'écart relatif ne dit rien
+FORMATS_HORS_ANOMALIE = {"Pack"}   # « Pack » couvre le sachet de 4 cartes ET le fat pack de 15
 
-    Ces lignes ne sont pas des achats : ce sont des questions. Un prix très inférieur aux
-    autres vendeurs a deux explications, et le moteur ne sait pas les distinguer — une vraie
-    occasion, ou une fiche que personne n'a mise à jour. Le 07/09, Obsidian Hobby était à
-    424,95 $ chez un vendeur et 1 100 $ chez le seul autre : un écart pareil se vérifie à la
-    main avant de payer, il ne se conclut pas depuis un tableau.
 
-    Les offres d'un vendeur au stock non prouvable atterrissent TOUJOURS ici, jamais dans
-    BUY NOW, même quand une vente réalisée existerait.
+def price_anomalies(entries, limit=12, cat=None):
+    """PRICE ANOMALIES TO VERIFY — un prix nettement sous les AUTRES VENDEURS, sans vente.
+
+    Ces lignes ne sont pas des achats : ce sont des questions, et chacune coûte du temps à
+    lever. Elles doivent donc être rares et sérieuses.
+
+    Ce qui n'y entre pas, et pourquoi :
+    · les sachets — le format « Pack » mélange le sachet de quatre cartes et le fat pack de
+      quinze, si bien qu'un écart de -90 % ne compare pas deux fois le même objet ;
+    · les articles sous 20 $ — un écart relatif sur trois dollars ne décrit rien ;
+    · les lignes sans vendeurs comparables — leur écart se mesure contre leur propre passé,
+      pas contre le marché, et les afficher sous un titre qui promet une comparaison entre
+      vendeurs revient à mentir sur ce qu'on montre.
+
+    Une seule exception à toutes ces règles : un verdict d'achat annulé par le risque vendeur
+    entre TOUJOURS. C'est précisément le cas qu'il ne faut pas rater.
     """
+    by_sku = {x["id"]: x for x in (cat or {}).get("skus", [])}
     out = []
     for e in entries:
         if not e["available"] or e.get("region", "US") != "US":
             continue
         shop = e["o"][1]
         pv = e.get("pv") or {}
-        gap = pv.get("ask_gap")
-        douteux = not stock_provable(shop) or high_risk(shop)
-        # Un verdict d'achat plafonné par le risque vendeur atterrit ICI : c'est précisément
-        # le cas qu'il ne faut pas rater — un prix spectaculaire chez un vendeur non vérifié.
+        prix = e["o"][3] or 0
+        fmt = (by_sku.get(e.get("sid")) or {}).get("format")
+
+        # l'exception : un achat que le risque vendeur a annulé
         if pv.get("capped_from"):
             out.append((pv.get("gap") or 0, f"{pv['capped_from']} annulé — vendeur à risque", e))
-        elif (pv.get("verdict") == "INSUFFICIENT DATA" and e.get("triggers")
-              and e.get("gap") is not None and e["gap"] <= -15):
-            out.append((e["gap"], "plus-bas historique, aucune vente pour trancher", e))
-        elif pv.get("basis") == "ask_only" and gap is not None and gap <= -15:
-            out.append((gap, "prix très inférieur aux autres vendeurs", e))
-        elif douteux and pv.get("verdict") in ("STRONG BUY", "BUY"):
+            continue
+        if fmt in FORMATS_HORS_ANOMALIE or prix < ANOMALIE_VALEUR_MIN:
+            continue
+        gap = pv.get("ask_gap")
+        n = pv.get("ask_shops") or 0
+        if (pv.get("basis") == "ask_only" and gap is not None
+                and gap <= ANOMALIE_ECART_MIN and n >= ANOMALIE_VENDEURS_MIN):
+            out.append((gap, f"{gap:.0f} % sous {n} autres vendeurs", e))
+        elif not stock_provable(shop) and pv.get("verdict") in ("STRONG BUY", "BUY"):
             out.append((pv.get("gap") or 0, "stock du vendeur non prouvable", e))
-    out.sort(key=lambda x: x[0])
+    # une RC Wemby d'abord : c'est la chasse, le reste est du contexte
+    def _rang(t):
+        e = t[2]
+        rc = (by_sku.get(e.get("sid")) or {}).get("wemby_rc")
+        return (0 if rc else 1, t[0])
+    out.sort(key=_rang)
     return out[:limit]
 
 
@@ -2387,7 +2410,7 @@ def write_html(cat, blocks, restocks, review, seen_at, trust=None, hot=None, ent
     # ---------------- regroupements
     near = near_buy_lines(entries)
     restk = restock_lines(entries)
-    anomalies = price_anomalies(entries)
+    anomalies = price_anomalies(entries, cat=cat)
     douteux = unreliable_shops_present(entries)
     n_insuff = sum(1 for e in entries if e["available"]
                    and (e.get("pv") or {}).get("verdict") == "INSUFFICIENT DATA")
@@ -2443,11 +2466,17 @@ def write_html(cat, blocks, restocks, review, seen_at, trust=None, hot=None, ent
 
     # ---------------- PRICE ANOMALIES TO VERIFY
     h.append("<h2 id=anomalies>🔍 PRICE ANOMALIES TO VERIFY</h2>")
-    h.append("<p class=small>Des prix nettement inférieurs aux autres vendeurs, <b>sans aucune "
-             "vente réalisée</b> pour trancher. Ce ne sont pas des achats : ce sont des questions. "
-             "Un écart de cette taille est soit une vraie occasion, soit une fiche jamais mise à "
-             "jour — et depuis un tableau, rien ne permet de le savoir. À vérifier auprès du "
-             "vendeur avant tout paiement.</p>")
+    h.append(f"<p class=small>Un prix au moins <b>{abs(ANOMALIE_ECART_MIN)} % sous celui d'au "
+             f"moins {ANOMALIE_VENDEURS_MIN} autres vendeurs</b>, <b>sans aucune vente réalisée</b> "
+             "pour trancher. Ce ne sont pas des achats : ce sont des questions, et chacune coûte "
+             "du temps à lever — cette liste est donc volontairement courte. Un écart pareil est "
+             "soit une vraie occasion, soit une fiche jamais mise à jour, et depuis un tableau "
+             "rien ne permet de le savoir.</p>"
+             f"<p class=small>N'y figurent pas : les sachets (le format « Pack » mélange le "
+             f"sachet de 4 cartes et le fat pack de 15, un écart n'y compare pas deux fois le "
+             f"même objet), les articles sous {ANOMALIE_VALEUR_MIN:.0f} $, et les lignes sans "
+             "vendeurs comparables. Seule exception : un achat annulé par le risque vendeur "
+             "entre toujours.</p>")
     if douteux:
         h.append("<p class=small>⚠️ Stock non prouvable chez : <b>"
                  + ", ".join(douteux) + "</b>. Ces boutiques déclarent la quasi-totalité de leur "
@@ -2643,11 +2672,14 @@ def write_html(cat, blocks, restocks, review, seen_at, trust=None, hot=None, ent
                  f"<td>{'<span class=go>' + str(nliv) + '</span>' if nliv else '0'}</td>"
                  f"<td>{sum(1 for r in rows if (r.get('stock_status') or '') == xe.OOS)}</td>"
                  f"<td>{sum(1 for r in rows if (r.get('stock_status') or '') == xe.STALE)}</td>"
-                 f"<td>{money_or(_unit(best)) if best else '—'}"
+                 # LE PRIX EST LE LIEN. C'est la section la plus consultée du tableau de bord
+                 # et elle n'offrait aucun moyen d'atteindre la fiche : il fallait relever le
+                 # nom du vendeur, puis retrouver le produit à la main sur son site.
+                 f"<td>{A((best or {}).get('url'), money_or(_unit(best))) if best else '—'}"
                  f"{(' <span class=small>×' + str(best['quantity']) + ' boîtes</span>') if best and (best.get('quantity') or 1) > 1 else ''}</td>"
-                 f"<td>{(best or {}).get('shop') or '—'}</td>"
+                 f"<td>{A((best or {}).get('url'), (best or {}).get('shop')) if best else '—'}</td>"
                  f"<td><span class=small>"
-                 f"{(money_or(_unit(best_risque)) + ' · ' + str(best_risque.get('shop')) + ' ⚠️') if risque_moins_cher else '—'}"
+                 f"{(A(best_risque.get('url'), money_or(_unit(best_risque))) + ' · ' + str(best_risque.get('shop')) + ' ⚠️') if risque_moins_cher else '—'}"
                  f"</span></td>"
                  f"<td><span class=small>{prov}</span></td><td>{conf}</td>"
                  f"<td><span class=small>{stxt}</span></td></tr>")

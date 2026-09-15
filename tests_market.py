@@ -180,11 +180,18 @@ _askonly = pvd("INSUFFICIENT DATA", "ask_only", None)
 _askonly["ask_gap"], _askonly["ask_shops"] = -33.7, 4
 check("une remise contre des prix demandés n'ouvre PAS BUY NOW",
       hunt.hot_now([hn_entry("X", 10.0, _askonly, triggers=(), gap=None, ref=None)]), [])
-check("mais elle apparaît en anomalie à vérifier",
-      len(hunt.price_anomalies([hn_entry("X", 10.0, _askonly)])), 1)
-check("une remise trop faible n'est pas une anomalie",
-      hunt.price_anomalies([hn_entry("X", 10.0, dict(_askonly, ask_gap=-3.0),
-                                     triggers=(), gap=None, ref=None)]), [])
+# Seuils resserrés le 15/09 : au moins 4 vendeurs, au moins -25 %, au moins 20 $, et jamais
+# un sachet. La section affichait vingt lignes dont douze sachets — elle en devenait illisible.
+_CATM = {"skus": [{"id": "X", "format": "Hobby", "wemby_rc": False}]}
+check("une vraie anomalie apparaît",
+      len(hunt.price_anomalies([hn_entry("X", 300.0, dict(_askonly, ask_gap=-40.0, ask_shops=6))],
+                               cat=_CATM)), 1)
+check("une remise trop faible n'en est pas une",
+      hunt.price_anomalies([hn_entry("X", 300.0, dict(_askonly, ask_gap=-3.0, ask_shops=6),
+                                     triggers=(), gap=None, ref=None)], cat=_CATM), [])
+check("un article à 10 $ n'y entre pas",
+      hunt.price_anomalies([hn_entry("X", 10.0, dict(_askonly, ask_gap=-40.0, ask_shops=6))],
+                           cat=_CATM), [])
 check("seul un verdict adossé aux ventes entre dans BUY NOW",
       [e["sid"] for e in hunt.hot_now([
           hn_entry("ASKD", 10.0, _askonly, triggers=(), gap=None, ref=None),

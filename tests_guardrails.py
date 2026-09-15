@@ -149,12 +149,61 @@ _insuff = {"verdict": "INSUFFICIENT DATA", "basis": None, "gap": None, "ref": No
            "confidence": "LOW", "why": "aucune vente"}
 _avec_decl = _e("X", 4.99, _insuff, triggers=["NEW_LOW"], gap=-40.0, ref=8.25)
 check("un plus-bas historique SANS vente n'ouvre plus BUY NOW", hunt.hot_now([_avec_decl]), [])
-check("il descend en anomalie à vérifier", len(hunt.price_anomalies([_avec_decl])), 1)
-check("et son motif le nomme",
-      hunt.price_anomalies([_avec_decl])[0][1], "plus-bas historique, aucune vente pour trancher")
+# RÈGLE RESSERRÉE LE 15/09 : il ne descend pas non plus en anomalie. Son écart se mesure
+# contre son propre passé, pas contre d'autres vendeurs, et la section promet une comparaison
+# entre vendeurs. Sa place est dans « Surveiller », où un plus-bas historique est à sa place.
+check("un plus-bas historique seul n'est pas une anomalie de prix entre vendeurs",
+      hunt.price_anomalies([_avec_decl]), [])
 check("une vente réalisée ouvre toujours BUY NOW",
       len(hunt.hot_now([_e("Y", 50.0, {"verdict": "BUY", "basis": "sold", "gap": -20.0,
                                        "ref": 62.0, "confidence": "HIGH", "why": "7 ventes"})])), 1)
+
+# ---------------------------------------------- 8. les anomalies doivent être RARES, 15/09
+# En production, la section affichait vingt lignes dont DOUZE sachets — un « Pack » à 0,75 $
+# comparé à une médiane de 8,25 $ sur trois vendeurs. Le format « Pack » couvre le sachet de
+# quatre cartes ET le fat pack de quinze : l'écart ne compare pas deux fois le même objet.
+# Cinq autres lignes annonçaient un écart « vs les autres vendeurs » avec une colonne Réf. vide.
+_CAT = {"skus": [{"id": "BOX", "format": "Hobby", "wemby_rc": False},
+                 {"id": "PACK", "format": "Pack", "wemby_rc": False},
+                 {"id": "RC", "format": "Blaster", "wemby_rc": True}]}
+def _ao(sid, prix, gap, shops, shop="sh"):
+    pv = {"verdict": "INSUFFICIENT DATA", "basis": "ask_only", "gap": None, "ref": 1.0,
+          "confidence": "HIGH", "why": "x", "ask_gap": gap, "ask_shops": shops}
+    return _e(sid, prix, pv, shop=shop)
+
+check("un sachet n'entre jamais, si bas soit-il",
+      hunt.price_anomalies([_ao("PACK", 0.75, -93, 5)], cat=_CAT), [])
+check("un article sous 20 $ non plus",
+      hunt.price_anomalies([_ao("BOX", 12.0, -60, 5)], cat=_CAT), [])
+check("trois vendeurs ne suffisent pas à fonder une anomalie",
+      hunt.price_anomalies([_ao("BOX", 300.0, -60, 3)], cat=_CAT), [])
+check("un écart de -15 % n'est plus une anomalie",
+      hunt.price_anomalies([_ao("BOX", 300.0, -15, 6)], cat=_CAT), [])
+check("une vraie anomalie passe", len(hunt.price_anomalies([_ao("BOX", 300.0, -40, 6)], cat=_CAT)), 1)
+check("et son motif nomme le nombre de vendeurs",
+      "6 autres vendeurs" in hunt.price_anomalies([_ao("BOX", 300.0, -40, 6)], cat=_CAT)[0][1])
+# une ligne sans vendeurs comparables ne peut pas figurer sous un titre qui promet une comparaison
+_sans = _e("BOX", 300.0, {"verdict": "INSUFFICIENT DATA", "basis": None, "gap": None,
+                          "ref": None, "confidence": "LOW", "why": "x"},
+           triggers=["NEW_LOW"], gap=-50.0, ref=600.0)
+check("une ligne sans vendeurs comparables n'y figure plus",
+      hunt.price_anomalies([_sans], cat=_CAT), [])
+# l'exception qui prime sur toutes les règles
+hunt.STOCK_UNRELIABLE = {"kutogo"}
+hunt.SELLER_RISK = {"kutogo": "HIGH"}
+_cap = _e("PACK", 5.0, {"verdict": "VERIFY BEFORE BUYING", "capped_from": "STRONG BUY",
+                        "basis": "sold", "gap": -40.0, "ref": 10.0, "confidence": "HIGH",
+                        "why": "x"}, shop="kutogo")
+check("un achat annulé par le risque vendeur entre TOUJOURS, même sur un sachet",
+      len(hunt.price_anomalies([_cap], cat=_CAT)), 1)
+# la chasse d'abord : une RC Wemby passe devant
+_rc = _ao("RC", 300.0, -30, 6)
+_autre = _ao("BOX", 300.0, -50, 6)
+check("une RC Wemby est classée avant un écart plus large",
+      hunt.price_anomalies([_autre, _rc], cat=_CAT)[0][2]["sid"], "RC")
+hunt.STOCK_UNRELIABLE, hunt.SELLER_RISK = set(), {}
+check("la liste est plafonnée", len(hunt.price_anomalies(
+      [_ao("BOX", 300.0, -40, 6, shop=f"s{i}") for i in range(40)], cat=_CAT)) <= 12)
 
 print(f"\nTOTAL : {len(total)} tests, {len(fails)} FAIL")
 for f in fails: print("  FAIL", f)

@@ -1,4 +1,4 @@
-⚠️  [shopuscards] passage 2026-09-15T15:08:27+00:00 PARTIAL (178 produits) — ignoré, référence = dernier passage complet
+⚠️  [shopuscards] passage 2026-09-15T15:13:18+00:00 PARTIAL (143 produits) — ignoré, référence = dernier passage complet
 (228 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
 
 ========================================================================
@@ -1067,10 +1067,8 @@
         🔹STRONG_DEAL -53%  RC_YEAR  VERIFY  cheapest of 2 in stock
    2. boxseat          $   14.99  IN STOCK  landed≈€  28.29  (score 1.00)
         RC_YEAR  VERIFY
-   3. bleecker         $   65.00  SOLD OUT  landed≈€  80.02  (score 1.00)
-        RC_YEAR  VERIFY
    ask $14.99   sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
-   HISTORICAL LOW $6.99 (le 2026-09-06, boxseat, 2 shop(s) vus) | cheapest live $6.99
+   HISTORICAL LOW $6.99 (le 2026-09-06, boxseat, 1 shop(s) vus) | cheapest live $6.99
    BEST → boxseat  https://boxseatcollectibles.com/products/2023-24-panini-phoenix-basketball-blaster-pack
 
 · SUIVI   2023-24 Panini Prizm Draft Picks Collegiate/Draft Blaster   [PANINI_2023-24_PRIZM_DRAFT_PICKS_DRAFT_BLASTER]  ⚑ False
@@ -3613,6 +3611,7 @@
   [deichcards] Topps Chrome UCC Value Blaster 2023/2024  $34.90 OOS  → [["TOPPS_2023-24_CHROME_VALUE_BLASTER", 0.77]]
   [deichcards] Topps Chrome UCC Hobby Box 2023/2024  $249.90 OOS  → [["TOPPS_2023-24_CHROME_HOBBY", 0.77]]
   [deichcards] Topps UCC Finest Hobby Box 2023/2024  $204.90 OOS  → [["TOPPS_2023-24_FINEST_HOBBY", 0.77]]
+  [kutogo] 2023/24 Topps Finest Basketball Breaker’s Delight Box  $229.95 IN  → [["TOPPS_2023-24_FINEST_BREAKERS_DELIGHT", 0.77], ["TOPPS_2023-24_FINEST_HOBBY", 0.77]]
   [collectorstore] 1990-91 Hoops Series 2 Basketball Hobby Box  $79.99 OOS  → [["PANINI_2024-25_HOOPS_HOBBY", 0.75], ["TOPPS_2025-26_HOOPS_HOBBY", 0.75], ["PANINI_2023-24_HOOPS_HOBBY", 0.75]]
   [hiddengems] 1991-92 Hoops Series 1 Basketball Hobby Box  $75.00 OOS  → [["PANINI_2024-25_HOOPS_HOBBY", 0.75], ["TOPPS_2025-26_HOOPS_HOBBY", 0.75], ["PANINI_2023-24_HOOPS_HOBBY", 0.75]]
   [bleecker] 1991-92 NBA Hoops Series 1 Basketball Hobby Box  $140.00 OOS  → [["PANINI_2024-25_HOOPS_HOBBY", 0.75], ["TOPPS_2025-26_HOOPS_HOBBY", 0.75], ["PANINI_2023-24_HOOPS_HOBBY", 0.75]]
@@ -3622,10 +3621,9 @@
   [bleecker] 1998-99 Skybox Hoops Basketball Hobby Box  $1200.00 OOS  → [["PANINI_2024-25_HOOPS_HOBBY", 0.75], ["TOPPS_2025-26_HOOPS_HOBBY", 0.75], ["PANINI_2023-24_HOOPS_HOBBY", 0.75]]
   [bleecker] 2012 Prizm Basketball Hobby Box  $17500.00 OOS  → [["PANINI_2023-24_PRIZM_HOBBY", 0.75], ["PANINI_2024-25_PRIZM_HOBBY", 0.75], ["PANINI_2025-26_PRIZM_HOBBY", 0.75]]
   [bleecker] 2022 Prizm NBA Basketball Hobby Box  $850.00 OOS  → [["PANINI_2023-24_PRIZM_HOBBY", 0.75], ["PANINI_2024-25_PRIZM_HOBBY", 0.75], ["PANINI_2025-26_PRIZM_HOBBY", 0.75]]
-  [boxseat] 1990-91 NBA Hoops Pack  $3.99 IN  → [["PANINI_2023-24_HOOPS_PACK", 0.75], ["PANINI_2024-25_HOOPS_PACK", 0.75], ["PANINI_2025-26_HOOPS_PACK", 0.75]]
 
 ========================================================================
-  👀 WATCHLIST — 95 prioritaires / 193 historiques / 4 autres
+  👀 WATCHLIST — 94 prioritaires / 193 historiques / 4 autres
 ========================================================================
   🔔 RESTOCK PRIORITY  2024-25 Panini Hoops Pack                  target                          $0.75 (2026-09-06, 5 shop(s))   -93.1% vs ask $10.90
   🔔 RESTOCK PRIORITY  2024-25 Panini Mosaic Pack                 target                          $4.99 (2026-09-06, 2 shop(s))   -84.4% vs ask $32.00
@@ -3637,11 +3635,11 @@
   🔔 RESTOCK PRIORITY  2023-24 Panini Prizm Draft Picks Collegi   target                        $100.00 (2026-09-06, 2 shop(s))   -58.3% vs ask $240.00
   🔔 RESTOCK PRIORITY  2024-25 Panini Prizm Pack                  target                          $5.99 (2026-09-06, 5 shop(s))   -57.2% vs ask $13.99
   🔔 RESTOCK PRIORITY  2024-25 Panini Prizm EuroLeague Hobby      target                         $64.99 (2026-09-06, 3 shop(s))   -55.2% vs ask $145.00
-  🔔 RESTOCK PRIORITY  2023-24 Panini Phoenix Pack                target                          $6.99 (2026-09-06, 2 shop(s))   -53.4% vs ask $14.99
   🔔 RESTOCK PRIORITY  2024-25 Panini Donruss Retail Box          target                         $54.95 (2026-09-06, 3 shop(s))   -52.2% vs ask $115.00
   🔔 RESTOCK PRIORITY  2023-24 Panini Revolution Tin              target                          $9.99 (2026-08-30, 10 shop(s))   -50.0% vs ask $20.00
   🔔 RESTOCK PRIORITY  2024-25 Panini Hoops Fat Pack              target                         $10.00 (2026-09-06, 2 shop(s))   -50.0% vs ask $19.99
   🔔 RESTOCK PRIORITY  2025-26 Topps Bowman Hanger                target                         $14.99 (2026-09-06, 11 shop(s))   -50.0% vs ask $30.00
+  🔔 RESTOCK PRIORITY  2023-24 Panini Donruss Pack                target                          $5.00 (2026-09-06, 3 shop(s))   -49.9% vs ask $9.99
      historical low     2023-24 Panini Prizm EuroLeague Blaster                             $9.95 (2026-08-18, 7 shop(s))
      historical low     2024-25 Panini Prizm Blaster                                       $10.00 (2026-08-18, 7 shop(s))
      historical low     2024-25 Panini Prizm EuroLeague Blaster                            $10.00 (2026-09-06, 3 shop(s))
@@ -3654,13 +3652,12 @@
      historical low     2025-26 Panini Select EuroLeague Pack                              $22.00 (2026-09-06, 1 shop(s))
 
 ========================================================================
-  🩺 SANTÉ DES SOURCES — 4 anomalie(s)
+  🩺 SANTÉ DES SOURCES — 3 anomalie(s)
 ========================================================================
-  DEGRADED  kutogo               volume 0 contre une base récente de 737
   DEGRADED  shopuscards          6 passages interrompus sur 6 (dernier : PARTIAL:BUDGET)
   DEAD      stickerpoint         6 passages complets consécutifs à 0 produit
   DEAD      supercollectors      3 passages complets consécutifs à 0 produit
-  35 HEALTHY · 18 SKIPPED · 2 DEGRADED · 2 DEAD
+  36 HEALTHY · 18 SKIPPED · 2 DEAD · 1 DEGRADED
 
 ========================================================================
   ⛔ BLOCKLIST — 2 domaine(s) jamais crawlés
@@ -3700,5 +3697,5 @@
   2023-24_HOOPS_BLASTER                    €   67.90  tanteo      
   2025-26_BOWMAN_VALUE_BLASTER             €   67.90  tanteo      
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-09-15T15-51-35.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-09-15T15-58-34.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

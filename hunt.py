@@ -1956,9 +1956,27 @@ def sku_bucket(s: dict) -> str:
         if s["format"] in fmts: return name
     return "retail"
 
+URL_ABSOLUE = re.compile(r"^https?://[^\s\"\'<>]+$", re.I)
+
+
+def url_valide(u) -> bool:
+    """Une URL de produit est absolue et en http(s). Tout le reste n'en est pas une.
+
+    Un identifiant, un score, un prix, une chaîne vide : le navigateur les résout en chemin
+    RELATIF au site public, et le lien mène à une 404 chez nous au lieu de la boutique.
+    """
+    return bool(u) and isinstance(u, str) and bool(URL_ABSOLUE.match(u.strip()))
+
+
 def A(url, label, cls=""):
-    """Tout lien sortant : nouvel onglet, sans fuite de referrer ni accès à window.opener."""
+    """Tout lien sortant : nouvel onglet, sans fuite de referrer ni accès à window.opener.
+
+    Si la valeur n'est pas une URL absolue, AUCUN lien n'est produit — le libellé s'affiche
+    tel quel. Mieux vaut un produit non cliquable qu'un lien qui ment sur sa destination.
+    """
     c = f" class={cls}" if cls else ""
+    if not url_valide(url):
+        return f"<span{c} title=\"lien produit indisponible\">{label}</span>"
     return f"<a{c} href='{url}' target=\"_blank\" rel=\"noopener noreferrer\">{label}</a>"
 
 def thumb(e, always=False):
@@ -2449,7 +2467,10 @@ def write_html(cat, blocks, restocks, review, seen_at, trust=None, hot=None, ent
             base = ("ventes réalisées" if pv.get("basis") == "sold"
                     else f"{pv.get('ask_shops')} prix demandés" if pv.get("ask_shops") else "—")
             verdict = "VERIFY BEFORE BUYING" if pv.get("capped_from") or flag else "à vérifier"
-            h.append(f"<tr><td>{A(e['o'][6], lbl[:52])}</td><td>{money_or(e['o'][3])}</td>"
+            # o[5] = url, o[6] = match_score. Le tableau des anomalies passait o[6] : chaque
+            # lien pointait donc vers « 1.0 », que le navigateur résolvait en chemin relatif
+            # sur le site public — d'où les 404 jucafede.github.io/wemby-hunt/1.0.
+            h.append(f"<tr><td>{A(e['o'][5], lbl[:52])}</td><td>{money_or(e['o'][3])}</td>"
                      f"<td>{shop}</td><td><span class=small>{risque}</span></td>"
                      f"<td>{stock}</td><td>{gap:+.0f} %</td>"
                      f"<td><span class=small>{base}</span></td>"

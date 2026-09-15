@@ -46,6 +46,22 @@ check("aucun tableau dans la zone de décision (Acheter + Surveiller)", "<table"
 check("la zone de décision contient bien des cartes", "class=card" in _zone)
 check("le prix est mis en avant sur la carte", 'class=pr' in h)
 
+# ---------------------------------------------- liens produit, bug du 15/09
+# Le tableau des anomalies passait o[6] — le SCORE DE MATCHING — à A() au lieu de o[5], l'URL.
+# Chaque lien pointait donc vers « 1.0 », que le navigateur résolvait en chemin relatif sur le
+# site public : jucafede.github.io/wemby-hunt/1.0, une 404 chez nous au lieu de la boutique.
+check("une URL absolue est un lien", "<a" in hunt.A("https://boutique.fr/p", "x"))
+check("un score n'en est pas un", "<a" in hunt.A(1.0, "x"), False)
+check("« 1.0 » non plus", "<a" in hunt.A("1.0", "x"), False)
+check("un chemin relatif non plus", "<a" in hunt.A("/produit/3", "x"), False)
+check("une chaîne vide non plus", "<a" in hunt.A("", "x"), False)
+check("None non plus", "<a" in hunt.A(None, "x"), False)
+check("une clé de boutique non plus", "<a" in hunt.A("kutogo", "x"), False)
+check("javascript: non plus", "<a" in hunt.A("javascript:alert(1)", "x"), False)
+# le produit reste affiché, seule l'action de lien disparaît
+check("le libellé survit quand le lien tombe", "Prizm Hobby" in hunt.A("1.0", "Prizm Hobby"))
+check("et il est rendu en span", "<span" in hunt.A("1.0", "Prizm Hobby"))
+
 print(f"\nTOTAL : {len(total)} tests, {len(fails)} FAIL")
 for f in fails: print("  FAIL", f)
 sys.exit(1 if fails else 0)

@@ -68,6 +68,15 @@ jobs:
         run: |
           set -o pipefail
           python -u prizm_core.py 2>&1 | tail -20
+      # Aucun lien mensonger ne doit être publié. Le 15/09, le tableau des anomalies rendait
+      # « 1.0 » comme href et envoyait l'acheteur sur une 404 de notre propre site, en lui
+      # laissant croire que la boutique avait disparu.
+      - name: Contrôle des liens produit
+        shell: bash
+        run: |
+          set -o pipefail
+          python -u validate_links.py
+
       - name: Rapport final avec les quatre couches
         shell: bash
         run: |

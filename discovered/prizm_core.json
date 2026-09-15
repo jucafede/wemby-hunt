@@ -1361,33 +1361,39 @@
     },
     {
       "type": "PRIZM_SOURCE_LOST",
-      "url": "dacw",
-      "why": "aucune fiche dans products_raw : le crawl n'a rien rapporté de cette boutique"
+      "url": null,
+      "why": "aucune fiche dans products_raw : le crawl n'a rien rapporté de cette boutique",
+      "shop": "dacw"
     },
     {
       "type": "PRIZM_SOURCE_LOST",
-      "url": "blowout",
-      "why": "aucune fiche dans products_raw : le crawl n'a rien rapporté de cette boutique"
+      "url": null,
+      "why": "aucune fiche dans products_raw : le crawl n'a rien rapporté de cette boutique",
+      "shop": "blowout"
     },
     {
       "type": "PRIZM_SOURCE_LOST",
-      "url": "millcreek",
-      "why": "aucune fiche dans products_raw : le crawl n'a rien rapporté de cette boutique"
+      "url": null,
+      "why": "aucune fiche dans products_raw : le crawl n'a rien rapporté de cette boutique",
+      "shop": "millcreek"
     },
     {
       "type": "PRIZM_SOURCE_LOST",
-      "url": "bigcards",
-      "why": "aucune fiche dans products_raw : le crawl n'a rien rapporté de cette boutique"
+      "url": null,
+      "why": "aucune fiche dans products_raw : le crawl n'a rien rapporté de cette boutique",
+      "shop": "bigcards"
     },
     {
       "type": "PRIZM_SOURCE_LOST",
-      "url": "mangastory",
-      "why": "aucune fiche dans products_raw : le crawl n'a rien rapporté de cette boutique"
+      "url": null,
+      "why": "aucune fiche dans products_raw : le crawl n'a rien rapporté de cette boutique",
+      "shop": "mangastory"
     },
     {
       "type": "PRIZM_SOURCE_LOST",
-      "url": "stickerpoint",
-      "why": "aucune fiche dans products_raw : le crawl n'a rien rapporté de cette boutique"
+      "url": null,
+      "why": "aucune fiche dans products_raw : le crawl n'a rien rapporté de cette boutique",
+      "shop": "stickerpoint"
     }
   ]
 }

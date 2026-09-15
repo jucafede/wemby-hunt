@@ -211,7 +211,10 @@ def main():
             alerts.append({"type": "PRIZM_STOCK_AMBIGUOUS", "url": r["url"],
                            "why": "la boutique ne gère pas ses quantités — à vérifier à la main"})
     for k in lost:
-        alerts.append({"type": "PRIZM_SOURCE_LOST", "url": k,
+        # Une source perdue N'A PAS d'URL de produit : elle a un nom de boutique. Ranger ce nom
+        # dans un champ « url » suffisait à ce qu'il devienne un lien cliquable côté page, et
+        # « dacw » se résolvait alors en chemin relatif sur le site public.
+        alerts.append({"type": "PRIZM_SOURCE_LOST", "shop": k, "url": None,
                        "why": "aucune fiche dans products_raw : le crawl n'a rien rapporté de cette boutique"})
     payload = {"generated_at": now(), "collection": "hunt.db/products_raw (aucun crawl propre)",
                "sources_read": seen, "sources_lost": lost,

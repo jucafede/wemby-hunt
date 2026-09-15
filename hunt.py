@@ -2378,7 +2378,8 @@ def write_html(cat, blocks, restocks, review, seen_at, trust=None, hot=None, ent
           f"{dataset_freshness()}</p>"),
          "<nav>" + " ".join(f"<a href='#{i}'>{n}</a>" for i, n in
                             [("acheter", "🔥 BUY NOW"), ("anomalies", "🔍 Anomalies"),
-                             ("insuffisant", "❓ Données"), ("surveiller", "👀 Surveiller"),
+                             ("insuffisant", "❓ Données"), ("europe", "🌍 Europe"),
+                             ("surveiller", "👀 Surveiller"),
                              ("prizm", "🎯 Prizm Core"), ("inventaire", "📦 Mon inventaire"),
                              ("fr", "🇫🇷 FR"), ("explorer", "🔎 Explorer"),
                              ("diag", "⚙️ Diagnostic")]) + "</nav>"]
@@ -2651,6 +2652,55 @@ def write_html(cat, blocks, restocks, review, seen_at, trust=None, hot=None, ent
                  f"<td><span class=small>{prov}</span></td><td>{conf}</td>"
                  f"<td><span class=small>{stxt}</span></td></tr>")
     h.append("</table></div>")
+
+    # ---------------- 🌍 EUROPE — observations vérifiées à la main
+    # Ces boutiques ne peuvent PAS être crawlées : robots.txt qui nous nomme, 403 permanent,
+    # ou robots ambigu. Leur stock existe pourtant, et Julien l'a vérifié dans un navigateur.
+    # Les laisser hors de la page revenait à faire disparaître du marché tout ce que le
+    # crawler ne sait pas lire — c'est exactement l'erreur du 15/09, quand le rapport a conclu
+    # « aucune pépite européenne » avec cinq boutiques pleines sous les yeux.
+    mo = ROOT / "discovered" / "manual_observations.json"
+    if mo.exists():
+        try:
+            obs = json.loads(mo.read_text(encoding="utf-8")).get("observations", [])
+        except Exception:
+            obs = []
+        vivantes = [o for o in obs if (o.get("stock") or "") not in ("oos", "sold_out")]
+        if vivantes:
+            h.append("<h2 id=europe>🌍 Europe — vérifié à la main</h2>")
+            h.append("<p class=small>Ces boutiques refusent la lecture automatique — robots.txt "
+                     "qui nous interdit nommément, pare-feu, ou robots illisible. Nous ne les "
+                     "crawlons pas. Leur stock a été vérifié dans un navigateur, et il vaut "
+                     "exactement ce que vaut une lecture du crawler : la provenance est "
+                     "affichée, elle ne déclasse rien. Un prix relevé à une date reste un prix "
+                     "à cette date — il n'est pas revérifié à chaque passage.</p>")
+            h.append("<div class=wrap><table><tr><th>Produit</th><th>Prix</th><th>Rendu FR</th>"
+                     "<th>Vendeur</th><th>Pays</th><th>Stock</th><th>Relevé le</th>"
+                     "<th>Preuve</th></tr>")
+            for o in sorted(vivantes, key=lambda x: x.get("prix_eur") or 0):
+                lbl = (o.get("titre") or "?")[:52]
+                lc = None
+                if o.get("prix_eur"):
+                    try:
+                        import alerts as _al
+                        lc = _al.landed_cost_fr(o["prix_eur"], "EUR", "EU",
+                                                float(cat["fx_usd_eur"])).value_eur
+                    except Exception:
+                        lc = None
+                tag = ""
+                if o.get("league"):
+                    tag = f" <span class=small>[{o['league']}]</span>"
+                elif o.get("wemby_rc"):
+                    tag = " <span class=small>🎯 RC</span>"
+                q = f" ×{o['quantite']}" if o.get("quantite") else ""
+                h.append(f"<tr><td>{A(o.get('url'), lbl)}{tag}</td>"
+                         f"<td>{o.get('prix')} {o.get('devise') or ''}</td>"
+                         f"<td>{f'{lc:.0f} €' if lc else '—'}</td>"
+                         f"<td>{o.get('seller')}</td><td>{o.get('pays') or '—'}</td>"
+                         f"<td>{(o.get('stock') or '?').replace('_', ' ')}{q}</td>"
+                         f"<td><span class=small>{(o.get('observed_at') or '')[:10]}</span></td>"
+                         f"<td><span class=small>MANUAL VERIFIED</span></td></tr>")
+            h.append("</table></div>")
 
     # ---------------- 📦 mon inventaire
     tot_q = sum(r["qty"] for r in inv_rows)

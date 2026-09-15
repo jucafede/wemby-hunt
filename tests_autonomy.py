@@ -113,6 +113,18 @@ check("une interdiction ciblée est respectée",
       _robots("User-agent: *\nDisallow: /admin/", "https://exemple.test/admin/x"), False)
 check("et ne déborde pas sur le reste du site",
       _robots("User-agent: *\nDisallow: /admin/", "https://exemple.test/products/x"), True)
+# un site qui nous nomme explicitement nous interdit, même si le joker autorise tout
+check("« User-agent: ClaudeBot / Disallow: / » nous exclut",
+      _robots("User-agent: *\nAllow: /\n\nUser-agent: ClaudeBot\nDisallow: /",
+              "https://exemple.test/kategorie/basketbal/"), False)
+check("porter un UA de navigateur ne change rien à qui nous sommes",
+      _robots("User-agent: *\nAllow: /\n\nUser-agent: ClaudeBot\nDisallow: /",
+              "https://exemple.test/"), False)
+check("les autres identités Anthropic comptent aussi",
+      _robots("User-agent: *\nAllow: /\n\nUser-agent: anthropic-ai\nDisallow: /",
+              "https://exemple.test/x"), False)
+check("un site qui n'interdit personne reste ouvert",
+      _robots("User-agent: *\nAllow: /", "https://exemple.test/x"), True)
 xe._robots.pop("https://exemple.test", None)
 
 # ------------------------------------------------ extraction de liens de moteur

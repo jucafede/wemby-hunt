@@ -176,6 +176,19 @@ def robots_ok(url: str) -> bool:
     rp = _robots[origine]
     if rp is None:
         return True
+    # QUI SOMMES-NOUS VRAIMENT
+    # -----------------------
+    # Nous envoyons une chaîne UA de navigateur pour être servis normalement, mais nous restons
+    # ClaudeBot. Un site qui écrit « User-agent: ClaudeBot / Disallow: / » nous nomme, nous, et
+    # se glisser sous le joker « * » avec un UA Chrome serait contourner une règle écrite à
+    # notre intention — pas l'interpréter.
+    #
+    # Le 15/09, hokej-karty.eu a rendu le défaut visible : son robots.txt interdit ClaudeBot sur
+    # tout le domaine, et cette fonction répondait pourtant « autorisé ». Elle ne testait que la
+    # chaîne UA. Blowout ne passait, lui, que parce qu'il interdit AUSSI le joker.
+    for identite in ("ClaudeBot", "anthropic-ai", "Claude-Web"):
+        if not rp.can_fetch(identite, url):
+            return False
     return rp.can_fetch(UA, url) or rp.can_fetch("*", url)
 
 

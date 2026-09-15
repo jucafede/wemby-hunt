@@ -1,0 +1,77 @@
+{
+  "shop": "hokejkarty",
+  "base_url": "https://www.hokej-karty.eu",
+  "generated_at": "2026-09-15T00:00:00+00:00",
+  "note": "Historique de Hokej-Karty.eu. Le site NOUS INTERDIT NOMMÉMENT par robots.txt (User-agent: ClaudeBot / Disallow: /) : aucune de ces lignes ne vient ni ne viendra d'une lecture automatique. Ce sont des relevés HUMAINS datés, et c'est la seule voie légitime ici. Ils servent de point de comparaison entre deux relevés.",
+  "particularite": "Cette boutique AFFICHE les quantités restantes — presque aucune autre source ne le fait. C'est ce qui rend le suivi quantitatif possible, et c'est précisément ce qu'on perd en ne pouvant pas la crawler.",
+  "regles_quantite": {
+    "STOCK_MOVING": "la quantité baisse entre deux relevés (ex. 11 → 8) : le produit se vend",
+    "LAST_UNIT_ALERT": "la quantité tombe à 1",
+    "LOW_STOCK": "quantité ≤ 3",
+    "RESTOCK": "0 → >0",
+    "SOLD_OUT": ">0 → 0",
+    "BACK_IN_STOCK": "réapparition après une rupture",
+    "POSSIBLE_DORMANT_STOCK": "quantité identique sur une longue période — du vieux stock que personne ne touche, souvent le plus intéressant à négocier"
+  },
+  "alerte": {
+    "nom": "CZECH_WEMBY_ALERT",
+    "condition": "tout produit Panini NBA 2023-24 scellé jusqu'ici inconnu qui apparaît en stock"
+  },
+  "a_inspecter_au_prochain_releve": [
+    "2023-24 Panini NBA Hoops Blaster Box",
+    "catégorie Basketball/NBA complète — et pas seulement les URLs déjà connues"
+  ],
+  "observations": [
+    {
+      "titre": "2023-24 Panini Prizm NBA Basketball Blaster Box",
+      "prix": 122.38,
+      "qte": 3,
+      "priorite": "HIGH / WEMBY RC",
+      "devise": "EUR",
+      "sku_id": "PANINI_2023-24_PRIZM_BLASTER",
+      "format": "Blaster",
+      "saison": "2023-24",
+      "league": null,
+      "wemby_rc": true,
+      "wemby_present": null,
+      "etat_stock": "LOW_STOCK",
+      "observed_at": "2026-09-15",
+      "source": "relevé manuel utilisateur",
+      "verifie_par_crawler": false
+    },
+    {
+      "titre": "2023-24 Panini Donruss NBA Basketball Blaster Box",
+      "prix": 55.05,
+      "qte": 11,
+      "priorite": "HIGH / WEMBY RC",
+      "devise": "EUR",
+      "sku_id": "PANINI_2023-24_DONRUSS_BLASTER",
+      "format": "Blaster",
+      "saison": "2023-24",
+      "league": null,
+      "wemby_rc": true,
+      "wemby_present": true,
+      "etat_stock": "IN_STOCK",
+      "observed_at": "2026-09-15",
+      "source": "relevé manuel utilisateur",
+      "verifie_par_crawler": false
+    },
+    {
+      "titre": "2024-25 Panini NBA Hoops Basketball FAT Pack",
+      "prix": 9.34,
+      "qte": 2,
+      "priorite": "LOW",
+      "devise": "EUR",
+      "sku_id": "PANINI_2024-25_HOOPS_FAT_PACK",
+      "format": "Fat Pack",
+      "saison": "2024-25",
+      "league": null,
+      "wemby_rc": false,
+      "wemby_present": true,
+      "etat_stock": "LOW_STOCK",
+      "observed_at": "2026-09-15",
+      "source": "relevé manuel utilisateur",
+      "verifie_par_crawler": false
+    }
+  ]
+}

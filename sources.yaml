@@ -532,3 +532,38 @@ shops:
       dont au moins un dernier exemplaire. À surveiller : nouveaux produits NBA, restock,
       quantités faibles, baisses de prix, vieux stock 2023-24, et tout produit Wembanyama
       rookie — déclencheur SUPERCOLLECTORS_WEMBY_ALERT.
+
+  - key: hokejkarty
+    name: Hokej-Karty.eu
+    base_url: https://www.hokej-karty.eu
+    type: eu_reference            # JAMAIS crawlé : robots.txt nous interdit nommément
+    platform: unknown
+    market_region: EU
+    currency: EUR
+    country: CZ
+    trust: trusted
+    status: active
+    priority: high
+    seller_type: multi_sport_card_shop
+    seller_verification: VERIFIED
+    exposes_stock_quantity: true
+    discovered_at: 2026-09-15
+    discovery_evidence: "relevé manuel utilisateur — 3 fiches produit avec quantités, 15/09/2026"
+    robots_disallow: true
+    robots_checked_at: 2026-09-15
+    robots_reason: >-
+      Son robots.txt nous NOMME : « User-agent: ClaudeBot / Disallow: / ». L'interdiction porte
+      sur l'intégralité du domaine. Il ajoute « Content-Signal: ai-train=no, use=reference » et
+      rappelle que ces restrictions sont une réserve expresse de droits au titre de l'article 4
+      de la directive UE 2019/790. Le serveur répond par ailleurs 403 à toute requête.
+      NOUS NE CRAWLONS PAS CE SITE, et nous ne nous glissons pas sous le joker « * » avec une
+      chaîne UA de navigateur : une règle écrite à notre intention s'applique à nous. C'est la
+      même décision que pour Blowout.
+      Ce qui reste permis : Julien consulte le site lui-même comme n'importe quel visiteur, et
+      ses relevés datés entrent dans hokejkarty_history.json. L'interdiction vise la collecte
+      automatisée par l'agent, pas la lecture humaine.
+    notes: >-
+      Boutique tchèque multi-sports avec du vrai stock NBA ancien, et — fait rare — elle AFFICHE
+      les quantités restantes. Cela permettrait un suivi que presque aucune autre source ne
+      rend possible : STOCK_MOVING, LAST_UNIT_ALERT, POSSIBLE_DORMANT_STOCK. D'où la valeur
+      particulière d'un relevé manuel régulier ici, à défaut de crawl.

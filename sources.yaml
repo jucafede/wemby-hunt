@@ -501,3 +501,34 @@ shops:
       NE PAS retenir le Trustpilot de ktwogroupllc.com : autre domaine, lien non démontré.
       Statut : NI blanchi, NI qualifié frauduleux. Non vérifié, donc non décisionnel.
     notes: "WooCommerce, API Store ouverte, 737 produits. Domaine 2016. Stock déclaré 100 % disponible — à vérifier page par page avant tout achat."
+
+  - key: supercollectors
+    name: SuperCollectors
+    base_url: https://www.supercollectors.es
+    type: shopify_json            # WooCommerce (URLs /producto/) ; hunt.py essaie les deux plateformes
+    platform: woocommerce
+    market_region: EU
+    currency: EUR
+    country: ES
+    trust: trusted
+    status: active
+    priority: high
+    seller_type: specialist_sports_cards
+    seller_verification: VERIFIED
+    discovered_at: 2026-09-15
+    discovery_evidence: "relevé manuel utilisateur — 4 fiches produit vérifiées le 15/09/2026"
+    crawl_blocked: true
+    crawl_blocked_since: 2026-09-15
+    crawl_blocked_reason: >-
+      HTTP 403 sur TOUTES les routes depuis ce serveur, y compris /robots.txt, avec un jeu
+      d'en-têtes navigateur complet (UA Chrome, Accept-Language es-ES, Sec-Fetch-*). Le refus
+      vient d'un pare-feu applicatif, pas d'une route absente, et on ne le contourne pas.
+      CONSÉQUENCE À TENIR : cette source ne doit jamais produire un zéro silencieux. Tant que
+      le 403 dure, chaque passage la déclare BLOQUÉE, pas « rien trouvé » — la différence
+      entre « cherché et vide » et « pas pu chercher » est décisive ici, puisque le vendeur a
+      du stock 2023-24 vérifié à la main le 15/09.
+    notes: >-
+      Détaillant espagnol spécialisé cartes de sport. Stock 2023-24 encore présent en 09/2026,
+      dont au moins un dernier exemplaire. À surveiller : nouveaux produits NBA, restock,
+      quantités faibles, baisses de prix, vieux stock 2023-24, et tout produit Wembanyama
+      rookie — déclencheur SUPERCOLLECTORS_WEMBY_ALERT.

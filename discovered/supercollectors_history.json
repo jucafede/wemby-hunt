@@ -1,0 +1,86 @@
+{
+  "shop": "supercollectors",
+  "base_url": "https://www.supercollectors.es",
+  "generated_at": "2026-09-15T00:00:00+00:00",
+  "note": "Historique d'observations de SuperCollectors. Le crawler reçoit 403 sur ce domaine : ces lignes viennent d'un relevé humain daté, pas d'une lecture automatique. Elles servent de POINT DE COMPARAISON — au prochain passage lisible, toute différence de prix ou de stock devient RESTOCK / NEW_LOW / PRICE_DROP / LOW_STOCK / SOLD_OUT / BACK_IN_STOCK. Un des quatre produits reste sans identité catalogue, faute d'un second vendeur pour l'attester — voir identite_note.",
+  "etats_suivis": [
+    "RESTOCK",
+    "NEW_LOW",
+    "PRICE_DROP",
+    "LOW_STOCK",
+    "SOLD_OUT",
+    "BACK_IN_STOCK"
+  ],
+  "alerte": {
+    "nom": "SUPERCOLLECTORS_WEMBY_ALERT",
+    "condition": "tout produit 2023-24 contenant la RC Wembanyama qui apparaît en stock"
+  },
+  "observations": [
+    {
+      "url": "https://www.supercollectors.es/producto/2024-25-panini-donruss-basketball-retail-box/",
+      "titre": "2024-25 Panini Donruss Basketball Retail Box",
+      "prix": 84.0,
+      "stock": "LOW_STOCK",
+      "stock_detail": "dernier exemplaire annoncé",
+      "devise": "EUR",
+      "sku_id": "PANINI_2024-25_DONRUSS_RETAIL_BOX",
+      "format": "Retail Box",
+      "saison": "2024-25",
+      "league": null,
+      "wemby_rc": false,
+      "observed_at": "2026-09-15",
+      "source": "relevé manuel utilisateur",
+      "verifie_par_crawler": false
+    },
+    {
+      "url": "https://www.supercollectors.es/producto/2024-25-panini-hoops-nba-fat-pack/",
+      "titre": "2024-25 Panini Hoops NBA Fat Pack",
+      "prix": null,
+      "stock": "IN_STOCK",
+      "stock_detail": null,
+      "devise": "EUR",
+      "sku_id": "PANINI_2024-25_HOOPS_FAT_PACK",
+      "format": "Fat Pack",
+      "saison": "2024-25",
+      "league": null,
+      "wemby_rc": false,
+      "observed_at": "2026-09-15",
+      "source": "relevé manuel utilisateur",
+      "verifie_par_crawler": false
+    },
+    {
+      "url": "https://www.supercollectors.es/producto/2024-25-topps-chrome-basketball-value-box/",
+      "titre": "2024-25 Topps Chrome Basketball Value Box",
+      "prix": 25.0,
+      "stock": "IN_STOCK",
+      "stock_detail": null,
+      "devise": "EUR",
+      "sku_id": null,
+      "format": null,
+      "saison": null,
+      "league": null,
+      "wemby_rc": null,
+      "observed_at": "2026-09-15",
+      "source": "relevé manuel utilisateur",
+      "verifie_par_crawler": false,
+      "identite": "PENDING_SECOND_ATTESTATION",
+      "identite_note": "2024-25 Topps Chrome Value Box n'existe pas au catalogue : la gamme y figure en Hobby, Mega, Blaster et Case pour 2024-25, mais pas en Value Box. Le SKU N'A PAS été créé, parce que le projet exige DEUX vendeurs pour fonder une identité et que SuperCollectors est le seul à l'attester — 30 boutiques interrogées le 15/09, aucune autre ne le référence. Le produit est suivi ici en attendant un second témoignage ; créer l'identité sur une seule source serait précisément ce que cette règle interdit."
+    },
+    {
+      "url": "https://www.supercollectors.es/producto/2023-24-panini-prizm-euroleague-basketball-hobby-box/",
+      "titre": "2023-24 Panini Prizm EuroLeague Basketball Hobby Box",
+      "prix": 120.0,
+      "stock": "IN_STOCK",
+      "stock_detail": null,
+      "devise": "EUR",
+      "sku_id": "PANINI_2023-24_PRIZM_EUROLEAGUE_HOBBY",
+      "format": "Hobby",
+      "saison": "2023-24",
+      "league": "EuroLeague",
+      "wemby_rc": false,
+      "observed_at": "2026-09-15",
+      "source": "relevé manuel utilisateur",
+      "verifie_par_crawler": false
+    }
+  ]
+}

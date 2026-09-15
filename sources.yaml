@@ -567,3 +567,79 @@ shops:
       les quantités restantes. Cela permettrait un suivi que presque aucune autre source ne
       rend possible : STOCK_MOVING, LAST_UNIT_ALERT, POSSIBLE_DORMANT_STOCK. D'où la valeur
       particulière d'un relevé manuel régulier ici, à défaut de crawl.
+
+  - key: bandurka
+    name: Bandurka
+    base_url: https://www.bandurka.cz
+    type: html                    # Shoptet : microdonnées lisibles, adaptateur à écrire
+    platform: shoptet
+    market_region: EU
+    currency: CZK
+    country: CZ
+    trust: trusted
+    status: active
+    priority: high
+    seller_type: card_shop
+    seller_verification: VERIFIED
+    exposes_stock_quantity: true
+    robots_checked_at: 2026-09-15
+    robots_disallow: false
+    discovered_at: 2026-09-15
+    discovery_evidence: "relevé manuel utilisateur + lecture directe du catalogue le 15/09/2026"
+    notes: >-
+      Boutique tchèque sur Shoptet. Son robots.txt nous autorise et sa recherche interne
+      (/vyhledavani/?string=) répond : 42 produits basket lus le 15/09, AVEC les quantités
+      restantes (« 2 ks »). C'est la seule des cinq nouvelles sources européennes réellement
+      crawlable — et elle expose la quantité, ce qui la rend précieuse pour le stock dormant.
+      Attention : son stock Prizm 2023-24 est en Draft Picks et EuroLeague, PAS en Prizm NBA.
+
+  - key: cardland
+    name: Cardland
+    base_url: https://www.cardland.se
+    type: eu_reference            # non crawlé tant que l'ambiguïté robots n'est pas tranchée
+    platform: magento
+    market_region: EU
+    currency: SEK
+    country: SE
+    trust: trusted
+    status: active
+    priority: medium
+    seller_type: card_shop
+    seller_verification: VERIFIED
+    robots_checked_at: 2026-09-15
+    robots_ambiguous: true
+    robots_reason: >-
+      Son robots.txt empile SIX blocs « User-agent: * » successifs. Le parseur robots standard
+      de Python en refuse alors le site ENTIER, y compris /. Lu littéralement, le fichier ne
+      bloque pourtant que /apps/, /success/, /cart/, /shop/search et /fortnox-import — des
+      chemins techniques, pas le catalogue.
+      DÉCISION : on ne crawle pas tant que Julien n'a pas tranché. Face à une ambiguïté sur une
+      autorisation, on s'abstient. /shop/search est de toute façon interdit explicitement et ne
+      doit jamais être utilisé.
+    notes: >-
+      Boutique suédoise, gros catalogue basket, plusieurs formats Prizm 2023-24 connus
+      (Retail, Mega Red Ice, Mega Green Cracked Ice/Fanatics, Fast Break), plusieurs en rupture.
+      À surveiller pour RESTOCK. Ses repacks et tins ne sont PAS des formats Panini officiels :
+      ne jamais les traiter comme tels sans validation.
+
+  - key: coolcard
+    name: Coolcard
+    base_url: https://www.coolcard.se
+    type: html                    # site sur mesure ; /search?q= répond, adaptateur à écrire
+    platform: custom
+    market_region: EU
+    currency: SEK
+    country: SE
+    trust: trusted
+    status: active
+    priority: medium
+    seller_type: card_shop
+    seller_verification: VERIFIED
+    robots_checked_at: 2026-09-15
+    robots_disallow: false
+    discovered_at: 2026-09-15
+    discovery_evidence: "relevé manuel utilisateur — Fast Break 2024-25 à 3995 SEK, 1 unité"
+    notes: >-
+      Détaillant suédois établi de longue date. robots.txt permissif (seuls les chemins client
+      sont fermés) et /search?q= répond avec du contenu exploitable. Piste pour du stock ancien
+      et dormant.

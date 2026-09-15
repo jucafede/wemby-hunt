@@ -284,7 +284,14 @@ def ajoute(url: str, prix=None, devise=None, stock=None, quantite=None,
     if avant and avant.get("prix") and prix and prix < avant["prix"] * 0.95:
         transitions.append("PRICE_DROP")
 
-    obs = {"url": url, "titre": titre, "prix": prix, "devise": devise,
+    # L'URL est FOURNIE, jamais déduite. Le 15/09 j'ai construit trois liens hokej-karty et un
+    # lien coolcard à partir du nom du produit : le coolcard menait à une 404, les trois autres
+    # restent invérifiables. Une URL inventée est un mensonge qui a l'air d'une donnée.
+    verifiee = None
+    if autorise:
+        st_v, _b, _w = xe.fetch(url, timeout=10)
+        verifiee = (st_v == 200)
+    obs = {"url": url, "url_verifiee": verifiee, "titre": titre, "prix": prix, "devise": devise,
            "prix_eur": en_eur(prix, devise, fx),
            "stock": stock or ("in_stock" if (quantite or 0) > 0 else None),
            "quantite": quantite, "seller": cle_v, "pays": meta_v.get("country"),

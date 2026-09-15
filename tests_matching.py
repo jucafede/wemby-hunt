@@ -444,5 +444,26 @@ _pr("chaque identité découverte porte sa preuve",
 _pr("et le nombre de vendeurs qui l'attestent",
     all(x.get("discovery_evidence", 0) >= 2 for x in _SK if x.get("discovered_at")), True)
 
+# ---------------------------------------------- « (10 packs) » décrit un CONTENU, 15/09
+# « Hel Box 2024-25 Panini Prizm NBA Basketball Fast Break (10 packs) » était classée Pack,
+# donc comparée à un sachet à 26 $ au lieu d'une boîte à 350 €. « Pack » est testé avant
+# « Fast Break » dans la liste des formats : toute boîte qui annonce son contenu tombait.
+_pf = lambda t: hunt.parse_format(hunt.norm(t))
+_pr("une Fast Break qui annonce ses 10 sachets reste une Fast Break",
+    _pf("2024-25 Panini Prizm NBA Basketball Fast Break (10 packs)"), "Fast Break")
+_pr("même précédée de « Hel Box »",
+    _pf("Hel Box 2024-25 Panini Prizm NBA Basketball Fast Break (10 packs)"), "Fast Break")
+_pr("un Blaster qui annonce ses 6 sachets reste un Blaster",
+    _pf("2023-24 Panini Prizm Basketball Blaster Box (6 packs)"), "Blaster")
+_pr("la notation « 6 pks/bx » aussi",
+    _pf("2023/24 Panini Prizm Draft Picks Basketball Blaster Box (6 pks/bx)"), "Blaster")
+# et un VRAI sachet reste un sachet : le garde-fou ne doit pas les avaler
+_pr("un sachet de 4 cartes reste un sachet",
+    _pf("2023-24 Panini Prizm Basketball 4-Card Pack"), "Pack")
+_pr("un fat pack reste un fat pack",
+    _pf("2023-24 Panini Hoops Basketball Fat Pack"), "Fat Pack")
+_pr("« Retail Box - Single Pack » reste un sachet",
+    _pf("2023-24 Panini Prizm Basketball Retail Box - Single Pack"), "Pack")
+
 print(f"TOTAL AVEC SEALED : {len(POS)+len(P2)+len(NEG)+11+len(_FP)+len(_MO)+len(_H2)+len(_SC)} tests, {len(fails)} FAIL")
 sys.exit(1 if fails else 0)

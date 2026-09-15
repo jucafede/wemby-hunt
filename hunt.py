@@ -256,11 +256,28 @@ def parse_season(t: str) -> str | None:
 # rattaché au SKU Retail Box. Le nom de la boîte décrit l'ORIGINE du pack, pas le produit.
 SINGLE_PACK_RE = re.compile(r"single\s*pack|(?<![\w-])(?:1|one)\s*pack(?!s)|loose\s*pack|pack\s*only")
 
+# « (10 packs) », « 6 packs/bx », « 24 packs » : un CONTENU, pas un format. Une Fast Break qui
+# annonce ses dix sachets reste une Fast Break — la classer « Pack » la comparait à un sachet à
+# 26 $ au lieu d'une boîte à 350 €. Même famille que le « 2 » de H2 lu comme une quantité.
+# Deux formes seulement, et aucune ne déborde : entre parenthèses, on peut consommer jusqu'à
+# la fermante ; sans parenthèses, on ne retire QUE « N packs ». Une version gourmande avalait
+# « Blaster Box » dans « Hobby 6-Pack Blaster Box » et en faisait un simple Hobby.
+CONTENU_EN_PACKS = re.compile(
+    r"\(\s*\d{1,2}\s*-?\s*(?:packs?|pks?)\b[^)]*\)"      # « (10 packs) », « (6 pks/bx) »
+    r"|\b\d{1,2}\s*-?\s*(?:packs?|pks?)\s*/\s*b(?:o?x)\b",  # « 6 pks/bx » sans parenthèses
+    re.I)
+
+
 def parse_format(t: str) -> str | None:
+    # On retire d'abord la description du contenu : elle parle de ce qu'il y a DANS la boîte.
+    sans_contenu = CONTENU_EN_PACKS.sub(" ", t)
     # ce garde-fou passe AVANT tout le reste : quand une fiche dit qu'elle vend un pack,
     # elle vend un pack, quel que soit le nom de boîte qu'elle cite
     if SINGLE_PACK_RE.search(t) and not re.search(r"\d{1,2}\s*-?\s*pack", t):
         return "Pack"
+    for name, rx in FORMATS:
+        if re.search(rx, sans_contenu): return name
+    # rien sans le contenu : on retente sur le titre entier, un vrai sachet doit rester un sachet
     for name, rx in FORMATS:
         if re.search(rx, t): return name
     return None

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-15T13:10:05+00:00",
+  "generated_at": "2026-09-15T15:12:40+00:00",
   "observations": [
     {
       "url": "https://www.supercollectors.es/producto/2024-25-panini-donruss-basketball-retail-box/",
@@ -28,7 +28,8 @@
       "exact_comp_key": "PANINI_2024-25_DONRUSS_RETAIL_BOX|std|x1",
       "transitions": [
         "LAST_UNIT"
-      ]
+      ],
+      "url_source": "fournie par l'utilisateur"
     },
     {
       "url": "https://www.supercollectors.es/producto/2024-25-topps-chrome-basketball-value-box/",
@@ -55,7 +56,8 @@
       "wemby_rc": null,
       "quantity": 1,
       "exact_comp_key": null,
-      "transitions": []
+      "transitions": [],
+      "url_source": "fournie par l'utilisateur"
     },
     {
       "url": "https://www.supercollectors.es/producto/2024-25-panini-hoops-nba-fat-pack/",
@@ -82,7 +84,8 @@
       "wemby_rc": false,
       "quantity": 1,
       "exact_comp_key": "PANINI_2024-25_HOOPS_FAT_PACK|std|x1",
-      "transitions": []
+      "transitions": [],
+      "url_source": "fournie par l'utilisateur"
     },
     {
       "url": "https://www.supercollectors.es/producto/2023-24-panini-prizm-euroleague-basketball-hobby-box/",
@@ -109,10 +112,11 @@
       "wemby_rc": false,
       "quantity": 1,
       "exact_comp_key": "PANINI_2023-24_PRIZM_EUROLEAGUE_HOBBY|std|x1",
-      "transitions": []
+      "transitions": [],
+      "url_source": "fournie par l'utilisateur"
     },
     {
-      "url": "https://www.hokej-karty.eu/2023-24-panini-donruss-nba-basketball-blaster-box/",
+      "url": null,
       "titre": "2023-24 Panini Donruss NBA Basketball Blaster Box",
       "prix": 55.05,
       "devise": "EUR",
@@ -136,10 +140,12 @@
       "wemby_rc": true,
       "quantity": 1,
       "exact_comp_key": "PANINI_2023-24_DONRUSS_BLASTER|std|x1",
-      "transitions": []
+      "transitions": [],
+      "url_construite_non_verifiee": "https://www.hokej-karty.eu/2023-24-panini-donruss-nba-basketball-blaster-box/",
+      "url_source": "construite à partir du nom du produit, JAMAIS vérifiée — le site répond 403 et l'URL n'a été confirmée par personne. Mise à null pour qu'aucun lien faux ne soit publié."
     },
     {
-      "url": "https://www.hokej-karty.eu/2024-25-panini-nba-hoops-basketball-fat-pack/",
+      "url": null,
       "titre": "2024-25 Panini NBA Hoops Basketball FAT Pack",
       "prix": 9.34,
       "devise": "EUR",
@@ -165,7 +171,9 @@
       "exact_comp_key": "PANINI_2024-25_HOOPS_FAT_PACK|std|x1",
       "transitions": [
         "LOW_STOCK"
-      ]
+      ],
+      "url_construite_non_verifiee": "https://www.hokej-karty.eu/2024-25-panini-nba-hoops-basketball-fat-pack/",
+      "url_source": "construite à partir du nom du produit, JAMAIS vérifiée — le site répond 403 et l'URL n'a été confirmée par personne. Mise à null pour qu'aucun lien faux ne soit publié."
     },
     {
       "url": "https://www.bandurka.cz/basketbal-boxy/2024-25-panini-prizm-nba-basketball-blaster-box/",
@@ -194,7 +202,8 @@
       "exact_comp_key": "PANINI_2024-25_PRIZM_BLASTER|std|x1",
       "transitions": [
         "LOW_STOCK"
-      ]
+      ],
+      "url_source": "lue dans le catalogue de la boutique (HTTP 200)"
     },
     {
       "url": "https://www.bandurka.cz/basketbal-boxy/2024-25-topps-chrome-basketball-blaster-box/",
@@ -223,7 +232,8 @@
       "exact_comp_key": "TOPPS_2024-25_CHROME_BLASTER|std|x1",
       "transitions": [
         "LOW_STOCK"
-      ]
+      ],
+      "url_source": "lue dans le catalogue de la boutique (HTTP 200)"
     },
     {
       "url": "https://www.bandurka.cz/basketbal-boxy/2023-24-panini-prizm-turkish-airlines-euroleague-basketball-blaster-box/",
@@ -252,39 +262,11 @@
       "exact_comp_key": "PANINI_2023-24_PRIZM_EUROLEAGUE_BLASTER|std|x1",
       "transitions": [
         "LAST_UNIT"
-      ]
+      ],
+      "url_source": "lue dans le catalogue de la boutique (HTTP 200)"
     },
     {
-      "url": "https://www.coolcard.se/2024-25-panini-prizm-basketball-fast-break",
-      "titre": "2024-25 Panini Prizm Basketball Fast Break",
-      "prix": 3995.0,
-      "devise": "SEK",
-      "prix_eur": 347.56,
-      "stock": "last_unit",
-      "quantite": 1,
-      "seller": "coolcard",
-      "pays": "SE",
-      "seller_trust": "trusted",
-      "seller_status": "active",
-      "evidence_type": "MANUAL_VERIFIED",
-      "page_lue": false,
-      "robots_autorise": true,
-      "observed_at": "2026-09-15T13:09:36+00:00",
-      "note": "relevé manuel utilisateur 15/09/2026",
-      "sku_id": null,
-      "score": 0.75,
-      "format": null,
-      "season": null,
-      "league": null,
-      "wemby_rc": null,
-      "quantity": 1,
-      "exact_comp_key": null,
-      "transitions": [
-        "LAST_UNIT"
-      ]
-    },
-    {
-      "url": "https://www.hokej-karty.eu/2023-24-panini-prizm-nba-basketball-blaster-box/",
+      "url": null,
       "titre": "2023-24 Panini Prizm NBA Basketball Blaster Box",
       "prix": 122.38,
       "devise": "EUR",
@@ -308,7 +290,39 @@
       "wemby_rc": true,
       "quantity": 1,
       "exact_comp_key": "PANINI_2023-24_PRIZM_BLASTER|std|x1",
-      "transitions": []
+      "transitions": [],
+      "url_construite_non_verifiee": "https://www.hokej-karty.eu/2023-24-panini-prizm-nba-basketball-blaster-box/",
+      "url_source": "construite à partir du nom du produit, JAMAIS vérifiée — le site répond 403 et l'URL n'a été confirmée par personne. Mise à null pour qu'aucun lien faux ne soit publié."
+    },
+    {
+      "url": "https://www.coolcard.se/product/hel-box-2024-25-panini-prizm-basketball-fast-break-10-packs",
+      "url_verifiee": true,
+      "titre": "2024-25 Panini Prizm NBA Basketball Fast Break (10 packs)",
+      "prix": 3995.0,
+      "devise": "SEK",
+      "prix_eur": 347.56,
+      "stock": "last_unit",
+      "quantite": 1,
+      "seller": "coolcard",
+      "pays": "SE",
+      "seller_trust": "trusted",
+      "seller_status": "active",
+      "evidence_type": "MANUAL_VERIFIED",
+      "page_lue": false,
+      "robots_autorise": true,
+      "observed_at": "2026-09-15T15:09:26+00:00",
+      "note": null,
+      "sku_id": "PANINI_2024-25_PRIZM_FAST_BREAK",
+      "score": 1.0,
+      "format": "Fast Break",
+      "season": "2024-25",
+      "league": null,
+      "wemby_rc": false,
+      "quantity": 1,
+      "exact_comp_key": "PANINI_2024-25_PRIZM_FAST_BREAK|std|x1",
+      "transitions": [
+        "LAST_UNIT"
+      ]
     }
   ],
   "price_history": [
@@ -441,6 +455,16 @@
       "devise": "EUR",
       "prix_eur": 122.38,
       "evidence_type": "MANUAL_VERIFIED"
+    },
+    {
+      "t": "2026-09-15T15:09:26+00:00",
+      "url": "https://www.coolcard.se/product/hel-box-2024-25-panini-prizm-basketball-fast-break-10-packs",
+      "seller": "coolcard",
+      "exact_comp_key": "PANINI_2024-25_PRIZM_PACK|std|x1",
+      "prix": 3995.0,
+      "devise": "SEK",
+      "prix_eur": 347.56,
+      "evidence_type": "MANUAL_VERIFIED"
     }
   ],
   "stock_history": [
@@ -535,6 +559,16 @@
       "exact_comp_key": "PANINI_2023-24_PRIZM_BLASTER|std|x1",
       "quantity": 3,
       "transitions": []
+    },
+    {
+      "t": "2026-09-15T15:09:26+00:00",
+      "seller": "coolcard",
+      "product": "2024-25 Panini Prizm NBA Basketball Fast Break (10 packs)",
+      "exact_comp_key": "PANINI_2024-25_PRIZM_PACK|std|x1",
+      "quantity": 1,
+      "transitions": [
+        "LAST_UNIT"
+      ]
     }
   ]
 }

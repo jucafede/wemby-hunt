@@ -37,6 +37,8 @@ def main():
            if o["prix_eur"] and (o["devise"] or "").upper() != "EUR" else "")
     print(f"  {o['seller']} {o['pays'] or ''} · {o['prix']} {o['devise']}{eur}")
     print(f"  stock : {o['stock'] or '?'}" + (f" ×{o['quantite']}" if o["quantite"] is not None else ""))
+    v = o.get("url_verifiee")
+    print(f"  url    : {'✅ répond 200' if v else ('❌ NE RÉPOND PAS — vérifiez le lien' if v is False else '— non vérifiable (le site nous refuse)')}")
     print(f"  preuve : {o['evidence_type']}"
           f"{' · page relue' if o['page_lue'] else ' · page non relue'}"
           f"{'' if o['robots_autorise'] else ' (robots.txt nous refuse ce site)'}")

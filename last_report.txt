@@ -1,10 +1,5 @@
-⚠️  [shopuscards] passage 2026-09-15T11:34:56+00:00 PARTIAL (153 produits) — ignoré, référence = dernier passage complet
+⚠️  [shopuscards] passage 2026-09-15T12:17:16+00:00 PARTIAL (167 produits) — ignoré, référence = dernier passage complet
 (224 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
-
-========================================================================
-  🔔 RESTOCKS depuis le passage précédent
-========================================================================
-  🔔 RESTOCK  TOPPS_2025-26_SIGNATURE_CLASS_BLASTER  dacardworldeu  $45.00  https://dacardworld.eu/products/2025-26-topps-signature-class-basketball-blaster
 
 ========================================================================
   RETAIL
@@ -894,7 +889,7 @@
         🔹DEAL -17%
    4. ballgame         $  110.00  IN STOCK  landed≈€ 126.57  (score 1.00)
         VERIFY
-   5. superior         $  140.00  IN STOCK  landed≈€ 157.60  (score 1.00)
+   5. superior         $  150.00  IN STOCK  landed≈€ 167.95  (score 1.00)
         VERIFY
    6. bleecker         $   45.00  SOLD OUT  landed≈€  59.34  (score 1.00)
         VERIFY
@@ -956,7 +951,7 @@
    2. stcuk            $   40.00  IN STOCK  landed≈€  54.16  (score 1.00)
         VERIFY  cheapest of 7 in stock  FR
    3. ehcards          $   44.99  IN STOCK  landed≈€  59.33  (score 1.00)
-   4. dacardworldeu    $   45.00  IN STOCK  landed≈€  59.34  (score 1.00)  🔔
+   4. dacardworldeu    $   45.00  IN STOCK  landed≈€  59.34  (score 1.00)
         VERIFY  FR
    5. rbicru7          $   50.00  IN STOCK  landed≈€  64.51  (score 1.00)
    6. tanteo           $   54.90  IN STOCK  landed≈€  69.58  (score 1.00)
@@ -1673,7 +1668,7 @@
    1. sportscardjunction $   80.00  IN STOCK  landed≈€  95.54  (score 1.00)
         🔹DEAL -11%  VERIFY  cheapest of 4 in stock
    2. rbicru7          $  105.00  IN STOCK  landed≈€ 121.40  (score 1.00)
-   3. dacardworldeu    $  130.00  IN STOCK  landed≈€ 147.26  (score 1.00)
+   3. dacardworldeu    $  135.00  IN STOCK  landed≈€ 152.43  (score 1.00)
         VERIFY  FR
    4. superior         $  160.00  IN STOCK  landed≈€ 178.29  (score 1.00)
         VERIFY
@@ -3075,21 +3070,21 @@
    BEST → ehcards  https://ehcards.com/products/2024-25-panini-donruss-nba-basketball-choice-box
 
 · SUIVI   2024-25 Panini Donruss EuroLeague Hobby   [PANINI_2024-25_DONRUSS_EUROLEAGUE_HOBBY]  ⚑ False
-   1. sjay2k           $  100.00  IN STOCK  landed≈€ 116.23  (score 1.00)
-        ONLY_STOCK_SEEN  UNLICENSED  EUROLEAGUE  VERIFY
-   2. columbia         $   49.99  SOLD OUT  landed≈€  64.50  (score 1.00)
+   1. columbia         $   49.99  SOLD OUT  landed≈€  64.50  (score 1.00)
         UNLICENSED  EUROLEAGUE
-   3. bleecker         $   50.00  SOLD OUT  landed≈€  64.51  (score 1.00)
+   2. bleecker         $   50.00  SOLD OUT  landed≈€  64.51  (score 1.00)
         UNLICENSED  EUROLEAGUE  VERIFY
-   4. sportscardjunction $   50.00  SOLD OUT  landed≈€  64.51  (score 1.00)
+   3. sportscardjunction $   50.00  SOLD OUT  landed≈€  64.51  (score 1.00)
         UNLICENSED  EUROLEAGUE  VERIFY
-   5. awesome          $   58.75  SOLD OUT  landed≈€  73.56  (score 1.00)
+   4. awesome          $   58.75  SOLD OUT  landed≈€  73.56  (score 1.00)
         UNLICENSED  EUROLEAGUE
-   6. monmouth         $   69.99  SOLD OUT  landed≈€  85.19  (score 1.00)
+   5. monmouth         $   69.99  SOLD OUT  landed≈€  85.19  (score 1.00)
+        UNLICENSED  EUROLEAGUE  VERIFY
+   6. rlsports         $   74.99  SOLD OUT  landed≈€  90.36  (score 1.00)
         UNLICENSED  EUROLEAGUE  VERIFY
    ask $69.99   sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
-   HISTORICAL LOW $100.00 (le 2026-09-06, sjay2k, 1 shop(s) vus) | cheapest live $100.00
-   BEST → sjay2k  https://www.sjay2k.com/products/2024-25-panini-donruss-basketball-hobby-international-hobby-box-pre-order-tba
+   HISTORICAL LOW $49.99 (le 2026-09-06, columbia, 6 shop(s) vus) | aucun live
+   RESTOCK TARGET $49.99  — surveillance, pas une valeur de marché
 
 · SUIVI   2024-25 Panini Donruss International   [PANINI_2024-25_DONRUSS_INTERNATIONAL]
    1. columbia         $   94.99  SOLD OUT  landed≈€ 111.05  (score 1.00)
@@ -3631,7 +3626,7 @@
   [bleecker] 2022 Prizm NBA Basketball Hobby Box  $850.00 OOS  → [["PANINI_2023-24_PRIZM_HOBBY", 0.75], ["PANINI_2024-25_PRIZM_HOBBY", 0.75], ["PANINI_2025-26_PRIZM_HOBBY", 0.75]]
 
 ========================================================================
-  👀 WATCHLIST — 95 prioritaires / 191 historiques / 5 autres
+  👀 WATCHLIST — 95 prioritaires / 192 historiques / 5 autres
 ========================================================================
   🔔 RESTOCK PRIORITY  2024-25 Panini Hoops Pack                  target                          $0.75 (2026-09-06, 5 shop(s))   -93.1% vs ask $10.90
   🔔 RESTOCK PRIORITY  2024-25 Panini Mosaic Pack                 target                          $4.99 (2026-09-06, 2 shop(s))   -84.4% vs ask $32.00
@@ -3704,5 +3699,5 @@
   2023-24_HOOPS_BLASTER                    €   67.90  tanteo      
   2025-26_BOWMAN_VALUE_BLASTER             €   67.90  tanteo      
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-09-15T12-14-07.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-09-15T12-59-44.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

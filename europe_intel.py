@@ -207,14 +207,19 @@ def compare(offre: dict, live: list, fx: float) -> dict:
     eu = [(v, r) for v, r in valeurs if (r.get("pays") or "").upper() in
           ("FR","ES","DE","IT","NL","GR","PL","CZ","SE","BE","AT","PT","SK","RS")]
     mini_eu = min(eu, key=lambda x: x[0])[0] if eu else None
+    # « PLUS BAS MONDIAL » est une affirmation sur le monde. Nous ne connaissons qu'une base.
+    # Tant que la découverte est incomplète — et elle l'est, faute de clé de moteur — la seule
+    # phrase vraie est « la plus basse offre vivante QUE NOUS CONNAISSONS ». La nuance n'est pas
+    # cosmétique : elle dit à l'acheteur s'il peut arrêter de chercher.
     return {"comparable": True, "n_offres": len(valeurs),
             "exclus_ht": [r.get("seller") for r in exclus_ht],
-            "prix_eur": px, "world_low_eur": mini_eur,
-            "world_low_seller": mini_r.get("seller"),
-            "europe_low_eur": mini_eu,
-            "is_world_low": px <= mini_eur + 0.01,
-            "is_europe_low": mini_eu is not None and px <= mini_eu + 0.01,
-            "ecart_vs_world_low_pct": round((px - mini_eur) / mini_eur * 100, 1) if mini_eur else None}
+            "libelle_plus_bas": "LOWEST KNOWN LIVE OFFER",
+            "prix_eur": px, "lowest_known_eur": mini_eur,
+            "lowest_known_seller": mini_r.get("seller"),
+            "lowest_known_europe_eur": mini_eu,
+            "is_lowest_known": px <= mini_eur + 0.01,
+            "is_lowest_known_europe": mini_eu is not None and px <= mini_eu + 0.01,
+            "ecart_vs_lowest_known_pct": round((px - mini_eur) / mini_eur * 100, 1) if mini_eur else None}
 
 
 def verdict_sold(sku_id: str, prix_eur: float, skus: list, fx: float) -> dict:

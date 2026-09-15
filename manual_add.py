@@ -48,12 +48,12 @@ def main():
 
     if c.get("comparable"):
         print(f"\n  comparé à {c['n_offres']} offre(s) vivante(s) du MÊME produit")
-        print(f"  EUROPE LOW : {'OUI' if c['is_europe_low'] else 'non'}"
-              + (f" (plus bas européen {c['europe_low_eur']} €)" if c.get("europe_low_eur") else ""))
-        print(f"  WORLD LOW  : {'OUI' if c['is_world_low'] else 'non'}"
-              f" (plus bas {c['world_low_eur']} € chez {c['world_low_seller']})")
-        if not c["is_world_low"]:
-            print(f"  écart      : {c['ecart_vs_world_low_pct']:+.0f} % vs le meilleur prix connu")
+        print(f"  LOWEST EUROPE : {'OUI' if c['is_lowest_known_europe'] else 'non'}"
+              + (f" (plus basse offre connue en Europe {c['lowest_known_europe_eur']} €)" if c.get("lowest_known_europe_eur") else ""))
+        print(f"  LOWEST KNOWN : {'OUI' if c['is_lowest_known'] else 'non'}"
+              f" (plus bas {c['lowest_known_eur']} € chez {c['lowest_known_seller']})")
+        if not c["is_lowest_known"]:
+            print(f"  écart      : {c['ecart_vs_lowest_known_pct']:+.0f} % vs le meilleur prix connu")
     else:
         print(f"\n  comparaison impossible : {c.get('raison')}")
 

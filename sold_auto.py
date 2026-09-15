@@ -355,3 +355,83 @@ def main(argv=None):
 
 if __name__ == "__main__":
     main()
+
+
+# ---------------------------------------------------------------- normalisation et barème
+TAUX_EUR = {"EUR": 1.0, "USD": 0.862, "GBP": 1.17, "SEK": 0.087, "CZK": 0.0405,
+            "PLN": 0.233, "CHF": 1.06}
+
+
+def en_eur(prix, devise, fx_usd_eur=None) -> float | None:
+    """Toute vente est ramenée en euros. Comparer 122 € à 86 $ sans conversion n'a aucun sens,
+    et c'est une erreur d'autant plus facile qu'elle ne se voit pas."""
+    if prix is None:
+        return None
+    t = dict(TAUX_EUR)
+    if fx_usd_eur:
+        t["USD"] = fx_usd_eur
+    taux = t.get((devise or "USD").upper())
+    return round(float(prix) * taux, 2) if taux else None
+
+
+# Une vente n'est comparable qu'à l'intérieur de SA population. Les mélanger produit une
+# médiane qui ne décrit aucun marché réel.
+POPULATIONS_DISJOINTES = (
+    "ligue : NBA / EuroLeague / Draft Picks / Overtime Elite / NBL / WNBA ne se mélangent jamais",
+    "format : Blaster / Mega / Retail / Hobby / Fast Break / Choice / Hanger sont des produits distincts",
+    "conditionnement : une boîte seule, un lot et un case sont trois marchés",
+)
+
+
+def fenetres_eur(transactions: list, today=None) -> dict:
+    """Médianes 30 / 90 / 180 jours, en euros, avec le compte et les bornes.
+
+    Chaque fenêtre porte SON effectif : une médiane à 180 jours sur deux ventes ne vaut pas
+    une médiane à 30 jours sur douze, et seul le n permet de le voir.
+    """
+    from datetime import date, timedelta
+    today = today or date.today()
+    dates = []
+    for t in transactions:
+        if not t.get("sold_date"):
+            continue
+        px = t.get("sold_price_eur")
+        if px is None:
+            px = en_eur(t.get("sold_price"), t.get("currency"))
+        if px is None:
+            continue
+        try:
+            dates.append((date.fromisoformat(t["sold_date"]), px))
+        except (ValueError, TypeError):
+            continue
+    dates.sort()
+    out = {"sold_count": len(dates),
+           "sold_low": round(min(p for _, p in dates), 2) if dates else None,
+           "sold_high": round(max(p for _, p in dates), 2) if dates else None,
+           "last_sale_eur": round(dates[-1][1], 2) if dates else None,
+           "last_sale_date": dates[-1][0].isoformat() if dates else None}
+    for j in (30, 90, 180):
+        w = [p for d, p in dates if d >= today - timedelta(days=j)]
+        out[f"sold_{j}d_median"] = round(statistics.median(w), 2) if w else None
+        out[f"sold_{j}d_count"] = len(w)
+    n90 = out["sold_90d_count"]
+    out["sold_confidence"] = sold_confidence(n90)
+    return out
+
+
+# Le barème, appliqué au COÛT RENDU quand on le connaît — pas au prix affiché. Une boîte à
+# 100 $ chez un vendeur américain n'est pas à 100 € dans un salon français.
+PALIERS = ((-20, "STRONG_DEAL"), (-10, "DEAL"), (10, "FAIR"), (25, "EXPENSIVE"))
+
+
+def deal_score(prix_rendu_eur, mediane_eur, confiance) -> tuple:
+    """(palier, écart %). Aucun palier sans médiane fiable — la règle ne fléchit pas."""
+    if prix_rendu_eur is None or not mediane_eur:
+        return "INSUFFICIENT_SOLD_DATA", None
+    if confiance in (None, "NONE", "LOW"):
+        return "INSUFFICIENT_SOLD_DATA", None
+    ecart = round((prix_rendu_eur - mediane_eur) / mediane_eur * 100, 1)
+    for seuil, nom in PALIERS:
+        if ecart <= seuil:
+            return nom, ecart
+    return "VERY_EXPENSIVE", ecart

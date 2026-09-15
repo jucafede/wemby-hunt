@@ -84,8 +84,8 @@ def main():
         tag = "🎯 RC" if l["rc"] else (f"⚠️ {l['league']}" if l["league"] else "  ")
         bas = ""
         if l["cmp"].get("comparable"):
-            if l["cmp"]["is_world_low"]: bas = "  ← PLUS BAS MONDIAL"
-            elif l["cmp"]["is_europe_low"]: bas = "  ← plus bas européen"
+            if l["cmp"]["is_lowest_known"]: bas = "  ← PLUS BASSE OFFRE CONNUE"
+            elif l["cmp"]["is_lowest_known_europe"]: bas = "  ← plus basse offre connue en Europe"
         ev = "M" if l["evidence_type"] == ei.MANUAL_VERIFIED else "C"
         q = f"×{l['quantite']}" if l.get("quantite") else ""
         print(f"  [{ev}] {l['eur']:>8.2f} € {str(l['pays']):<3} {l['seller']:<17} {q:<4} "

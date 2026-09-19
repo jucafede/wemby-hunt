@@ -1,4 +1,4 @@
-⚠️  [shopuscards] passage 2026-09-19T04:23:36+00:00 PARTIAL (156 produits) — ignoré, référence = dernier passage complet
+⚠️  [shopuscards] passage 2026-09-19T10:46:34+00:00 PARTIAL (173 produits) — ignoré, référence = dernier passage complet
 (259 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
 
 ========================================================================
@@ -3704,5 +3704,5 @@
   2025-26_BOWMAN_VALUE_BLASTER             €   67.90  tanteo      
   2023-24_DONRUSS_BLASTER                  €   69.90  tanteo      
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-09-19T05-06-33.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-09-19T11-28-12.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

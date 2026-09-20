@@ -1,10 +1,5 @@
-⚠️  [shopuscards] passage 2026-09-20T04:42:11+00:00 PARTIAL (175 produits) — ignoré, référence = dernier passage complet
+⚠️  [shopuscards] passage 2026-09-20T11:09:11+00:00 PARTIAL (170 produits) — ignoré, référence = dernier passage complet
 (264 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
-
-========================================================================
-  🔔 RESTOCKS depuis le passage précédent
-========================================================================
-  🔔 RESTOCK  PANINI_2023-24_OPTIC_MEGA  rbicru7  $110.00  https://rbicru7.com/products/2023-24-donruss-optic-basketball-mega-box
 
 ========================================================================
   RETAIL
@@ -96,8 +91,8 @@
    RESTOCK TARGET $35.00  — surveillance, pas une valeur de marché
 
 ⛔ NO_GO   2023-24 Panini Donruss Optic Mega   [PANINI_2023-24_OPTIC_MEGA]
-   1. rbicru7          $  110.00  IN STOCK  landed≈€ 126.57  (score 1.00)  🔔
-        🔹RESTOCK +0j  ONLY_STOCK_SEEN  RC_YEAR
+   1. rbicru7          $  110.00  IN STOCK  landed≈€ 126.57  (score 1.00)
+        ONLY_STOCK_SEEN  RC_YEAR
    2. ehcards          $   59.99  SOLD OUT  landed≈€  74.84  (score 1.00)
         RC_YEAR
    3. e5sports         $   60.00  SOLD OUT  landed≈€  74.85  (score 1.00)
@@ -3410,7 +3405,7 @@
 
 · SUIVI   2025-26 Panini Prizm Hobby   [PANINI_2025-26_PRIZM_HOBBY]
    1. stcuk            $  225.00  IN STOCK  landed≈€ 245.53  (score 1.00)
-        VERIFY  cheapest of 17 in stock  FR
+        VERIFY  cheapest of 16 in stock  FR
    2. rlsports         $  239.00  IN STOCK  landed≈€ 260.01  (score 1.00)
         🔹DEAL -13%  VERIFY
    3. awesome          $  242.75  IN STOCK  landed≈€ 263.89  (score 1.00)
@@ -3706,5 +3701,5 @@
   2025-26_BOWMAN_VALUE_BLASTER             €   67.90  tanteo      
   2023-24_DONRUSS_BLASTER                  €   69.90  tanteo      
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-09-20T05-25-20.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-09-20T11-53-17.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

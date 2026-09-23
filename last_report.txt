@@ -1,10 +1,11 @@
-⚠️  [shopuscards] passage 2026-09-23T16:43:51+00:00 PARTIAL (158 produits) — ignoré, référence = dernier passage complet
+⚠️  [shopuscards] passage 2026-09-23T21:25:29+00:00 PARTIAL (97 produits) — ignoré, référence = dernier passage complet
 (274 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
 
 ========================================================================
   🔔 RESTOCKS depuis le passage précédent
 ========================================================================
-  🔔 RESTOCK  PANINI_2024-25_SELECT_HOBBY  rbicru7  $395.00  https://rbicru7.com/products/2024-25-panini-select-basketball-hobby-box
+  🔔 RESTOCK  PANINI_2023-24_OPTIC_BLASTER  tanteo  $74.90  https://tanteocartescollections.com/products/2023-24-panini-donruss-optic-cartes-basketball-nba-6-pack-blaster-box-glitter-parallels
+  🔔 RESTOCK  PANINI_2025-26_DONRUSS_BLASTER  tanteo  $39.90  https://tanteocartescollections.com/products/2025-26-panini-donruss-cartes-basketball-nba-blaster-box
 
 ========================================================================
   RETAIL
@@ -78,22 +79,22 @@
    HISTORICAL LOW $60.00 (le 2026-08-17, awesome, 5 shop(s) vus) | aucun live
    RESTOCK TARGET $60.00  — surveillance, pas une valeur de marché
 
-— NO_STOCK   2023-24 Panini Donruss Optic Blaster   [PANINI_2023-24_OPTIC_BLASTER]
-   1. hiddengems       $   35.00  SOLD OUT  landed≈€  48.99  (score 1.00)
+⛔ NO_GO   2023-24 Panini Donruss Optic Blaster   [PANINI_2023-24_OPTIC_BLASTER]
+   1. tanteo           $   74.90  IN STOCK  landed≈€  90.26  (score 1.00)  🔔
+        ONLY_STOCK_SEEN  RC_YEAR  VERIFY  MARKET DATA INSUFFICIENT  FR
+   2. hiddengems       $   35.00  SOLD OUT  landed≈€  48.99  (score 1.00)
         RC_YEAR  MARKET DATA INSUFFICIENT
-   2. e5sports         $   40.00  SOLD OUT  landed≈€  54.16  (score 1.00)
+   3. e5sports         $   40.00  SOLD OUT  landed≈€  54.16  (score 1.00)
         RC_YEAR  VERIFY  MARKET DATA INSUFFICIENT
-   3. awesome          $   45.00  SOLD OUT  landed≈€  59.34  (score 1.00)
+   4. awesome          $   45.00  SOLD OUT  landed≈€  59.34  (score 1.00)
         RC_YEAR  MARKET DATA INSUFFICIENT
-   4. bleecker         $   50.00  SOLD OUT  landed≈€  64.51  (score 1.00)
+   5. bleecker         $   50.00  SOLD OUT  landed≈€  64.51  (score 1.00)
         RC_YEAR  VERIFY  MARKET DATA INSUFFICIENT
-   5. ehcards          $   59.99  SOLD OUT  landed≈€  74.84  (score 1.00)
+   6. ehcards          $   59.99  SOLD OUT  landed≈€  74.84  (score 1.00)
         RC_YEAR  MARKET DATA INSUFFICIENT
-   6. tanteo           $   67.50  SOLD OUT  landed≈€  82.61  (score 1.00)
-        RC_YEAR  VERIFY  MARKET DATA INSUFFICIENT  FR
    ask n/a      sold n/a      | buy ≤ $40.00   | watch ≤ $45.00   | EU n/a  ⏳ STALE THRESHOLD (37 j)
-   HISTORICAL LOW $35.00 (le 2026-08-17, hiddengems, 6 shop(s) vus) | aucun live
-   RESTOCK TARGET $35.00  — surveillance, pas une valeur de marché
+   HISTORICAL LOW $35.00 (le 2026-08-17, hiddengems, 6 shop(s) vus) | cheapest live $74.90
+   BEST → tanteo  https://tanteocartescollections.com/products/2023-24-panini-donruss-optic-cartes-basketball-nba-6-pack-blaster-box-glitter-parallels
 
 ⛔ NO_GO   2023-24 Panini Donruss Optic Mega   [PANINI_2023-24_OPTIC_MEGA]
    1. rbicru7          $  110.00  IN STOCK  landed≈€ 126.57  (score 1.00)
@@ -828,16 +829,15 @@
 
 · SUIVI   2025-26 Topps Chrome Blaster   [TOPPS_2025-26_CHROME_BLASTER]
    1. ehcards          $   79.99  IN STOCK  landed≈€  95.53  (score 1.00)
-        cheapest of 6 in stock
+        cheapest of 5 in stock
    2. rbicru7          $   85.00  IN STOCK  landed≈€ 100.71  (score 1.00)
-   3. fancave          $   99.99  IN STOCK  landed≈€ 116.22  (score 1.00)
+   3. bleecker         $  100.00  IN STOCK  landed≈€ 116.23  (score 1.00)
         VERIFY
-   4. bleecker         $  100.00  IN STOCK  landed≈€ 116.23  (score 1.00)
-        VERIFY
-   5. dacardworldeu    $  110.00  IN STOCK  landed≈€ 126.57  (score 1.00)
+   4. dacardworldeu    $  110.00  IN STOCK  landed≈€ 126.57  (score 1.00)
         VERIFY  FR
-   6. superior         $  115.00  IN STOCK  landed≈€ 131.74  (score 1.00)
+   5. superior         $  115.00  IN STOCK  landed≈€ 131.74  (score 1.00)
         VERIFY
+   6. columbia         $   44.99  SOLD OUT  landed≈€  59.33  (score 1.00)
    ask $79.99   sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $44.99 (le 2026-08-19, columbia, 8 shop(s) vus) | cheapest live $79.99
    BEST → ehcards  https://ehcards.com/products/2025-26-topps-chrome-basketball-blaster-box
@@ -1450,14 +1450,15 @@
 
 · SUIVI   2025-26 Panini Donruss Blaster   [PANINI_2025-26_DONRUSS_BLASTER]
    1. rlsports         $   22.99  IN STOCK  landed≈€  36.57  (score 1.00)
-        🔹STRONG_DEAL -23%  VERIFY  cheapest of 5 in stock
+        🔹STRONG_DEAL -23%  VERIFY  cheapest of 6 in stock
    2. rbicru7          $   28.00  IN STOCK  landed≈€  41.75  (score 1.00)
    3. awesome          $   29.75  IN STOCK  landed≈€  43.56  (score 1.00)
    4. cbhobby          $   30.00  IN STOCK  landed≈€  43.82  (score 1.00)
         VERIFY
    5. bleecker         $   35.00  IN STOCK  landed≈€  48.99  (score 1.00)
         VERIFY
-   6. collectorstore   $   29.99  SOLD OUT  landed≈€  43.81  (score 1.00)
+   6. tanteo           $   39.90  IN STOCK  landed≈€  54.06  (score 1.00)  🔔
+        VERIFY  FR
    ask $29.75   sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $22.99 (le 2026-09-11, rlsports, 7 shop(s) vus) | cheapest live $22.99
    BEST → rlsports  https://rlsportscards.com/products/2025-26-panini-donruss-basketball-blaster-box
@@ -1534,7 +1535,7 @@
 
 · SUIVI   2025-26 Panini Prizm Mega   [PANINI_2025-26_PRIZM_MEGA]
    1. hiddengems       $   39.99  IN STOCK  landed≈€  54.15  (score 1.00)
-        🔹STRONG_DEAL -20%  cheapest of 7 in stock
+        🔹STRONG_DEAL -20%  cheapest of 8 in stock
    2. rlsports         $   49.99  IN STOCK  landed≈€  64.50  (score 1.00)
         VERIFY
    3. rbicru7          $   50.00  IN STOCK  landed≈€  64.51  (score 1.00)
@@ -1542,7 +1543,7 @@
         VERIFY  FR
    5. dacardworldeu    $   52.44  IN STOCK  landed≈€  67.03  (score 1.00)
         VERIFY  FR
-   6. fancave          $   69.99  IN STOCK  landed≈€  85.19  (score 1.00)
+   6. superior         $   62.00  IN STOCK  landed≈€  76.92  (score 1.00)
         VERIFY
    ask $50.00   sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $39.99 (le 2026-09-11, hiddengems, 6 shop(s) vus) | cheapest live $39.99
@@ -2071,8 +2072,8 @@
         YEAR2  VERIFY  cheapest of 7 in stock
    2. collectorstore   $  394.95  IN STOCK  landed≈€ 421.32  (score 1.00)
         YEAR2
-   3. rbicru7          $  395.00  IN STOCK  landed≈€ 421.38  (score 1.00)  🔔
-        🔹RESTOCK +0j  YEAR2
+   3. rbicru7          $  395.00  IN STOCK  landed≈€ 421.38  (score 1.00)
+        YEAR2
    4. sportcards       $  449.95  IN STOCK  landed≈€ 478.22  (score 1.00)
         YEAR2  VERIFY
    5. ballgame         $  450.00  IN STOCK  landed≈€ 478.27  (score 1.00)
@@ -3334,7 +3335,7 @@
 
 · SUIVI   2025-26 Panini Court Kings Hobby   [PANINI_2025-26_COURT_KINGS_HOBBY]
    1. rlsports         $  109.00  IN STOCK  landed≈€ 125.54  (score 1.00)
-        🔹STRONG_DEAL -27%  VERIFY  cheapest of 12 in stock
+        🔹STRONG_DEAL -27%  VERIFY  cheapest of 13 in stock
    2. awesome          $  118.75  IN STOCK  landed≈€ 135.62  (score 1.00)
         🔹STRONG_DEAL -21%
    3. collectorstore   $  119.95  IN STOCK  landed≈€ 136.86  (score 1.00)
@@ -3346,7 +3347,7 @@
    6. stcuk            $  120.00  IN STOCK  landed≈€ 136.92  (score 1.00)
         VERIFY  FR
    ask $150.00  sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
-   HISTORICAL LOW $109.00 (le 2026-09-11, rlsports, 13 shop(s) vus) | cheapest live $109.00
+   HISTORICAL LOW $109.00 (le 2026-09-11, rlsports, 14 shop(s) vus) | cheapest live $109.00
    BEST → rlsports  https://rlsportscards.com/products/2025-26-panini-court-kings-basketball-hobby-box
 
 · SUIVI   2025-26 Panini Donruss Case   [PANINI_2025-26_DONRUSS_CASE]
@@ -3682,7 +3683,7 @@
   (aucune ligne en stock ne cumule un déclencheur et une référence de marché)
 
 ========================================================================
-  🇫🇷 MARCHÉ FR — 42 produit(s) avec une offre en stock
+  🇫🇷 MARCHÉ FR — 44 produit(s) avec une offre en stock
 ========================================================================
   FR MARKET PARTIAL — 2/4 source(s) vérifiée(s) : shopuscards DEGRADED, stickerpoint DEAD
   2025-26_SIGNATURE_CLASS_PACK             €    9.90  tanteo      
@@ -3692,6 +3693,7 @@
   2025-26_PRIZM_BLASTER                    €   35.00  qscards       (+1 autre(s) offre(s) FR)
   2024-25_SELECT_BLASTER                   €   36.90  tanteo      
   2024-25_HOOPS_BLASTER                    €   39.90  tanteo        (+1 autre(s) offre(s) FR)
+  2025-26_DONRUSS_BLASTER                  €   39.90  tanteo      
   2024-25_TOTALLY_CERTIFIED_BLASTER        €   39.95  tanteo      
   2023-24_PHOENIX_BLASTER                  €   44.90  tanteo      
   2024-25_MOSAIC_BLASTER                   €   44.90  tanteo      
@@ -3704,7 +3706,6 @@
   2024-25_DONRUSS_MEGA                     €   64.90  tanteo      
   2023-24_HOOPS_BLASTER                    €   67.90  tanteo      
   2025-26_BOWMAN_VALUE_BLASTER             €   67.90  tanteo      
-  2023-24_DONRUSS_BLASTER                  €   69.90  tanteo      
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-09-23T17-33-17.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-09-23T22-10-55.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

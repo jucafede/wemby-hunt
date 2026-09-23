@@ -1,10 +1,10 @@
-⚠️  [shopuscards] passage 2026-09-23T04:33:11+00:00 PARTIAL (167 produits) — ignoré, référence = dernier passage complet
+⚠️  [shopuscards] passage 2026-09-23T11:21:51+00:00 PARTIAL (162 produits) — ignoré, référence = dernier passage complet
 (276 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
 
 ========================================================================
   🔔 RESTOCKS depuis le passage précédent
 ========================================================================
-  🔔 RESTOCK  TOPPS_2025-26_SIGNATURE_CLASS_HOBBY  awesome  $499.75  https://theawesomecardshop.com/products/2025-26-topps-signature-class-basketball-hobby-box
+  🔔 RESTOCK  PANINI_2025-26_DONRUSS_MEGA  sjay2k  $110.00  https://www.sjay2k.com/products/2025-26-panini-donruss-basketball-mega-box
 
 ========================================================================
   RETAIL
@@ -578,17 +578,17 @@
 
 · SUIVI   2024-25 Panini Donruss Blaster   [PANINI_2024-25_DONRUSS_BLASTER]
    1. ehcards          $   24.99  IN STOCK  landed≈€  38.64  (score 1.00)
-        YEAR2  cheapest of 3 in stock
+        YEAR2  cheapest of 4 in stock
    2. hiddengems       $   24.99  IN STOCK  landed≈€  38.64  (score 1.00)
-        YEAR2  cheapest of 3 in stock
-   3. tanteo           $   34.90  IN STOCK  landed≈€  48.89  (score 1.00)
+        YEAR2  cheapest of 4 in stock
+   3. dacardworldeu    $   25.00  IN STOCK  landed≈€  38.65  (score 1.00)
         YEAR2  VERIFY  FR
-   4. cardiacs         $   17.95  SOLD OUT  landed≈€  31.36  (score 1.00)
+   4. tanteo           $   34.90  IN STOCK  landed≈€  48.89  (score 1.00)
+        YEAR2  VERIFY  FR
+   5. cardiacs         $   17.95  SOLD OUT  landed≈€  31.36  (score 1.00)
         YEAR2
-   5. awesome          $   24.75  SOLD OUT  landed≈€  38.39  (score 1.00)
+   6. awesome          $   24.75  SOLD OUT  landed≈€  38.39  (score 1.00)
         YEAR2
-   6. bleecker         $   30.00  SOLD OUT  landed≈€  43.82  (score 1.00)
-        YEAR2  VERIFY
    ask $24.99   sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $17.95 (le 2026-08-18, cardiacs, 6 shop(s) vus) | cheapest live $24.99
    BEST → ehcards  https://ehcards.com/products/2024-25-panini-donruss-nba-basketball-6-pack-blaster-box-holo-orange-laser-inserts
@@ -1464,14 +1464,14 @@
 
 · SUIVI   2025-26 Panini Donruss Mega   [PANINI_2025-26_DONRUSS_MEGA]
    1. rlsports         $   44.99  IN STOCK  landed≈€  59.33  (score 1.00)
-        🔹STRONG_DEAL -25%  VERIFY  cheapest of 3 in stock
+        🔹STRONG_DEAL -25%  VERIFY  cheapest of 4 in stock
    2. cbhobby          $   60.00  IN STOCK  landed≈€  74.85  (score 1.00)
         VERIFY
    3. superior         $   75.00  IN STOCK  landed≈€  90.37  (score 1.00)
         VERIFY
-   4. collectorstore   $   49.99  SOLD OUT  landed≈€  64.50  (score 1.00)
-   5. sjay2k           $  110.00  SOLD OUT  landed≈€ 126.57  (score 1.00)
-        VERIFY
+   4. sjay2k           $  110.00  IN STOCK  landed≈€ 126.57  (score 1.00)  🔔
+        🔹RESTOCK +0j  VERIFY
+   5. collectorstore   $   49.99  SOLD OUT  landed≈€  64.50  (score 1.00)
    ask $60.00   sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $44.99 (le 2026-09-06, rlsports, 5 shop(s) vus) | cheapest live $44.99
    BEST → rlsports  https://rlsportscards.com/products/2025-26-panini-donruss-basketball-mega-box
@@ -2068,16 +2068,16 @@
 
 · SUIVI   2024-25 Panini Select Hobby   [PANINI_2024-25_SELECT_HOBBY]
    1. kutogo           $  359.95  IN STOCK  landed≈€ 385.12  (score 1.00)
-        YEAR2  VERIFY  cheapest of 7 in stock
-   2. rbicru7          $  375.00  IN STOCK  landed≈€ 400.69  (score 1.00)
+        YEAR2  VERIFY  cheapest of 6 in stock
+   2. collectorstore   $  394.95  IN STOCK  landed≈€ 421.32  (score 1.00)
         YEAR2
-   3. collectorstore   $  394.95  IN STOCK  landed≈€ 421.32  (score 1.00)
-        YEAR2
-   4. sportcards       $  449.95  IN STOCK  landed≈€ 478.22  (score 1.00)
+   3. sportcards       $  449.95  IN STOCK  landed≈€ 478.22  (score 1.00)
         YEAR2  VERIFY
-   5. ballgame         $  450.00  IN STOCK  landed≈€ 478.27  (score 1.00)
+   4. ballgame         $  450.00  IN STOCK  landed≈€ 478.27  (score 1.00)
         YEAR2  VERIFY
-   6. bleecker         $  500.00  IN STOCK  landed≈€ 529.99  (score 1.00)
+   5. bleecker         $  500.00  IN STOCK  landed≈€ 529.99  (score 1.00)
+        YEAR2  VERIFY
+   6. sjay2k           $  700.00  IN STOCK  landed≈€ 736.87  (score 1.00)
         YEAR2  VERIFY
    ask $35.00   sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $349.99 (le 2026-08-18, columbia, 12 shop(s) vus) | cheapest live $359.95
@@ -3706,5 +3706,5 @@
   2025-26_BOWMAN_VALUE_BLASTER             €   67.90  tanteo      
   2023-24_DONRUSS_BLASTER                  €   69.90  tanteo      
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-09-23T05-14-42.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-09-23T12-08-38.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

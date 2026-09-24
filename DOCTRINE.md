@@ -76,3 +76,28 @@ confondre avec un « 0 cherché ».
 source, URL. `sold_prizm.json` en est la sortie calculée à chaque passage. `LAST_SALE` n'est
 jamais une médiane : c'est un point, souvent le plus bruyant de la série. Un relevé agrégé
 qu'on ne peut pas décomposer se cite comme tel et ne se déplie pas en fausses transactions.
+
+## Le piège récurrent : confondre notre lecture et le marchand (24/09/2026)
+
+Quatre fois dans la même session, la même faute sous quatre formes. Elle mérite d'être nommée
+parce qu'elle ne ressemble pas à une erreur : elle produit des chiffres plausibles, tous faux
+dans le même sens.
+
+| Confusion | Ce que ça a produit |
+|---|---|
+| Filtre de ligues appliqué au texte ENTIER d'une page au lieu du titre | des Mega basket écartées parce qu'un menu disait « football » |
+| « L'API répond zéro résultat » lu comme « aucune API lisible » | 16 boutiques classées non crawlables alors qu'elles n'avaient simplement pas de basket |
+| Filtre de sport appliqué au texte entier | `NO_BASKETBALL` gonflé de 7 à 57 |
+| « Nous n'avons rien su lire » lu comme « le site nous interdit » | une boutique prouvée par son API annulée |
+
+LA RÈGLE QUI EN DÉCOULE
+Un filtre pertinent sur un TITRE de produit devient faux sur le texte d'une page : une page
+contient le catalogue entier, donc tous les sports et toutes les ligues. Un filtre d'exclusion
+s'applique à l'objet qu'il juge, jamais à son contexte.
+
+Et surtout : une limite de NOTRE lecture n'est jamais un jugement sur le marchand. « Nous ne
+savons pas lire » et « il n'y en a pas » sont deux phrases opposées. Les ranger sous le même
+statut transforme silencieusement notre ignorance en information — c'est la même faute que
+« 0 résultat dans le registre » lu comme « introuvable sur le marché », et elle appelle la
+même discipline : deux axes séparés, LEGITIMACY et CRAWLABILITY, et un statut
+UNVERIFIED_NOT_CRAWLABLE qui dit ce qu'il est — une candidate non jugée, pas un rejet.

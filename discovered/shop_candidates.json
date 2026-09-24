@@ -13,15 +13,40 @@
       "crawlable": false,
       "robots_status": "disallowed",
       "evidence": null,
-      "status": "REJECTED_NOT_CRAWLABLE",
-      "reason": "robots.txt nous interdit ce site — nous ne le crawlons pas",
+      "status": "UNVERIFIED_NOT_CRAWLABLE",
+      "reason": "robots.txt nous interdit — candidate non vérifiée",
       "discovery_score": 0,
       "name": "ABU Games",
       "city": "Boise",
       "state": "idaho",
       "phone": "+12083766019",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/idaho/boise-city/abu-games/"
+      "directory_url": "https://cardshopmap.com/card-shops/idaho/boise-city/abu-games/",
+      "pass2": {
+        "status": "BLOCKED",
+        "legitimacy": "UNVERIFIED",
+        "crawlability": "BLOCKED",
+        "purchase_mode": null,
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [],
+        "robots_forbids": true
+      },
+      "pass1": {
+        "status": null,
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": false,
+        "ecommerce": false,
+        "evidence": null
+      },
+      "legitimacy": "UNVERIFIED",
+      "crawlability": "BLOCKED",
+      "purchase_mode": null,
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "captain-comics.com",
@@ -35,15 +60,40 @@
       "crawlable": false,
       "robots_status": "disallowed",
       "evidence": null,
-      "status": "REJECTED_NOT_CRAWLABLE",
-      "reason": "robots.txt nous interdit ce site — nous ne le crawlons pas",
+      "status": "UNVERIFIED_NOT_CRAWLABLE",
+      "reason": "robots.txt nous interdit — candidate non vérifiée",
       "discovery_score": 0,
       "name": "Captain Comics Inc",
       "city": "Boise",
       "state": "idaho",
       "phone": "+12083362333",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/idaho/boise-city/captain-comics-inc/"
+      "directory_url": "https://cardshopmap.com/card-shops/idaho/boise-city/captain-comics-inc/",
+      "pass2": {
+        "status": "BLOCKED",
+        "legitimacy": "UNVERIFIED",
+        "crawlability": "BLOCKED",
+        "purchase_mode": null,
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [],
+        "robots_forbids": true
+      },
+      "pass1": {
+        "status": null,
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": false,
+        "ecommerce": false,
+        "evidence": null
+      },
+      "legitimacy": "UNVERIFIED",
+      "crawlability": "BLOCKED",
+      "purchase_mode": null,
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "m.entertainmart.com",
@@ -57,15 +107,45 @@
       "crawlable": false,
       "robots_status": "allowed",
       "evidence": null,
-      "status": "REJECTED_NOT_CRAWLABLE",
-      "reason": "aucune API de catalogue lisible",
+      "status": "REJECTED_NO_BASKETBALL",
+      "reason": "aucun basketball sur aucune des deux passes",
       "discovery_score": 0,
       "name": "Entertainmart - Boise",
       "city": "Boise",
       "state": "idaho",
       "phone": "+19862134065",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/idaho/boise-city/entertainmart-boise/"
+      "directory_url": "https://cardshopmap.com/card-shops/idaho/boise-city/entertainmart-boise/",
+      "pass2": {
+        "status": "REJECTED_NO_BASKETBALL",
+        "legitimacy": "TRUSTED",
+        "crawlability": "MANUAL_ONLY",
+        "purchase_mode": "ONLINE_CART",
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [
+          "téléphone",
+          "e-mail",
+          "page à propos",
+          "CGV/retours"
+        ],
+        "robots_forbids": false
+      },
+      "pass1": {
+        "status": "REJECTED_NOT_CRAWLABLE",
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": false,
+        "ecommerce": true,
+        "evidence": null
+      },
+      "legitimacy": "TRUSTED",
+      "crawlability": "MANUAL_ONLY",
+      "purchase_mode": "ONLINE_CART",
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "goliathgamingboise.com",
@@ -101,15 +181,44 @@
       "crawlable": false,
       "robots_status": "allowed",
       "evidence": null,
-      "status": "REJECTED_NO_ECOMMERCE",
-      "reason": "aucun signal d'e-commerce (plateforme custom)",
+      "status": "REJECTED_NO_BASKETBALL",
+      "reason": "aucun basketball sur aucune des deux passes",
       "discovery_score": 0,
       "name": "King's Komix Kastle",
       "city": "Boise",
       "state": "idaho",
       "phone": "+12083437142",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/idaho/boise-city/kings-komix-kastle/"
+      "directory_url": "https://cardshopmap.com/card-shops/idaho/boise-city/kings-komix-kastle/",
+      "pass2": {
+        "status": "REJECTED_NO_BASKETBALL",
+        "legitimacy": "LIKELY_LEGIT",
+        "crawlability": "MANUAL_ONLY",
+        "purchase_mode": "IN_STORE_ONLY",
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [
+          "téléphone",
+          "adresse postale",
+          "CGV/retours"
+        ],
+        "robots_forbids": false
+      },
+      "pass1": {
+        "status": "REJECTED_NO_ECOMMERCE",
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": false,
+        "ecommerce": false,
+        "evidence": null
+      },
+      "legitimacy": "LIKELY_LEGIT",
+      "crawlability": "MANUAL_ONLY",
+      "purchase_mode": "IN_STORE_ONLY",
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "vipgamestore.com",
@@ -123,15 +232,42 @@
       "crawlable": false,
       "robots_status": "allowed",
       "evidence": null,
-      "status": "REJECTED_NOT_CRAWLABLE",
-      "reason": "aucune API de catalogue lisible",
+      "status": "REJECTED_NO_BASKETBALL",
+      "reason": "aucun basketball sur aucune des deux passes",
       "discovery_score": 0,
       "name": "VIP GameStore",
       "city": "Boise",
       "state": "idaho",
       "phone": "+12086395545",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/idaho/boise-city/vip-gamestore/"
+      "directory_url": "https://cardshopmap.com/card-shops/idaho/boise-city/vip-gamestore/",
+      "pass2": {
+        "status": "REJECTED_NO_BASKETBALL",
+        "legitimacy": "UNVERIFIED",
+        "crawlability": "MANUAL_ONLY",
+        "purchase_mode": "IN_STORE_ONLY",
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [
+          "adresse postale"
+        ],
+        "robots_forbids": false
+      },
+      "pass1": {
+        "status": "REJECTED_NOT_CRAWLABLE",
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": false,
+        "ecommerce": true,
+        "evidence": null
+      },
+      "legitimacy": "UNVERIFIED",
+      "crawlability": "MANUAL_ONLY",
+      "purchase_mode": "IN_STORE_ONLY",
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "yourtoylink.com",
@@ -145,15 +281,40 @@
       "crawlable": false,
       "robots_status": "disallowed",
       "evidence": null,
-      "status": "REJECTED_NOT_CRAWLABLE",
-      "reason": "robots.txt nous interdit ce site — nous ne le crawlons pas",
+      "status": "UNVERIFIED_NOT_CRAWLABLE",
+      "reason": "robots.txt nous interdit — candidate non vérifiée",
       "discovery_score": 0,
       "name": "Your Toy Link",
       "city": "Boise",
       "state": "idaho",
       "phone": "+12089575441",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/idaho/boise-city/your-toy-link/"
+      "directory_url": "https://cardshopmap.com/card-shops/idaho/boise-city/your-toy-link/",
+      "pass2": {
+        "status": "BLOCKED",
+        "legitimacy": "UNVERIFIED",
+        "crawlability": "BLOCKED",
+        "purchase_mode": null,
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [],
+        "robots_forbids": true
+      },
+      "pass1": {
+        "status": null,
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": false,
+        "ecommerce": false,
+        "evidence": null
+      },
+      "legitimacy": "UNVERIFIED",
+      "crawlability": "BLOCKED",
+      "purchase_mode": null,
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "shopgameworld.com",
@@ -167,15 +328,42 @@
       "crawlable": false,
       "robots_status": "allowed",
       "evidence": null,
-      "status": "REJECTED_NOT_CRAWLABLE",
-      "reason": "aucune API de catalogue lisible",
+      "status": "REJECTED_NO_BASKETBALL",
+      "reason": "aucun basketball sur aucune des deux passes",
       "discovery_score": 0,
       "name": "Game World",
       "city": "Coeur D'Alene",
       "state": "idaho",
       "phone": "+12087717208",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/idaho/coeur-dalene/game-world/"
+      "directory_url": "https://cardshopmap.com/card-shops/idaho/coeur-dalene/game-world/",
+      "pass2": {
+        "status": "REJECTED_NO_BASKETBALL",
+        "legitimacy": "UNVERIFIED",
+        "crawlability": "MANUAL_ONLY",
+        "purchase_mode": "ONLINE_CART",
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [
+          "téléphone"
+        ],
+        "robots_forbids": false
+      },
+      "pass1": {
+        "status": "REJECTED_NOT_CRAWLABLE",
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": false,
+        "ecommerce": true,
+        "evidence": null
+      },
+      "legitimacy": "UNVERIFIED",
+      "crawlability": "MANUAL_ONLY",
+      "purchase_mode": "ONLINE_CART",
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "pick6sportscards.com",
@@ -190,14 +378,42 @@
       "robots_status": "allowed",
       "evidence": null,
       "status": "REJECTED_NO_SEALED",
-      "reason": "1 fiche(s) basketball, mais aucune scellée (singles/slabs)",
+      "reason": "basketball présent, aucun scellé prouvé",
       "discovery_score": 0,
       "name": "Pick 6 Sportscards",
       "city": "Coeur D'Alene",
       "state": "idaho",
       "phone": "+12089664513",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/idaho/coeur-dalene/pick-6-sportscards/"
+      "directory_url": "https://cardshopmap.com/card-shops/idaho/coeur-dalene/pick-6-sportscards/",
+      "pass2": {
+        "status": "REJECTED_NO_SEALED",
+        "legitimacy": "LIKELY_LEGIT",
+        "crawlability": "MANUAL_ONLY",
+        "purchase_mode": "ONLINE_CART",
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [
+          "page à propos",
+          "CGV/retours"
+        ],
+        "robots_forbids": false
+      },
+      "pass1": {
+        "status": "REJECTED_NO_SEALED",
+        "sealed_basketball": false,
+        "basketball": true,
+        "crawlable": true,
+        "ecommerce": true,
+        "evidence": null
+      },
+      "legitimacy": "LIKELY_LEGIT",
+      "crawlability": "MANUAL_ONLY",
+      "purchase_mode": "ONLINE_CART",
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "themanapoolshop.com",
@@ -211,15 +427,40 @@
       "crawlable": false,
       "robots_status": "disallowed",
       "evidence": null,
-      "status": "REJECTED_NOT_CRAWLABLE",
-      "reason": "robots.txt nous interdit ce site — nous ne le crawlons pas",
+      "status": "UNVERIFIED_NOT_CRAWLABLE",
+      "reason": "robots.txt nous interdit — candidate non vérifiée",
       "discovery_score": 0,
       "name": "Press Start To Play",
       "city": "Coeur D Alene",
       "state": "idaho",
       "phone": "+12086645421",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/idaho/coeur-dalene/press-start-to-play/"
+      "directory_url": "https://cardshopmap.com/card-shops/idaho/coeur-dalene/press-start-to-play/",
+      "pass2": {
+        "status": "BLOCKED",
+        "legitimacy": "UNVERIFIED",
+        "crawlability": "BLOCKED",
+        "purchase_mode": null,
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [],
+        "robots_forbids": true
+      },
+      "pass1": {
+        "status": null,
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": false,
+        "ecommerce": false,
+        "evidence": null
+      },
+      "legitimacy": "UNVERIFIED",
+      "crawlability": "BLOCKED",
+      "purchase_mode": null,
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "openstreetmap.org",
@@ -233,15 +474,40 @@
       "crawlable": false,
       "robots_status": "allowed",
       "evidence": null,
-      "status": "REJECTED_NO_ECOMMERCE",
-      "reason": "aucun signal d'e-commerce (plateforme custom)",
+      "status": "REJECTED_NO_BASKETBALL",
+      "reason": "aucun basketball sur aucune des deux passes",
       "discovery_score": 0,
       "name": "Worthy Comics",
       "city": "Coeur d'Alene",
       "state": "idaho",
       "phone": "+12082929252",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/idaho/coeur-dalene/worthy-comics/"
+      "directory_url": "https://cardshopmap.com/card-shops/idaho/coeur-dalene/worthy-comics/",
+      "pass2": {
+        "status": "REJECTED_NO_BASKETBALL",
+        "legitimacy": "UNVERIFIED",
+        "crawlability": "MANUAL_ONLY",
+        "purchase_mode": "IN_STORE_ONLY",
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [],
+        "robots_forbids": false
+      },
+      "pass1": {
+        "status": "REJECTED_NO_ECOMMERCE",
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": false,
+        "ecommerce": false,
+        "evidence": null
+      },
+      "legitimacy": "UNVERIFIED",
+      "crawlability": "MANUAL_ONLY",
+      "purchase_mode": "IN_STORE_ONLY",
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "aquatreasurestcg.com",
@@ -278,14 +544,44 @@
       "robots_status": "allowed",
       "evidence": null,
       "status": "REJECTED_NO_BASKETBALL",
-      "reason": "catalogue lisible, aucun produit correspondant",
+      "reason": "aucun basketball sur aucune des deux passes",
       "discovery_score": 0,
       "name": "Idaho Dive Pirates",
       "city": "Idaho Falls",
       "state": "idaho",
       "phone": "+12085292636",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/idaho/idaho-falls/idaho-dive-pirates/"
+      "directory_url": "https://cardshopmap.com/card-shops/idaho/idaho-falls/idaho-dive-pirates/",
+      "pass2": {
+        "status": "REJECTED_NO_BASKETBALL",
+        "legitimacy": "TRUSTED",
+        "crawlability": "MANUAL_ONLY",
+        "purchase_mode": "ONLINE_CART",
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [
+          "téléphone",
+          "e-mail",
+          "adresse postale",
+          "page à propos"
+        ],
+        "robots_forbids": false
+      },
+      "pass1": {
+        "status": "REJECTED_NO_BASKETBALL",
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": true,
+        "ecommerce": true,
+        "evidence": null
+      },
+      "legitimacy": "TRUSTED",
+      "crawlability": "MANUAL_ONLY",
+      "purchase_mode": "ONLINE_CART",
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "baxburn.com",
@@ -321,15 +617,42 @@
       "crawlable": false,
       "robots_status": "allowed",
       "evidence": null,
-      "status": "REJECTED_NOT_CRAWLABLE",
-      "reason": "aucune API de catalogue lisible",
+      "status": "REJECTED_NO_BASKETBALL",
+      "reason": "aucun basketball sur aucune des deux passes",
       "discovery_score": 0,
       "name": "Round Table Games",
       "city": "Idaho Falls",
       "state": "idaho",
       "phone": "+12086079333",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/idaho/idaho-falls/round-table-games/"
+      "directory_url": "https://cardshopmap.com/card-shops/idaho/idaho-falls/round-table-games/",
+      "pass2": {
+        "status": "REJECTED_NO_BASKETBALL",
+        "legitimacy": "UNVERIFIED",
+        "crawlability": "MANUAL_ONLY",
+        "purchase_mode": "IN_STORE_ONLY",
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [
+          "page à propos"
+        ],
+        "robots_forbids": false
+      },
+      "pass1": {
+        "status": "REJECTED_NOT_CRAWLABLE",
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": false,
+        "ecommerce": true,
+        "evidence": null
+      },
+      "legitimacy": "UNVERIFIED",
+      "crawlability": "MANUAL_ONLY",
+      "purchase_mode": "IN_STORE_ONLY",
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "silversluggercoins.com",
@@ -365,15 +688,43 @@
       "crawlable": false,
       "robots_status": "allowed",
       "evidence": null,
-      "status": "REJECTED_NOT_CRAWLABLE",
-      "reason": "aucune API de catalogue lisible",
+      "status": "REJECTED_NO_BASKETBALL",
+      "reason": "aucun basketball sur aucune des deux passes",
       "discovery_score": 0,
       "name": "The Custom Saber Shop, Llc",
       "city": "Idaho Falls",
       "state": "idaho",
       "phone": null,
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/idaho/idaho-falls/the-custom-saber-shop-llc/"
+      "directory_url": "https://cardshopmap.com/card-shops/idaho/idaho-falls/the-custom-saber-shop-llc/",
+      "pass2": {
+        "status": "REJECTED_NO_BASKETBALL",
+        "legitimacy": "LIKELY_LEGIT",
+        "crawlability": "MANUAL_ONLY",
+        "purchase_mode": "ONLINE_CART",
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [
+          "page à propos",
+          "CGV/retours"
+        ],
+        "robots_forbids": false
+      },
+      "pass1": {
+        "status": "REJECTED_NOT_CRAWLABLE",
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": false,
+        "ecommerce": true,
+        "evidence": null
+      },
+      "legitimacy": "LIKELY_LEGIT",
+      "crawlability": "MANUAL_ONLY",
+      "purchase_mode": "ONLINE_CART",
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "safaripearl.com",
@@ -387,15 +738,45 @@
       "crawlable": false,
       "robots_status": "allowed",
       "evidence": null,
-      "status": "REJECTED_NO_ECOMMERCE",
-      "reason": "aucun signal d'e-commerce (plateforme custom)",
+      "status": "REJECTED_NO_BASKETBALL",
+      "reason": "aucun basketball sur aucune des deux passes",
       "discovery_score": 0,
       "name": "Safari Pearl",
       "city": "Moscow",
       "state": "idaho",
       "phone": "+12088829499",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/idaho/moscow/safari-pearl/"
+      "directory_url": "https://cardshopmap.com/card-shops/idaho/moscow/safari-pearl/",
+      "pass2": {
+        "status": "REJECTED_NO_BASKETBALL",
+        "legitimacy": "TRUSTED",
+        "crawlability": "MANUAL_ONLY",
+        "purchase_mode": "IN_STORE_ONLY",
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [
+          "téléphone",
+          "e-mail",
+          "adresse postale",
+          "page à propos"
+        ],
+        "robots_forbids": false
+      },
+      "pass1": {
+        "status": "REJECTED_NO_ECOMMERCE",
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": false,
+        "ecommerce": false,
+        "evidence": null
+      },
+      "legitimacy": "TRUSTED",
+      "crawlability": "MANUAL_ONLY",
+      "purchase_mode": "IN_STORE_ONLY",
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "mayhemcomics.com",
@@ -409,15 +790,44 @@
       "crawlable": false,
       "robots_status": "allowed",
       "evidence": null,
-      "status": "REJECTED_NO_ECOMMERCE",
-      "reason": "aucun signal d'e-commerce (plateforme custom)",
+      "status": "REJECTED_NO_BASKETBALL",
+      "reason": "aucun basketball sur aucune des deux passes",
       "discovery_score": 0,
       "name": "Mayhem Collectibles",
       "city": "Ames",
       "state": "iowa",
       "phone": "+15152923510",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/iowa/ames/mayhem-collectibles/"
+      "directory_url": "https://cardshopmap.com/card-shops/iowa/ames/mayhem-collectibles/",
+      "pass2": {
+        "status": "REJECTED_NO_BASKETBALL",
+        "legitimacy": "LIKELY_LEGIT",
+        "crawlability": "MANUAL_ONLY",
+        "purchase_mode": "IN_STORE_ONLY",
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [
+          "téléphone",
+          "adresse postale",
+          "page à propos"
+        ],
+        "robots_forbids": false
+      },
+      "pass1": {
+        "status": "REJECTED_NO_ECOMMERCE",
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": false,
+        "ecommerce": false,
+        "evidence": null
+      },
+      "legitimacy": "LIKELY_LEGIT",
+      "crawlability": "MANUAL_ONLY",
+      "purchase_mode": "IN_STORE_ONLY",
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "shield-comics.com",
@@ -453,15 +863,40 @@
       "crawlable": false,
       "robots_status": "disallowed",
       "evidence": null,
-      "status": "REJECTED_NOT_CRAWLABLE",
-      "reason": "robots.txt nous interdit ce site — nous ne le crawlons pas",
+      "status": "UNVERIFIED_NOT_CRAWLABLE",
+      "reason": "robots.txt nous interdit — candidate non vérifiée",
       "discovery_score": 0,
       "name": "Dungeon's Gate",
       "city": "Ankeny",
       "state": "iowa",
       "phone": "+15156355170",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/iowa/ankeny/dungeons-gate/"
+      "directory_url": "https://cardshopmap.com/card-shops/iowa/ankeny/dungeons-gate/",
+      "pass2": {
+        "status": "BLOCKED",
+        "legitimacy": "UNVERIFIED",
+        "crawlability": "BLOCKED",
+        "purchase_mode": null,
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [],
+        "robots_forbids": true
+      },
+      "pass1": {
+        "status": null,
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": false,
+        "ecommerce": false,
+        "evidence": null
+      },
+      "legitimacy": "UNVERIFIED",
+      "crawlability": "BLOCKED",
+      "purchase_mode": null,
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "gogamers.com",
@@ -475,15 +910,40 @@
       "crawlable": false,
       "robots_status": "disallowed",
       "evidence": null,
-      "status": "REJECTED_NOT_CRAWLABLE",
-      "reason": "robots.txt nous interdit ce site — nous ne le crawlons pas",
+      "status": "UNVERIFIED_NOT_CRAWLABLE",
+      "reason": "robots.txt nous interdit — candidate non vérifiée",
       "discovery_score": 0,
       "name": "Gamers",
       "city": "Ankeny",
       "state": "iowa",
       "phone": "+14027034403",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/iowa/ankeny/gamers/"
+      "directory_url": "https://cardshopmap.com/card-shops/iowa/ankeny/gamers/",
+      "pass2": {
+        "status": "BLOCKED",
+        "legitimacy": "UNVERIFIED",
+        "crawlability": "BLOCKED",
+        "purchase_mode": null,
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [],
+        "robots_forbids": true
+      },
+      "pass1": {
+        "status": null,
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": false,
+        "ecommerce": false,
+        "evidence": null
+      },
+      "legitimacy": "UNVERIFIED",
+      "crawlability": "BLOCKED",
+      "purchase_mode": null,
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "jaystoysandgames.com",
@@ -498,14 +958,42 @@
       "robots_status": "allowed",
       "evidence": null,
       "status": "REJECTED_NO_SEALED",
-      "reason": "2 fiche(s) basketball, mais aucune scellée (singles/slabs)",
+      "reason": "basketball présent, aucun scellé prouvé",
       "discovery_score": 0,
       "name": "Jay's CD and Hobby - Ankeny",
       "city": "Ankeny",
       "state": "iowa",
       "phone": "+15155130739",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/iowa/ankeny/jays-cd-and-hobby-ankeny/"
+      "directory_url": "https://cardshopmap.com/card-shops/iowa/ankeny/jays-cd-and-hobby-ankeny/",
+      "pass2": {
+        "status": "REJECTED_NO_SEALED",
+        "legitimacy": "LIKELY_LEGIT",
+        "crawlability": "MANUAL_ONLY",
+        "purchase_mode": "ONLINE_CART",
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [
+          "page à propos",
+          "CGV/retours"
+        ],
+        "robots_forbids": false
+      },
+      "pass1": {
+        "status": "REJECTED_NO_SEALED",
+        "sealed_basketball": false,
+        "basketball": true,
+        "crawlable": true,
+        "ecommerce": true,
+        "evidence": null
+      },
+      "legitimacy": "LIKELY_LEGIT",
+      "crawlability": "MANUAL_ONLY",
+      "purchase_mode": "ONLINE_CART",
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "rodmancomics.com",
@@ -519,15 +1007,40 @@
       "crawlable": false,
       "robots_status": "disallowed",
       "evidence": null,
-      "status": "REJECTED_NOT_CRAWLABLE",
-      "reason": "robots.txt nous interdit ce site — nous ne le crawlons pas",
+      "status": "UNVERIFIED_NOT_CRAWLABLE",
+      "reason": "robots.txt nous interdit — candidate non vérifiée",
       "discovery_score": 0,
       "name": "Rodman Comics",
       "city": "Ankeny",
       "state": "iowa",
       "phone": "+15159654592",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/iowa/ankeny/rodman-comics/"
+      "directory_url": "https://cardshopmap.com/card-shops/iowa/ankeny/rodman-comics/",
+      "pass2": {
+        "status": "BLOCKED",
+        "legitimacy": "UNVERIFIED",
+        "crawlability": "BLOCKED",
+        "purchase_mode": null,
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [],
+        "robots_forbids": true
+      },
+      "pass1": {
+        "status": null,
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": false,
+        "ecommerce": false,
+        "evidence": null
+      },
+      "legitimacy": "UNVERIFIED",
+      "crawlability": "BLOCKED",
+      "purchase_mode": null,
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "dvgtcg.com",
@@ -542,14 +1055,44 @@
       "robots_status": "allowed",
       "evidence": null,
       "status": "REJECTED_NO_SEALED",
-      "reason": "8 fiche(s) basketball, mais aucune scellée (singles/slabs)",
+      "reason": "basketball présent, aucun scellé prouvé",
       "discovery_score": 0,
       "name": "Dark Vassal Gaming",
       "city": "Cedar Falls",
       "state": "iowa",
       "phone": "+13192520784",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/iowa/cedar-falls/dark-vassal-gaming/"
+      "directory_url": "https://cardshopmap.com/card-shops/iowa/cedar-falls/dark-vassal-gaming/",
+      "pass2": {
+        "status": "REJECTED_NO_SEALED",
+        "legitimacy": "TRUSTED",
+        "crawlability": "MANUAL_ONLY",
+        "purchase_mode": "ONLINE_CART",
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [
+          "téléphone",
+          "adresse postale",
+          "page à propos",
+          "CGV/retours"
+        ],
+        "robots_forbids": false
+      },
+      "pass1": {
+        "status": "REJECTED_NO_SEALED",
+        "sealed_basketball": false,
+        "basketball": true,
+        "crawlable": true,
+        "ecommerce": true,
+        "evidence": null
+      },
+      "legitimacy": "TRUSTED",
+      "crawlability": "MANUAL_ONLY",
+      "purchase_mode": "ONLINE_CART",
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "loccollectibles.com",
@@ -563,15 +1106,44 @@
       "crawlable": false,
       "robots_status": "allowed",
       "evidence": null,
-      "status": "REJECTED_NO_ECOMMERCE",
-      "reason": "aucun signal d'e-commerce (plateforme custom)",
+      "status": "REJECTED_NO_BASKETBALL",
+      "reason": "aucun basketball sur aucune des deux passes",
       "discovery_score": 0,
       "name": "Limited Edition Comics",
       "city": "Cedar Falls",
       "state": "iowa",
       "phone": "+15732754276",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/iowa/cedar-falls/limited-edition-comics/"
+      "directory_url": "https://cardshopmap.com/card-shops/iowa/cedar-falls/limited-edition-comics/",
+      "pass2": {
+        "status": "REJECTED_NO_BASKETBALL",
+        "legitimacy": "LIKELY_LEGIT",
+        "crawlability": "MANUAL_ONLY",
+        "purchase_mode": "IN_STORE_ONLY",
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [
+          "téléphone",
+          "e-mail",
+          "CGV/retours"
+        ],
+        "robots_forbids": false
+      },
+      "pass1": {
+        "status": "REJECTED_NO_ECOMMERCE",
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": false,
+        "ecommerce": false,
+        "evidence": null
+      },
+      "legitimacy": "LIKELY_LEGIT",
+      "crawlability": "MANUAL_ONLY",
+      "purchase_mode": "IN_STORE_ONLY",
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "thecoreonline.com",
@@ -580,20 +1152,49 @@
       "platform": "shopify",
       "ecommerce": true,
       "cart_available": true,
-      "basketball": false,
+      "basketball": true,
       "sealed_basketball": false,
       "crawlable": true,
       "robots_status": "allowed",
       "evidence": null,
-      "status": "REJECTED_NO_BASKETBALL",
-      "reason": "25 fiches lues, aucun basketball",
+      "status": "REJECTED_NO_SEALED",
+      "reason": "basketball présent, aucun scellé prouvé",
       "discovery_score": 0,
       "name": "The CORE Comics & Games",
       "city": "Cedar Falls",
       "state": "iowa",
       "phone": "+13192771835",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/iowa/cedar-falls/the-core-comics-and-games/"
+      "directory_url": "https://cardshopmap.com/card-shops/iowa/cedar-falls/the-core-comics-and-games/",
+      "pass2": {
+        "status": "REJECTED_NO_SEALED",
+        "legitimacy": "LIKELY_LEGIT",
+        "crawlability": "MANUAL_ONLY",
+        "purchase_mode": "ONLINE_CART",
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [
+          "adresse postale",
+          "page à propos",
+          "CGV/retours"
+        ],
+        "robots_forbids": false
+      },
+      "pass1": {
+        "status": "REJECTED_NO_BASKETBALL",
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": true,
+        "ecommerce": true,
+        "evidence": null
+      },
+      "legitimacy": "LIKELY_LEGIT",
+      "crawlability": "MANUAL_ONLY",
+      "purchase_mode": "ONLINE_CART",
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "3lgaming.com",
@@ -607,15 +1208,40 @@
       "crawlable": false,
       "robots_status": "disallowed",
       "evidence": null,
-      "status": "REJECTED_NOT_CRAWLABLE",
-      "reason": "robots.txt nous interdit ce site — nous ne le crawlons pas",
+      "status": "UNVERIFIED_NOT_CRAWLABLE",
+      "reason": "robots.txt nous interdit — candidate non vérifiée",
       "discovery_score": 0,
       "name": "3l Gaming Supplies",
       "city": "Cedar Rapids",
       "state": "iowa",
       "phone": null,
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/iowa/cedar-rapids/3l-gaming-supplies/"
+      "directory_url": "https://cardshopmap.com/card-shops/iowa/cedar-rapids/3l-gaming-supplies/",
+      "pass2": {
+        "status": "BLOCKED",
+        "legitimacy": "UNVERIFIED",
+        "crawlability": "BLOCKED",
+        "purchase_mode": null,
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [],
+        "robots_forbids": true
+      },
+      "pass1": {
+        "status": null,
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": false,
+        "ecommerce": false,
+        "evidence": null
+      },
+      "legitimacy": "UNVERIFIED",
+      "crawlability": "BLOCKED",
+      "purchase_mode": null,
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "couleecards.com",
@@ -629,15 +1255,40 @@
       "crawlable": false,
       "robots_status": "disallowed",
       "evidence": null,
-      "status": "REJECTED_NOT_CRAWLABLE",
-      "reason": "robots.txt nous interdit ce site — nous ne le crawlons pas",
+      "status": "UNVERIFIED_NOT_CRAWLABLE",
+      "reason": "robots.txt nous interdit — candidate non vérifiée",
       "discovery_score": 0,
       "name": "Coulee Cards and Gaming",
       "city": "Cedar Rapids",
       "state": "iowa",
       "phone": "+13194494462",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/iowa/cedar-rapids/coulee-cards-and-gaming/"
+      "directory_url": "https://cardshopmap.com/card-shops/iowa/cedar-rapids/coulee-cards-and-gaming/",
+      "pass2": {
+        "status": "BLOCKED",
+        "legitimacy": "UNVERIFIED",
+        "crawlability": "BLOCKED",
+        "purchase_mode": null,
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [],
+        "robots_forbids": true
+      },
+      "pass1": {
+        "status": null,
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": false,
+        "ecommerce": false,
+        "evidence": null
+      },
+      "legitimacy": "UNVERIFIED",
+      "crawlability": "BLOCKED",
+      "purchase_mode": null,
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "ecsplay.com",
@@ -652,14 +1303,42 @@
       "robots_status": "allowed",
       "evidence": null,
       "status": "REJECTED_NO_BASKETBALL",
-      "reason": "catalogue lisible, aucun produit correspondant",
+      "reason": "aucun basketball sur aucune des deux passes",
       "discovery_score": 0,
       "name": "Ecs Inc Cedar Rapids / Camden Amusement",
       "city": "Cedar Rapids",
       "state": "iowa",
       "phone": "+13195821585",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/iowa/cedar-rapids/ecs-inc-cedar-rapids-camden-amusement/"
+      "directory_url": "https://cardshopmap.com/card-shops/iowa/cedar-rapids/ecs-inc-cedar-rapids-camden-amusement/",
+      "pass2": {
+        "status": "REJECTED_NO_BASKETBALL",
+        "legitimacy": "LIKELY_LEGIT",
+        "crawlability": "MANUAL_ONLY",
+        "purchase_mode": "ONLINE_CART",
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [
+          "e-mail",
+          "page à propos"
+        ],
+        "robots_forbids": false
+      },
+      "pass1": {
+        "status": "REJECTED_NO_BASKETBALL",
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": true,
+        "ecommerce": true,
+        "evidence": null
+      },
+      "legitimacy": "LIKELY_LEGIT",
+      "crawlability": "MANUAL_ONLY",
+      "purchase_mode": "ONLINE_CART",
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "tempestgames.net",
@@ -673,15 +1352,44 @@
       "crawlable": false,
       "robots_status": "allowed",
       "evidence": null,
-      "status": "REJECTED_NOT_CRAWLABLE",
-      "reason": "aucune API de catalogue lisible",
+      "status": "REJECTED_NO_BASKETBALL",
+      "reason": "aucun basketball sur aucune des deux passes",
       "discovery_score": 0,
       "name": "Tempest Games",
       "city": "Cedar Rapids",
       "state": "iowa",
       "phone": "+13193906441",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/iowa/cedar-rapids/tempest-games/"
+      "directory_url": "https://cardshopmap.com/card-shops/iowa/cedar-rapids/tempest-games/",
+      "pass2": {
+        "status": "REJECTED_NO_BASKETBALL",
+        "legitimacy": "LIKELY_LEGIT",
+        "crawlability": "MANUAL_ONLY",
+        "purchase_mode": "IN_STORE_ONLY",
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [
+          "téléphone",
+          "e-mail",
+          "adresse postale"
+        ],
+        "robots_forbids": false
+      },
+      "pass1": {
+        "status": "REJECTED_NOT_CRAWLABLE",
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": false,
+        "ecommerce": true,
+        "evidence": null
+      },
+      "legitimacy": "LIKELY_LEGIT",
+      "crawlability": "MANUAL_ONLY",
+      "purchase_mode": "IN_STORE_ONLY",
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "geek-city.com",
@@ -695,15 +1403,40 @@
       "crawlable": false,
       "robots_status": "allowed",
       "evidence": null,
-      "status": "REJECTED_NOT_CRAWLABLE",
-      "reason": "aucune API de catalogue lisible",
+      "status": "REJECTED_NO_BASKETBALL",
+      "reason": "aucun basketball sur aucune des deux passes",
       "discovery_score": 0,
       "name": "Geek City",
       "city": "Coralville",
       "state": "iowa",
       "phone": "+13193331924",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/iowa/coralville/geek-city/"
+      "directory_url": "https://cardshopmap.com/card-shops/iowa/coralville/geek-city/",
+      "pass2": {
+        "status": "REJECTED_NO_BASKETBALL",
+        "legitimacy": "UNVERIFIED",
+        "crawlability": "MANUAL_ONLY",
+        "purchase_mode": "ONLINE_CART",
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [],
+        "robots_forbids": false
+      },
+      "pass1": {
+        "status": "REJECTED_NOT_CRAWLABLE",
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": false,
+        "ecommerce": true,
+        "evidence": null
+      },
+      "legitimacy": "UNVERIFIED",
+      "crawlability": "MANUAL_ONLY",
+      "purchase_mode": "ONLINE_CART",
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "playgamecentral.com",
@@ -717,15 +1450,45 @@
       "crawlable": false,
       "robots_status": "allowed",
       "evidence": null,
-      "status": "REJECTED_NO_ECOMMERCE",
-      "reason": "aucun signal d'e-commerce (plateforme custom)",
+      "status": "REJECTED_NO_BASKETBALL",
+      "reason": "aucun basketball sur aucune des deux passes",
       "discovery_score": 0,
       "name": "Game Central",
       "city": "Davenport",
       "state": "iowa",
       "phone": "+12243331228",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/iowa/davenport/game-central/"
+      "directory_url": "https://cardshopmap.com/card-shops/iowa/davenport/game-central/",
+      "pass2": {
+        "status": "REJECTED_NO_BASKETBALL",
+        "legitimacy": "TRUSTED",
+        "crawlability": "MANUAL_ONLY",
+        "purchase_mode": "IN_STORE_ONLY",
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [
+          "téléphone",
+          "e-mail",
+          "adresse postale",
+          "page à propos"
+        ],
+        "robots_forbids": false
+      },
+      "pass1": {
+        "status": "REJECTED_NO_ECOMMERCE",
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": false,
+        "ecommerce": false,
+        "evidence": null
+      },
+      "legitimacy": "TRUSTED",
+      "crawlability": "MANUAL_ONLY",
+      "purchase_mode": "IN_STORE_ONLY",
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "protournamentleague.com",
@@ -756,20 +1519,51 @@
       "platform": "custom",
       "ecommerce": false,
       "cart_available": false,
-      "basketball": false,
+      "basketball": true,
       "sealed_basketball": false,
       "crawlable": false,
       "robots_status": "allowed",
       "evidence": null,
-      "status": "REJECTED_NO_ECOMMERCE",
-      "reason": "aucun signal d'e-commerce (plateforme custom)",
+      "status": "REJECTED_NO_SEALED",
+      "reason": "basketball présent, aucun scellé prouvé",
       "discovery_score": 0,
       "name": "Superstars and Superheroes",
       "city": "Davenport",
       "state": "iowa",
       "phone": "+15633234392",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/iowa/davenport/superstars-and-superheroes/"
+      "directory_url": "https://cardshopmap.com/card-shops/iowa/davenport/superstars-and-superheroes/",
+      "pass2": {
+        "status": "REJECTED_NO_SEALED",
+        "legitimacy": "TRUSTED",
+        "crawlability": "MANUAL_ONLY",
+        "purchase_mode": "IN_STORE_ONLY",
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [
+          "téléphone",
+          "e-mail",
+          "adresse postale",
+          "page à propos",
+          "CGV/retours"
+        ],
+        "robots_forbids": false
+      },
+      "pass1": {
+        "status": "REJECTED_NO_ECOMMERCE",
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": false,
+        "ecommerce": false,
+        "evidence": null
+      },
+      "legitimacy": "TRUSTED",
+      "crawlability": "MANUAL_ONLY",
+      "purchase_mode": "IN_STORE_ONLY",
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "sportscard-stores.com",
@@ -783,15 +1577,42 @@
       "crawlable": false,
       "robots_status": "allowed",
       "evidence": null,
-      "status": "REJECTED_NO_ECOMMERCE",
-      "reason": "aucun signal d'e-commerce (plateforme custom)",
+      "status": "REJECTED_NO_BASKETBALL",
+      "reason": "aucun basketball sur aucune des deux passes",
       "discovery_score": 0,
       "name": "Chucks Sports CARDS",
       "city": "Des Moines",
       "state": "iowa",
       "phone": "+15154801074",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/iowa/des-moines/chucks-sports-cards/"
+      "directory_url": "https://cardshopmap.com/card-shops/iowa/des-moines/chucks-sports-cards/",
+      "pass2": {
+        "status": "REJECTED_NO_BASKETBALL",
+        "legitimacy": "UNVERIFIED",
+        "crawlability": "MANUAL_ONLY",
+        "purchase_mode": "IN_STORE_ONLY",
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [
+          "téléphone"
+        ],
+        "robots_forbids": false
+      },
+      "pass1": {
+        "status": "REJECTED_NO_ECOMMERCE",
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": false,
+        "ecommerce": false,
+        "evidence": null
+      },
+      "legitimacy": "UNVERIFIED",
+      "crawlability": "MANUAL_ONLY",
+      "purchase_mode": "IN_STORE_ONLY",
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "dsmgamingclub.com",
@@ -805,15 +1626,44 @@
       "crawlable": false,
       "robots_status": "allowed",
       "evidence": null,
-      "status": "REJECTED_NOT_CRAWLABLE",
-      "reason": "aucune API de catalogue lisible",
+      "status": "REJECTED_NO_BASKETBALL",
+      "reason": "aucun basketball sur aucune des deux passes",
       "discovery_score": 0,
       "name": "Des Moines Gaming Club",
       "city": "Des Moines",
       "state": "iowa",
       "phone": "+15156576967",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/iowa/des-moines/des-moines-gaming-club/"
+      "directory_url": "https://cardshopmap.com/card-shops/iowa/des-moines/des-moines-gaming-club/",
+      "pass2": {
+        "status": "REJECTED_NO_BASKETBALL",
+        "legitimacy": "LIKELY_LEGIT",
+        "crawlability": "MANUAL_ONLY",
+        "purchase_mode": "IN_STORE_ONLY",
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [
+          "téléphone",
+          "page à propos",
+          "CGV/retours"
+        ],
+        "robots_forbids": false
+      },
+      "pass1": {
+        "status": "REJECTED_NOT_CRAWLABLE",
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": false,
+        "ecommerce": true,
+        "evidence": null
+      },
+      "legitimacy": "LIKELY_LEGIT",
+      "crawlability": "MANUAL_ONLY",
+      "purchase_mode": "IN_STORE_ONLY",
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "empirecards.world",
@@ -828,14 +1678,42 @@
       "robots_status": "allowed",
       "evidence": null,
       "status": "REJECTED_NO_BASKETBALL",
-      "reason": "catalogue lisible, aucun produit correspondant",
+      "reason": "aucun basketball sur aucune des deux passes",
       "discovery_score": 0,
       "name": "Empire Cards",
       "city": "Des Moines",
       "state": "iowa",
       "phone": "+15154448240",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/iowa/des-moines/empire-cards/"
+      "directory_url": "https://cardshopmap.com/card-shops/iowa/des-moines/empire-cards/",
+      "pass2": {
+        "status": "REJECTED_NO_BASKETBALL",
+        "legitimacy": "LIKELY_LEGIT",
+        "crawlability": "MANUAL_ONLY",
+        "purchase_mode": "ONLINE_CART",
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [
+          "page à propos",
+          "CGV/retours"
+        ],
+        "robots_forbids": false
+      },
+      "pass1": {
+        "status": "REJECTED_NO_BASKETBALL",
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": true,
+        "ecommerce": true,
+        "evidence": null
+      },
+      "legitimacy": "LIKELY_LEGIT",
+      "crawlability": "MANUAL_ONLY",
+      "purchase_mode": "ONLINE_CART",
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "hi-5cards.com",
@@ -850,14 +1728,44 @@
       "robots_status": "allowed",
       "evidence": null,
       "status": "REJECTED_NO_SEALED",
-      "reason": "1 fiche(s) basketball, mais aucune scellée (singles/slabs)",
+      "reason": "basketball présent, aucun scellé prouvé",
       "discovery_score": 0,
       "name": "Hi-5 Comics and Cards",
       "city": "Des Moines",
       "state": "iowa",
       "phone": "+15155615128",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/iowa/des-moines/hi-5-comics-and-cards/"
+      "directory_url": "https://cardshopmap.com/card-shops/iowa/des-moines/hi-5-comics-and-cards/",
+      "pass2": {
+        "status": "REJECTED_NO_SEALED",
+        "legitimacy": "TRUSTED",
+        "crawlability": "MANUAL_ONLY",
+        "purchase_mode": "ONLINE_CART",
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [
+          "téléphone",
+          "e-mail",
+          "adresse postale",
+          "page à propos"
+        ],
+        "robots_forbids": false
+      },
+      "pass1": {
+        "status": "REJECTED_NO_SEALED",
+        "sealed_basketball": false,
+        "basketball": true,
+        "crawlable": true,
+        "ecommerce": true,
+        "evidence": null
+      },
+      "legitimacy": "TRUSTED",
+      "crawlability": "MANUAL_ONLY",
+      "purchase_mode": "ONLINE_CART",
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "jayscdandhobby.com",
@@ -872,14 +1780,42 @@
       "robots_status": "allowed",
       "evidence": null,
       "status": "REJECTED_NO_SEALED",
-      "reason": "2 fiche(s) basketball, mais aucune scellée (singles/slabs)",
+      "reason": "basketball présent, aucun scellé prouvé",
       "discovery_score": 0,
       "name": "Jay's CD and Hobby",
       "city": "Des Moines",
       "state": "iowa",
       "phone": "+15152874578",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/iowa/des-moines/jays-cd-and-hobby/"
+      "directory_url": "https://cardshopmap.com/card-shops/iowa/des-moines/jays-cd-and-hobby/",
+      "pass2": {
+        "status": "REJECTED_NO_SEALED",
+        "legitimacy": "LIKELY_LEGIT",
+        "crawlability": "MANUAL_ONLY",
+        "purchase_mode": "ONLINE_CART",
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [
+          "page à propos",
+          "CGV/retours"
+        ],
+        "robots_forbids": false
+      },
+      "pass1": {
+        "status": "REJECTED_NO_SEALED",
+        "sealed_basketball": false,
+        "basketball": true,
+        "crawlable": true,
+        "ecommerce": true,
+        "evidence": null
+      },
+      "legitimacy": "LIKELY_LEGIT",
+      "crawlability": "MANUAL_ONLY",
+      "purchase_mode": "ONLINE_CART",
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "landksportscards.com",
@@ -915,15 +1851,40 @@
       "crawlable": false,
       "robots_status": "allowed",
       "evidence": null,
-      "status": "REJECTED_NO_ECOMMERCE",
-      "reason": "aucun signal d'e-commerce (plateforme custom)",
+      "status": "REJECTED_NO_BASKETBALL",
+      "reason": "aucun basketball sur aucune des deux passes",
       "discovery_score": 0,
       "name": "Spud's Emporium of Comics and Games",
       "city": "Ottumwa",
       "state": "iowa",
       "phone": "+16417996767",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/iowa/ottumwa/spuds-emporium-of-comics-and-games/"
+      "directory_url": "https://cardshopmap.com/card-shops/iowa/ottumwa/spuds-emporium-of-comics-and-games/",
+      "pass2": {
+        "status": "REJECTED_NO_BASKETBALL",
+        "legitimacy": "UNVERIFIED",
+        "crawlability": "MANUAL_ONLY",
+        "purchase_mode": "IN_STORE_ONLY",
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [],
+        "robots_forbids": false
+      },
+      "pass1": {
+        "status": "REJECTED_NO_ECOMMERCE",
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": false,
+        "ecommerce": false,
+        "evidence": null
+      },
+      "legitimacy": "UNVERIFIED",
+      "crawlability": "MANUAL_ONLY",
+      "purchase_mode": "IN_STORE_ONLY",
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "borntoplaygames.com",
@@ -954,20 +1915,50 @@
       "platform": "woocommerce",
       "ecommerce": true,
       "cart_available": false,
-      "basketball": false,
+      "basketball": true,
       "sealed_basketball": false,
       "crawlable": false,
       "robots_status": "allowed",
       "evidence": null,
-      "status": "REJECTED_NOT_CRAWLABLE",
-      "reason": "aucune API de catalogue lisible",
+      "status": "REJECTED_NO_SEALED",
+      "reason": "basketball présent, aucun scellé prouvé",
       "discovery_score": 0,
       "name": "Rickley Sports Cards",
       "city": "Bellevue",
       "state": "nebraska",
       "phone": "+14023151885",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/nebraska/bellevue/rickley-sports-cards/"
+      "directory_url": "https://cardshopmap.com/card-shops/nebraska/bellevue/rickley-sports-cards/",
+      "pass2": {
+        "status": "REJECTED_NO_SEALED",
+        "legitimacy": "TRUSTED",
+        "crawlability": "MANUAL_ONLY",
+        "purchase_mode": "IN_STORE_ONLY",
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [
+          "téléphone",
+          "e-mail",
+          "adresse postale",
+          "page à propos"
+        ],
+        "robots_forbids": false
+      },
+      "pass1": {
+        "status": "REJECTED_NOT_CRAWLABLE",
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": false,
+        "ecommerce": true,
+        "evidence": null
+      },
+      "legitimacy": "TRUSTED",
+      "crawlability": "MANUAL_ONLY",
+      "purchase_mode": "IN_STORE_ONLY",
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "thegameshoppe.com",
@@ -981,15 +1972,45 @@
       "crawlable": false,
       "robots_status": "allowed",
       "evidence": null,
-      "status": "REJECTED_NOT_CRAWLABLE",
-      "reason": "aucune API de catalogue lisible",
+      "status": "REJECTED_NO_BASKETBALL",
+      "reason": "aucun basketball sur aucune des deux passes",
       "discovery_score": 0,
       "name": "The Game Shoppe",
       "city": "Bellevue",
       "state": "nebraska",
       "phone": "+14022924263",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/nebraska/bellevue/the-game-shoppe/"
+      "directory_url": "https://cardshopmap.com/card-shops/nebraska/bellevue/the-game-shoppe/",
+      "pass2": {
+        "status": "REJECTED_NO_BASKETBALL",
+        "legitimacy": "TRUSTED",
+        "crawlability": "MANUAL_ONLY",
+        "purchase_mode": "IN_STORE_ONLY",
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [
+          "téléphone",
+          "adresse postale",
+          "page à propos",
+          "CGV/retours"
+        ],
+        "robots_forbids": false
+      },
+      "pass1": {
+        "status": "REJECTED_NOT_CRAWLABLE",
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": false,
+        "ecommerce": true,
+        "evidence": null
+      },
+      "legitimacy": "TRUSTED",
+      "crawlability": "MANUAL_ONLY",
+      "purchase_mode": "IN_STORE_ONLY",
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "bangersportscards.com",
@@ -1003,15 +2024,40 @@
       "crawlable": false,
       "robots_status": "allowed",
       "evidence": null,
-      "status": "REJECTED_NO_ECOMMERCE",
-      "reason": "aucun signal d'e-commerce (plateforme custom)",
+      "status": "REJECTED_NO_BASKETBALL",
+      "reason": "aucun basketball sur aucune des deux passes",
       "discovery_score": 0,
       "name": "Banger Sports Cards",
       "city": "Lincoln",
       "state": "nebraska",
       "phone": "+15312547078",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/nebraska/lincoln/banger-sports-cards/"
+      "directory_url": "https://cardshopmap.com/card-shops/nebraska/lincoln/banger-sports-cards/",
+      "pass2": {
+        "status": "REJECTED_NO_BASKETBALL",
+        "legitimacy": "UNVERIFIED",
+        "crawlability": "MANUAL_ONLY",
+        "purchase_mode": "IN_STORE_ONLY",
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [],
+        "robots_forbids": false
+      },
+      "pass1": {
+        "status": "REJECTED_NO_ECOMMERCE",
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": false,
+        "ecommerce": false,
+        "evidence": null
+      },
+      "legitimacy": "UNVERIFIED",
+      "crawlability": "MANUAL_ONLY",
+      "purchase_mode": "IN_STORE_ONLY",
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "natehamel.com",
@@ -1025,15 +2071,45 @@
       "crawlable": false,
       "robots_status": "allowed",
       "evidence": null,
-      "status": "REJECTED_NOT_CRAWLABLE",
-      "reason": "aucune API de catalogue lisible",
+      "status": "REJECTED_NO_BASKETBALL",
+      "reason": "aucun basketball sur aucune des deux passes",
       "discovery_score": 0,
       "name": "Behind The Glass Comic Book Art Gallery",
       "city": "Lincoln",
       "state": "nebraska",
       "phone": "+14022172737",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/nebraska/lincoln/behind-the-glass-comic-book-art-gallery/"
+      "directory_url": "https://cardshopmap.com/card-shops/nebraska/lincoln/behind-the-glass-comic-book-art-gallery/",
+      "pass2": {
+        "status": "REJECTED_NO_BASKETBALL",
+        "legitimacy": "TRUSTED",
+        "crawlability": "MANUAL_ONLY",
+        "purchase_mode": "IN_STORE_ONLY",
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [
+          "téléphone",
+          "adresse postale",
+          "page à propos",
+          "CGV/retours"
+        ],
+        "robots_forbids": false
+      },
+      "pass1": {
+        "status": "REJECTED_NOT_CRAWLABLE",
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": false,
+        "ecommerce": true,
+        "evidence": null
+      },
+      "legitimacy": "TRUSTED",
+      "crawlability": "MANUAL_ONLY",
+      "purchase_mode": "IN_STORE_ONLY",
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "capcitysportscards.com",
@@ -1042,20 +2118,51 @@
       "platform": "wix",
       "ecommerce": true,
       "cart_available": true,
-      "basketball": false,
+      "basketball": true,
       "sealed_basketball": false,
       "crawlable": false,
       "robots_status": "allowed",
       "evidence": null,
-      "status": "REJECTED_NOT_CRAWLABLE",
-      "reason": "aucune API de catalogue lisible",
+      "status": "REJECTED_NO_SEALED",
+      "reason": "basketball présent, aucun scellé prouvé",
       "discovery_score": 0,
       "name": "Capital City Sports Cards",
       "city": "Lincoln",
       "state": "nebraska",
       "phone": "+14027868548",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/nebraska/lincoln/capital-city-sports-cards/"
+      "directory_url": "https://cardshopmap.com/card-shops/nebraska/lincoln/capital-city-sports-cards/",
+      "pass2": {
+        "status": "REJECTED_NO_SEALED",
+        "legitimacy": "TRUSTED",
+        "crawlability": "MANUAL_ONLY",
+        "purchase_mode": "ONLINE_CART",
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [
+          "téléphone",
+          "e-mail",
+          "adresse postale",
+          "page à propos",
+          "CGV/retours"
+        ],
+        "robots_forbids": false
+      },
+      "pass1": {
+        "status": "REJECTED_NOT_CRAWLABLE",
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": false,
+        "ecommerce": true,
+        "evidence": null
+      },
+      "legitimacy": "TRUSTED",
+      "crawlability": "MANUAL_ONLY",
+      "purchase_mode": "ONLINE_CART",
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "collectivelnk.tcgplayerpro.com",
@@ -1069,15 +2176,40 @@
       "crawlable": false,
       "robots_status": "disallowed",
       "evidence": null,
-      "status": "REJECTED_NOT_CRAWLABLE",
-      "reason": "robots.txt nous interdit ce site — nous ne le crawlons pas",
+      "status": "UNVERIFIED_NOT_CRAWLABLE",
+      "reason": "robots.txt nous interdit — candidate non vérifiée",
       "discovery_score": 0,
       "name": "Collective 365",
       "city": "Lincoln",
       "state": "nebraska",
       "phone": "+15312491617",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/nebraska/lincoln/collective-365/"
+      "directory_url": "https://cardshopmap.com/card-shops/nebraska/lincoln/collective-365/",
+      "pass2": {
+        "status": "BLOCKED",
+        "legitimacy": "UNVERIFIED",
+        "crawlability": "BLOCKED",
+        "purchase_mode": null,
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [],
+        "robots_forbids": true
+      },
+      "pass1": {
+        "status": null,
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": false,
+        "ecommerce": false,
+        "evidence": null
+      },
+      "legitimacy": "UNVERIFIED",
+      "crawlability": "BLOCKED",
+      "purchase_mode": null,
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "entertainmart.com",
@@ -1091,15 +2223,45 @@
       "crawlable": false,
       "robots_status": "allowed",
       "evidence": null,
-      "status": "REJECTED_NOT_CRAWLABLE",
-      "reason": "aucune API de catalogue lisible",
+      "status": "REJECTED_NO_BASKETBALL",
+      "reason": "aucun basketball sur aucune des deux passes",
       "discovery_score": 0,
       "name": "EntertainMART",
       "city": "Lincoln",
       "state": "nebraska",
       "phone": "+15312070215",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/nebraska/lincoln/entertainmart/"
+      "directory_url": "https://cardshopmap.com/card-shops/nebraska/lincoln/entertainmart/",
+      "pass2": {
+        "status": "REJECTED_NO_BASKETBALL",
+        "legitimacy": "TRUSTED",
+        "crawlability": "MANUAL_ONLY",
+        "purchase_mode": "ONLINE_CART",
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [
+          "téléphone",
+          "e-mail",
+          "page à propos",
+          "CGV/retours"
+        ],
+        "robots_forbids": false
+      },
+      "pass1": {
+        "status": "REJECTED_NOT_CRAWLABLE",
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": false,
+        "ecommerce": true,
+        "evidence": null
+      },
+      "legitimacy": "TRUSTED",
+      "crawlability": "MANUAL_ONLY",
+      "purchase_mode": "ONLINE_CART",
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "kickbackgaminglincoln.com",
@@ -1113,15 +2275,44 @@
       "crawlable": false,
       "robots_status": "allowed",
       "evidence": null,
-      "status": "REJECTED_NO_ECOMMERCE",
-      "reason": "aucun signal d'e-commerce (plateforme custom)",
+      "status": "REJECTED_NO_BASKETBALL",
+      "reason": "aucun basketball sur aucune des deux passes",
       "discovery_score": 0,
       "name": "Kick Back Gaming",
       "city": "Lincoln",
       "state": "nebraska",
       "phone": "+15312297592",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/nebraska/lincoln/kick-back-gaming/"
+      "directory_url": "https://cardshopmap.com/card-shops/nebraska/lincoln/kick-back-gaming/",
+      "pass2": {
+        "status": "REJECTED_NO_BASKETBALL",
+        "legitimacy": "LIKELY_LEGIT",
+        "crawlability": "MANUAL_ONLY",
+        "purchase_mode": "IN_STORE_ONLY",
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [
+          "téléphone",
+          "e-mail",
+          "CGV/retours"
+        ],
+        "robots_forbids": false
+      },
+      "pass1": {
+        "status": "REJECTED_NO_ECOMMERCE",
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": false,
+        "ecommerce": false,
+        "evidence": null
+      },
+      "legitimacy": "LIKELY_LEGIT",
+      "crawlability": "MANUAL_ONLY",
+      "purchase_mode": "IN_STORE_ONLY",
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "rainbowcomicsandcards.com",
@@ -1157,15 +2348,45 @@
       "crawlable": false,
       "robots_status": "allowed",
       "evidence": null,
-      "status": "REJECTED_NOT_CRAWLABLE",
-      "reason": "aucune API de catalogue lisible",
+      "status": "REJECTED_NO_BASKETBALL",
+      "reason": "aucun basketball sur aucune des deux passes",
       "discovery_score": 0,
       "name": "Trains and Toy Soldiers",
       "city": "Lincoln",
       "state": "nebraska",
       "phone": "+18007861888",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/nebraska/lincoln/trains-and-toy-soldiers/"
+      "directory_url": "https://cardshopmap.com/card-shops/nebraska/lincoln/trains-and-toy-soldiers/",
+      "pass2": {
+        "status": "REJECTED_NO_BASKETBALL",
+        "legitimacy": "TRUSTED",
+        "crawlability": "MANUAL_ONLY",
+        "purchase_mode": "ONLINE_CART",
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [
+          "téléphone",
+          "adresse postale",
+          "page à propos",
+          "CGV/retours"
+        ],
+        "robots_forbids": false
+      },
+      "pass1": {
+        "status": "REJECTED_NOT_CRAWLABLE",
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": false,
+        "ecommerce": true,
+        "evidence": null
+      },
+      "legitimacy": "TRUSTED",
+      "crawlability": "MANUAL_ONLY",
+      "purchase_mode": "ONLINE_CART",
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "topps.com",
@@ -1179,15 +2400,40 @@
       "crawlable": false,
       "robots_status": "disallowed",
       "evidence": null,
-      "status": "REJECTED_NOT_CRAWLABLE",
-      "reason": "robots.txt nous interdit ce site — nous ne le crawlons pas",
+      "status": "UNVERIFIED_NOT_CRAWLABLE",
+      "reason": "robots.txt nous interdit — candidate non vérifiée",
       "discovery_score": 0,
       "name": "Wes' Baseball Cards, Inc.",
       "city": "Lincoln",
       "state": "nebraska",
       "phone": "+14024883775",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/nebraska/lincoln/wes-baseball-cards-inc/"
+      "directory_url": "https://cardshopmap.com/card-shops/nebraska/lincoln/wes-baseball-cards-inc/",
+      "pass2": {
+        "status": "BLOCKED",
+        "legitimacy": "UNVERIFIED",
+        "crawlability": "BLOCKED",
+        "purchase_mode": null,
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [],
+        "robots_forbids": true
+      },
+      "pass1": {
+        "status": null,
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": false,
+        "ecommerce": false,
+        "evidence": null
+      },
+      "legitimacy": "UNVERIFIED",
+      "crawlability": "BLOCKED",
+      "purchase_mode": null,
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "collectivescorner.com",
@@ -1201,15 +2447,45 @@
       "crawlable": false,
       "robots_status": "allowed",
       "evidence": null,
-      "status": "REJECTED_NOT_CRAWLABLE",
-      "reason": "aucune API de catalogue lisible",
+      "status": "REJECTED_NO_BASKETBALL",
+      "reason": "aucun basketball sur aucune des deux passes",
       "discovery_score": 0,
       "name": "Collective's Corner",
       "city": "Omaha",
       "state": "nebraska",
       "phone": "+15313755914",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/nebraska/omaha/collectives-corner/"
+      "directory_url": "https://cardshopmap.com/card-shops/nebraska/omaha/collectives-corner/",
+      "pass2": {
+        "status": "REJECTED_NO_BASKETBALL",
+        "legitimacy": "TRUSTED",
+        "crawlability": "MANUAL_ONLY",
+        "purchase_mode": "ONLINE_CART",
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [
+          "téléphone",
+          "e-mail",
+          "adresse postale",
+          "CGV/retours"
+        ],
+        "robots_forbids": false
+      },
+      "pass1": {
+        "status": "REJECTED_NOT_CRAWLABLE",
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": false,
+        "ecommerce": true,
+        "evidence": null
+      },
+      "legitimacy": "TRUSTED",
+      "crawlability": "MANUAL_ONLY",
+      "purchase_mode": "ONLINE_CART",
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "dragons-lair.com",
@@ -1267,15 +2543,45 @@
       "crawlable": false,
       "robots_status": "allowed",
       "evidence": null,
-      "status": "REJECTED_NO_ECOMMERCE",
-      "reason": "aucun signal d'e-commerce (plateforme custom)",
+      "status": "REJECTED_NO_BASKETBALL",
+      "reason": "aucun basketball sur aucune des deux passes",
       "discovery_score": 0,
       "name": "Krypton Comics",
       "city": "Omaha",
       "state": "nebraska",
       "phone": "+14023914131",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/nebraska/omaha/krypton-comics/"
+      "directory_url": "https://cardshopmap.com/card-shops/nebraska/omaha/krypton-comics/",
+      "pass2": {
+        "status": "REJECTED_NO_BASKETBALL",
+        "legitimacy": "TRUSTED",
+        "crawlability": "MANUAL_ONLY",
+        "purchase_mode": "IN_STORE_ONLY",
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [
+          "téléphone",
+          "e-mail",
+          "adresse postale",
+          "page à propos"
+        ],
+        "robots_forbids": false
+      },
+      "pass1": {
+        "status": "REJECTED_NO_ECOMMERCE",
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": false,
+        "ecommerce": false,
+        "evidence": null
+      },
+      "legitimacy": "TRUSTED",
+      "crawlability": "MANUAL_ONLY",
+      "purchase_mode": "IN_STORE_ONLY",
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "metrohobbiesne.wordpress.com",
@@ -1289,15 +2595,45 @@
       "crawlable": false,
       "robots_status": "allowed",
       "evidence": null,
-      "status": "REJECTED_NOT_CRAWLABLE",
-      "reason": "aucune API de catalogue lisible",
+      "status": "REJECTED_NO_BASKETBALL",
+      "reason": "aucun basketball sur aucune des deux passes",
       "discovery_score": 0,
       "name": "Metro Hobbies",
       "city": "Omaha",
       "state": "nebraska",
       "phone": "+14022962730",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/nebraska/omaha/metro-hobbies/"
+      "directory_url": "https://cardshopmap.com/card-shops/nebraska/omaha/metro-hobbies/",
+      "pass2": {
+        "status": "REJECTED_NO_BASKETBALL",
+        "legitimacy": "TRUSTED",
+        "crawlability": "MANUAL_ONLY",
+        "purchase_mode": "ONLINE_CART",
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [
+          "téléphone",
+          "e-mail",
+          "page à propos",
+          "CGV/retours"
+        ],
+        "robots_forbids": false
+      },
+      "pass1": {
+        "status": "REJECTED_NOT_CRAWLABLE",
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": false,
+        "ecommerce": true,
+        "evidence": null
+      },
+      "legitimacy": "TRUSTED",
+      "crawlability": "MANUAL_ONLY",
+      "purchase_mode": "ONLINE_CART",
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "mothershipcomicsomaha.com",
@@ -1312,14 +2648,41 @@
       "robots_status": "allowed",
       "evidence": null,
       "status": "REJECTED_NO_BASKETBALL",
-      "reason": "250 fiches lues, aucun basketball",
+      "reason": "aucun basketball sur aucune des deux passes",
       "discovery_score": 0,
       "name": "Mothership Comics",
       "city": "Omaha",
       "state": "nebraska",
       "phone": "+14022385151",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/nebraska/omaha/mothership-comics/"
+      "directory_url": "https://cardshopmap.com/card-shops/nebraska/omaha/mothership-comics/",
+      "pass2": {
+        "status": "REJECTED_NO_BASKETBALL",
+        "legitimacy": "UNVERIFIED",
+        "crawlability": "MANUAL_ONLY",
+        "purchase_mode": "ONLINE_CART",
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [
+          "CGV/retours"
+        ],
+        "robots_forbids": false
+      },
+      "pass1": {
+        "status": "REJECTED_NO_BASKETBALL",
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": true,
+        "ecommerce": true,
+        "evidence": null
+      },
+      "legitimacy": "UNVERIFIED",
+      "crawlability": "MANUAL_ONLY",
+      "purchase_mode": "ONLINE_CART",
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "nerdrush.com",
@@ -1333,15 +2696,40 @@
       "crawlable": false,
       "robots_status": "disallowed",
       "evidence": null,
-      "status": "REJECTED_NOT_CRAWLABLE",
-      "reason": "robots.txt nous interdit ce site — nous ne le crawlons pas",
+      "status": "UNVERIFIED_NOT_CRAWLABLE",
+      "reason": "robots.txt nous interdit — candidate non vérifiée",
       "discovery_score": 0,
       "name": "Nerd Rush",
       "city": "Omaha",
       "state": "nebraska",
       "phone": "+14025770246",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/nebraska/omaha/nerd-rush/"
+      "directory_url": "https://cardshopmap.com/card-shops/nebraska/omaha/nerd-rush/",
+      "pass2": {
+        "status": "BLOCKED",
+        "legitimacy": "UNVERIFIED",
+        "crawlability": "BLOCKED",
+        "purchase_mode": null,
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [],
+        "robots_forbids": true
+      },
+      "pass1": {
+        "status": null,
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": false,
+        "ecommerce": false,
+        "evidence": null
+      },
+      "legitimacy": "UNVERIFIED",
+      "crawlability": "BLOCKED",
+      "purchase_mode": null,
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "omahacards.com",
@@ -1355,15 +2743,44 @@
       "crawlable": false,
       "robots_status": "allowed",
       "evidence": null,
-      "status": "REJECTED_NOT_CRAWLABLE",
-      "reason": "aucune API de catalogue lisible",
+      "status": "REJECTED_NO_BASKETBALL",
+      "reason": "aucun basketball sur aucune des deux passes",
       "discovery_score": 0,
       "name": "Omaha Sports Cards",
       "city": "Omaha",
       "state": "nebraska",
       "phone": "+14026149702",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/nebraska/omaha/omaha-sports-cards/"
+      "directory_url": "https://cardshopmap.com/card-shops/nebraska/omaha/omaha-sports-cards/",
+      "pass2": {
+        "status": "REJECTED_NO_BASKETBALL",
+        "legitimacy": "LIKELY_LEGIT",
+        "crawlability": "MANUAL_ONLY",
+        "purchase_mode": "ONLINE_CART",
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [
+          "téléphone",
+          "adresse postale",
+          "CGV/retours"
+        ],
+        "robots_forbids": false
+      },
+      "pass1": {
+        "status": "REJECTED_NOT_CRAWLABLE",
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": false,
+        "ecommerce": true,
+        "evidence": null
+      },
+      "legitimacy": "LIKELY_LEGIT",
+      "crawlability": "MANUAL_ONLY",
+      "purchase_mode": "ONLINE_CART",
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "sandssportscards.com",
@@ -1378,19 +2795,57 @@
       "robots_status": "allowed",
       "evidence": {
         "product_name": "2024-25 Panini Prizm Basketball Trading Cards Blaster Box",
-        "product_url": "https://sandssportscards.com/products/2024-25-panini-prizm-basketball-trading-cards-blaster-box-1?_pos=1&_psq=basketball&_psid=130dce2d8&_ss=e",
+        "product_url": "https://sandssportscards.com/products/2024-25-panini-prizm-basketball-trading-cards-blaster-box-1?_pos=1&_psq=basketball&_psid=ab7736807&_ss=e",
         "price": "40.00",
         "availability": "IN_STOCK"
       },
       "status": "QUALIFIED",
-      "reason": "2 fiche(s) de basket scellé lues",
+      "reason": "basket scellé prouvé · achat ONLINE_CART · lecture FULL",
       "discovery_score": 17,
       "name": "S and S Sports Card",
       "city": "Broken Arrow",
       "state": "oklahoma",
       "phone": "+19182582273",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/oklahoma/broken-arrow/s-and-s-sports-card-8439/"
+      "directory_url": "https://cardshopmap.com/card-shops/oklahoma/broken-arrow/s-and-s-sports-card-8439/",
+      "pass2": {
+        "status": "QUALIFIED",
+        "legitimacy": "LIKELY_LEGIT",
+        "crawlability": "FULL",
+        "purchase_mode": "ONLINE_CART",
+        "sealed_basketball": true,
+        "saison_2023_24": false,
+        "evidence": {
+          "product_name": "2022 Panini Chronicles Draft Picks Basketball Blaster Box",
+          "product_url": "https://www.sandssportscards.com/sitemap_products_1.xml?from=10369661665579&amp;to=10408835088683",
+          "source": "page HTML publique / JSON-LD"
+        },
+        "signaux": [
+          "téléphone",
+          "adresse postale",
+          "CGV/retours"
+        ],
+        "robots_forbids": false
+      },
+      "pass1": {
+        "status": "QUALIFIED",
+        "sealed_basketball": true,
+        "basketball": true,
+        "crawlable": true,
+        "ecommerce": true,
+        "evidence": {
+          "product_name": "2024-25 Panini Prizm Basketball Trading Cards Blaster Box",
+          "product_url": "https://sandssportscards.com/products/2024-25-panini-prizm-basketball-trading-cards-blaster-box-1?_pos=1&_psq=basketball&_psid=ab7736807&_ss=e",
+          "price": "40.00",
+          "availability": "IN_STOCK"
+        }
+      },
+      "legitimacy": "LIKELY_LEGIT",
+      "crawlability": "FULL",
+      "purchase_mode": "ONLINE_CART",
+      "saison_2023_24": false,
+      "hunt_enabled": true,
+      "prouve_par": "api"
     },
     {
       "domain": "vintagestock.com",
@@ -1399,20 +2854,50 @@
       "platform": "custom",
       "ecommerce": true,
       "cart_available": true,
-      "basketball": false,
+      "basketball": true,
       "sealed_basketball": false,
       "crawlable": false,
       "robots_status": "allowed",
       "evidence": null,
-      "status": "REJECTED_NOT_CRAWLABLE",
-      "reason": "aucune API de catalogue lisible",
+      "status": "REJECTED_NO_SEALED",
+      "reason": "basketball présent, aucun scellé prouvé",
       "discovery_score": 0,
       "name": "Vintage Stock",
       "city": "Broken Arrow",
       "state": "oklahoma",
       "phone": "+19182516162",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/oklahoma/broken-arrow/vintage-stock/"
+      "directory_url": "https://cardshopmap.com/card-shops/oklahoma/broken-arrow/vintage-stock/",
+      "pass2": {
+        "status": "REJECTED_NO_SEALED",
+        "legitimacy": "TRUSTED",
+        "crawlability": "MANUAL_ONLY",
+        "purchase_mode": "ONLINE_CART",
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [
+          "téléphone",
+          "e-mail",
+          "page à propos",
+          "CGV/retours"
+        ],
+        "robots_forbids": false
+      },
+      "pass1": {
+        "status": "REJECTED_NOT_CRAWLABLE",
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": false,
+        "ecommerce": true,
+        "evidence": null
+      },
+      "legitimacy": "TRUSTED",
+      "crawlability": "MANUAL_ONLY",
+      "purchase_mode": "ONLINE_CART",
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "vintagetoymall.com",
@@ -1427,14 +2912,39 @@
       "robots_status": "allowed",
       "evidence": null,
       "status": "REJECTED_NO_BASKETBALL",
-      "reason": "catalogue lisible, aucun produit correspondant",
+      "reason": "aucun basketball sur aucune des deux passes",
       "discovery_score": 0,
       "name": "Vintage Toy Mall",
       "city": "Broken Arrow",
       "state": "oklahoma",
       "phone": "+19189198697",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/oklahoma/broken-arrow/vintage-toy-mall/"
+      "directory_url": "https://cardshopmap.com/card-shops/oklahoma/broken-arrow/vintage-toy-mall/",
+      "pass2": {
+        "status": "REJECTED_NO_BASKETBALL",
+        "legitimacy": "UNVERIFIED",
+        "crawlability": "MANUAL_ONLY",
+        "purchase_mode": "ONLINE_CART",
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [],
+        "robots_forbids": false
+      },
+      "pass1": {
+        "status": "REJECTED_NO_BASKETBALL",
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": true,
+        "ecommerce": true,
+        "evidence": null
+      },
+      "legitimacy": "UNVERIFIED",
+      "crawlability": "MANUAL_ONLY",
+      "purchase_mode": "ONLINE_CART",
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "alssportscardsandgaming.com",
@@ -1493,14 +3003,43 @@
       "robots_status": "allowed",
       "evidence": null,
       "status": "REJECTED_NO_BASKETBALL",
-      "reason": "catalogue lisible, aucun produit correspondant",
+      "reason": "aucun basketball sur aucune des deux passes",
       "discovery_score": 0,
       "name": "Wilson Aquatics and More",
       "city": "Edmond",
       "state": "oklahoma",
       "phone": "+14052548169",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/oklahoma/edmond/wilson-aquatics-and-more/"
+      "directory_url": "https://cardshopmap.com/card-shops/oklahoma/edmond/wilson-aquatics-and-more/",
+      "pass2": {
+        "status": "REJECTED_NO_BASKETBALL",
+        "legitimacy": "LIKELY_LEGIT",
+        "crawlability": "MANUAL_ONLY",
+        "purchase_mode": "ONLINE_CART",
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [
+          "téléphone",
+          "page à propos",
+          "CGV/retours"
+        ],
+        "robots_forbids": false
+      },
+      "pass1": {
+        "status": "REJECTED_NO_BASKETBALL",
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": true,
+        "ecommerce": true,
+        "evidence": null
+      },
+      "legitimacy": "LIKELY_LEGIT",
+      "crawlability": "MANUAL_ONLY",
+      "purchase_mode": "ONLINE_CART",
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "dzcomics.com",
@@ -1515,14 +3054,44 @@
       "robots_status": "allowed",
       "evidence": null,
       "status": "REJECTED_NO_SEALED",
-      "reason": "9 fiche(s) basketball, mais aucune scellée (singles/slabs)",
+      "reason": "basketball présent, aucun scellé prouvé",
       "discovery_score": 0,
       "name": "DZ Comics & Gaming",
       "city": "Moore",
       "state": "oklahoma",
       "phone": "+14057353994",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/oklahoma/moore/dz-comics-and-gaming/"
+      "directory_url": "https://cardshopmap.com/card-shops/oklahoma/moore/dz-comics-and-gaming/",
+      "pass2": {
+        "status": "REJECTED_NO_SEALED",
+        "legitimacy": "TRUSTED",
+        "crawlability": "MANUAL_ONLY",
+        "purchase_mode": "ONLINE_CART",
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [
+          "téléphone",
+          "adresse postale",
+          "page à propos",
+          "CGV/retours"
+        ],
+        "robots_forbids": false
+      },
+      "pass1": {
+        "status": "REJECTED_NO_SEALED",
+        "sealed_basketball": false,
+        "basketball": true,
+        "crawlable": true,
+        "ecommerce": true,
+        "evidence": null
+      },
+      "legitimacy": "TRUSTED",
+      "crawlability": "MANUAL_ONLY",
+      "purchase_mode": "ONLINE_CART",
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "mm7sportscards.com",
@@ -1536,15 +3105,45 @@
       "crawlable": false,
       "robots_status": "allowed",
       "evidence": null,
-      "status": "REJECTED_NOT_CRAWLABLE",
-      "reason": "aucune API de catalogue lisible",
+      "status": "REJECTED_NO_BASKETBALL",
+      "reason": "aucun basketball sur aucune des deux passes",
       "discovery_score": 0,
       "name": "MM7 Sportscards",
       "city": "Moore",
       "state": "oklahoma",
       "phone": "+14056582114",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/oklahoma/moore/mm7-sportscards/"
+      "directory_url": "https://cardshopmap.com/card-shops/oklahoma/moore/mm7-sportscards/",
+      "pass2": {
+        "status": "REJECTED_NO_BASKETBALL",
+        "legitimacy": "TRUSTED",
+        "crawlability": "MANUAL_ONLY",
+        "purchase_mode": "ONLINE_CART",
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [
+          "e-mail",
+          "adresse postale",
+          "page à propos",
+          "CGV/retours"
+        ],
+        "robots_forbids": false
+      },
+      "pass1": {
+        "status": "REJECTED_NOT_CRAWLABLE",
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": false,
+        "ecommerce": true,
+        "evidence": null
+      },
+      "legitimacy": "TRUSTED",
+      "crawlability": "MANUAL_ONLY",
+      "purchase_mode": "ONLINE_CART",
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "tcgdetails.com",
@@ -1558,15 +3157,46 @@
       "crawlable": false,
       "robots_status": "allowed",
       "evidence": null,
-      "status": "REJECTED_NOT_CRAWLABLE",
-      "reason": "aucune API de catalogue lisible",
+      "status": "REJECTED_NO_BASKETBALL",
+      "reason": "aucun basketball sur aucune des deux passes",
       "discovery_score": 0,
       "name": "TCG Detail Services | Paint Correction | Ceramic Coating | Full Service Detailing | Mobile Services",
       "city": "Moore",
       "state": "oklahoma",
       "phone": "+14053782550",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/oklahoma/moore/tcg-detail-services-paint-correction-ceramic-coating-full-service-detailing-mobile-services/"
+      "directory_url": "https://cardshopmap.com/card-shops/oklahoma/moore/tcg-detail-services-paint-correction-ceramic-coating-full-service-detailing-mobile-services/",
+      "pass2": {
+        "status": "REJECTED_NO_BASKETBALL",
+        "legitimacy": "TRUSTED",
+        "crawlability": "MANUAL_ONLY",
+        "purchase_mode": "ONLINE_CART",
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [
+          "téléphone",
+          "e-mail",
+          "adresse postale",
+          "page à propos",
+          "CGV/retours"
+        ],
+        "robots_forbids": false
+      },
+      "pass1": {
+        "status": "REJECTED_NOT_CRAWLABLE",
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": false,
+        "ecommerce": true,
+        "evidence": null
+      },
+      "legitimacy": "TRUSTED",
+      "crawlability": "MANUAL_ONLY",
+      "purchase_mode": "ONLINE_CART",
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "allstarcomicsokc.com",
@@ -1580,15 +3210,44 @@
       "crawlable": false,
       "robots_status": "allowed",
       "evidence": null,
-      "status": "REJECTED_NO_ECOMMERCE",
-      "reason": "aucun signal d'e-commerce (plateforme custom)",
+      "status": "REJECTED_NO_BASKETBALL",
+      "reason": "aucun basketball sur aucune des deux passes",
       "discovery_score": 0,
       "name": "All-Star Comics",
       "city": "Oklahoma City",
       "state": "oklahoma",
       "phone": "+14058427800",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/oklahoma/oklahoma-city/all-star-comics/"
+      "directory_url": "https://cardshopmap.com/card-shops/oklahoma/oklahoma-city/all-star-comics/",
+      "pass2": {
+        "status": "REJECTED_NO_BASKETBALL",
+        "legitimacy": "LIKELY_LEGIT",
+        "crawlability": "MANUAL_ONLY",
+        "purchase_mode": "IN_STORE_ONLY",
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [
+          "téléphone",
+          "adresse postale",
+          "CGV/retours"
+        ],
+        "robots_forbids": false
+      },
+      "pass1": {
+        "status": "REJECTED_NO_ECOMMERCE",
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": false,
+        "ecommerce": false,
+        "evidence": null
+      },
+      "legitimacy": "LIKELY_LEGIT",
+      "crawlability": "MANUAL_ONLY",
+      "purchase_mode": "IN_STORE_ONLY",
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "bricksandhobbies.com",
@@ -1602,15 +3261,43 @@
       "crawlable": false,
       "robots_status": "disallowed",
       "evidence": null,
-      "status": "REJECTED_NOT_CRAWLABLE",
-      "reason": "robots.txt nous interdit ce site — nous ne le crawlons pas",
+      "status": "REJECTED_NO_BASKETBALL",
+      "reason": "aucun basketball sur aucune des deux passes",
       "discovery_score": 0,
       "name": "Bricks and Hobbies",
       "city": "Oklahoma City",
       "state": "oklahoma",
       "phone": "+14054932264",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/oklahoma/oklahoma-city/bricks-and-hobbies/"
+      "directory_url": "https://cardshopmap.com/card-shops/oklahoma/oklahoma-city/bricks-and-hobbies/",
+      "pass2": {
+        "status": "REJECTED_NO_BASKETBALL",
+        "legitimacy": "LIKELY_LEGIT",
+        "crawlability": "MANUAL_ONLY",
+        "purchase_mode": "ONLINE_CART",
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [
+          "page à propos",
+          "CGV/retours"
+        ],
+        "robots_forbids": false
+      },
+      "pass1": {
+        "status": "REJECTED_NOT_CRAWLABLE",
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": false,
+        "ecommerce": true,
+        "evidence": null
+      },
+      "legitimacy": "LIKELY_LEGIT",
+      "crawlability": "MANUAL_ONLY",
+      "purchase_mode": "ONLINE_CART",
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "cosmicokc.com",
@@ -1625,14 +3312,44 @@
       "robots_status": "allowed",
       "evidence": null,
       "status": "REJECTED_NO_SEALED",
-      "reason": "1 fiche(s) basketball, mais aucune scellée (singles/slabs)",
+      "reason": "basketball présent, aucun scellé prouvé",
       "discovery_score": 0,
       "name": "Cosmic Collectibles",
       "city": "Oklahoma City",
       "state": "oklahoma",
       "phone": "+14057306075",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/oklahoma/oklahoma-city/cosmic-collectibles/"
+      "directory_url": "https://cardshopmap.com/card-shops/oklahoma/oklahoma-city/cosmic-collectibles/",
+      "pass2": {
+        "status": "REJECTED_NO_BASKETBALL",
+        "legitimacy": "TRUSTED",
+        "crawlability": "MANUAL_ONLY",
+        "purchase_mode": "ONLINE_CART",
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [
+          "téléphone",
+          "e-mail",
+          "adresse postale",
+          "CGV/retours"
+        ],
+        "robots_forbids": false
+      },
+      "pass1": {
+        "status": "REJECTED_NO_SEALED",
+        "sealed_basketball": false,
+        "basketball": true,
+        "crawlable": true,
+        "ecommerce": true,
+        "evidence": null
+      },
+      "legitimacy": "TRUSTED",
+      "crawlability": "MANUAL_ONLY",
+      "purchase_mode": "ONLINE_CART",
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "dynamicgamingsolutions.com",
@@ -1646,15 +3363,43 @@
       "crawlable": false,
       "robots_status": "allowed",
       "evidence": null,
-      "status": "REJECTED_NOT_CRAWLABLE",
-      "reason": "aucune API de catalogue lisible",
+      "status": "REJECTED_NO_BASKETBALL",
+      "reason": "aucun basketball sur aucune des deux passes",
       "discovery_score": 0,
       "name": "Dynamic Gaming Solutions",
       "city": "Oklahoma City",
       "state": "oklahoma",
       "phone": "+14054294294",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/oklahoma/oklahoma-city/dynamic-gaming-solutions/"
+      "directory_url": "https://cardshopmap.com/card-shops/oklahoma/oklahoma-city/dynamic-gaming-solutions/",
+      "pass2": {
+        "status": "REJECTED_NO_BASKETBALL",
+        "legitimacy": "LIKELY_LEGIT",
+        "crawlability": "MANUAL_ONLY",
+        "purchase_mode": "ONLINE_CART",
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [
+          "téléphone",
+          "CGV/retours"
+        ],
+        "robots_forbids": false
+      },
+      "pass1": {
+        "status": "REJECTED_NOT_CRAWLABLE",
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": false,
+        "ecommerce": true,
+        "evidence": null
+      },
+      "legitimacy": "LIKELY_LEGIT",
+      "crawlability": "MANUAL_ONLY",
+      "purchase_mode": "ONLINE_CART",
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "newworldcomics.net",
@@ -1668,15 +3413,43 @@
       "crawlable": false,
       "robots_status": "allowed",
       "evidence": null,
-      "status": "REJECTED_NOT_CRAWLABLE",
-      "reason": "aucune API de catalogue lisible",
+      "status": "REJECTED_NO_BASKETBALL",
+      "reason": "aucun basketball sur aucune des deux passes",
       "discovery_score": 0,
       "name": "New World Comics",
       "city": "Oklahoma City",
       "state": "oklahoma",
       "phone": "+14057217634",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/oklahoma/oklahoma-city/new-world-comics/"
+      "directory_url": "https://cardshopmap.com/card-shops/oklahoma/oklahoma-city/new-world-comics/",
+      "pass2": {
+        "status": "REJECTED_NO_BASKETBALL",
+        "legitimacy": "LIKELY_LEGIT",
+        "crawlability": "MANUAL_ONLY",
+        "purchase_mode": "ONLINE_CART",
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [
+          "e-mail",
+          "CGV/retours"
+        ],
+        "robots_forbids": false
+      },
+      "pass1": {
+        "status": "REJECTED_NOT_CRAWLABLE",
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": false,
+        "ecommerce": true,
+        "evidence": null
+      },
+      "legitimacy": "LIKELY_LEGIT",
+      "crawlability": "MANUAL_ONLY",
+      "purchase_mode": "ONLINE_CART",
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "piratepeteccg.com",
@@ -1690,15 +3463,45 @@
       "crawlable": false,
       "robots_status": "allowed",
       "evidence": null,
-      "status": "REJECTED_NOT_CRAWLABLE",
-      "reason": "aucune API de catalogue lisible",
+      "status": "REJECTED_NO_BASKETBALL",
+      "reason": "aucun basketball sur aucune des deux passes",
       "discovery_score": 0,
       "name": "Pirate Pete CCG",
       "city": "Oklahoma City",
       "state": "oklahoma",
       "phone": "+14058067255",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/oklahoma/oklahoma-city/pirate-pete-ccg/"
+      "directory_url": "https://cardshopmap.com/card-shops/oklahoma/oklahoma-city/pirate-pete-ccg/",
+      "pass2": {
+        "status": "REJECTED_NO_BASKETBALL",
+        "legitimacy": "TRUSTED",
+        "crawlability": "MANUAL_ONLY",
+        "purchase_mode": "ONLINE_CART",
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [
+          "téléphone",
+          "e-mail",
+          "page à propos",
+          "CGV/retours"
+        ],
+        "robots_forbids": false
+      },
+      "pass1": {
+        "status": "REJECTED_NOT_CRAWLABLE",
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": false,
+        "ecommerce": true,
+        "evidence": null
+      },
+      "legitimacy": "TRUSTED",
+      "crawlability": "MANUAL_ONLY",
+      "purchase_mode": "ONLINE_CART",
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "pressplaygamers.com",
@@ -1734,15 +3537,46 @@
       "crawlable": false,
       "robots_status": "allowed",
       "evidence": null,
-      "status": "REJECTED_NO_ECOMMERCE",
-      "reason": "aucun signal d'e-commerce (plateforme custom)",
+      "status": "REJECTED_NO_BASKETBALL",
+      "reason": "aucun basketball sur aucune des deux passes",
       "discovery_score": 0,
       "name": "The Brew Shop",
       "city": "Oklahoma City",
       "state": "oklahoma",
       "phone": "+14055285193",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/oklahoma/oklahoma-city/the-brew-shop/"
+      "directory_url": "https://cardshopmap.com/card-shops/oklahoma/oklahoma-city/the-brew-shop/",
+      "pass2": {
+        "status": "REJECTED_NO_BASKETBALL",
+        "legitimacy": "TRUSTED",
+        "crawlability": "MANUAL_ONLY",
+        "purchase_mode": "IN_STORE_ONLY",
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [
+          "téléphone",
+          "e-mail",
+          "adresse postale",
+          "page à propos",
+          "CGV/retours"
+        ],
+        "robots_forbids": false
+      },
+      "pass1": {
+        "status": "REJECTED_NO_ECOMMERCE",
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": false,
+        "ecommerce": false,
+        "evidence": null
+      },
+      "legitimacy": "TRUSTED",
+      "crawlability": "MANUAL_ONLY",
+      "purchase_mode": "IN_STORE_ONLY",
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "twist3rcardsandtoys.godaddysites.com",
@@ -1756,15 +3590,40 @@
       "crawlable": false,
       "robots_status": "disallowed",
       "evidence": null,
-      "status": "REJECTED_NOT_CRAWLABLE",
-      "reason": "robots.txt nous interdit ce site — nous ne le crawlons pas",
+      "status": "UNVERIFIED_NOT_CRAWLABLE",
+      "reason": "robots.txt nous interdit — candidate non vérifiée",
       "discovery_score": 0,
       "name": "Twist3r Cards & Toys",
       "city": "Oklahoma City",
       "state": "oklahoma",
       "phone": "+14052451003",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/oklahoma/oklahoma-city/twist3r-cards-and-toys/"
+      "directory_url": "https://cardshopmap.com/card-shops/oklahoma/oklahoma-city/twist3r-cards-and-toys/",
+      "pass2": {
+        "status": "BLOCKED",
+        "legitimacy": "UNVERIFIED",
+        "crawlability": "BLOCKED",
+        "purchase_mode": null,
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [],
+        "robots_forbids": true
+      },
+      "pass1": {
+        "status": null,
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": false,
+        "ecommerce": false,
+        "evidence": null
+      },
+      "legitimacy": "UNVERIFIED",
+      "crawlability": "BLOCKED",
+      "purchase_mode": null,
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "teamcovenant.com",
@@ -1778,15 +3637,40 @@
       "crawlable": false,
       "robots_status": "disallowed",
       "evidence": null,
-      "status": "REJECTED_NOT_CRAWLABLE",
-      "reason": "robots.txt nous interdit ce site — nous ne le crawlons pas",
+      "status": "UNVERIFIED_NOT_CRAWLABLE",
+      "reason": "robots.txt nous interdit — candidate non vérifiée",
       "discovery_score": 0,
       "name": "Covenant Tulsa",
       "city": "Tulsa",
       "state": "oklahoma",
       "phone": "+19182126583",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/oklahoma/tulsa/covenant-tulsa/"
+      "directory_url": "https://cardshopmap.com/card-shops/oklahoma/tulsa/covenant-tulsa/",
+      "pass2": {
+        "status": "BLOCKED",
+        "legitimacy": "UNVERIFIED",
+        "crawlability": "BLOCKED",
+        "purchase_mode": null,
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [],
+        "robots_forbids": true
+      },
+      "pass1": {
+        "status": null,
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": false,
+        "ecommerce": false,
+        "evidence": null
+      },
+      "legitimacy": "UNVERIFIED",
+      "crawlability": "BLOCKED",
+      "purchase_mode": null,
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "discord.gg",
@@ -1800,15 +3684,42 @@
       "crawlable": false,
       "robots_status": "allowed",
       "evidence": null,
-      "status": "REJECTED_NO_ECOMMERCE",
-      "reason": "aucun signal d'e-commerce (plateforme custom)",
+      "status": "REJECTED_NO_BASKETBALL",
+      "reason": "aucun basketball sur aucune des deux passes",
       "discovery_score": 0,
       "name": "Critical Hit Table-Top Gaming",
       "city": "Tulsa",
       "state": "oklahoma",
       "phone": "+19189229174",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/oklahoma/tulsa/critical-hit-table-top-gaming/"
+      "directory_url": "https://cardshopmap.com/card-shops/oklahoma/tulsa/critical-hit-table-top-gaming/",
+      "pass2": {
+        "status": "REJECTED_NO_BASKETBALL",
+        "legitimacy": "UNVERIFIED",
+        "crawlability": "MANUAL_ONLY",
+        "purchase_mode": "IN_STORE_ONLY",
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [
+          "CGV/retours"
+        ],
+        "robots_forbids": false
+      },
+      "pass1": {
+        "status": "REJECTED_NO_ECOMMERCE",
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": false,
+        "ecommerce": false,
+        "evidence": null
+      },
+      "legitimacy": "UNVERIFIED",
+      "crawlability": "MANUAL_ONLY",
+      "purchase_mode": "IN_STORE_ONLY",
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "housedividedsportscards.com",
@@ -1839,20 +3750,49 @@
       "platform": "shopify",
       "ecommerce": true,
       "cart_available": true,
-      "basketball": true,
+      "basketball": false,
       "sealed_basketball": false,
       "crawlable": true,
       "robots_status": "allowed",
       "evidence": null,
-      "status": "REJECTED_NO_SEALED",
-      "reason": "1 fiche(s) basketball, mais aucune scellée (singles/slabs)",
+      "status": "REJECTED_NO_BASKETBALL",
+      "reason": "aucun basketball sur aucune des deux passes",
       "discovery_score": 0,
       "name": "Impulse Creations Comics & Collectibles",
       "city": "Tulsa",
       "state": "oklahoma",
       "phone": null,
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/oklahoma/tulsa/impulse-creations-comics-and-collectibles/"
+      "directory_url": "https://cardshopmap.com/card-shops/oklahoma/tulsa/impulse-creations-comics-and-collectibles/",
+      "pass2": {
+        "status": "REJECTED_NO_BASKETBALL",
+        "legitimacy": "LIKELY_LEGIT",
+        "crawlability": "MANUAL_ONLY",
+        "purchase_mode": "ONLINE_CART",
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [
+          "téléphone",
+          "e-mail",
+          "CGV/retours"
+        ],
+        "robots_forbids": false
+      },
+      "pass1": {
+        "status": "REJECTED_NO_BASKETBALL",
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": true,
+        "ecommerce": true,
+        "evidence": null
+      },
+      "legitimacy": "LIKELY_LEGIT",
+      "crawlability": "MANUAL_ONLY",
+      "purchase_mode": "ONLINE_CART",
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "mammothcomics.com",
@@ -1866,15 +3806,43 @@
       "crawlable": false,
       "robots_status": "allowed",
       "evidence": null,
-      "status": "REJECTED_NOT_CRAWLABLE",
-      "reason": "aucune API de catalogue lisible",
+      "status": "REJECTED_NO_BASKETBALL",
+      "reason": "aucun basketball sur aucune des deux passes",
       "discovery_score": 0,
       "name": "Mammoth Comics",
       "city": "Tulsa",
       "state": "oklahoma",
       "phone": "+19188369636",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/oklahoma/tulsa/mammoth-comics/"
+      "directory_url": "https://cardshopmap.com/card-shops/oklahoma/tulsa/mammoth-comics/",
+      "pass2": {
+        "status": "REJECTED_NO_BASKETBALL",
+        "legitimacy": "LIKELY_LEGIT",
+        "crawlability": "MANUAL_ONLY",
+        "purchase_mode": "IN_STORE_ONLY",
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [
+          "téléphone",
+          "e-mail"
+        ],
+        "robots_forbids": false
+      },
+      "pass1": {
+        "status": "REJECTED_NOT_CRAWLABLE",
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": false,
+        "ecommerce": true,
+        "evidence": null
+      },
+      "legitimacy": "LIKELY_LEGIT",
+      "crawlability": "MANUAL_ONLY",
+      "purchase_mode": "IN_STORE_ONLY",
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "shadowmountaincomics.com",
@@ -1932,15 +3900,44 @@
       "crawlable": false,
       "robots_status": "allowed",
       "evidence": null,
-      "status": "REJECTED_NO_ECOMMERCE",
-      "reason": "aucun signal d'e-commerce (plateforme custom)",
+      "status": "REJECTED_NO_BASKETBALL",
+      "reason": "aucun basketball sur aucune des deux passes",
       "discovery_score": 0,
       "name": "Tulsa Toy Depot",
       "city": "Tulsa",
       "state": "oklahoma",
       "phone": "+19189380555",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/oklahoma/tulsa/tulsa-toy-depot/"
+      "directory_url": "https://cardshopmap.com/card-shops/oklahoma/tulsa/tulsa-toy-depot/",
+      "pass2": {
+        "status": "REJECTED_NO_BASKETBALL",
+        "legitimacy": "LIKELY_LEGIT",
+        "crawlability": "MANUAL_ONLY",
+        "purchase_mode": "IN_STORE_ONLY",
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [
+          "téléphone",
+          "adresse postale",
+          "page à propos"
+        ],
+        "robots_forbids": false
+      },
+      "pass1": {
+        "status": "REJECTED_NO_ECOMMERCE",
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": false,
+        "ecommerce": false,
+        "evidence": null
+      },
+      "legitimacy": "LIKELY_LEGIT",
+      "crawlability": "MANUAL_ONLY",
+      "purchase_mode": "IN_STORE_ONLY",
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "tulsabricks.com",
@@ -1954,15 +3951,44 @@
       "crawlable": false,
       "robots_status": "allowed",
       "evidence": null,
-      "status": "REJECTED_NO_ECOMMERCE",
-      "reason": "aucun signal d'e-commerce (plateforme custom)",
+      "status": "REJECTED_NO_BASKETBALL",
+      "reason": "aucun basketball sur aucune des deux passes",
       "discovery_score": 0,
       "name": "Tulsabricks",
       "city": "Tulsa",
       "state": "oklahoma",
       "phone": "+19182126468",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/oklahoma/tulsa/tulsabricks/"
+      "directory_url": "https://cardshopmap.com/card-shops/oklahoma/tulsa/tulsabricks/",
+      "pass2": {
+        "status": "REJECTED_NO_BASKETBALL",
+        "legitimacy": "LIKELY_LEGIT",
+        "crawlability": "MANUAL_ONLY",
+        "purchase_mode": "IN_STORE_ONLY",
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [
+          "téléphone",
+          "e-mail",
+          "adresse postale"
+        ],
+        "robots_forbids": false
+      },
+      "pass1": {
+        "status": "REJECTED_NO_ECOMMERCE",
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": false,
+        "ecommerce": false,
+        "evidence": null
+      },
+      "legitimacy": "LIKELY_LEGIT",
+      "crawlability": "MANUAL_ONLY",
+      "purchase_mode": "IN_STORE_ONLY",
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "wizardscomicsandgames.com",
@@ -1976,15 +4002,40 @@
       "crawlable": false,
       "robots_status": "disallowed",
       "evidence": null,
-      "status": "REJECTED_NOT_CRAWLABLE",
-      "reason": "robots.txt nous interdit ce site — nous ne le crawlons pas",
+      "status": "UNVERIFIED_NOT_CRAWLABLE",
+      "reason": "robots.txt nous interdit — candidate non vérifiée",
       "discovery_score": 0,
       "name": "Wizards Asylum Comics & Games",
       "city": "Tulsa",
       "state": "oklahoma",
       "phone": "+19182502077",
       "discovered_via": "cardshopmap.com",
-      "directory_url": "https://cardshopmap.com/card-shops/oklahoma/tulsa/wizards-asylum-comics-and-games/"
+      "directory_url": "https://cardshopmap.com/card-shops/oklahoma/tulsa/wizards-asylum-comics-and-games/",
+      "pass2": {
+        "status": "BLOCKED",
+        "legitimacy": "UNVERIFIED",
+        "crawlability": "BLOCKED",
+        "purchase_mode": null,
+        "sealed_basketball": false,
+        "saison_2023_24": false,
+        "evidence": null,
+        "signaux": [],
+        "robots_forbids": true
+      },
+      "pass1": {
+        "status": null,
+        "sealed_basketball": false,
+        "basketball": false,
+        "crawlable": false,
+        "ecommerce": false,
+        "evidence": null
+      },
+      "legitimacy": "UNVERIFIED",
+      "crawlability": "BLOCKED",
+      "purchase_mode": null,
+      "saison_2023_24": false,
+      "hunt_enabled": false,
+      "prouve_par": null
     },
     {
       "domain": "worldofcomics.com",

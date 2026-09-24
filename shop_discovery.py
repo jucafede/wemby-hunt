@@ -50,7 +50,24 @@ R_AUTRE = "REJECTED_OTHER"
 # ni le tenir pour un vendeur identifié.
 MARKETPLACES = re.compile(r"ebay\.|etsy\.|amazon\.|facebook\.|instagram\.|whatnot\.|mercari\.|"
                           r"tiktok\.|linktr\.ee|square\.site|shopmy|bigcartel\.com$", re.I)
-BASKET = re.compile(r"basketball|\bnba\b|panini\s+prizm|\bprizm\b|\bhoops\b|donruss|mosaic", re.I)
+# Panini décline Prizm, Donruss, Select et Mosaic sur TOUS ses sports. « Prizm » seul a
+# qualifié un « 2025 Panini Prizm Football Blaster Box » comme preuve de basket. Le sport doit
+# être nommé — ou la gamme doit être exclusivement basket (Hoops, Court Kings).
+AUTRE_SPORT = re.compile(r"football|\bnfl\b|soccer|fifa|world\s*cup|premier\s*league|la\s*liga|"
+                         r"bundesliga|serie\s*a\b|\buefa\b|baseball|\bmlb\b|hockey|\bnhl\b|"
+                         r"\bufc\b|\bwwe\b|golf|nascar|racing|tennis|cricket|rugby|wnba|"
+                         r"pokemon|magic|yu-?gi-?oh|lorcana|one\s*piece|digimon|marvel|star\s*wars",
+                         re.I)
+_BASKET_MOT = re.compile(r"basketball|\bnba\b|\bhoops\b|court\s*kings|\bnbl\b", re.I)
+
+
+class _Basket:
+    """Basket = le sport est nommé ET aucun autre sport ne l'est."""
+    def search(self, t):
+        return _BASKET_MOT.search(t) if not AUTRE_SPORT.search(t) else None
+
+
+BASKET = _Basket()
 # « Jumbo » seul a qualifié un Funko Pop « Vinyl Jumbo 10\" » comme du basket scellé. Un mot
 # de format doit être accolé à un contenant : c'est « Jumbo Box », pas « Jumbo » tout court.
 SCELLE = re.compile(r"hobby\s*box|blaster|mega\s*box|retail\s*box|booster\s*box|"

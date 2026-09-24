@@ -157,6 +157,9 @@ ok(nr._b(None) == "?" and nr._b(False) == "non" and nr._b(True) == "oui",
    "inconnu, non et oui restent distincts dans le rapport")
 ok("NON JUGÉ" in nr._sens("UNVERIFIED_NOT_CRAWLABLE"), "robots interdit = candidat non jugé")
 ok("ignorance, pas rejet" in nr._sens("ERROR"), "une erreur de lecture n'est pas un rejet")
+ok("NON JUGÉ" in nr._sens("UNKNOWN_NOT_READ"), "aucune lecture aboutie = candidat non jugé")
+ok(nr._sens("UNKNOWN_NOT_READ") and nr._sens("UNVERIFIED_NOT_CRAWLABLE"),
+   "les deux ignorances ont chacune leur libellé")
 ok("preuve suffisante" in nr._sens("REJECTED_NO_BASKETBALL"),
    "NO_BASKETBALL est présenté comme une preuve, pas une absence de lecture")
 

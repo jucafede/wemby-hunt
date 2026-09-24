@@ -89,6 +89,7 @@ dans le même sens.
 | « L'API répond zéro résultat » lu comme « aucune API lisible » | 16 boutiques classées non crawlables alors qu'elles n'avaient simplement pas de basket |
 | Filtre de sport appliqué au texte entier | `NO_BASKETBALL` gonflé de 7 à 57 |
 | « Nous n'avons rien su lire » lu comme « le site nous interdit » | une boutique prouvée par son API annulée |
+| Deux passes qui ne lisent RIEN (429) fusionnées en « aucune des deux n'a prouvé de basket » | `sandssportscards`, déjà dans `sources.yaml`, rendue `REJECTED_NO_BASKETBALL` ; 18 autres rejets de l'Idaho/Iowa/Nebraska/Oklahoma reposaient sur des sites injoignables |
 
 LA RÈGLE QUI EN DÉCOULE
 Un filtre pertinent sur un TITRE de produit devient faux sur le texte d'une page : une page

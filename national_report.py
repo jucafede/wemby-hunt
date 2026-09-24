@@ -174,6 +174,7 @@ def _sens(statut: str) -> str:
             "REJECTED_NO_SEALED": "basketball prouvé, pas de scellé",
             "IN_STORE_ONLY": "scellé présent, aucune vente à distance identifiée",
             "UNVERIFIED_NOT_CRAWLABLE": "le marchand interdit le crawl — candidat NON JUGÉ",
+            "UNKNOWN_NOT_READ": "aucune lecture aboutie — candidat NON JUGÉ, pas un rejet",
             "ERROR": "lecture impossible — ignorance, pas rejet"}.get(statut, "")
 
 

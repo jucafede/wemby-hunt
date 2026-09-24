@@ -262,11 +262,18 @@ def dedoublonne(fiches: list[dict]) -> dict:
             if f["state"] not in u["states"]:
                 u["states"].append(f["state"])
             u["cities"].append(f.get("city") or f["city_slug"])
+            u["street_address"] = u.get("street_address") or f.get("street_address")
+            u["phone"] = u.get("phone") or f.get("phone")
+            u["since"] = u.get("since") or f.get("since")
             u["categories"] = sorted(set(u["categories"]) | set(f["categories"]))[:16]
             continue
         uniques[d] = {"domain": d, "shop_name": f["shop_name"], "website": f["website"],
                       "state": f["state"], "states": [f["state"]],
                       "cities": [f.get("city") or f["city_slug"]], "phone": f["phone"],
+                      # Sans ces deux champs, « +3 adresse physique » et « +2 ancienneté »
+                      # ne se déclenchaient jamais et aucune boutique ne pouvait devenir
+                      # TRUSTED : le dédoublonnage les laissait au bord de la route.
+                      "street_address": f.get("street_address"), "since": f.get("since"),
                       "categories": list(f["categories"]), "description": f["description"],
                       "cardshopmap_url": f["cardshopmap_url"], "listings": 1,
                       "source": "cardshopmap"}

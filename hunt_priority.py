@@ -117,6 +117,24 @@ MILLESIME = re.compile(r"\b(19[7-9]\d|20[0-2]\d)\s*[-/]\s*(\d{2})\b|\b(19[7-9]\d
 OOS = re.compile(r"out\s*of\s*stock|sold\s*out|unavailable|backorder", re.I)
 
 
+# Pourquoi une vitrine n'a pas été lue. La distinction compte : un robots.txt qui refuse et
+# un WAF qui renvoie 429 sont deux refus du marchand, que l'on respecte ; un domaine mort est
+# une absence de site. Aucun des trois n'est un jugement sur ce que la boutique vend.
+def blocage(v: dict) -> str | None:
+    if v.get("inspected"):
+        return None
+    if v.get("robots") == "disallowed":
+        return "ROBOTS_DISALLOW"
+    h = str(v.get("http"))
+    if h in ("429", "403"):
+        return "WAF_BLOCKED"          # protection anti-robot : respectée, jamais contournée
+    if h in ("404", "410"):
+        return "PAGE_ABSENTE"
+    if h.isdigit():
+        return "ERREUR_SERVEUR"
+    return "INJOIGNABLE"              # DNS mort, TLS cassé, délai dépassé
+
+
 def now() -> str:
     return datetime.now(timezone.utc).isoformat(timespec="seconds")
 
@@ -280,6 +298,7 @@ def evalue(c: dict, total: int, journal) -> dict:
             "legitimacy": leg, "legitimacy_evidence": preuves,
             "inspected": v.get("inspected", False), "robots": v.get("robots"),
             "http": v.get("http"), "platform": v.get("platform"),
+            "blocage": blocage(v),
             "signals": vu,
             "inspection_note": (None if v.get("inspected") else
                                 "vitrine non lue : le score B vaut 0 par défaut d'observation, "

@@ -643,3 +643,28 @@ shops:
       Détaillant suédois établi de longue date. robots.txt permissif (seuls les chemins client
       sont fermés) et /search?q= répond avec du contenu exploitable. Piste pour du stock ancien
       et dormant.
+
+  - key: cardvault
+    name: CardVault by Tom Brady
+    base_url: https://cardvaultbytombrady.com
+    type: shopify_json
+    platform: shopify
+    market_region: US
+    currency: USD
+    country: US
+    trust: trusted
+    status: active
+    priority: medium
+    seller_type: sports_cards_retail
+    seller_verification: VERIFIED
+    robots_checked_at: 2026-09-24
+    robots_disallow: false
+    discovered_at: 2026-09-24
+    discovery_evidence: "signalée par l'utilisateur · Shopify confirmé, /products.json et /search/suggest.json répondent"
+    notes: >-
+      Détaillant américain de cartes de sport, enseigne Tom Brady. Shopify, robots.txt
+      permissif, recherche interne exploitable — crawlable sans réserve. Aucune des 5 Mega
+      2023-24 à ce jour (24/09), son catalogue penche vers les sorties récentes.
+      SA DÉCOUVERTE EST LA LEÇON : elle était absente du registre alors qu'elle existe et
+      vend du scellé. Nos 57 boutiques ne sont pas l'univers des vendeurs, et un « 0 résultat
+      dans le registre » ne dira jamais « introuvable sur le marché ».

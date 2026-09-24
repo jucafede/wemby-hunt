@@ -1,0 +1,396 @@
+{
+  "generated_at": "2026-09-24T07:55:54+00:00",
+  "offers": [
+    {
+      "product_id": "select_2023_24_hobby_mega_green_shock",
+      "shop_id": "awesome",
+      "url": "https://theawesomecardshop.com/products/2023-24-panini-select-basketball-mega-box-green-shock-prizm",
+      "price": 109.75,
+      "currency": "USD",
+      "stock_status": "OUT_OF_STOCK",
+      "stock_qty": null,
+      "shipping_france": null,
+      "shipping_cost": null,
+      "landed_price_france": 128.77,
+      "match_method": "SET_FORMAT_VARIANTE",
+      "confidence": "select + variante « Green Shock Prizms » nommée",
+      "first_seen": "2026-09-24T07:55:54+00:00",
+      "last_seen": "2026-09-24T07:55:54+00:00",
+      "last_price": null,
+      "last_in_stock": null,
+      "history": [
+        {
+          "t": "2026-09-24T07:55:54+00:00",
+          "price": 109.75,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "NEW"
+        }
+      ]
+    },
+    {
+      "product_id": "select_2023_24_mega_blue_pink",
+      "shop_id": "rbicru7",
+      "url": "https://rbicru7.com/products/2023-24-panini-select-basketball-mega-box-releases-5-17",
+      "price": 110.0,
+      "currency": "USD",
+      "stock_status": "IN_STOCK",
+      "stock_qty": null,
+      "shipping_france": null,
+      "shipping_cost": null,
+      "landed_price_france": 129.02,
+      "match_method": "SET_FORMAT_VARIANTE",
+      "confidence": "select + variante « Blue & Pink Cracked Ice Prizms » nommée",
+      "first_seen": "2026-09-24T07:55:54+00:00",
+      "last_seen": "2026-09-24T07:55:54+00:00",
+      "last_price": null,
+      "last_in_stock": "2026-09-24T07:55:54+00:00",
+      "history": [
+        {
+          "t": "2026-09-24T07:55:54+00:00",
+          "price": 110.0,
+          "stock_status": "IN_STOCK",
+          "stock_qty": null,
+          "event": "NEW"
+        }
+      ]
+    },
+    {
+      "product_id": "select_2023_24_mega_blue_pink",
+      "shop_id": "worldchampion",
+      "url": "https://www.worldchampionsportscards.org/products/2023-24-panini-select-basketball-mega-box",
+      "price": 67.95,
+      "currency": "USD",
+      "stock_status": "OUT_OF_STOCK",
+      "stock_qty": null,
+      "shipping_france": null,
+      "shipping_cost": null,
+      "landed_price_france": 85.53,
+      "match_method": "SET_FORMAT_VARIANTE",
+      "confidence": "Mega Select 2023-24 sans variante nommée — non attribuable",
+      "first_seen": "2026-09-24T07:55:54+00:00",
+      "last_seen": "2026-09-24T07:55:54+00:00",
+      "last_price": null,
+      "last_in_stock": null,
+      "history": [
+        {
+          "t": "2026-09-24T07:55:54+00:00",
+          "price": 67.95,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "NEW"
+        }
+      ]
+    },
+    {
+      "product_id": "select_2023_24_mega_blue_pink",
+      "shop_id": "e5sports",
+      "url": "https://e5sports.com/products/2023-24-panini-select-nba-mega-box",
+      "price": 65.0,
+      "currency": "USD",
+      "stock_status": "OUT_OF_STOCK",
+      "stock_qty": null,
+      "shipping_france": null,
+      "shipping_cost": null,
+      "landed_price_france": 82.48,
+      "match_method": "SET_FORMAT_VARIANTE",
+      "confidence": "Mega Select 2023-24 sans variante nommée — non attribuable",
+      "first_seen": "2026-09-24T07:55:54+00:00",
+      "last_seen": "2026-09-24T07:55:54+00:00",
+      "last_price": null,
+      "last_in_stock": null,
+      "history": [
+        {
+          "t": "2026-09-24T07:55:54+00:00",
+          "price": 65.0,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "NEW"
+        }
+      ]
+    },
+    {
+      "product_id": "prizm_2023_24_mega_green_ice",
+      "shop_id": "deichcards",
+      "url": "https://deichcards.de/products/panini-prizm-basketball-nba-hobby-mega-box-2023-2024",
+      "price": 375.0,
+      "currency": "EUR",
+      "stock_status": "OUT_OF_STOCK",
+      "stock_qty": null,
+      "shipping_france": true,
+      "shipping_cost": null,
+      "landed_price_france": 387.0,
+      "match_method": "SET_FORMAT_VARIANTE",
+      "confidence": "Mega Prizm 2023-24 sans variante nommée — non attribuable",
+      "first_seen": "2026-09-24T07:55:54+00:00",
+      "last_seen": "2026-09-24T07:55:54+00:00",
+      "last_price": null,
+      "last_in_stock": null,
+      "history": [
+        {
+          "t": "2026-09-24T07:55:54+00:00",
+          "price": 375.0,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "NEW"
+        }
+      ]
+    },
+    {
+      "product_id": "select_2023_24_mega_blue_pink",
+      "shop_id": "deichcards",
+      "url": "https://deichcards.de/products/panini-select-basketball-mega-box-2023-24",
+      "price": 89.9,
+      "currency": "EUR",
+      "stock_status": "OUT_OF_STOCK",
+      "stock_qty": null,
+      "shipping_france": true,
+      "shipping_cost": null,
+      "landed_price_france": 101.9,
+      "match_method": "SET_FORMAT_VARIANTE",
+      "confidence": "Mega Select 2023-24 sans variante nommée — non attribuable",
+      "first_seen": "2026-09-24T07:55:54+00:00",
+      "last_seen": "2026-09-24T07:55:54+00:00",
+      "last_price": null,
+      "last_in_stock": null,
+      "history": [
+        {
+          "t": "2026-09-24T07:55:54+00:00",
+          "price": 89.9,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "NEW"
+        }
+      ]
+    },
+    {
+      "product_id": null,
+      "shop_id": "worldchampion",
+      "url": "https://www.worldchampionsportscards.org/products/2023-24-panini-select-basketball-mega-box",
+      "price": 67.95,
+      "currency": "USD",
+      "stock_status": "AMBIGU",
+      "stock_qty": null,
+      "shipping_france": null,
+      "shipping_cost": null,
+      "landed_price_france": null,
+      "match_method": "AMBIGU",
+      "confidence": "Mega Select 2023-24 sans variante nommée — non attribuable",
+      "titre_observe": "2023-24 Panini Select Basketball Mega Box",
+      "first_seen": "2026-09-24T07:55:54+00:00",
+      "last_seen": "2026-09-24T07:55:54+00:00",
+      "last_price": null,
+      "last_in_stock": null,
+      "history": [
+        {
+          "t": "2026-09-24T07:55:54+00:00",
+          "price": 67.95,
+          "stock_status": "AMBIGU",
+          "stock_qty": null,
+          "event": "NEW"
+        }
+      ]
+    },
+    {
+      "product_id": null,
+      "shop_id": "e5sports",
+      "url": "https://e5sports.com/products/2023-24-panini-prizm-nba-mega-box",
+      "price": 125.0,
+      "currency": "USD",
+      "stock_status": "AMBIGU",
+      "stock_qty": null,
+      "shipping_france": null,
+      "shipping_cost": null,
+      "landed_price_france": null,
+      "match_method": "AMBIGU",
+      "confidence": "Mega Prizm 2023-24 sans variante nommée — non attribuable",
+      "titre_observe": "2023-24 Panini Prizm NBA Mega Box",
+      "first_seen": "2026-09-24T07:55:54+00:00",
+      "last_seen": "2026-09-24T07:55:54+00:00",
+      "last_price": null,
+      "last_in_stock": null,
+      "history": [
+        {
+          "t": "2026-09-24T07:55:54+00:00",
+          "price": 125.0,
+          "stock_status": "AMBIGU",
+          "stock_qty": null,
+          "event": "NEW"
+        }
+      ]
+    },
+    {
+      "product_id": null,
+      "shop_id": "e5sports",
+      "url": "https://e5sports.com/products/2023-24-panini-select-nba-mega-box",
+      "price": 65.0,
+      "currency": "USD",
+      "stock_status": "AMBIGU",
+      "stock_qty": null,
+      "shipping_france": null,
+      "shipping_cost": null,
+      "landed_price_france": null,
+      "match_method": "AMBIGU",
+      "confidence": "Mega Select 2023-24 sans variante nommée — non attribuable",
+      "titre_observe": "2023-24 Panini Select NBA Mega Box Wembanyama",
+      "first_seen": "2026-09-24T07:55:54+00:00",
+      "last_seen": "2026-09-24T07:55:54+00:00",
+      "last_price": 65.0,
+      "last_in_stock": null,
+      "history": [
+        {
+          "t": "2026-09-24T07:55:54+00:00",
+          "price": 65.0,
+          "stock_status": "AMBIGU",
+          "stock_qty": null,
+          "event": "NEW"
+        },
+        {
+          "t": "2026-09-24T07:55:54+00:00",
+          "price": 65.0,
+          "stock_status": "AMBIGU",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        }
+      ]
+    },
+    {
+      "product_id": null,
+      "shop_id": "deichcards",
+      "url": "https://deichcards.de/products/panini-prizm-basketball-nba-hobby-mega-box-2023-2024",
+      "price": 375.0,
+      "currency": "EUR",
+      "stock_status": "AMBIGU",
+      "stock_qty": null,
+      "shipping_france": null,
+      "shipping_cost": null,
+      "landed_price_france": null,
+      "match_method": "AMBIGU",
+      "confidence": "Mega Prizm 2023-24 sans variante nommée — non attribuable",
+      "titre_observe": "Panini Prizm Basketball NBA Hobby Mega Box 2023/2024",
+      "first_seen": "2026-09-24T07:55:54+00:00",
+      "last_seen": "2026-09-24T07:55:54+00:00",
+      "last_price": 375.0,
+      "last_in_stock": null,
+      "history": [
+        {
+          "t": "2026-09-24T07:55:54+00:00",
+          "price": 375.0,
+          "stock_status": "AMBIGU",
+          "stock_qty": null,
+          "event": "NEW"
+        },
+        {
+          "t": "2026-09-24T07:55:54+00:00",
+          "price": 375.0,
+          "stock_status": "AMBIGU",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-09-24T07:55:54+00:00",
+          "price": 375.0,
+          "stock_status": "AMBIGU",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        }
+      ]
+    },
+    {
+      "product_id": null,
+      "shop_id": "deichcards",
+      "url": "https://deichcards.de/products/panini-prizm-basketball-nba-mega-box-2023-2024",
+      "price": 179.0,
+      "currency": "EUR",
+      "stock_status": "AMBIGU",
+      "stock_qty": null,
+      "shipping_france": null,
+      "shipping_cost": null,
+      "landed_price_france": null,
+      "match_method": "AMBIGU",
+      "confidence": "Mega Prizm 2023-24 sans variante nommée — non attribuable",
+      "titre_observe": "Panini Prizm Basketball NBA Mega Box 2023/2024",
+      "first_seen": "2026-09-24T07:55:54+00:00",
+      "last_seen": "2026-09-24T07:55:54+00:00",
+      "last_price": 179.0,
+      "last_in_stock": null,
+      "history": [
+        {
+          "t": "2026-09-24T07:55:54+00:00",
+          "price": 179.0,
+          "stock_status": "AMBIGU",
+          "stock_qty": null,
+          "event": "NEW"
+        },
+        {
+          "t": "2026-09-24T07:55:54+00:00",
+          "price": 179.0,
+          "stock_status": "AMBIGU",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        }
+      ]
+    },
+    {
+      "product_id": null,
+      "shop_id": "deichcards",
+      "url": "https://deichcards.de/products/panini-select-basketball-mega-box-2023-24",
+      "price": 89.9,
+      "currency": "EUR",
+      "stock_status": "AMBIGU",
+      "stock_qty": null,
+      "shipping_france": null,
+      "shipping_cost": null,
+      "landed_price_france": null,
+      "match_method": "AMBIGU",
+      "confidence": "Mega Select 2023-24 sans variante nommée — non attribuable",
+      "titre_observe": "Panini Select Basketball Mega Box 2023/24",
+      "first_seen": "2026-09-24T07:55:54+00:00",
+      "last_seen": "2026-09-24T07:55:54+00:00",
+      "last_price": 89.9,
+      "last_in_stock": null,
+      "history": [
+        {
+          "t": "2026-09-24T07:55:54+00:00",
+          "price": 89.9,
+          "stock_status": "AMBIGU",
+          "stock_qty": null,
+          "event": "NEW"
+        },
+        {
+          "t": "2026-09-24T07:55:54+00:00",
+          "price": 89.9,
+          "stock_status": "AMBIGU",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-09-24T07:55:54+00:00",
+          "price": 89.9,
+          "stock_status": "AMBIGU",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        }
+      ]
+    }
+  ],
+  "note": "OFFER = relation produit × boutique, datée. L'identité produit vit dans mega_targets.py, l'identité boutique dans sources.yaml : rien n'est recopié ici. Les ruptures sont CONSERVÉES — elles portent l'historique de prix et permettent la détection de restock.",
+  "champs": [
+    "product_id",
+    "shop_id",
+    "url",
+    "price",
+    "currency",
+    "stock_status",
+    "stock_qty",
+    "shipping_france",
+    "shipping_cost",
+    "landed_price_france",
+    "match_method",
+    "confidence",
+    "first_seen",
+    "last_seen",
+    "last_in_stock",
+    "last_price"
+  ]
+}

@@ -668,3 +668,32 @@ shops:
       SA DÉCOUVERTE EST LA LEÇON : elle était absente du registre alors qu'elle existe et
       vend du scellé. Nos 57 boutiques ne sont pas l'univers des vendeurs, et un « 0 résultat
       dans le registre » ne dira jamais « introuvable sur le marché ».
+
+  - key: sandssportscards
+    name: S and S Sports Cards
+    base_url: https://sandssportscards.com
+    type: shopify_json
+    platform: shopify
+    market_region: US
+    currency: USD
+    country: US
+    state: OK
+    city: Broken Arrow
+    trust: trusted
+    status: active
+    priority: medium
+    seller_type: local_card_shop
+    seller_verification: VERIFIED
+    robots_checked_at: 2026-09-24
+    robots_disallow: false
+    discovered_at: 2026-09-24
+    discovery_method: "shop discovery géographique · annuaire cardshopmap.com · Oklahoma"
+    discovery_score: 17
+    discovery_evidence: >-
+      2024-25 Panini Prizm Basketball Trading Cards Blaster Box, 40,00 $, IN_STOCK —
+      fiche produit lue par l'API Shopify le 24/09/2026.
+    notes: >-
+      Petit LCS de Broken Arrow (Oklahoma, ~115 000 hab.), Shopify, robots permissif,
+      catalogue lisible. Seule boutique à passer le funnel complet sur 91 candidats
+      examinés dans quatre États — d'où son intérêt : c'est exactement le profil visé,
+      petite ville et vrai e-commerce avec du Prizm scellé.

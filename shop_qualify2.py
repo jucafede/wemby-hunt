@@ -45,6 +45,13 @@ UNVERIFIED_NOT_CRAWLABLE = "UNVERIFIED_NOT_CRAWLABLE"
 # REJECTED_NO_BASKETBALL, et sandssportscards — prouvée par son API la veille — ressortait
 # comme une boutique qui ne vend pas de basketball.
 UNKNOWN_NOT_READ = "UNKNOWN_NOT_READ"
+# Une page d'accueil n'est pas un catalogue. Conclure « ce marchand ne vend pas de basket »
+# après avoir lu SA SEULE VITRINE, c'est juger un magasin sur sa devanture : Paula's Sports
+# Cards, WooCommerce, dont la seule page lue ne montrait aucun produit, est ressortie
+# REJECTED_NO_BASKETBALL. Un rejet produit exige une SURFACE DE CATALOGUE — un sitemap, des
+# pages de rubrique, une liste de fiches — pas une page unique.
+UNKNOWN_NO_CATALOGUE = "UNKNOWN_NO_CATALOGUE"
+TITRES_MIN = 15
 
 # Les signatures du vieux LCS en vente par correspondance — le profil « RK Collectibles ».
 MAIL = re.compile(r"box\s*inventory|boxes?\s*(?:&|and)\s*cases?|wax\s*inventory|sealed\s*wax|"
@@ -136,9 +143,11 @@ def qualifie2(dom: str) -> dict:
 
     # --- le produit : basket ET scellé, prouvés sur une page publique
     prod = []
+    vus = [0]
 
     def garde(t, u):
         t = re.sub(r"\s+", " ", t).strip()
+        vus[0] += 1
         if BASKET.search(t) and SCELLE.search(t) and not PAS_DES_CARTES.search(t):
             prod.append({"titre": t[:140], "page": u})
 
@@ -171,6 +180,7 @@ def qualifie2(dom: str) -> dict:
 
     r["crawlability"] = (FULL if r["purchase_mode"] == ONLINE_CART and prod else
                          PARTIAL if prod else MANUAL_ONLY)
+    r["titres_examines"] = vus[0]
 
     if not r["basketball"]:
         r.update(status="REJECTED_NO_BASKETBALL", reason="aucun basketball sur les pages publiques")
@@ -217,6 +227,14 @@ def fusionne(pass1: dict, pass2: dict) -> dict:
         st = UNKNOWN_NOT_READ
         why = ("aucune lecture aboutie — " + (pass1.get("reason") or "site sans réponse")
                + " · ni basket ni scellé ne sont JUGÉS : ils sont INCONNUS")
+    elif not scelle and not api and (pass2.get("titres_examines") or 0) < TITRES_MIN:
+        # Lu, mais pas ASSEZ pour parler du CATALOGUE — et cela vaut pour les deux rejets
+        # produit. NO_SEALED reposait sur « le mot basketball figure quelque part » plus
+        # « nous n'avons énuméré aucun scellé » : les 42 rejets de la première passe n'avaient
+        # AUCUNE fiche produit à l'appui.
+        st = UNKNOWN_NO_CATALOGUE
+        why = (f"catalogue non énuméré — {pass2.get('titres_examines') or 0} intitulé(s) lus, "
+               f"aucune API : une devanture ne dit pas ce qu'il y a en rayon")
     elif not basket:
         st, why = "REJECTED_NO_BASKETBALL", "aucun basketball sur aucune des deux passes"
     elif not scelle:
@@ -230,6 +248,7 @@ def fusionne(pass1: dict, pass2: dict) -> dict:
             # Sans lecture, on ne renvoie pas False — on renvoie None. False dirait « non ».
             "basketball": basket if lu else None,
             "sealed_basketball": scelle if lu else None, "evidence": preuve,
+            "titres_examines": pass2.get("titres_examines") or 0, "api_lue": api,
             "saison_2023_24": bool(pass2.get("saison_2023_24")),
             "hunt_enabled": st in (QUALIFIED_S,),
             "prouve_par": ("api" if pass1.get("sealed_basketball") else

@@ -697,3 +697,453 @@ shops:
       catalogue lisible. Seule boutique à passer le funnel complet sur 91 candidats
       examinés dans quatre États — d'où son intérêt : c'est exactement le profil visé,
       petite ville et vrai e-commerce avec du Prizm scellé.
+  - key: nickscards
+    name: "Nick's Sports Cards & Memorabilia"
+    base_url: https://nickscards.com
+    type: shopify_json
+    platform: shopify
+    market_region: US
+    currency: USD
+    country: US
+    state: TX
+    city: "Dallas"
+    trust: trusted
+    status: active
+    priority: medium
+    seller_type: local_card_shop
+    seller_verification: VERIFIED
+    purchase_mode: ONLINE_CART
+    crawlability: FULL
+    robots_checked_at: 2026-09-24
+    robots_disallow: false
+    discovered_at: 2026-09-24
+    discovery_method: "national shop discovery · cardshopmap · TOP 100 par hunt_priority_score"
+    hunt_priority_score: 74
+    old_stock_score: 17
+    qualification_evidence: "2025/26 Bowman Basketball Blaster Box"
+    catalogue_titres_examines: 841
+  - key: danscardz
+    name: "Dan's Sports Cards & Games"
+    base_url: https://danscardz.com
+    type: html
+    platform: html
+    market_region: US
+    currency: USD
+    country: US
+    state: FL
+    city: "Jacksonville"
+    trust: trusted
+    status: active
+    priority: medium
+    seller_type: local_card_shop
+    seller_verification: VERIFIED
+    purchase_mode: ONLINE_CART
+    crawlability: FULL
+    robots_checked_at: 2026-09-24
+    robots_disallow: false
+    discovered_at: 2026-09-24
+    discovery_method: "national shop discovery · cardshopmap · TOP 100 par hunt_priority_score"
+    hunt_priority_score: 61
+    old_stock_score: 36
+    qualification_evidence: "2025/26 Topps Chrome Update Series Basketball Hobby Box"
+    catalogue_titres_examines: 153
+  - key: shopbck
+    name: "The Baseball Card King"
+    base_url: https://shopbck.com
+    type: html
+    platform: html
+    market_region: US
+    currency: USD
+    country: US
+    state: IL
+    city: "Shorewood"
+    trust: trusted
+    status: active
+    priority: medium
+    seller_type: local_card_shop
+    seller_verification: VERIFIED
+    purchase_mode: ONLINE_CART
+    crawlability: FULL
+    robots_checked_at: 2026-09-24
+    robots_disallow: false
+    discovered_at: 2026-09-24
+    discovery_method: "national shop discovery · cardshopmap · TOP 100 par hunt_priority_score"
+    hunt_priority_score: 60
+    old_stock_score: 36
+    qualification_evidence: "2025/26 Bowman Basketball Hobby Jumbo Box"
+    catalogue_titres_examines: 324
+  - key: arthurscardsandcollectibles
+    name: "Arthur's Cards and Collectibles"
+    base_url: https://arthurscardsandcollectibles.com
+    type: shopify_json
+    platform: shopify
+    market_region: US
+    currency: USD
+    country: US
+    state: AZ
+    city: "Scottsdale"
+    trust: trusted
+    status: active
+    priority: medium
+    seller_type: local_card_shop
+    seller_verification: VERIFIED
+    purchase_mode: ONLINE_CART
+    crawlability: FULL
+    robots_checked_at: 2026-09-24
+    robots_disallow: false
+    discovered_at: 2026-09-24
+    discovery_method: "national shop discovery · cardshopmap · TOP 100 par hunt_priority_score"
+    hunt_priority_score: 58
+    old_stock_score: 27
+    qualification_evidence: "2025-26 Topps Chrome Cactus Jack Basketball Hobby Box"
+    catalogue_titres_examines: 956
+  - key: vwsportscards
+    name: "Valleywide Sports Cards"
+    base_url: https://vwsportscards.com
+    type: shopify_json
+    platform: shopify
+    market_region: US
+    currency: USD
+    country: US
+    state: AZ
+    city: "Scottsdale"
+    trust: trusted
+    status: active
+    priority: medium
+    seller_type: local_card_shop
+    seller_verification: VERIFIED
+    purchase_mode: ONLINE_CART
+    crawlability: FULL
+    robots_checked_at: 2026-09-24
+    robots_disallow: false
+    discovered_at: 2026-09-24
+    discovery_method: "national shop discovery · cardshopmap · TOP 100 par hunt_priority_score"
+    hunt_priority_score: 54
+    old_stock_score: 17
+    qualification_evidence: "2025/26 Topps Signature Class Basketball Hobby Box"
+    catalogue_titres_examines: 869
+  - key: allstarsportsgr
+    name: "All-Star Sports Cards & Gaming"
+    base_url: https://allstarsportsgr.com
+    type: html
+    platform: html
+    market_region: US
+    currency: USD
+    country: US
+    state: MI
+    city: "Wyoming"
+    trust: trusted
+    status: active
+    priority: medium
+    seller_type: local_card_shop
+    seller_verification: VERIFIED
+    purchase_mode: ONLINE_CART
+    crawlability: FULL
+    robots_checked_at: 2026-09-24
+    robots_disallow: false
+    discovered_at: 2026-09-24
+    discovery_method: "national shop discovery · cardshopmap · TOP 100 par hunt_priority_score"
+    hunt_priority_score: 53
+    old_stock_score: 17
+    qualification_evidence: "2025-26 Topps Chrome Basketball Blaster Box"
+    catalogue_titres_examines: 300
+  - key: cognizantcardbreaks
+    name: "Cognizant Cards and Collectibles"
+    base_url: https://cognizantcardbreaks.com
+    type: woo_store_api
+    platform: woocommerce
+    market_region: US
+    currency: USD
+    country: US
+    state: FL
+    city: "Pembroke Pines"
+    trust: trusted
+    status: active
+    priority: medium
+    seller_type: local_card_shop
+    seller_verification: VERIFIED
+    purchase_mode: ONLINE_CART
+    crawlability: FULL
+    robots_checked_at: 2026-09-24
+    robots_disallow: false
+    discovered_at: 2026-09-24
+    discovery_method: "national shop discovery · cardshopmap · TOP 100 par hunt_priority_score"
+    hunt_priority_score: 52
+    old_stock_score: 13
+    qualification_evidence: "2025/26 Topps Chrome Black Basketball Hobby Box"
+    catalogue_titres_examines: 43
+  - key: smyrnasportscards
+    name: "Smyrna Everything - Sports Cards & Collectibles"
+    base_url: https://smyrnasportscards.com
+    type: shopify_json
+    platform: shopify
+    market_region: US
+    currency: USD
+    country: US
+    state: TN
+    city: "Smyrna"
+    trust: trusted
+    status: active
+    priority: medium
+    seller_type: local_card_shop
+    seller_verification: VERIFIED
+    purchase_mode: ONLINE_CART
+    crawlability: FULL
+    robots_checked_at: 2026-09-24
+    robots_disallow: false
+    discovered_at: 2026-09-24
+    discovery_method: "national shop discovery · cardshopmap · TOP 100 par hunt_priority_score"
+    hunt_priority_score: 48
+    old_stock_score: 17
+    qualification_evidence: "2024-25 Hoops Retail Box"
+    catalogue_titres_examines: 113
+  - key: liquidsports
+    name: "Liquid Sports Cards, LLC"
+    base_url: https://liquidsports.cards
+    type: shopify_json
+    platform: shopify
+    market_region: US
+    currency: USD
+    country: US
+    state: OH
+    city: "Cincinnati"
+    trust: trusted
+    status: active
+    priority: medium
+    seller_type: local_card_shop
+    seller_verification: VERIFIED
+    purchase_mode: ONLINE_CART
+    crawlability: FULL
+    robots_checked_at: 2026-09-24
+    robots_disallow: false
+    discovered_at: 2026-09-24
+    discovery_method: "national shop discovery · cardshopmap · TOP 100 par hunt_priority_score"
+    hunt_priority_score: 46
+    old_stock_score: 17
+    qualification_evidence: "2025-26 Topps NBA Hobby Box"
+    catalogue_titres_examines: 331
+  - key: wolfdentcg
+    name: "Wolf Den Gaming"
+    base_url: https://wolfdentcg.com
+    type: shopify_json
+    platform: shopify
+    market_region: US
+    currency: USD
+    country: US
+    state: TX
+    city: "Boerne"
+    trust: trusted
+    status: active
+    priority: medium
+    seller_type: local_card_shop
+    seller_verification: VERIFIED
+    purchase_mode: ONLINE_CART
+    crawlability: FULL
+    robots_checked_at: 2026-09-24
+    robots_disallow: false
+    discovered_at: 2026-09-24
+    discovery_method: "national shop discovery · cardshopmap · TOP 100 par hunt_priority_score"
+    hunt_priority_score: 46
+    old_stock_score: 17
+    qualification_evidence: "2025-26 Panini Noir Basketball Hobby Box"
+    catalogue_titres_examines: 14264
+  - key: upstatesportscards
+    name: "Upstate Sports Cards"
+    base_url: https://upstatesportscards.com
+    type: html
+    platform: html
+    market_region: US
+    currency: USD
+    country: US
+    state: NY
+    city: "Kingston"
+    trust: likely_legit
+    status: active
+    priority: medium
+    seller_type: local_card_shop
+    seller_verification: LIKELY
+    purchase_mode: ONLINE_CART
+    crawlability: FULL
+    robots_checked_at: 2026-09-24
+    robots_disallow: false
+    discovered_at: 2026-09-24
+    discovery_method: "national shop discovery · cardshopmap · TOP 100 par hunt_priority_score"
+    hunt_priority_score: 45
+    old_stock_score: 21
+    qualification_evidence: "2024/25 Panini Select Basketball Blaster | Upstate Sports Cards"
+    catalogue_titres_examines: 306
+  - key: chasethehero
+    name: "Cardboard Heroes Sports Cards"
+    base_url: https://chasethehero.com
+    type: html
+    platform: html
+    market_region: US
+    currency: USD
+    country: US
+    state: TX
+    city: "Conroe"
+    trust: likely_legit
+    status: active
+    priority: medium
+    seller_type: local_card_shop
+    seller_verification: LIKELY
+    purchase_mode: ONLINE_CART
+    crawlability: FULL
+    robots_checked_at: 2026-09-24
+    robots_disallow: false
+    discovered_at: 2026-09-24
+    discovery_method: "national shop discovery · cardshopmap · TOP 100 par hunt_priority_score"
+    hunt_priority_score: 44
+    old_stock_score: 22
+    qualification_evidence: "2024/25 Panini Mosaic Basketball Hobby Blaster Box"
+    catalogue_titres_examines: 666
+  - key: allstarcasebreaks
+    name: "All Star Sports Cards"
+    base_url: https://allstarcasebreaks.com
+    type: shopify_json
+    platform: shopify
+    market_region: US
+    currency: USD
+    country: US
+    state: TN
+    city: "Chattanooga"
+    trust: trusted
+    status: active
+    priority: medium
+    seller_type: local_card_shop
+    seller_verification: VERIFIED
+    purchase_mode: ONLINE_CART
+    crawlability: FULL
+    robots_checked_at: 2026-09-24
+    robots_disallow: false
+    discovered_at: 2026-09-24
+    discovery_method: "national shop discovery · cardshopmap · TOP 100 par hunt_priority_score"
+    hunt_priority_score: 43
+    old_stock_score: 9
+    qualification_evidence: "2025-26 Topps Chrome Black Basketball Hobby Box"
+    catalogue_titres_examines: 49
+  - key: slabbedsports
+    name: "Slabbed Sports Cards"
+    base_url: https://slabbedsports.com
+    type: html
+    platform: html
+    market_region: US
+    currency: USD
+    country: US
+    state: OH
+    city: "West Chester"
+    trust: likely_legit
+    status: active
+    priority: medium
+    seller_type: local_card_shop
+    seller_verification: LIKELY
+    purchase_mode: ONLINE_CART
+    crawlability: FULL
+    robots_checked_at: 2026-09-24
+    robots_disallow: false
+    discovered_at: 2026-09-24
+    discovery_method: "national shop discovery · cardshopmap · TOP 100 par hunt_priority_score"
+    hunt_priority_score: 42
+    old_stock_score: 0
+    qualification_evidence: "20-21 Panini Chronicles Basketball Hanger Box | Slabbed Sports Cards"
+    catalogue_titres_examines: 123
+  - key: fathersoncards
+    name: "Father Son Sports Cards and Collectibles"
+    base_url: https://fathersoncards.com
+    type: shopify_json
+    platform: shopify
+    market_region: US
+    currency: USD
+    country: US
+    state: OH
+    city: "Powell"
+    trust: trusted
+    status: active
+    priority: medium
+    seller_type: local_card_shop
+    seller_verification: VERIFIED
+    purchase_mode: ONLINE_CART
+    crawlability: FULL
+    robots_checked_at: 2026-09-24
+    robots_disallow: false
+    discovered_at: 2026-09-24
+    discovery_method: "national shop discovery · cardshopmap · TOP 100 par hunt_priority_score"
+    hunt_priority_score: 40
+    old_stock_score: 5
+    qualification_evidence: "2021/22 Panini Mosaic Basketball Hobby Box"
+    catalogue_titres_examines: 89
+  - key: dnacardsandcollectibles
+    name: "DNA Cards and Collectibles"
+    base_url: https://dnacardsandcollectibles.com
+    type: shopify_json
+    platform: shopify
+    market_region: US
+    currency: USD
+    country: US
+    state: AZ
+    city: "Phoenix"
+    trust: trusted
+    status: active
+    priority: medium
+    seller_type: local_card_shop
+    seller_verification: VERIFIED
+    purchase_mode: ONLINE_CART
+    crawlability: FULL
+    robots_checked_at: 2026-09-24
+    robots_disallow: false
+    discovered_at: 2026-09-24
+    discovery_method: "national shop discovery · cardshopmap · TOP 100 par hunt_priority_score"
+    hunt_priority_score: 38
+    old_stock_score: 25
+    qualification_evidence: "2024-25 Topps Chrome basketball blaster"
+    catalogue_titres_examines: 9579
+  - key: beastcards
+    name: "Beast Sports Cards"
+    base_url: https://beastcards.com
+    type: html
+    platform: html
+    market_region: US
+    currency: USD
+    country: US
+    state: TX
+    city: "Plano"
+    trust: trusted
+    status: active
+    priority: medium
+    seller_type: local_card_shop
+    seller_verification: VERIFIED
+    purchase_mode: ONLINE_CART
+    crawlability: FULL
+    robots_checked_at: 2026-09-24
+    robots_disallow: false
+    discovered_at: 2026-09-24
+    discovery_method: "national shop discovery · cardshopmap · TOP 100 par hunt_priority_score"
+    hunt_priority_score: 38
+    old_stock_score: 13
+    qualification_evidence: "Basketball Hobby Boxes"
+    catalogue_titres_examines: 655
+  - key: azsportscards
+    name: "AZ Sports Cards"
+    base_url: https://azsportscards.com
+    type: html
+    platform: html
+    market_region: US
+    currency: USD
+    country: US
+    state: AZ
+    city: "Phoenix"
+    trust: trusted
+    status: active
+    priority: medium
+    seller_type: local_card_shop
+    seller_verification: VERIFIED
+    purchase_mode: MAIL_ORDER
+    crawlability: PARTIAL
+    robots_checked_at: 2026-09-24
+    robots_disallow: false
+    discovered_at: 2026-09-24
+    discovery_method: "national shop discovery · cardshopmap · TOP 100 par hunt_priority_score"
+    hunt_priority_score: 38
+    old_stock_score: 12
+    qualification_evidence: "Chrome Black Basketball Hobby Box:"
+    catalogue_titres_examines: 635

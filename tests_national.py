@@ -216,6 +216,46 @@ v3 = sq2.fusionne({"website_accessible": False},
                   {"robots_forbids": True, "crawlability": "BLOCKED", "pages_lues": 0})
 ok(v3["status"] == sq2.UNVERIFIED_NOT_CRAWLABLE, "robots interdit garde son propre statut")
 
+# une devanture n'est pas un catalogue
+peu = sq2.fusionne({"website_accessible": True, "crawlable": False, "basketball": False},
+                   {"pages_lues": 1, "titres_examines": 3, "basketball": False,
+                    "robots_forbids": False, "purchase_mode": "ONLINE_CART"})
+ok(peu["status"] == sq2.UNKNOWN_NO_CATALOGUE,
+   "une seule page lue ne permet pas de rejeter le catalogue")
+ok(peu["status"] != "REJECTED_NO_BASKETBALL", "la devanture ne juge pas le rayon")
+ok("catalogue non énuméré" in peu["reason"], "le motif dit ce qui manque")
+
+assez = sq2.fusionne({"website_accessible": True, "crawlable": False, "basketball": False},
+                     {"pages_lues": 4, "titres_examines": 180, "basketball": False,
+                      "robots_forbids": False, "purchase_mode": "ONLINE_CART"})
+ok(assez["status"] == "REJECTED_NO_BASKETBALL",
+   "un catalogue réellement énuméré autorise le rejet")
+api = sq2.fusionne({"website_accessible": True, "crawlable": True, "basketball": False,
+                    "ecommerce": True},
+                   {"pages_lues": 1, "titres_examines": 2, "basketball": False,
+                    "robots_forbids": False})
+ok(api["status"] == "REJECTED_NO_BASKETBALL",
+   "une API de catalogue lue vaut énumération, même sans pages HTML")
+ok(sq2.TITRES_MIN >= 10, "le seuil d'énumération n'est pas symbolique")
+
+# NO_SEALED exige la même base que NO_BASKETBALL : un catalogue, pas un mot sur une page
+mot = sq2.fusionne({"website_accessible": True, "crawlable": False, "basketball": False,
+                    "sealed_basketball": False, "ecommerce": True},
+                   {"pages_lues": 2, "titres_examines": 3, "basketball": True,
+                    "sealed_basketball": False, "robots_forbids": False,
+                    "purchase_mode": "ONLINE_CART"})
+ok(mot["status"] == sq2.UNKNOWN_NO_CATALOGUE,
+   "« le mot basketball figure quelque part » ne fonde pas un NO_SEALED")
+enum = sq2.fusionne({"website_accessible": True, "crawlable": False, "basketball": False,
+                     "sealed_basketball": False, "ecommerce": True},
+                    {"pages_lues": 4, "titres_examines": 200, "basketball": True,
+                     "sealed_basketball": False, "robots_forbids": False,
+                     "purchase_mode": "ONLINE_CART"})
+ok(enum["status"] == "REJECTED_NO_SEALED", "un catalogue énuméré fonde bien un NO_SEALED")
+ok(enum["titres_examines"] == 200 and mot["titres_examines"] == 3,
+   "la base de preuve est reportée dans le verdict")
+ok("NON JUGÉ" in nr._sens(sq2.UNKNOWN_NO_CATALOGUE), "le rapport le présente comme non jugé")
+
 # une passe qui A lu suffit : l'autre muette n'annule pas la preuve
 v4 = sq2.fusionne({"website_accessible": True, "crawlable": True, "basketball": True,
                    "sealed_basketball": True, "ecommerce": True,

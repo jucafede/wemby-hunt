@@ -62,9 +62,12 @@ def rapport() -> str:
     listings: dict[str, int] = {}
     for f in idx.get("listings", []):
         listings[f["state"]] = listings.get(f["state"], 0) + 1
+    # « Candidat cartes de sport » = l'annuaire le NOMME ainsi, par le nom de l'enseigne ou
+    # par sa rubrique. Un seuil sur le score total ne vaudrait rien : adresse, petite ville et
+    # site propre le franchissent à eux seuls, et la colonne recopierait le nombre de domaines.
     sc: dict[str, int] = {}
     for r in pri.get("ranked", []):
-        if r["score_a"] >= 8:
+        if "sports cards »" in (r.get("reason") or "") or "rubrique sports cards" in (r.get("reason") or ""):
             for s in (r.get("states") or [r.get("state")]):
                 sc[s] = sc.get(s, 0) + 1
     w = (22, 8, 10, 12)
@@ -72,8 +75,8 @@ def rapport() -> str:
     for etat, dom in list(par_etat.items())[:20]:
         A(ligne(etat.replace("-", " ").title(), listings.get(etat, 0), dom, sc.get(etat, 0), w=w))
     A("")
-    A("« sports-card » = candidats dont l'étage A du score atteint 8 (nom ou rubrique")
-    A("explicitement cartes de sport). Ce n'est pas un comptage du basket : c'est un tri.")
+    A("« sports-card » = l'annuaire NOMME la boutique cartes de sport (nom d'enseigne ou")
+    A("rubrique). Ce n'est pas un comptage du basket, et encore moins du scellé.")
     A("")
 
     # ------------------------------------------------ TOP 30 SHOPS
@@ -175,6 +178,7 @@ def _sens(statut: str) -> str:
             "IN_STORE_ONLY": "scellé présent, aucune vente à distance identifiée",
             "UNVERIFIED_NOT_CRAWLABLE": "le marchand interdit le crawl — candidat NON JUGÉ",
             "UNKNOWN_NOT_READ": "aucune lecture aboutie — candidat NON JUGÉ, pas un rejet",
+            "UNKNOWN_NO_CATALOGUE": "catalogue jamais énuméré — candidat NON JUGÉ",
             "ERROR": "lecture impossible — ignorance, pas rejet"}.get(statut, "")
 
 

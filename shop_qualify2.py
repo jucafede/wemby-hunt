@@ -39,6 +39,12 @@ FULL, PARTIAL, MANUAL_ONLY, BLOCKED = "FULL", "PARTIAL", "MANUAL_ONLY", "BLOCKED
 ONLINE_CART, MAIL_ORDER, PHONE_ORDER, IN_STORE_ONLY = ("ONLINE_CART", "MAIL_ORDER",
                                                        "PHONE_ORDER", "IN_STORE_ONLY")
 UNVERIFIED_NOT_CRAWLABLE = "UNVERIFIED_NOT_CRAWLABLE"
+# Le marchand n'a rien répondu que nous ayons pu lire : 429, 503, timeout, page vide. Ce
+# n'est ni un refus (robots l'aurait dit) ni une absence de basket — c'est une ignorance, et
+# elle doit porter un nom à elle. Sans ce statut, « rien lu » retombait dans
+# REJECTED_NO_BASKETBALL, et sandssportscards — prouvée par son API la veille — ressortait
+# comme une boutique qui ne vend pas de basketball.
+UNKNOWN_NOT_READ = "UNKNOWN_NOT_READ"
 
 # Les signatures du vieux LCS en vente par correspondance — le profil « RK Collectibles ».
 MAIL = re.compile(r"box\s*inventory|boxes?\s*(?:&|and)\s*cases?|wax\s*inventory|sealed\s*wax|"
@@ -98,9 +104,10 @@ def qualifie2(dom: str) -> dict:
         # NE PAS confondre « le site nous interdit » et « nous n'avons rien su lire ». Le
         # premier est un veto, le second une ignorance — et traiter le second comme un veto
         # a fait retomber sandssportscards, pourtant prouvée par son API, en non vérifiée.
-        r.update(crawlability=MANUAL_ONLY, status="UNREADABLE_HTML",
+        r.update(crawlability=MANUAL_ONLY, status="UNREADABLE_HTML", pages_lues=0,
                  reason="aucune page publique lisible — la passe API reste seule juge")
         return r
+    r["pages_lues"] = len(pages)
 
     blob = " ".join(b for _, b in pages)
     txt = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", blob))
@@ -200,8 +207,16 @@ def fusionne(pass1: dict, pass2: dict) -> dict:
     if api and pass1.get("ecommerce") and achat in (None, IN_STORE_ONLY):
         achat = ONLINE_CART      # une API de panier EST une vente à distance
 
+    # A-t-on seulement LU quelque chose ? Un verdict produit suppose une lecture ; sans elle,
+    # « pas de basket » ne décrit pas le marchand, il décrit notre échec.
+    lu = bool(pass1.get("website_accessible") or pass1.get("crawlable")
+              or pass2.get("pages_lues"))
     if pass2.get("robots_forbids") and not api:
         st, why = UNVERIFIED_NOT_CRAWLABLE, "robots.txt nous interdit — candidate non vérifiée"
+    elif not lu:
+        st = UNKNOWN_NOT_READ
+        why = ("aucune lecture aboutie — " + (pass1.get("reason") or "site sans réponse")
+               + " · ni basket ni scellé ne sont JUGÉS : ils sont INCONNUS")
     elif not basket:
         st, why = "REJECTED_NO_BASKETBALL", "aucun basketball sur aucune des deux passes"
     elif not scelle:
@@ -211,8 +226,10 @@ def fusionne(pass1: dict, pass2: dict) -> dict:
     else:
         st, why = QUALIFIED_S, f"basket scellé prouvé · achat {achat} · lecture {craw}"
     return {"status": st, "reason": why, "legitimacy": pass2.get("legitimacy", UNVERIFIED),
-            "crawlability": craw, "purchase_mode": achat, "basketball": basket,
-            "sealed_basketball": scelle, "evidence": preuve,
+            "crawlability": craw, "purchase_mode": achat, "lu": lu,
+            # Sans lecture, on ne renvoie pas False — on renvoie None. False dirait « non ».
+            "basketball": basket if lu else None,
+            "sealed_basketball": scelle if lu else None, "evidence": preuve,
             "saison_2023_24": bool(pass2.get("saison_2023_24")),
             "hunt_enabled": st in (QUALIFIED_S,),
             "prouve_par": ("api" if pass1.get("sealed_basketball") else

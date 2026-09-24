@@ -183,5 +183,43 @@ ok({"746134151026", "746134160479", "746134158100", "746134158162", "74613415822
    "les 5 UPC canoniques sont inchangés")
 ok("746134160462" in getattr(mt, "UPC_VOISINS", {}), "le MEGA PACK reste un voisin rejeté")
 
+# ------------------------------------------- un rejet suppose une lecture
+import shop_qualify2 as sq2
+
+muette1 = {"status": "REJECTED_OTHER", "reason": "site injoignable (HTTP 429)",
+           "website_accessible": False, "crawlable": False}
+muette2 = {"status": "UNREADABLE_HTML", "pages_lues": 0, "crawlability": "MANUAL_ONLY",
+           "robots_forbids": False}
+v = sq2.fusionne(muette1, muette2)
+ok(v["status"] == sq2.UNKNOWN_NOT_READ, "deux passes muettes ne donnent pas un rejet produit")
+ok(v["status"] != "REJECTED_NO_BASKETBALL", "« rien lu » n'est pas « pas de basketball »")
+ok(v["basketball"] is None and v["sealed_basketball"] is None,
+   "sans lecture, basket et scellé valent None — pas False")
+ok(v["lu"] is False, "le drapeau de lecture est explicite")
+ok("429" in v["reason"] and "INCONNUS" in v["reason"], "la cause HTTP est nommée dans le motif")
+
+# une lecture aboutie autorise, elle, un vrai rejet
+lu1 = {"website_accessible": True, "crawlable": True, "basketball": False,
+       "sealed_basketball": False, "ecommerce": True}
+lu2 = {"status": "REJECTED_NO_BASKETBALL", "pages_lues": 4, "basketball": False,
+       "purchase_mode": "ONLINE_CART", "robots_forbids": False}
+v2 = sq2.fusionne(lu1, lu2)
+ok(v2["status"] == "REJECTED_NO_BASKETBALL", "après lecture, NO_BASKETBALL reste possible")
+ok(v2["basketball"] is False, "après lecture, False veut bien dire non")
+ok(v2["lu"] is True, "le drapeau de lecture distingue les deux cas")
+
+# robots qui refuse reste un cas à part : non jugé, pas inconnu par accident
+v3 = sq2.fusionne({"website_accessible": False},
+                  {"robots_forbids": True, "crawlability": "BLOCKED", "pages_lues": 0})
+ok(v3["status"] == sq2.UNVERIFIED_NOT_CRAWLABLE, "robots interdit garde son propre statut")
+
+# une passe qui A lu suffit : l'autre muette n'annule pas la preuve
+v4 = sq2.fusionne({"website_accessible": True, "crawlable": True, "basketball": True,
+                   "sealed_basketball": True, "ecommerce": True,
+                   "evidence": {"product_name": "Prizm Basketball Blaster"}},
+                  {"status": "UNREADABLE_HTML", "pages_lues": 0, "robots_forbids": False})
+ok(v4["status"] == "QUALIFIED", "une API qui prouve le scellé n'est pas annulée par un HTML muet")
+ok(v4["lu"] is True, "la lecture de l'API compte comme lecture")
+
 print(f"\ntests_national : {T} tests, {F} échec(s)")
 raise SystemExit(1 if F else 0)

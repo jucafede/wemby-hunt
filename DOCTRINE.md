@@ -101,3 +101,37 @@ statut transforme silencieusement notre ignorance en information — c'est la m�
 « 0 résultat dans le registre » lu comme « introuvable sur le marché », et elle appelle la
 même discipline : deux axes séparés, LEGITIMACY et CRAWLABILITY, et un statut
 UNVERIFIED_NOT_CRAWLABLE qui dit ce qu'il est — une candidate non jugée, pas un rejet.
+
+---
+
+## Découverte nationale : un ordre de passage n'est pas un verdict
+
+3 281 fiches d'annuaire, et le budget pour en crawler cent. Tout le problème de cette phase
+tient dans ce rapport : il faut DIRIGER le crawl profond sans laisser le tri se faire passer
+pour un jugement.
+
+**Le score ne note pas les magasins.** `hunt_priority_score` répond à une seule question :
+dans quel ordre ouvrir les catalogues pour tomber sur du scellé ancien. Il ne dit pas quelle
+boutique est bonne. Un rang 800 n'est pas une boutique rejetée, c'est une boutique dont le
+tour n'est pas venu — et le fichier comme le rapport doivent l'écrire, parce qu'un tableau
+trié se lit spontanément comme un classement du meilleur au pire.
+
+**Aucun poids n'est négatif, et c'est délibéré.** Un site en HTML de 2009, sans API, sans
+panier, avec un inventaire mail-order profond, est une MEILLEURE cible qu'un Shopify neuf qui
+ne stocke que le produit de l'année. Pénaliser la vétusté reviendrait à trier par
+sophistication technique — exactement l'inverse de ce qu'on cherche. RK Collectibles est le
+modèle : vieux magasin réel, catalogue profond, vieux scellé.
+
+**Un zéro d'observation n'est pas un zéro de fait.** L'étage B du score vaut 0 quand la
+vitrine n'a pas été lue — robots.txt qui refuse, site injoignable, page vide. Ce 0 se range
+dans la même colonne qu'un 0 obtenu après lecture, et devient indiscernable dès qu'on trie.
+D'où le champ `inspected`, la note qui l'accompagne, et le `?` du rapport là où un `non`
+serait un mensonge. C'est la cinquième occurrence de la même faute dans ce projet ; la seule
+parade qui tienne est structurelle, pas une bonne intention.
+
+**Le débit se compte, il ne se suppose pas.** L'annuaire rend ses pages en 0,4 s ou en 9 s
+selon son cache. Le compteur par hôte de `xe.fetch` n'est pas protégé : à plusieurs fils il
+devient une condition de course, qui laisse passer des rafales ou fige tout. La politesse
+qu'on ne peut pas mesurer n'est pas de la politesse — d'où un compteur explicite sous verrou.
+Cela ne touche à aucune règle de conformité : robots.txt reste souverain, et les chemins
+interdits — `/go/`, `/api/`, `/admin/`, `/auth-error/` — ne sont jamais demandés.

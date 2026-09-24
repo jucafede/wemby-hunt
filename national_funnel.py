@@ -48,9 +48,7 @@ def now() -> str:
 
 
 # ------------------------------------------------------------------ phase 4
-def funnel(c: dict) -> dict:
-    """Les deux passes existantes, fusionnées — aucune règle de conformité n'est touchée."""
-    dom = c["domain"]
+def _passes(dom: str) -> tuple[dict, dict]:
     try:
         p1 = sd.qualifie(dom)
     except Exception as e:
@@ -59,7 +57,25 @@ def funnel(c: dict) -> dict:
         p2 = sq2.qualifie2(dom)
     except Exception as e:
         p2 = {"domain": dom, "status": "ERROR", "reason": e.__class__.__name__}
+    return p1, p2
+
+
+def funnel(c: dict) -> dict:
+    """Les deux passes existantes, fusionnées — aucune règle de conformité n'est touchée."""
+    dom = c["domain"]
+    p1, p2 = _passes(dom)
     v = sq2.fusionne(p1, p2)
+    # Un 429 est une demande de ralentir, pas une réponse sur le catalogue. La phase 2 vient
+    # de solliciter ce même domaine : on laisse retomber, puis on redemande UNE fois. Si le
+    # marchand refuse encore, le statut reste UNKNOWN — on n'insiste pas, et on ne conclut pas.
+    if v["status"] == sq2.UNKNOWN_NOT_READ and "429" in (p1.get("reason") or ""):
+        time.sleep(20)
+        p1b, p2b = _passes(dom)
+        vb = sq2.fusionne(p1b, p2b)
+        if vb["status"] != sq2.UNKNOWN_NOT_READ:
+            p1, p2, v = p1b, p2b, vb
+        else:
+            v["reason"] += " · réessayé une fois après pause, même réponse"
     return {**c, **v, "platform_api": p1.get("platform"), "checked_at": now(),
             # la légitimité de l'étage 3 se nourrit des DEUX lectures : l'annuaire publie une
             # adresse et un téléphone que les pages du marchand ne répètent pas toujours.
@@ -156,7 +172,15 @@ def sauve(payload: dict):
 def main():
     n = int(sys.argv[1]) if len(sys.argv) > 1 else TOP_N
     d = json.loads(PRIORITE.read_text(encoding="utf-8"))
-    cands = d["ranked"]
+    # Le classement a été calculé avant que les domaines PARTAGÉS soient écartés de l'index
+    # (discord.gg, topps.com, une place de marché). Ils ne désignent aucun marchand : ils ne
+    # peuvent pas occuper une place du TOP 100.
+    import national_index as ni
+    marchands = {c["domain"] for c in (ni.charge().get("candidates") or [])}
+    avant = len(d["ranked"])
+    cands = [r for r in d["ranked"] if r["domain"] in marchands] if marchands else d["ranked"]
+    if avant != len(cands):
+        print(f"({avant - len(cands)} domaines partagés écartés du classement)")
     print(f"PHASE 4 — FUNNEL COMPLET SUR LE TOP {n}\n" + "=" * 46)
     shops = passe_top(cands, n)
     par_statut: dict[str, int] = {}

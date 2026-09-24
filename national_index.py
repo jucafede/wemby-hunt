@@ -85,6 +85,24 @@ def _http(url: str, timeout: int = 25):
         return None, "", e.__class__.__name__
 
 
+# Un domaine PARTAGÉ par plusieurs marchands n'identifie aucun marchand : un serveur Discord,
+# la boutique du fabricant, la place de marché où le magasin a un stand, une page de dons.
+# Les exclure n'est pas un jugement sur la boutique — c'est constater que ce domaine ne la
+# désigne pas.
+#
+# À NE PAS CONFONDRE avec une vitrine hébergée : `x.myshopify.com`, `x.wixsite.com`,
+# `x.bigcartel.com`, `x.tcgplayerpro.com` appartiennent à UN magasin et sont sa boutique. Les
+# écarter reviendrait à pénaliser le manque de moyens techniques — exactement ce que la
+# consigne interdit.
+DOMAINE_PARTAGE = re.compile(
+    r"^(?:www\.)?(?:discord\.(?:gg|com)|topps\.com|paniniamerica\.net|upperdeck\.com|"
+    r"tcgplayer\.com|(?:shop|store)\.tcgplayer\.com|beckett\.com|[\w-]+\.beckett\.com|"
+    r"sgccard\.com|psacard\.com|collectors\.com|cardladder\.com|"
+    r"eventbrite\.com|meetup\.com|patreon\.com|venmo\.com|cash\.app|paypal\.(?:com|me)|"
+    r"gofundme\.com|beacons\.ai|linktr\.ee|bit\.ly|goo\.gl|forms\.gle|"
+    r"(?:docs|drive|sites)\.google\.com)$", re.I)
+
+
 def now() -> str:
     return datetime.now(timezone.utc).isoformat(timespec="seconds")
 
@@ -236,7 +254,7 @@ def dedoublonne(fiches: list[dict]) -> dict:
     uniques: dict[str, dict] = {}
     for f in fiches:
         d = f.get("domain")
-        if not d:
+        if not d or DOMAINE_PARTAGE.match(d):
             continue
         if d in uniques:
             u = uniques[d]
@@ -253,6 +271,19 @@ def dedoublonne(fiches: list[dict]) -> dict:
                       "cardshopmap_url": f["cardshopmap_url"], "listings": 1,
                       "source": "cardshopmap"}
     return uniques
+
+
+def exclus_partages(fiches: list[dict]) -> list[dict]:
+    """Ce que le dédoublonnage écarte, consigné — aucune disparition silencieuse."""
+    out: dict[str, dict] = {}
+    for f in fiches:
+        d = f.get("domain")
+        if d and DOMAINE_PARTAGE.match(d):
+            e = out.setdefault(d, {"domain": d, "listings": 0, "shops": []})
+            e["listings"] += 1
+            if len(e["shops"]) < 8:
+                e["shops"].append(f.get("shop_name"))
+    return sorted(out.values(), key=lambda x: -x["listings"])
 
 
 def sauve(payload: dict):

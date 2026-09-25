@@ -1,0 +1,1856 @@
+{
+  "generated_at": "2026-09-25T08:04:29+00:00",
+  "examines": 50,
+  "fetchs": 321,
+  "minutes": 26.0,
+  "par_verdict": {
+    "BLOCKED": 9,
+    "QUALIFIED": 5,
+    "UNREADABLE": 18,
+    "REJECTED": 11,
+    "CANDIDATE_ONLY": 7
+  },
+  "qualifies": 5,
+  "offres_cibles": [],
+  "resultats": [
+    {
+      "domain": "triplesssinc.com",
+      "checked_at": "2026-09-25T07:38:30+00:00",
+      "verdict": "BLOCKED",
+      "raison": "robots.txt nous interdit — respecté, non contourné",
+      "sealed_product": null,
+      "product_url": null,
+      "price": null,
+      "currency": "USD",
+      "purchase_mode": null,
+      "crawlability": "BLOCKED",
+      "legitimacy": "UNVERIFIED",
+      "in_stock": null,
+      "preuves": [],
+      "titres_examines": 0,
+      "api_lue": false,
+      "statut_funnel": "UNVERIFIED_NOT_CRAWLABLE",
+      "candidate_name": "Triple Sss Sports Cards",
+      "city": "Shelby Twp",
+      "state": "MI",
+      "lookalike_score": 82.0,
+      "seed_count": 16,
+      "source_seeds": [
+        "awesome",
+        "bleecker",
+        "boxseat",
+        "cardiacs",
+        "cbhobby",
+        "columbia",
+        "e5sports",
+        "ehcards",
+        "hiddengems",
+        "monmouth",
+        "rbicru7",
+        "rlsports",
+        "sjay2k",
+        "sportcards",
+        "sportscardjunction",
+        "worldchampion"
+      ],
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/michigan/utica/triple-sss-sports-cards/",
+      "twin_types": [
+        "LOCAL",
+        "PROFILE"
+      ]
+    },
+    {
+      "domain": "rynossportscards.com",
+      "checked_at": "2026-09-25T07:38:30+00:00",
+      "verdict": "QUALIFIED",
+      "raison": "scellé basket + prix affiché + achat ONLINE_CART",
+      "sealed_product": "2024-25 Panini DonRuss Turkish Airlines Euro League Basketball Hobby Box",
+      "product_url": "https://rynossportscards.com/products/2024-25-panini-donruss-turkish-airlines-euro-league-basketball-hobby-box?_pos=1&_psq=basketball&_psid=87cee52b1&_ss=e",
+      "price": 100.0,
+      "currency": "USD",
+      "purchase_mode": "ONLINE_CART",
+      "crawlability": "FULL",
+      "legitimacy": "LIKELY_LEGIT",
+      "in_stock": "OUT_OF_STOCK",
+      "preuves": [
+        "téléphone",
+        "adresse postale",
+        "CGV/retours"
+      ],
+      "titres_examines": 146,
+      "api_lue": true,
+      "statut_funnel": "QUALIFIED",
+      "candidate_name": "Ryno's Sports Cards & Memorabilia",
+      "city": "Bellingham",
+      "state": "WA",
+      "lookalike_score": 75.0,
+      "seed_count": 15,
+      "source_seeds": [
+        "awesome",
+        "bleecker",
+        "boxseat",
+        "cardiacs",
+        "cbhobby",
+        "columbia",
+        "e5sports",
+        "ehcards",
+        "hiddengems",
+        "monmouth",
+        "rlsports",
+        "sjay2k",
+        "sportcards",
+        "sportscardjunction",
+        "worldchampion"
+      ],
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/washington/bellingham/rynos-sports-cards-and-memorabilia/",
+      "twin_types": [
+        "PROFILE"
+      ],
+      "old_stock_score": 8,
+      "old_stock_reason": [
+        "+5 produits OOS anciens encore indexés",
+        "+3 faible rotation apparente"
+      ],
+      "target_offers": []
+    },
+    {
+      "domain": "columbiahobby.com",
+      "checked_at": "2026-09-25T07:38:46+00:00",
+      "verdict": "QUALIFIED",
+      "raison": "scellé basket + prix affiché + achat ONLINE_CART",
+      "sealed_product": "2025/26 Topps Chrome Cactus Jack Basketball Hobby Box",
+      "product_url": "https://columbiahobby.com/products/2025-26-topps-chrome-cactus-jack-basketball-hobby-box?_pos=1&_psq=basketball&_psid=bb891e97e&_ss=e",
+      "price": 548.99,
+      "currency": "USD",
+      "purchase_mode": "ONLINE_CART",
+      "crawlability": "FULL",
+      "legitimacy": "LIKELY_LEGIT",
+      "in_stock": "IN_STOCK",
+      "preuves": [
+        "adresse postale",
+        "page à propos",
+        "CGV/retours"
+      ],
+      "titres_examines": 3897,
+      "api_lue": true,
+      "statut_funnel": "QUALIFIED",
+      "candidate_name": "Columbia Hobby - Comics - Games - Sports Cards",
+      "city": "Vancouver",
+      "state": "WA",
+      "lookalike_score": 74.0,
+      "seed_count": 14,
+      "source_seeds": [
+        "awesome",
+        "bleecker",
+        "boxseat",
+        "cardiacs",
+        "cbhobby",
+        "columbia",
+        "e5sports",
+        "ehcards",
+        "monmouth",
+        "rlsports",
+        "sjay2k",
+        "sportcards",
+        "sportscardjunction",
+        "worldchampion"
+      ],
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/washington/vancouver/columbia-hobby-comics-games-sports-cards/",
+      "twin_types": [
+        "PROFILE"
+      ],
+      "old_stock_score": 25,
+      "old_stock_reason": [
+        "+8 NBA 2022-23",
+        "+5 plusieurs générations de wax",
+        "+5 produits OOS anciens encore indexés",
+        "+4 prix manifestement anciens",
+        "+3 faible rotation apparente"
+      ],
+      "target_offers": []
+    },
+    {
+      "domain": "davesportscards.com",
+      "checked_at": "2026-09-25T07:39:03+00:00",
+      "verdict": "UNREADABLE",
+      "raison": "aucune lecture aboutie — site injoignable (HTTP 403) · ni basket ni scellé ne sont JUGÉS : ils sont INCONNUS",
+      "sealed_product": null,
+      "product_url": null,
+      "price": null,
+      "currency": "USD",
+      "purchase_mode": null,
+      "crawlability": "MANUAL_ONLY",
+      "legitimacy": "UNVERIFIED",
+      "in_stock": null,
+      "preuves": [],
+      "titres_examines": 0,
+      "api_lue": false,
+      "statut_funnel": "UNKNOWN_NOT_READ",
+      "candidate_name": "Dave's Sports Cards",
+      "city": "Roswell",
+      "state": "GA",
+      "lookalike_score": 72.0,
+      "seed_count": 16,
+      "source_seeds": [
+        "awesome",
+        "bleecker",
+        "boxseat",
+        "cardiacs",
+        "cbhobby",
+        "columbia",
+        "e5sports",
+        "ehcards",
+        "hiddengems",
+        "monmouth",
+        "rbicru7",
+        "rlsports",
+        "sjay2k",
+        "sportcards",
+        "sportscardjunction",
+        "worldchampion"
+      ],
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/georgia/roswell/daves-sports-cards/",
+      "twin_types": [
+        "PROFILE"
+      ]
+    },
+    {
+      "domain": "thesandlotsports.com",
+      "checked_at": "2026-09-25T07:39:07+00:00",
+      "verdict": "BLOCKED",
+      "raison": "robots.txt nous interdit — respecté, non contourné",
+      "sealed_product": null,
+      "product_url": null,
+      "price": null,
+      "currency": "USD",
+      "purchase_mode": null,
+      "crawlability": "BLOCKED",
+      "legitimacy": "UNVERIFIED",
+      "in_stock": null,
+      "preuves": [],
+      "titres_examines": 0,
+      "api_lue": false,
+      "statut_funnel": "UNVERIFIED_NOT_CRAWLABLE",
+      "candidate_name": "The Sandlot - Sports Cards & Memorabilia",
+      "city": "Glen Ellyn",
+      "state": "IL",
+      "lookalike_score": 69.0,
+      "seed_count": 14,
+      "source_seeds": [
+        "bleecker",
+        "boxseat",
+        "cardiacs",
+        "cbhobby",
+        "columbia",
+        "e5sports",
+        "ehcards",
+        "hiddengems",
+        "monmouth",
+        "rbicru7",
+        "sjay2k",
+        "sportcards",
+        "sportscardjunction",
+        "worldchampion"
+      ],
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/illinois/glen-ellyn/the-sandlot-sports-cards-and-memorabilia/",
+      "twin_types": [
+        "PROFILE"
+      ]
+    },
+    {
+      "domain": "foreveryoungsportscards.com",
+      "checked_at": "2026-09-25T07:39:07+00:00",
+      "verdict": "BLOCKED",
+      "raison": "robots.txt nous interdit — respecté, non contourné",
+      "sealed_product": null,
+      "product_url": null,
+      "price": null,
+      "currency": "USD",
+      "purchase_mode": null,
+      "crawlability": "BLOCKED",
+      "legitimacy": "UNVERIFIED",
+      "in_stock": null,
+      "preuves": [],
+      "titres_examines": 0,
+      "api_lue": false,
+      "statut_funnel": "UNVERIFIED_NOT_CRAWLABLE",
+      "candidate_name": "Forever Young Sports Cards",
+      "city": "Crown Point",
+      "state": "IN",
+      "lookalike_score": 69.0,
+      "seed_count": 7,
+      "source_seeds": [
+        "boxseat",
+        "columbia",
+        "e5sports",
+        "hiddengems",
+        "rbicru7",
+        "sjay2k",
+        "sportcards"
+      ],
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/indiana/crown-point/forever-young-sports-cards/",
+      "twin_types": [
+        "PROFILE"
+      ]
+    },
+    {
+      "domain": "thesportscardzone.com",
+      "checked_at": "2026-09-25T07:39:07+00:00",
+      "verdict": "QUALIFIED",
+      "raison": "scellé basket + prix affiché + achat ONLINE_CART",
+      "sealed_product": "2025-26 Topps NBA Hoops Basketball Hobby Box",
+      "product_url": "https://thesportscardzone.com/products/2025-26-topps-nba-hoops-basketball-hobby-box?_pos=1&_psq=basketball&_psid=01d838276&_ss=e",
+      "price": 300.0,
+      "currency": "USD",
+      "purchase_mode": "ONLINE_CART",
+      "crawlability": "FULL",
+      "legitimacy": "LIKELY_LEGIT",
+      "in_stock": "IN_STOCK",
+      "preuves": [
+        "téléphone",
+        "page à propos",
+        "CGV/retours"
+      ],
+      "titres_examines": 203,
+      "api_lue": true,
+      "statut_funnel": "QUALIFIED",
+      "candidate_name": "The Sports Card Zone",
+      "city": "Shorewood",
+      "state": "IL",
+      "lookalike_score": 69.0,
+      "seed_count": 7,
+      "source_seeds": [
+        "boxseat",
+        "columbia",
+        "e5sports",
+        "hiddengems",
+        "rbicru7",
+        "sjay2k",
+        "sportcards"
+      ],
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/illinois/shorewood/the-sports-card-zone/",
+      "twin_types": [
+        "PROFILE"
+      ],
+      "old_stock_score": 41,
+      "old_stock_reason": [
+        "+10 NBA 2023-24 encore présent",
+        "+8 NBA 2022-23",
+        "+6 NBA 2021-22",
+        "+5 plusieurs générations de wax",
+        "+5 produits OOS anciens encore indexés",
+        "+4 prix manifestement anciens",
+        "+3 faible rotation apparente"
+      ],
+      "target_offers": []
+    },
+    {
+      "domain": "goldensportscards.com",
+      "checked_at": "2026-09-25T07:39:20+00:00",
+      "verdict": "REJECTED",
+      "raison": "scellé basket NON PROUVÉ — aucun basketball sur aucune des deux passes",
+      "sealed_product": null,
+      "product_url": null,
+      "price": null,
+      "currency": "USD",
+      "purchase_mode": "IN_STORE_ONLY",
+      "crawlability": "MANUAL_ONLY",
+      "legitimacy": "LIKELY_LEGIT",
+      "in_stock": null,
+      "preuves": [
+        "page à propos",
+        "CGV/retours"
+      ],
+      "titres_examines": 28,
+      "api_lue": false,
+      "statut_funnel": "REJECTED_NO_BASKETBALL",
+      "candidate_name": "Golden Sports Cards",
+      "city": "Lake Mary",
+      "state": "FL",
+      "lookalike_score": 68.0,
+      "seed_count": 13,
+      "source_seeds": [
+        "bleecker",
+        "boxseat",
+        "cardiacs",
+        "cbhobby",
+        "columbia",
+        "e5sports",
+        "ehcards",
+        "monmouth",
+        "rlsports",
+        "sjay2k",
+        "sportcards",
+        "sportscardjunction",
+        "worldchampion"
+      ],
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/florida/lake-mary/golden-sports-cards/",
+      "twin_types": [
+        "PROFILE"
+      ]
+    },
+    {
+      "domain": "phillyshow.com",
+      "checked_at": "2026-09-25T07:39:23+00:00",
+      "verdict": "UNREADABLE",
+      "raison": "aucune lecture aboutie — site injoignable (HTTP 403) · ni basket ni scellé ne sont JUGÉS : ils sont INCONNUS",
+      "sealed_product": null,
+      "product_url": null,
+      "price": null,
+      "currency": "USD",
+      "purchase_mode": null,
+      "crawlability": "MANUAL_ONLY",
+      "legitimacy": "UNVERIFIED",
+      "in_stock": null,
+      "preuves": [],
+      "titres_examines": 0,
+      "api_lue": false,
+      "statut_funnel": "UNKNOWN_NOT_READ",
+      "candidate_name": "Philadelphia Sports Card & Memorabilia Show",
+      "city": "Phoenixville",
+      "state": "PA",
+      "lookalike_score": 66.0,
+      "seed_count": 4,
+      "source_seeds": [
+        "bleecker",
+        "monmouth",
+        "sportscardjunction",
+        "worldchampion"
+      ],
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/pennsylvania/phoenixville/philadelphia-sports-card-and-memorabilia-show/",
+      "twin_types": [
+        "LOCAL",
+        "PROFILE"
+      ]
+    },
+    {
+      "domain": "centericesportscards.com",
+      "checked_at": "2026-09-25T07:39:27+00:00",
+      "verdict": "UNREADABLE",
+      "raison": "aucune lecture aboutie — site injoignable (URLError) · ni basket ni scellé ne sont JUGÉS : ils sont INCONNUS",
+      "sealed_product": null,
+      "product_url": null,
+      "price": null,
+      "currency": "USD",
+      "purchase_mode": null,
+      "crawlability": "MANUAL_ONLY",
+      "legitimacy": "UNVERIFIED",
+      "in_stock": null,
+      "preuves": [],
+      "titres_examines": 0,
+      "api_lue": false,
+      "statut_funnel": "UNKNOWN_NOT_READ",
+      "candidate_name": "Center Ice Sports Cards",
+      "city": "Tonawanda",
+      "state": "NY",
+      "lookalike_score": 64.0,
+      "seed_count": 4,
+      "source_seeds": [
+        "bleecker",
+        "monmouth",
+        "sportscardjunction",
+        "worldchampion"
+      ],
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/new-york/tonawanda/center-ice-sports-cards/",
+      "twin_types": [
+        "LOCAL",
+        "PROFILE"
+      ]
+    },
+    {
+      "domain": "dollarboxcards.com",
+      "checked_at": "2026-09-25T07:39:30+00:00",
+      "verdict": "REJECTED",
+      "raison": "scellé basket NON PROUVÉ — basketball présent, aucun scellé prouvé",
+      "sealed_product": null,
+      "product_url": null,
+      "price": null,
+      "currency": "USD",
+      "purchase_mode": "ONLINE_CART",
+      "crawlability": "MANUAL_ONLY",
+      "legitimacy": "LIKELY_LEGIT",
+      "in_stock": null,
+      "preuves": [
+        "page à propos",
+        "CGV/retours"
+      ],
+      "titres_examines": 11408,
+      "api_lue": true,
+      "statut_funnel": "REJECTED_NO_SEALED",
+      "candidate_name": "Dollar Box - Sports Cards",
+      "city": "Jersey City",
+      "state": "NJ",
+      "lookalike_score": 59.0,
+      "seed_count": 4,
+      "source_seeds": [
+        "bleecker",
+        "monmouth",
+        "sportscardjunction",
+        "worldchampion"
+      ],
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/new-jersey/jersey-city/dollar-box-sports-cards/",
+      "twin_types": [
+        "LOCAL",
+        "PROFILE"
+      ]
+    },
+    {
+      "domain": "cardshopfinder.com",
+      "checked_at": "2026-09-25T07:39:42+00:00",
+      "verdict": "UNREADABLE",
+      "raison": "aucune lecture aboutie — site injoignable (URLError) · ni basket ni scellé ne sont JUGÉS : ils sont INCONNUS",
+      "sealed_product": null,
+      "product_url": null,
+      "price": null,
+      "currency": "USD",
+      "purchase_mode": null,
+      "crawlability": "MANUAL_ONLY",
+      "legitimacy": "UNVERIFIED",
+      "in_stock": null,
+      "preuves": [],
+      "titres_examines": 0,
+      "api_lue": false,
+      "statut_funnel": "UNKNOWN_NOT_READ",
+      "candidate_name": "Home Plate Sports Cards",
+      "city": "Phoenix",
+      "state": "AZ",
+      "lookalike_score": 51.0,
+      "seed_count": 3,
+      "source_seeds": [
+        "cardiacs",
+        "cbhobby",
+        "ehcards"
+      ],
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/arizona/phoenix/home-plate-sports-cards/",
+      "twin_types": [
+        "LOCAL"
+      ]
+    },
+    {
+      "domain": "hotcornersportscards.com",
+      "checked_at": "2026-09-25T07:44:09+00:00",
+      "verdict": "BLOCKED",
+      "raison": "robots.txt nous interdit — respecté, non contourné",
+      "sealed_product": null,
+      "product_url": null,
+      "price": null,
+      "currency": "USD",
+      "purchase_mode": null,
+      "crawlability": "BLOCKED",
+      "legitimacy": "UNVERIFIED",
+      "in_stock": null,
+      "preuves": [],
+      "titres_examines": 0,
+      "api_lue": false,
+      "statut_funnel": "UNVERIFIED_NOT_CRAWLABLE",
+      "candidate_name": "Hot Corner Sports Cards",
+      "city": "Mesa",
+      "state": "AZ",
+      "lookalike_score": 51.0,
+      "seed_count": 3,
+      "source_seeds": [
+        "cardiacs",
+        "cbhobby",
+        "ehcards"
+      ],
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/arizona/mesa/hot-corner-sports-cards/",
+      "twin_types": [
+        "LOCAL"
+      ]
+    },
+    {
+      "domain": "sportscardsandmoreaz.com",
+      "checked_at": "2026-09-25T07:44:09+00:00",
+      "verdict": "CANDIDATE_ONLY",
+      "raison": "scellé basket NON PROUVÉ — catalogue non énuméré — 12 intitulé(s) lus, aucune API : une devanture ne dit pas ce qu'il y a en rayon",
+      "sealed_product": null,
+      "product_url": null,
+      "price": null,
+      "currency": "USD",
+      "purchase_mode": "ONLINE_CART",
+      "crawlability": "MANUAL_ONLY",
+      "legitimacy": "UNVERIFIED",
+      "in_stock": null,
+      "preuves": [
+        "CGV/retours"
+      ],
+      "titres_examines": 12,
+      "api_lue": false,
+      "statut_funnel": "UNKNOWN_NO_CATALOGUE",
+      "candidate_name": "Sports Cards and More",
+      "city": "Phoenix",
+      "state": "AZ",
+      "lookalike_score": 51.0,
+      "seed_count": 3,
+      "source_seeds": [
+        "cardiacs",
+        "cbhobby",
+        "ehcards"
+      ],
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/arizona/phoenix/sports-cards-and-more/",
+      "twin_types": [
+        "LOCAL"
+      ]
+    },
+    {
+      "domain": "dandpsportscards.com",
+      "checked_at": "2026-09-25T07:44:19+00:00",
+      "verdict": "REJECTED",
+      "raison": "scellé basket NON PROUVÉ — basketball présent, aucun scellé prouvé",
+      "sealed_product": null,
+      "product_url": null,
+      "price": null,
+      "currency": "USD",
+      "purchase_mode": "ONLINE_CART",
+      "crawlability": "MANUAL_ONLY",
+      "legitimacy": "TRUSTED",
+      "in_stock": null,
+      "preuves": [
+        "téléphone",
+        "adresse postale",
+        "page à propos",
+        "CGV/retours"
+      ],
+      "titres_examines": 88,
+      "api_lue": true,
+      "statut_funnel": "REJECTED_NO_SEALED",
+      "candidate_name": "D&P Sports Cards",
+      "city": "Sacramento",
+      "state": "CA",
+      "lookalike_score": 49.0,
+      "seed_count": 2,
+      "source_seeds": [
+        "awesome",
+        "rlsports"
+      ],
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/california/sacramento/d-and-p-sports-cards/",
+      "twin_types": [
+        "LOCAL",
+        "PROFILE"
+      ]
+    },
+    {
+      "domain": "vegascardshop.com",
+      "checked_at": "2026-09-25T07:44:31+00:00",
+      "verdict": "UNREADABLE",
+      "raison": "aucune lecture aboutie — site injoignable (URLError) · ni basket ni scellé ne sont JUGÉS : ils sont INCONNUS",
+      "sealed_product": null,
+      "product_url": null,
+      "price": null,
+      "currency": "USD",
+      "purchase_mode": null,
+      "crawlability": "MANUAL_ONLY",
+      "legitimacy": "UNVERIFIED",
+      "in_stock": null,
+      "preuves": [],
+      "titres_examines": 0,
+      "api_lue": false,
+      "statut_funnel": "UNKNOWN_NOT_READ",
+      "candidate_name": "Gameday Sports Cards",
+      "city": "Las Vegas",
+      "state": "NV",
+      "lookalike_score": 49.0,
+      "seed_count": 2,
+      "source_seeds": [
+        "awesome",
+        "rlsports"
+      ],
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/nevada/las-vegas/gameday-sports-cards/",
+      "twin_types": [
+        "LOCAL",
+        "PROFILE"
+      ]
+    },
+    {
+      "domain": "hobbybenchstores.com",
+      "checked_at": "2026-09-25T07:46:44+00:00",
+      "verdict": "UNREADABLE",
+      "raison": "aucune lecture aboutie — site injoignable (URLError) · ni basket ni scellé ne sont JUGÉS : ils sont INCONNUS",
+      "sealed_product": null,
+      "product_url": null,
+      "price": null,
+      "currency": "USD",
+      "purchase_mode": null,
+      "crawlability": "MANUAL_ONLY",
+      "legitimacy": "UNVERIFIED",
+      "in_stock": null,
+      "preuves": [],
+      "titres_examines": 0,
+      "api_lue": false,
+      "statut_funnel": "UNKNOWN_NOT_READ",
+      "candidate_name": "Hobby Bench (19th/northern)",
+      "city": "Phoenix",
+      "state": "AZ",
+      "lookalike_score": 48.0,
+      "seed_count": 3,
+      "source_seeds": [
+        "cardiacs",
+        "cbhobby",
+        "ehcards"
+      ],
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/arizona/phoenix/hobby-bench-19th-northern/",
+      "twin_types": [
+        "LOCAL"
+      ]
+    },
+    {
+      "domain": "centerfieldsportscards.com",
+      "checked_at": "2026-09-25T07:46:47+00:00",
+      "verdict": "QUALIFIED",
+      "raison": "scellé basket + prix affiché + achat ONLINE_CART",
+      "sealed_product": "2023-24 Panini Prizm Basketball Mega Box(Pink Ice Prizms!)",
+      "product_url": "https://centerfieldsportscards.com/products/2023-24-panini-prizm-basketball-mega-boxpink-ice-prizms?_pos=1&_psq=basketball&_psid=4602085bd&_ss=e",
+      "price": 275.0,
+      "currency": "USD",
+      "purchase_mode": "ONLINE_CART",
+      "crawlability": "FULL",
+      "legitimacy": "LIKELY_LEGIT",
+      "in_stock": "IN_STOCK",
+      "preuves": [
+        "téléphone",
+        "CGV/retours"
+      ],
+      "titres_examines": 1627,
+      "api_lue": true,
+      "statut_funnel": "QUALIFIED",
+      "candidate_name": "Centerfield Sports Cards",
+      "city": "Springfield",
+      "state": "MO",
+      "lookalike_score": 46.0,
+      "seed_count": 2,
+      "source_seeds": [
+        "hiddengems",
+        "rbicru7"
+      ],
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/missouri/springfield/centerfield-sports-cards/",
+      "twin_types": [
+        "LOCAL",
+        "PROFILE"
+      ],
+      "old_stock_score": 13,
+      "old_stock_reason": [
+        "+5 plusieurs générations de wax",
+        "+5 produits OOS anciens encore indexés",
+        "+3 faible rotation apparente"
+      ],
+      "target_offers": []
+    },
+    {
+      "domain": "3dsportscards.net",
+      "checked_at": "2026-09-25T07:47:03+00:00",
+      "verdict": "CANDIDATE_ONLY",
+      "raison": "scellé basket NON PROUVÉ — catalogue non énuméré — 5 intitulé(s) lus, aucune API : une devanture ne dit pas ce qu'il y a en rayon",
+      "sealed_product": null,
+      "product_url": null,
+      "price": null,
+      "currency": "USD",
+      "purchase_mode": "ONLINE_CART",
+      "crawlability": "MANUAL_ONLY",
+      "legitimacy": "UNVERIFIED",
+      "in_stock": null,
+      "preuves": [
+        "CGV/retours"
+      ],
+      "titres_examines": 5,
+      "api_lue": false,
+      "statut_funnel": "UNKNOWN_NO_CATALOGUE",
+      "candidate_name": "3D Sports Cards",
+      "city": "Glendale",
+      "state": "AZ",
+      "lookalike_score": 45.0,
+      "seed_count": 3,
+      "source_seeds": [
+        "cardiacs",
+        "cbhobby",
+        "ehcards"
+      ],
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/arizona/glendale/3d-sports-cards/",
+      "twin_types": [
+        "LOCAL"
+      ]
+    },
+    {
+      "domain": "bankstons.com",
+      "checked_at": "2026-09-25T07:47:13+00:00",
+      "verdict": "REJECTED",
+      "raison": "scellé basket NON PROUVÉ — aucun basketball sur aucune des deux passes",
+      "sealed_product": null,
+      "product_url": null,
+      "price": null,
+      "currency": "USD",
+      "purchase_mode": "ONLINE_CART",
+      "crawlability": "MANUAL_ONLY",
+      "legitimacy": "TRUSTED",
+      "in_stock": null,
+      "preuves": [
+        "téléphone",
+        "e-mail",
+        "adresse postale",
+        "CGV/retours"
+      ],
+      "titres_examines": 32,
+      "api_lue": false,
+      "statut_funnel": "REJECTED_NO_BASKETBALL",
+      "candidate_name": "Bankston's Comics-Sportscards",
+      "city": "Waco",
+      "state": "TX",
+      "lookalike_score": 45.0,
+      "seed_count": 3,
+      "source_seeds": [
+        "cardiacs",
+        "cbhobby",
+        "ehcards"
+      ],
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/texas/waco/bankstons-comics-sportscards/",
+      "twin_types": [
+        "PROFILE"
+      ]
+    },
+    {
+      "domain": "pensburymanor.com",
+      "checked_at": "2026-09-25T07:47:23+00:00",
+      "verdict": "REJECTED",
+      "raison": "scellé basket NON PROUVÉ — aucun basketball sur aucune des deux passes",
+      "sealed_product": null,
+      "product_url": null,
+      "price": null,
+      "currency": "USD",
+      "purchase_mode": "ONLINE_CART",
+      "crawlability": "MANUAL_ONLY",
+      "legitimacy": "TRUSTED",
+      "in_stock": null,
+      "preuves": [
+        "téléphone",
+        "e-mail",
+        "adresse postale",
+        "page à propos",
+        "CGV/retours"
+      ],
+      "titres_examines": 37,
+      "api_lue": false,
+      "statut_funnel": "REJECTED_NO_BASKETBALL",
+      "candidate_name": "PENSbury Manor",
+      "city": "Phoenix",
+      "state": "AZ",
+      "lookalike_score": 45.0,
+      "seed_count": 3,
+      "source_seeds": [
+        "cardiacs",
+        "cbhobby",
+        "ehcards"
+      ],
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/arizona/phoenix/pensbury-manor/",
+      "twin_types": [
+        "LOCAL"
+      ]
+    },
+    {
+      "domain": "phxsportscards.com",
+      "checked_at": "2026-09-25T07:47:33+00:00",
+      "verdict": "CANDIDATE_ONLY",
+      "raison": "scellé prouvé, mais PRIX non constaté — aucun prix affiché sur la page produit",
+      "sealed_product": "2020-21 Panini Chronicles NBA Basketball Fat Pack | Phoenix Sports Cards",
+      "product_url": "https://www.phxsportscards.com/product/2020-21-panini-chronicles-nba-basketball-fat-pack/MLTPX3ZBRFZK7S5AIDGX7T57",
+      "price": null,
+      "currency": "USD",
+      "purchase_mode": "ONLINE_CART",
+      "crawlability": "FULL",
+      "legitimacy": "UNVERIFIED",
+      "in_stock": null,
+      "preuves": [],
+      "titres_examines": 504,
+      "api_lue": false,
+      "statut_funnel": "QUALIFIED",
+      "candidate_name": "Phoenix Sports Cards",
+      "city": "Glendale",
+      "state": "AZ",
+      "lookalike_score": 45.0,
+      "seed_count": 3,
+      "source_seeds": [
+        "cardiacs",
+        "cbhobby",
+        "ehcards"
+      ],
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/arizona/glendale/phoenix-sports-cards/",
+      "twin_types": [
+        "LOCAL"
+      ]
+    },
+    {
+      "domain": "omgcollectibles.com",
+      "checked_at": "2026-09-25T07:47:52+00:00",
+      "verdict": "UNREADABLE",
+      "raison": "aucune lecture aboutie — site injoignable (URLError) · ni basket ni scellé ne sont JUGÉS : ils sont INCONNUS",
+      "sealed_product": null,
+      "product_url": null,
+      "price": null,
+      "currency": "USD",
+      "purchase_mode": null,
+      "crawlability": "MANUAL_ONLY",
+      "legitimacy": "UNVERIFIED",
+      "in_stock": null,
+      "preuves": [],
+      "titres_examines": 0,
+      "api_lue": false,
+      "statut_funnel": "UNKNOWN_NOT_READ",
+      "candidate_name": "OMG Collectibles and Sports Cards",
+      "city": "Palm Desert",
+      "state": "CA",
+      "lookalike_score": 45.0,
+      "seed_count": 2,
+      "source_seeds": [
+        "awesome",
+        "rlsports"
+      ],
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/california/palm-desert/omg-collectibles-and-sports-cards-9172/",
+      "twin_types": [
+        "LOCAL",
+        "PROFILE"
+      ]
+    },
+    {
+      "domain": "tedscardshop.com",
+      "checked_at": "2026-09-25T07:47:55+00:00",
+      "verdict": "REJECTED",
+      "raison": "scellé basket NON PROUVÉ — basketball présent, aucun scellé prouvé",
+      "sealed_product": null,
+      "product_url": null,
+      "price": null,
+      "currency": "USD",
+      "purchase_mode": "IN_STORE_ONLY",
+      "crawlability": "MANUAL_ONLY",
+      "legitimacy": "TRUSTED",
+      "in_stock": null,
+      "preuves": [
+        "téléphone",
+        "e-mail",
+        "adresse postale",
+        "page à propos",
+        "CGV/retours"
+      ],
+      "titres_examines": 31,
+      "api_lue": false,
+      "statut_funnel": "REJECTED_NO_SEALED",
+      "candidate_name": "Ted's Sports Cards",
+      "city": "Ada",
+      "state": "MI",
+      "lookalike_score": 44.0,
+      "seed_count": 2,
+      "source_seeds": [
+        "hiddengems",
+        "rbicru7"
+      ],
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/michigan/forest-hills/teds-sports-cards/",
+      "twin_types": [
+        "LOCAL",
+        "PROFILE"
+      ]
+    },
+    {
+      "domain": "collectibleshub.net",
+      "checked_at": "2026-09-25T07:47:57+00:00",
+      "verdict": "BLOCKED",
+      "raison": "robots.txt nous interdit — respecté, non contourné",
+      "sealed_product": null,
+      "product_url": null,
+      "price": null,
+      "currency": "USD",
+      "purchase_mode": null,
+      "crawlability": "BLOCKED",
+      "legitimacy": "UNVERIFIED",
+      "in_stock": null,
+      "preuves": [],
+      "titres_examines": 0,
+      "api_lue": false,
+      "statut_funnel": "UNVERIFIED_NOT_CRAWLABLE",
+      "candidate_name": "Collectibles Hub | Sports Cards | Comic Books",
+      "city": "Richardson",
+      "state": "TX",
+      "lookalike_score": 43.0,
+      "seed_count": 3,
+      "source_seeds": [
+        "cardiacs",
+        "cbhobby",
+        "ehcards"
+      ],
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/texas/richardson/collectibles-hub-sports-cards-comic-books/",
+      "twin_types": [
+        "PROFILE"
+      ]
+    },
+    {
+      "domain": "hvsportscards.com",
+      "checked_at": "2026-09-25T07:47:57+00:00",
+      "verdict": "CANDIDATE_ONLY",
+      "raison": "scellé basket NON PROUVÉ — catalogue non énuméré — 2 intitulé(s) lus, aucune API : une devanture ne dit pas ce qu'il y a en rayon",
+      "sealed_product": null,
+      "product_url": null,
+      "price": null,
+      "currency": "USD",
+      "purchase_mode": "IN_STORE_ONLY",
+      "crawlability": "MANUAL_ONLY",
+      "legitimacy": "UNVERIFIED",
+      "in_stock": null,
+      "preuves": [
+        "téléphone"
+      ],
+      "titres_examines": 2,
+      "api_lue": false,
+      "statut_funnel": "UNKNOWN_NO_CATALOGUE",
+      "candidate_name": "Hudson Valley Sports Cards",
+      "city": "Kingston",
+      "state": "NY",
+      "lookalike_score": 43.0,
+      "seed_count": 2,
+      "source_seeds": [
+        "bleecker",
+        "worldchampion"
+      ],
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/new-york/kingston/hudson-valley-sports-cards-6322/",
+      "twin_types": [
+        "LOCAL"
+      ]
+    },
+    {
+      "domain": "evilcontrollers.com",
+      "checked_at": "2026-09-25T07:48:03+00:00",
+      "verdict": "REJECTED",
+      "raison": "scellé basket NON PROUVÉ — aucun basketball sur aucune des deux passes",
+      "sealed_product": null,
+      "product_url": null,
+      "price": null,
+      "currency": "USD",
+      "purchase_mode": "ONLINE_CART",
+      "crawlability": "MANUAL_ONLY",
+      "legitimacy": "LIKELY_LEGIT",
+      "in_stock": null,
+      "preuves": [
+        "téléphone",
+        "e-mail",
+        "page à propos"
+      ],
+      "titres_examines": 45,
+      "api_lue": false,
+      "statut_funnel": "REJECTED_NO_BASKETBALL",
+      "candidate_name": "Evil Controllers",
+      "city": "Tempe",
+      "state": "AZ",
+      "lookalike_score": 42.0,
+      "seed_count": 3,
+      "source_seeds": [
+        "cardiacs",
+        "cbhobby",
+        "ehcards"
+      ],
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/arizona/tempe/evil-controllers/",
+      "twin_types": [
+        "LOCAL"
+      ]
+    },
+    {
+      "domain": "empireheatsports.com",
+      "checked_at": "2026-09-25T07:48:19+00:00",
+      "verdict": "UNREADABLE",
+      "raison": "aucune lecture aboutie — site injoignable (URLError) · ni basket ni scellé ne sont JUGÉS : ils sont INCONNUS",
+      "sealed_product": null,
+      "product_url": null,
+      "price": null,
+      "currency": "USD",
+      "purchase_mode": null,
+      "crawlability": "MANUAL_ONLY",
+      "legitimacy": "UNVERIFIED",
+      "in_stock": null,
+      "preuves": [],
+      "titres_examines": 0,
+      "api_lue": false,
+      "statut_funnel": "UNKNOWN_NOT_READ",
+      "candidate_name": "Empire Heat Sports Cards and Memorabilia",
+      "city": "Staten Island",
+      "state": "NY",
+      "lookalike_score": 41.0,
+      "seed_count": 2,
+      "source_seeds": [
+        "bleecker",
+        "worldchampion"
+      ],
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/new-york/new-york/empire-heat-sports-cards-and-memorabilia/",
+      "twin_types": [
+        "LOCAL"
+      ]
+    },
+    {
+      "domain": "super-sport-cards.myshopify.com",
+      "checked_at": "2026-09-25T07:48:22+00:00",
+      "verdict": "REJECTED",
+      "raison": "scellé basket NON PROUVÉ — basketball présent, aucun scellé prouvé",
+      "sealed_product": null,
+      "product_url": null,
+      "price": null,
+      "currency": "USD",
+      "purchase_mode": "ONLINE_CART",
+      "crawlability": "MANUAL_ONLY",
+      "legitimacy": "TRUSTED",
+      "in_stock": null,
+      "preuves": [
+        "téléphone",
+        "e-mail",
+        "adresse postale",
+        "CGV/retours"
+      ],
+      "titres_examines": 44,
+      "api_lue": true,
+      "statut_funnel": "REJECTED_NO_SEALED",
+      "candidate_name": "Super Sports Cards",
+      "city": "Vancouver",
+      "state": "WA",
+      "lookalike_score": 39.0,
+      "seed_count": 2,
+      "source_seeds": [
+        "awesome",
+        "rlsports"
+      ],
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/washington/vancouver/super-sports-cards/",
+      "twin_types": [
+        "PROFILE"
+      ]
+    },
+    {
+      "domain": "greentreesc.com",
+      "checked_at": "2026-09-25T07:48:33+00:00",
+      "verdict": "UNREADABLE",
+      "raison": "aucune lecture aboutie — site injoignable (URLError) · ni basket ni scellé ne sont JUGÉS : ils sont INCONNUS",
+      "sealed_product": null,
+      "product_url": null,
+      "price": null,
+      "currency": "USD",
+      "purchase_mode": null,
+      "crawlability": "MANUAL_ONLY",
+      "legitimacy": "UNVERIFIED",
+      "in_stock": null,
+      "preuves": [],
+      "titres_examines": 0,
+      "api_lue": false,
+      "statut_funnel": "UNKNOWN_NOT_READ",
+      "candidate_name": "Greentree Sports Cards",
+      "city": "Pittsburgh",
+      "state": "PA",
+      "lookalike_score": 39.0,
+      "seed_count": 1,
+      "source_seeds": [
+        "sportscardjunction"
+      ],
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/pennsylvania/pittsburgh/greentree-sports-cards/",
+      "twin_types": [
+        "LOCAL"
+      ]
+    },
+    {
+      "domain": "ultimatesportscards.com",
+      "checked_at": "2026-09-25T07:52:59+00:00",
+      "verdict": "REJECTED",
+      "raison": "scellé basket NON PROUVÉ — aucun basketball sur aucune des deux passes",
+      "sealed_product": null,
+      "product_url": null,
+      "price": null,
+      "currency": "USD",
+      "purchase_mode": "ONLINE_CART",
+      "crawlability": "MANUAL_ONLY",
+      "legitimacy": "LIKELY_LEGIT",
+      "in_stock": null,
+      "preuves": [
+        "téléphone",
+        "page à propos"
+      ],
+      "titres_examines": 20,
+      "api_lue": false,
+      "statut_funnel": "REJECTED_NO_BASKETBALL",
+      "candidate_name": "Ultimate Sports Cards And Memorabilia",
+      "city": "Las Vegas",
+      "state": "NV",
+      "lookalike_score": 39.0,
+      "seed_count": 1,
+      "source_seeds": [
+        "awesome"
+      ],
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/nevada/las-vegas/ultimate-sports-cards-and-memorabilia/",
+      "twin_types": [
+        "LOCAL"
+      ]
+    },
+    {
+      "domain": "orbsportscards.com",
+      "checked_at": "2026-09-25T07:53:12+00:00",
+      "verdict": "UNREADABLE",
+      "raison": "aucune lecture aboutie — site injoignable (HTTP 403) · ni basket ni scellé ne sont JUGÉS : ils sont INCONNUS",
+      "sealed_product": null,
+      "product_url": null,
+      "price": null,
+      "currency": "USD",
+      "purchase_mode": null,
+      "crawlability": "MANUAL_ONLY",
+      "legitimacy": "UNVERIFIED",
+      "in_stock": null,
+      "preuves": [],
+      "titres_examines": 0,
+      "api_lue": false,
+      "statut_funnel": "UNKNOWN_NOT_READ",
+      "candidate_name": "Orb Sports Cards & Collectibles",
+      "city": "Oregon City",
+      "state": "OR",
+      "lookalike_score": 38.0,
+      "seed_count": 2,
+      "source_seeds": [
+        "awesome",
+        "rlsports"
+      ],
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/oregon/oregon-city/orb-sports-cards-and-collectibles/",
+      "twin_types": [
+        "PROFILE"
+      ]
+    },
+    {
+      "domain": "tpsc.net",
+      "checked_at": "2026-09-25T07:53:17+00:00",
+      "verdict": "UNREADABLE",
+      "raison": "aucune lecture aboutie — site injoignable (URLError) · ni basket ni scellé ne sont JUGÉS : ils sont INCONNUS",
+      "sealed_product": null,
+      "product_url": null,
+      "price": null,
+      "currency": "USD",
+      "purchase_mode": null,
+      "crawlability": "MANUAL_ONLY",
+      "legitimacy": "UNVERIFIED",
+      "in_stock": null,
+      "preuves": [],
+      "titres_examines": 0,
+      "api_lue": false,
+      "statut_funnel": "UNKNOWN_NOT_READ",
+      "candidate_name": "Triple Play Sports Cards",
+      "city": "Sioux Falls",
+      "state": "SD",
+      "lookalike_score": 36.0,
+      "seed_count": 2,
+      "source_seeds": [
+        "hiddengems",
+        "rbicru7"
+      ],
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/south-dakota/sioux-falls/triple-play-sports-cards/",
+      "twin_types": [
+        "PROFILE"
+      ]
+    },
+    {
+      "domain": "burbanksportscards.com",
+      "checked_at": "2026-09-25T07:53:20+00:00",
+      "verdict": "UNREADABLE",
+      "raison": "aucune lecture aboutie — site injoignable (URLError) · ni basket ni scellé ne sont JUGÉS : ils sont INCONNUS",
+      "sealed_product": null,
+      "product_url": null,
+      "price": null,
+      "currency": "USD",
+      "purchase_mode": null,
+      "crawlability": "MANUAL_ONLY",
+      "legitimacy": "UNVERIFIED",
+      "in_stock": null,
+      "preuves": [],
+      "titres_examines": 0,
+      "api_lue": false,
+      "statut_funnel": "UNKNOWN_NOT_READ",
+      "candidate_name": "Burbank Sportscards",
+      "city": "Burbank",
+      "state": "CA",
+      "lookalike_score": 36.0,
+      "seed_count": 1,
+      "source_seeds": [
+        "rlsports"
+      ],
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/california/burbank/burbank-sportscards-4689/",
+      "twin_types": [
+        "LOCAL"
+      ]
+    },
+    {
+      "domain": "courtneyssportscards.com",
+      "checked_at": "2026-09-25T07:55:33+00:00",
+      "verdict": "BLOCKED",
+      "raison": "robots.txt nous interdit — respecté, non contourné",
+      "sealed_product": null,
+      "product_url": null,
+      "price": null,
+      "currency": "USD",
+      "purchase_mode": null,
+      "crawlability": "BLOCKED",
+      "legitimacy": "UNVERIFIED",
+      "in_stock": null,
+      "preuves": [],
+      "titres_examines": 0,
+      "api_lue": false,
+      "statut_funnel": "UNVERIFIED_NOT_CRAWLABLE",
+      "candidate_name": "Courtney's Sports Cards",
+      "city": "Colton",
+      "state": "CA",
+      "lookalike_score": 36.0,
+      "seed_count": 1,
+      "source_seeds": [
+        "rlsports"
+      ],
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/california/colton/courtneys-sports-cards/",
+      "twin_types": [
+        "LOCAL"
+      ]
+    },
+    {
+      "domain": "dave-s-sports-cards.hub.biz",
+      "checked_at": "2026-09-25T07:55:33+00:00",
+      "verdict": "UNREADABLE",
+      "raison": "aucune lecture aboutie — site injoignable (timeout) · ni basket ni scellé ne sont JUGÉS : ils sont INCONNUS",
+      "sealed_product": null,
+      "product_url": null,
+      "price": null,
+      "currency": "USD",
+      "purchase_mode": null,
+      "crawlability": "MANUAL_ONLY",
+      "legitimacy": "UNVERIFIED",
+      "in_stock": null,
+      "preuves": [],
+      "titres_examines": 0,
+      "api_lue": false,
+      "statut_funnel": "UNKNOWN_NOT_READ",
+      "candidate_name": "Dave's Sports Cards",
+      "city": "Erie",
+      "state": "PA",
+      "lookalike_score": 36.0,
+      "seed_count": 1,
+      "source_seeds": [
+        "sportscardjunction"
+      ],
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/pennsylvania/erie/daves-sports-cards/",
+      "twin_types": [
+        "LOCAL"
+      ]
+    },
+    {
+      "domain": "eastbaycardshow.com",
+      "checked_at": "2026-09-25T08:01:04+00:00",
+      "verdict": "REJECTED",
+      "raison": "scellé basket NON PROUVÉ — aucun basketball sur aucune des deux passes",
+      "sealed_product": null,
+      "product_url": null,
+      "price": null,
+      "currency": "USD",
+      "purchase_mode": "ONLINE_CART",
+      "crawlability": "MANUAL_ONLY",
+      "legitimacy": "TRUSTED",
+      "in_stock": null,
+      "preuves": [
+        "téléphone",
+        "e-mail",
+        "adresse postale",
+        "CGV/retours"
+      ],
+      "titres_examines": 145,
+      "api_lue": false,
+      "statut_funnel": "REJECTED_NO_BASKETBALL",
+      "candidate_name": "East Bay Sports Card & Collectors Show",
+      "city": "Concord",
+      "state": "CA",
+      "lookalike_score": 36.0,
+      "seed_count": 1,
+      "source_seeds": [
+        "rlsports"
+      ],
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/california/concord/east-bay-sports-card-and-collectors-show/",
+      "twin_types": [
+        "LOCAL"
+      ]
+    },
+    {
+      "domain": "jrsportscards.com",
+      "checked_at": "2026-09-25T08:01:15+00:00",
+      "verdict": "UNREADABLE",
+      "raison": "aucune lecture aboutie — site injoignable (URLError) · ni basket ni scellé ne sont JUGÉS : ils sont INCONNUS",
+      "sealed_product": null,
+      "product_url": null,
+      "price": null,
+      "currency": "USD",
+      "purchase_mode": null,
+      "crawlability": "MANUAL_ONLY",
+      "legitimacy": "UNVERIFIED",
+      "in_stock": null,
+      "preuves": [],
+      "titres_examines": 0,
+      "api_lue": false,
+      "statut_funnel": "UNKNOWN_NOT_READ",
+      "candidate_name": "J&r Sportscards",
+      "city": "Chico",
+      "state": "CA",
+      "lookalike_score": 36.0,
+      "seed_count": 1,
+      "source_seeds": [
+        "rlsports"
+      ],
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/california/chico/j-and-r-sportscards/",
+      "twin_types": [
+        "LOCAL"
+      ]
+    },
+    {
+      "domain": "kinemserie.com",
+      "checked_at": "2026-09-25T08:03:28+00:00",
+      "verdict": "UNREADABLE",
+      "raison": "aucune lecture aboutie — site injoignable (URLError) · ni basket ni scellé ne sont JUGÉS : ils sont INCONNUS",
+      "sealed_product": null,
+      "product_url": null,
+      "price": null,
+      "currency": "USD",
+      "purchase_mode": null,
+      "crawlability": "MANUAL_ONLY",
+      "legitimacy": "UNVERIFIED",
+      "in_stock": null,
+      "preuves": [],
+      "titres_examines": 0,
+      "api_lue": false,
+      "statut_funnel": "UNKNOWN_NOT_READ",
+      "candidate_name": "Kinem's Sports Cards",
+      "city": "Erie",
+      "state": "PA",
+      "lookalike_score": 36.0,
+      "seed_count": 1,
+      "source_seeds": [
+        "sportscardjunction"
+      ],
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/pennsylvania/erie/kinems-sports-cards/",
+      "twin_types": [
+        "LOCAL"
+      ]
+    },
+    {
+      "domain": "mtpsportscards.com",
+      "checked_at": "2026-09-25T08:03:31+00:00",
+      "verdict": "UNREADABLE",
+      "raison": "aucune lecture aboutie — site injoignable (URLError) · ni basket ni scellé ne sont JUGÉS : ils sont INCONNUS",
+      "sealed_product": null,
+      "product_url": null,
+      "price": null,
+      "currency": "USD",
+      "purchase_mode": null,
+      "crawlability": "MANUAL_ONLY",
+      "legitimacy": "UNVERIFIED",
+      "in_stock": null,
+      "preuves": [],
+      "titres_examines": 0,
+      "api_lue": false,
+      "statut_funnel": "UNKNOWN_NOT_READ",
+      "candidate_name": "Mt Penn Sports Cards",
+      "city": "Reading",
+      "state": "PA",
+      "lookalike_score": 36.0,
+      "seed_count": 1,
+      "source_seeds": [
+        "sportscardjunction"
+      ],
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/pennsylvania/reading/mt-penn-sports-cards/",
+      "twin_types": [
+        "LOCAL"
+      ]
+    },
+    {
+      "domain": "sierranevadasportscards.com",
+      "checked_at": "2026-09-25T08:03:34+00:00",
+      "verdict": "CANDIDATE_ONLY",
+      "raison": "scellé basket NON PROUVÉ — catalogue non énuméré — 6 intitulé(s) lus, aucune API : une devanture ne dit pas ce qu'il y a en rayon",
+      "sealed_product": null,
+      "product_url": null,
+      "price": null,
+      "currency": "USD",
+      "purchase_mode": "ONLINE_CART",
+      "crawlability": "MANUAL_ONLY",
+      "legitimacy": "UNVERIFIED",
+      "in_stock": null,
+      "preuves": [
+        "CGV/retours"
+      ],
+      "titres_examines": 6,
+      "api_lue": false,
+      "statut_funnel": "UNKNOWN_NO_CATALOGUE",
+      "candidate_name": "Sierra Nevada Sports Cards",
+      "city": "Chico",
+      "state": "CA",
+      "lookalike_score": 36.0,
+      "seed_count": 1,
+      "source_seeds": [
+        "rlsports"
+      ],
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/california/chico/sierra-nevada-sports-cards/",
+      "twin_types": [
+        "LOCAL"
+      ]
+    },
+    {
+      "domain": "sportscardsetcpgh.com",
+      "checked_at": "2026-09-25T08:03:45+00:00",
+      "verdict": "UNREADABLE",
+      "raison": "aucune lecture aboutie — site injoignable (URLError) · ni basket ni scellé ne sont JUGÉS : ils sont INCONNUS",
+      "sealed_product": null,
+      "product_url": null,
+      "price": null,
+      "currency": "USD",
+      "purchase_mode": null,
+      "crawlability": "MANUAL_ONLY",
+      "legitimacy": "UNVERIFIED",
+      "in_stock": null,
+      "preuves": [],
+      "titres_examines": 0,
+      "api_lue": false,
+      "statut_funnel": "UNKNOWN_NOT_READ",
+      "candidate_name": "Sports Cards, Etc.",
+      "city": "Robinson Twp",
+      "state": "PA",
+      "lookalike_score": 36.0,
+      "seed_count": 1,
+      "source_seeds": [
+        "sportscardjunction"
+      ],
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/pennsylvania/pennsbury-village/sports-cards-etc/",
+      "twin_types": [
+        "LOCAL"
+      ]
+    },
+    {
+      "domain": "tablemountainsportscards.com",
+      "checked_at": "2026-09-25T08:03:48+00:00",
+      "verdict": "QUALIFIED",
+      "raison": "scellé basket + prix affiché + achat ONLINE_CART",
+      "sealed_product": "2025 TOPPS NBA HOOPS BLASTER BOX",
+      "product_url": "https://tablemountainsportscards.com/products/2025-topps-nba-hoops-blaster-box?_pos=2&_psq=basketball&_psid=82035dd85&_ss=e",
+      "price": 39.99,
+      "currency": "USD",
+      "purchase_mode": "ONLINE_CART",
+      "crawlability": "FULL",
+      "legitimacy": "LIKELY_LEGIT",
+      "in_stock": "IN_STOCK",
+      "preuves": [
+        "téléphone",
+        "adresse postale",
+        "CGV/retours"
+      ],
+      "titres_examines": 673,
+      "api_lue": true,
+      "statut_funnel": "QUALIFIED",
+      "candidate_name": "Table Mountain Sports Cards",
+      "city": "Oroville",
+      "state": "CA",
+      "lookalike_score": 36.0,
+      "seed_count": 1,
+      "source_seeds": [
+        "rlsports"
+      ],
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/california/oroville/table-mountain-sports-cards/",
+      "twin_types": [
+        "LOCAL"
+      ],
+      "old_stock_score": 17,
+      "old_stock_reason": [
+        "+5 plusieurs générations de wax",
+        "+5 produits OOS anciens encore indexés",
+        "+4 prix manifestement anciens",
+        "+3 faible rotation apparente"
+      ],
+      "target_offers": []
+    },
+    {
+      "domain": "stripsidecomics.com",
+      "checked_at": "2026-09-25T08:04:03+00:00",
+      "verdict": "UNREADABLE",
+      "raison": "aucune lecture aboutie — site injoignable (URLError) · ni basket ni scellé ne sont JUGÉS : ils sont INCONNUS",
+      "sealed_product": null,
+      "product_url": null,
+      "price": null,
+      "currency": "USD",
+      "purchase_mode": null,
+      "crawlability": "MANUAL_ONLY",
+      "legitimacy": "UNVERIFIED",
+      "in_stock": null,
+      "preuves": [],
+      "titres_examines": 0,
+      "api_lue": false,
+      "statut_funnel": "UNKNOWN_NOT_READ",
+      "candidate_name": "Stripside Comics and Sportscards",
+      "city": "Las Vegas",
+      "state": "NV",
+      "lookalike_score": 35.0,
+      "seed_count": 1,
+      "source_seeds": [
+        "awesome"
+      ],
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/nevada/enterprise/stripside-comics-and-sportscards/",
+      "twin_types": [
+        "LOCAL"
+      ]
+    },
+    {
+      "domain": "elitesportscards.net",
+      "checked_at": "2026-09-25T08:04:07+00:00",
+      "verdict": "BLOCKED",
+      "raison": "robots.txt nous interdit — respecté, non contourné",
+      "sealed_product": null,
+      "product_url": null,
+      "price": null,
+      "currency": "USD",
+      "purchase_mode": null,
+      "crawlability": "BLOCKED",
+      "legitimacy": "UNVERIFIED",
+      "in_stock": null,
+      "preuves": [],
+      "titres_examines": 0,
+      "api_lue": false,
+      "statut_funnel": "UNVERIFIED_NOT_CRAWLABLE",
+      "candidate_name": "Elite Sports Cards and Comics",
+      "city": "Chicago",
+      "state": "IL",
+      "lookalike_score": 34.0,
+      "seed_count": 2,
+      "source_seeds": [
+        "hiddengems",
+        "rbicru7"
+      ],
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/illinois/chicago/elite-sports-cards-and-comics-0201/",
+      "twin_types": [
+        "PROFILE"
+      ]
+    },
+    {
+      "domain": "greatescapeadventures.net",
+      "checked_at": "2026-09-25T08:04:07+00:00",
+      "verdict": "BLOCKED",
+      "raison": "robots.txt nous interdit — respecté, non contourné",
+      "sealed_product": null,
+      "product_url": null,
+      "price": null,
+      "currency": "USD",
+      "purchase_mode": null,
+      "crawlability": "BLOCKED",
+      "legitimacy": "UNVERIFIED",
+      "in_stock": null,
+      "preuves": [],
+      "titres_examines": 0,
+      "api_lue": false,
+      "statut_funnel": "UNVERIFIED_NOT_CRAWLABLE",
+      "candidate_name": "Great Escape Adventures",
+      "city": "Cheektowaga",
+      "state": "NY",
+      "lookalike_score": 34.0,
+      "seed_count": 2,
+      "source_seeds": [
+        "bleecker",
+        "worldchampion"
+      ],
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/new-york/cheektowaga/great-escape-adventures/",
+      "twin_types": [
+        "LOCAL"
+      ]
+    },
+    {
+      "domain": "themeccaofsportscards.com",
+      "checked_at": "2026-09-25T08:04:07+00:00",
+      "verdict": "BLOCKED",
+      "raison": "robots.txt nous interdit — respecté, non contourné",
+      "sealed_product": null,
+      "product_url": null,
+      "price": null,
+      "currency": "USD",
+      "purchase_mode": null,
+      "crawlability": "BLOCKED",
+      "legitimacy": "UNVERIFIED",
+      "in_stock": null,
+      "preuves": [],
+      "titres_examines": 0,
+      "api_lue": false,
+      "statut_funnel": "UNVERIFIED_NOT_CRAWLABLE",
+      "candidate_name": "Mecca Sportscards",
+      "city": "Garden City",
+      "state": "MI",
+      "lookalike_score": 34.0,
+      "seed_count": 1,
+      "source_seeds": [
+        "hiddengems"
+      ],
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/michigan/garden-city/mecca-sportscards/",
+      "twin_types": [
+        "LOCAL"
+      ]
+    },
+    {
+      "domain": "americard.us",
+      "checked_at": "2026-09-25T08:04:08+00:00",
+      "verdict": "CANDIDATE_ONLY",
+      "raison": "scellé basket NON PROUVÉ — catalogue non énuméré — 14 intitulé(s) lus, aucune API : une devanture ne dit pas ce qu'il y a en rayon",
+      "sealed_product": null,
+      "product_url": null,
+      "price": null,
+      "currency": "USD",
+      "purchase_mode": "IN_STORE_ONLY",
+      "crawlability": "MANUAL_ONLY",
+      "legitimacy": "LIKELY_LEGIT",
+      "in_stock": null,
+      "preuves": [
+        "téléphone",
+        "page à propos"
+      ],
+      "titres_examines": 14,
+      "api_lue": false,
+      "statut_funnel": "UNKNOWN_NO_CATALOGUE",
+      "candidate_name": "Sportscard Central",
+      "city": "Waterford",
+      "state": "MI",
+      "lookalike_score": 33.0,
+      "seed_count": 1,
+      "source_seeds": [
+        "hiddengems"
+      ],
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/michigan/sylvan-lake/sportscard-central/",
+      "twin_types": [
+        "LOCAL"
+      ]
+    },
+    {
+      "domain": "billssportsmemorabilia.com",
+      "checked_at": "2026-09-25T08:04:11+00:00",
+      "verdict": "REJECTED",
+      "raison": "scellé basket NON PROUVÉ — basketball présent, aucun scellé prouvé",
+      "sealed_product": null,
+      "product_url": null,
+      "price": null,
+      "currency": "USD",
+      "purchase_mode": "ONLINE_CART",
+      "crawlability": "MANUAL_ONLY",
+      "legitimacy": "LIKELY_LEGIT",
+      "in_stock": null,
+      "preuves": [
+        "téléphone",
+        "adresse postale",
+        "page à propos"
+      ],
+      "titres_examines": 193,
+      "api_lue": false,
+      "statut_funnel": "REJECTED_NO_SEALED",
+      "candidate_name": "Bill's Sports Cards and Memorabilia",
+      "city": "Philadelphia",
+      "state": "PA",
+      "lookalike_score": 33.0,
+      "seed_count": 1,
+      "source_seeds": [
+        "sportscardjunction"
+      ],
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/pennsylvania/philadelphia/bills-sports-cards-and-memorabilia/",
+      "twin_types": [
+        "LOCAL"
+      ]
+    },
+    {
+      "domain": "fatkatzsportscards.com",
+      "checked_at": "2026-09-25T08:04:24+00:00",
+      "verdict": "CANDIDATE_ONLY",
+      "raison": "scellé basket NON PROUVÉ — catalogue non énuméré — 10 intitulé(s) lus, aucune API : une devanture ne dit pas ce qu'il y a en rayon",
+      "sealed_product": null,
+      "product_url": null,
+      "price": null,
+      "currency": "USD",
+      "purchase_mode": "IN_STORE_ONLY",
+      "crawlability": "MANUAL_ONLY",
+      "legitimacy": "LIKELY_LEGIT",
+      "in_stock": null,
+      "preuves": [
+        "téléphone",
+        "page à propos"
+      ],
+      "titres_examines": 10,
+      "api_lue": false,
+      "statut_funnel": "UNKNOWN_NO_CATALOGUE",
+      "candidate_name": "Fat Katz Sportscards & Collectibles",
+      "city": "St Clair Shores",
+      "state": "MI",
+      "lookalike_score": 32.0,
+      "seed_count": 1,
+      "source_seeds": [
+        "hiddengems"
+      ],
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/michigan/st-clair-shores/fat-katz-sportscards-and-collectibles/",
+      "twin_types": [
+        "LOCAL"
+      ]
+    }
+  ],
+  "ambigus": [
+    {
+      "product": null,
+      "upc": null,
+      "target_id": null,
+      "domain": "centerfieldsportscards.com",
+      "price": "275.00",
+      "stock": "IN_STOCK",
+      "url": "https://centerfieldsportscards.com/products/2023-24-panini-prizm-basketball-mega-boxpink-ice-prizms?_pos=2&_psq=prizm+mega&_psid=a84d1d105&_ss=e",
+      "title": "2023-24 Panini Prizm Basketball Mega Box(Pink Ice Prizms!)",
+      "match_level": "Mega Prizm 2023-24 sans variante nommée — non attribuable",
+      "confidence": "AMBIGU",
+      "config": null,
+      "shop": "centerfieldsportscards.com"
+    },
+    {
+      "product": null,
+      "upc": null,
+      "target_id": null,
+      "domain": "centerfieldsportscards.com",
+      "price": "275.00",
+      "stock": "IN_STOCK",
+      "url": "https://centerfieldsportscards.com/products/2023-24-panini-prizm-basketball-mega-boxpink-ice-prizms?_pos=3&_psq=mega+box&_psid=950fe1bd9&_ss=e",
+      "title": "2023-24 Panini Prizm Basketball Mega Box(Pink Ice Prizms!)",
+      "match_level": "Mega Prizm 2023-24 sans variante nommée — non attribuable",
+      "confidence": "AMBIGU",
+      "config": null,
+      "shop": "centerfieldsportscards.com"
+    },
+    {
+      "product": null,
+      "upc": null,
+      "target_id": null,
+      "domain": "centerfieldsportscards.com",
+      "price": "275.00",
+      "stock": "IN_STOCK",
+      "url": "https://centerfieldsportscards.com/products/2023-24-panini-prizm-basketball-mega-boxpink-ice-prizms?_pos=1&_psq=red+ice&_psid=f02894c7d&_ss=e",
+      "title": "2023-24 Panini Prizm Basketball Mega Box(Pink Ice Prizms!)",
+      "match_level": "Mega Prizm 2023-24 sans variante nommée — non attribuable",
+      "confidence": "AMBIGU",
+      "config": null,
+      "shop": "centerfieldsportscards.com"
+    },
+    {
+      "product": null,
+      "upc": null,
+      "target_id": null,
+      "domain": "centerfieldsportscards.com",
+      "price": "275.00",
+      "stock": "IN_STOCK",
+      "url": "https://centerfieldsportscards.com/products/2023-24-panini-prizm-basketball-mega-boxpink-ice-prizms?_pos=2&_psq=green+ice&_psid=cc4addce2&_ss=e",
+      "title": "2023-24 Panini Prizm Basketball Mega Box(Pink Ice Prizms!)",
+      "match_level": "Mega Prizm 2023-24 sans variante nommée — non attribuable",
+      "confidence": "AMBIGU",
+      "config": null,
+      "shop": "centerfieldsportscards.com"
+    },
+    {
+      "product": null,
+      "upc": null,
+      "target_id": null,
+      "domain": "centerfieldsportscards.com",
+      "price": "275.00",
+      "stock": "IN_STOCK",
+      "url": "https://centerfieldsportscards.com/products/2023-24-panini-prizm-basketball-mega-boxpink-ice-prizms?_pos=2&_psq=wembanyama+mega&_psid=d43706f79&_ss=e",
+      "title": "2023-24 Panini Prizm Basketball Mega Box(Pink Ice Prizms!)",
+      "match_level": "Mega Prizm 2023-24 sans variante nommée — non attribuable",
+      "confidence": "AMBIGU",
+      "config": null,
+      "shop": "centerfieldsportscards.com"
+    }
+  ]
+}

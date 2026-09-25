@@ -1,0 +1,5547 @@
+{
+  "generated_at": "2026-09-25T07:37:12+00:00",
+  "seeds": [
+    {
+      "catalogue_releve": true,
+      "key": "awesome",
+      "name": "The Awesome Card Shop",
+      "domain": "theawesomecardshop.com",
+      "state": "NV",
+      "city": "Las Vegas",
+      "region": "W",
+      "dans_annuaire": false,
+      "categories_annuaire": [],
+      "platform": null,
+      "purchase_mode": null,
+      "fiches": 7253,
+      "basket": 958,
+      "scelle": 908,
+      "part_scelle": 0.125,
+      "s2324": 159,
+      "vieux_wax": 398,
+      "marques": {
+        "panini": 663,
+        "prizm": 158,
+        "select": 57,
+        "optic": 70,
+        "phoenix": 8,
+        "mosaic": 49,
+        "hoops": 49,
+        "donruss": 111
+      },
+      "part_panini": 0.73,
+      "specialiste": false,
+      "trust": "trusted",
+      "notes": "Las Vegas. Port gratuit >200 $.",
+      "preuve_registre": null
+    },
+    {
+      "catalogue_releve": true,
+      "key": "bleecker",
+      "name": "Bleecker Trading",
+      "domain": "bleeckertrading.com",
+      "state": "NY",
+      "city": "Nyc",
+      "region": "NE",
+      "dans_annuaire": false,
+      "categories_annuaire": [],
+      "platform": null,
+      "purchase_mode": null,
+      "fiches": 2182,
+      "basket": 429,
+      "scelle": 392,
+      "part_scelle": 0.18,
+      "s2324": 70,
+      "vieux_wax": 104,
+      "marques": {
+        "panini": 203,
+        "prizm": 61,
+        "select": 31,
+        "optic": 36,
+        "phoenix": 6,
+        "mosaic": 25,
+        "hoops": 26,
+        "donruss": 60
+      },
+      "part_panini": 0.52,
+      "specialiste": false,
+      "trust": "watch",
+      "notes": "NYC. Prix retail+.",
+      "preuve_registre": null
+    },
+    {
+      "catalogue_releve": true,
+      "key": "sportscardjunction",
+      "name": "Sports Card Junction",
+      "domain": "sportscardjunction.com",
+      "state": "PA",
+      "city": "Pittsburgh",
+      "region": "NE",
+      "dans_annuaire": false,
+      "categories_annuaire": [],
+      "platform": null,
+      "purchase_mode": null,
+      "fiches": 3741,
+      "basket": 362,
+      "scelle": 319,
+      "part_scelle": 0.085,
+      "s2324": 60,
+      "vieux_wax": 119,
+      "marques": {
+        "panini": 227,
+        "prizm": 35,
+        "select": 19,
+        "optic": 21,
+        "phoenix": 3,
+        "mosaic": 20,
+        "hoops": 22,
+        "donruss": 23
+      },
+      "part_panini": 0.71,
+      "specialiste": true,
+      "trust": "watch",
+      "notes": "Pittsburgh PA. LCS multi-sports.",
+      "preuve_registre": null
+    },
+    {
+      "catalogue_releve": true,
+      "key": "columbia",
+      "name": "Columbia Sports Cards",
+      "domain": "columbiasportscard.com",
+      "state": null,
+      "city": null,
+      "region": null,
+      "dans_annuaire": false,
+      "categories_annuaire": [],
+      "platform": null,
+      "purchase_mode": null,
+      "fiches": 3113,
+      "basket": 279,
+      "scelle": 252,
+      "part_scelle": 0.081,
+      "s2324": 66,
+      "vieux_wax": 66,
+      "marques": {
+        "panini": 166,
+        "prizm": 35,
+        "select": 18,
+        "optic": 21,
+        "phoenix": 2,
+        "mosaic": 14,
+        "hoops": 7,
+        "donruss": 31
+      },
+      "part_panini": 0.66,
+      "specialiste": true,
+      "trust": "trusted",
+      "notes": "Optic Mega 64,99 $ (OOS 17/08).",
+      "preuve_registre": null
+    },
+    {
+      "catalogue_releve": true,
+      "key": "hiddengems",
+      "name": "Hidden Gems Card Shop",
+      "domain": "hiddengemscardshop.com",
+      "state": "MI",
+      "city": "Shelby Township",
+      "region": "MW",
+      "dans_annuaire": false,
+      "categories_annuaire": [],
+      "platform": null,
+      "purchase_mode": null,
+      "fiches": 5505,
+      "basket": 264,
+      "scelle": 236,
+      "part_scelle": 0.043,
+      "s2324": 38,
+      "vieux_wax": 26,
+      "marques": {
+        "panini": 92,
+        "prizm": 28,
+        "select": 10,
+        "optic": 22,
+        "phoenix": 4,
+        "mosaic": 8,
+        "hoops": 20,
+        "donruss": 24
+      },
+      "part_panini": 0.39,
+      "specialiste": false,
+      "trust": "trusted",
+      "notes": "Shelby Township MI. Vrai LCS. Clearance agressive observée sur plusieurs SKU NBA sealed.",
+      "preuve_registre": null
+    },
+    {
+      "catalogue_releve": true,
+      "key": "rlsports",
+      "name": "RL Sports Cards",
+      "domain": "rlsportscards.com",
+      "state": "CA",
+      "city": "Fullerton",
+      "region": "W",
+      "dans_annuaire": true,
+      "categories_annuaire": [
+        "Buys cards",
+        "Online store"
+      ],
+      "platform": null,
+      "purchase_mode": null,
+      "fiches": 1719,
+      "basket": 258,
+      "scelle": 233,
+      "part_scelle": 0.136,
+      "s2324": 56,
+      "vieux_wax": 61,
+      "marques": {
+        "panini": 180,
+        "prizm": 37,
+        "select": 27,
+        "optic": 19,
+        "phoenix": 2,
+        "mosaic": 15,
+        "hoops": 12,
+        "donruss": 27
+      },
+      "part_panini": 0.77,
+      "specialiste": true,
+      "trust": "watch",
+      "notes": "Déjà remonté par discover.py (17 basket, 0 sealed 23-24 sur 250). Fiches Bowman 2025-26 vues le 18/08.",
+      "preuve_registre": null
+    },
+    {
+      "catalogue_releve": true,
+      "key": "rbicru7",
+      "name": "RbiCru7 Collectibles",
+      "domain": "rbicru7.com",
+      "state": "MO",
+      "city": "Missouri",
+      "region": "MW",
+      "dans_annuaire": true,
+      "categories_annuaire": [],
+      "platform": null,
+      "purchase_mode": null,
+      "fiches": 12240,
+      "basket": 325,
+      "scelle": 213,
+      "part_scelle": 0.017,
+      "s2324": 15,
+      "vieux_wax": 67,
+      "marques": {
+        "panini": 148,
+        "prizm": 23,
+        "select": 27,
+        "optic": 14,
+        "mosaic": 9,
+        "hoops": 10,
+        "donruss": 31
+      },
+      "part_panini": 0.69,
+      "specialiste": false,
+      "trust": "trusted",
+      "notes": "Missouri. Soldes Hobby. Variantes Pack/Box sur le même produit — attention au format.",
+      "preuve_registre": null
+    },
+    {
+      "catalogue_releve": true,
+      "key": "worldchampion",
+      "name": "World Champion Sports Cards",
+      "domain": "worldchampionsportscards.org",
+      "state": "NY",
+      "city": "New York",
+      "region": "NE",
+      "dans_annuaire": true,
+      "categories_annuaire": [],
+      "platform": null,
+      "purchase_mode": null,
+      "fiches": 3830,
+      "basket": 239,
+      "scelle": 195,
+      "part_scelle": 0.051,
+      "s2324": 51,
+      "vieux_wax": 43,
+      "marques": {
+        "panini": 106,
+        "prizm": 22,
+        "select": 13,
+        "optic": 12,
+        "phoenix": 1,
+        "mosaic": 12,
+        "hoops": 8,
+        "donruss": 18
+      },
+      "part_panini": 0.54,
+      "specialiste": true,
+      "trust": "watch",
+      "notes": "Select Mega 23-24 vu 75 $ puis OOS (17/08) — watchlist restock.",
+      "preuve_registre": null
+    },
+    {
+      "catalogue_releve": true,
+      "key": "monmouth",
+      "name": "Monmouth Cards",
+      "domain": "monmouthcards.com",
+      "state": "NJ",
+      "city": null,
+      "region": "NE",
+      "dans_annuaire": false,
+      "categories_annuaire": [],
+      "platform": null,
+      "purchase_mode": null,
+      "fiches": 5078,
+      "basket": 217,
+      "scelle": 135,
+      "part_scelle": 0.027,
+      "s2324": 34,
+      "vieux_wax": 48,
+      "marques": {
+        "panini": 96,
+        "prizm": 13,
+        "select": 13,
+        "optic": 10,
+        "phoenix": 2,
+        "mosaic": 11,
+        "hoops": 8,
+        "donruss": 22
+      },
+      "part_panini": 0.71,
+      "specialiste": false,
+      "trust": "watch",
+      "notes": "NJ. Revendeur autorisé. Port gratuit >100 $. Prix plutôt MSRP.",
+      "preuve_registre": null
+    },
+    {
+      "catalogue_releve": true,
+      "key": "cardiacs",
+      "name": "The Cardiacs",
+      "domain": "thecardiacs.com",
+      "state": "AZ",
+      "city": "Phoenix",
+      "region": "SW",
+      "dans_annuaire": false,
+      "categories_annuaire": [],
+      "platform": null,
+      "purchase_mode": null,
+      "fiches": 5272,
+      "basket": 168,
+      "scelle": 110,
+      "part_scelle": 0.021,
+      "s2324": 12,
+      "vieux_wax": 18,
+      "marques": {
+        "panini": 65,
+        "prizm": 17,
+        "select": 10,
+        "optic": 6,
+        "phoenix": 1,
+        "mosaic": 10,
+        "hoops": 5,
+        "donruss": 15
+      },
+      "part_panini": 0.59,
+      "specialiste": false,
+      "trust": "trusted",
+      "notes": "Phoenix 23-24 listé. Commande #NJHHDXG5V passée le 18/08, 367 $ — paiement accepté, passage en trusted.",
+      "preuve_registre": null
+    },
+    {
+      "catalogue_releve": true,
+      "key": "ehcards",
+      "name": "EH Cards & Collectibles",
+      "domain": "ehcards.com",
+      "state": "AZ",
+      "city": "Phoenix",
+      "region": "SW",
+      "dans_annuaire": false,
+      "categories_annuaire": [],
+      "platform": null,
+      "purchase_mode": null,
+      "fiches": 944,
+      "basket": 101,
+      "scelle": 93,
+      "part_scelle": 0.099,
+      "s2324": 14,
+      "vieux_wax": 9,
+      "marques": {
+        "panini": 69,
+        "prizm": 12,
+        "select": 6,
+        "optic": 10,
+        "phoenix": 1,
+        "mosaic": 6,
+        "hoops": 9,
+        "donruss": 21
+      },
+      "part_panini": 0.74,
+      "specialiste": false,
+      "trust": "trusted",
+      "notes": "Phoenix 23-24 : 34,99 $ LIVE au 17/08 (une lecture Google périmée disait 29,99). Limit 6/client. Port gratuit >99 $.",
+      "preuve_registre": null
+    },
+    {
+      "catalogue_releve": true,
+      "key": "boxseat",
+      "name": "Box Seat Collectibles",
+      "domain": "boxseatcollectibles.com",
+      "state": null,
+      "city": null,
+      "region": null,
+      "dans_annuaire": false,
+      "categories_annuaire": [],
+      "platform": null,
+      "purchase_mode": null,
+      "fiches": 2082,
+      "basket": 148,
+      "scelle": 88,
+      "part_scelle": 0.042,
+      "s2324": 17,
+      "vieux_wax": 20,
+      "marques": {
+        "panini": 46,
+        "prizm": 9,
+        "select": 3,
+        "optic": 4,
+        "phoenix": 3,
+        "mosaic": 6,
+        "hoops": 6,
+        "donruss": 4
+      },
+      "part_panini": 0.52,
+      "specialiste": false,
+      "trust": "watch",
+      "notes": "Découvert par discover.py 18/08 : Shopify, 72 produits basket / 11 sealed 2023-24 sur un échantillon de 250. Doit participer à un run normal avant tout passage ",
+      "preuve_registre": null
+    },
+    {
+      "catalogue_releve": true,
+      "key": "cbhobby",
+      "name": "CB Hobby",
+      "domain": "cbhobby.com",
+      "state": "AZ",
+      "city": "Phoenix",
+      "region": "SW",
+      "dans_annuaire": false,
+      "categories_annuaire": [],
+      "platform": null,
+      "purchase_mode": null,
+      "fiches": 688,
+      "basket": 80,
+      "scelle": 70,
+      "part_scelle": 0.102,
+      "s2324": 5,
+      "vieux_wax": 14,
+      "marques": {
+        "panini": 39,
+        "prizm": 12,
+        "select": 9,
+        "optic": 3,
+        "phoenix": 2,
+        "mosaic": 1,
+        "hoops": 8,
+        "donruss": 7
+      },
+      "part_panini": 0.56,
+      "specialiste": false,
+      "trust": "watch",
+      "notes": "Phoenix 23-24 backorder.",
+      "preuve_registre": null
+    },
+    {
+      "catalogue_releve": true,
+      "key": "sjay2k",
+      "name": "SJAY2K Trading Cards",
+      "domain": "sjay2k.com",
+      "state": null,
+      "city": null,
+      "region": null,
+      "dans_annuaire": false,
+      "categories_annuaire": [],
+      "platform": null,
+      "purchase_mode": null,
+      "fiches": 583,
+      "basket": 83,
+      "scelle": 69,
+      "part_scelle": 0.118,
+      "s2324": 4,
+      "vieux_wax": 25,
+      "marques": {
+        "panini": 48,
+        "prizm": 14,
+        "select": 4,
+        "optic": 11,
+        "mosaic": 5,
+        "hoops": 4,
+        "donruss": 15
+      },
+      "part_panini": 0.7,
+      "specialiste": false,
+      "trust": "watch",
+      "notes": "Optic Mega 23-24 listé.",
+      "preuve_registre": null
+    },
+    {
+      "catalogue_releve": true,
+      "key": "sportcards",
+      "name": "SportCards.com",
+      "domain": "sportcards.com",
+      "state": null,
+      "city": null,
+      "region": null,
+      "dans_annuaire": false,
+      "categories_annuaire": [],
+      "platform": null,
+      "purchase_mode": null,
+      "fiches": 7909,
+      "basket": 986,
+      "scelle": 31,
+      "part_scelle": 0.004,
+      "s2324": 10,
+      "vieux_wax": 7,
+      "marques": {
+        "panini": 25,
+        "prizm": 4,
+        "select": 5,
+        "optic": 1,
+        "mosaic": 4,
+        "donruss": 5
+      },
+      "part_panini": 0.81,
+      "specialiste": true,
+      "trust": "watch",
+      "notes": "discover.py 18/08 : Shopify, 12 basket / 7 sealed 2023-24 / 5 matchs sur 250 produits échantillonnés. --diag avant tout passage en trusted.",
+      "preuve_registre": null
+    },
+    {
+      "catalogue_releve": true,
+      "key": "e5sports",
+      "name": "E5 Sports",
+      "domain": "e5sports.com",
+      "state": null,
+      "city": null,
+      "region": null,
+      "dans_annuaire": false,
+      "categories_annuaire": [],
+      "platform": null,
+      "purchase_mode": null,
+      "fiches": 1073,
+      "basket": 52,
+      "scelle": 26,
+      "part_scelle": 0.024,
+      "s2324": 14,
+      "vieux_wax": 12,
+      "marques": {
+        "panini": 23,
+        "prizm": 4,
+        "select": 3,
+        "optic": 3,
+        "mosaic": 3,
+        "hoops": 5,
+        "donruss": 4
+      },
+      "part_panini": 0.88,
+      "specialiste": false,
+      "trust": "watch",
+      "notes": "discover.py 18/08 : Shopify, 26 basket / 13 sealed 2023-24 / 8 matchs sur 250 produits échantillonnés. --diag avant tout passage en trusted.",
+      "preuve_registre": null
+    }
+  ],
+  "seeds_rejected": [
+    {
+      "key": "collectorstore",
+      "domain": "collectorstore.com",
+      "motif": "grande enseigne — 61744 fiches, ce n'est plus un LCS indépendant"
+    },
+    {
+      "key": "mojobreak",
+      "domain": "mojobreakshop.com",
+      "motif": "boutique déjà rejetée dans le registre"
+    },
+    {
+      "key": "layton",
+      "domain": "laytonsportscards.com",
+      "motif": "breaker — vend de l'ouverture en direct, pas du scellé à emporter"
+    },
+    {
+      "key": "jaspys",
+      "domain": "jaspys.com",
+      "motif": "boutique déjà rejetée dans le registre"
+    },
+    {
+      "key": "dacw",
+      "domain": "dacardworld.com",
+      "motif": "scellé basket non établi dans nos relevés (0 fiche(s))"
+    },
+    {
+      "key": "grandslam",
+      "domain": "grandslamcollectibles.com",
+      "motif": "boutique déjà rejetée dans le registre"
+    },
+    {
+      "key": "superior",
+      "domain": "superiorsportsinvestments.com",
+      "motif": "grande enseigne — 25000 fiches, ce n'est plus un LCS indépendant"
+    },
+    {
+      "key": "ballgame",
+      "domain": "theballgame.com",
+      "motif": "grande enseigne — 29684 fiches, ce n'est plus un LCS indépendant"
+    },
+    {
+      "key": "stockx",
+      "domain": "stockx.com",
+      "motif": "place de marché, pas une boutique identifiée"
+    },
+    {
+      "key": "blowout",
+      "domain": "blowoutcards.com",
+      "motif": "scellé basket non établi dans nos relevés (0 fiche(s))"
+    },
+    {
+      "key": "fancave",
+      "domain": "fancave.com",
+      "motif": "scellé basket non établi dans nos relevés (13 fiche(s))"
+    },
+    {
+      "key": "millcreek",
+      "domain": "millcreeksports.com",
+      "motif": "scellé basket non établi dans nos relevés (0 fiche(s))"
+    },
+    {
+      "key": "shopuscards",
+      "domain": "shopuscards.eu",
+      "motif": "hors univers de candidats (pays FR)"
+    },
+    {
+      "key": "tracenchase",
+      "domain": "tracenchase.com",
+      "motif": "référence de prix européenne, hors univers de candidats américain"
+    },
+    {
+      "key": "ludotrotter",
+      "domain": "ludotrotter.fr",
+      "motif": "référence de prix européenne, hors univers de candidats américain"
+    },
+    {
+      "key": "hikarudistribution",
+      "domain": "hikarudistribution.com",
+      "motif": "référence de prix européenne, hors univers de candidats américain"
+    },
+    {
+      "key": "mafiosicards",
+      "domain": "mafiosicards.com",
+      "motif": "référence de prix européenne, hors univers de candidats américain"
+    },
+    {
+      "key": "qscards",
+      "domain": "qscards.com",
+      "motif": "hors univers de candidats (pays NL)"
+    },
+    {
+      "key": "tanteo",
+      "domain": "tanteocartescollections.com",
+      "motif": "hors univers de candidats (pays FR)"
+    },
+    {
+      "key": "stcuk",
+      "domain": "sportstradingcardsuk.com",
+      "motif": "hors univers de candidats (pays GB)"
+    },
+    {
+      "key": "kaboom",
+      "domain": "kaboomcards.co.uk",
+      "motif": "hors univers de candidats (pays GB)"
+    },
+    {
+      "key": "tradewii",
+      "domain": "tradewiicards.com",
+      "motif": "hors univers de candidats (pays GB)"
+    },
+    {
+      "key": "jakesbreaks",
+      "domain": "jakesbreaks.co.uk",
+      "motif": "hors univers de candidats (pays GB)"
+    },
+    {
+      "key": "hallofcollect",
+      "domain": "hallofcollect.de",
+      "motif": "hors univers de candidats (pays DE)"
+    },
+    {
+      "key": "deichcards",
+      "domain": "deichcards.de",
+      "motif": "hors univers de candidats (pays DE)"
+    },
+    {
+      "key": "dennistheripper",
+      "domain": "dennistheripper.de",
+      "motif": "hors univers de candidats (pays DE)"
+    },
+    {
+      "key": "bigcards",
+      "domain": "bigcards.eu",
+      "motif": "hors univers de candidats (pays EU)"
+    },
+    {
+      "key": "dacardworldeu",
+      "domain": "dacardworld.eu",
+      "motif": "hors univers de candidats (pays NL)"
+    },
+    {
+      "key": "americansportstore",
+      "domain": "american-sportstore.com",
+      "motif": "hors univers de candidats (pays NL)"
+    },
+    {
+      "key": "pokefamily",
+      "domain": "pokefamily.nl",
+      "motif": "hors univers de candidats (pays NL)"
+    },
+    {
+      "key": "mangastory",
+      "domain": "manga-story.fr",
+      "motif": "hors univers de candidats (pays FR)"
+    },
+    {
+      "key": "dioib",
+      "domain": "dioib.fr",
+      "motif": "hors univers de candidats (pays FR)"
+    },
+    {
+      "key": "mafiosicards_shop",
+      "domain": "mafiosicards.com",
+      "motif": "hors univers de candidats (pays FR)"
+    },
+    {
+      "key": "hikaru_shop",
+      "domain": "hikarudistribution.com",
+      "motif": "hors univers de candidats (pays FR)"
+    },
+    {
+      "key": "stickerpoint",
+      "domain": "stickerpoint.fr",
+      "motif": "hors univers de candidats (pays FR)"
+    },
+    {
+      "key": "kutogo",
+      "domain": "kutogo.com",
+      "motif": "vendeur à risque élevé — pas un modèle"
+    },
+    {
+      "key": "supercollectors",
+      "domain": "supercollectors.es",
+      "motif": "vendeur à risque élevé — pas un modèle"
+    },
+    {
+      "key": "hokejkarty",
+      "domain": "hokej-karty.eu",
+      "motif": "référence de prix européenne, hors univers de candidats américain"
+    },
+    {
+      "key": "bandurka",
+      "domain": "bandurka.cz",
+      "motif": "hors univers de candidats (pays CZ)"
+    },
+    {
+      "key": "cardland",
+      "domain": "cardland.se",
+      "motif": "référence de prix européenne, hors univers de candidats américain"
+    },
+    {
+      "key": "coolcard",
+      "domain": "coolcard.se",
+      "motif": "hors univers de candidats (pays SE)"
+    },
+    {
+      "key": "cardvault",
+      "domain": "cardvaultbytombrady.com",
+      "motif": "scellé basket non établi dans nos relevés (0 fiche(s))"
+    },
+    {
+      "key": "sandssportscards",
+      "domain": "sandssportscards.com",
+      "motif": "scellé basket non établi dans nos relevés (0 fiche(s))"
+    },
+    {
+      "key": "nickscards",
+      "domain": "nickscards.com",
+      "motif": "issue de la passe nationale — modèle circulaire, aucun historique de chasse"
+    },
+    {
+      "key": "danscardz",
+      "domain": "danscardz.com",
+      "motif": "issue de la passe nationale — modèle circulaire, aucun historique de chasse"
+    },
+    {
+      "key": "shopbck",
+      "domain": "shopbck.com",
+      "motif": "issue de la passe nationale — modèle circulaire, aucun historique de chasse"
+    },
+    {
+      "key": "arthurscardsandcollectibles",
+      "domain": "arthurscardsandcollectibles.com",
+      "motif": "issue de la passe nationale — modèle circulaire, aucun historique de chasse"
+    },
+    {
+      "key": "vwsportscards",
+      "domain": "vwsportscards.com",
+      "motif": "issue de la passe nationale — modèle circulaire, aucun historique de chasse"
+    },
+    {
+      "key": "allstarsportsgr",
+      "domain": "allstarsportsgr.com",
+      "motif": "issue de la passe nationale — modèle circulaire, aucun historique de chasse"
+    },
+    {
+      "key": "cognizantcardbreaks",
+      "domain": "cognizantcardbreaks.com",
+      "motif": "issue de la passe nationale — modèle circulaire, aucun historique de chasse"
+    },
+    {
+      "key": "smyrnasportscards",
+      "domain": "smyrnasportscards.com",
+      "motif": "issue de la passe nationale — modèle circulaire, aucun historique de chasse"
+    },
+    {
+      "key": "liquidsports",
+      "domain": "liquidsports.cards",
+      "motif": "issue de la passe nationale — modèle circulaire, aucun historique de chasse"
+    },
+    {
+      "key": "wolfdentcg",
+      "domain": "wolfdentcg.com",
+      "motif": "issue de la passe nationale — modèle circulaire, aucun historique de chasse"
+    },
+    {
+      "key": "upstatesportscards",
+      "domain": "upstatesportscards.com",
+      "motif": "issue de la passe nationale — modèle circulaire, aucun historique de chasse"
+    },
+    {
+      "key": "chasethehero",
+      "domain": "chasethehero.com",
+      "motif": "issue de la passe nationale — modèle circulaire, aucun historique de chasse"
+    },
+    {
+      "key": "allstarcasebreaks",
+      "domain": "allstarcasebreaks.com",
+      "motif": "issue de la passe nationale — modèle circulaire, aucun historique de chasse"
+    },
+    {
+      "key": "slabbedsports",
+      "domain": "slabbedsports.com",
+      "motif": "issue de la passe nationale — modèle circulaire, aucun historique de chasse"
+    },
+    {
+      "key": "fathersoncards",
+      "domain": "fathersoncards.com",
+      "motif": "issue de la passe nationale — modèle circulaire, aucun historique de chasse"
+    },
+    {
+      "key": "dnacardsandcollectibles",
+      "domain": "dnacardsandcollectibles.com",
+      "motif": "issue de la passe nationale — modèle circulaire, aucun historique de chasse"
+    },
+    {
+      "key": "beastcards",
+      "domain": "beastcards.com",
+      "motif": "issue de la passe nationale — modèle circulaire, aucun historique de chasse"
+    },
+    {
+      "key": "azsportscards",
+      "domain": "azsportscards.com",
+      "motif": "issue de la passe nationale — modèle circulaire, aucun historique de chasse"
+    }
+  ],
+  "univers": 2157,
+  "jumeaux_bruts": 216,
+  "candidats": [
+    {
+      "candidate_domain": "triplesssinc.com",
+      "candidate_name": "Triple Sss Sports Cards",
+      "city": "Shelby Twp",
+      "state": "MI",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/michigan/utica/triple-sss-sports-cards/",
+      "phone": "+15869910100",
+      "street_address": "47501 Van Dyke Ave",
+      "categories": [
+        "Buys cards",
+        "Online store",
+        "Utica"
+      ],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "awesome",
+          "twin_type": "PROFILE",
+          "similarity_score": 28.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "rubrique « buys cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "bleecker",
+          "twin_type": "PROFILE",
+          "similarity_score": 28.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "rubrique « buys cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "sportscardjunction",
+          "twin_type": "PROFILE",
+          "similarity_score": 32.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "comme sportscardjunction",
+            "rubrique « online store »",
+            "rubrique « buys cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "columbia",
+          "twin_type": "PROFILE",
+          "similarity_score": 32.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "comme columbia",
+            "rubrique « online store »",
+            "rubrique « buys cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "hiddengems",
+          "twin_type": "LOCAL",
+          "similarity_score": 42.0,
+          "similarity_reasons": [
+            "même État que hiddengems (MI)",
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "rubrique « buys cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "rlsports",
+          "twin_type": "PROFILE",
+          "similarity_score": 32.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "comme rlsports",
+            "rubrique « online store »",
+            "rubrique « buys cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "rbicru7",
+          "twin_type": "PROFILE",
+          "similarity_score": 33.0,
+          "similarity_reasons": [
+            "même région (MW)",
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "rubrique « buys cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "worldchampion",
+          "twin_type": "PROFILE",
+          "similarity_score": 32.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "comme worldchampion",
+            "rubrique « online store »",
+            "rubrique « buys cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "monmouth",
+          "twin_type": "PROFILE",
+          "similarity_score": 28.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "rubrique « buys cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "cardiacs",
+          "twin_type": "PROFILE",
+          "similarity_score": 28.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "rubrique « buys cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "ehcards",
+          "twin_type": "PROFILE",
+          "similarity_score": 28.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "rubrique « buys cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "boxseat",
+          "twin_type": "PROFILE",
+          "similarity_score": 28.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "rubrique « buys cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "cbhobby",
+          "twin_type": "PROFILE",
+          "similarity_score": 28.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "rubrique « buys cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "sjay2k",
+          "twin_type": "PROFILE",
+          "similarity_score": 28.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "rubrique « buys cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "sportcards",
+          "twin_type": "PROFILE",
+          "similarity_score": 32.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "comme sportcards",
+            "rubrique « online store »",
+            "rubrique « buys cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "e5sports",
+          "twin_type": "PROFILE",
+          "similarity_score": 28.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "rubrique « buys cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        }
+      ],
+      "best_similarity": 42.0,
+      "seed_count": 16,
+      "twin_types": [
+        "LOCAL",
+        "PROFILE"
+      ],
+      "lookalike_score": 82.0,
+      "source_seeds": [
+        "awesome",
+        "bleecker",
+        "boxseat",
+        "cardiacs",
+        "cbhobby",
+        "columbia",
+        "e5sports",
+        "ehcards",
+        "hiddengems",
+        "monmouth",
+        "rbicru7",
+        "rlsports",
+        "sjay2k",
+        "sportcards",
+        "sportscardjunction",
+        "worldchampion"
+      ]
+    },
+    {
+      "candidate_domain": "rynossportscards.com",
+      "candidate_name": "Ryno's Sports Cards & Memorabilia",
+      "city": "Bellingham",
+      "state": "WA",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/washington/bellingham/rynos-sports-cards-and-memorabilia/",
+      "phone": null,
+      "street_address": "702 Kentucky Street",
+      "categories": [
+        "Beginner-friendly",
+        "Online store",
+        "Sells cards"
+      ],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "awesome",
+          "twin_type": "PROFILE",
+          "similarity_score": 31.0,
+          "similarity_reasons": [
+            "même région (W)",
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "rubrique « sells cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "bleecker",
+          "twin_type": "PROFILE",
+          "similarity_score": 26.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "rubrique « sells cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "sportscardjunction",
+          "twin_type": "PROFILE",
+          "similarity_score": 30.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "comme sportscardjunction",
+            "rubrique « online store »",
+            "rubrique « sells cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "columbia",
+          "twin_type": "PROFILE",
+          "similarity_score": 30.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "comme columbia",
+            "rubrique « online store »",
+            "rubrique « sells cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "hiddengems",
+          "twin_type": "PROFILE",
+          "similarity_score": 26.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "rubrique « sells cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "rlsports",
+          "twin_type": "PROFILE",
+          "similarity_score": 35.0,
+          "similarity_reasons": [
+            "même région (W)",
+            "enseigne « sports cards »",
+            "comme rlsports",
+            "rubrique « online store »",
+            "rubrique « sells cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "worldchampion",
+          "twin_type": "PROFILE",
+          "similarity_score": 30.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "comme worldchampion",
+            "rubrique « online store »",
+            "rubrique « sells cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "monmouth",
+          "twin_type": "PROFILE",
+          "similarity_score": 26.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "rubrique « sells cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "cardiacs",
+          "twin_type": "PROFILE",
+          "similarity_score": 26.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "rubrique « sells cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "ehcards",
+          "twin_type": "PROFILE",
+          "similarity_score": 26.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "rubrique « sells cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "boxseat",
+          "twin_type": "PROFILE",
+          "similarity_score": 26.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "rubrique « sells cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "cbhobby",
+          "twin_type": "PROFILE",
+          "similarity_score": 26.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "rubrique « sells cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "sjay2k",
+          "twin_type": "PROFILE",
+          "similarity_score": 26.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "rubrique « sells cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "sportcards",
+          "twin_type": "PROFILE",
+          "similarity_score": 30.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "comme sportcards",
+            "rubrique « online store »",
+            "rubrique « sells cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "e5sports",
+          "twin_type": "PROFILE",
+          "similarity_score": 26.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "rubrique « sells cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        }
+      ],
+      "best_similarity": 35.0,
+      "seed_count": 15,
+      "twin_types": [
+        "PROFILE"
+      ],
+      "lookalike_score": 75.0,
+      "source_seeds": [
+        "awesome",
+        "bleecker",
+        "boxseat",
+        "cardiacs",
+        "cbhobby",
+        "columbia",
+        "e5sports",
+        "ehcards",
+        "hiddengems",
+        "monmouth",
+        "rlsports",
+        "sjay2k",
+        "sportcards",
+        "sportscardjunction",
+        "worldchampion"
+      ]
+    },
+    {
+      "candidate_domain": "columbiahobby.com",
+      "candidate_name": "Columbia Hobby - Comics - Games - Sports Cards",
+      "city": "Vancouver",
+      "state": "WA",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/washington/vancouver/columbia-hobby-comics-games-sports-cards/",
+      "phone": "+13606354400",
+      "street_address": "11713 NE 99th St",
+      "categories": [
+        "Grading submissions",
+        "Online store"
+      ],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "awesome",
+          "twin_type": "PROFILE",
+          "similarity_score": 30.0,
+          "similarity_reasons": [
+            "même région (W)",
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "rubrique « grading submissions »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "bleecker",
+          "twin_type": "PROFILE",
+          "similarity_score": 25.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "rubrique « grading submissions »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "sportscardjunction",
+          "twin_type": "PROFILE",
+          "similarity_score": 29.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "comme sportscardjunction",
+            "rubrique « online store »",
+            "rubrique « grading submissions »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "columbia",
+          "twin_type": "PROFILE",
+          "similarity_score": 32.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "comme columbia",
+            "jetons communs : columbia",
+            "rubrique « online store »",
+            "rubrique « grading submissions »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "rlsports",
+          "twin_type": "PROFILE",
+          "similarity_score": 34.0,
+          "similarity_reasons": [
+            "même région (W)",
+            "enseigne « sports cards »",
+            "comme rlsports",
+            "rubrique « online store »",
+            "rubrique « grading submissions »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "worldchampion",
+          "twin_type": "PROFILE",
+          "similarity_score": 29.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "comme worldchampion",
+            "rubrique « online store »",
+            "rubrique « grading submissions »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "monmouth",
+          "twin_type": "PROFILE",
+          "similarity_score": 25.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "rubrique « grading submissions »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "cardiacs",
+          "twin_type": "PROFILE",
+          "similarity_score": 25.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "rubrique « grading submissions »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "ehcards",
+          "twin_type": "PROFILE",
+          "similarity_score": 25.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "rubrique « grading submissions »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "boxseat",
+          "twin_type": "PROFILE",
+          "similarity_score": 25.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "rubrique « grading submissions »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "cbhobby",
+          "twin_type": "PROFILE",
+          "similarity_score": 28.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "jetons communs : hobby",
+            "rubrique « online store »",
+            "rubrique « grading submissions »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "sjay2k",
+          "twin_type": "PROFILE",
+          "similarity_score": 25.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "rubrique « grading submissions »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "sportcards",
+          "twin_type": "PROFILE",
+          "similarity_score": 29.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "comme sportcards",
+            "rubrique « online store »",
+            "rubrique « grading submissions »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "e5sports",
+          "twin_type": "PROFILE",
+          "similarity_score": 25.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "rubrique « grading submissions »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        }
+      ],
+      "best_similarity": 34.0,
+      "seed_count": 14,
+      "twin_types": [
+        "PROFILE"
+      ],
+      "lookalike_score": 74.0,
+      "source_seeds": [
+        "awesome",
+        "bleecker",
+        "boxseat",
+        "cardiacs",
+        "cbhobby",
+        "columbia",
+        "e5sports",
+        "ehcards",
+        "monmouth",
+        "rlsports",
+        "sjay2k",
+        "sportcards",
+        "sportscardjunction",
+        "worldchampion"
+      ]
+    },
+    {
+      "candidate_domain": "davesportscards.com",
+      "candidate_name": "Dave's Sports Cards",
+      "city": "Roswell",
+      "state": "GA",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/georgia/roswell/daves-sports-cards/",
+      "phone": "+16782428110",
+      "street_address": "900 Mansell Rd Ste 3",
+      "categories": [
+        "Buys cards",
+        "Online store"
+      ],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "awesome",
+          "twin_type": "PROFILE",
+          "similarity_score": 28.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "rubrique « buys cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "bleecker",
+          "twin_type": "PROFILE",
+          "similarity_score": 28.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "rubrique « buys cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "sportscardjunction",
+          "twin_type": "PROFILE",
+          "similarity_score": 32.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "comme sportscardjunction",
+            "rubrique « online store »",
+            "rubrique « buys cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "columbia",
+          "twin_type": "PROFILE",
+          "similarity_score": 32.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "comme columbia",
+            "rubrique « online store »",
+            "rubrique « buys cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "hiddengems",
+          "twin_type": "PROFILE",
+          "similarity_score": 28.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "rubrique « buys cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "rlsports",
+          "twin_type": "PROFILE",
+          "similarity_score": 32.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "comme rlsports",
+            "rubrique « online store »",
+            "rubrique « buys cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "rbicru7",
+          "twin_type": "PROFILE",
+          "similarity_score": 28.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "rubrique « buys cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "worldchampion",
+          "twin_type": "PROFILE",
+          "similarity_score": 32.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "comme worldchampion",
+            "rubrique « online store »",
+            "rubrique « buys cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "monmouth",
+          "twin_type": "PROFILE",
+          "similarity_score": 28.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "rubrique « buys cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "cardiacs",
+          "twin_type": "PROFILE",
+          "similarity_score": 28.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "rubrique « buys cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "ehcards",
+          "twin_type": "PROFILE",
+          "similarity_score": 28.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "rubrique « buys cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "boxseat",
+          "twin_type": "PROFILE",
+          "similarity_score": 28.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "rubrique « buys cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "cbhobby",
+          "twin_type": "PROFILE",
+          "similarity_score": 28.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "rubrique « buys cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "sjay2k",
+          "twin_type": "PROFILE",
+          "similarity_score": 28.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "rubrique « buys cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "sportcards",
+          "twin_type": "PROFILE",
+          "similarity_score": 32.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "comme sportcards",
+            "rubrique « online store »",
+            "rubrique « buys cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "e5sports",
+          "twin_type": "PROFILE",
+          "similarity_score": 28.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "rubrique « buys cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        }
+      ],
+      "best_similarity": 32.0,
+      "seed_count": 16,
+      "twin_types": [
+        "PROFILE"
+      ],
+      "lookalike_score": 72.0,
+      "source_seeds": [
+        "awesome",
+        "bleecker",
+        "boxseat",
+        "cardiacs",
+        "cbhobby",
+        "columbia",
+        "e5sports",
+        "ehcards",
+        "hiddengems",
+        "monmouth",
+        "rbicru7",
+        "rlsports",
+        "sjay2k",
+        "sportcards",
+        "sportscardjunction",
+        "worldchampion"
+      ]
+    },
+    {
+      "candidate_domain": "thesandlotsports.com",
+      "candidate_name": "The Sandlot - Sports Cards & Memorabilia",
+      "city": "Glen Ellyn",
+      "state": "IL",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/illinois/glen-ellyn/the-sandlot-sports-cards-and-memorabilia/",
+      "phone": "+16306750001",
+      "street_address": "529 Roosevelt Rd",
+      "categories": [
+        "Online store"
+      ],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "bleecker",
+          "twin_type": "PROFILE",
+          "similarity_score": 24.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "sportscardjunction",
+          "twin_type": "PROFILE",
+          "similarity_score": 28.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "comme sportscardjunction",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "columbia",
+          "twin_type": "PROFILE",
+          "similarity_score": 28.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "comme columbia",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "hiddengems",
+          "twin_type": "PROFILE",
+          "similarity_score": 29.0,
+          "similarity_reasons": [
+            "même région (MW)",
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "rbicru7",
+          "twin_type": "PROFILE",
+          "similarity_score": 29.0,
+          "similarity_reasons": [
+            "même région (MW)",
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "worldchampion",
+          "twin_type": "PROFILE",
+          "similarity_score": 28.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "comme worldchampion",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "monmouth",
+          "twin_type": "PROFILE",
+          "similarity_score": 24.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "cardiacs",
+          "twin_type": "PROFILE",
+          "similarity_score": 24.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "ehcards",
+          "twin_type": "PROFILE",
+          "similarity_score": 24.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "boxseat",
+          "twin_type": "PROFILE",
+          "similarity_score": 24.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "cbhobby",
+          "twin_type": "PROFILE",
+          "similarity_score": 24.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "sjay2k",
+          "twin_type": "PROFILE",
+          "similarity_score": 24.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "sportcards",
+          "twin_type": "PROFILE",
+          "similarity_score": 28.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "comme sportcards",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "e5sports",
+          "twin_type": "PROFILE",
+          "similarity_score": 24.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        }
+      ],
+      "best_similarity": 29.0,
+      "seed_count": 14,
+      "twin_types": [
+        "PROFILE"
+      ],
+      "lookalike_score": 69.0,
+      "source_seeds": [
+        "bleecker",
+        "boxseat",
+        "cardiacs",
+        "cbhobby",
+        "columbia",
+        "e5sports",
+        "ehcards",
+        "hiddengems",
+        "monmouth",
+        "rbicru7",
+        "sjay2k",
+        "sportcards",
+        "sportscardjunction",
+        "worldchampion"
+      ]
+    },
+    {
+      "candidate_domain": "foreveryoungsportscards.com",
+      "candidate_name": "Forever Young Sports Cards",
+      "city": "Crown Point",
+      "state": "IN",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/indiana/crown-point/forever-young-sports-cards/",
+      "phone": "+12194407071",
+      "street_address": "166 S West St",
+      "categories": [
+        "Online store"
+      ],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "columbia",
+          "twin_type": "PROFILE",
+          "similarity_score": 28.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "comme columbia",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "hiddengems",
+          "twin_type": "PROFILE",
+          "similarity_score": 29.0,
+          "similarity_reasons": [
+            "même région (MW)",
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "rbicru7",
+          "twin_type": "PROFILE",
+          "similarity_score": 29.0,
+          "similarity_reasons": [
+            "même région (MW)",
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "boxseat",
+          "twin_type": "PROFILE",
+          "similarity_score": 24.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "sjay2k",
+          "twin_type": "PROFILE",
+          "similarity_score": 24.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "sportcards",
+          "twin_type": "PROFILE",
+          "similarity_score": 28.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "comme sportcards",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "e5sports",
+          "twin_type": "PROFILE",
+          "similarity_score": 24.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        }
+      ],
+      "best_similarity": 29.0,
+      "seed_count": 7,
+      "twin_types": [
+        "PROFILE"
+      ],
+      "lookalike_score": 69.0,
+      "source_seeds": [
+        "boxseat",
+        "columbia",
+        "e5sports",
+        "hiddengems",
+        "rbicru7",
+        "sjay2k",
+        "sportcards"
+      ]
+    },
+    {
+      "candidate_domain": "thesportscardzone.com",
+      "candidate_name": "The Sports Card Zone",
+      "city": "Shorewood",
+      "state": "IL",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/illinois/shorewood/the-sports-card-zone/",
+      "phone": "+18152805841",
+      "street_address": "852 Sharp Dr",
+      "categories": [
+        "Online store"
+      ],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "columbia",
+          "twin_type": "PROFILE",
+          "similarity_score": 28.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "comme columbia",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "hiddengems",
+          "twin_type": "PROFILE",
+          "similarity_score": 29.0,
+          "similarity_reasons": [
+            "même région (MW)",
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "rbicru7",
+          "twin_type": "PROFILE",
+          "similarity_score": 29.0,
+          "similarity_reasons": [
+            "même région (MW)",
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "boxseat",
+          "twin_type": "PROFILE",
+          "similarity_score": 24.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "sjay2k",
+          "twin_type": "PROFILE",
+          "similarity_score": 24.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "sportcards",
+          "twin_type": "PROFILE",
+          "similarity_score": 28.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "comme sportcards",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "e5sports",
+          "twin_type": "PROFILE",
+          "similarity_score": 24.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        }
+      ],
+      "best_similarity": 29.0,
+      "seed_count": 7,
+      "twin_types": [
+        "PROFILE"
+      ],
+      "lookalike_score": 69.0,
+      "source_seeds": [
+        "boxseat",
+        "columbia",
+        "e5sports",
+        "hiddengems",
+        "rbicru7",
+        "sjay2k",
+        "sportcards"
+      ]
+    },
+    {
+      "candidate_domain": "goldensportscards.com",
+      "candidate_name": "Golden Sports Cards",
+      "city": "Lake Mary",
+      "state": "FL",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/florida/lake-mary/golden-sports-cards/",
+      "phone": "+13212873618",
+      "street_address": "3725 Lake Emma Rd",
+      "categories": [
+        "Online store"
+      ],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "bleecker",
+          "twin_type": "PROFILE",
+          "similarity_score": 24.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "sportscardjunction",
+          "twin_type": "PROFILE",
+          "similarity_score": 28.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "comme sportscardjunction",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "columbia",
+          "twin_type": "PROFILE",
+          "similarity_score": 28.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "comme columbia",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "rlsports",
+          "twin_type": "PROFILE",
+          "similarity_score": 28.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "comme rlsports",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "worldchampion",
+          "twin_type": "PROFILE",
+          "similarity_score": 28.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "comme worldchampion",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "monmouth",
+          "twin_type": "PROFILE",
+          "similarity_score": 24.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "cardiacs",
+          "twin_type": "PROFILE",
+          "similarity_score": 24.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "ehcards",
+          "twin_type": "PROFILE",
+          "similarity_score": 24.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "boxseat",
+          "twin_type": "PROFILE",
+          "similarity_score": 24.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "cbhobby",
+          "twin_type": "PROFILE",
+          "similarity_score": 24.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "sjay2k",
+          "twin_type": "PROFILE",
+          "similarity_score": 24.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "sportcards",
+          "twin_type": "PROFILE",
+          "similarity_score": 28.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "comme sportcards",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "e5sports",
+          "twin_type": "PROFILE",
+          "similarity_score": 24.0,
+          "similarity_reasons": [
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        }
+      ],
+      "best_similarity": 28.0,
+      "seed_count": 13,
+      "twin_types": [
+        "PROFILE"
+      ],
+      "lookalike_score": 68.0,
+      "source_seeds": [
+        "bleecker",
+        "boxseat",
+        "cardiacs",
+        "cbhobby",
+        "columbia",
+        "e5sports",
+        "ehcards",
+        "monmouth",
+        "rlsports",
+        "sjay2k",
+        "sportcards",
+        "sportscardjunction",
+        "worldchampion"
+      ]
+    },
+    {
+      "candidate_domain": "phillyshow.com",
+      "candidate_name": "Philadelphia Sports Card & Memorabilia Show",
+      "city": "Phoenixville",
+      "state": "PA",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/pennsylvania/phoenixville/philadelphia-sports-card-and-memorabilia-show/",
+      "phone": "+19088247247",
+      "street_address": "100 Station Ave",
+      "categories": [
+        "Online store"
+      ],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "bleecker",
+          "twin_type": "PROFILE",
+          "similarity_score": 29.0,
+          "similarity_reasons": [
+            "même région (NE)",
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "sportscardjunction",
+          "twin_type": "LOCAL",
+          "similarity_score": 42.0,
+          "similarity_reasons": [
+            "même État que sportscardjunction (PA)",
+            "enseigne « sports cards »",
+            "comme sportscardjunction",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "worldchampion",
+          "twin_type": "PROFILE",
+          "similarity_score": 33.0,
+          "similarity_reasons": [
+            "même région (NE)",
+            "enseigne « sports cards »",
+            "comme worldchampion",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "monmouth",
+          "twin_type": "PROFILE",
+          "similarity_score": 29.0,
+          "similarity_reasons": [
+            "même région (NE)",
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        }
+      ],
+      "best_similarity": 42.0,
+      "seed_count": 4,
+      "twin_types": [
+        "LOCAL",
+        "PROFILE"
+      ],
+      "lookalike_score": 66.0,
+      "source_seeds": [
+        "bleecker",
+        "monmouth",
+        "sportscardjunction",
+        "worldchampion"
+      ]
+    },
+    {
+      "candidate_domain": "centericesportscards.com",
+      "candidate_name": "Center Ice Sports Cards",
+      "city": "Tonawanda",
+      "state": "NY",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/new-york/tonawanda/center-ice-sports-cards/",
+      "phone": "+17165242020",
+      "street_address": "11 GLENALBY Rd",
+      "categories": [
+        "Buys cards"
+      ],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "bleecker",
+          "twin_type": "LOCAL",
+          "similarity_score": 36.0,
+          "similarity_reasons": [
+            "même État que bleecker (NY)",
+            "enseigne « sports cards »",
+            "rubrique « buys cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "sportscardjunction",
+          "twin_type": "PROFILE",
+          "similarity_score": 31.0,
+          "similarity_reasons": [
+            "même région (NE)",
+            "enseigne « sports cards »",
+            "comme sportscardjunction",
+            "rubrique « buys cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "worldchampion",
+          "twin_type": "LOCAL",
+          "similarity_score": 40.0,
+          "similarity_reasons": [
+            "même État que worldchampion (NY)",
+            "enseigne « sports cards »",
+            "comme worldchampion",
+            "rubrique « buys cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "monmouth",
+          "twin_type": "PROFILE",
+          "similarity_score": 27.0,
+          "similarity_reasons": [
+            "même région (NE)",
+            "enseigne « sports cards »",
+            "rubrique « buys cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        }
+      ],
+      "best_similarity": 40.0,
+      "seed_count": 4,
+      "twin_types": [
+        "LOCAL",
+        "PROFILE"
+      ],
+      "lookalike_score": 64.0,
+      "source_seeds": [
+        "bleecker",
+        "monmouth",
+        "sportscardjunction",
+        "worldchampion"
+      ]
+    },
+    {
+      "candidate_domain": "dollarboxcards.com",
+      "candidate_name": "Dollar Box - Sports Cards",
+      "city": "Jersey City",
+      "state": "NJ",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/new-jersey/jersey-city/dollar-box-sports-cards/",
+      "phone": null,
+      "street_address": "1078 Summit Ave",
+      "categories": [
+        "Online store"
+      ],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "bleecker",
+          "twin_type": "PROFILE",
+          "similarity_score": 26.0,
+          "similarity_reasons": [
+            "même région (NE)",
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant"
+          ]
+        },
+        {
+          "source_seed": "sportscardjunction",
+          "twin_type": "PROFILE",
+          "similarity_score": 30.0,
+          "similarity_reasons": [
+            "même région (NE)",
+            "enseigne « sports cards »",
+            "comme sportscardjunction",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant"
+          ]
+        },
+        {
+          "source_seed": "worldchampion",
+          "twin_type": "PROFILE",
+          "similarity_score": 30.0,
+          "similarity_reasons": [
+            "même région (NE)",
+            "enseigne « sports cards »",
+            "comme worldchampion",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant"
+          ]
+        },
+        {
+          "source_seed": "monmouth",
+          "twin_type": "LOCAL",
+          "similarity_score": 35.0,
+          "similarity_reasons": [
+            "même État que monmouth (NJ)",
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant"
+          ]
+        }
+      ],
+      "best_similarity": 35.0,
+      "seed_count": 4,
+      "twin_types": [
+        "LOCAL",
+        "PROFILE"
+      ],
+      "lookalike_score": 59.0,
+      "source_seeds": [
+        "bleecker",
+        "monmouth",
+        "sportscardjunction",
+        "worldchampion"
+      ]
+    },
+    {
+      "candidate_domain": "cardshopfinder.com",
+      "candidate_name": "Home Plate Sports Cards",
+      "city": "Phoenix",
+      "state": "AZ",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/arizona/phoenix/home-plate-sports-cards/",
+      "phone": "+13038930552",
+      "street_address": "12802 N 19th Ave",
+      "categories": [],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "cardiacs",
+          "twin_type": "LOCAL",
+          "similarity_score": 35.0,
+          "similarity_reasons": [
+            "même État que cardiacs (AZ)",
+            "même ville (Phoenix)",
+            "enseigne « sports cards »",
+            "point de vente unique — LCS indépendant"
+          ]
+        },
+        {
+          "source_seed": "ehcards",
+          "twin_type": "LOCAL",
+          "similarity_score": 35.0,
+          "similarity_reasons": [
+            "même État que ehcards (AZ)",
+            "même ville (Phoenix)",
+            "enseigne « sports cards »",
+            "point de vente unique — LCS indépendant"
+          ]
+        },
+        {
+          "source_seed": "cbhobby",
+          "twin_type": "LOCAL",
+          "similarity_score": 35.0,
+          "similarity_reasons": [
+            "même État que cbhobby (AZ)",
+            "même ville (Phoenix)",
+            "enseigne « sports cards »",
+            "point de vente unique — LCS indépendant"
+          ]
+        }
+      ],
+      "best_similarity": 35.0,
+      "seed_count": 3,
+      "twin_types": [
+        "LOCAL"
+      ],
+      "lookalike_score": 51.0,
+      "source_seeds": [
+        "cardiacs",
+        "cbhobby",
+        "ehcards"
+      ]
+    },
+    {
+      "candidate_domain": "hotcornersportscards.com",
+      "candidate_name": "Hot Corner Sports Cards",
+      "city": "Mesa",
+      "state": "AZ",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/arizona/mesa/hot-corner-sports-cards/",
+      "phone": "+14803960442",
+      "street_address": "6750 E Main St",
+      "categories": [
+        "Buys cards",
+        "Sells cards"
+      ],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "cardiacs",
+          "twin_type": "LOCAL",
+          "similarity_score": 35.0,
+          "similarity_reasons": [
+            "même État que cardiacs (AZ)",
+            "enseigne « sports cards »",
+            "rubrique « buys cards »",
+            "rubrique « sells cards »",
+            "point de vente unique — LCS indépendant"
+          ]
+        },
+        {
+          "source_seed": "ehcards",
+          "twin_type": "LOCAL",
+          "similarity_score": 35.0,
+          "similarity_reasons": [
+            "même État que ehcards (AZ)",
+            "enseigne « sports cards »",
+            "rubrique « buys cards »",
+            "rubrique « sells cards »",
+            "point de vente unique — LCS indépendant"
+          ]
+        },
+        {
+          "source_seed": "cbhobby",
+          "twin_type": "LOCAL",
+          "similarity_score": 35.0,
+          "similarity_reasons": [
+            "même État que cbhobby (AZ)",
+            "enseigne « sports cards »",
+            "rubrique « buys cards »",
+            "rubrique « sells cards »",
+            "point de vente unique — LCS indépendant"
+          ]
+        }
+      ],
+      "best_similarity": 35.0,
+      "seed_count": 3,
+      "twin_types": [
+        "LOCAL"
+      ],
+      "lookalike_score": 51.0,
+      "source_seeds": [
+        "cardiacs",
+        "cbhobby",
+        "ehcards"
+      ]
+    },
+    {
+      "candidate_domain": "sportscardsandmoreaz.com",
+      "candidate_name": "Sports Cards and More",
+      "city": "Phoenix",
+      "state": "AZ",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/arizona/phoenix/sports-cards-and-more/",
+      "phone": "+14802971371",
+      "street_address": "15414 N 19th Ave",
+      "categories": [],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "cardiacs",
+          "twin_type": "LOCAL",
+          "similarity_score": 35.0,
+          "similarity_reasons": [
+            "même État que cardiacs (AZ)",
+            "même ville (Phoenix)",
+            "enseigne « sports cards »",
+            "point de vente unique — LCS indépendant"
+          ]
+        },
+        {
+          "source_seed": "ehcards",
+          "twin_type": "LOCAL",
+          "similarity_score": 35.0,
+          "similarity_reasons": [
+            "même État que ehcards (AZ)",
+            "même ville (Phoenix)",
+            "enseigne « sports cards »",
+            "point de vente unique — LCS indépendant"
+          ]
+        },
+        {
+          "source_seed": "cbhobby",
+          "twin_type": "LOCAL",
+          "similarity_score": 35.0,
+          "similarity_reasons": [
+            "même État que cbhobby (AZ)",
+            "même ville (Phoenix)",
+            "enseigne « sports cards »",
+            "point de vente unique — LCS indépendant"
+          ]
+        }
+      ],
+      "best_similarity": 35.0,
+      "seed_count": 3,
+      "twin_types": [
+        "LOCAL"
+      ],
+      "lookalike_score": 51.0,
+      "source_seeds": [
+        "cardiacs",
+        "cbhobby",
+        "ehcards"
+      ]
+    },
+    {
+      "candidate_domain": "dandpsportscards.com",
+      "candidate_name": "D&P Sports Cards",
+      "city": "Sacramento",
+      "state": "CA",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/california/sacramento/d-and-p-sports-cards/",
+      "phone": null,
+      "street_address": "5968 S Land Park Dr",
+      "categories": [
+        "Online store",
+        "Sells cards"
+      ],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "awesome",
+          "twin_type": "PROFILE",
+          "similarity_score": 28.0,
+          "similarity_reasons": [
+            "même région (W)",
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "rubrique « sells cards »",
+            "point de vente unique — LCS indépendant"
+          ]
+        },
+        {
+          "source_seed": "rlsports",
+          "twin_type": "LOCAL",
+          "similarity_score": 41.0,
+          "similarity_reasons": [
+            "même État que rlsports (CA)",
+            "enseigne « sports cards »",
+            "comme rlsports",
+            "rubrique « online store »",
+            "rubrique « sells cards »",
+            "point de vente unique — LCS indépendant"
+          ]
+        }
+      ],
+      "best_similarity": 41.0,
+      "seed_count": 2,
+      "twin_types": [
+        "LOCAL",
+        "PROFILE"
+      ],
+      "lookalike_score": 49.0,
+      "source_seeds": [
+        "awesome",
+        "rlsports"
+      ]
+    },
+    {
+      "candidate_domain": "vegascardshop.com",
+      "candidate_name": "Gameday Sports Cards",
+      "city": "Las Vegas",
+      "state": "NV",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/nevada/las-vegas/gameday-sports-cards/",
+      "phone": "+17252045278",
+      "street_address": "7501 W Lake Mead Blvd",
+      "categories": [
+        "Online store"
+      ],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "awesome",
+          "twin_type": "LOCAL",
+          "similarity_score": 41.0,
+          "similarity_reasons": [
+            "même État que awesome (NV)",
+            "même ville (Las Vegas)",
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant"
+          ]
+        },
+        {
+          "source_seed": "rlsports",
+          "twin_type": "PROFILE",
+          "similarity_score": 30.0,
+          "similarity_reasons": [
+            "même région (W)",
+            "enseigne « sports cards »",
+            "comme rlsports",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant"
+          ]
+        }
+      ],
+      "best_similarity": 41.0,
+      "seed_count": 2,
+      "twin_types": [
+        "LOCAL",
+        "PROFILE"
+      ],
+      "lookalike_score": 49.0,
+      "source_seeds": [
+        "awesome",
+        "rlsports"
+      ]
+    },
+    {
+      "candidate_domain": "hobbybenchstores.com",
+      "candidate_name": "Hobby Bench (19th/northern)",
+      "city": "Phoenix",
+      "state": "AZ",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/arizona/phoenix/hobby-bench-19th-northern/",
+      "phone": "+16025471828",
+      "street_address": "8058 N 19th Ave",
+      "categories": [
+        "Online store"
+      ],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "cardiacs",
+          "twin_type": "LOCAL",
+          "similarity_score": 29.0,
+          "similarity_reasons": [
+            "même État que cardiacs (AZ)",
+            "même ville (Phoenix)",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant"
+          ]
+        },
+        {
+          "source_seed": "ehcards",
+          "twin_type": "LOCAL",
+          "similarity_score": 29.0,
+          "similarity_reasons": [
+            "même État que ehcards (AZ)",
+            "même ville (Phoenix)",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant"
+          ]
+        },
+        {
+          "source_seed": "cbhobby",
+          "twin_type": "LOCAL",
+          "similarity_score": 32.0,
+          "similarity_reasons": [
+            "même État que cbhobby (AZ)",
+            "même ville (Phoenix)",
+            "jetons communs : hobby",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant"
+          ]
+        }
+      ],
+      "best_similarity": 32.0,
+      "seed_count": 3,
+      "twin_types": [
+        "LOCAL"
+      ],
+      "lookalike_score": 48.0,
+      "source_seeds": [
+        "cardiacs",
+        "cbhobby",
+        "ehcards"
+      ]
+    },
+    {
+      "candidate_domain": "centerfieldsportscards.com",
+      "candidate_name": "Centerfield Sports Cards",
+      "city": "Springfield",
+      "state": "MO",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/missouri/springfield/centerfield-sports-cards/",
+      "phone": "+14178317675",
+      "street_address": "1672 E Sunshine St",
+      "categories": [
+        "Online store"
+      ],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "hiddengems",
+          "twin_type": "PROFILE",
+          "similarity_score": 29.0,
+          "similarity_reasons": [
+            "même région (MW)",
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "rbicru7",
+          "twin_type": "LOCAL",
+          "similarity_score": 38.0,
+          "similarity_reasons": [
+            "même État que rbicru7 (MO)",
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        }
+      ],
+      "best_similarity": 38.0,
+      "seed_count": 2,
+      "twin_types": [
+        "LOCAL",
+        "PROFILE"
+      ],
+      "lookalike_score": 46.0,
+      "source_seeds": [
+        "hiddengems",
+        "rbicru7"
+      ]
+    },
+    {
+      "candidate_domain": "3dsportscards.net",
+      "candidate_name": "3D Sports Cards",
+      "city": "Glendale",
+      "state": "AZ",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/arizona/glendale/3d-sports-cards/",
+      "phone": "+16028433897",
+      "street_address": "5350 W Bell Rd",
+      "categories": [],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "cardiacs",
+          "twin_type": "LOCAL",
+          "similarity_score": 29.0,
+          "similarity_reasons": [
+            "même État que cardiacs (AZ)",
+            "enseigne « sports cards »",
+            "point de vente unique — LCS indépendant"
+          ]
+        },
+        {
+          "source_seed": "ehcards",
+          "twin_type": "LOCAL",
+          "similarity_score": 29.0,
+          "similarity_reasons": [
+            "même État que ehcards (AZ)",
+            "enseigne « sports cards »",
+            "point de vente unique — LCS indépendant"
+          ]
+        },
+        {
+          "source_seed": "cbhobby",
+          "twin_type": "LOCAL",
+          "similarity_score": 29.0,
+          "similarity_reasons": [
+            "même État que cbhobby (AZ)",
+            "enseigne « sports cards »",
+            "point de vente unique — LCS indépendant"
+          ]
+        }
+      ],
+      "best_similarity": 29.0,
+      "seed_count": 3,
+      "twin_types": [
+        "LOCAL"
+      ],
+      "lookalike_score": 45.0,
+      "source_seeds": [
+        "cardiacs",
+        "cbhobby",
+        "ehcards"
+      ]
+    },
+    {
+      "candidate_domain": "bankstons.com",
+      "candidate_name": "Bankston's Comics-Sportscards",
+      "city": "Waco",
+      "state": "TX",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/texas/waco/bankstons-comics-sportscards/",
+      "phone": "+12547550070",
+      "street_address": "1321 S Valley Mills Dr",
+      "categories": [
+        "Online store"
+      ],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "cardiacs",
+          "twin_type": "PROFILE",
+          "similarity_score": 29.0,
+          "similarity_reasons": [
+            "même région (SW)",
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "ehcards",
+          "twin_type": "PROFILE",
+          "similarity_score": 29.0,
+          "similarity_reasons": [
+            "même région (SW)",
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "cbhobby",
+          "twin_type": "PROFILE",
+          "similarity_score": 29.0,
+          "similarity_reasons": [
+            "même région (SW)",
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        }
+      ],
+      "best_similarity": 29.0,
+      "seed_count": 3,
+      "twin_types": [
+        "PROFILE"
+      ],
+      "lookalike_score": 45.0,
+      "source_seeds": [
+        "cardiacs",
+        "cbhobby",
+        "ehcards"
+      ]
+    },
+    {
+      "candidate_domain": "pensburymanor.com",
+      "candidate_name": "PENSbury Manor",
+      "city": "Phoenix",
+      "state": "AZ",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/arizona/phoenix/pensbury-manor/",
+      "phone": "+14802736147",
+      "street_address": "2241 E Nicolet Ave",
+      "categories": [
+        "Online store"
+      ],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "cardiacs",
+          "twin_type": "LOCAL",
+          "similarity_score": 29.0,
+          "similarity_reasons": [
+            "même État que cardiacs (AZ)",
+            "même ville (Phoenix)",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant"
+          ]
+        },
+        {
+          "source_seed": "ehcards",
+          "twin_type": "LOCAL",
+          "similarity_score": 29.0,
+          "similarity_reasons": [
+            "même État que ehcards (AZ)",
+            "même ville (Phoenix)",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant"
+          ]
+        },
+        {
+          "source_seed": "cbhobby",
+          "twin_type": "LOCAL",
+          "similarity_score": 29.0,
+          "similarity_reasons": [
+            "même État que cbhobby (AZ)",
+            "même ville (Phoenix)",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant"
+          ]
+        }
+      ],
+      "best_similarity": 29.0,
+      "seed_count": 3,
+      "twin_types": [
+        "LOCAL"
+      ],
+      "lookalike_score": 45.0,
+      "source_seeds": [
+        "cardiacs",
+        "cbhobby",
+        "ehcards"
+      ]
+    },
+    {
+      "candidate_domain": "phxsportscards.com",
+      "candidate_name": "Phoenix Sports Cards",
+      "city": "Glendale",
+      "state": "AZ",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/arizona/glendale/phoenix-sports-cards/",
+      "phone": "+16025481254",
+      "street_address": "5870 W Thunderbird Rd",
+      "categories": [],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "cardiacs",
+          "twin_type": "LOCAL",
+          "similarity_score": 29.0,
+          "similarity_reasons": [
+            "même État que cardiacs (AZ)",
+            "enseigne « sports cards »",
+            "point de vente unique — LCS indépendant"
+          ]
+        },
+        {
+          "source_seed": "ehcards",
+          "twin_type": "LOCAL",
+          "similarity_score": 29.0,
+          "similarity_reasons": [
+            "même État que ehcards (AZ)",
+            "enseigne « sports cards »",
+            "point de vente unique — LCS indépendant"
+          ]
+        },
+        {
+          "source_seed": "cbhobby",
+          "twin_type": "LOCAL",
+          "similarity_score": 29.0,
+          "similarity_reasons": [
+            "même État que cbhobby (AZ)",
+            "enseigne « sports cards »",
+            "point de vente unique — LCS indépendant"
+          ]
+        }
+      ],
+      "best_similarity": 29.0,
+      "seed_count": 3,
+      "twin_types": [
+        "LOCAL"
+      ],
+      "lookalike_score": 45.0,
+      "source_seeds": [
+        "cardiacs",
+        "cbhobby",
+        "ehcards"
+      ]
+    },
+    {
+      "candidate_domain": "omgcollectibles.com",
+      "candidate_name": "OMG Collectibles and Sports Cards",
+      "city": "Palm Desert",
+      "state": "CA",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/california/palm-desert/omg-collectibles-and-sports-cards-9172/",
+      "phone": "+17603603790",
+      "street_address": "77622 Country Club Dr",
+      "categories": [
+        "Buys cards"
+      ],
+      "listings": 2,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "awesome",
+          "twin_type": "PROFILE",
+          "similarity_score": 24.0,
+          "similarity_reasons": [
+            "même région (W)",
+            "enseigne « sports cards »",
+            "rubrique « buys cards »",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "rlsports",
+          "twin_type": "LOCAL",
+          "similarity_score": 37.0,
+          "similarity_reasons": [
+            "même État que rlsports (CA)",
+            "enseigne « sports cards »",
+            "comme rlsports",
+            "rubrique « buys cards »",
+            "petite ou moyenne ville"
+          ]
+        }
+      ],
+      "best_similarity": 37.0,
+      "seed_count": 2,
+      "twin_types": [
+        "LOCAL",
+        "PROFILE"
+      ],
+      "lookalike_score": 45.0,
+      "source_seeds": [
+        "awesome",
+        "rlsports"
+      ]
+    },
+    {
+      "candidate_domain": "tedscardshop.com",
+      "candidate_name": "Ted's Sports Cards",
+      "city": "Ada",
+      "state": "MI",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/michigan/forest-hills/teds-sports-cards/",
+      "phone": "+16168628337",
+      "street_address": "7190 Headley St SE",
+      "categories": [
+        "Buys cards",
+        "Forest Hills"
+      ],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "hiddengems",
+          "twin_type": "LOCAL",
+          "similarity_score": 36.0,
+          "similarity_reasons": [
+            "même État que hiddengems (MI)",
+            "enseigne « sports cards »",
+            "rubrique « buys cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "rbicru7",
+          "twin_type": "PROFILE",
+          "similarity_score": 27.0,
+          "similarity_reasons": [
+            "même région (MW)",
+            "enseigne « sports cards »",
+            "rubrique « buys cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        }
+      ],
+      "best_similarity": 36.0,
+      "seed_count": 2,
+      "twin_types": [
+        "LOCAL",
+        "PROFILE"
+      ],
+      "lookalike_score": 44.0,
+      "source_seeds": [
+        "hiddengems",
+        "rbicru7"
+      ]
+    },
+    {
+      "candidate_domain": "collectibleshub.net",
+      "candidate_name": "Collectibles Hub | Sports Cards | Comic Books",
+      "city": "Richardson",
+      "state": "TX",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/texas/richardson/collectibles-hub-sports-cards-comic-books/",
+      "phone": "+18662221616",
+      "street_address": "1901 N Central Expy #230",
+      "categories": [
+        "Buys cards"
+      ],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "cardiacs",
+          "twin_type": "PROFILE",
+          "similarity_score": 27.0,
+          "similarity_reasons": [
+            "même région (SW)",
+            "enseigne « sports cards »",
+            "rubrique « buys cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "ehcards",
+          "twin_type": "PROFILE",
+          "similarity_score": 27.0,
+          "similarity_reasons": [
+            "même région (SW)",
+            "enseigne « sports cards »",
+            "rubrique « buys cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "cbhobby",
+          "twin_type": "PROFILE",
+          "similarity_score": 27.0,
+          "similarity_reasons": [
+            "même région (SW)",
+            "enseigne « sports cards »",
+            "rubrique « buys cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        }
+      ],
+      "best_similarity": 27.0,
+      "seed_count": 3,
+      "twin_types": [
+        "PROFILE"
+      ],
+      "lookalike_score": 43.0,
+      "source_seeds": [
+        "cardiacs",
+        "cbhobby",
+        "ehcards"
+      ]
+    },
+    {
+      "candidate_domain": "hvsportscards.com",
+      "candidate_name": "Hudson Valley Sports Cards",
+      "city": "Kingston",
+      "state": "NY",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/new-york/kingston/hudson-valley-sports-cards-6322/",
+      "phone": "+18458538440",
+      "street_address": "897 NY-28",
+      "categories": [
+        "Sells cards"
+      ],
+      "listings": 2,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "bleecker",
+          "twin_type": "LOCAL",
+          "similarity_score": 31.0,
+          "similarity_reasons": [
+            "même État que bleecker (NY)",
+            "enseigne « sports cards »",
+            "rubrique « sells cards »",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "worldchampion",
+          "twin_type": "LOCAL",
+          "similarity_score": 35.0,
+          "similarity_reasons": [
+            "même État que worldchampion (NY)",
+            "enseigne « sports cards »",
+            "comme worldchampion",
+            "rubrique « sells cards »",
+            "petite ou moyenne ville"
+          ]
+        }
+      ],
+      "best_similarity": 35.0,
+      "seed_count": 2,
+      "twin_types": [
+        "LOCAL"
+      ],
+      "lookalike_score": 43.0,
+      "source_seeds": [
+        "bleecker",
+        "worldchampion"
+      ]
+    },
+    {
+      "candidate_domain": "evilcontrollers.com",
+      "candidate_name": "Evil Controllers",
+      "city": "Tempe",
+      "state": "AZ",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/arizona/tempe/evil-controllers/",
+      "phone": "+18778803845",
+      "street_address": "2050 E 5th St",
+      "categories": [
+        "Online store"
+      ],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "cardiacs",
+          "twin_type": "LOCAL",
+          "similarity_score": 26.0,
+          "similarity_reasons": [
+            "même État que cardiacs (AZ)",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "ehcards",
+          "twin_type": "LOCAL",
+          "similarity_score": 26.0,
+          "similarity_reasons": [
+            "même État que ehcards (AZ)",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "cbhobby",
+          "twin_type": "LOCAL",
+          "similarity_score": 26.0,
+          "similarity_reasons": [
+            "même État que cbhobby (AZ)",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        }
+      ],
+      "best_similarity": 26.0,
+      "seed_count": 3,
+      "twin_types": [
+        "LOCAL"
+      ],
+      "lookalike_score": 42.0,
+      "source_seeds": [
+        "cardiacs",
+        "cbhobby",
+        "ehcards"
+      ]
+    },
+    {
+      "candidate_domain": "empireheatsports.com",
+      "candidate_name": "Empire Heat Sports Cards and Memorabilia",
+      "city": "Staten Island",
+      "state": "NY",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/new-york/new-york/empire-heat-sports-cards-and-memorabilia/",
+      "phone": "+16464697358",
+      "street_address": "2655 Richmond Ave",
+      "categories": [],
+      "listings": 2,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "bleecker",
+          "twin_type": "LOCAL",
+          "similarity_score": 29.0,
+          "similarity_reasons": [
+            "même État que bleecker (NY)",
+            "enseigne « sports cards »",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "worldchampion",
+          "twin_type": "LOCAL",
+          "similarity_score": 33.0,
+          "similarity_reasons": [
+            "même État que worldchampion (NY)",
+            "enseigne « sports cards »",
+            "comme worldchampion",
+            "petite ou moyenne ville"
+          ]
+        }
+      ],
+      "best_similarity": 33.0,
+      "seed_count": 2,
+      "twin_types": [
+        "LOCAL"
+      ],
+      "lookalike_score": 41.0,
+      "source_seeds": [
+        "bleecker",
+        "worldchampion"
+      ]
+    },
+    {
+      "candidate_domain": "super-sport-cards.myshopify.com",
+      "candidate_name": "Super Sports Cards",
+      "city": "Vancouver",
+      "state": "WA",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/washington/vancouver/super-sports-cards/",
+      "phone": "+13608593078",
+      "street_address": "2700 NE Andresen Rd",
+      "categories": [
+        "Buys cards"
+      ],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "awesome",
+          "twin_type": "PROFILE",
+          "similarity_score": 27.0,
+          "similarity_reasons": [
+            "même région (W)",
+            "enseigne « sports cards »",
+            "rubrique « buys cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "rlsports",
+          "twin_type": "PROFILE",
+          "similarity_score": 31.0,
+          "similarity_reasons": [
+            "même région (W)",
+            "enseigne « sports cards »",
+            "comme rlsports",
+            "rubrique « buys cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        }
+      ],
+      "best_similarity": 31.0,
+      "seed_count": 2,
+      "twin_types": [
+        "PROFILE"
+      ],
+      "lookalike_score": 39.0,
+      "source_seeds": [
+        "awesome",
+        "rlsports"
+      ]
+    },
+    {
+      "candidate_domain": "greentreesc.com",
+      "candidate_name": "Greentree Sports Cards",
+      "city": "Pittsburgh",
+      "state": "PA",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/pennsylvania/pittsburgh/greentree-sports-cards/",
+      "phone": "+14129370540",
+      "street_address": "1962 Greentree Rd",
+      "categories": [],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "sportscardjunction",
+          "twin_type": "LOCAL",
+          "similarity_score": 39.0,
+          "similarity_reasons": [
+            "même État que sportscardjunction (PA)",
+            "même ville (Pittsburgh)",
+            "enseigne « sports cards »",
+            "comme sportscardjunction",
+            "point de vente unique — LCS indépendant"
+          ]
+        }
+      ],
+      "best_similarity": 39.0,
+      "seed_count": 1,
+      "twin_types": [
+        "LOCAL"
+      ],
+      "lookalike_score": 39.0,
+      "source_seeds": [
+        "sportscardjunction"
+      ]
+    },
+    {
+      "candidate_domain": "ultimatesportscards.com",
+      "candidate_name": "Ultimate Sports Cards And Memorabilia",
+      "city": "Las Vegas",
+      "state": "NV",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/nevada/las-vegas/ultimate-sports-cards-and-memorabilia/",
+      "phone": "+17023637999",
+      "street_address": "450 Fremont St Ste 183",
+      "categories": [
+        "Buys cards"
+      ],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "awesome",
+          "twin_type": "LOCAL",
+          "similarity_score": 39.0,
+          "similarity_reasons": [
+            "même État que awesome (NV)",
+            "même ville (Las Vegas)",
+            "enseigne « sports cards »",
+            "rubrique « buys cards »",
+            "point de vente unique — LCS indépendant"
+          ]
+        }
+      ],
+      "best_similarity": 39.0,
+      "seed_count": 1,
+      "twin_types": [
+        "LOCAL"
+      ],
+      "lookalike_score": 39.0,
+      "source_seeds": [
+        "awesome"
+      ]
+    },
+    {
+      "candidate_domain": "orbsportscards.com",
+      "candidate_name": "Orb Sports Cards & Collectibles",
+      "city": "Oregon City",
+      "state": "OR",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/oregon/oregon-city/orb-sports-cards-and-collectibles/",
+      "phone": "+15033895404",
+      "street_address": "1900 McLoughlin Blvd",
+      "categories": [
+        "Grading submissions",
+        "Sells cards"
+      ],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "awesome",
+          "twin_type": "PROFILE",
+          "similarity_score": 26.0,
+          "similarity_reasons": [
+            "même région (W)",
+            "enseigne « sports cards »",
+            "rubrique « sells cards »",
+            "rubrique « grading submissions »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "rlsports",
+          "twin_type": "PROFILE",
+          "similarity_score": 30.0,
+          "similarity_reasons": [
+            "même région (W)",
+            "enseigne « sports cards »",
+            "comme rlsports",
+            "rubrique « sells cards »",
+            "rubrique « grading submissions »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        }
+      ],
+      "best_similarity": 30.0,
+      "seed_count": 2,
+      "twin_types": [
+        "PROFILE"
+      ],
+      "lookalike_score": 38.0,
+      "source_seeds": [
+        "awesome",
+        "rlsports"
+      ]
+    },
+    {
+      "candidate_domain": "tpsc.net",
+      "candidate_name": "Triple Play Sports Cards",
+      "city": "Sioux Falls",
+      "state": "SD",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/south-dakota/sioux-falls/triple-play-sports-cards/",
+      "phone": "+19724489188",
+      "street_address": "3816 S Western Ave",
+      "categories": [
+        "Events / tournaments",
+        "Online store"
+      ],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "hiddengems",
+          "twin_type": "PROFILE",
+          "similarity_score": 28.0,
+          "similarity_reasons": [
+            "même région (MW)",
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "rbicru7",
+          "twin_type": "PROFILE",
+          "similarity_score": 28.0,
+          "similarity_reasons": [
+            "même région (MW)",
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        }
+      ],
+      "best_similarity": 28.0,
+      "seed_count": 2,
+      "twin_types": [
+        "PROFILE"
+      ],
+      "lookalike_score": 36.0,
+      "source_seeds": [
+        "hiddengems",
+        "rbicru7"
+      ]
+    },
+    {
+      "candidate_domain": "burbanksportscards.com",
+      "candidate_name": "Burbank Sportscards",
+      "city": "Burbank",
+      "state": "CA",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/california/burbank/burbank-sportscards-4689/",
+      "phone": "+18188432600",
+      "street_address": "1500 W Burbank Blvd",
+      "categories": [],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "rlsports",
+          "twin_type": "LOCAL",
+          "similarity_score": 36.0,
+          "similarity_reasons": [
+            "même État que rlsports (CA)",
+            "enseigne « sports cards »",
+            "comme rlsports",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        }
+      ],
+      "best_similarity": 36.0,
+      "seed_count": 1,
+      "twin_types": [
+        "LOCAL"
+      ],
+      "lookalike_score": 36.0,
+      "source_seeds": [
+        "rlsports"
+      ]
+    },
+    {
+      "candidate_domain": "courtneyssportscards.com",
+      "candidate_name": "Courtney's Sports Cards",
+      "city": "Colton",
+      "state": "CA",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/california/colton/courtneys-sports-cards/",
+      "phone": "+19098242919",
+      "street_address": "1626 E Washington St",
+      "categories": [],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "rlsports",
+          "twin_type": "LOCAL",
+          "similarity_score": 36.0,
+          "similarity_reasons": [
+            "même État que rlsports (CA)",
+            "enseigne « sports cards »",
+            "comme rlsports",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        }
+      ],
+      "best_similarity": 36.0,
+      "seed_count": 1,
+      "twin_types": [
+        "LOCAL"
+      ],
+      "lookalike_score": 36.0,
+      "source_seeds": [
+        "rlsports"
+      ]
+    },
+    {
+      "candidate_domain": "dave-s-sports-cards.hub.biz",
+      "candidate_name": "Dave's Sports Cards",
+      "city": "Erie",
+      "state": "PA",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/pennsylvania/erie/daves-sports-cards/",
+      "phone": "+18148680826",
+      "street_address": "4514 Peach St",
+      "categories": [],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "sportscardjunction",
+          "twin_type": "LOCAL",
+          "similarity_score": 36.0,
+          "similarity_reasons": [
+            "même État que sportscardjunction (PA)",
+            "enseigne « sports cards »",
+            "comme sportscardjunction",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        }
+      ],
+      "best_similarity": 36.0,
+      "seed_count": 1,
+      "twin_types": [
+        "LOCAL"
+      ],
+      "lookalike_score": 36.0,
+      "source_seeds": [
+        "sportscardjunction"
+      ]
+    },
+    {
+      "candidate_domain": "eastbaycardshow.com",
+      "candidate_name": "East Bay Sports Card & Collectors Show",
+      "city": "Concord",
+      "state": "CA",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/california/concord/east-bay-sports-card-and-collectors-show/",
+      "phone": "+14154702670",
+      "street_address": "45 John Glenn Dr",
+      "categories": [],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "rlsports",
+          "twin_type": "LOCAL",
+          "similarity_score": 36.0,
+          "similarity_reasons": [
+            "même État que rlsports (CA)",
+            "enseigne « sports cards »",
+            "comme rlsports",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        }
+      ],
+      "best_similarity": 36.0,
+      "seed_count": 1,
+      "twin_types": [
+        "LOCAL"
+      ],
+      "lookalike_score": 36.0,
+      "source_seeds": [
+        "rlsports"
+      ]
+    },
+    {
+      "candidate_domain": "jrsportscards.com",
+      "candidate_name": "J&r Sportscards",
+      "city": "Chico",
+      "state": "CA",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/california/chico/j-and-r-sportscards/",
+      "phone": null,
+      "street_address": "1465 Mangrove Ave Ste A",
+      "categories": [],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "rlsports",
+          "twin_type": "LOCAL",
+          "similarity_score": 36.0,
+          "similarity_reasons": [
+            "même État que rlsports (CA)",
+            "enseigne « sports cards »",
+            "comme rlsports",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        }
+      ],
+      "best_similarity": 36.0,
+      "seed_count": 1,
+      "twin_types": [
+        "LOCAL"
+      ],
+      "lookalike_score": 36.0,
+      "source_seeds": [
+        "rlsports"
+      ]
+    },
+    {
+      "candidate_domain": "kinemserie.com",
+      "candidate_name": "Kinem's Sports Cards",
+      "city": "Erie",
+      "state": "PA",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/pennsylvania/erie/kinems-sports-cards/",
+      "phone": "+18148642309",
+      "street_address": "3624 Maple St",
+      "categories": [],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "sportscardjunction",
+          "twin_type": "LOCAL",
+          "similarity_score": 36.0,
+          "similarity_reasons": [
+            "même État que sportscardjunction (PA)",
+            "enseigne « sports cards »",
+            "comme sportscardjunction",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        }
+      ],
+      "best_similarity": 36.0,
+      "seed_count": 1,
+      "twin_types": [
+        "LOCAL"
+      ],
+      "lookalike_score": 36.0,
+      "source_seeds": [
+        "sportscardjunction"
+      ]
+    },
+    {
+      "candidate_domain": "mtpsportscards.com",
+      "candidate_name": "Mt Penn Sports Cards",
+      "city": "Reading",
+      "state": "PA",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/pennsylvania/reading/mt-penn-sports-cards/",
+      "phone": "+16107795282",
+      "street_address": "2940 Saint Lawrence Ave",
+      "categories": [],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "sportscardjunction",
+          "twin_type": "LOCAL",
+          "similarity_score": 36.0,
+          "similarity_reasons": [
+            "même État que sportscardjunction (PA)",
+            "enseigne « sports cards »",
+            "comme sportscardjunction",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        }
+      ],
+      "best_similarity": 36.0,
+      "seed_count": 1,
+      "twin_types": [
+        "LOCAL"
+      ],
+      "lookalike_score": 36.0,
+      "source_seeds": [
+        "sportscardjunction"
+      ]
+    },
+    {
+      "candidate_domain": "sierranevadasportscards.com",
+      "candidate_name": "Sierra Nevada Sports Cards",
+      "city": "Chico",
+      "state": "CA",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/california/chico/sierra-nevada-sports-cards/",
+      "phone": "+15304878158",
+      "street_address": "1722 Mangrove Ave",
+      "categories": [],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "rlsports",
+          "twin_type": "LOCAL",
+          "similarity_score": 36.0,
+          "similarity_reasons": [
+            "même État que rlsports (CA)",
+            "enseigne « sports cards »",
+            "comme rlsports",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        }
+      ],
+      "best_similarity": 36.0,
+      "seed_count": 1,
+      "twin_types": [
+        "LOCAL"
+      ],
+      "lookalike_score": 36.0,
+      "source_seeds": [
+        "rlsports"
+      ]
+    },
+    {
+      "candidate_domain": "sportscardsetcpgh.com",
+      "candidate_name": "Sports Cards, Etc.",
+      "city": "Robinson Twp",
+      "state": "PA",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/pennsylvania/pennsbury-village/sports-cards-etc/",
+      "phone": "+14127873235",
+      "street_address": "5629 Steubenville Pike",
+      "categories": [
+        "Pennsbury Village"
+      ],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "sportscardjunction",
+          "twin_type": "LOCAL",
+          "similarity_score": 36.0,
+          "similarity_reasons": [
+            "même État que sportscardjunction (PA)",
+            "enseigne « sports cards »",
+            "comme sportscardjunction",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        }
+      ],
+      "best_similarity": 36.0,
+      "seed_count": 1,
+      "twin_types": [
+        "LOCAL"
+      ],
+      "lookalike_score": 36.0,
+      "source_seeds": [
+        "sportscardjunction"
+      ]
+    },
+    {
+      "candidate_domain": "tablemountainsportscards.com",
+      "candidate_name": "Table Mountain Sports Cards",
+      "city": "Oroville",
+      "state": "CA",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/california/oroville/table-mountain-sports-cards/",
+      "phone": "+15302673679",
+      "street_address": "1115 Oro Dam Blvd E",
+      "categories": [],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "rlsports",
+          "twin_type": "LOCAL",
+          "similarity_score": 36.0,
+          "similarity_reasons": [
+            "même État que rlsports (CA)",
+            "enseigne « sports cards »",
+            "comme rlsports",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        }
+      ],
+      "best_similarity": 36.0,
+      "seed_count": 1,
+      "twin_types": [
+        "LOCAL"
+      ],
+      "lookalike_score": 36.0,
+      "source_seeds": [
+        "rlsports"
+      ]
+    },
+    {
+      "candidate_domain": "stripsidecomics.com",
+      "candidate_name": "Stripside Comics and Sportscards",
+      "city": "Las Vegas",
+      "state": "NV",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/nevada/enterprise/stripside-comics-and-sportscards/",
+      "phone": "+17028344113",
+      "street_address": "9620 Las Vegas Blvd S N-8",
+      "categories": [
+        "Enterprise"
+      ],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "awesome",
+          "twin_type": "LOCAL",
+          "similarity_score": 35.0,
+          "similarity_reasons": [
+            "même État que awesome (NV)",
+            "même ville (Las Vegas)",
+            "enseigne « sports cards »",
+            "point de vente unique — LCS indépendant"
+          ]
+        }
+      ],
+      "best_similarity": 35.0,
+      "seed_count": 1,
+      "twin_types": [
+        "LOCAL"
+      ],
+      "lookalike_score": 35.0,
+      "source_seeds": [
+        "awesome"
+      ]
+    },
+    {
+      "candidate_domain": "elitesportscards.net",
+      "candidate_name": "Elite Sports Cards and Comics",
+      "city": "Chicago",
+      "state": "IL",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/illinois/chicago/elite-sports-cards-and-comics-0201/",
+      "phone": "+17737841396",
+      "street_address": "2028 W Montrose Ave",
+      "categories": [
+        "Online store"
+      ],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "hiddengems",
+          "twin_type": "PROFILE",
+          "similarity_score": 26.0,
+          "similarity_reasons": [
+            "même région (MW)",
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant"
+          ]
+        },
+        {
+          "source_seed": "rbicru7",
+          "twin_type": "PROFILE",
+          "similarity_score": 26.0,
+          "similarity_reasons": [
+            "même région (MW)",
+            "enseigne « sports cards »",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant"
+          ]
+        }
+      ],
+      "best_similarity": 26.0,
+      "seed_count": 2,
+      "twin_types": [
+        "PROFILE"
+      ],
+      "lookalike_score": 34.0,
+      "source_seeds": [
+        "hiddengems",
+        "rbicru7"
+      ]
+    },
+    {
+      "candidate_domain": "greatescapeadventures.net",
+      "candidate_name": "Great Escape Adventures",
+      "city": "Cheektowaga",
+      "state": "NY",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/new-york/cheektowaga/great-escape-adventures/",
+      "phone": "+17168007389",
+      "street_address": "1 Walden Galleria",
+      "categories": [
+        "Online store"
+      ],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "bleecker",
+          "twin_type": "LOCAL",
+          "similarity_score": 26.0,
+          "similarity_reasons": [
+            "même État que bleecker (NY)",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        },
+        {
+          "source_seed": "worldchampion",
+          "twin_type": "LOCAL",
+          "similarity_score": 26.0,
+          "similarity_reasons": [
+            "même État que worldchampion (NY)",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        }
+      ],
+      "best_similarity": 26.0,
+      "seed_count": 2,
+      "twin_types": [
+        "LOCAL"
+      ],
+      "lookalike_score": 34.0,
+      "source_seeds": [
+        "bleecker",
+        "worldchampion"
+      ]
+    },
+    {
+      "candidate_domain": "themeccaofsportscards.com",
+      "candidate_name": "Mecca Sportscards",
+      "city": "Garden City",
+      "state": "MI",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/michigan/garden-city/mecca-sportscards/",
+      "phone": "+19513236001",
+      "street_address": "6719 Middlebelt Road",
+      "categories": [
+        "Sells cards"
+      ],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "hiddengems",
+          "twin_type": "LOCAL",
+          "similarity_score": 34.0,
+          "similarity_reasons": [
+            "même État que hiddengems (MI)",
+            "enseigne « sports cards »",
+            "rubrique « sells cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        }
+      ],
+      "best_similarity": 34.0,
+      "seed_count": 1,
+      "twin_types": [
+        "LOCAL"
+      ],
+      "lookalike_score": 34.0,
+      "source_seeds": [
+        "hiddengems"
+      ]
+    },
+    {
+      "candidate_domain": "americard.us",
+      "candidate_name": "Sportscard Central",
+      "city": "Waterford",
+      "state": "MI",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/michigan/sylvan-lake/sportscard-central/",
+      "phone": "+12486264300",
+      "street_address": "359 Summit Dr",
+      "categories": [
+        "Grading submissions",
+        "Sylvan Lake"
+      ],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "hiddengems",
+          "twin_type": "LOCAL",
+          "similarity_score": 33.0,
+          "similarity_reasons": [
+            "même État que hiddengems (MI)",
+            "enseigne « sports cards »",
+            "rubrique « grading submissions »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        }
+      ],
+      "best_similarity": 33.0,
+      "seed_count": 1,
+      "twin_types": [
+        "LOCAL"
+      ],
+      "lookalike_score": 33.0,
+      "source_seeds": [
+        "hiddengems"
+      ]
+    },
+    {
+      "candidate_domain": "billssportsmemorabilia.com",
+      "candidate_name": "Bill's Sports Cards and Memorabilia",
+      "city": "Philadelphia",
+      "state": "PA",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/pennsylvania/philadelphia/bills-sports-cards-and-memorabilia/",
+      "phone": "+12678721486",
+      "street_address": "2720 Rhawn St",
+      "categories": [],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "sportscardjunction",
+          "twin_type": "LOCAL",
+          "similarity_score": 33.0,
+          "similarity_reasons": [
+            "même État que sportscardjunction (PA)",
+            "enseigne « sports cards »",
+            "comme sportscardjunction",
+            "point de vente unique — LCS indépendant"
+          ]
+        }
+      ],
+      "best_similarity": 33.0,
+      "seed_count": 1,
+      "twin_types": [
+        "LOCAL"
+      ],
+      "lookalike_score": 33.0,
+      "source_seeds": [
+        "sportscardjunction"
+      ]
+    },
+    {
+      "candidate_domain": "fatkatzsportscards.com",
+      "candidate_name": "Fat Katz Sportscards & Collectibles",
+      "city": "St Clair Shores",
+      "state": "MI",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/michigan/st-clair-shores/fat-katz-sportscards-and-collectibles/",
+      "phone": "+14193030043",
+      "street_address": "24516 Harper Ave",
+      "categories": [
+        "St. Clair Shores"
+      ],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "hiddengems",
+          "twin_type": "LOCAL",
+          "similarity_score": 32.0,
+          "similarity_reasons": [
+            "même État que hiddengems (MI)",
+            "enseigne « sports cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        }
+      ],
+      "best_similarity": 32.0,
+      "seed_count": 1,
+      "twin_types": [
+        "LOCAL"
+      ],
+      "lookalike_score": 32.0,
+      "source_seeds": [
+        "hiddengems"
+      ]
+    },
+    {
+      "candidate_domain": "houghtonmarketplace.com",
+      "candidate_name": "Sportscard Connection",
+      "city": "Houghton",
+      "state": "MI",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/michigan/houghton/sportscard-connection/",
+      "phone": "+19064824121",
+      "street_address": "314 Shelden Ave",
+      "categories": [],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "hiddengems",
+          "twin_type": "LOCAL",
+          "similarity_score": 32.0,
+          "similarity_reasons": [
+            "même État que hiddengems (MI)",
+            "enseigne « sports cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        }
+      ],
+      "best_similarity": 32.0,
+      "seed_count": 1,
+      "twin_types": [
+        "LOCAL"
+      ],
+      "lookalike_score": 32.0,
+      "source_seeds": [
+        "hiddengems"
+      ]
+    },
+    {
+      "candidate_domain": "juno.com",
+      "candidate_name": "Centerfield Sports Cards",
+      "city": "Springfield",
+      "state": "MO",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/missouri/springfield/centerfield-sports-cards-4308/",
+      "phone": "+14178317675",
+      "street_address": "427 N Boonville Ave",
+      "categories": [],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "rbicru7",
+          "twin_type": "LOCAL",
+          "similarity_score": 32.0,
+          "similarity_reasons": [
+            "même État que rbicru7 (MO)",
+            "enseigne « sports cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        }
+      ],
+      "best_similarity": 32.0,
+      "seed_count": 1,
+      "twin_types": [
+        "LOCAL"
+      ],
+      "lookalike_score": 32.0,
+      "source_seeds": [
+        "rbicru7"
+      ]
+    },
+    {
+      "candidate_domain": "kcsfinestsportscards.com",
+      "candidate_name": "KC's Finest Sports Cards and Memorabilia",
+      "city": "Liberty",
+      "state": "MO",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/missouri/liberty/kcs-finest-sports-cards-and-memorabilia/",
+      "phone": "+18164297060",
+      "street_address": "943 W Liberty Dr",
+      "categories": [],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "rbicru7",
+          "twin_type": "LOCAL",
+          "similarity_score": 32.0,
+          "similarity_reasons": [
+            "même État que rbicru7 (MO)",
+            "enseigne « sports cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        }
+      ],
+      "best_similarity": 32.0,
+      "seed_count": 1,
+      "twin_types": [
+        "LOCAL"
+      ],
+      "lookalike_score": 32.0,
+      "source_seeds": [
+        "rbicru7"
+      ]
+    },
+    {
+      "candidate_domain": "legacysportscards.com",
+      "candidate_name": "Legacy Sports Cards",
+      "city": "Las Vegas",
+      "state": "NV",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/nevada/las-vegas/legacy-sports-cards-3152/",
+      "phone": "+17023416525",
+      "street_address": "4235 S Fort Apache Rd",
+      "categories": [],
+      "listings": 2,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "awesome",
+          "twin_type": "LOCAL",
+          "similarity_score": 32.0,
+          "similarity_reasons": [
+            "même État que awesome (NV)",
+            "même ville (Las Vegas)",
+            "enseigne « sports cards »"
+          ]
+        }
+      ],
+      "best_similarity": 32.0,
+      "seed_count": 1,
+      "twin_types": [
+        "LOCAL"
+      ],
+      "lookalike_score": 32.0,
+      "source_seeds": [
+        "awesome"
+      ]
+    },
+    {
+      "candidate_domain": "mattssportscards.com",
+      "candidate_name": "417 Sports Card Show",
+      "city": "Springfield",
+      "state": "MO",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/missouri/springfield/417-sports-card-show/",
+      "phone": "+14178600592",
+      "street_address": "2015 W Battlefield Rd",
+      "categories": [],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "rbicru7",
+          "twin_type": "LOCAL",
+          "similarity_score": 32.0,
+          "similarity_reasons": [
+            "même État que rbicru7 (MO)",
+            "enseigne « sports cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        }
+      ],
+      "best_similarity": 32.0,
+      "seed_count": 1,
+      "twin_types": [
+        "LOCAL"
+      ],
+      "lookalike_score": 32.0,
+      "source_seeds": [
+        "rbicru7"
+      ]
+    },
+    {
+      "candidate_domain": "fieldofdreamsmoviesite.com",
+      "candidate_name": "Field of Dreams Sports Cards",
+      "city": "Springfield",
+      "state": "MO",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/missouri/springfield/field-of-dreams-sports-cards/",
+      "phone": "+14178630558",
+      "street_address": "926 W Kearney St",
+      "categories": [
+        "Events / tournaments"
+      ],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "rbicru7",
+          "twin_type": "LOCAL",
+          "similarity_score": 31.0,
+          "similarity_reasons": [
+            "même État que rbicru7 (MO)",
+            "enseigne « sports cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        }
+      ],
+      "best_similarity": 31.0,
+      "seed_count": 1,
+      "twin_types": [
+        "LOCAL"
+      ],
+      "lookalike_score": 31.0,
+      "source_seeds": [
+        "rbicru7"
+      ]
+    },
+    {
+      "candidate_domain": "j2games.com",
+      "candidate_name": "J2Games",
+      "city": "Brick",
+      "state": "NJ",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/new-jersey/leisure-village-east/j2games/",
+      "phone": "+17324558550",
+      "street_address": "2791 Hooper Ave",
+      "categories": [
+        "Buys cards",
+        "Leisure Village East",
+        "Online store"
+      ],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "monmouth",
+          "twin_type": "LOCAL",
+          "similarity_score": 30.0,
+          "similarity_reasons": [
+            "même État que monmouth (NJ)",
+            "rubrique « online store »",
+            "rubrique « buys cards »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        }
+      ],
+      "best_similarity": 30.0,
+      "seed_count": 1,
+      "twin_types": [
+        "LOCAL"
+      ],
+      "lookalike_score": 30.0,
+      "source_seeds": [
+        "monmouth"
+      ]
+    },
+    {
+      "candidate_domain": "888collectibles.com",
+      "candidate_name": "888 Collectibles",
+      "city": "Las Vegas",
+      "state": "NV",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/nevada/las-vegas/888-collectibles/",
+      "phone": "+17029699640",
+      "street_address": "4276 Spring Mountain Road #203",
+      "categories": [
+        "Buys cards",
+        "Sells cards"
+      ],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "awesome",
+          "twin_type": "LOCAL",
+          "similarity_score": 29.0,
+          "similarity_reasons": [
+            "même État que awesome (NV)",
+            "même ville (Las Vegas)",
+            "rubrique « buys cards »",
+            "rubrique « sells cards »",
+            "point de vente unique — LCS indépendant"
+          ]
+        }
+      ],
+      "best_similarity": 29.0,
+      "seed_count": 1,
+      "twin_types": [
+        "LOCAL"
+      ],
+      "lookalike_score": 29.0,
+      "source_seeds": [
+        "awesome"
+      ]
+    },
+    {
+      "candidate_domain": "downtownhobby9.com",
+      "candidate_name": "DownTown Hobby 9",
+      "city": "Las Vegas",
+      "state": "NV",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/nevada/las-vegas/downtown-hobby-9/",
+      "phone": "+17024105071",
+      "street_address": "3310 S Jones Blvd",
+      "categories": [
+        "Online store"
+      ],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "awesome",
+          "twin_type": "LOCAL",
+          "similarity_score": 29.0,
+          "similarity_reasons": [
+            "même État que awesome (NV)",
+            "même ville (Las Vegas)",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant"
+          ]
+        }
+      ],
+      "best_similarity": 29.0,
+      "seed_count": 1,
+      "twin_types": [
+        "LOCAL"
+      ],
+      "lookalike_score": 29.0,
+      "source_seeds": [
+        "awesome"
+      ]
+    },
+    {
+      "candidate_domain": "guildofhands.com",
+      "candidate_name": "Guild Of Hands",
+      "city": "New York",
+      "state": "NY",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/new-york/new-york/guild-of-hands/",
+      "phone": "+16467915544",
+      "street_address": "18 W 27th St",
+      "categories": [
+        "Online store"
+      ],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "worldchampion",
+          "twin_type": "LOCAL",
+          "similarity_score": 29.0,
+          "similarity_reasons": [
+            "même État que worldchampion (NY)",
+            "même ville (New York)",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant"
+          ]
+        }
+      ],
+      "best_similarity": 29.0,
+      "seed_count": 1,
+      "twin_types": [
+        "LOCAL"
+      ],
+      "lookalike_score": 29.0,
+      "source_seeds": [
+        "worldchampion"
+      ]
+    },
+    {
+      "candidate_domain": "javelinhobbieslv.com",
+      "candidate_name": "Javelin Hobbies LV",
+      "city": "Las Vegas",
+      "state": "NV",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/nevada/las-vegas/javelin-hobbies-lv/",
+      "phone": "+17028153307",
+      "street_address": "1717 S Decatur Blvd",
+      "categories": [
+        "Online store"
+      ],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "awesome",
+          "twin_type": "LOCAL",
+          "similarity_score": 29.0,
+          "similarity_reasons": [
+            "même État que awesome (NV)",
+            "même ville (Las Vegas)",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant"
+          ]
+        }
+      ],
+      "best_similarity": 29.0,
+      "seed_count": 1,
+      "twin_types": [
+        "LOCAL"
+      ],
+      "lookalike_score": 29.0,
+      "source_seeds": [
+        "awesome"
+      ]
+    },
+    {
+      "candidate_domain": "mimicsmarket.com",
+      "candidate_name": "Mimic's Market",
+      "city": "Pittsburgh",
+      "state": "PA",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/pennsylvania/pittsburgh/mimics-market/",
+      "phone": "+14122280306",
+      "street_address": "4707 Liberty Avenue",
+      "categories": [
+        "Online store"
+      ],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "sportscardjunction",
+          "twin_type": "LOCAL",
+          "similarity_score": 29.0,
+          "similarity_reasons": [
+            "même État que sportscardjunction (PA)",
+            "même ville (Pittsburgh)",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant"
+          ]
+        }
+      ],
+      "best_similarity": 29.0,
+      "seed_count": 1,
+      "twin_types": [
+        "LOCAL"
+      ],
+      "lookalike_score": 29.0,
+      "source_seeds": [
+        "sportscardjunction"
+      ]
+    },
+    {
+      "candidate_domain": "plushtery.com",
+      "candidate_name": "Plushtery",
+      "city": "New York",
+      "state": "NY",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/new-york/new-york/plushtery/",
+      "phone": null,
+      "street_address": "600 3rd Ave",
+      "categories": [
+        "Online store"
+      ],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "worldchampion",
+          "twin_type": "LOCAL",
+          "similarity_score": 29.0,
+          "similarity_reasons": [
+            "même État que worldchampion (NY)",
+            "même ville (New York)",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant"
+          ]
+        }
+      ],
+      "best_similarity": 29.0,
+      "seed_count": 1,
+      "twin_types": [
+        "LOCAL"
+      ],
+      "lookalike_score": 29.0,
+      "source_seeds": [
+        "worldchampion"
+      ]
+    },
+    {
+      "candidate_domain": "thepokecourt.com",
+      "candidate_name": "The Poke Court",
+      "city": "New York",
+      "state": "NY",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/new-york/new-york/the-poke-court/",
+      "phone": "+16463892206",
+      "street_address": "412 W 13th St",
+      "categories": [
+        "Events / tournaments",
+        "Grading submissions",
+        "Online store"
+      ],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "worldchampion",
+          "twin_type": "LOCAL",
+          "similarity_score": 29.0,
+          "similarity_reasons": [
+            "même État que worldchampion (NY)",
+            "même ville (New York)",
+            "rubrique « online store »",
+            "rubrique « grading submissions »",
+            "point de vente unique — LCS indépendant"
+          ]
+        }
+      ],
+      "best_similarity": 29.0,
+      "seed_count": 1,
+      "twin_types": [
+        "LOCAL"
+      ],
+      "lookalike_score": 29.0,
+      "source_seeds": [
+        "worldchampion"
+      ]
+    },
+    {
+      "candidate_domain": "thwipster.com",
+      "candidate_name": "Thwipster",
+      "city": "New York",
+      "state": "NY",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/new-york/new-york/thwipster/",
+      "phone": null,
+      "street_address": "66 Allen St",
+      "categories": [
+        "Online store"
+      ],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "worldchampion",
+          "twin_type": "LOCAL",
+          "similarity_score": 29.0,
+          "similarity_reasons": [
+            "même État que worldchampion (NY)",
+            "même ville (New York)",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant"
+          ]
+        }
+      ],
+      "best_similarity": 29.0,
+      "seed_count": 1,
+      "twin_types": [
+        "LOCAL"
+      ],
+      "lookalike_score": 29.0,
+      "source_seeds": [
+        "worldchampion"
+      ]
+    },
+    {
+      "candidate_domain": "tricksupply.com",
+      "candidate_name": "Tricksupply.com",
+      "city": "Las Vegas",
+      "state": "NV",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/nevada/las-vegas/tricksupply-com/",
+      "phone": "+17024301625",
+      "street_address": "2510 E Sunset Rd",
+      "categories": [
+        "Online store"
+      ],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "awesome",
+          "twin_type": "LOCAL",
+          "similarity_score": 29.0,
+          "similarity_reasons": [
+            "même État que awesome (NV)",
+            "même ville (Las Vegas)",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant"
+          ]
+        }
+      ],
+      "best_similarity": 29.0,
+      "seed_count": 1,
+      "twin_types": [
+        "LOCAL"
+      ],
+      "lookalike_score": 29.0,
+      "source_seeds": [
+        "awesome"
+      ]
+    },
+    {
+      "candidate_domain": "argreplay.com",
+      "candidate_name": "ARG Replay",
+      "city": "Depew",
+      "state": "NY",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/new-york/depew/arg-replay/",
+      "phone": "+17163200777",
+      "street_address": "6061 Transit Rd",
+      "categories": [
+        "Online store"
+      ],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "bleecker",
+          "twin_type": "LOCAL",
+          "similarity_score": 26.0,
+          "similarity_reasons": [
+            "même État que bleecker (NY)",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        }
+      ],
+      "best_similarity": 26.0,
+      "seed_count": 1,
+      "twin_types": [
+        "LOCAL"
+      ],
+      "lookalike_score": 26.0,
+      "source_seeds": [
+        "bleecker"
+      ]
+    },
+    {
+      "candidate_domain": "artisanknitworks.com",
+      "candidate_name": "Artisan Knitworks",
+      "city": "Chelsea",
+      "state": "MI",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/michigan/chelsea/artisan-knitworks/",
+      "phone": "+17345622682",
+      "street_address": "105 Main St N",
+      "categories": [
+        "Beginner-friendly",
+        "Online store"
+      ],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "hiddengems",
+          "twin_type": "LOCAL",
+          "similarity_score": 26.0,
+          "similarity_reasons": [
+            "même État que hiddengems (MI)",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        }
+      ],
+      "best_similarity": 26.0,
+      "seed_count": 1,
+      "twin_types": [
+        "LOCAL"
+      ],
+      "lookalike_score": 26.0,
+      "source_seeds": [
+        "hiddengems"
+      ]
+    },
+    {
+      "candidate_domain": "blackjadedwolf.com",
+      "candidate_name": "Blackjadedwolf",
+      "city": "Brooklyn",
+      "state": "NY",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/new-york/new-york/blackjadedwolf/",
+      "phone": "+13475895251",
+      "street_address": "282 Flatbush Ave",
+      "categories": [
+        "Online store"
+      ],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "bleecker",
+          "twin_type": "LOCAL",
+          "similarity_score": 26.0,
+          "similarity_reasons": [
+            "même État que bleecker (NY)",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        }
+      ],
+      "best_similarity": 26.0,
+      "seed_count": 1,
+      "twin_types": [
+        "LOCAL"
+      ],
+      "lookalike_score": 26.0,
+      "source_seeds": [
+        "bleecker"
+      ]
+    },
+    {
+      "candidate_domain": "blackmarketfpv.com",
+      "candidate_name": "Black Market Fpv",
+      "city": "Jackson Heights",
+      "state": "NY",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/new-york/new-york/black-market-fpv/",
+      "phone": null,
+      "street_address": "8315 Northern Blvd Ste 2",
+      "categories": [
+        "Online store"
+      ],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "bleecker",
+          "twin_type": "LOCAL",
+          "similarity_score": 26.0,
+          "similarity_reasons": [
+            "même État que bleecker (NY)",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        }
+      ],
+      "best_similarity": 26.0,
+      "seed_count": 1,
+      "twin_types": [
+        "LOCAL"
+      ],
+      "lookalike_score": 26.0,
+      "source_seeds": [
+        "bleecker"
+      ]
+    },
+    {
+      "candidate_domain": "goffausa.com",
+      "candidate_name": "Goffa International",
+      "city": "Brooklyn",
+      "state": "NY",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/new-york/new-york/goffa-international/",
+      "phone": "+17183618883",
+      "street_address": "930 Flushing Ave Ste 2",
+      "categories": [
+        "Online store"
+      ],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "bleecker",
+          "twin_type": "LOCAL",
+          "similarity_score": 26.0,
+          "similarity_reasons": [
+            "même État que bleecker (NY)",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        }
+      ],
+      "best_similarity": 26.0,
+      "seed_count": 1,
+      "twin_types": [
+        "LOCAL"
+      ],
+      "lookalike_score": 26.0,
+      "source_seeds": [
+        "bleecker"
+      ]
+    },
+    {
+      "candidate_domain": "holmeshobbies.com",
+      "candidate_name": "Holmes Hobbies LLC",
+      "city": "Columbia",
+      "state": "MO",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/missouri/columbia/holmes-hobbies-llc/",
+      "phone": "+15732560022",
+      "street_address": "716 W Sexton Rd",
+      "categories": [
+        "Online store"
+      ],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "rbicru7",
+          "twin_type": "LOCAL",
+          "similarity_score": 26.0,
+          "similarity_reasons": [
+            "même État que rbicru7 (MO)",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        }
+      ],
+      "best_similarity": 26.0,
+      "seed_count": 1,
+      "twin_types": [
+        "LOCAL"
+      ],
+      "lookalike_score": 26.0,
+      "source_seeds": [
+        "rbicru7"
+      ]
+    },
+    {
+      "candidate_domain": "macadoodles.com",
+      "candidate_name": "Macadoodles of Columbia",
+      "city": "Columbia",
+      "state": "MO",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/missouri/columbia/macadoodles-of-columbia/",
+      "phone": "+15734431825",
+      "street_address": "455 E Green Meadows Rd",
+      "categories": [
+        "Online store"
+      ],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "rbicru7",
+          "twin_type": "LOCAL",
+          "similarity_score": 26.0,
+          "similarity_reasons": [
+            "même État que rbicru7 (MO)",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        }
+      ],
+      "best_similarity": 26.0,
+      "seed_count": 1,
+      "twin_types": [
+        "LOCAL"
+      ],
+      "lookalike_score": 26.0,
+      "source_seeds": [
+        "rbicru7"
+      ]
+    },
+    {
+      "candidate_domain": "thehideouttcs.com",
+      "candidate_name": "The Hideout",
+      "city": "Columbia",
+      "state": "MO",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/missouri/columbia/the-hideout/",
+      "phone": "+15737779510",
+      "street_address": "4250 E Broadway",
+      "categories": [
+        "Online store"
+      ],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "rbicru7",
+          "twin_type": "LOCAL",
+          "similarity_score": 26.0,
+          "similarity_reasons": [
+            "même État que rbicru7 (MO)",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        }
+      ],
+      "best_similarity": 26.0,
+      "seed_count": 1,
+      "twin_types": [
+        "LOCAL"
+      ],
+      "lookalike_score": 26.0,
+      "source_seeds": [
+        "rbicru7"
+      ]
+    },
+    {
+      "candidate_domain": "theripbuddy.com",
+      "candidate_name": "The Rip Buddy",
+      "city": "Grand Rapids",
+      "state": "MI",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/michigan/grand-rapids/the-rip-buddy/",
+      "phone": "+15593686406",
+      "street_address": "2991 5 Mile Rd NE",
+      "categories": [
+        "Online store"
+      ],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "hiddengems",
+          "twin_type": "LOCAL",
+          "similarity_score": 26.0,
+          "similarity_reasons": [
+            "même État que hiddengems (MI)",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        }
+      ],
+      "best_similarity": 26.0,
+      "seed_count": 1,
+      "twin_types": [
+        "LOCAL"
+      ],
+      "lookalike_score": 26.0,
+      "source_seeds": [
+        "hiddengems"
+      ]
+    },
+    {
+      "candidate_domain": "ihc.cards",
+      "candidate_name": "IHC Cards and Collectibles",
+      "city": "Trenton",
+      "state": "NJ",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/new-jersey/trenton/ihc-cards-and-collectibles/",
+      "phone": "+16092458988",
+      "street_address": "876 White Horse Ave",
+      "categories": [
+        "Events / tournaments",
+        "Online store"
+      ],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "monmouth",
+          "twin_type": "LOCAL",
+          "similarity_score": 25.0,
+          "similarity_reasons": [
+            "même État que monmouth (NJ)",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        }
+      ],
+      "best_similarity": 25.0,
+      "seed_count": 1,
+      "twin_types": [
+        "LOCAL"
+      ],
+      "lookalike_score": 25.0,
+      "source_seeds": [
+        "monmouth"
+      ]
+    },
+    {
+      "candidate_domain": "maplewoodhobby.com",
+      "candidate_name": "Maplewood Hobby",
+      "city": "Maplewood",
+      "state": "NJ",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/new-jersey/vauxhall/maplewood-hobby/",
+      "phone": "+19733783839",
+      "street_address": "1970 Springfield Ave",
+      "categories": [
+        "Vauxhall"
+      ],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "monmouth",
+          "twin_type": "LOCAL",
+          "similarity_score": 20.0,
+          "similarity_reasons": [
+            "même État que monmouth (NJ)",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        }
+      ],
+      "best_similarity": 20.0,
+      "seed_count": 1,
+      "twin_types": [
+        "LOCAL"
+      ],
+      "lookalike_score": 20.0,
+      "source_seeds": [
+        "monmouth"
+      ]
+    },
+    {
+      "candidate_domain": "theplayeragency.com",
+      "candidate_name": "The Player Agency",
+      "city": "South Orange",
+      "state": "NJ",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/new-jersey/vauxhall/the-player-agency/",
+      "phone": "+19738215867",
+      "street_address": "5 Mead St",
+      "categories": [
+        "Vauxhall"
+      ],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "monmouth",
+          "twin_type": "LOCAL",
+          "similarity_score": 20.0,
+          "similarity_reasons": [
+            "même État que monmouth (NJ)",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville"
+          ]
+        }
+      ],
+      "best_similarity": 20.0,
+      "seed_count": 1,
+      "twin_types": [
+        "LOCAL"
+      ],
+      "lookalike_score": 20.0,
+      "source_seeds": [
+        "monmouth"
+      ]
+    },
+    {
+      "candidate_domain": "comic-lair.com",
+      "candidate_name": "Comic Lair",
+      "city": "Trenton",
+      "state": "NJ",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/new-jersey/trenton/comic-lair/",
+      "phone": "+16096958855",
+      "street_address": "1606 S Broad St",
+      "categories": [
+        "Online store"
+      ],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "monmouth",
+          "twin_type": "LOCAL",
+          "similarity_score": 18.0,
+          "similarity_reasons": [
+            "même État que monmouth (NJ)",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville",
+            "nom orienté TCG / comics / jeux"
+          ]
+        }
+      ],
+      "best_similarity": 18.0,
+      "seed_count": 1,
+      "twin_types": [
+        "LOCAL"
+      ],
+      "lookalike_score": 18.0,
+      "source_seeds": [
+        "monmouth"
+      ]
+    },
+    {
+      "candidate_domain": "gildedravengames.com",
+      "candidate_name": "Gilded Raven Games",
+      "city": "Somerset",
+      "state": "NJ",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/new-jersey/somerset/gilded-raven-games/",
+      "phone": "+19085475440",
+      "street_address": "120 Cedar Grove Ln",
+      "categories": [
+        "Events / tournaments",
+        "Online store"
+      ],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "monmouth",
+          "twin_type": "LOCAL",
+          "similarity_score": 17.0,
+          "similarity_reasons": [
+            "même État que monmouth (NJ)",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville",
+            "nom orienté TCG / comics / jeux"
+          ]
+        }
+      ],
+      "best_similarity": 17.0,
+      "seed_count": 1,
+      "twin_types": [
+        "LOCAL"
+      ],
+      "lookalike_score": 17.0,
+      "source_seeds": [
+        "monmouth"
+      ]
+    },
+    {
+      "candidate_domain": "round2gaming.com",
+      "candidate_name": "Round 2 Gaming",
+      "city": "Lawrence Twp",
+      "state": "NJ",
+      "cardshopmap_url": "https://cardshopmap.com/card-shops/new-jersey/lawrenceville/round-2-gaming/",
+      "phone": "+16097496000",
+      "street_address": "3320 US Highway",
+      "categories": [
+        "Events / tournaments",
+        "Lawrenceville",
+        "Online store"
+      ],
+      "listings": 1,
+      "already_known": false,
+      "matches": [
+        {
+          "source_seed": "monmouth",
+          "twin_type": "LOCAL",
+          "similarity_score": 17.0,
+          "similarity_reasons": [
+            "même État que monmouth (NJ)",
+            "rubrique « online store »",
+            "point de vente unique — LCS indépendant",
+            "petite ou moyenne ville",
+            "nom orienté TCG / comics / jeux"
+          ]
+        }
+      ],
+      "best_similarity": 17.0,
+      "seed_count": 1,
+      "twin_types": [
+        "LOCAL"
+      ],
+      "lookalike_score": 17.0,
+      "source_seeds": [
+        "monmouth"
+      ]
+    }
+  ],
+  "note": "Un score de similarité ordonne une file d'attente. Il ne voit aucun catalogue, ne prouve ni basket ni scellé, et une candidate n'est PAS une recommandation : il faut basket SCELLÉ visible + PRIX + ACHAT À DISTANCE. Les malus (TCG, breaker, chaîne) sont des critères de tri, pas des jugements — UNKNOWN n'est jamais NO."
+}

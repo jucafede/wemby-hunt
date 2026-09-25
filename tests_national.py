@@ -264,5 +264,43 @@ v4 = sq2.fusionne({"website_accessible": True, "crawlable": True, "basketball": 
 ok(v4["status"] == "QUALIFIED", "une API qui prouve le scellé n'est pas annulée par un HTML muet")
 ok(v4["lu"] is True, "la lecture de l'API compte comme lecture")
 
+# ---------------------------------------------------------- lookalike
+import lookalike as lk
+
+ok(lk.domaine("https://www.Foo.com/x") == "foo.com", "domaine normalisé")
+ok(lk.region("TX") == "SW" and lk.region("MI") == "MW", "régions cohérentes")
+ok(lk.region(None) is None, "État inconnu : pas de région inventée")
+
+# la porte dure exige les TROIS preuves
+ok(lk.ACHAT_DISTANCE == {"ONLINE_CART", "MAIL_ORDER", "PHONE_ORDER"},
+   "IN_STORE_ONLY n'est pas un achat à distance")
+
+# similarité : un breaker et un TCG sont pénalisés, jamais rejetés
+g = {"key": "x", "name": "Awesome Sports Cards", "state": "NV", "city": "Las Vegas",
+     "region": "W", "specialiste": True}
+base = {"shop_name": "Reno Sports Cards", "cities": ["Reno"], "state": "nevada",
+        "categories": ["Online store"], "listings": 1}
+s_base, why, kind = lk.similarite(g, base)
+ok(kind == "LOCAL", "même État = jumeau LOCAL")
+s_tcg, _, _ = lk.similarite(g, dict(base, shop_name="Reno Pokemon Games"))
+ok(s_tcg < s_base, "un nom TCG est pénalisé")
+s_br, _, _ = lk.similarite(g, dict(base, shop_name="Reno Sports Cards Breaks"))
+ok(s_br < s_base, "un nom de breaker est pénalisé")
+s_ch, _, _ = lk.similarite(g, dict(base, listings=6))
+ok(s_ch < s_base, "une chaîne est pénalisée")
+ok(s_tcg > -1000 and s_br > -1000, "un malus reste un tri, pas un rejet")
+loin, _, k2 = lk.similarite(g, dict(base, state="maine", cities=["Bangor"]))
+ok(k2 == "PROFILE", "hors région = jumeau de PROFIL")
+
+# l'absence d'information ne pénalise pas
+sans_geo = dict(g, state=None, city=None, region=None)
+s_nogeo, _, k3 = lk.similarite(sans_geo, base)
+ok(k3 == "PROFILE" and s_nogeo > 0, "une graine sans géographie produit quand même des jumeaux")
+
+# le bonus multi-graines ne doit pas écraser la similarité
+ok(lk.BONUS_MULTI * lk.BONUS_MAX <= 40,
+   "le bonus multi-graines reste borné — 14 graines ne valent pas +130")
+ok(lk.SCELLE_MIN >= 20, "une graine doit montrer une vraie profondeur scellée")
+
 print(f"\ntests_national : {T} tests, {F} échec(s)")
 raise SystemExit(1 if F else 0)

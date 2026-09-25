@@ -1,38 +1,37 @@
 {
-  "generated_at": "2026-09-25T05:31:52+00:00",
+  "generated_at": "2026-09-25T12:25:40+00:00",
   "method": "automatique · KNOWN URL REFRESH, puis NEW LISTING DISCOVERY par recherche web ET par balayage des catalogues candidats",
   "stale_after_hours": 24,
   "note": "Une annonce non VÉRIFIÉE depuis plus de 24 h passe STALE : visible, datée, mais ni live, ni meilleur prix, ni déclencheur d'achat. eBay, StockX et les sites de cotation refusent toute lecture automatisée (403) — leurs annonces ne peuvent donc pas être confirmées ici, et ne le prétendent pas.",
   "states": {
-    "CONFIRMED_LIVE": 3,
+    "CONFIRMED_LIVE": 4,
     "PROBABLE_LIVE": 1,
     "OOS": 19,
-    "STALE": 15,
-    "LOST": 0,
-    "AMBIGUOUS": 1
+    "STALE": 12,
+    "LOST": 3,
+    "AMBIGUOUS": 0
   },
   "run": {
     "known_urls_checked": 39,
-    "unreadable": 16,
+    "unreadable": 12,
     "web_searches": 23,
     "marketplace_searches": 20,
     "domains_swept": 8,
     "ecartes_deja_crawles": [],
-    "domains_reachable": 7,
-    "catalog_items_read": 17916,
+    "domains_reachable": 8,
+    "catalog_items_read": 18202,
     "new_domains": [],
     "new_listings": 13,
     "new_by_search": 0,
     "new_by_sweep": 13,
     "price_changes": [],
-    "live_to_oos": [
+    "live_to_oos": [],
+    "oos_to_live": [
       {
         "url": "https://collectorsclub.com/products/2023-24-panini-prizm-basketball-hobby-box",
-        "statut": "AMBIGUOUS",
         "format": "Hobby"
       }
     ],
-    "oos_to_live": [],
     "became_stale": [
       {
         "url": "https://stockx.com/2023-24-panini-prizm-basketball-1st-off-the-line-hobby-box",
@@ -81,7 +80,9 @@
       {
         "url": "https://www.amazon.com/2023-24-Panini-Prizm-Basketball-Mega/dp/B0CY5NX4FM",
         "format": "Mega"
-      },
+      }
+    ],
+    "lost": [
       {
         "url": "https://collectorsclub.com/products/2023-24-prizm-basketball-hobby-box-fotl",
         "format": "FOTL"
@@ -95,8 +96,7 @@
         "format": "Hobby"
       }
     ],
-    "lost": [],
-    "urls_seen": 372,
+    "urls_seen": 314,
     "urls_probed": 4,
     "rejected": 4,
     "engine_attempts": [
@@ -201,7 +201,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 4
+            "n": 13
           }
         ]
       },
@@ -307,7 +307,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 8
+            "n": 6
           }
         ]
       },
@@ -343,7 +343,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 8
+            "n": 7
           }
         ]
       },
@@ -415,7 +415,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 8
+            "n": 6
           }
         ]
       },
@@ -451,7 +451,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 9
+            "n": 6
           }
         ]
       },
@@ -487,7 +487,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 8
+            "n": 6
           }
         ]
       },
@@ -523,7 +523,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 8
+            "n": 6
           }
         ]
       },
@@ -559,7 +559,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 8
+            "n": 6
           }
         ]
       },
@@ -595,7 +595,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 8
+            "n": 6
           }
         ]
       },
@@ -631,7 +631,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 8
+            "n": 6
           }
         ]
       },
@@ -667,7 +667,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 8
+            "n": 6
           }
         ]
       },
@@ -703,7 +703,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 8
+            "n": 6
           }
         ]
       },
@@ -739,7 +739,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 8
+            "n": 6
           }
         ]
       },
@@ -775,7 +775,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 8
+            "n": 6
           }
         ]
       },
@@ -811,7 +811,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 8
+            "n": 7
           }
         ]
       },
@@ -847,7 +847,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 11
+            "n": 13
           }
         ]
       },
@@ -883,7 +883,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 8
+            "n": 6
           }
         ]
       },
@@ -919,7 +919,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 8
+            "n": 7
           }
         ]
       },
@@ -955,7 +955,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 8
+            "n": 6
           }
         ]
       },
@@ -991,7 +991,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 8
+            "n": 6
           }
         ]
       },
@@ -1027,7 +1027,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 8
+            "n": 7
           }
         ]
       },
@@ -1063,7 +1063,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 8
+            "n": 6
           }
         ]
       },
@@ -1099,7 +1099,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 8
+            "n": 6
           }
         ]
       },
@@ -1135,7 +1135,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 8
+            "n": 6
           }
         ]
       },
@@ -1171,7 +1171,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 8
+            "n": 6
           }
         ]
       },
@@ -1207,7 +1207,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 8
+            "n": 6
           }
         ]
       },
@@ -1243,7 +1243,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 8
+            "n": 6
           }
         ]
       },
@@ -1279,7 +1279,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 8
+            "n": 6
           }
         ]
       },
@@ -1315,7 +1315,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 8
+            "n": 6
           }
         ]
       },
@@ -1351,7 +1351,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 8
+            "n": 6
           }
         ]
       },
@@ -1387,7 +1387,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 8
+            "n": 6
           }
         ]
       },
@@ -1423,7 +1423,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 9
+            "n": 6
           }
         ]
       },
@@ -1459,7 +1459,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 8
+            "n": 6
           }
         ]
       },
@@ -1495,7 +1495,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 8
+            "n": 6
           }
         ]
       },
@@ -1531,7 +1531,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 8
+            "n": 6
           }
         ]
       },
@@ -1567,7 +1567,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 8
+            "n": 6
           }
         ]
       },
@@ -1603,7 +1603,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 8
+            "n": 7
           }
         ]
       },
@@ -1639,7 +1639,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 8
+            "n": 6
           }
         ]
       }
@@ -1649,7 +1649,7 @@
     {
       "format": "FOTL",
       "first_seen": "2026-09-06",
-      "last_checked": "2026-09-25T05:24:08+00:00",
+      "last_checked": "2026-09-25T12:18:13+00:00",
       "last_seen_live": "2026-09-06",
       "price": null,
       "currency": "USD",
@@ -1669,7 +1669,7 @@
     {
       "format": "Mega",
       "first_seen": "2026-09-06",
-      "last_checked": "2026-09-25T05:24:08+00:00",
+      "last_checked": "2026-09-25T12:18:13+00:00",
       "last_seen_live": "2026-09-06",
       "price": 239.99,
       "currency": "USD",
@@ -1689,7 +1689,7 @@
     {
       "format": "Mega",
       "first_seen": "2026-09-06",
-      "last_checked": "2026-09-25T05:24:08+00:00",
+      "last_checked": "2026-09-25T12:18:13+00:00",
       "last_seen_live": "2026-09-06",
       "price": 230.99,
       "currency": "USD",
@@ -1709,7 +1709,7 @@
     {
       "format": "Mega",
       "first_seen": "2026-09-06",
-      "last_checked": "2026-09-25T05:24:08+00:00",
+      "last_checked": "2026-09-25T12:18:13+00:00",
       "last_seen_live": "2026-09-06",
       "price": 134.0,
       "currency": "USD",
@@ -1729,7 +1729,7 @@
     {
       "format": "Blaster",
       "first_seen": "2026-09-06",
-      "last_checked": "2026-09-25T05:24:08+00:00",
+      "last_checked": "2026-09-25T12:18:13+00:00",
       "last_seen_live": "2026-09-06",
       "price": 129.95,
       "currency": "USD",
@@ -1749,7 +1749,7 @@
     {
       "format": "Blaster",
       "first_seen": "2026-09-06",
-      "last_checked": "2026-09-25T05:24:08+00:00",
+      "last_checked": "2026-09-25T12:18:13+00:00",
       "last_seen_live": "2026-09-06",
       "price": 74.0,
       "currency": "USD",
@@ -1769,7 +1769,7 @@
     {
       "format": "Retail Box",
       "first_seen": "2026-09-06",
-      "last_checked": "2026-09-25T05:24:08+00:00",
+      "last_checked": "2026-09-25T12:18:13+00:00",
       "last_seen_live": "2026-09-06",
       "price": 299.98,
       "currency": "USD",
@@ -1789,7 +1789,7 @@
     {
       "format": "Choice",
       "first_seen": "2026-09-06",
-      "last_checked": "2026-09-25T05:24:08+00:00",
+      "last_checked": "2026-09-25T12:18:13+00:00",
       "last_seen_live": "2026-09-06",
       "price": 867.0,
       "currency": "USD",
@@ -1809,7 +1809,7 @@
     {
       "format": "Hobby",
       "first_seen": "2026-09-06",
-      "last_checked": "2026-09-25T05:24:08+00:00",
+      "last_checked": "2026-09-25T12:18:13+00:00",
       "last_seen_live": "2026-09-06",
       "price": 874.0,
       "currency": "USD",
@@ -1829,7 +1829,7 @@
     {
       "format": "Premium Factory Set",
       "first_seen": "2026-09-06",
-      "last_checked": "2026-09-25T05:24:08+00:00",
+      "last_checked": "2026-09-25T12:18:13+00:00",
       "last_seen_live": null,
       "price": null,
       "currency": "USD",
@@ -1849,7 +1849,7 @@
     {
       "format": "Mega",
       "first_seen": "2026-09-06",
-      "last_checked": "2026-09-25T05:24:10+00:00",
+      "last_checked": "2026-09-25T12:18:14+00:00",
       "last_seen_live": null,
       "price": null,
       "currency": "USD",
@@ -1863,13 +1863,13 @@
       "note": "cible RESTOCK, suivie par hotstock.io",
       "probe": {
         "raw": "AMBIGUOUS",
-        "why": "place de marché : aucun stock structuré"
+        "why": "défi anti-robot"
       }
     },
     {
       "format": "Mega",
       "first_seen": "2026-09-06",
-      "last_checked": "2026-09-25T05:24:10+00:00",
+      "last_checked": "2026-09-25T12:18:14+00:00",
       "last_seen_live": null,
       "price": null,
       "currency": "USD",
@@ -1889,7 +1889,7 @@
     {
       "format": "Hobby",
       "first_seen": "2026-09-07T09:07:17+00:00",
-      "last_checked": "2026-09-25T05:24:11+00:00",
+      "last_checked": "2026-09-25T12:18:16+00:00",
       "last_seen_live": null,
       "price": 1199.99,
       "currency": "CAD",
@@ -1909,7 +1909,7 @@
     {
       "format": "International",
       "first_seen": "2026-09-07T09:40:30+00:00",
-      "last_checked": "2026-09-25T05:30:39+00:00",
+      "last_checked": "2026-09-25T12:24:35+00:00",
       "last_seen_live": null,
       "price": 334.95,
       "currency": "USD",
@@ -1932,7 +1932,7 @@
     {
       "format": "Choice",
       "first_seen": "2026-09-07T09:40:30+00:00",
-      "last_checked": "2026-09-25T05:30:39+00:00",
+      "last_checked": "2026-09-25T12:24:35+00:00",
       "last_seen_live": null,
       "price": 10599.95,
       "currency": "USD",
@@ -1954,7 +1954,7 @@
     {
       "format": "Fast Break",
       "first_seen": "2026-09-07T09:40:30+00:00",
-      "last_checked": "2026-09-25T05:30:39+00:00",
+      "last_checked": "2026-09-25T12:24:35+00:00",
       "last_seen_live": null,
       "price": 12499.95,
       "currency": "USD",
@@ -1976,7 +1976,7 @@
     {
       "format": "Fast Break",
       "first_seen": "2026-09-07T09:40:30+00:00",
-      "last_checked": "2026-09-25T05:30:39+00:00",
+      "last_checked": "2026-09-25T12:24:35+00:00",
       "last_seen_live": null,
       "price": 549.95,
       "currency": "USD",
@@ -1999,7 +1999,7 @@
     {
       "format": "Hobby",
       "first_seen": "2026-09-07T09:40:30+00:00",
-      "last_checked": "2026-09-25T05:30:39+00:00",
+      "last_checked": "2026-09-25T12:24:35+00:00",
       "last_seen_live": null,
       "price": 13549.95,
       "currency": "USD",
@@ -2021,8 +2021,8 @@
     {
       "format": "Hobby",
       "first_seen": "2026-09-07T09:40:30+00:00",
-      "last_checked": "2026-09-25T05:30:39+00:00",
-      "last_seen_live": "2026-09-25T05:30:39+00:00",
+      "last_checked": "2026-09-25T12:24:35+00:00",
+      "last_seen_live": "2026-09-25T12:24:35+00:00",
       "price": 3099.95,
       "currency": "USD",
       "seller": "giantsportscards.com",
@@ -2044,7 +2044,7 @@
     {
       "format": "Blaster",
       "first_seen": "2026-09-07T09:41:43+00:00",
-      "last_checked": "2026-09-25T05:31:11+00:00",
+      "last_checked": "2026-09-25T12:24:53+00:00",
       "last_seen_live": null,
       "price": 64.99,
       "currency": "USD",
@@ -2067,7 +2067,7 @@
     {
       "format": "Pack",
       "first_seen": "2026-09-07T09:42:49+00:00",
-      "last_checked": "2026-09-25T05:24:19+00:00",
+      "last_checked": "2026-09-25T12:18:23+00:00",
       "last_seen_live": null,
       "price": 19.99,
       "currency": "USD",
@@ -2089,7 +2089,7 @@
     {
       "format": "Mega",
       "first_seen": "2026-09-07T09:42:49+00:00",
-      "last_checked": "2026-09-25T05:24:21+00:00",
+      "last_checked": "2026-09-25T12:18:24+00:00",
       "last_seen_live": null,
       "price": 89.99,
       "currency": "USD",
@@ -2112,7 +2112,7 @@
     {
       "format": "Retail Box",
       "first_seen": "2026-09-07T09:42:49+00:00",
-      "last_checked": "2026-09-25T05:24:21+00:00",
+      "last_checked": "2026-09-25T12:18:25+00:00",
       "last_seen_live": null,
       "price": 8.99,
       "currency": "USD",
@@ -2135,7 +2135,7 @@
     {
       "format": "Blaster",
       "first_seen": "2026-09-07T09:42:49+00:00",
-      "last_checked": "2026-09-25T05:24:22+00:00",
+      "last_checked": "2026-09-25T12:18:26+00:00",
       "last_seen_live": null,
       "price": 39.99,
       "currency": "USD",
@@ -2158,8 +2158,8 @@
     {
       "format": "Hobby",
       "first_seen": "2026-09-08T16:59:05+00:00",
-      "last_checked": "2026-09-25T05:24:23+00:00",
-      "last_seen_live": "2026-09-25T05:24:23+00:00",
+      "last_checked": "2026-09-25T12:18:27+00:00",
+      "last_seen_live": "2026-09-25T12:18:27+00:00",
       "price": 3400.0,
       "currency": "USD",
       "seller": "tradingcardmarket.com",
@@ -2178,20 +2178,20 @@
     {
       "format": "Hobby",
       "first_seen": "2026-09-08T16:59:05+00:00",
-      "last_checked": "2026-09-25T05:24:23+00:00",
-      "last_seen_live": "2026-09-24T22:12:58+00:00",
+      "last_checked": "2026-09-25T12:18:27+00:00",
+      "last_seen_live": "2026-09-25T12:18:27+00:00",
       "price": 2500.0,
       "currency": "USD",
       "seller": "collectorsclub.com",
       "seller_type": "RETAILER_EXTERNE",
       "url": "https://collectorsclub.com/products/2023-24-panini-prizm-basketball-hobby-box",
       "discovery_method": "balayage catalogue · shopify",
-      "stock_status": "AMBIGUOUS",
-      "confidence": "LOW",
+      "stock_status": "CONFIRMED_LIVE",
+      "confidence": "HIGH",
       "layer": "web",
       "probe": {
-        "raw": "AMBIGUOUS",
-        "why": "robots.txt interdit la lecture"
+        "raw": "CONFIRMED_LIVE",
+        "why": null
       },
       "title_lu": "2023-24 Panini Prizm Basketball Hobby Box",
       "quantity": 1,
@@ -2201,7 +2201,7 @@
     {
       "format": "FOTL",
       "first_seen": "2026-09-08T17:03:56+00:00",
-      "last_checked": "2026-09-25T05:24:23+00:00",
+      "last_checked": "2026-09-25T12:18:28+00:00",
       "last_seen_live": "2026-09-09T21:24:05+00:00",
       "quantity": 1,
       "sku_id": null,
@@ -2212,19 +2212,19 @@
       "seller_type": "RETAILER_EXTERNE",
       "url": "https://collectorsclub.com/products/2023-24-prizm-basketball-hobby-box-fotl",
       "discovery_method": "balayage catalogue · shopify",
-      "stock_status": "STALE",
-      "confidence": "LOW",
+      "stock_status": "LOST",
+      "confidence": "MEDIUM",
       "layer": "web",
       "title_lu": "2023-24 Prizm Basketball Hobby Box FOTL",
       "probe": {
-        "raw": "AMBIGUOUS",
-        "why": "robots.txt interdit la lecture"
+        "raw": "LOST",
+        "why": "HTTP 404"
       }
     },
     {
       "format": "Hobby",
       "first_seen": "2026-09-10T16:45:43+00:00",
-      "last_checked": "2026-09-25T05:31:34+00:00",
+      "last_checked": "2026-09-25T12:25:22+00:00",
       "last_seen_live": null,
       "price": 1494.95,
       "currency": "USD",
@@ -2247,7 +2247,7 @@
     {
       "format": "Fast Break",
       "first_seen": "2026-09-10T16:50:01+00:00",
-      "last_checked": "2026-09-25T05:31:34+00:00",
+      "last_checked": "2026-09-25T12:25:22+00:00",
       "last_seen_live": null,
       "quantity": 1,
       "sku_id": "PANINI_2023-24_PRIZM_FAST_BREAK",
@@ -2270,7 +2270,7 @@
     {
       "format": "International",
       "first_seen": "2026-09-10T16:50:01+00:00",
-      "last_checked": "2026-09-25T05:31:34+00:00",
+      "last_checked": "2026-09-25T12:25:22+00:00",
       "last_seen_live": null,
       "quantity": 1,
       "sku_id": "PANINI_2023-24_PRIZM_INTERNATIONAL",
@@ -2293,7 +2293,7 @@
     {
       "format": "Blaster",
       "first_seen": "2026-09-10T16:50:01+00:00",
-      "last_checked": "2026-09-25T05:31:34+00:00",
+      "last_checked": "2026-09-25T12:25:22+00:00",
       "last_seen_live": null,
       "quantity": 1,
       "sku_id": "PANINI_2023-24_PRIZM_BLASTER",
@@ -2316,7 +2316,7 @@
     {
       "format": "Choice",
       "first_seen": "2026-09-10T16:50:01+00:00",
-      "last_checked": "2026-09-25T05:31:34+00:00",
+      "last_checked": "2026-09-25T12:25:22+00:00",
       "last_seen_live": null,
       "quantity": 1,
       "sku_id": "PANINI_2023-24_PRIZM_CHOICE",
@@ -2339,7 +2339,7 @@
     {
       "format": "Retail Box",
       "first_seen": "2026-09-10T16:50:01+00:00",
-      "last_checked": "2026-09-25T05:31:34+00:00",
+      "last_checked": "2026-09-25T12:25:22+00:00",
       "last_seen_live": null,
       "quantity": 1,
       "sku_id": "PANINI_2023-24_PRIZM_RETAIL_BOX",
@@ -2362,7 +2362,7 @@
     {
       "format": "FOTL",
       "first_seen": "2026-09-11T04:55:55+00:00",
-      "last_checked": "2026-09-25T05:24:29+00:00",
+      "last_checked": "2026-09-25T12:18:34+00:00",
       "last_seen_live": "2026-09-14T22:20:42+00:00",
       "quantity": 1,
       "sku_id": null,
@@ -2373,19 +2373,19 @@
       "seller_type": "RETAILER_EXTERNE",
       "url": "https://collectorsclub.com/products/2023-24-panini-prizm-basketball-fotl-hobby-box",
       "discovery_method": "balayage catalogue · shopify",
-      "stock_status": "STALE",
-      "confidence": "LOW",
+      "stock_status": "LOST",
+      "confidence": "MEDIUM",
       "layer": "web",
       "title_lu": "2023-24 Panini Prizm Basketball FOTL Hobby Box",
       "probe": {
-        "raw": "AMBIGUOUS",
-        "why": "robots.txt interdit la lecture"
+        "raw": "LOST",
+        "why": "HTTP 404"
       }
     },
     {
       "format": "Hobby",
       "first_seen": "2026-09-11T21:26:05+00:00",
-      "last_checked": "2026-09-25T05:24:29+00:00",
+      "last_checked": "2026-09-25T12:18:35+00:00",
       "last_seen_live": "2026-09-20T05:19:04+00:00",
       "quantity": 1,
       "sku_id": "PANINI_2023-24_PRIZM_HOBBY",
@@ -2396,20 +2396,20 @@
       "seller_type": "RETAILER_EXTERNE",
       "url": "https://collectorsclub.com/products/2023-panini-prizm-24-panini-basketball-hobby-box",
       "discovery_method": "balayage catalogue · shopify",
-      "stock_status": "STALE",
-      "confidence": "LOW",
+      "stock_status": "LOST",
+      "confidence": "MEDIUM",
       "layer": "web",
       "title_lu": "2023-24 Panini Prizm Basketball Hobby Box",
       "probe": {
-        "raw": "AMBIGUOUS",
-        "why": "robots.txt interdit la lecture"
+        "raw": "LOST",
+        "why": "HTTP 404"
       }
     },
     {
       "format": "Retail Box",
       "first_seen": "2026-09-12T11:07:36+00:00",
-      "last_checked": "2026-09-25T05:24:29+00:00",
-      "last_seen_live": "2026-09-25T05:24:29+00:00",
+      "last_checked": "2026-09-25T12:18:35+00:00",
+      "last_seen_live": "2026-09-25T12:18:35+00:00",
       "price": 399.99,
       "currency": "USD",
       "seller": "burbankcards.com",
@@ -2428,7 +2428,7 @@
     {
       "format": "Hobby",
       "first_seen": "2026-09-12T15:56:55+00:00",
-      "last_checked": "2026-09-25T05:24:30+00:00",
+      "last_checked": "2026-09-25T12:18:36+00:00",
       "last_seen_live": null,
       "price": 964.99,
       "currency": "USD",
@@ -2448,7 +2448,7 @@
     {
       "format": "Mega",
       "first_seen": "2026-09-15T05:12:10+00:00",
-      "last_checked": "2026-09-25T05:24:31+00:00",
+      "last_checked": "2026-09-25T12:18:37+00:00",
       "last_seen_live": null,
       "price": null,
       "currency": "USD",
@@ -2468,8 +2468,8 @@
     {
       "format": "Blaster",
       "first_seen": "2026-09-15T05:13:04+00:00",
-      "last_checked": "2026-09-25T05:24:32+00:00",
-      "last_seen_live": "2026-09-25T05:24:32+00:00",
+      "last_checked": "2026-09-25T12:18:38+00:00",
+      "last_seen_live": "2026-09-25T12:18:38+00:00",
       "price": null,
       "currency": "USD",
       "seller": "target.com",

@@ -1,14 +1,6 @@
-⚠️  [shopuscards] passage 2026-09-25T04:41:36+00:00 PARTIAL (182 produits) — ignoré, référence = dernier passage complet
-⚠️  [wolfdentcg] passage 2026-09-25T04:41:36+00:00 PARTIAL (31810 produits) — ignoré, référence = dernier passage complet
-(281 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
-
-========================================================================
-  🔔 RESTOCKS depuis le passage précédent
-========================================================================
-  🔔 RESTOCK  PANINI_2024-25_DONRUSS_MEGA  sjay2k  $90.00  https://www.sjay2k.com/products/2024-25-panini-donruss-basketball-hobby-blaster-copy
-  🔔 RESTOCK  PANINI_2024-25_MONOPOLY_PRIZM_BLASTER  sjay2k  $50.00  https://www.sjay2k.com/products/2024-25-panini-prizm-monopoly-basketball-6-pack-blaster-box-millionaire-black-inserts-1
-  🔔 RESTOCK  PANINI_2024-25_MOSAIC_BLASTER  sjay2k  $60.00  https://www.sjay2k.com/products/2023-24-panini-mosaic-basketball-6-pack-hobby-blaster-box-copy
-  🔔 RESTOCK  PANINI_2024-25_SELECT_MEGA  sjay2k  $90.00  https://www.sjay2k.com/products/2024-25-panini-select-basketball-h2-hybrid-box-copy
+⚠️  [shopuscards] passage 2026-09-25T11:41:03+00:00 PARTIAL (182 produits) — ignoré, référence = dernier passage complet
+⚠️  [wolfdentcg] passage 2026-09-25T11:41:03+00:00 PARTIAL (31810 produits) — ignoré, référence = dernier passage complet
+(278 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
 
 ========================================================================
   RETAIL
@@ -439,8 +431,8 @@
 · SUIVI   2024-25 Panini Prizm Monopoly Blaster   [PANINI_2024-25_MONOPOLY_PRIZM_BLASTER]
    1. tanteo           $   49.90  IN STOCK  landed≈€  64.40  (score 1.00)
         VERIFY  cheapest of 2 in stock  FR
-   2. sjay2k           $   50.00  IN STOCK  landed≈€  64.51  (score 1.00)  🔔
-        🔹RESTOCK +21j  🔹NEW_LOW  🔹PRICE_DROP -17%  VERIFY
+   2. sjay2k           $   50.00  IN STOCK  landed≈€  64.51  (score 1.00)
+        VERIFY
    3. bleecker         $   25.00  SOLD OUT  landed≈€  38.65  (score 1.00)
         VERIFY
    4. hiddengems       $   25.00  SOLD OUT  landed≈€  38.65  (score 1.00)
@@ -494,8 +486,8 @@
         YEAR2  VERIFY
    5. superior         $   75.00  IN STOCK  landed≈€  90.37  (score 1.00)
         YEAR2  VERIFY
-   6. sjay2k           $   90.00  IN STOCK  landed≈€ 105.88  (score 1.00)  🔔
-        🔹RESTOCK +20j  YEAR2  VERIFY
+   6. sjay2k           $   90.00  IN STOCK  landed≈€ 105.88  (score 1.00)
+        YEAR2  VERIFY
    ask $39.95   sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $29.99 (le 2026-08-18, hiddengems, 13 shop(s) vus) | cheapest live $40.00
    BEST → sportscardjunction  https://sportscardjunction.com/products/2024-25-panini-select-basketball-mega-box
@@ -608,8 +600,8 @@
         YEAR2  VERIFY
    4. tanteo           $   64.90  IN STOCK  landed≈€  79.92  (score 1.00)
         YEAR2  VERIFY  FR
-   5. sjay2k           $   90.00  IN STOCK  landed≈€ 105.88  (score 1.00)  🔔
-        🔹RESTOCK +16j  YEAR2  VERIFY
+   5. sjay2k           $   90.00  IN STOCK  landed≈€ 105.88  (score 1.00)
+        YEAR2  VERIFY
    6. hiddengems       $   25.00  SOLD OUT  landed≈€  38.65  (score 1.00)
         YEAR2
    ask $44.99   sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
@@ -863,18 +855,17 @@
    BEST → dacardworldeu  https://dacardworld.eu/products/2025-26-topps-chrome-basketball-hanger
 
 · SUIVI   2025-26 Topps Chrome Update Mega   [TOPPS_2025-26_CHROME_UPDATE_MEGA]
-   1. ballgame         $  250.00  IN STOCK  landed≈€ 271.39  (score 1.00)
-        VERIFY  cheapest of 2 in stock
-   2. superior         $  270.00  IN STOCK  landed≈€ 292.08  (score 1.00)
+   1. superior         $  270.00  IN STOCK  landed≈€ 292.08  (score 1.00)
+        ONLY_STOCK_SEEN  VERIFY
+   2. hiddengems       $  155.00  SOLD OUT  landed≈€ 173.12  (score 1.00)
+   3. awesome          $  174.75  SOLD OUT  landed≈€ 193.55  (score 1.00)
+   4. columbia         $  174.99  SOLD OUT  landed≈€ 193.80  (score 1.00)
+   5. rlsports         $  189.00  SOLD OUT  landed≈€ 208.29  (score 1.00)
         VERIFY
-   3. hiddengems       $  155.00  SOLD OUT  landed≈€ 173.12  (score 1.00)
-   4. awesome          $  174.75  SOLD OUT  landed≈€ 193.55  (score 1.00)
-   5. columbia         $  174.99  SOLD OUT  landed≈€ 193.80  (score 1.00)
-   6. rlsports         $  189.00  SOLD OUT  landed≈€ 208.29  (score 1.00)
-        VERIFY
+   6. collectorstore   $  189.99  SOLD OUT  landed≈€ 209.31  (score 1.00)
    ask $180.00  sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU €133.33
-   HISTORICAL LOW $84.99 (le 2026-08-23, rlsports, 9 shop(s) vus) | cheapest live $250.00
-   BEST → ballgame  https://theballgame.com/products/2025-26-topps-chrome-update-series-basketball-mega-box
+   HISTORICAL LOW $84.99 (le 2026-08-23, rlsports, 9 shop(s) vus) | cheapest live $270.00
+   BEST → superior  https://superiorsportsinvestments.com/products/2025-26-topps-chrome-update-series-basketball-mega-box
 
 · SUIVI   2025-26 Topps Chrome Update Value Box   [TOPPS_2025-26_CHROME_UPDATE_VALUE]
    1. dennistheripper  $   64.99  SOLD OUT  landed≈€  80.01  (score 1.00)
@@ -919,7 +910,7 @@
 
 · SUIVI   2025-26 Topps Hoops Value Box   [TOPPS_2025-26_HOOPS_VALUE_BOX]
    1. rlsports         $   27.99  IN STOCK  landed≈€  41.74  (score 1.00)
-        VERIFY  cheapest of 6 in stock
+        VERIFY  cheapest of 7 in stock
    2. hiddengems       $   29.99  IN STOCK  landed≈€  43.81  (score 1.00)
    3. deichcards       $   30.00  IN STOCK  landed≈€  43.82  (score 1.00)
         VERIFY  FR
@@ -2533,9 +2524,9 @@
 
 · SUIVI   2025-26 Topps Signature Class Hobby   [TOPPS_2025-26_SIGNATURE_CLASS_HOBBY]
    1. sportscardjunction $  425.00  IN STOCK  landed≈€ 452.41  (score 1.00)
-        VERIFY  cheapest of 19 in stock
+        VERIFY  cheapest of 20 in stock
    2. stcuk            $  425.00  IN STOCK  landed≈€ 452.41  (score 1.00)
-        VERIFY  cheapest of 19 in stock  FR
+        VERIFY  cheapest of 20 in stock  FR
    3. cardiacs         $  449.95  IN STOCK  landed≈€ 478.22  (score 1.00)
    4. vwsportscards    $  449.99  IN STOCK  landed≈€ 478.26  (score 1.00)
    5. cbhobby          $  450.00  IN STOCK  landed≈€ 478.27  (score 1.00)
@@ -3353,7 +3344,7 @@
 
 · SUIVI   2025-26 Panini Court Kings Hobby   [PANINI_2025-26_COURT_KINGS_HOBBY]
    1. awesome          $  118.75  IN STOCK  landed≈€ 135.62  (score 1.00)
-        🔹STRONG_DEAL -21%  cheapest of 11 in stock
+        🔹STRONG_DEAL -21%  cheapest of 10 in stock
    2. collectorstore   $  119.95  IN STOCK  landed≈€ 136.86  (score 1.00)
         🔹STRONG_DEAL -20%
    3. cbhobby          $  120.00  IN STOCK  landed≈€ 136.92  (score 1.00)
@@ -3537,7 +3528,7 @@
         VERIFY  MARKET DATA INSUFFICIENT
    5. bleecker         $    0.00  SOLD OUT  landed≈€  12.79  (score 1.00)
         NO_PRICE
-   6. qscards          $12999.00  SOLD OUT  landed≈€13458.95  (score 1.00)
+   6. qscards          $19999.00  SOLD OUT  landed≈€20699.75  (score 1.00)
         VERIFY  MARKET DATA INSUFFICIENT  FR
    ask n/a      sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $17499.95 (le 2026-09-17, cardiacs, 5 shop(s) vus) | cheapest live $17499.95
@@ -3588,9 +3579,9 @@
 
 · SUIVI   2025-26 Topps Signature Class Hobby Jumbo   [TOPPS_2025-26_SIGNATURE_CLASS_HOBBY_JUMBO]
    1. rbicru7          $  705.00  IN STOCK  landed≈€ 742.04  (score 1.00)
-        🔹STRONG_DEAL -22%  cheapest of 12 in stock
+        🔹STRONG_DEAL -22%  cheapest of 13 in stock
    2. sportscardjunction $  705.00  IN STOCK  landed≈€ 742.04  (score 1.00)
-        🔹STRONG_DEAL -22%  VERIFY  cheapest of 12 in stock
+        🔹STRONG_DEAL -22%  VERIFY  cheapest of 13 in stock
    3. cardvault        $  709.95  IN STOCK  landed≈€ 747.16  (score 1.00)
         🔹STRONG_DEAL -21%
    4. collectorstore   $  714.95  IN STOCK  landed≈€ 752.33  (score 1.00)
@@ -3685,8 +3676,8 @@
   DEGRADED  shopuscards          6 passages interrompus sur 6 (dernier : PARTIAL:BUDGET)
   DEAD      stickerpoint         6 passages complets consécutifs à 0 produit
   DEAD      supercollectors      6 passages complets consécutifs à 0 produit
-  PARTIAL   wolfdentcg           dernier passage interrompu (PAGINATION_INCOMPLETE, 3.7 min)
-  46 HEALTHY · 27 SKIPPED · 2 DEAD · 1 DEGRADED · 1 PARTIAL
+  DEGRADED  wolfdentcg           3 passages interrompus sur 3 (dernier : PAGINATION_INCOMPLETE)
+  46 HEALTHY · 27 SKIPPED · 2 DEGRADED · 2 DEAD
 
 ========================================================================
   ⛔ BLOCKLIST — 2 domaine(s) jamais crawlés
@@ -3702,7 +3693,7 @@
   (aucune ligne en stock ne cumule un déclencheur et une référence de marché)
 
 ========================================================================
-  🇫🇷 MARCHÉ FR — 44 produit(s) avec une offre en stock
+  🇫🇷 MARCHÉ FR — 43 produit(s) avec une offre en stock
 ========================================================================
   FR MARKET PARTIAL — 2/4 source(s) vérifiée(s) : shopuscards DEGRADED, stickerpoint DEAD
   2025-26_SIGNATURE_CLASS_PACK             €    9.90  tanteo      
@@ -3726,5 +3717,5 @@
   2023-24_HOOPS_BLASTER                    €   67.90  tanteo      
   2025-26_BOWMAN_VALUE_BLASTER             €   67.90  tanteo      
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-09-25T05-37-49.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-09-25T12-31-03.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

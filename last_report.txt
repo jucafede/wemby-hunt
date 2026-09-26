@@ -1,5 +1,5 @@
-⚠️  [shopuscards] passage 2026-09-26T11:14:35+00:00 PARTIAL (140 produits) — ignoré, référence = dernier passage complet
-⚠️  [wolfdentcg] passage 2026-09-26T11:14:35+00:00 PARTIAL (31905 produits) — ignoré, référence = dernier passage complet
+⚠️  [shopuscards] passage 2026-09-26T16:15:49+00:00 PARTIAL (167 produits) — ignoré, référence = dernier passage complet
+⚠️  [wolfdentcg] passage 2026-09-26T16:15:49+00:00 PARTIAL (31905 produits) — ignoré, référence = dernier passage complet
 (325 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
 
 ========================================================================
@@ -394,17 +394,17 @@
 
 · SUIVI   2024-25 Panini Prizm Blaster   [PANINI_2024-25_PRIZM_BLASTER]
    1. ehcards          $   29.99  IN STOCK  landed≈€  43.81  (score 1.00)
-        YEAR2  cheapest of 5 in stock
-   2. bleecker         $   30.00  IN STOCK  landed≈€  43.82  (score 1.00)
-        YEAR2  VERIFY
-   3. dacardworldeu    $   30.00  IN STOCK  landed≈€  43.82  (score 1.00)
+        YEAR2  cheapest of 4 in stock
+   2. dacardworldeu    $   30.00  IN STOCK  landed≈€  43.82  (score 1.00)
         YEAR2  VERIFY  FR
-   4. tanteo           $   34.50  IN STOCK  landed≈€  48.47  (score 1.00)
+   3. tanteo           $   34.50  IN STOCK  landed≈€  48.47  (score 1.00)
         YEAR2  VERIFY  FR
-   5. sandssportscards $   35.00  IN STOCK  landed≈€  48.99  (score 1.00)
+   4. sandssportscards $   35.00  IN STOCK  landed≈€  48.99  (score 1.00)
         YEAR2
-   6. sportscardjunction $   10.00  SOLD OUT  landed≈€  23.13  (score 1.00)
+   5. sportscardjunction $   10.00  SOLD OUT  landed≈€  23.13  (score 1.00)
         YEAR2  VERIFY
+   6. cardiacs         $   19.95  SOLD OUT  landed≈€  33.42  (score 1.00)
+        YEAR2
    ask $15.00   sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $10.00 (le 2026-08-18, sportscardjunction, 8 shop(s) vus) | cheapest live $29.99
    BEST → ehcards  https://ehcards.com/products/2024-25-panini-prizm-nba-basketball-6-pack-blaster-box
@@ -849,7 +849,7 @@
    BEST → dacardworldeu  https://dacardworld.eu/products/2025-26-topps-chrome-basketball-hanger
 
 · SUIVI   2025-26 Topps Chrome Update Mega   [TOPPS_2025-26_CHROME_UPDATE_MEGA]
-   1. superior         $  270.00  IN STOCK  landed≈€ 292.08  (score 1.00)
+   1. superior         $  310.00  IN STOCK  landed≈€ 333.45  (score 1.00)
         ONLY_STOCK_SEEN  VERIFY
    2. hiddengems       $  155.00  SOLD OUT  landed≈€ 173.12  (score 1.00)
    3. awesome          $  174.75  SOLD OUT  landed≈€ 193.55  (score 1.00)
@@ -858,7 +858,7 @@
         VERIFY
    6. collectorstore   $  189.99  SOLD OUT  landed≈€ 209.31  (score 1.00)
    ask $180.00  sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU €133.33
-   HISTORICAL LOW $84.99 (le 2026-08-23, rlsports, 9 shop(s) vus) | cheapest live $270.00
+   HISTORICAL LOW $84.99 (le 2026-08-23, rlsports, 9 shop(s) vus) | cheapest live $310.00
    BEST → superior  https://superiorsportsinvestments.com/products/2025-26-topps-chrome-update-series-basketball-mega-box
 
 · SUIVI   2025-26 Topps Chrome Update Value Box   [TOPPS_2025-26_CHROME_UPDATE_VALUE]
@@ -3439,18 +3439,18 @@
    ask $1000.00 sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
 
 · SUIVI   2024-25 Topps Finest Hobby   [TOPPS_2024-25_FINEST_HOBBY]
-   1. bleecker         $  275.00  IN STOCK  landed≈€ 297.25  (score 1.00)
-        VERIFY  cheapest of 2 in stock
-   2. superior         $  340.00  IN STOCK  landed≈€ 364.48  (score 1.00)
+   1. dacardworldeu    $  190.00  IN STOCK  landed≈€ 209.32  (score 1.00)
+        VERIFY  cheapest of 3 in stock  FR
+   2. bleecker         $  275.00  IN STOCK  landed≈€ 297.25  (score 1.00)
         VERIFY
-   3. awesome          $   94.75  SOLD OUT  landed≈€ 110.80  (score 1.00)
-   4. columbia         $   94.99  SOLD OUT  landed≈€ 111.05  (score 1.00)
-   5. hiddengems       $  100.00  SOLD OUT  landed≈€ 116.23  (score 1.00)
-   6. sportcards       $  114.95  SOLD OUT  landed≈€ 131.69  (score 1.00)
+   3. superior         $  340.00  IN STOCK  landed≈€ 364.48  (score 1.00)
         VERIFY
+   4. awesome          $   94.75  SOLD OUT  landed≈€ 110.80  (score 1.00)
+   5. columbia         $   94.99  SOLD OUT  landed≈€ 111.05  (score 1.00)
+   6. hiddengems       $  100.00  SOLD OUT  landed≈€ 116.23  (score 1.00)
    ask $119.90  sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
-   HISTORICAL LOW $94.75 (le 2026-09-06, awesome, 8 shop(s) vus) | cheapest live $275.00
-   BEST → bleecker  https://bleeckertrading.com/products/2024-25-topps-finest-basketball-hobby-box
+   HISTORICAL LOW $94.75 (le 2026-09-06, awesome, 8 shop(s) vus) | cheapest live $190.00
+   BEST → dacardworldeu  https://dacardworld.eu/products/2024-25-topps-finest-basketball-hobby
 
 · SUIVI   2024-25 Topps Inception Case   [TOPPS_2024-25_INCEPTION_CASE]
    ask $1200.00 sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
@@ -3504,12 +3504,12 @@
         VERIFY  MARKET DATA INSUFFICIENT
    3. bleecker         $    0.00  SOLD OUT  landed≈€  12.79  (score 1.00)
         NO_PRICE
-   4. monmouth         $15000.00  SOLD OUT  landed≈€15528.79  (score 1.00)
-        VERIFY  MARKET DATA INSUFFICIENT
-   5. qscards          $19999.00  SOLD OUT  landed≈€20699.75  (score 1.00)
+   4. dacardworldeu    $14160.00  SOLD OUT  landed≈€14659.89  (score 1.00)
         VERIFY  MARKET DATA INSUFFICIENT  FR
-   6. awesome          $24999.75  SOLD OUT  landed≈€25872.53  (score 1.00)
-        MARKET DATA INSUFFICIENT
+   5. monmouth         $15000.00  SOLD OUT  landed≈€15528.79  (score 1.00)
+        VERIFY  MARKET DATA INSUFFICIENT
+   6. qscards          $19999.00  SOLD OUT  landed≈€20699.75  (score 1.00)
+        VERIFY  MARKET DATA INSUFFICIENT  FR
    ask n/a      sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $15000.00 (le 2026-09-26, monmouth, 5 shop(s) vus) | cheapest live $17499.95
    BEST → cardiacs  https://www.thecardiacs.com/products/2025-26-topps-definitive-basketball-hobby-box
@@ -3559,9 +3559,9 @@
 
 · SUIVI   2025-26 Topps Signature Class Hobby Jumbo   [TOPPS_2025-26_SIGNATURE_CLASS_HOBBY_JUMBO]
    1. rbicru7          $  705.00  IN STOCK  landed≈€ 742.04  (score 1.00)
-        🔹STRONG_DEAL -22%  cheapest of 13 in stock
+        🔹STRONG_DEAL -22%  cheapest of 14 in stock
    2. sportscardjunction $  705.00  IN STOCK  landed≈€ 742.04  (score 1.00)
-        🔹STRONG_DEAL -22%  VERIFY  cheapest of 13 in stock
+        🔹STRONG_DEAL -22%  VERIFY  cheapest of 14 in stock
    3. cardvault        $  709.95  IN STOCK  landed≈€ 747.16  (score 1.00)
         🔹STRONG_DEAL -21%
    4. collectorstore   $  714.95  IN STOCK  landed≈€ 752.33  (score 1.00)
@@ -3697,5 +3697,5 @@
   2023-24_HOOPS_BLASTER                    €   67.90  tanteo      
   2025-26_BOWMAN_VALUE_BLASTER             €   67.90  tanteo      
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-09-26T12-07-36.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-09-26T17-12-52.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

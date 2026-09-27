@@ -1,11 +1,10 @@
-⚠️  [shopuscards] passage 2026-09-27T05:06:44+00:00 PARTIAL (172 produits) — ignoré, référence = dernier passage complet
-⚠️  [wolfdentcg] passage 2026-09-27T05:06:44+00:00 PARTIAL (31905 produits) — ignoré, référence = dernier passage complet
-(324 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
-
-========================================================================
-  🔔 RESTOCKS depuis le passage précédent
-========================================================================
-  🔔 RESTOCK  TOPPS_2025-26_CHROME_HOBBY_JUMBO  monmouth  $2299.99  https://monmouthcards.com/products/2025-26-topps-chrome-basketball-jumbo-box
+⚠️  [ballgame] passage 2026-09-27T11:53:55+00:00 PARTIAL (2531 produits) — ignoré, référence = dernier passage complet
+⚠️  [sportcards] passage 2026-09-27T11:53:55+00:00 PARTIAL (1758 produits) — ignoré, référence = dernier passage complet
+⚠️  [rlsports] passage 2026-09-27T11:53:55+00:00 PARTIAL (503 produits) — ignoré, référence = dernier passage complet
+⚠️  [fancave] passage 2026-09-27T11:53:55+00:00 PARTIAL (582 produits) — ignoré, référence = dernier passage complet
+⚠️  [shopuscards] passage 2026-09-27T11:53:55+00:00 PARTIAL (178 produits) — ignoré, référence = dernier passage complet
+⚠️  [wolfdentcg] passage 2026-09-27T11:53:55+00:00 PARTIAL (31905 produits) — ignoré, référence = dernier passage complet
+(357 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
 
 ========================================================================
   RETAIL
@@ -28,22 +27,22 @@
    HISTORICAL LOW $19.99 (le 2026-08-17, hiddengems, 10 shop(s) vus) | cheapest live $34.99
    BEST → ehcards  https://ehcards.com/products/2023-24-panini-phoenix-basketball-6-pack-blaster-box
 
-⛔ NO_GO   2023-24 Panini Premium Stock Blaster   [PANINI_2023-24_PREMIUM_STOCK_BLASTER]
-   1. fancave          $   64.99  IN STOCK  landed≈€  80.01  (score 1.00)
-        ONLY_STOCK_SEEN  RC_YEAR  VERIFY
-   2. hiddengems       $   20.00  SOLD OUT  landed≈€  33.48  (score 1.00)
+— NO_STOCK   2023-24 Panini Premium Stock Blaster   [PANINI_2023-24_PREMIUM_STOCK_BLASTER]
+   1. hiddengems       $   20.00  SOLD OUT  landed≈€  33.48  (score 1.00)
         RC_YEAR
-   3. cardiacs         $   29.95  SOLD OUT  landed≈€  43.77  (score 1.00)
+   2. cardiacs         $   29.95  SOLD OUT  landed≈€  43.77  (score 1.00)
         RC_YEAR
-   4. worldchampion    $   35.00  SOLD OUT  landed≈€  48.99  (score 1.00)
+   3. worldchampion    $   35.00  SOLD OUT  landed≈€  48.99  (score 1.00)
         RC_YEAR  VERIFY
-   5. sportcards       $   39.95  SOLD OUT  landed≈€  54.11  (score 1.00)
+   4. sportcards       $   39.95  SOLD OUT  landed≈€  54.11  (score 1.00)
         RC_YEAR  VERIFY
-   6. deichcards       $   44.90  SOLD OUT  landed≈€  59.23  (score 1.00)
+   5. deichcards       $   44.90  SOLD OUT  landed≈€  59.23  (score 1.00)
         RC_YEAR  VERIFY  FR
+   6. boxseat          $   49.99  SOLD OUT  landed≈€  64.50  (score 1.00)
+        RC_YEAR  VERIFY
    ask $34.96   sold n/a      | buy ≤ $30.00   | watch ≤ $35.00   | EU n/a  ⏳ STALE THRESHOLD (41 j)
-   HISTORICAL LOW $20.00 (le 2026-08-17, hiddengems, 8 shop(s) vus) | cheapest live $64.99
-   BEST → fancave  https://fancave.com/products/2023-24-panini-nba-hoops-premium-stock-basketball-blaster-box
+   HISTORICAL LOW $20.00 (le 2026-08-17, hiddengems, 8 shop(s) vus) | aucun live
+   RESTOCK TARGET $20.00  — surveillance, pas une valeur de marché
 
 — NO_STOCK   2023-24 Panini Premium Stock Mega   [PANINI_2023-24_PREMIUM_STOCK_MEGA]
    1. hiddengems       $   35.00  SOLD OUT  landed≈€  48.99  (score 1.00)
@@ -465,18 +464,17 @@
    BEST → rbicru7  https://rbicru7.com/products/2024-25-panini-select-basketball-blaster-box-flash-prizms
 
 · SUIVI   2024-25 Panini Select Hobby Blaster   [PANINI_2024-25_SELECT_HOBBY_BLASTER]
-   1. collectorstore   $   29.99  IN STOCK  landed≈€  43.81  (score 1.00)
-        cheapest of 4 in stock
-   2. sportscardjunction $   30.00  IN STOCK  landed≈€  43.82  (score 1.00)
-        VERIFY
-   3. rbicru7          $   38.00  IN STOCK  landed≈€  52.09  (score 1.00)
-   4. ehcards          $   39.99  IN STOCK  landed≈€  54.15  (score 1.00)
-   5. cardiacs         $   29.95  SOLD OUT  landed≈€  43.77  (score 1.00)
+   1. sportscardjunction $   30.00  IN STOCK  landed≈€  43.82  (score 1.00)
+        VERIFY  cheapest of 3 in stock
+   2. rbicru7          $   38.00  IN STOCK  landed≈€  52.09  (score 1.00)
+   3. ehcards          $   39.99  IN STOCK  landed≈€  54.15  (score 1.00)
+   4. cardiacs         $   29.95  SOLD OUT  landed≈€  43.77  (score 1.00)
+   5. collectorstore   $   29.99  SOLD OUT  landed≈€  43.81  (score 1.00)
    6. rlsports         $   29.99  SOLD OUT  landed≈€  43.81  (score 1.00)
         VERIFY
    ask $32.38   sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
-   HISTORICAL LOW $29.95 (le 2026-08-30, cardiacs, 9 shop(s) vus) | cheapest live $29.99
-   BEST → collectorstore  https://collectorstore.com/products/2024-25-panini-select-basketball-hobby-blaster-box
+   HISTORICAL LOW $29.95 (le 2026-08-30, cardiacs, 9 shop(s) vus) | cheapest live $30.00
+   BEST → sportscardjunction  https://sportscardjunction.com/products/2024-25-panini-select-basketball-hobby-blaster-box
 
 · SUIVI   2024-25 Panini Select Mega   [PANINI_2024-25_SELECT_MEGA]
    1. sportscardjunction $   40.00  IN STOCK  landed≈€  54.16  (score 1.00)
@@ -859,9 +857,9 @@
    2. hiddengems       $  155.00  SOLD OUT  landed≈€ 173.12  (score 1.00)
    3. awesome          $  174.75  SOLD OUT  landed≈€ 193.55  (score 1.00)
    4. columbia         $  174.99  SOLD OUT  landed≈€ 193.80  (score 1.00)
-   5. rlsports         $  189.00  SOLD OUT  landed≈€ 208.29  (score 1.00)
+   5. collectorstore   $  189.99  SOLD OUT  landed≈€ 209.31  (score 1.00)
+   6. bleecker         $  200.00  SOLD OUT  landed≈€ 219.67  (score 1.00)
         VERIFY
-   6. collectorstore   $  189.99  SOLD OUT  landed≈€ 209.31  (score 1.00)
    ask $180.00  sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU €133.33
    HISTORICAL LOW $84.99 (le 2026-08-23, rlsports, 9 shop(s) vus) | cheapest live $310.00
    BEST → superior  https://superiorsportsinvestments.com/products/2025-26-topps-chrome-update-series-basketball-mega-box
@@ -869,9 +867,7 @@
 · SUIVI   2025-26 Topps Chrome Update Value Box   [TOPPS_2025-26_CHROME_UPDATE_VALUE]
    1. dennistheripper  $   64.99  SOLD OUT  landed≈€  80.01  (score 1.00)
         VERIFY  FR
-   2. rlsports         $   89.99  SOLD OUT  landed≈€ 105.87  (score 1.00)
-        VERIFY
-   3. hiddengems       $   90.00  SOLD OUT  landed≈€ 105.88  (score 1.00)
+   2. hiddengems       $   90.00  SOLD OUT  landed≈€ 105.88  (score 1.00)
    ask $65.00   sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU €70.00
    HISTORICAL LOW $44.99 (le 2026-08-30, rlsports, 2 shop(s) vus) | aucun live
    RESTOCK TARGET $44.99  — surveillance, pas une valeur de marché
@@ -887,15 +883,14 @@
         VERIFY
    5. sportscardjunction $   45.00  SOLD OUT  landed≈€  59.34  (score 1.00)
         VERIFY
-   6. ballgame         $   85.00  SOLD OUT  landed≈€ 100.71  (score 1.00)
-        VERIFY
+   6. columbia         $   87.95  SOLD OUT  landed≈€ 103.76  (score 1.00)
    ask $120.00  sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU €62.49
    HISTORICAL LOW $45.00 (le 2026-08-19, sportscardjunction, 11 shop(s) vus) | cheapest live $83.90
    BEST → tanteo  https://tanteocartescollections.com/products/2025-26-topps-update-series-cartes-basketball-nba-blaster-box
 
 · SUIVI   2025-26 Topps Hoops Blaster   [TOPPS_2025-26_HOOPS_BLASTER]
    1. sportscardjunction $   30.00  IN STOCK  landed≈€  43.82  (score 1.00)
-        VERIFY  cheapest of 9 in stock
+        VERIFY  cheapest of 8 in stock
    2. dnacardsandcollectibles $   35.00  IN STOCK  landed≈€  48.99  (score 1.00)
    3. rbicru7          $   35.00  IN STOCK  landed≈€  48.99  (score 1.00)
    4. ehcards          $   39.99  IN STOCK  landed≈€  54.15  (score 1.00)
@@ -1202,15 +1197,13 @@
    BEST → sjay2k  https://www.sjay2k.com/products/2024-25-panini-donruss-optic-basketball-hobby-mega-box-seismic-parallels
 
 · SUIVI   2024-25 Panini Donruss Optic Pack   [PANINI_2024-25_DONRUSS_OPTIC_PACK]
-   1. fancave          $    5.99  IN STOCK  landed≈€  18.98  (score 1.00)
-        🔹STRONG_DEAL -83%  VERIFY  cheapest of 3 in stock
-   2. dacardworldeu    $   34.00  IN STOCK  landed≈€  47.96  (score 1.00)
-        VERIFY  FR
-   3. superior         $   35.00  IN STOCK  landed≈€  48.99  (score 1.00)
+   1. dacardworldeu    $   34.00  IN STOCK  landed≈€  47.96  (score 1.00)
+        VERIFY  cheapest of 2 in stock  FR
+   2. superior         $   35.00  IN STOCK  landed≈€  48.99  (score 1.00)
         VERIFY
    ask $35.00   sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
-   HISTORICAL LOW $5.99 (le 2026-09-06, fancave, 2 shop(s) vus) | cheapest live $5.99
-   BEST → fancave  https://fancave.com/products/2024-25-panini-donruss-optic-basketball-retail-box-single-pack
+   HISTORICAL LOW $5.99 (le 2026-09-06, fancave, 2 shop(s) vus) | cheapest live $34.00
+   BEST → dacardworldeu  https://dacardworld.eu/products/2024-25-panini-donruss-optic-basketball-hobby
 
 · SUIVI   2024-25 Panini Donruss Optic Retail Box   [PANINI_2024-25_DONRUSS_OPTIC_RETAIL_BOX]
    1. columbia         $   79.99  SOLD OUT  landed≈€  95.53  (score 1.00)
@@ -1448,39 +1441,37 @@
    BEST → cardiacs  https://www.thecardiacs.com/products/2024-25-panini-select-basketball-blaster-pack-flash-prizms
 
 · SUIVI   2025-26 Panini Donruss Blaster   [PANINI_2025-26_DONRUSS_BLASTER]
-   1. rlsports         $   22.99  IN STOCK  landed≈€  36.57  (score 1.00)
-        🔹STRONG_DEAL -23%  VERIFY  cheapest of 6 in stock
-   2. rbicru7          $   28.00  IN STOCK  landed≈€  41.75  (score 1.00)
-   3. awesome          $   29.75  IN STOCK  landed≈€  43.56  (score 1.00)
-   4. cbhobby          $   30.00  IN STOCK  landed≈€  43.82  (score 1.00)
+   1. rbicru7          $   28.00  IN STOCK  landed≈€  41.75  (score 1.00)
+        cheapest of 5 in stock
+   2. awesome          $   29.75  IN STOCK  landed≈€  43.56  (score 1.00)
+   3. cbhobby          $   30.00  IN STOCK  landed≈€  43.82  (score 1.00)
         VERIFY
-   5. bleecker         $   35.00  IN STOCK  landed≈€  48.99  (score 1.00)
+   4. bleecker         $   35.00  IN STOCK  landed≈€  48.99  (score 1.00)
         VERIFY
-   6. tanteo           $   39.90  IN STOCK  landed≈€  54.06  (score 1.00)
+   5. tanteo           $   39.90  IN STOCK  landed≈€  54.06  (score 1.00)
         VERIFY  FR
+   6. collectorstore   $   29.99  SOLD OUT  landed≈€  43.81  (score 1.00)
    ask $29.75   sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
-   HISTORICAL LOW $22.99 (le 2026-09-11, rlsports, 7 shop(s) vus) | cheapest live $22.99
-   BEST → rlsports  https://rlsportscards.com/products/2025-26-panini-donruss-basketball-blaster-box
+   HISTORICAL LOW $22.99 (le 2026-09-11, rlsports, 7 shop(s) vus) | cheapest live $28.00
+   BEST → rbicru7  https://rbicru7.com/products/2025-26-panini-donruss-basketball-retail-blaster-box
 
 · SUIVI   2025-26 Panini Donruss Mega   [PANINI_2025-26_DONRUSS_MEGA]
-   1. rlsports         $   44.99  IN STOCK  landed≈€  59.33  (score 1.00)
-        🔹STRONG_DEAL -25%  VERIFY  cheapest of 4 in stock
-   2. monmouth         $   54.99  IN STOCK  landed≈€  69.67  (score 1.00)
+   1. monmouth         $   54.99  IN STOCK  landed≈€  69.67  (score 1.00)
+        VERIFY  cheapest of 3 in stock
+   2. cbhobby          $   60.00  IN STOCK  landed≈€  74.85  (score 1.00)
         VERIFY
-   3. cbhobby          $   60.00  IN STOCK  landed≈€  74.85  (score 1.00)
+   3. superior         $   75.00  IN STOCK  landed≈€  90.37  (score 1.00)
         VERIFY
-   4. superior         $   75.00  IN STOCK  landed≈€  90.37  (score 1.00)
-        VERIFY
-   5. collectorstore   $   49.99  SOLD OUT  landed≈€  64.50  (score 1.00)
-   6. sjay2k           $  110.00  SOLD OUT  landed≈€ 126.57  (score 1.00)
+   4. collectorstore   $   49.99  SOLD OUT  landed≈€  64.50  (score 1.00)
+   5. sjay2k           $  110.00  SOLD OUT  landed≈€ 126.57  (score 1.00)
         VERIFY
    ask $60.00   sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
-   HISTORICAL LOW $44.99 (le 2026-09-06, rlsports, 6 shop(s) vus) | cheapest live $44.99
-   BEST → rlsports  https://rlsportscards.com/products/2025-26-panini-donruss-basketball-mega-box
+   HISTORICAL LOW $44.99 (le 2026-09-06, rlsports, 6 shop(s) vus) | cheapest live $54.99
+   BEST → monmouth  https://monmouthcards.com/products/2025-26-panini-donruss-basketball-mega-box
 
 · SUIVI   2025-26 Panini Hoops Hanger   [PANINI_2025-26_HOOPS_HANGER]
    1. hiddengems       $   14.99  IN STOCK  landed≈€  28.29  (score 1.00)
-        🔹STRONG_DEAL -32%  cheapest of 15 in stock
+        🔹STRONG_DEAL -32%  cheapest of 14 in stock
    2. cbhobby          $   17.00  IN STOCK  landed≈€  30.37  (score 1.00)
         🔹STRONG_DEAL -23%  VERIFY
    3. rlsports         $   17.99  IN STOCK  landed≈€  31.40  (score 1.00)
@@ -1535,15 +1526,15 @@
 
 · SUIVI   2025-26 Panini Prizm Mega   [PANINI_2025-26_PRIZM_MEGA]
    1. hiddengems       $   39.99  IN STOCK  landed≈€  54.15  (score 1.00)
-        🔹STRONG_DEAL -20%  cheapest of 9 in stock
+        🔹STRONG_DEAL -20%  cheapest of 7 in stock
    2. collectorstore   $   49.99  IN STOCK  landed≈€  64.50  (score 1.00)
-   3. rlsports         $   49.99  IN STOCK  landed≈€  64.50  (score 1.00)
+   3. rbicru7          $   50.00  IN STOCK  landed≈€  64.51  (score 1.00)
+   4. stcuk            $   50.00  IN STOCK  landed≈€  64.51  (score 1.00)
+        VERIFY  FR
+   5. dacardworldeu    $   50.44  IN STOCK  landed≈€  64.96  (score 1.00)
+        VERIFY  FR
+   6. superior         $   62.00  IN STOCK  landed≈€  76.92  (score 1.00)
         VERIFY
-   4. rbicru7          $   50.00  IN STOCK  landed≈€  64.51  (score 1.00)
-   5. stcuk            $   50.00  IN STOCK  landed≈€  64.51  (score 1.00)
-        VERIFY  FR
-   6. dacardworldeu    $   50.44  IN STOCK  landed≈€  64.96  (score 1.00)
-        VERIFY  FR
    ask $50.00   sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $39.99 (le 2026-09-11, hiddengems, 6 shop(s) vus) | cheapest live $39.99
    BEST → hiddengems  https://www.hiddengemscardshop.com/products/2025-26-panini-prizm-basketball-mega-box
@@ -1618,16 +1609,15 @@
 
 · SUIVI   2025-26 Topps Bowman Hanger   [TOPPS_2025-26_BOWMAN_HANGER]
    1. monmouth         $   29.99  IN STOCK  landed≈€  43.81  (score 1.00)
-        VERIFY  cheapest of 5 in stock
+        VERIFY  cheapest of 4 in stock
    2. sportscardjunction $   30.00  IN STOCK  landed≈€  43.82  (score 1.00)
         VERIFY
    3. boxseat          $   39.99  IN STOCK  landed≈€  54.15  (score 1.00)
         VERIFY
-   4. fancave          $   39.99  IN STOCK  landed≈€  54.15  (score 1.00)
+   4. rbicru7          $   40.00  IN STOCK  landed≈€  54.16  (score 1.00)
+   5. rlsports         $   14.99  SOLD OUT  landed≈€  28.29  (score 1.00)
         VERIFY
-   5. rbicru7          $   40.00  IN STOCK  landed≈€  54.16  (score 1.00)
-   6. rlsports         $   14.99  SOLD OUT  landed≈€  28.29  (score 1.00)
-        VERIFY
+   6. hiddengems       $   18.00  SOLD OUT  landed≈€  31.41  (score 1.00)
    ask $30.00   sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $14.99 (le 2026-09-06, rlsports, 12 shop(s) vus) | cheapest live $29.99
    BEST → monmouth  https://monmouthcards.com/products/2025-26-bowman-basketball-hanger-box
@@ -2425,8 +2415,8 @@
 · SUIVI   2025-26 Topps Chrome Hobby Jumbo   [TOPPS_2025-26_CHROME_HOBBY_JUMBO]
    1. kutogo           $ 2124.95  IN STOCK  landed≈€2210.84  (score 1.00)
         🔹DEAL -13%  VERIFY  cheapest of 3 in stock
-   2. monmouth         $ 2299.99  IN STOCK  landed≈€2391.90  (score 1.00)  🔔
-        🔹RESTOCK +11j  VERIFY
+   2. monmouth         $ 2299.99  IN STOCK  landed≈€2391.90  (score 1.00)
+        VERIFY
    3. mafiosicards_shop $ 2399.00  IN STOCK  landed≈€2494.31  (score 1.00)
         VERIFY  FR
    4. hikaru_shop      $  999.00  SOLD OUT  landed≈€1046.15  (score 1.00)
@@ -2470,15 +2460,14 @@
         VERIFY  FR
    5. superior         $ 2950.00  IN STOCK  landed≈€3064.27  (score 1.00)
         VERIFY
-   6. rlsports         $ 1999.00  SOLD OUT  landed≈€2080.55  (score 1.00)
-        VERIFY
+   6. columbia         $ 2079.99  SOLD OUT  landed≈€2164.33  (score 1.00)
    ask $2195.00 sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $1999.00 (le 2026-08-19, rlsports, 13 shop(s) vus) | cheapest live $2249.95
    BEST → collectorstore  https://collectorstore.com/products/2025-26-topps-chrome-update-series-basketball-jumbo-box
 
 · SUIVI   2025-26 Topps Chrome Black Hobby [Chrome Black]   [TOPPS_2025-26_CHROME_BLACK_HOBBY]
    1. dennistheripper  $  449.99  IN STOCK  landed≈€ 478.26  (score 1.00)
-        VERIFY  cheapest of 19 in stock  FR
+        VERIFY  cheapest of 17 in stock  FR
    2. cbhobby          $  450.00  IN STOCK  landed≈€ 478.27  (score 1.00)
         🔹STRONG_DEAL -29%  VERIFY
    3. deichcards       $  450.00  IN STOCK  landed≈€ 478.27  (score 1.00)
@@ -2584,15 +2573,14 @@
 
 · SUIVI   2025-26 Topps Cosmic Chrome Hobby   [TOPPS_2025-26_COSMIC_CHROME_HOBBY]
    1. kutogo           $  949.95  IN STOCK  landed≈€ 995.42  (score 1.00)
-        VERIFY  cheapest of 6 in stock
+        VERIFY  cheapest of 5 in stock
    2. qscards          $ 1099.00  IN STOCK  landed≈€1149.59  (score 1.00)
         VERIFY  FR
    3. rbicru7          $ 1175.00  IN STOCK  landed≈€1228.21  (score 1.00)
    4. ehcards          $ 1199.99  IN STOCK  landed≈€1254.06  (score 1.00)
-   5. ballgame         $ 1295.00  IN STOCK  landed≈€1352.34  (score 1.00)
+   5. superior         $ 1550.00  IN STOCK  landed≈€1616.11  (score 1.00)
         VERIFY
-   6. superior         $ 1550.00  IN STOCK  landed≈€1616.11  (score 1.00)
-        VERIFY
+   6. columbia         $  879.99  SOLD OUT  landed≈€ 923.05  (score 1.00)
    ask $919.95  sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $879.99 (le 2026-08-19, columbia, 14 shop(s) vus) | cheapest live $949.95
    BEST → kutogo  https://kutogo.com/product/2025-26-topps-cosmic-chrome-basketball-hobby-box/
@@ -2620,17 +2608,17 @@
 
 · CANDIDAT   2025-26 Panini Origins EuroLeague H2   [PANINI_2025-26_EUROLEAGUE_ORIGINS_H2]  ⚑ euroleague
    1. columbia         $   29.99  IN STOCK  landed≈€  43.81  (score 1.00)
-        EUROLEAGUE  cheapest of 8 in stock  MARKET DATA INSUFFICIENT
-   2. rlsports         $   29.99  IN STOCK  landed≈€  43.81  (score 1.00)
-        EUROLEAGUE  VERIFY  cheapest of 8 in stock  MARKET DATA INSUFFICIENT
-   3. vwsportscards    $   39.99  IN STOCK  landed≈€  54.15  (score 1.00)
+        EUROLEAGUE  cheapest of 7 in stock  MARKET DATA INSUFFICIENT
+   2. vwsportscards    $   39.99  IN STOCK  landed≈€  54.15  (score 1.00)
         EUROLEAGUE  MARKET DATA INSUFFICIENT
-   4. rbicru7          $   40.00  IN STOCK  landed≈€  54.16  (score 1.00)
+   3. rbicru7          $   40.00  IN STOCK  landed≈€  54.16  (score 1.00)
         EUROLEAGUE  MARKET DATA INSUFFICIENT
-   5. dacardworldeu    $   44.44  IN STOCK  landed≈€  58.76  (score 1.00)
+   4. dacardworldeu    $   44.44  IN STOCK  landed≈€  58.76  (score 1.00)
         EUROLEAGUE  VERIFY  MARKET DATA INSUFFICIENT  FR
-   6. awesome          $   49.75  IN STOCK  landed≈€  64.25  (score 1.00)
+   5. awesome          $   49.75  IN STOCK  landed≈€  64.25  (score 1.00)
         EUROLEAGUE  MARKET DATA INSUFFICIENT
+   6. superior         $   65.00  IN STOCK  landed≈€  80.02  (score 1.00)
+        EUROLEAGUE  VERIFY  MARKET DATA INSUFFICIENT
    ask n/a      sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU €76.49
    HISTORICAL LOW $29.99 (le 2026-09-11, rlsports, 6 shop(s) vus) | cheapest live $29.99
    BEST → columbia  https://columbiasportscard.com/products/2025-26-panini-origins-euroleague-basketball-h2-box
@@ -3331,7 +3319,7 @@
 
 · SUIVI   2025-26 Panini Court Kings Hobby   [PANINI_2025-26_COURT_KINGS_HOBBY]
    1. awesome          $  118.75  IN STOCK  landed≈€ 135.62  (score 1.00)
-        🔹STRONG_DEAL -21%  cheapest of 11 in stock
+        🔹STRONG_DEAL -21%  cheapest of 10 in stock
    2. collectorstore   $  119.95  IN STOCK  landed≈€ 136.86  (score 1.00)
         🔹STRONG_DEAL -20%
    3. cbhobby          $  120.00  IN STOCK  landed≈€ 136.92  (score 1.00)
@@ -3368,15 +3356,15 @@
 
 · SUIVI   2025-26 Panini Noir Hobby   [PANINI_2025-26_NOIR_HOBBY]
    1. kutogo           $  769.95  IN STOCK  landed≈€ 809.22  (score 1.00)
-        VERIFY  cheapest of 13 in stock
+        VERIFY  cheapest of 11 in stock
    2. stcuk            $  775.00  IN STOCK  landed≈€ 814.45  (score 1.00)
         VERIFY  FR
    3. columbia         $  799.99  IN STOCK  landed≈€ 840.30  (score 1.00)
-   4. rlsports         $  800.00  IN STOCK  landed≈€ 840.31  (score 1.00)
+   4. sportscardjunction $  825.00  IN STOCK  landed≈€ 866.17  (score 1.00)
         VERIFY
-   5. sportscardjunction $  825.00  IN STOCK  landed≈€ 866.17  (score 1.00)
+   5. awesome          $  849.75  IN STOCK  landed≈€ 891.77  (score 1.00)
+   6. cbhobby          $  850.00  IN STOCK  landed≈€ 892.03  (score 1.00)
         VERIFY
-   6. awesome          $  849.75  IN STOCK  landed≈€ 891.77  (score 1.00)
    ask $849.75  sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $734.99 (le 2026-09-20, columbia, 15 shop(s) vus) | cheapest live $769.95
    BEST → kutogo  https://kutogo.com/product/2025-26-panini-noir-basketball-hobby-box/
@@ -3389,14 +3377,14 @@
 
 · SUIVI   2025-26 Panini Origins Hobby   [PANINI_2025-26_ORIGINS_HOBBY]
    1. worldchampion    $  210.00  IN STOCK  landed≈€ 230.01  (score 1.00)
-        VERIFY  cheapest of 7 in stock
+        VERIFY  cheapest of 5 in stock
    2. collectorstore   $  219.95  IN STOCK  landed≈€ 240.30  (score 1.00)
    3. rbicru7          $  220.00  IN STOCK  landed≈€ 240.36  (score 1.00)
-   4. ballgame         $  235.00  IN STOCK  landed≈€ 255.87  (score 1.00)
+   4. bleecker         $  300.00  IN STOCK  landed≈€ 323.11  (score 1.00)
         VERIFY
-   5. rlsports         $  249.99  IN STOCK  landed≈€ 271.38  (score 1.00)
+   5. superior         $  300.00  IN STOCK  landed≈€ 323.11  (score 1.00)
         VERIFY
-   6. bleecker         $  300.00  IN STOCK  landed≈€ 323.11  (score 1.00)
+   6. cbhobby          $  150.00  SOLD OUT  landed≈€ 167.95  (score 1.00)
         VERIFY
    ask $199.99  sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $150.00 (le 2026-09-06, cbhobby, 16 shop(s) vus) | cheapest live $210.00
@@ -3407,14 +3395,14 @@
 
 · SUIVI   2025-26 Panini Prizm Hobby   [PANINI_2025-26_PRIZM_HOBBY]
    1. stcuk            $  225.00  IN STOCK  landed≈€ 245.53  (score 1.00)
-        VERIFY  cheapest of 13 in stock  FR
-   2. rlsports         $  239.00  IN STOCK  landed≈€ 260.01  (score 1.00)
-        🔹DEAL -13%  VERIFY
-   3. sportscardjunction $  245.00  IN STOCK  landed≈€ 266.22  (score 1.00)
+        VERIFY  cheapest of 12 in stock  FR
+   2. sportscardjunction $  245.00  IN STOCK  landed≈€ 266.22  (score 1.00)
         🔹DEAL -11%  VERIFY
-   4. awesome          $  249.75  IN STOCK  landed≈€ 271.13  (score 1.00)
-   5. collectorstore   $  249.95  IN STOCK  landed≈€ 271.34  (score 1.00)
-   6. rbicru7          $  250.00  IN STOCK  landed≈€ 271.39  (score 1.00)
+   3. awesome          $  249.75  IN STOCK  landed≈€ 271.13  (score 1.00)
+   4. collectorstore   $  249.95  IN STOCK  landed≈€ 271.34  (score 1.00)
+   5. rbicru7          $  250.00  IN STOCK  landed≈€ 271.39  (score 1.00)
+   6. dacardworldeu    $  285.44  IN STOCK  landed≈€ 308.05  (score 1.00)
+        VERIFY  FR
    ask $275.00  sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $600.00 (le 2026-09-06, sjay2k, 1 shop(s) vus) | cheapest live $225.00
    BEST → stcuk  https://sportstradingcardsuk.com/products/pre-order-2025-26-panini-prizm-basketball-hobby-box
@@ -3621,11 +3609,11 @@
   [worldchampion] 2023/24 Topps Chrome Sapphire Edition Basketball Box  $500.00 OOS  → [["TOPPS_2023-24_CHROME_SAPPHIRE", 0.77]]
   [worldchampion] 2025 Panini Mosaic Basketball Mega Box  $60.00 OOS  → [["PANINI_2023-24_MOSAIC_MEGA", 0.77], ["PANINI_2024-25_MOSAIC_MEGA", 0.77]]
   [superior] 2023-24 Hasbro Panini Prizm Monopoly Basketball Trading Card Board Game Box  $85.00 IN  → [["PANINI_2023-24_PRIZM_MONOPOLY_BLASTER", 0.77]]
-  [bleecker] 1998-99 Topps Finest Series 2 Basketball Hobby Box  $2100.00 OOS  → [["TOPPS_2025-26_FINEST_HOBBY", 0.77], ["TOPPS_2023-24_FINEST_HOBBY", 0.77], ["TOPPS_2024-25_FINEST_HOBBY", 0.77]]
-  [bleecker] 1999-00 Topps Finest Basketball Series 1 Hobby Box  $900.00 OOS  → [["TOPPS_2025-26_FINEST_HOBBY", 0.77], ["TOPPS_2023-24_FINEST_HOBBY", 0.77], ["TOPPS_2024-25_FINEST_HOBBY", 0.77]]
-  [bleecker] 2016 Panini Donruss Optic Basketball NBA Retail Box *Kobe Autos, Jaylen Brown RC*  $225.00 OOS  → [["PANINI_2023-24_DONRUSS_OPTIC_RETAIL_BOX", 0.77], ["PANINI_2024-25_DONRUSS_OPTIC_RETAIL_BOX", 0.77], ["PANINI_2024-25_DONRUSS_RETAIL_BOX", 0.77]]
-  [bleecker] 1993-94 Topps Finest Basketball Hobby Box  $1400.00 OOS  → [["TOPPS_2025-26_FINEST_HOBBY", 0.77], ["TOPPS_2023-24_FINEST_HOBBY", 0.77], ["TOPPS_2024-25_FINEST_HOBBY", 0.77]]
-  [bleecker] 1999-00 Topps Chrome Basketball Hobby Box  $750.00 OOS  → [["TOPPS_2023-24_CHROME_HOBBY", 0.77], ["TOPPS_2025-26_CHROME_HOBBY", 0.77], ["TOPPS_2024-25_TOPPS_CHROME_HOBBY", 0.77]]
+  [shopuscards] 2023/24 Panini Haunted Hoops Basketball 40-Pack Bundle  $29.16 IN  → [["PANINI_2023-24_HOOPS_BLASTER", 0.77], ["PANINI_2023-24_HOOPS_MEGA", 0.77], ["PANINI_2023-24_HOOPS_HOBBY", 0.77]]
+  [tanteo] 2023-24 Panini Phoenix Cartes Basketball NBA Méga Box  $89.90 IN  → [["PANINI_2023-24_PHOENIX_BLASTER", 0.77], ["PANINI_2023-24_PHOENIX_MEGA", 0.77], ["PANINI_2023-24_PHOENIX_INTERNATIONAL", 0.77]]
+  [kaboom] Topps Chrome Black Basketball 2026 - Hobby Box  $340.00 IN  → [["TOPPS_2025-26_CHROME_BLACK_HOBBY", 0.77]]
+  [deichcards] Topps Chrome UWCL Blaster Box 2023/2024  $25.00 IN  → [["TOPPS_2023-24_CHROME_VALUE_BLASTER", 0.77]]
+  [deichcards] Topps Chrome UCC Value Blaster 2023/2024  $34.90 OOS  → [["TOPPS_2023-24_CHROME_VALUE_BLASTER", 0.77]]
 
 ========================================================================
   👀 WATCHLIST — 95 prioritaires / 188 historiques / 3 autres
@@ -3657,14 +3645,20 @@
      historical low     2025-26 Panini Select EuroLeague Pack                              $22.00 (2026-09-06, 1 shop(s))
 
 ========================================================================
-  🩺 SANTÉ DES SOURCES — 5 anomalie(s)
+  🩺 SANTÉ DES SOURCES — 11 anomalie(s)
 ========================================================================
-  DEGRADED  kutogo               volume 0 contre une base récente de 737
+  PARTIAL   ballgame             dernier passage interrompu (PAGINATION_INCOMPLETE, 0.3 min)
+  DEGRADED  bleecker             volume 0 contre une base récente de 2293
+  DEGRADED  cbhobby              volume 0 contre une base récente de 660
+  PARTIAL   fancave              dernier passage interrompu (PAGINATION_INCOMPLETE, 0.2 min)
+  PARTIAL   rlsports             dernier passage interrompu (PAGINATION_INCOMPLETE, 0.2 min)
   DEGRADED  shopuscards          6 passages interrompus sur 6 (dernier : PARTIAL:BUDGET)
+  DEGRADED  sjay2k               volume 0 contre une base récente de 584
+  PARTIAL   sportcards           dernier passage interrompu (PAGINATION_INCOMPLETE, 0.5 min)
   DEAD      stickerpoint         6 passages complets consécutifs à 0 produit
   DEAD      supercollectors      6 passages complets consécutifs à 0 produit
   DEGRADED  wolfdentcg           6 passages interrompus sur 6 (dernier : PAGINATION_INCOMPLETE)
-  45 HEALTHY · 27 SKIPPED · 3 DEGRADED · 2 DEAD
+  39 HEALTHY · 27 SKIPPED · 5 DEGRADED · 4 PARTIAL · 2 DEAD
 
 ========================================================================
   ⛔ BLOCKLIST — 2 domaine(s) jamais crawlés
@@ -3704,5 +3698,5 @@
   2023-24_HOOPS_BLASTER                    €   67.90  tanteo      
   2025-26_BOWMAN_VALUE_BLASTER             €   67.90  tanteo      
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-09-27T05-55-49.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-09-27T12-42-28.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

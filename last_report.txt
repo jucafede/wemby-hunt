@@ -1,6 +1,6 @@
-⚠️  [shopuscards] passage 2026-09-27T16:52:43+00:00 PARTIAL (159 produits) — ignoré, référence = dernier passage complet
-⚠️  [wolfdentcg] passage 2026-09-27T16:52:43+00:00 PARTIAL (31910 produits) — ignoré, référence = dernier passage complet
-(324 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
+⚠️  [shopuscards] passage 2026-09-27T21:15:30+00:00 PARTIAL (184 produits) — ignoré, référence = dernier passage complet
+⚠️  [wolfdentcg] passage 2026-09-27T21:15:30+00:00 PARTIAL (31910 produits) — ignoré, référence = dernier passage complet
+(327 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
 
 ========================================================================
   RETAIL
@@ -903,16 +903,16 @@
 
 · SUIVI   2025-26 Topps Hoops Value Box   [TOPPS_2025-26_HOOPS_VALUE_BOX]
    1. hiddengems       $   29.99  IN STOCK  landed≈€  43.81  (score 1.00)
-        cheapest of 4 in stock
+        cheapest of 3 in stock
    2. mafiosicards_shop $   35.00  IN STOCK  landed≈€  48.99  (score 1.00)
         VERIFY  FR
    3. boxseat          $   39.99  IN STOCK  landed≈€  54.15  (score 1.00)
         VERIFY
-   4. dioib            $   50.00  IN STOCK  landed≈€  64.51  (score 1.00)
-        VERIFY  FR
-   5. rlsports         $   27.99  SOLD OUT  landed≈€  41.74  (score 1.00)
+   4. rlsports         $   27.99  SOLD OUT  landed≈€  41.74  (score 1.00)
         VERIFY
-   6. deichcards       $   30.00  SOLD OUT  landed≈€  43.82  (score 1.00)
+   5. deichcards       $   30.00  SOLD OUT  landed≈€  43.82  (score 1.00)
+        VERIFY  FR
+   6. americansportstore $   39.99  SOLD OUT  landed≈€  54.15  (score 1.00)
         VERIFY  FR
    ask $29.99   sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU €39.00
    HISTORICAL LOW $27.99 (le 2026-08-30, rlsports, 4 shop(s) vus) | cheapest live $29.99
@@ -1612,16 +1612,15 @@
 
 · SUIVI   2025-26 Topps Bowman Hanger   [TOPPS_2025-26_BOWMAN_HANGER]
    1. monmouth         $   29.99  IN STOCK  landed≈€  43.81  (score 1.00)
-        VERIFY  cheapest of 5 in stock
+        VERIFY  cheapest of 4 in stock
    2. sportscardjunction $   30.00  IN STOCK  landed≈€  43.82  (score 1.00)
         VERIFY
    3. boxseat          $   39.99  IN STOCK  landed≈€  54.15  (score 1.00)
         VERIFY
-   4. fancave          $   39.99  IN STOCK  landed≈€  54.15  (score 1.00)
+   4. rbicru7          $   40.00  IN STOCK  landed≈€  54.16  (score 1.00)
+   5. rlsports         $   14.99  SOLD OUT  landed≈€  28.29  (score 1.00)
         VERIFY
-   5. rbicru7          $   40.00  IN STOCK  landed≈€  54.16  (score 1.00)
-   6. rlsports         $   14.99  SOLD OUT  landed≈€  28.29  (score 1.00)
-        VERIFY
+   6. hiddengems       $   18.00  SOLD OUT  landed≈€  31.41  (score 1.00)
    ask $30.00   sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $14.99 (le 2026-09-06, rlsports, 12 shop(s) vus) | cheapest live $29.99
    BEST → monmouth  https://monmouthcards.com/products/2025-26-bowman-basketball-hanger-box
@@ -2343,7 +2342,7 @@
         VERIFY
    4. rbicru7          $  875.00  IN STOCK  landed≈€ 917.89  (score 1.00)
    5. collectorstore   $  924.95  IN STOCK  landed≈€ 969.56  (score 1.00)
-   6. superior         $ 1100.00  IN STOCK  landed≈€1150.63  (score 1.00)
+   6. superior         $ 1175.00  IN STOCK  landed≈€1228.21  (score 1.00)
         VERIFY
    ask $749.00  sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $598.99 (le 2026-08-19, columbia, 14 shop(s) vus) | cheapest live $669.95
@@ -2517,9 +2516,9 @@
 
 · SUIVI   2025-26 Topps Signature Class Hobby   [TOPPS_2025-26_SIGNATURE_CLASS_HOBBY]
    1. sportscardjunction $  425.00  IN STOCK  landed≈€ 452.41  (score 1.00)
-        VERIFY  cheapest of 21 in stock
+        VERIFY  cheapest of 20 in stock
    2. stcuk            $  425.00  IN STOCK  landed≈€ 452.41  (score 1.00)
-        VERIFY  cheapest of 21 in stock  FR
+        VERIFY  cheapest of 20 in stock  FR
    3. cardiacs         $  449.95  IN STOCK  landed≈€ 478.22  (score 1.00)
    4. vwsportscards    $  449.99  IN STOCK  landed≈€ 478.26  (score 1.00)
    5. cbhobby          $  450.00  IN STOCK  landed≈€ 478.27  (score 1.00)
@@ -3559,9 +3558,9 @@
 
 · SUIVI   2025-26 Topps Signature Class Hobby Jumbo   [TOPPS_2025-26_SIGNATURE_CLASS_HOBBY_JUMBO]
    1. rbicru7          $  705.00  IN STOCK  landed≈€ 742.04  (score 1.00)
-        🔹STRONG_DEAL -22%  cheapest of 14 in stock
+        🔹STRONG_DEAL -22%  cheapest of 13 in stock
    2. sportscardjunction $  705.00  IN STOCK  landed≈€ 742.04  (score 1.00)
-        🔹STRONG_DEAL -22%  VERIFY  cheapest of 14 in stock
+        🔹STRONG_DEAL -22%  VERIFY  cheapest of 13 in stock
    3. cardvault        $  709.95  IN STOCK  landed≈€ 747.16  (score 1.00)
         🔹STRONG_DEAL -21%
    4. collectorstore   $  714.95  IN STOCK  landed≈€ 752.33  (score 1.00)
@@ -3697,5 +3696,5 @@
   2023-24_HOOPS_BLASTER                    €   67.90  tanteo      
   2025-26_BOWMAN_VALUE_BLASTER             €   67.90  tanteo      
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-09-27T17-45-55.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-09-27T22-09-28.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

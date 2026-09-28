@@ -1,0 +1,569 @@
+[
+  {
+    "domain": "triplesssinc.com",
+    "state": "BLOCKED",
+    "http": null,
+    "fetchs": 1,
+    "raison": "robots.txt interdit — respecté ; le marchand existe, il refuse le robot"
+  },
+  {
+    "domain": "rynossportscards.com",
+    "state": "LIVE",
+    "http": 200,
+    "fetchs": 2,
+    "raison": "accueil lu (390130 octets)"
+  },
+  {
+    "domain": "columbiahobby.com",
+    "state": "LIVE",
+    "http": 200,
+    "fetchs": 2,
+    "raison": "accueil lu (661832 octets)"
+  },
+  {
+    "domain": "davesportscards.com",
+    "state": "BLOCKED",
+    "http": 403,
+    "fetchs": 2,
+    "raison": "HTTP 403 — protection anti-robot, respectée"
+  },
+  {
+    "domain": "thesandlotsports.com",
+    "state": "LIVE",
+    "http": 200,
+    "fetchs": 2,
+    "raison": "accueil lu (104771 octets)"
+  },
+  {
+    "domain": "foreveryoungsportscards.com",
+    "state": "BLOCKED",
+    "http": null,
+    "fetchs": 1,
+    "raison": "robots.txt interdit — respecté ; le marchand existe, il refuse le robot"
+  },
+  {
+    "domain": "thesportscardzone.com",
+    "state": "LIVE",
+    "http": 200,
+    "fetchs": 2,
+    "raison": "accueil lu (614785 octets)"
+  },
+  {
+    "domain": "goldensportscards.com",
+    "state": "LIVE",
+    "http": 200,
+    "fetchs": 2,
+    "raison": "accueil lu (94432 octets)"
+  },
+  {
+    "domain": "phillyshow.com",
+    "state": "BLOCKED",
+    "http": 403,
+    "fetchs": 2,
+    "raison": "HTTP 403 — protection anti-robot, respectée"
+  },
+  {
+    "domain": "centericesportscards.com",
+    "state": "UNKNOWN",
+    "http": "URLError",
+    "fetchs": 2,
+    "raison": "pas de réponse exploitable (URLError)"
+  },
+  {
+    "domain": "dollarboxcards.com",
+    "state": "LIVE",
+    "http": 200,
+    "fetchs": 2,
+    "raison": "accueil lu (1066990 octets)"
+  },
+  {
+    "domain": "cardshopfinder.com",
+    "state": "UNKNOWN",
+    "http": "URLError",
+    "fetchs": 2,
+    "raison": "pas de réponse exploitable (URLError)"
+  },
+  {
+    "domain": "hotcornersportscards.com",
+    "state": "BLOCKED",
+    "http": null,
+    "fetchs": 1,
+    "raison": "robots.txt interdit — respecté ; le marchand existe, il refuse le robot"
+  },
+  {
+    "domain": "sportscardsandmoreaz.com",
+    "state": "LIVE",
+    "http": 200,
+    "fetchs": 2,
+    "raison": "accueil lu (30745 octets)"
+  },
+  {
+    "domain": "dandpsportscards.com",
+    "state": "LIVE",
+    "http": 200,
+    "fetchs": 2,
+    "raison": "accueil lu (120085 octets)"
+  },
+  {
+    "domain": "vegascardshop.com",
+    "state": "UNKNOWN",
+    "http": "URLError",
+    "fetchs": 2,
+    "raison": "pas de réponse exploitable (URLError)"
+  },
+  {
+    "domain": "hobbybenchstores.com",
+    "state": "UNKNOWN",
+    "http": "URLError",
+    "fetchs": 2,
+    "raison": "pas de réponse exploitable (URLError)"
+  },
+  {
+    "domain": "centerfieldsportscards.com",
+    "state": "LIVE",
+    "http": 200,
+    "fetchs": 2,
+    "raison": "accueil lu (373611 octets)"
+  },
+  {
+    "domain": "3dsportscards.net",
+    "state": "LIVE",
+    "http": 200,
+    "fetchs": 2,
+    "raison": "accueil lu (105183 octets)"
+  },
+  {
+    "domain": "bankstons.com",
+    "state": "LIVE",
+    "http": 200,
+    "fetchs": 2,
+    "raison": "accueil lu (739914 octets)"
+  },
+  {
+    "domain": "pensburymanor.com",
+    "state": "LIVE",
+    "http": 200,
+    "fetchs": 2,
+    "raison": "accueil lu (991713 octets)"
+  },
+  {
+    "domain": "phxsportscards.com",
+    "state": "LIVE",
+    "http": 200,
+    "fetchs": 2,
+    "raison": "accueil lu (54688 octets)"
+  },
+  {
+    "domain": "omgcollectibles.com",
+    "state": "UNKNOWN",
+    "http": "URLError",
+    "fetchs": 2,
+    "raison": "pas de réponse exploitable (URLError)"
+  },
+  {
+    "domain": "tedscardshop.com",
+    "state": "LIVE",
+    "http": 200,
+    "fetchs": 2,
+    "raison": "accueil lu (139031 octets)"
+  },
+  {
+    "domain": "collectibleshub.net",
+    "state": "BLOCKED",
+    "http": null,
+    "fetchs": 1,
+    "raison": "robots.txt interdit — respecté ; le marchand existe, il refuse le robot"
+  },
+  {
+    "domain": "hvsportscards.com",
+    "state": "LIVE",
+    "http": 200,
+    "fetchs": 2,
+    "raison": "accueil lu (12458 octets)"
+  },
+  {
+    "domain": "evilcontrollers.com",
+    "state": "LIVE",
+    "http": 200,
+    "fetchs": 2,
+    "raison": "accueil lu (130893 octets)"
+  },
+  {
+    "domain": "empireheatsports.com",
+    "state": "DEAD",
+    "http": null,
+    "fetchs": 0,
+    "raison": "le domaine ne résout pas (DNS) — aucune requête émise"
+  },
+  {
+    "domain": "super-sport-cards.myshopify.com",
+    "state": "LIVE",
+    "http": 200,
+    "fetchs": 2,
+    "raison": "accueil lu (109965 octets)"
+  },
+  {
+    "domain": "greentreesc.com",
+    "state": "UNKNOWN",
+    "http": "URLError",
+    "fetchs": 2,
+    "raison": "pas de réponse exploitable (URLError)"
+  },
+  {
+    "domain": "ultimatesportscards.com",
+    "state": "LIVE",
+    "http": 200,
+    "fetchs": 2,
+    "raison": "accueil lu (71117 octets)"
+  },
+  {
+    "domain": "orbsportscards.com",
+    "state": "BLOCKED",
+    "http": 403,
+    "fetchs": 2,
+    "raison": "HTTP 403 — protection anti-robot, respectée"
+  },
+  {
+    "domain": "tpsc.net",
+    "state": "UNKNOWN",
+    "http": "URLError",
+    "fetchs": 2,
+    "raison": "pas de réponse exploitable (URLError)"
+  },
+  {
+    "domain": "burbanksportscards.com",
+    "state": "UNKNOWN",
+    "http": "URLError",
+    "fetchs": 2,
+    "raison": "pas de réponse exploitable (URLError)"
+  },
+  {
+    "domain": "courtneyssportscards.com",
+    "state": "BLOCKED",
+    "http": null,
+    "fetchs": 1,
+    "raison": "robots.txt interdit — respecté ; le marchand existe, il refuse le robot"
+  },
+  {
+    "domain": "dave-s-sports-cards.hub.biz",
+    "state": "BLOCKED",
+    "http": null,
+    "fetchs": 1,
+    "raison": "robots.txt interdit — respecté ; le marchand existe, il refuse le robot"
+  },
+  {
+    "domain": "eastbaycardshow.com",
+    "state": "LIVE",
+    "http": 200,
+    "fetchs": 2,
+    "raison": "accueil lu (2036126 octets)"
+  },
+  {
+    "domain": "jrsportscards.com",
+    "state": "UNKNOWN",
+    "http": "URLError",
+    "fetchs": 2,
+    "raison": "pas de réponse exploitable (URLError)"
+  },
+  {
+    "domain": "kinemserie.com",
+    "state": "DEAD",
+    "http": null,
+    "fetchs": 0,
+    "raison": "le domaine ne résout pas (DNS) — aucune requête émise"
+  },
+  {
+    "domain": "mtpsportscards.com",
+    "state": "DEAD",
+    "http": null,
+    "fetchs": 0,
+    "raison": "le domaine ne résout pas (DNS) — aucune requête émise"
+  },
+  {
+    "domain": "sierranevadasportscards.com",
+    "state": "LIVE",
+    "http": 200,
+    "fetchs": 2,
+    "raison": "accueil lu (47654 octets)"
+  },
+  {
+    "domain": "sportscardsetcpgh.com",
+    "state": "UNKNOWN",
+    "http": "URLError",
+    "fetchs": 2,
+    "raison": "pas de réponse exploitable (URLError)"
+  },
+  {
+    "domain": "tablemountainsportscards.com",
+    "state": "LIVE",
+    "http": 200,
+    "fetchs": 2,
+    "raison": "accueil lu (365173 octets)"
+  },
+  {
+    "domain": "stripsidecomics.com",
+    "state": "DEAD",
+    "http": null,
+    "fetchs": 0,
+    "raison": "le domaine ne résout pas (DNS) — aucune requête émise"
+  },
+  {
+    "domain": "elitesportscards.net",
+    "state": "BLOCKED",
+    "http": null,
+    "fetchs": 1,
+    "raison": "robots.txt interdit — respecté ; le marchand existe, il refuse le robot"
+  },
+  {
+    "domain": "greatescapeadventures.net",
+    "state": "BLOCKED",
+    "http": null,
+    "fetchs": 1,
+    "raison": "robots.txt interdit — respecté ; le marchand existe, il refuse le robot"
+  },
+  {
+    "domain": "themeccaofsportscards.com",
+    "state": "BLOCKED",
+    "http": null,
+    "fetchs": 1,
+    "raison": "robots.txt interdit — respecté ; le marchand existe, il refuse le robot"
+  },
+  {
+    "domain": "americard.us",
+    "state": "LIVE",
+    "http": 200,
+    "fetchs": 2,
+    "raison": "accueil lu (98947 octets)"
+  },
+  {
+    "domain": "billssportsmemorabilia.com",
+    "state": "LIVE",
+    "http": 200,
+    "fetchs": 2,
+    "raison": "accueil lu (203311 octets)"
+  },
+  {
+    "domain": "fatkatzsportscards.com",
+    "state": "LIVE",
+    "http": 200,
+    "fetchs": 2,
+    "raison": "accueil lu (1480 octets)"
+  },
+  {
+    "domain": "houghtonmarketplace.com",
+    "state": "BLOCKED",
+    "http": null,
+    "fetchs": 1,
+    "raison": "robots.txt interdit — respecté ; le marchand existe, il refuse le robot"
+  },
+  {
+    "domain": "juno.com",
+    "state": "LIVE",
+    "http": 200,
+    "fetchs": 2,
+    "raison": "accueil lu (25251 octets)"
+  },
+  {
+    "domain": "kcsfinestsportscards.com",
+    "state": "DEAD",
+    "http": null,
+    "fetchs": 0,
+    "raison": "le domaine ne résout pas (DNS) — aucune requête émise"
+  },
+  {
+    "domain": "legacysportscards.com",
+    "state": "LIVE",
+    "http": 200,
+    "fetchs": 2,
+    "raison": "accueil lu (148214 octets)"
+  },
+  {
+    "domain": "mattssportscards.com",
+    "state": "UNKNOWN",
+    "http": "URLError",
+    "fetchs": 2,
+    "raison": "pas de réponse exploitable (URLError)"
+  },
+  {
+    "domain": "fieldofdreamsmoviesite.com",
+    "state": "LIVE",
+    "http": 200,
+    "fetchs": 2,
+    "raison": "accueil lu (373170 octets)"
+  },
+  {
+    "domain": "j2games.com",
+    "state": "LIVE",
+    "http": 200,
+    "fetchs": 2,
+    "raison": "accueil lu (1018476 octets)"
+  },
+  {
+    "domain": "888collectibles.com",
+    "state": "LIVE",
+    "http": 200,
+    "fetchs": 2,
+    "raison": "accueil lu (142164 octets)"
+  },
+  {
+    "domain": "downtownhobby9.com",
+    "state": "LIVE",
+    "http": 200,
+    "fetchs": 2,
+    "raison": "accueil lu (904270 octets)"
+  },
+  {
+    "domain": "guildofhands.com",
+    "state": "LIVE",
+    "http": 200,
+    "fetchs": 2,
+    "raison": "accueil lu (203415 octets)"
+  },
+  {
+    "domain": "javelinhobbieslv.com",
+    "state": "LIVE",
+    "http": 200,
+    "fetchs": 2,
+    "raison": "accueil lu (1838734 octets)"
+  },
+  {
+    "domain": "mimicsmarket.com",
+    "state": "BLOCKED",
+    "http": null,
+    "fetchs": 1,
+    "raison": "robots.txt interdit — respecté ; le marchand existe, il refuse le robot"
+  },
+  {
+    "domain": "plushtery.com",
+    "state": "UNKNOWN",
+    "http": "URLError",
+    "fetchs": 2,
+    "raison": "pas de réponse exploitable (URLError)"
+  },
+  {
+    "domain": "thepokecourt.com",
+    "state": "LIVE",
+    "http": 200,
+    "fetchs": 2,
+    "raison": "accueil lu (270827 octets)"
+  },
+  {
+    "domain": "thwipster.com",
+    "state": "BLOCKED",
+    "http": null,
+    "fetchs": 1,
+    "raison": "robots.txt interdit — respecté ; le marchand existe, il refuse le robot"
+  },
+  {
+    "domain": "tricksupply.com",
+    "state": "BLOCKED",
+    "http": null,
+    "fetchs": 1,
+    "raison": "robots.txt interdit — respecté ; le marchand existe, il refuse le robot"
+  },
+  {
+    "domain": "argreplay.com",
+    "state": "LIVE",
+    "http": 200,
+    "fetchs": 2,
+    "raison": "accueil lu (266906 octets)"
+  },
+  {
+    "domain": "artisanknitworks.com",
+    "state": "BLOCKED",
+    "http": null,
+    "fetchs": 1,
+    "raison": "robots.txt interdit — respecté ; le marchand existe, il refuse le robot"
+  },
+  {
+    "domain": "blackjadedwolf.com",
+    "state": "LIVE",
+    "http": 200,
+    "fetchs": 2,
+    "raison": "accueil lu (395532 octets)"
+  },
+  {
+    "domain": "blackmarketfpv.com",
+    "state": "LIVE",
+    "http": 200,
+    "fetchs": 2,
+    "raison": "accueil lu (543300 octets)"
+  },
+  {
+    "domain": "goffausa.com",
+    "state": "LIVE",
+    "http": 200,
+    "fetchs": 2,
+    "raison": "accueil lu (57628 octets)"
+  },
+  {
+    "domain": "holmeshobbies.com",
+    "state": "LIVE",
+    "http": 200,
+    "fetchs": 2,
+    "raison": "accueil lu (64560 octets)"
+  },
+  {
+    "domain": "macadoodles.com",
+    "state": "BLOCKED",
+    "http": null,
+    "fetchs": 1,
+    "raison": "robots.txt interdit — respecté ; le marchand existe, il refuse le robot"
+  },
+  {
+    "domain": "thehideouttcs.com",
+    "state": "LIVE",
+    "http": 200,
+    "fetchs": 2,
+    "raison": "accueil lu (969236 octets)"
+  },
+  {
+    "domain": "theripbuddy.com",
+    "state": "LIVE",
+    "http": 200,
+    "fetchs": 2,
+    "raison": "accueil lu (498511 octets)"
+  },
+  {
+    "domain": "ihc.cards",
+    "state": "LIVE",
+    "http": 200,
+    "fetchs": 2,
+    "raison": "accueil lu (339189 octets)"
+  },
+  {
+    "domain": "maplewoodhobby.com",
+    "state": "LIVE",
+    "http": 200,
+    "fetchs": 2,
+    "raison": "accueil lu (40994 octets)"
+  },
+  {
+    "domain": "theplayeragency.com",
+    "state": "LIVE",
+    "http": 200,
+    "fetchs": 2,
+    "raison": "accueil lu (299332 octets)"
+  },
+  {
+    "domain": "comic-lair.com",
+    "state": "LIVE",
+    "http": 200,
+    "fetchs": 2,
+    "raison": "accueil lu (6627 octets)"
+  },
+  {
+    "domain": "gildedravengames.com",
+    "state": "BLOCKED",
+    "http": null,
+    "fetchs": 1,
+    "raison": "robots.txt interdit — respecté ; le marchand existe, il refuse le robot"
+  },
+  {
+    "domain": "round2gaming.com",
+    "state": "LIVE",
+    "http": 200,
+    "fetchs": 2,
+    "raison": "accueil lu (114845 octets)"
+  }
+]

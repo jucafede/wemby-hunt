@@ -165,13 +165,30 @@ def robots_ok(url: str) -> bool:
     parts = urllib.parse.urlsplit(url)
     origine = f"{parts.scheme}://{parts.netloc}"
     if origine not in _robots:
+        # LIRE LES RÈGLES AVEC NOTRE PROPRE IDENTITÉ
+        # ------------------------------------------
+        # `RobotFileParser.read()` télécharge robots.txt avec l'UA par défaut de urllib, que
+        # beaucoup de sites refusent — et, sur 401/403, le parseur pose `disallow_all`. Nous
+        # fabriquions donc une interdiction que nous n'avions jamais lue : StockX sert son
+        # robots.txt en 200 à nos en-têtes habituels et n'y interdit aucune page produit, mais
+        # répondait 403 à urllib, et tout le domaine devenait « interdit ». C'est la faute que
+        # ce projet traque partout ailleurs — « nous n'avons pas su lire » pris pour « c'est
+        # interdit » — logée dans la couche de conformité elle-même.
+        #
+        # On lit donc robots.txt comme on lit tout le reste, puis on OBÉIT à ce qui y est écrit.
         rp = urllib.robotparser.RobotFileParser()
-        rp.set_url(origine + "/robots.txt")
-        try:
-            rp.read()
-        except Exception:
-            # robots.txt illisible : on ne présume pas d'une interdiction qui n'est pas écrite
-            rp = None
+        st, corps, _ = fetch(origine + "/robots.txt", timeout=12)
+        if st == 200 and corps is not None:
+            rp.parse(corps.splitlines())
+        elif st in (401, 403):
+            # Le site refuse de nous montrer ses règles : on se retire, on ne devine pas.
+            rp.disallow_all = True
+        elif isinstance(st, int) and 500 <= st < 600:
+            rp.disallow_all = True          # serveur en difficulté : on n'insiste pas
+        elif isinstance(st, int) and 400 <= st < 500:
+            rp.allow_all = True             # pas de robots.txt publié = aucune restriction
+        else:
+            rp = None                       # pas de réponse : on ne présume rien
         _robots[origine] = rp
     rp = _robots[origine]
     if rp is None:
@@ -189,7 +206,53 @@ def robots_ok(url: str) -> bool:
     for identite in ("ClaudeBot", "anthropic-ai", "Claude-Web"):
         if not rp.can_fetch(identite, url):
             return False
+    if _interdit_glob(origine, url):
+        return False
     return rp.can_fetch(UA, url) or rp.can_fetch("*", url)
+
+
+# `urllib.robotparser` ne gère pas les jokers d'une règle comme « Disallow: */search* » : il a
+# répondu « autorisé » pour /search?s=x que StockX interdit pourtant explicitement. Ce garde-fou
+# relit les motifs à la main. Il ne peut QUE restreindre — jamais autoriser ce que le parseur
+# refuse — pour qu'un bogue ici ne puisse pas se transformer en contournement.
+_globs: dict = {}
+
+
+def _motifs_interdits(origine: str) -> list:
+    if origine in _globs:
+        return _globs[origine]
+    st, corps, _ = fetch(origine + "/robots.txt", timeout=12)
+    motifs, groupes, courant = [], [], []
+    if st == 200 and corps:
+        nous = {"*", "claudebot", "anthropic-ai", "claude-web"}
+        actif = False
+        for ligne in corps.splitlines():
+            ligne = ligne.split("#", 1)[0].strip()
+            if not ligne or ":" not in ligne:
+                continue
+            cle, _, val = ligne.partition(":")
+            cle, val = cle.strip().lower(), val.strip()
+            if cle == "user-agent":
+                actif = val.lower() in nous
+            elif cle == "disallow" and actif and val:
+                motifs.append(val)
+    compiles = []
+    for m in motifs:
+        if "*" not in m and "$" not in m:
+            continue                      # cas simple : le parseur standard le traite déjà
+        rx = "".join(".*" if ch == "*" else ("$" if ch == "$" else re.escape(ch)) for ch in m)
+        try:
+            compiles.append(re.compile("^" + rx))
+        except re.error:
+            pass
+    _globs[origine] = compiles
+    return compiles
+
+
+def _interdit_glob(origine: str, url: str) -> bool:
+    parts = urllib.parse.urlsplit(url)
+    chemin = parts.path + (("?" + parts.query) if parts.query else "")
+    return any(rx.match(chemin) for rx in _motifs_interdits(origine))
 
 
 CHALLENGE = re.compile(r"just a moment|cf-browser-verification|captcha|are you a human|"

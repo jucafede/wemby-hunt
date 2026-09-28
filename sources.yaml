@@ -1147,3 +1147,37 @@ shops:
     old_stock_score: 12
     qualification_evidence: "Chrome Black Basketball Hobby Box:"
     catalogue_titres_examines: 635
+  - key: piecethegame
+    name: Piece Of The Game
+    base_url: https://shoppieceofthegame.com
+    type: shopify_json
+    platform: shopify
+    market_region: US
+    currency: USD
+    country: US
+    state: NY
+    city: Wappingers Falls
+    trust: trusted
+    status: active
+    priority: high
+    seller_type: local_card_shop
+    seller_verification: VERIFIED
+    purchase_mode: ONLINE_CART
+    crawlability: FULL
+    robots_checked_at: 2026-09-28
+    robots_disallow: false
+    discovered_at: 2026-09-28
+    discovery_method: manual_user_supplied
+    counts_as_algorithmic_discovery: false
+    seed_eligible: true
+    france_selector_observed: true
+    old_stock_score: 33
+    qualification_evidence: "2020-21 Panini Donruss Optic Basketball Hyper Pink Prizm Mega Box — 84,99 $ EN STOCK"
+    catalogue_titres_examines: 10000
+    notes: >-
+      Graine OR fournie par l'utilisateur, PAS une découverte de l'algorithme — le champ
+      counts_as_algorithmic_discovery le dit pour qu'aucun bilan ne la compte à tort.
+      Wappingers Falls NY, Shopify, panier en ligne, adresse et téléphone publiés, sélecteur
+      pays incluant la France. Catalogue lu jusqu'au plafond de 10 000 fiches (40 pages) :
+      les comptes ci-dessous sont donc des MINORANTS, pas des totaux. 315 fiches basket,
+      78 scellé NBA, plus ancien scellé NBA encore au panier : 2017-18 Hoops Blaster 114,99 $.

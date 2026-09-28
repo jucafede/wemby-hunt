@@ -1,0 +1,1207 @@
+{
+  "domain": "shoppieceofthegame.com",
+  "catalogue_total": 10000,
+  "basketball": 315,
+  "scelle_nba": 78,
+  "autre_ligue": 16,
+  "panini": 21,
+  "prizm": 6,
+  "select": 2,
+  "optic": 4,
+  "mosaic": 0,
+  "phoenix": 0,
+  "hoops": 13,
+  "mega": 10,
+  "blaster": 11,
+  "hobby": 36,
+  "2023-24": 1,
+  "2022-23": 0,
+  "2021-22": 1,
+  "2020-21": 1,
+  "2019-20_ou_avant": 6,
+  "vieux_en_stock": 2,
+  "old_stock_score": 33,
+  "old_stock_motifs": [
+    "+6 1 fiche(s) 2019-ou-avant ENCORE AU PANIER",
+    "+12 1 fiche(s) 2023-24 ENCORE AU PANIER",
+    "+4 1 format(s) retail ancien(s) achetable(s) (Mega/Blaster/Hanger)",
+    "+8 7 fiche(s) ancienne(s) encore indexée(s) mais ÉPUISÉE(S) — trace, pas stock",
+    "+3 catalogue NBA scellé profond (78 fiches relevées)"
+  ],
+  "old_stock_detail": {
+    "nba_scelle_total": 78,
+    "achetables": 52,
+    "anciens_achetables": 2,
+    "epuises_anciens": 7,
+    "generations_achetables": [
+      "2017-18",
+      "2023-24"
+    ],
+    "plus_ancien_achetable": "2017-18"
+  },
+  "cibles_exactes": [],
+  "ambigus": [],
+  "purchase_mode": "ONLINE_CART",
+  "crawlability": "FULL",
+  "legitimacy": "TRUSTED",
+  "signaux_legitimite": [
+    "téléphone",
+    "e-mail",
+    "adresse postale",
+    "CGV/retours"
+  ],
+  "fiches_scelle_nba": [
+    {
+      "titre": "2025-26 Panini Noir Basketball Hobby Box",
+      "url": "https://shoppieceofthegame.com/products/2025-26-panini-noir-basketball-hobby-box",
+      "prix": 979.99,
+      "dispo": true,
+      "saison": "2025-26",
+      "annee": 2025,
+      "type": "Sports Trading cards",
+      "tags": [
+        "basketball",
+        "Panini",
+        "sports cards"
+      ]
+    },
+    {
+      "titre": "2025-26 Panini Noir Basketball Hobby 4 Box Case",
+      "url": "https://shoppieceofthegame.com/products/2025-26-panini-noir-basketball-hobby-4-box-case",
+      "prix": 3794.99,
+      "dispo": true,
+      "saison": "2025-26",
+      "annee": 2025,
+      "type": "Sports Trading cards",
+      "tags": [
+        "basketball",
+        "boxes",
+        "Panini",
+        "sports cards"
+      ]
+    },
+    {
+      "titre": "2020-21 Panini Donruss Optic Basketball Blaster Box",
+      "url": "https://shoppieceofthegame.com/products/2020-2021-panini-donruss-optic-nba-blaster-box",
+      "prix": 54.99,
+      "dispo": false,
+      "saison": "2020-21",
+      "annee": 2020,
+      "type": "Cards",
+      "tags": [
+        "basketball",
+        "boxes",
+        "Panini",
+        "sports cards"
+      ]
+    },
+    {
+      "titre": "2019-20 Panini Donruss Optic Basketball Mega Box",
+      "url": "https://shoppieceofthegame.com/products/2019-20-panini-donruss-optic-basketball-mega-box",
+      "prix": 74.99,
+      "dispo": false,
+      "saison": "2019-20",
+      "annee": 2019,
+      "type": "",
+      "tags": [
+        "basketball",
+        "boxes",
+        "Panini",
+        "sports cards"
+      ]
+    },
+    {
+      "titre": "2025-26 Topps Chrome Black Basketball Hobby 8 Box Case",
+      "url": "https://shoppieceofthegame.com/products/2025-26-topps-chrome-black-basketball-hobby-8-box-case-1",
+      "prix": 5999.94,
+      "dispo": true,
+      "saison": "2025-26",
+      "annee": 2025,
+      "type": "Sports Trading cards",
+      "tags": [
+        "basketball",
+        "cases",
+        "sports cards",
+        "Topps"
+      ]
+    },
+    {
+      "titre": "2025-26 Topps Chrome Black Basketball Hobby Box",
+      "url": "https://shoppieceofthegame.com/products/2025-26-topps-chrome-black-basketball-hobby-box-1",
+      "prix": 724.99,
+      "dispo": true,
+      "saison": "2025-26",
+      "annee": 2025,
+      "type": "Sports Trading cards",
+      "tags": [
+        "basketball",
+        "boxes",
+        "sports cards",
+        "Topps"
+      ]
+    },
+    {
+      "titre": "1991-92 Upper Deck NBA Basketball High Series Sealed Box",
+      "url": "https://shoppieceofthegame.com/products/1991-92-upper-deck-nba-basketball-high-series-sealed-box",
+      "prix": 164.99,
+      "dispo": false,
+      "saison": "1991-92",
+      "annee": 1991,
+      "type": "Sports Trading cards",
+      "tags": [
+        "basketball",
+        "sealed box"
+      ]
+    },
+    {
+      "titre": "2025-26 Panini Origins Basketball Hobby 12 Box Case",
+      "url": "https://shoppieceofthegame.com/products/2025-26-panini-origins-basketball-hobby-12-box-case",
+      "prix": 2974.94,
+      "dispo": true,
+      "saison": "2025-26",
+      "annee": 2025,
+      "type": "Sports Trading cards",
+      "tags": [
+        "basketball",
+        "cases",
+        "Panini",
+        "sports cards"
+      ]
+    },
+    {
+      "titre": "2025-26 Panini Origins Basketball Hobby Box",
+      "url": "https://shoppieceofthegame.com/products/2025-26-panini-origins-basketball-hobby-box",
+      "prix": 244.99,
+      "dispo": true,
+      "saison": "2025-26",
+      "annee": 2025,
+      "type": "Sports Trading cards",
+      "tags": [
+        "basketball",
+        "boxes",
+        "Panini",
+        "sports cards"
+      ]
+    },
+    {
+      "titre": "2025-26 Topps Chrome Update Basketball Blaster Box",
+      "url": "https://shoppieceofthegame.com/products/2025-26-topps-chrome-update-basketball-blaster-box",
+      "prix": 119.99,
+      "dispo": true,
+      "saison": "2025-26",
+      "annee": 2025,
+      "type": "",
+      "tags": [
+        "basketball",
+        "boxes",
+        "sports cards",
+        "Topps"
+      ]
+    },
+    {
+      "titre": "2025-26 Topps Chrome Update Basketball Jumbo Box",
+      "url": "https://shoppieceofthegame.com/products/2025-26-topps-chrome-update-basketball-jumbo-box",
+      "prix": 2599.0,
+      "dispo": true,
+      "saison": "2025-26",
+      "annee": 2025,
+      "type": "",
+      "tags": [
+        "basketball",
+        "boxes",
+        "sports cards",
+        "Topps"
+      ]
+    },
+    {
+      "titre": "2025-26 Topps Chrome Update Basketball Breakers Delight Box",
+      "url": "https://shoppieceofthegame.com/products/2025-26-topps-chrome-update-basketball-breakers-delight-box",
+      "prix": 4499.99,
+      "dispo": true,
+      "saison": "2025-26",
+      "annee": 2025,
+      "type": "",
+      "tags": [
+        "basketball",
+        "boxes",
+        "sports cards",
+        "Topps"
+      ]
+    },
+    {
+      "titre": "2025-26 Topps Chrome Update Basketball Breakers Delight 6 Box Case",
+      "url": "https://shoppieceofthegame.com/products/2025-26-topps-chrome-update-basketball-breakers-delight-6-box-case",
+      "prix": 26989.94,
+      "dispo": true,
+      "saison": "2025-26",
+      "annee": 2025,
+      "type": "",
+      "tags": [
+        "basketball",
+        "cases",
+        "sports cards",
+        "Topps"
+      ]
+    },
+    {
+      "titre": "2025-26 Topps Chrome Update Basketball Jumbo 8 Box Case",
+      "url": "https://shoppieceofthegame.com/products/2025-26-topps-chrome-update-basketball-jumbo-8-box-case",
+      "prix": 20499.0,
+      "dispo": true,
+      "saison": "2025-26",
+      "annee": 2025,
+      "type": "",
+      "tags": [
+        "basketball",
+        "cases",
+        "sports cards",
+        "Topps"
+      ]
+    },
+    {
+      "titre": "2025-26 Topps Chrome Update Basketball Mega 20 Box Case",
+      "url": "https://shoppieceofthegame.com/products/2025-26-topps-chrome-update-basketball-mega20-box-case",
+      "prix": 4394.99,
+      "dispo": false,
+      "saison": "2025-26",
+      "annee": 2025,
+      "type": "",
+      "tags": [
+        "basketball",
+        "cases",
+        "sports cards",
+        "Topps"
+      ]
+    },
+    {
+      "titre": "2025-26 Topps Chrome Update Basketball Hobby Box",
+      "url": "https://shoppieceofthegame.com/products/2025-26-topps-chrome-update-basketball-hobby-box",
+      "prix": 1249.99,
+      "dispo": true,
+      "saison": "2025-26",
+      "annee": 2025,
+      "type": "",
+      "tags": [
+        "basketball",
+        "boxes",
+        "sports cards",
+        "Topps"
+      ]
+    },
+    {
+      "titre": "2025-26 Topps Chrome Update Basketball Hobby 12 Box Case",
+      "url": "https://shoppieceofthegame.com/products/2025-26-topps-chrome-update-basketball-hobby-12-box-case",
+      "prix": 14999.0,
+      "dispo": true,
+      "saison": "2025-26",
+      "annee": 2025,
+      "type": "",
+      "tags": [
+        "basketball",
+        "cases",
+        "sports cards",
+        "Topps"
+      ]
+    },
+    {
+      "titre": "2025-26 Topps Chrome Update Basketball Mega Box",
+      "url": "https://shoppieceofthegame.com/products/2025-26-topps-chrome-update-basketball-mega-box",
+      "prix": 259.99,
+      "dispo": false,
+      "saison": "2025-26",
+      "annee": 2025,
+      "type": "",
+      "tags": [
+        "basketball",
+        "boxes",
+        "sports cards",
+        "Topps"
+      ]
+    },
+    {
+      "titre": "2025-26 Panini Prizm Basketball Hobby 12 Box Case",
+      "url": "https://shoppieceofthegame.com/products/2025-26-panini-prizm-basketball-hobby-12-box-case",
+      "prix": 3424.99,
+      "dispo": false,
+      "saison": "2025-26",
+      "annee": 2025,
+      "type": "",
+      "tags": [
+        "basketball",
+        "cases",
+        "Panini",
+        "sports cards"
+      ]
+    },
+    {
+      "titre": "2025-26 Panini Prizm Basketball Hobby Box",
+      "url": "https://shoppieceofthegame.com/products/2025-26-panini-prizm-basketball-hobby-box",
+      "prix": 289.99,
+      "dispo": true,
+      "saison": "2025-26",
+      "annee": 2025,
+      "type": "",
+      "tags": [
+        "basketball",
+        "boxes",
+        "Panini",
+        "sports cards"
+      ]
+    },
+    {
+      "titre": "2025-26 Panini Court Kings Basketball Hobby 16 Box Case",
+      "url": "https://shoppieceofthegame.com/products/2025-26-panini-court-kings-basketball-hobby-16-box-case",
+      "prix": 2389.99,
+      "dispo": true,
+      "saison": "2025-26",
+      "annee": 2025,
+      "type": "Sports Trading cards",
+      "tags": [
+        "basketball",
+        "cases",
+        "Panini",
+        "sports cards"
+      ]
+    },
+    {
+      "titre": "2025-26 Panini Court Kings Basketball Hobby Box",
+      "url": "https://shoppieceofthegame.com/products/2025-26-panini-court-kings-basketball-hobby-box",
+      "prix": 149.99,
+      "dispo": true,
+      "saison": "2025-26",
+      "annee": 2025,
+      "type": "Sports Trading cards",
+      "tags": [
+        "basketball",
+        "boxes",
+        "Panini",
+        "sports cards"
+      ]
+    },
+    {
+      "titre": "2017-18 Panini NBA Hoops Basketball Blaster Box",
+      "url": "https://shoppieceofthegame.com/products/2017-18-panini-nba-hoops-basketball-blaster-box",
+      "prix": 114.99,
+      "dispo": true,
+      "saison": "2017-18",
+      "annee": 2017,
+      "type": "",
+      "tags": [
+        "basketball",
+        "boxes",
+        "Panini",
+        "sports cards"
+      ]
+    },
+    {
+      "titre": "1991-92 NBA Hoops Series 1 Basketball Hobby Box",
+      "url": "https://shoppieceofthegame.com/products/1991-92-nba-hoops-basketball-hobby-box",
+      "prix": 109.99,
+      "dispo": false,
+      "saison": "1991-92",
+      "annee": 1991,
+      "type": "",
+      "tags": [
+        "basketball",
+        "boxes",
+        "sports cards"
+      ]
+    },
+    {
+      "titre": "2025-26 Topps Chrome Cactus Jack Basketball Hobby 12 Box Case",
+      "url": "https://shoppieceofthegame.com/products/2025-26-topps-chrome-cactus-jack-basketball-hobby-12-box-case-1",
+      "prix": 7499.94,
+      "dispo": true,
+      "saison": "2025-26",
+      "annee": 2025,
+      "type": "Sports Trading cards",
+      "tags": [
+        "basketball",
+        "cases",
+        "sports cards",
+        "Topps"
+      ]
+    },
+    {
+      "titre": "2025-26 Topps Chrome Cactus Jack Basketball Hobby Box",
+      "url": "https://shoppieceofthegame.com/products/2025-26-topps-chrome-cactus-jack-basketball-hobby-12-box-case",
+      "prix": 599.99,
+      "dispo": false,
+      "saison": "2025-26",
+      "annee": 2025,
+      "type": "Sports Trading cards",
+      "tags": [
+        "basketball",
+        "boxes",
+        "sports cards",
+        "Topps"
+      ]
+    },
+    {
+      "titre": "2021-22 Panini Prizm Basketball Mega Box (Red Ice)",
+      "url": "https://shoppieceofthegame.com/products/2021-22-panini-prizm-basketball-mega-box",
+      "prix": 59.99,
+      "dispo": false,
+      "saison": "2021-22",
+      "annee": 2021,
+      "type": "Sports Trading cards",
+      "tags": [
+        "basketball",
+        "boxes",
+        "Panini",
+        "sports cards"
+      ]
+    },
+    {
+      "titre": "2025-26 Panini Donruss Basketball Hobby Box",
+      "url": "https://shoppieceofthegame.com/products/2025-26-panini-donruss-basketball-hobby-box",
+      "prix": 299.99,
+      "dispo": false,
+      "saison": "2025-26",
+      "annee": 2025,
+      "type": "",
+      "tags": [
+        "basketball",
+        "boxes",
+        "Panini",
+        "sports cards"
+      ]
+    },
+    {
+      "titre": "1990-91 NBA Hoops Basketball Series 1 Factory Sealed Box",
+      "url": "https://shoppieceofthegame.com/products/1990-91-nba-hoops-basketball-series-1-factory-sealed-box",
+      "prix": 99.99,
+      "dispo": false,
+      "saison": "1990-91",
+      "annee": 1990,
+      "type": "Sports Trading cards",
+      "tags": [
+        "basketball",
+        "boxes",
+        "sports cards",
+        "Topps"
+      ]
+    },
+    {
+      "titre": "2025-26 Bowman Sapphire Basketball Hobby 10 Box Case",
+      "url": "https://shoppieceofthegame.com/products/2025-26-bowman-sapphire-basketball-hobby-10-box-case",
+      "prix": 42999.0,
+      "dispo": true,
+      "saison": "2025-26",
+      "annee": 2025,
+      "type": "Sports Trading cards",
+      "tags": [
+        "basketball",
+        "cases",
+        "sports cards",
+        "Topps"
+      ]
+    },
+    {
+      "titre": "2023-24 Panini Prizm Basketball International Hobby 12 Box Case",
+      "url": "https://shoppieceofthegame.com/products/2023-24-panini-prizm-basketball-international-hobby-12-box-case",
+      "prix": 11849.0,
+      "dispo": true,
+      "saison": "2023-24",
+      "annee": 2023,
+      "type": "",
+      "tags": [
+        "basketball",
+        "cases",
+        "Panini",
+        "sports cards"
+      ]
+    },
+    {
+      "titre": "2025-26 Topps Hoops Basketball Hanger 64 Box Case",
+      "url": "https://shoppieceofthegame.com/products/2025-26-topps-hoops-basketball-hanger-box-copy",
+      "prix": 1499.0,
+      "dispo": true,
+      "saison": "2025-26",
+      "annee": 2025,
+      "type": "Sports Trading cards",
+      "tags": [
+        "basketball",
+        "boxes",
+        "just in",
+        "sports cards",
+        "Topps"
+      ]
+    },
+    {
+      "titre": "2025-26 Topps Hoops Basketball Hanger Box",
+      "url": "https://shoppieceofthegame.com/products/2025-26-topps-hoops-basketball-hanger-box",
+      "prix": 19.99,
+      "dispo": true,
+      "saison": "2025-26",
+      "annee": 2025,
+      "type": "Sports Trading cards",
+      "tags": [
+        "basketball",
+        "boxes",
+        "just in",
+        "sports cards",
+        "Topps"
+      ]
+    },
+    {
+      "titre": "2025-26 Topps Hoops Basketball Blaster Box",
+      "url": "https://shoppieceofthegame.com/products/2025-26-topps-hoops-basketball-blaster-box",
+      "prix": 34.99,
+      "dispo": true,
+      "saison": "2025-26",
+      "annee": 2025,
+      "type": "Sports Trading cards",
+      "tags": [
+        "basketball",
+        "boxes",
+        "just in",
+        "sports cards",
+        "Topps"
+      ]
+    },
+    {
+      "titre": "2025-26 Topps Hoops Basketball Blaster 40 Box Case",
+      "url": "https://shoppieceofthegame.com/products/2025-26-topps-hoops-basketball-blaster-40-box-case",
+      "prix": 1599.0,
+      "dispo": true,
+      "saison": "2025-26",
+      "annee": 2025,
+      "type": "Sports Trading cards",
+      "tags": [
+        "basketball",
+        "cases",
+        "sports cards",
+        "Topps"
+      ]
+    },
+    {
+      "titre": "2025-26 Topps Hoops Basketball Hobby Box",
+      "url": "https://shoppieceofthegame.com/products/2025-26-topps-hoops-basketball-hobby-box",
+      "prix": 299.99,
+      "dispo": true,
+      "saison": "2025-26",
+      "annee": 2025,
+      "type": "Sports Trading cards",
+      "tags": [
+        "basketball",
+        "boxes",
+        "just in",
+        "sports cards",
+        "Topps"
+      ]
+    },
+    {
+      "titre": "2025-26 Topps Hoops Basketball Hobby 12 Box Case",
+      "url": "https://shoppieceofthegame.com/products/2025-26-topps-hoops-basketball-hobby-12-box-case",
+      "prix": 3899.99,
+      "dispo": true,
+      "saison": "2025-26",
+      "annee": 2025,
+      "type": "Sports Trading cards",
+      "tags": [
+        "basketball",
+        "cases",
+        "sports cards",
+        "Topps"
+      ]
+    },
+    {
+      "titre": "2025-26 Topps Hoops Basketball Hobby Jumbo 8 Box Case",
+      "url": "https://shoppieceofthegame.com/products/2025-26-topps-hoops-basketball-hobby-jumbo-8-box-case",
+      "prix": 4398.99,
+      "dispo": true,
+      "saison": "2025-26",
+      "annee": 2025,
+      "type": "Sports Trading cards",
+      "tags": [
+        "basketball",
+        "cases",
+        "sports cards",
+        "Topps"
+      ]
+    },
+    {
+      "titre": "2025-26 Topps Hoops Basketball Hobby Jumbo Box",
+      "url": "https://shoppieceofthegame.com/products/2025-26-topps-hoops-basketball-hobby-jumbo-box",
+      "prix": 549.99,
+      "dispo": true,
+      "saison": "2025-26",
+      "annee": 2025,
+      "type": "Sports Trading cards",
+      "tags": [
+        "basketball",
+        "boxes",
+        "sports cards",
+        "Topps"
+      ]
+    },
+    {
+      "titre": "2025-26 Bowman Basketball Mega 20 Box Case",
+      "url": "https://shoppieceofthegame.com/products/2025-26-bowman-basketball-mega-20-box-case",
+      "prix": 2298.99,
+      "dispo": false,
+      "saison": "2025-26",
+      "annee": 2025,
+      "type": "Sports Trading cards",
+      "tags": [
+        "basketball",
+        "bowman",
+        "boxes",
+        "Topps"
+      ]
+    },
+    {
+      "titre": "2025-26 Bowman Basketball Mega Box",
+      "url": "https://shoppieceofthegame.com/products/2025-26-bowman-basketball-mega-box",
+      "prix": 124.99,
+      "dispo": true,
+      "saison": "2025-26",
+      "annee": 2025,
+      "type": "Sports Trading cards",
+      "tags": [
+        "basketball",
+        "bowman",
+        "boxes",
+        "Topps"
+      ]
+    },
+    {
+      "titre": "2025-26 Bowman Basketball Hanger Box",
+      "url": "https://shoppieceofthegame.com/products/2025-26-bowman-basketball-hanger-box",
+      "prix": 39.99,
+      "dispo": true,
+      "saison": "2025-26",
+      "annee": 2025,
+      "type": "Sports Trading cards",
+      "tags": [
+        "basketball",
+        "bowman",
+        "boxes",
+        "Topps"
+      ]
+    },
+    {
+      "titre": "2024-25 Panini Prizm Deca Basketball Hobby 10-Box Case",
+      "url": "https://shoppieceofthegame.com/products/2024-25-panini-prizm-deca-basketball-hobby-10-box-case",
+      "prix": 9899.0,
+      "dispo": true,
+      "saison": "2024-25",
+      "annee": 2024,
+      "type": "Sports Trading cards",
+      "tags": [
+        "basketball",
+        "cases",
+        "Panini",
+        "sports cards"
+      ]
+    },
+    {
+      "titre": "2025-26 Topps Chrome Cosmic Basketball Hobby Box",
+      "url": "https://shoppieceofthegame.com/products/2025-26-topps-chrome-cosmic-basketball-hobby-box",
+      "prix": 1399.94,
+      "dispo": true,
+      "saison": "2025-26",
+      "annee": 2025,
+      "type": "",
+      "tags": [
+        "boxes",
+        "sports cards",
+        "Topps"
+      ]
+    },
+    {
+      "titre": "2025-26 Topps Chrome Cosmic Basketball Hobby 8-Box Case",
+      "url": "https://shoppieceofthegame.com/products/2025-26-topps-chrome-cosmic-basketball-hobby-8-box-case",
+      "prix": 10989.0,
+      "dispo": true,
+      "saison": "2025-26",
+      "annee": 2025,
+      "type": "",
+      "tags": [
+        "cases",
+        "sports cards",
+        "Topps"
+      ]
+    },
+    {
+      "titre": "2026 Under Wraps Emanate NBA Autographed Collectible Photo Mystery Box",
+      "url": "https://shoppieceofthegame.com/products/2026-under-wraps-emanate-nba-autographed-collectible-photo-mystery-box",
+      "prix": 499.99,
+      "dispo": true,
+      "saison": null,
+      "annee": null,
+      "type": "Memorabilia",
+      "tags": [
+        "Autographed",
+        "basketball",
+        "Memorabilia"
+      ]
+    },
+    {
+      "titre": "2025-26 Bowman Basketball Hobby Box",
+      "url": "https://shoppieceofthegame.com/products/2025-26-bowman-basketball-hobby-box",
+      "prix": 599.99,
+      "dispo": true,
+      "saison": "2025-26",
+      "annee": 2025,
+      "type": "Sports Trading cards",
+      "tags": [
+        "basketball",
+        "boxes",
+        "sports cards",
+        "Topps"
+      ]
+    },
+    {
+      "titre": "2025-26 Bowman Basketball Hobby 12 Box Case",
+      "url": "https://shoppieceofthegame.com/products/2025-26-bowman-basketball-hobby-12-box-case",
+      "prix": 7124.99,
+      "dispo": true,
+      "saison": "2025-26",
+      "annee": 2025,
+      "type": "Sports Trading cards",
+      "tags": [
+        "basketball",
+        "cases",
+        "sports cards",
+        "Topps"
+      ]
+    },
+    {
+      "titre": "2025-26 Bowman Basketball Hobby Jumbo Box",
+      "url": "https://shoppieceofthegame.com/products/2025-26-bowman-basketball-hobby-jumbo-box",
+      "prix": 999.94,
+      "dispo": true,
+      "saison": "2025-26",
+      "annee": 2025,
+      "type": "Sports Trading cards",
+      "tags": [
+        "basketball",
+        "boxes",
+        "sports cards",
+        "Topps"
+      ]
+    },
+    {
+      "titre": "2025-26 Bowman Basketball Hobby Jumbo 8 Box Case",
+      "url": "https://shoppieceofthegame.com/products/2025-26-bowman-basketball-hobby-jumbo-8-box-case",
+      "prix": 7499.0,
+      "dispo": true,
+      "saison": "2025-26",
+      "annee": 2025,
+      "type": "Sports Trading cards",
+      "tags": [
+        "basketball",
+        "cases",
+        "sports cards",
+        "Topps"
+      ]
+    },
+    {
+      "titre": "2025-26 Bowman Basketball Breaker's Delight Box",
+      "url": "https://shoppieceofthegame.com/products/2025-26-bowman-basketball-breakers-delight-box",
+      "prix": 2499.0,
+      "dispo": true,
+      "saison": "2025-26",
+      "annee": 2025,
+      "type": "Sports Trading cards",
+      "tags": [
+        "basketball",
+        "boxes",
+        "sports cards",
+        "Topps"
+      ]
+    },
+    {
+      "titre": "2025-26 Bowman Basketball Blaster Box",
+      "url": "https://shoppieceofthegame.com/products/2025-26-bowman-basketball-blaster-box",
+      "prix": 54.99,
+      "dispo": true,
+      "saison": "2025-26",
+      "annee": 2025,
+      "type": "Sports Trading cards",
+      "tags": [
+        "basketball",
+        "bowman",
+        "boxes",
+        "Topps"
+      ]
+    },
+    {
+      "titre": "2025-26 Bowman Basketball Blaster Box 40 Box Case",
+      "url": "https://shoppieceofthegame.com/products/2025-26-bowman-basketball-blaster-box-40-box-case",
+      "prix": 2194.99,
+      "dispo": true,
+      "saison": "2025-26",
+      "annee": 2025,
+      "type": "Sports Trading cards",
+      "tags": [
+        "basketball",
+        "bowman",
+        "boxes",
+        "Topps"
+      ]
+    },
+    {
+      "titre": "2025-26 Bowman Basketball Breaker's Delight 6 Box Case",
+      "url": "https://shoppieceofthegame.com/products/2025-26-bowman-basketball-breakers-delight-6-box-case",
+      "prix": 13994.94,
+      "dispo": true,
+      "saison": "2025-26",
+      "annee": 2025,
+      "type": "Sports Trading cards",
+      "tags": [
+        "basketball",
+        "cases",
+        "sports cards",
+        "Topps"
+      ]
+    },
+    {
+      "titre": "1990 NBA Hoops Super Stars 100-card Box Set (sealed but not in-tact)",
+      "url": "https://shoppieceofthegame.com/products/1990-nba-hoops-super-stars-100-card-box-set-sealed-but-not-in-tact",
+      "prix": 29.99,
+      "dispo": false,
+      "saison": null,
+      "annee": null,
+      "type": "",
+      "tags": [
+        "basketball",
+        "packs",
+        "sports cards"
+      ]
+    },
+    {
+      "titre": "2025-26 Ghostwrite NBA Season Hobby 12 Box Case",
+      "url": "https://shoppieceofthegame.com/products/2025-26-ghostwrite-nba-season-hobby-case",
+      "prix": 999.99,
+      "dispo": true,
+      "saison": "2025-26",
+      "annee": 2025,
+      "type": "",
+      "tags": [
+        "basketball",
+        "cases",
+        "Ghostwright",
+        "Novelty",
+        "sports cards"
+      ]
+    },
+    {
+      "titre": "2025-26 Ghostwrite NBA Season Blind Box",
+      "url": "https://shoppieceofthegame.com/products/2025-26-ghostwrite-nba-season-hobby-box",
+      "prix": 64.99,
+      "dispo": true,
+      "saison": "2025-26",
+      "annee": 2025,
+      "type": "",
+      "tags": [
+        "basketball",
+        "boxes",
+        "Ghostwright",
+        "Novelty",
+        "sports cards"
+      ]
+    },
+    {
+      "titre": "2025-26 Topps Chrome Basketball Sapphire Edition 10 Box Case",
+      "url": "https://shoppieceofthegame.com/products/2025-26-topps-chrome-basketball-sapphire-edition-10-box-case",
+      "prix": 48000.0,
+      "dispo": false,
+      "saison": "2025-26",
+      "annee": 2025,
+      "type": "Sports Trading cards",
+      "tags": [
+        "basketball",
+        "cases",
+        "sports cards",
+        "Topps"
+      ]
+    },
+    {
+      "titre": "2025-26 Topps Chrome Basketball Hanger Box Case",
+      "url": "https://shoppieceofthegame.com/products/2025-26-topps-chrome-basketball-hanger-box-case",
+      "prix": 3299.0,
+      "dispo": false,
+      "saison": "2025-26",
+      "annee": 2025,
+      "type": "Sports Trading cards",
+      "tags": [
+        "basketball",
+        "boxes",
+        "packs"
+      ]
+    },
+    {
+      "titre": "2024-25 Panini Immaculate Basketball Hobby Box",
+      "url": "https://shoppieceofthegame.com/products/2024-25-panini-immaculate-basketball-hobby-box",
+      "prix": 2000.0,
+      "dispo": false,
+      "saison": "2024-25",
+      "annee": 2024,
+      "type": "Sports Trading cards",
+      "tags": [
+        "basketball",
+        "boxes",
+        "Panini",
+        "sports cards"
+      ]
+    },
+    {
+      "titre": "2025-26 Topps Chrome Basketball Hanger Box",
+      "url": "https://shoppieceofthegame.com/products/2025-26-topps-chrome-basketball-hanger-box",
+      "prix": 98.99,
+      "dispo": true,
+      "saison": "2025-26",
+      "annee": 2025,
+      "type": "Sports Trading cards",
+      "tags": [
+        "basketball",
+        "boxes",
+        "packs"
+      ]
+    },
+    {
+      "titre": "2025-26 Topps Chrome Basketball Mega Box",
+      "url": "https://shoppieceofthegame.com/products/2025-26-topps-chrome-basketball-mega-box-1",
+      "prix": 224.99,
+      "dispo": false,
+      "saison": "2025-26",
+      "annee": 2025,
+      "type": "Sports Trading cards",
+      "tags": [
+        "basketball",
+        "boxes"
+      ]
+    },
+    {
+      "titre": "2025-26 Topps Chrome Basketball Mega Box 20 box case",
+      "url": "https://shoppieceofthegame.com/products/2025-26-topps-chrome-basketball-mega-box",
+      "prix": 2299.99,
+      "dispo": false,
+      "saison": "2025-26",
+      "annee": 2025,
+      "type": "Sports Trading cards",
+      "tags": [
+        "basketball",
+        "cases"
+      ]
+    },
+    {
+      "titre": "2025-26 Topps Chrome Basketball Blaster Box 40 box case",
+      "url": "https://shoppieceofthegame.com/products/2025-26-topps-chrome-basketball-blaster-box-40-box-case",
+      "prix": 3164.94,
+      "dispo": true,
+      "saison": "2025-26",
+      "annee": 2025,
+      "type": "Sports Trading cards",
+      "tags": [
+        "basketball",
+        "cases"
+      ]
+    },
+    {
+      "titre": "2025-26 Topps Chrome Basketball Blaster Box",
+      "url": "https://shoppieceofthegame.com/products/2025-26-topps-chrome-basketball-blaster-box",
+      "prix": 99.99,
+      "dispo": false,
+      "saison": "2025-26",
+      "annee": 2025,
+      "type": "Sports Trading cards",
+      "tags": [
+        "basketball",
+        "boxes"
+      ]
+    },
+    {
+      "titre": "2025-26 Topps Chrome Basketball First Day Issue Hobby Jumbo 8 Box Case",
+      "url": "https://shoppieceofthegame.com/products/2025-26-topps-chrome-basketball-first-day-issue-hobby-jumbo-8-box-case",
+      "prix": 39999.99,
+      "dispo": false,
+      "saison": "2025-26",
+      "annee": 2025,
+      "type": "Sports Trading cards",
+      "tags": [
+        "basketball",
+        "cases",
+        "sports cards",
+        "Topps"
+      ]
+    },
+    {
+      "titre": "2025-26 Topps Chrome Basketball Breakers Delight Box",
+      "url": "https://shoppieceofthegame.com/products/2025-26-topps-chrome-basketball-breakers-delight-box",
+      "prix": 3248.99,
+      "dispo": false,
+      "saison": "2025-26",
+      "annee": 2025,
+      "type": "Sports Trading cards",
+      "tags": [
+        "basketball",
+        "boxes"
+      ]
+    },
+    {
+      "titre": "2025-26 Topps Chrome Basketball Breakers Delight 6 Box Case",
+      "url": "https://shoppieceofthegame.com/products/2025-26-topps-chrome-basketball-breakers-delight-6-box-case",
+      "prix": 23989.0,
+      "dispo": false,
+      "saison": "2025-26",
+      "annee": 2025,
+      "type": "Sports Trading cards",
+      "tags": [
+        "basketball",
+        "boxes"
+      ]
+    },
+    {
+      "titre": "1990-91 NBA Hoops Series 1 Hobby Box Sealed",
+      "url": "https://shoppieceofthegame.com/products/1990-91-nba-hoops-hobby-box-sealed",
+      "prix": 70.0,
+      "dispo": false,
+      "saison": "1990-91",
+      "annee": 1990,
+      "type": "Sports Trading cards",
+      "tags": [
+        "basketball",
+        "boxes",
+        "NBA",
+        "po#156WP"
+      ]
+    },
+    {
+      "titre": "2024-25 Panini Select Basketball Mega 20 Box Case",
+      "url": "https://shoppieceofthegame.com/products/2024-25-panini-select-basketball-mega-20-box-case",
+      "prix": 949.99,
+      "dispo": true,
+      "saison": "2024-25",
+      "annee": 2024,
+      "type": "Sports Trading cards",
+      "tags": [
+        "basketball",
+        "cases",
+        "Panini",
+        "sports cards"
+      ]
+    },
+    {
+      "titre": "2024-25 Panini Select Basketball Mega Box",
+      "url": "https://shoppieceofthegame.com/products/2024-25-panini-select-basketball-mega-box-1",
+      "prix": 49.99,
+      "dispo": true,
+      "saison": "2024-25",
+      "annee": 2024,
+      "type": "Sports Trading cards",
+      "tags": [
+        "basketball",
+        "boxes",
+        "Panini",
+        "sports cards"
+      ]
+    },
+    {
+      "titre": "2024-25 Panini Donruss Optic Basketball Blaster 20 Box Case",
+      "url": "https://shoppieceofthegame.com/products/2024-25-panini-donruss-optic-basketball-blaster-20-box-case",
+      "prix": 844.99,
+      "dispo": true,
+      "saison": "2024-25",
+      "annee": 2024,
+      "type": "",
+      "tags": [
+        "basketball",
+        "cases",
+        "Panini",
+        "sports cards"
+      ]
+    },
+    {
+      "titre": "2024-25 Panini Donruss Optic Basketball Blaster Box",
+      "url": "https://shoppieceofthegame.com/products/2024-25-panini-donruss-optic-basketball-blaster-box",
+      "prix": 44.99,
+      "dispo": true,
+      "saison": "2024-25",
+      "annee": 2024,
+      "type": "",
+      "tags": [
+        "basketball",
+        "boxes",
+        "Panini",
+        "sports cards"
+      ]
+    },
+    {
+      "titre": "2024-25 Panini Prizm Black Basketball Hobby 12 Box Case",
+      "url": "https://shoppieceofthegame.com/products/2024-25-panini-prizm-black-basketball-hobby-12-box-case",
+      "prix": 15000.0,
+      "dispo": false,
+      "saison": "2024-25",
+      "annee": 2024,
+      "type": "Sports Trading cards",
+      "tags": [
+        "basketball",
+        "boxes",
+        "Panini",
+        "sports cards"
+      ]
+    },
+    {
+      "titre": "2025-26 Topps Chrome Basketball Jumbo 8 Box Case",
+      "url": "https://shoppieceofthegame.com/products/2025-26-topps-chrome-basketball-jumbo-8-box-case",
+      "prix": 18999.94,
+      "dispo": true,
+      "saison": "2025-26",
+      "annee": 2025,
+      "type": "Sports Trading cards",
+      "tags": [
+        "basketball",
+        "cases",
+        "sports cards",
+        "Topps"
+      ]
+    },
+    {
+      "titre": "2025-26 Topps Chrome Basketball Jumbo Box",
+      "url": "https://shoppieceofthegame.com/products/2025-26-topps-chrome-basketball-jumbo-box",
+      "prix": 2299.0,
+      "dispo": false,
+      "saison": "2025-26",
+      "annee": 2025,
+      "type": "Sports Trading cards",
+      "tags": [
+        "basketball",
+        "boxes",
+        "sports cards",
+        "Topps"
+      ]
+    },
+    {
+      "titre": "2025-26 Topps Chrome Basketball Hobby 12 Box Case",
+      "url": "https://shoppieceofthegame.com/products/2025-26-topps-chrome-basketball-hobby-12-box-case",
+      "prix": 15899.98,
+      "dispo": true,
+      "saison": "2025-26",
+      "annee": 2025,
+      "type": "Sports Trading cards",
+      "tags": [
+        "basketball",
+        "cases",
+        "sports cards",
+        "Topps"
+      ]
+    },
+    {
+      "titre": "2025-26 Topps Chrome Basketball Hobby Box",
+      "url": "https://shoppieceofthegame.com/products/2025-26-topps-chrome-basketball-hobby-box",
+      "prix": 1159.99,
+      "dispo": true,
+      "saison": "2025-26",
+      "annee": 2025,
+      "type": "Sports Trading cards",
+      "tags": [
+        "basketball",
+        "boxes"
+      ]
+    }
+  ]
+}

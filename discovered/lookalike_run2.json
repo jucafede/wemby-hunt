@@ -1,0 +1,1436 @@
+{
+  "generated_at": "2026-09-28T09:09:10+00:00",
+  "fetch_liveness": 136,
+  "fetch_validation": 491,
+  "fetch_total": 1020,
+  "minutes": 8.6,
+  "examines": 45,
+  "par_verdict": {
+    "CANDIDATE_ONLY": 12,
+    "QUALIFIED_NBA": 5,
+    "REJECTED": 28
+  },
+  "qualifies_nba": 5,
+  "liveness_global": {
+    "BLOCKED": 19,
+    "LIVE": 45,
+    "UNKNOWN": 12,
+    "DEAD": 5
+  },
+  "resultats": [
+    {
+      "domain": "rynossportscards.com",
+      "candidate_name": "Ryno's Sports Cards & Memorabilia",
+      "city": "Bellingham",
+      "state": "WA",
+      "lookalike_score": 75.0,
+      "seed_count": 15,
+      "source_seeds": [
+        "awesome",
+        "bleecker",
+        "boxseat",
+        "cardiacs",
+        "cbhobby",
+        "columbia",
+        "e5sports",
+        "ehcards",
+        "hiddengems",
+        "monmouth",
+        "rlsports",
+        "sjay2k",
+        "sportcards",
+        "sportscardjunction",
+        "worldchampion"
+      ],
+      "liveness": "LIVE",
+      "api": "shopify",
+      "fiches_vues": 22,
+      "nba_scelle": 0,
+      "autre_ligue": 1,
+      "generique": 0,
+      "purchase_mode": "ONLINE_CART",
+      "legitimacy": "LIKELY_LEGIT",
+      "crawlability": "FULL",
+      "preuves": [
+        "téléphone",
+        "adresse postale",
+        "CGV/retours"
+      ],
+      "verdict": "CANDIDATE_ONLY",
+      "raison": "1 fiche(s) hors NBA — NBA non prouvée, pas réfutée"
+    },
+    {
+      "domain": "columbiahobby.com",
+      "candidate_name": "Columbia Hobby - Comics - Games - Sports Cards",
+      "city": "Vancouver",
+      "state": "WA",
+      "lookalike_score": 74.0,
+      "seed_count": 14,
+      "source_seeds": [
+        "awesome",
+        "bleecker",
+        "boxseat",
+        "cardiacs",
+        "cbhobby",
+        "columbia",
+        "e5sports",
+        "ehcards",
+        "monmouth",
+        "rlsports",
+        "sjay2k",
+        "sportcards",
+        "sportscardjunction",
+        "worldchampion"
+      ],
+      "liveness": "LIVE",
+      "api": "shopify",
+      "fiches_vues": 35,
+      "nba_scelle": 3,
+      "autre_ligue": 3,
+      "generique": 5,
+      "purchase_mode": "ONLINE_CART",
+      "legitimacy": "LIKELY_LEGIT",
+      "crawlability": "FULL",
+      "preuves": [
+        "adresse postale",
+        "page à propos",
+        "CGV/retours"
+      ],
+      "verdict": "QUALIFIED_NBA",
+      "sealed_product": "2025/26 Topps Chrome Cactus Jack Basketball Hobby Box",
+      "product_url": "https://columbiahobby.com/products/2025-26-topps-chrome-cactus-jack-basketball-hobby-box",
+      "price": 548.99,
+      "in_stock": true,
+      "saison": "2025-26",
+      "old_stock_score": 8,
+      "old_stock_motifs": [
+        "+8 1 fiche(s) 2022-23 ENCORE AU PANIER"
+      ],
+      "old_stock_detail": {
+        "nba_scelle_total": 3,
+        "achetables": 3,
+        "anciens_achetables": 1,
+        "epuises_anciens": 0,
+        "generations_achetables": [
+          "2022-23"
+        ],
+        "plus_ancien_achetable": "2022-23"
+      },
+      "raison": "scellé NBA + prix affiché + achat ONLINE_CART",
+      "cibles_exactes": [],
+      "ambigus": []
+    },
+    {
+      "domain": "thesandlotsports.com",
+      "candidate_name": "The Sandlot - Sports Cards & Memorabilia",
+      "city": "Glen Ellyn",
+      "state": "IL",
+      "lookalike_score": 69.0,
+      "seed_count": 14,
+      "source_seeds": [
+        "bleecker",
+        "boxseat",
+        "cardiacs",
+        "cbhobby",
+        "columbia",
+        "e5sports",
+        "ehcards",
+        "hiddengems",
+        "monmouth",
+        "rbicru7",
+        "sjay2k",
+        "sportcards",
+        "sportscardjunction",
+        "worldchampion"
+      ],
+      "liveness": "LIVE",
+      "api": "shopify",
+      "fiches_vues": 32,
+      "nba_scelle": 9,
+      "autre_ligue": 0,
+      "generique": 0,
+      "purchase_mode": "ONLINE_CART",
+      "legitimacy": "TRUSTED",
+      "crawlability": "FULL",
+      "preuves": [
+        "téléphone",
+        "e-mail",
+        "adresse postale",
+        "CGV/retours"
+      ],
+      "verdict": "QUALIFIED_NBA",
+      "sealed_product": "2025-26 Topps NBA Hoops - Hobby Box",
+      "product_url": "https://thesandlotsports.com/products/2025-26-topps-nba-hoops-hobby-box",
+      "price": 289.99,
+      "in_stock": true,
+      "saison": "2025-26",
+      "old_stock_score": 12,
+      "old_stock_motifs": [
+        "+12 1 fiche(s) 2023-24 ENCORE AU PANIER"
+      ],
+      "old_stock_detail": {
+        "nba_scelle_total": 9,
+        "achetables": 6,
+        "anciens_achetables": 1,
+        "epuises_anciens": 0,
+        "generations_achetables": [
+          "2023-24"
+        ],
+        "plus_ancien_achetable": "2023-24"
+      },
+      "raison": "scellé NBA + prix affiché + achat ONLINE_CART",
+      "cibles_exactes": [],
+      "ambigus": []
+    },
+    {
+      "domain": "thesportscardzone.com",
+      "candidate_name": "The Sports Card Zone",
+      "city": "Shorewood",
+      "state": "IL",
+      "lookalike_score": 69.0,
+      "seed_count": 7,
+      "source_seeds": [
+        "boxseat",
+        "columbia",
+        "e5sports",
+        "hiddengems",
+        "rbicru7",
+        "sjay2k",
+        "sportcards"
+      ],
+      "liveness": "LIVE",
+      "api": "shopify",
+      "fiches_vues": 54,
+      "nba_scelle": 36,
+      "autre_ligue": 8,
+      "generique": 5,
+      "purchase_mode": "ONLINE_CART",
+      "legitimacy": "LIKELY_LEGIT",
+      "crawlability": "FULL",
+      "preuves": [
+        "téléphone",
+        "page à propos",
+        "CGV/retours"
+      ],
+      "verdict": "QUALIFIED_NBA",
+      "sealed_product": "2025-26 Topps NBA Hoops Basketball Hobby Box",
+      "product_url": "https://thesportscardzone.com/products/2025-26-topps-nba-hoops-basketball-hobby-box",
+      "price": 300.0,
+      "in_stock": true,
+      "saison": "2025-26",
+      "old_stock_score": 81,
+      "old_stock_motifs": [
+        "+18 3 fiche(s) 2019-ou-avant ENCORE AU PANIER",
+        "+12 2 fiche(s) 2020-21 ENCORE AU PANIER",
+        "+14 2 fiche(s) 2021-22 ENCORE AU PANIER",
+        "+12 1 fiche(s) 2023-24 ENCORE AU PANIER",
+        "+10 4 générations de wax NBA achetables en même temps (2019-20, 2020-21, 2021-22, 2023-24)",
+        "+12 5 format(s) retail ancien(s) achetable(s) (Mega/Blaster/Hanger)",
+        "+3 catalogue NBA scellé profond (36 fiches relevées)"
+      ],
+      "old_stock_detail": {
+        "nba_scelle_total": 36,
+        "achetables": 35,
+        "anciens_achetables": 8,
+        "epuises_anciens": 0,
+        "generations_achetables": [
+          "2019-20",
+          "2020-21",
+          "2021-22",
+          "2023-24"
+        ],
+        "plus_ancien_achetable": "2019-20"
+      },
+      "raison": "scellé NBA + prix affiché + achat ONLINE_CART",
+      "cibles_exactes": [],
+      "ambigus": []
+    },
+    {
+      "domain": "goldensportscards.com",
+      "candidate_name": "Golden Sports Cards",
+      "city": "Lake Mary",
+      "state": "FL",
+      "lookalike_score": 68.0,
+      "seed_count": 13,
+      "source_seeds": [
+        "bleecker",
+        "boxseat",
+        "cardiacs",
+        "cbhobby",
+        "columbia",
+        "e5sports",
+        "ehcards",
+        "monmouth",
+        "rlsports",
+        "sjay2k",
+        "sportcards",
+        "sportscardjunction",
+        "worldchampion"
+      ],
+      "liveness": "LIVE",
+      "api": "html",
+      "fiches_vues": 13,
+      "nba_scelle": 0,
+      "autre_ligue": 0,
+      "generique": 0,
+      "purchase_mode": "IN_STORE_ONLY",
+      "legitimacy": "LIKELY_LEGIT",
+      "crawlability": "MANUAL_ONLY",
+      "preuves": [
+        "page à propos",
+        "CGV/retours"
+      ],
+      "verdict": "CANDIDATE_ONLY",
+      "raison": "catalogue non énuméré — 13 intitulé(s) lus, aucune API : trop peu pour conclure que la boutique ne vend pas de NBA scellé"
+    },
+    {
+      "domain": "dollarboxcards.com",
+      "candidate_name": "Dollar Box - Sports Cards",
+      "city": "Jersey City",
+      "state": "NJ",
+      "lookalike_score": 59.0,
+      "seed_count": 4,
+      "source_seeds": [
+        "bleecker",
+        "monmouth",
+        "sportscardjunction",
+        "worldchampion"
+      ],
+      "liveness": "LIVE",
+      "api": "shopify",
+      "fiches_vues": 51,
+      "nba_scelle": 0,
+      "autre_ligue": 0,
+      "generique": 0,
+      "purchase_mode": "ONLINE_CART",
+      "legitimacy": "LIKELY_LEGIT",
+      "crawlability": "MANUAL_ONLY",
+      "preuves": [
+        "page à propos",
+        "CGV/retours"
+      ],
+      "verdict": "REJECTED",
+      "raison": "51 fiches lues, aucune NBA scellée"
+    },
+    {
+      "domain": "sportscardsandmoreaz.com",
+      "candidate_name": "Sports Cards and More",
+      "city": "Phoenix",
+      "state": "AZ",
+      "lookalike_score": 51.0,
+      "seed_count": 3,
+      "source_seeds": [
+        "cardiacs",
+        "cbhobby",
+        "ehcards"
+      ],
+      "liveness": "LIVE",
+      "api": "html",
+      "fiches_vues": 6,
+      "nba_scelle": 0,
+      "autre_ligue": 0,
+      "generique": 0,
+      "purchase_mode": "ONLINE_CART",
+      "legitimacy": "UNVERIFIED",
+      "crawlability": "MANUAL_ONLY",
+      "preuves": [
+        "CGV/retours"
+      ],
+      "verdict": "CANDIDATE_ONLY",
+      "raison": "catalogue non énuméré — 6 intitulé(s) lus, aucune API : trop peu pour conclure que la boutique ne vend pas de NBA scellé"
+    },
+    {
+      "domain": "dandpsportscards.com",
+      "candidate_name": "D&P Sports Cards",
+      "city": "Sacramento",
+      "state": "CA",
+      "lookalike_score": 49.0,
+      "seed_count": 2,
+      "source_seeds": [
+        "awesome",
+        "rlsports"
+      ],
+      "liveness": "LIVE",
+      "api": "html",
+      "fiches_vues": 52,
+      "nba_scelle": 0,
+      "autre_ligue": 0,
+      "generique": 2,
+      "purchase_mode": "ONLINE_CART",
+      "legitimacy": "TRUSTED",
+      "crawlability": "MANUAL_ONLY",
+      "preuves": [
+        "téléphone",
+        "adresse postale",
+        "page à propos",
+        "CGV/retours"
+      ],
+      "verdict": "REJECTED",
+      "raison": "52 intitulés lus, aucun scellé NBA"
+    },
+    {
+      "domain": "centerfieldsportscards.com",
+      "candidate_name": "Centerfield Sports Cards",
+      "city": "Springfield",
+      "state": "MO",
+      "lookalike_score": 46.0,
+      "seed_count": 2,
+      "source_seeds": [
+        "hiddengems",
+        "rbicru7"
+      ],
+      "liveness": "LIVE",
+      "api": "shopify",
+      "fiches_vues": 50,
+      "nba_scelle": 30,
+      "autre_ligue": 4,
+      "generique": 4,
+      "purchase_mode": "ONLINE_CART",
+      "legitimacy": "LIKELY_LEGIT",
+      "crawlability": "FULL",
+      "preuves": [
+        "téléphone",
+        "CGV/retours"
+      ],
+      "verdict": "QUALIFIED_NBA",
+      "sealed_product": "2017 Panini NBA Hoops Basketball Hobby Box",
+      "product_url": "https://centerfieldsportscards.com/products/2017-panini-nba-hoops-basketball-hobby-box",
+      "price": 350.0,
+      "in_stock": true,
+      "saison": null,
+      "old_stock_score": 76,
+      "old_stock_motifs": [
+        "+12 2 fiche(s) 2019-ou-avant ENCORE AU PANIER",
+        "+7 1 fiche(s) 2021-22 ENCORE AU PANIER",
+        "+8 1 fiche(s) 2022-23 ENCORE AU PANIER",
+        "+24 5 fiche(s) 2023-24 ENCORE AU PANIER",
+        "+10 5 générations de wax NBA achetables en même temps (2014-15, 2018-19, 2021-22, 2022-23, 2023-24)",
+        "+12 5 format(s) retail ancien(s) achetable(s) (Mega/Blaster/Hanger)",
+        "+3 catalogue NBA scellé profond (30 fiches relevées)"
+      ],
+      "old_stock_detail": {
+        "nba_scelle_total": 30,
+        "achetables": 19,
+        "anciens_achetables": 9,
+        "epuises_anciens": 0,
+        "generations_achetables": [
+          "2014-15",
+          "2018-19",
+          "2021-22",
+          "2022-23",
+          "2023-24"
+        ],
+        "plus_ancien_achetable": "2014-15"
+      },
+      "raison": "scellé NBA + prix affiché + achat ONLINE_CART",
+      "cibles_exactes": [],
+      "ambigus": [
+        {
+          "titre": "2023-24 Panini Prizm Basketball Mega Box(Pink Ice Prizms!)",
+          "url": "https://centerfieldsportscards.com/products/2023-24-panini-prizm-basketball-mega-boxpink-ice-prizms",
+          "prix": 275.0,
+          "dispo": true,
+          "confiance": "AMBIGU",
+          "preuve": "Mega Prizm 2023-24 sans variante nommée — non attribuable",
+          "upc": null
+        }
+      ]
+    },
+    {
+      "domain": "3dsportscards.net",
+      "candidate_name": "3D Sports Cards",
+      "city": "Glendale",
+      "state": "AZ",
+      "lookalike_score": 45.0,
+      "seed_count": 3,
+      "source_seeds": [
+        "cardiacs",
+        "cbhobby",
+        "ehcards"
+      ],
+      "liveness": "LIVE",
+      "api": "html",
+      "fiches_vues": 5,
+      "nba_scelle": 0,
+      "autre_ligue": 0,
+      "generique": 0,
+      "purchase_mode": "ONLINE_CART",
+      "legitimacy": "UNVERIFIED",
+      "crawlability": "MANUAL_ONLY",
+      "preuves": [
+        "CGV/retours"
+      ],
+      "verdict": "CANDIDATE_ONLY",
+      "raison": "catalogue non énuméré — 5 intitulé(s) lus, aucune API : trop peu pour conclure que la boutique ne vend pas de NBA scellé"
+    },
+    {
+      "domain": "bankstons.com",
+      "candidate_name": "Bankston's Comics-Sportscards",
+      "city": "Waco",
+      "state": "TX",
+      "lookalike_score": 45.0,
+      "seed_count": 3,
+      "source_seeds": [
+        "cardiacs",
+        "cbhobby",
+        "ehcards"
+      ],
+      "liveness": "LIVE",
+      "api": "html",
+      "fiches_vues": 31,
+      "nba_scelle": 0,
+      "autre_ligue": 0,
+      "generique": 0,
+      "purchase_mode": "ONLINE_CART",
+      "legitimacy": "TRUSTED",
+      "crawlability": "MANUAL_ONLY",
+      "preuves": [
+        "téléphone",
+        "e-mail",
+        "adresse postale",
+        "CGV/retours"
+      ],
+      "verdict": "REJECTED",
+      "raison": "31 intitulés lus, aucun scellé NBA"
+    },
+    {
+      "domain": "pensburymanor.com",
+      "candidate_name": "PENSbury Manor",
+      "city": "Phoenix",
+      "state": "AZ",
+      "lookalike_score": 45.0,
+      "seed_count": 3,
+      "source_seeds": [
+        "cardiacs",
+        "cbhobby",
+        "ehcards"
+      ],
+      "liveness": "LIVE",
+      "api": "html",
+      "fiches_vues": 33,
+      "nba_scelle": 0,
+      "autre_ligue": 0,
+      "generique": 0,
+      "purchase_mode": "ONLINE_CART",
+      "legitimacy": "TRUSTED",
+      "crawlability": "MANUAL_ONLY",
+      "preuves": [
+        "téléphone",
+        "e-mail",
+        "adresse postale",
+        "page à propos",
+        "CGV/retours"
+      ],
+      "verdict": "REJECTED",
+      "raison": "33 intitulés lus, aucun scellé NBA"
+    },
+    {
+      "domain": "phxsportscards.com",
+      "candidate_name": "Phoenix Sports Cards",
+      "city": "Glendale",
+      "state": "AZ",
+      "lookalike_score": 45.0,
+      "seed_count": 3,
+      "source_seeds": [
+        "cardiacs",
+        "cbhobby",
+        "ehcards"
+      ],
+      "liveness": "LIVE",
+      "api": "html",
+      "fiches_vues": 67,
+      "nba_scelle": 2,
+      "autre_ligue": 0,
+      "generique": 0,
+      "purchase_mode": "ONLINE_CART",
+      "legitimacy": "UNVERIFIED",
+      "crawlability": "FULL",
+      "preuves": [],
+      "verdict": "CANDIDATE_ONLY",
+      "raison": "2 fiche(s) NBA scellées lues, aucun prix constaté",
+      "nba_sans_prix": 2
+    },
+    {
+      "domain": "tedscardshop.com",
+      "candidate_name": "Ted's Sports Cards",
+      "city": "Ada",
+      "state": "MI",
+      "lookalike_score": 44.0,
+      "seed_count": 2,
+      "source_seeds": [
+        "hiddengems",
+        "rbicru7"
+      ],
+      "liveness": "LIVE",
+      "api": "html",
+      "fiches_vues": 20,
+      "nba_scelle": 0,
+      "autre_ligue": 0,
+      "generique": 0,
+      "purchase_mode": "IN_STORE_ONLY",
+      "legitimacy": "TRUSTED",
+      "crawlability": "MANUAL_ONLY",
+      "preuves": [
+        "téléphone",
+        "e-mail",
+        "adresse postale",
+        "page à propos",
+        "CGV/retours"
+      ],
+      "verdict": "REJECTED",
+      "raison": "20 intitulés lus, aucun scellé NBA"
+    },
+    {
+      "domain": "hvsportscards.com",
+      "candidate_name": "Hudson Valley Sports Cards",
+      "city": "Kingston",
+      "state": "NY",
+      "lookalike_score": 43.0,
+      "seed_count": 2,
+      "source_seeds": [
+        "bleecker",
+        "worldchampion"
+      ],
+      "liveness": "LIVE",
+      "api": "html",
+      "fiches_vues": 2,
+      "nba_scelle": 0,
+      "autre_ligue": 0,
+      "generique": 0,
+      "purchase_mode": "IN_STORE_ONLY",
+      "legitimacy": "UNVERIFIED",
+      "crawlability": "MANUAL_ONLY",
+      "preuves": [
+        "téléphone"
+      ],
+      "verdict": "CANDIDATE_ONLY",
+      "raison": "catalogue non énuméré — 2 intitulé(s) lus, aucune API : trop peu pour conclure que la boutique ne vend pas de NBA scellé"
+    },
+    {
+      "domain": "evilcontrollers.com",
+      "candidate_name": "Evil Controllers",
+      "city": "Tempe",
+      "state": "AZ",
+      "lookalike_score": 42.0,
+      "seed_count": 3,
+      "source_seeds": [
+        "cardiacs",
+        "cbhobby",
+        "ehcards"
+      ],
+      "liveness": "LIVE",
+      "api": "html",
+      "fiches_vues": 39,
+      "nba_scelle": 0,
+      "autre_ligue": 0,
+      "generique": 0,
+      "purchase_mode": "ONLINE_CART",
+      "legitimacy": "LIKELY_LEGIT",
+      "crawlability": "MANUAL_ONLY",
+      "preuves": [
+        "téléphone",
+        "e-mail",
+        "page à propos"
+      ],
+      "verdict": "REJECTED",
+      "raison": "39 intitulés lus, aucun scellé NBA"
+    },
+    {
+      "domain": "super-sport-cards.myshopify.com",
+      "candidate_name": "Super Sports Cards",
+      "city": "Vancouver",
+      "state": "WA",
+      "lookalike_score": 39.0,
+      "seed_count": 2,
+      "source_seeds": [
+        "awesome",
+        "rlsports"
+      ],
+      "liveness": "LIVE",
+      "api": "html",
+      "fiches_vues": 30,
+      "nba_scelle": 0,
+      "autre_ligue": 0,
+      "generique": 0,
+      "purchase_mode": "ONLINE_CART",
+      "legitimacy": "TRUSTED",
+      "crawlability": "MANUAL_ONLY",
+      "preuves": [
+        "téléphone",
+        "e-mail",
+        "adresse postale",
+        "CGV/retours"
+      ],
+      "verdict": "REJECTED",
+      "raison": "30 intitulés lus, aucun scellé NBA"
+    },
+    {
+      "domain": "ultimatesportscards.com",
+      "candidate_name": "Ultimate Sports Cards And Memorabilia",
+      "city": "Las Vegas",
+      "state": "NV",
+      "lookalike_score": 39.0,
+      "seed_count": 1,
+      "source_seeds": [
+        "awesome"
+      ],
+      "liveness": "LIVE",
+      "api": "html",
+      "fiches_vues": 19,
+      "nba_scelle": 0,
+      "autre_ligue": 0,
+      "generique": 0,
+      "purchase_mode": "ONLINE_CART",
+      "legitimacy": "LIKELY_LEGIT",
+      "crawlability": "MANUAL_ONLY",
+      "preuves": [
+        "téléphone",
+        "page à propos"
+      ],
+      "verdict": "REJECTED",
+      "raison": "19 intitulés lus, aucun scellé NBA"
+    },
+    {
+      "domain": "eastbaycardshow.com",
+      "candidate_name": "East Bay Sports Card & Collectors Show",
+      "city": "Concord",
+      "state": "CA",
+      "lookalike_score": 36.0,
+      "seed_count": 1,
+      "source_seeds": [
+        "rlsports"
+      ],
+      "liveness": "LIVE",
+      "api": "html",
+      "fiches_vues": 75,
+      "nba_scelle": 0,
+      "autre_ligue": 0,
+      "generique": 0,
+      "purchase_mode": "ONLINE_CART",
+      "legitimacy": "TRUSTED",
+      "crawlability": "MANUAL_ONLY",
+      "preuves": [
+        "téléphone",
+        "e-mail",
+        "adresse postale",
+        "CGV/retours"
+      ],
+      "verdict": "REJECTED",
+      "raison": "75 intitulés lus, aucun scellé NBA"
+    },
+    {
+      "domain": "sierranevadasportscards.com",
+      "candidate_name": "Sierra Nevada Sports Cards",
+      "city": "Chico",
+      "state": "CA",
+      "lookalike_score": 36.0,
+      "seed_count": 1,
+      "source_seeds": [
+        "rlsports"
+      ],
+      "liveness": "LIVE",
+      "api": "html",
+      "fiches_vues": 5,
+      "nba_scelle": 0,
+      "autre_ligue": 0,
+      "generique": 0,
+      "purchase_mode": "ONLINE_CART",
+      "legitimacy": "UNVERIFIED",
+      "crawlability": "MANUAL_ONLY",
+      "preuves": [
+        "CGV/retours"
+      ],
+      "verdict": "CANDIDATE_ONLY",
+      "raison": "catalogue non énuméré — 5 intitulé(s) lus, aucune API : trop peu pour conclure que la boutique ne vend pas de NBA scellé"
+    },
+    {
+      "domain": "tablemountainsportscards.com",
+      "candidate_name": "Table Mountain Sports Cards",
+      "city": "Oroville",
+      "state": "CA",
+      "lookalike_score": 36.0,
+      "seed_count": 1,
+      "source_seeds": [
+        "rlsports"
+      ],
+      "liveness": "LIVE",
+      "api": "shopify",
+      "fiches_vues": 32,
+      "nba_scelle": 1,
+      "autre_ligue": 0,
+      "generique": 0,
+      "purchase_mode": "ONLINE_CART",
+      "legitimacy": "LIKELY_LEGIT",
+      "crawlability": "FULL",
+      "preuves": [
+        "téléphone",
+        "adresse postale",
+        "CGV/retours"
+      ],
+      "verdict": "QUALIFIED_NBA",
+      "sealed_product": "2025 TOPPS NBA HOOPS BLASTER BOX",
+      "product_url": "https://tablemountainsportscards.com/products/2025-topps-nba-hoops-blaster-box",
+      "price": 39.99,
+      "in_stock": true,
+      "saison": null,
+      "old_stock_score": 0,
+      "old_stock_motifs": [],
+      "old_stock_detail": {
+        "nba_scelle_total": 1,
+        "achetables": 0,
+        "anciens_achetables": 0,
+        "epuises_anciens": 0,
+        "generations_achetables": [],
+        "plus_ancien_achetable": null
+      },
+      "raison": "scellé NBA + prix affiché + achat ONLINE_CART",
+      "cibles_exactes": [],
+      "ambigus": []
+    },
+    {
+      "domain": "americard.us",
+      "candidate_name": "Sportscard Central",
+      "city": "Waterford",
+      "state": "MI",
+      "lookalike_score": 33.0,
+      "seed_count": 1,
+      "source_seeds": [
+        "hiddengems"
+      ],
+      "liveness": "LIVE",
+      "api": "html",
+      "fiches_vues": 13,
+      "nba_scelle": 0,
+      "autre_ligue": 0,
+      "generique": 0,
+      "purchase_mode": "IN_STORE_ONLY",
+      "legitimacy": "LIKELY_LEGIT",
+      "crawlability": "MANUAL_ONLY",
+      "preuves": [
+        "téléphone",
+        "page à propos"
+      ],
+      "verdict": "CANDIDATE_ONLY",
+      "raison": "catalogue non énuméré — 13 intitulé(s) lus, aucune API : trop peu pour conclure que la boutique ne vend pas de NBA scellé"
+    },
+    {
+      "domain": "billssportsmemorabilia.com",
+      "candidate_name": "Bill's Sports Cards and Memorabilia",
+      "city": "Philadelphia",
+      "state": "PA",
+      "lookalike_score": 33.0,
+      "seed_count": 1,
+      "source_seeds": [
+        "sportscardjunction"
+      ],
+      "liveness": "LIVE",
+      "api": "html",
+      "fiches_vues": 168,
+      "nba_scelle": 0,
+      "autre_ligue": 0,
+      "generique": 0,
+      "purchase_mode": "ONLINE_CART",
+      "legitimacy": "LIKELY_LEGIT",
+      "crawlability": "MANUAL_ONLY",
+      "preuves": [
+        "téléphone",
+        "adresse postale",
+        "page à propos"
+      ],
+      "verdict": "REJECTED",
+      "raison": "168 intitulés lus, aucun scellé NBA"
+    },
+    {
+      "domain": "fatkatzsportscards.com",
+      "candidate_name": "Fat Katz Sportscards & Collectibles",
+      "city": "St Clair Shores",
+      "state": "MI",
+      "lookalike_score": 32.0,
+      "seed_count": 1,
+      "source_seeds": [
+        "hiddengems"
+      ],
+      "liveness": "LIVE",
+      "api": "html",
+      "fiches_vues": 6,
+      "nba_scelle": 0,
+      "autre_ligue": 0,
+      "generique": 0,
+      "purchase_mode": "IN_STORE_ONLY",
+      "legitimacy": "LIKELY_LEGIT",
+      "crawlability": "MANUAL_ONLY",
+      "preuves": [
+        "téléphone",
+        "page à propos"
+      ],
+      "verdict": "CANDIDATE_ONLY",
+      "raison": "catalogue non énuméré — 6 intitulé(s) lus, aucune API : trop peu pour conclure que la boutique ne vend pas de NBA scellé"
+    },
+    {
+      "domain": "juno.com",
+      "candidate_name": "Centerfield Sports Cards",
+      "city": "Springfield",
+      "state": "MO",
+      "lookalike_score": 32.0,
+      "seed_count": 1,
+      "source_seeds": [
+        "rbicru7"
+      ],
+      "liveness": "LIVE",
+      "api": "html",
+      "fiches_vues": 6,
+      "nba_scelle": 0,
+      "autre_ligue": 0,
+      "generique": 0,
+      "purchase_mode": "ONLINE_CART",
+      "legitimacy": "LIKELY_LEGIT",
+      "crawlability": "MANUAL_ONLY",
+      "preuves": [
+        "téléphone",
+        "CGV/retours"
+      ],
+      "verdict": "CANDIDATE_ONLY",
+      "raison": "catalogue non énuméré — 6 intitulé(s) lus, aucune API : trop peu pour conclure que la boutique ne vend pas de NBA scellé"
+    },
+    {
+      "domain": "legacysportscards.com",
+      "candidate_name": "Legacy Sports Cards",
+      "city": "Las Vegas",
+      "state": "NV",
+      "lookalike_score": 32.0,
+      "seed_count": 1,
+      "source_seeds": [
+        "awesome"
+      ],
+      "liveness": "LIVE",
+      "api": "shopify",
+      "fiches_vues": 7,
+      "nba_scelle": 0,
+      "autre_ligue": 0,
+      "generique": 0,
+      "purchase_mode": "ONLINE_CART",
+      "legitimacy": "TRUSTED",
+      "crawlability": "MANUAL_ONLY",
+      "preuves": [
+        "téléphone",
+        "e-mail",
+        "adresse postale",
+        "page à propos",
+        "CGV/retours"
+      ],
+      "verdict": "REJECTED",
+      "raison": "7 fiches lues, aucune NBA scellée"
+    },
+    {
+      "domain": "fieldofdreamsmoviesite.com",
+      "candidate_name": "Field of Dreams Sports Cards",
+      "city": "Springfield",
+      "state": "MO",
+      "lookalike_score": 31.0,
+      "seed_count": 1,
+      "source_seeds": [
+        "rbicru7"
+      ],
+      "liveness": "LIVE",
+      "api": "html",
+      "fiches_vues": 113,
+      "nba_scelle": 0,
+      "autre_ligue": 0,
+      "generique": 0,
+      "purchase_mode": "ONLINE_CART",
+      "legitimacy": "LIKELY_LEGIT",
+      "crawlability": "MANUAL_ONLY",
+      "preuves": [
+        "téléphone",
+        "e-mail",
+        "CGV/retours"
+      ],
+      "verdict": "REJECTED",
+      "raison": "113 intitulés lus, aucun scellé NBA"
+    },
+    {
+      "domain": "j2games.com",
+      "candidate_name": "J2Games",
+      "city": "Brick",
+      "state": "NJ",
+      "lookalike_score": 30.0,
+      "seed_count": 1,
+      "source_seeds": [
+        "monmouth"
+      ],
+      "liveness": "LIVE",
+      "api": "shopify",
+      "fiches_vues": 58,
+      "nba_scelle": 0,
+      "autre_ligue": 0,
+      "generique": 0,
+      "purchase_mode": "ONLINE_CART",
+      "legitimacy": "TRUSTED",
+      "crawlability": "MANUAL_ONLY",
+      "preuves": [
+        "téléphone",
+        "adresse postale",
+        "page à propos",
+        "CGV/retours"
+      ],
+      "verdict": "REJECTED",
+      "raison": "58 fiches lues, aucune NBA scellée"
+    },
+    {
+      "domain": "888collectibles.com",
+      "candidate_name": "888 Collectibles",
+      "city": "Las Vegas",
+      "state": "NV",
+      "lookalike_score": 29.0,
+      "seed_count": 1,
+      "source_seeds": [
+        "awesome"
+      ],
+      "liveness": "LIVE",
+      "api": "html",
+      "fiches_vues": 27,
+      "nba_scelle": 0,
+      "autre_ligue": 0,
+      "generique": 0,
+      "purchase_mode": "IN_STORE_ONLY",
+      "legitimacy": "LIKELY_LEGIT",
+      "crawlability": "MANUAL_ONLY",
+      "preuves": [
+        "téléphone",
+        "adresse postale",
+        "CGV/retours"
+      ],
+      "verdict": "REJECTED",
+      "raison": "27 intitulés lus, aucun scellé NBA"
+    },
+    {
+      "domain": "downtownhobby9.com",
+      "candidate_name": "DownTown Hobby 9",
+      "city": "Las Vegas",
+      "state": "NV",
+      "lookalike_score": 29.0,
+      "seed_count": 1,
+      "source_seeds": [
+        "awesome"
+      ],
+      "liveness": "LIVE",
+      "api": "html",
+      "fiches_vues": 67,
+      "nba_scelle": 0,
+      "autre_ligue": 0,
+      "generique": 0,
+      "purchase_mode": "ONLINE_CART",
+      "legitimacy": "TRUSTED",
+      "crawlability": "MANUAL_ONLY",
+      "preuves": [
+        "téléphone",
+        "e-mail",
+        "adresse postale",
+        "page à propos",
+        "CGV/retours"
+      ],
+      "verdict": "REJECTED",
+      "raison": "67 intitulés lus, aucun scellé NBA"
+    },
+    {
+      "domain": "guildofhands.com",
+      "candidate_name": "Guild Of Hands",
+      "city": "New York",
+      "state": "NY",
+      "lookalike_score": 29.0,
+      "seed_count": 1,
+      "source_seeds": [
+        "worldchampion"
+      ],
+      "liveness": "LIVE",
+      "api": "shopify",
+      "fiches_vues": 13,
+      "nba_scelle": 0,
+      "autre_ligue": 0,
+      "generique": 0,
+      "purchase_mode": "ONLINE_CART",
+      "legitimacy": "LIKELY_LEGIT",
+      "crawlability": "MANUAL_ONLY",
+      "preuves": [
+        "page à propos",
+        "CGV/retours"
+      ],
+      "verdict": "REJECTED",
+      "raison": "13 fiches lues, aucune NBA scellée"
+    },
+    {
+      "domain": "javelinhobbieslv.com",
+      "candidate_name": "Javelin Hobbies LV",
+      "city": "Las Vegas",
+      "state": "NV",
+      "lookalike_score": 29.0,
+      "seed_count": 1,
+      "source_seeds": [
+        "awesome"
+      ],
+      "liveness": "LIVE",
+      "api": "html",
+      "fiches_vues": 165,
+      "nba_scelle": 0,
+      "autre_ligue": 0,
+      "generique": 0,
+      "purchase_mode": "ONLINE_CART",
+      "legitimacy": "LIKELY_LEGIT",
+      "crawlability": "MANUAL_ONLY",
+      "preuves": [
+        "téléphone",
+        "adresse postale",
+        "CGV/retours"
+      ],
+      "verdict": "REJECTED",
+      "raison": "165 intitulés lus, aucun scellé NBA"
+    },
+    {
+      "domain": "thepokecourt.com",
+      "candidate_name": "The Poke Court",
+      "city": "New York",
+      "state": "NY",
+      "lookalike_score": 29.0,
+      "seed_count": 1,
+      "source_seeds": [
+        "worldchampion"
+      ],
+      "liveness": "LIVE",
+      "api": "shopify",
+      "fiches_vues": 24,
+      "nba_scelle": 0,
+      "autre_ligue": 0,
+      "generique": 0,
+      "purchase_mode": "ONLINE_CART",
+      "legitimacy": "TRUSTED",
+      "crawlability": "MANUAL_ONLY",
+      "preuves": [
+        "téléphone",
+        "adresse postale",
+        "page à propos",
+        "CGV/retours"
+      ],
+      "verdict": "REJECTED",
+      "raison": "24 fiches lues, aucune NBA scellée"
+    },
+    {
+      "domain": "argreplay.com",
+      "candidate_name": "ARG Replay",
+      "city": "Depew",
+      "state": "NY",
+      "lookalike_score": 26.0,
+      "seed_count": 1,
+      "source_seeds": [
+        "bleecker"
+      ],
+      "liveness": "LIVE",
+      "api": "html",
+      "fiches_vues": 10,
+      "nba_scelle": 0,
+      "autre_ligue": 0,
+      "generique": 0,
+      "purchase_mode": "ONLINE_CART",
+      "legitimacy": "LIKELY_LEGIT",
+      "crawlability": "MANUAL_ONLY",
+      "preuves": [
+        "téléphone",
+        "CGV/retours"
+      ],
+      "verdict": "CANDIDATE_ONLY",
+      "raison": "catalogue non énuméré — 10 intitulé(s) lus, aucune API : trop peu pour conclure que la boutique ne vend pas de NBA scellé"
+    },
+    {
+      "domain": "blackjadedwolf.com",
+      "candidate_name": "Blackjadedwolf",
+      "city": "Brooklyn",
+      "state": "NY",
+      "lookalike_score": 26.0,
+      "seed_count": 1,
+      "source_seeds": [
+        "bleecker"
+      ],
+      "liveness": "LIVE",
+      "api": "shopify",
+      "fiches_vues": 52,
+      "nba_scelle": 0,
+      "autre_ligue": 0,
+      "generique": 0,
+      "purchase_mode": "ONLINE_CART",
+      "legitimacy": "LIKELY_LEGIT",
+      "crawlability": "MANUAL_ONLY",
+      "preuves": [
+        "page à propos",
+        "CGV/retours"
+      ],
+      "verdict": "REJECTED",
+      "raison": "52 fiches lues, aucune NBA scellée"
+    },
+    {
+      "domain": "blackmarketfpv.com",
+      "candidate_name": "Black Market Fpv",
+      "city": "Jackson Heights",
+      "state": "NY",
+      "lookalike_score": 26.0,
+      "seed_count": 1,
+      "source_seeds": [
+        "bleecker"
+      ],
+      "liveness": "LIVE",
+      "api": "html",
+      "fiches_vues": 128,
+      "nba_scelle": 0,
+      "autre_ligue": 0,
+      "generique": 0,
+      "purchase_mode": "ONLINE_CART",
+      "legitimacy": "LIKELY_LEGIT",
+      "crawlability": "MANUAL_ONLY",
+      "preuves": [
+        "e-mail",
+        "page à propos",
+        "CGV/retours"
+      ],
+      "verdict": "REJECTED",
+      "raison": "128 intitulés lus, aucun scellé NBA"
+    },
+    {
+      "domain": "goffausa.com",
+      "candidate_name": "Goffa International",
+      "city": "Brooklyn",
+      "state": "NY",
+      "lookalike_score": 26.0,
+      "seed_count": 1,
+      "source_seeds": [
+        "bleecker"
+      ],
+      "liveness": "LIVE",
+      "api": "html",
+      "fiches_vues": 45,
+      "nba_scelle": 0,
+      "autre_ligue": 0,
+      "generique": 0,
+      "purchase_mode": "ONLINE_CART",
+      "legitimacy": "TRUSTED",
+      "crawlability": "MANUAL_ONLY",
+      "preuves": [
+        "téléphone",
+        "adresse postale",
+        "page à propos",
+        "CGV/retours"
+      ],
+      "verdict": "REJECTED",
+      "raison": "45 intitulés lus, aucun scellé NBA"
+    },
+    {
+      "domain": "holmeshobbies.com",
+      "candidate_name": "Holmes Hobbies LLC",
+      "city": "Columbia",
+      "state": "MO",
+      "lookalike_score": 26.0,
+      "seed_count": 1,
+      "source_seeds": [
+        "rbicru7"
+      ],
+      "liveness": "LIVE",
+      "api": "html",
+      "fiches_vues": 72,
+      "nba_scelle": 0,
+      "autre_ligue": 0,
+      "generique": 0,
+      "purchase_mode": "ONLINE_CART",
+      "legitimacy": "UNVERIFIED",
+      "crawlability": "MANUAL_ONLY",
+      "preuves": [
+        "CGV/retours"
+      ],
+      "verdict": "REJECTED",
+      "raison": "72 intitulés lus, aucun scellé NBA"
+    },
+    {
+      "domain": "thehideouttcs.com",
+      "candidate_name": "The Hideout",
+      "city": "Columbia",
+      "state": "MO",
+      "lookalike_score": 26.0,
+      "seed_count": 1,
+      "source_seeds": [
+        "rbicru7"
+      ],
+      "liveness": "LIVE",
+      "api": "html",
+      "fiches_vues": 23,
+      "nba_scelle": 0,
+      "autre_ligue": 0,
+      "generique": 0,
+      "purchase_mode": "ONLINE_CART",
+      "legitimacy": "LIKELY_LEGIT",
+      "crawlability": "MANUAL_ONLY",
+      "preuves": [
+        "e-mail",
+        "CGV/retours"
+      ],
+      "verdict": "REJECTED",
+      "raison": "23 intitulés lus, aucun scellé NBA"
+    },
+    {
+      "domain": "theripbuddy.com",
+      "candidate_name": "The Rip Buddy",
+      "city": "Grand Rapids",
+      "state": "MI",
+      "lookalike_score": 26.0,
+      "seed_count": 1,
+      "source_seeds": [
+        "hiddengems"
+      ],
+      "liveness": "LIVE",
+      "api": "html",
+      "fiches_vues": 47,
+      "nba_scelle": 0,
+      "autre_ligue": 0,
+      "generique": 0,
+      "purchase_mode": "ONLINE_CART",
+      "legitimacy": "LIKELY_LEGIT",
+      "crawlability": "MANUAL_ONLY",
+      "preuves": [
+        "page à propos",
+        "CGV/retours"
+      ],
+      "verdict": "REJECTED",
+      "raison": "47 intitulés lus, aucun scellé NBA"
+    },
+    {
+      "domain": "ihc.cards",
+      "candidate_name": "IHC Cards and Collectibles",
+      "city": "Trenton",
+      "state": "NJ",
+      "lookalike_score": 25.0,
+      "seed_count": 1,
+      "source_seeds": [
+        "monmouth"
+      ],
+      "liveness": "LIVE",
+      "api": "html",
+      "fiches_vues": 363,
+      "nba_scelle": 0,
+      "autre_ligue": 0,
+      "generique": 0,
+      "purchase_mode": "ONLINE_CART",
+      "legitimacy": "TRUSTED",
+      "crawlability": "MANUAL_ONLY",
+      "preuves": [
+        "téléphone",
+        "adresse postale",
+        "page à propos",
+        "CGV/retours"
+      ],
+      "verdict": "REJECTED",
+      "raison": "363 intitulés lus, aucun scellé NBA"
+    },
+    {
+      "domain": "maplewoodhobby.com",
+      "candidate_name": "Maplewood Hobby",
+      "city": "Maplewood",
+      "state": "NJ",
+      "lookalike_score": 20.0,
+      "seed_count": 1,
+      "source_seeds": [
+        "monmouth"
+      ],
+      "liveness": "LIVE",
+      "api": "html",
+      "fiches_vues": 16,
+      "nba_scelle": 0,
+      "autre_ligue": 0,
+      "generique": 0,
+      "purchase_mode": "IN_STORE_ONLY",
+      "legitimacy": "LIKELY_LEGIT",
+      "crawlability": "MANUAL_ONLY",
+      "preuves": [
+        "téléphone",
+        "adresse postale"
+      ],
+      "verdict": "REJECTED",
+      "raison": "16 intitulés lus, aucun scellé NBA"
+    },
+    {
+      "domain": "theplayeragency.com",
+      "candidate_name": "The Player Agency",
+      "city": "South Orange",
+      "state": "NJ",
+      "lookalike_score": 20.0,
+      "seed_count": 1,
+      "source_seeds": [
+        "monmouth"
+      ],
+      "liveness": "LIVE",
+      "api": "html",
+      "fiches_vues": 121,
+      "nba_scelle": 0,
+      "autre_ligue": 0,
+      "generique": 0,
+      "purchase_mode": "ONLINE_CART",
+      "legitimacy": "LIKELY_LEGIT",
+      "crawlability": "MANUAL_ONLY",
+      "preuves": [
+        "e-mail",
+        "CGV/retours"
+      ],
+      "verdict": "REJECTED",
+      "raison": "121 intitulés lus, aucun scellé NBA"
+    },
+    {
+      "domain": "comic-lair.com",
+      "candidate_name": "Comic Lair",
+      "city": "Trenton",
+      "state": "NJ",
+      "lookalike_score": 18.0,
+      "seed_count": 1,
+      "source_seeds": [
+        "monmouth"
+      ],
+      "liveness": "LIVE",
+      "api": "html",
+      "fiches_vues": 3,
+      "nba_scelle": 0,
+      "autre_ligue": 0,
+      "generique": 0,
+      "purchase_mode": "IN_STORE_ONLY",
+      "legitimacy": "LIKELY_LEGIT",
+      "crawlability": "MANUAL_ONLY",
+      "preuves": [
+        "téléphone",
+        "adresse postale"
+      ],
+      "verdict": "CANDIDATE_ONLY",
+      "raison": "catalogue non énuméré — 3 intitulé(s) lus, aucune API : trop peu pour conclure que la boutique ne vend pas de NBA scellé"
+    },
+    {
+      "domain": "round2gaming.com",
+      "candidate_name": "Round 2 Gaming",
+      "city": "Lawrence Twp",
+      "state": "NJ",
+      "lookalike_score": 17.0,
+      "seed_count": 1,
+      "source_seeds": [
+        "monmouth"
+      ],
+      "liveness": "LIVE",
+      "api": "html",
+      "fiches_vues": 19,
+      "nba_scelle": 0,
+      "autre_ligue": 0,
+      "generique": 0,
+      "purchase_mode": "IN_STORE_ONLY",
+      "legitimacy": "TRUSTED",
+      "crawlability": "MANUAL_ONLY",
+      "preuves": [
+        "téléphone",
+        "adresse postale",
+        "page à propos",
+        "CGV/retours"
+      ],
+      "verdict": "REJECTED",
+      "raison": "19 intitulés lus, aucun scellé NBA"
+    }
+  ],
+  "fetch_reprise": 393
+}

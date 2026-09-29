@@ -1,11 +1,12 @@
-⚠️  [shopuscards] passage 2026-09-29T05:31:48+00:00 PARTIAL (178 produits) — ignoré, référence = dernier passage complet
-⚠️  [wolfdentcg] passage 2026-09-29T05:31:48+00:00 PARTIAL (31981 produits) — ignoré, référence = dernier passage complet
-(333 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
+⚠️  [shopuscards] passage 2026-09-29T12:39:29+00:00 PARTIAL (172 produits) — ignoré, référence = dernier passage complet
+⚠️  [wolfdentcg] passage 2026-09-29T12:39:29+00:00 PARTIAL (31981 produits) — ignoré, référence = dernier passage complet
+(332 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
 
 ========================================================================
   🔔 RESTOCKS depuis le passage précédent
 ========================================================================
-  🔔 RESTOCK  PANINI_2025-26_COURT_KINGS_HOBBY  awesome  $129.75  https://theawesomecardshop.com/products/2025-26-panini-court-kings-basketball-hobby-box
+  🔔 RESTOCK  PANINI_2025-26_DONRUSS_MEGA  sjay2k  $110.00  https://www.sjay2k.com/products/2025-26-panini-donruss-basketball-mega-box
+  🔔 RESTOCK  TOPPS_2025-26_CHROME_UPDATE_HOBBY  stcuk  $850.00  https://sportstradingcardsuk.com/products/pre-order-2025-26-topps-chrome-update-series-basketball-hobby-box
 
 ========================================================================
   RETAIL
@@ -1485,14 +1486,16 @@
 
 · SUIVI   2025-26 Panini Donruss Mega   [PANINI_2025-26_DONRUSS_MEGA]
    1. rlsports         $   44.99  IN STOCK  landed≈€  59.33  (score 1.00)
-        🔹STRONG_DEAL -25%  VERIFY  cheapest of 4 in stock
+        🔹STRONG_DEAL -25%  VERIFY  cheapest of 5 in stock
    2. monmouth         $   54.99  IN STOCK  landed≈€  69.67  (score 1.00)
         VERIFY
    3. cbhobby          $   60.00  IN STOCK  landed≈€  74.85  (score 1.00)
         VERIFY
    4. superior         $   75.00  IN STOCK  landed≈€  90.37  (score 1.00)
         VERIFY
-   5. collectorstore   $   49.99  SOLD OUT  landed≈€  64.50  (score 1.00)
+   5. sjay2k           $  110.00  IN STOCK  landed≈€ 126.57  (score 1.00)  🔔
+        🔹RESTOCK +3j  VERIFY
+   6. collectorstore   $   49.99  SOLD OUT  landed≈€  64.50  (score 1.00)
    ask $60.00   sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $44.99 (le 2026-09-06, rlsports, 6 shop(s) vus) | cheapest live $44.99
    BEST → rlsports  https://rlsportscards.com/products/2025-26-panini-donruss-basketball-mega-box
@@ -2496,17 +2499,17 @@
    ask $4999.75 sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
 
 · SUIVI   2025-26 Topps Chrome Update Hobby   [TOPPS_2025-26_CHROME_UPDATE_HOBBY]
-   1. cardiacs         $ 1099.95  IN STOCK  landed≈€1150.58  (score 1.00)
-        cheapest of 8 in stock
-   2. rbicru7          $ 1125.00  IN STOCK  landed≈€1176.49  (score 1.00)
-   3. qscards          $ 1149.00  IN STOCK  landed≈€1201.31  (score 1.00)
+   1. stcuk            $  850.00  IN STOCK  landed≈€ 892.03  (score 1.00)  🔔
+        VERIFY  cheapest of 9 in stock  FR
+   2. cardiacs         $ 1099.95  IN STOCK  landed≈€1150.58  (score 1.00)
+   3. rbicru7          $ 1125.00  IN STOCK  landed≈€1176.49  (score 1.00)
+   4. qscards          $ 1149.00  IN STOCK  landed≈€1201.31  (score 1.00)
         VERIFY  FR
-   4. collectorstore   $ 1149.95  IN STOCK  landed≈€1202.30  (score 1.00)
-   5. ehcards          $ 1199.99  IN STOCK  landed≈€1254.06  (score 1.00)
-   6. cardvault        $ 1249.95  IN STOCK  landed≈€1305.74  (score 1.00)
+   5. collectorstore   $ 1149.95  IN STOCK  landed≈€1202.30  (score 1.00)
+   6. ehcards          $ 1199.99  IN STOCK  landed≈€1254.06  (score 1.00)
    ask $549.99  sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
-   HISTORICAL LOW $974.99 (le 2026-08-19, columbia, 16 shop(s) vus) | cheapest live $1099.95
-   BEST → cardiacs  https://www.thecardiacs.com/products/2025-26-topps-chrome-update-series-basketball-hobby-box
+   HISTORICAL LOW $995.00 (le 2026-08-19, sportscardjunction, 2 shop(s) vus) | cheapest live $850.00
+   BEST → stcuk  https://sportstradingcardsuk.com/products/pre-order-2025-26-topps-chrome-update-series-basketball-hobby-box
 
 · SUIVI   2025-26 Topps Chrome Update Hobby Jumbo   [TOPPS_2025-26_CHROME_UPDATE_JUMBO]
    1. collectorstore   $ 2249.95  IN STOCK  landed≈€2340.14  (score 1.00)
@@ -3418,8 +3421,8 @@
         VERIFY  FR
    4. cardiacs         $  124.95  IN STOCK  landed≈€ 142.04  (score 1.00)
         🔹DEAL -17%
-   5. awesome          $  129.75  IN STOCK  landed≈€ 147.00  (score 1.00)  🔔
-        🔹RESTOCK +0j  🔹DEAL -14%
+   5. awesome          $  129.75  IN STOCK  landed≈€ 147.00  (score 1.00)
+        🔹DEAL -14%
    6. rbicru7          $  130.00  IN STOCK  landed≈€ 147.26  (score 1.00)
         🔹DEAL -13%
    ask $150.00  sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
@@ -3783,5 +3786,5 @@
   2023-24_HOOPS_BLASTER                    €   67.90  tanteo      
   2025-26_BOWMAN_VALUE_BLASTER             €   67.90  tanteo      
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-09-29T06-30-11.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-09-29T13-33-03.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-28T14:29:47+00:00",
+  "generated_at": "2026-09-29T00:03:09+00:00",
   "collection": "hunt.db/products_raw (aucun crawl propre)",
   "sources_read": [
     "ehcards",
@@ -164,7 +164,7 @@
       "sku_id": "PANINI_2023-24_PRIZM_HANGER",
       "platform": "shopify",
       "stock_confidence": "CONFIRMED_IN_STOCK",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -183,7 +183,7 @@
       "sku_id": "PANINI_2023-24_PRIZM_RETAIL_BOX",
       "platform": "shopify",
       "stock_confidence": "OOS",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -202,7 +202,7 @@
       "sku_id": null,
       "platform": "shopify",
       "stock_confidence": "OOS",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -221,7 +221,7 @@
       "sku_id": "PANINI_2023-24_OPTIC_MEGA",
       "platform": "shopify",
       "stock_confidence": "OOS",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -240,7 +240,7 @@
       "sku_id": "PANINI_2023-24_MOSAIC_HOBBY_BLASTER",
       "platform": "shopify",
       "stock_confidence": "OOS",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -259,7 +259,7 @@
       "sku_id": null,
       "platform": "shopify",
       "stock_confidence": "OOS",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -278,7 +278,7 @@
       "sku_id": "PANINI_2023-24_PRIZM_RETAIL_BOX",
       "platform": "shopify",
       "stock_confidence": "OOS",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -297,7 +297,7 @@
       "sku_id": null,
       "platform": "shopify",
       "stock_confidence": "OOS",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -316,7 +316,7 @@
       "sku_id": "PANINI_2023-24_PRIZM_BLASTER",
       "platform": "shopify",
       "stock_confidence": "OOS",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -335,7 +335,7 @@
       "sku_id": "PANINI_2023-24_PRIZM_MEGA",
       "platform": "shopify",
       "stock_confidence": "OOS",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -354,7 +354,7 @@
       "sku_id": "PANINI_2023-24_PRIZM_BLASTER",
       "platform": "shopify",
       "stock_confidence": "OOS",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -373,7 +373,7 @@
       "sku_id": "PANINI_2023-24_PRIZM_CHOICE",
       "platform": "shopify",
       "stock_confidence": "OOS",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -392,7 +392,7 @@
       "sku_id": "PANINI_2023-24_PRIZM_FAST_BREAK",
       "platform": "shopify",
       "stock_confidence": "OOS",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -411,7 +411,7 @@
       "sku_id": "PANINI_2023-24_PRIZM_HOBBY",
       "platform": "shopify",
       "stock_confidence": "OOS",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -430,7 +430,7 @@
       "sku_id": null,
       "platform": "shopify",
       "stock_confidence": "OOS",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -449,7 +449,7 @@
       "sku_id": "PANINI_2023-24_PRIZM_INTERNATIONAL",
       "platform": "shopify",
       "stock_confidence": "OOS",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -468,7 +468,7 @@
       "sku_id": "PANINI_2023-24_PRIZM_MEGA",
       "platform": "shopify",
       "stock_confidence": "OOS",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -487,7 +487,7 @@
       "sku_id": null,
       "platform": "shopify",
       "stock_confidence": "OOS",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -506,7 +506,7 @@
       "sku_id": "PANINI_2023-24_SELECT_HOBBY_BLASTER",
       "platform": "shopify",
       "stock_confidence": "OOS",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -525,7 +525,7 @@
       "sku_id": "PANINI_2023-24_SELECT_BLASTER",
       "platform": "shopify",
       "stock_confidence": "OOS",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -544,7 +544,7 @@
       "sku_id": "PANINI_2023-24_SELECT_MEGA_CASE",
       "platform": "shopify",
       "stock_confidence": "OOS",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -563,7 +563,7 @@
       "sku_id": "PANINI_2023-24_SELECT_MEGA",
       "platform": "shopify",
       "stock_confidence": "OOS",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -582,7 +582,7 @@
       "sku_id": null,
       "platform": "shopify",
       "stock_confidence": "OOS",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -601,7 +601,7 @@
       "sku_id": "PANINI_2023-24_MOSAIC_HOBBY_BLASTER",
       "platform": "shopify",
       "stock_confidence": "OOS",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -620,7 +620,7 @@
       "sku_id": "PANINI_2023-24_PRIZM_HOBBY_BLASTER",
       "platform": "shopify",
       "stock_confidence": "OOS",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -639,7 +639,7 @@
       "sku_id": "PANINI_2023-24_PRIZM_PACK",
       "platform": "shopify",
       "stock_confidence": "OOS",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -658,7 +658,7 @@
       "sku_id": "PANINI_2023-24_PRIZM_FAST_BREAK",
       "platform": "shopify",
       "stock_confidence": "OOS",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -677,7 +677,7 @@
       "sku_id": "PANINI_2023-24_PRIZM_HOBBY",
       "platform": "shopify",
       "stock_confidence": "OOS",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -696,7 +696,7 @@
       "sku_id": "PANINI_2023-24_OPTIC_MEGA",
       "platform": "shopify",
       "stock_confidence": "OOS",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -715,7 +715,7 @@
       "sku_id": "PANINI_2023-24_OPTIC_MEGA",
       "platform": "shopify",
       "stock_confidence": "OOS",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -734,7 +734,7 @@
       "sku_id": "PANINI_2023-24_PRIZM_BLASTER",
       "platform": "shopify",
       "stock_confidence": "OOS",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -753,7 +753,7 @@
       "sku_id": "PANINI_2023-24_PRIZM_HOBBY",
       "platform": "shopify",
       "stock_confidence": "OOS",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -772,7 +772,7 @@
       "sku_id": "PANINI_2023-24_PRIZM_MEGA",
       "platform": "shopify",
       "stock_confidence": "OOS",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -791,7 +791,7 @@
       "sku_id": "PANINI_2023-24_OPTIC_HOBBY_MEGA",
       "platform": "shopify",
       "stock_confidence": "CONFIRMED_IN_STOCK",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -810,7 +810,7 @@
       "sku_id": "PANINI_2023-24_PRIZM_PACK",
       "platform": "shopify",
       "stock_confidence": "CONFIRMED_IN_STOCK",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -829,7 +829,7 @@
       "sku_id": "PANINI_2023-24_PRIZM_HANGER",
       "platform": "shopify",
       "stock_confidence": "CONFIRMED_IN_STOCK",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -848,7 +848,7 @@
       "sku_id": "PANINI_2023-24_OPTIC_MEGA",
       "platform": "shopify",
       "stock_confidence": "OOS",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -867,7 +867,7 @@
       "sku_id": "PANINI_2023-24_OPTIC_MEGA",
       "platform": "shopify",
       "stock_confidence": "OOS",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -886,7 +886,7 @@
       "sku_id": "PANINI_2023-24_PRIZM_CHOICE",
       "platform": "shopify",
       "stock_confidence": "OOS",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -905,7 +905,7 @@
       "sku_id": "PANINI_2023-24_PRIZM_INTERNATIONAL",
       "platform": "shopify",
       "stock_confidence": "OOS",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -924,7 +924,7 @@
       "sku_id": "PANINI_2023-24_PRIZM_HOBBY_BLASTER",
       "platform": "shopify",
       "stock_confidence": "OOS",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -943,7 +943,7 @@
       "sku_id": "PANINI_2023-24_PRIZM_HANGER",
       "platform": "shopify",
       "stock_confidence": "OOS",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -962,7 +962,7 @@
       "sku_id": "PANINI_2023-24_PRIZM_RETAIL_BOX",
       "platform": "shopify",
       "stock_confidence": "OOS",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -981,7 +981,7 @@
       "sku_id": "PANINI_2023-24_PRIZM_HOBBY",
       "platform": "shopify",
       "stock_confidence": "OOS",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -1000,7 +1000,7 @@
       "sku_id": "PANINI_2023-24_PRIZM_BLASTER",
       "platform": "shopify",
       "stock_confidence": "OOS",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -1019,7 +1019,7 @@
       "sku_id": "PANINI_2023-24_PRIZM_FAST_BREAK",
       "platform": "shopify",
       "stock_confidence": "OOS",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -1038,7 +1038,7 @@
       "sku_id": "PANINI_2023-24_PRIZM_MEGA",
       "platform": "shopify",
       "stock_confidence": "OOS",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -1057,7 +1057,7 @@
       "sku_id": "PANINI_2023-24_PRIZM_BLASTER",
       "platform": "shopify",
       "stock_confidence": "OOS",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -1076,7 +1076,7 @@
       "sku_id": "PANINI_2023-24_PRIZM_BLASTER",
       "platform": "shopify",
       "stock_confidence": "OOS",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -1095,7 +1095,7 @@
       "sku_id": "PANINI_2023-24_PRIZM_CHOICE",
       "platform": "shopify",
       "stock_confidence": "OOS",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -1114,7 +1114,7 @@
       "sku_id": "PANINI_2023-24_PRIZM_FAST_BREAK",
       "platform": "shopify",
       "stock_confidence": "OOS",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -1133,7 +1133,7 @@
       "sku_id": null,
       "platform": "shopify",
       "stock_confidence": "OOS",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -1152,7 +1152,7 @@
       "sku_id": "PANINI_2023-24_PRIZM_HOBBY",
       "platform": "shopify",
       "stock_confidence": "OOS",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -1171,7 +1171,7 @@
       "sku_id": "PANINI_2023-24_PRIZM_INTERNATIONAL",
       "platform": "shopify",
       "stock_confidence": "OOS",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -1190,7 +1190,7 @@
       "sku_id": null,
       "platform": "shopify",
       "stock_confidence": "OOS",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -1209,7 +1209,7 @@
       "sku_id": "PANINI_2023-24_SELECT_MEGA",
       "platform": "shopify",
       "stock_confidence": "OOS",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -1228,7 +1228,7 @@
       "sku_id": "PANINI_2023-24_PRIZM_BLASTER",
       "platform": "html",
       "stock_confidence": "CONFIRMED_IN_STOCK",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -1247,7 +1247,7 @@
       "sku_id": "PANINI_2023-24_SELECT_HOBBY_BLASTER",
       "platform": "html",
       "stock_confidence": "OOS",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -1266,7 +1266,7 @@
       "sku_id": "PANINI_2023-24_PRIZM_BLASTER",
       "platform": "shopify",
       "stock_confidence": "OOS",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -1285,7 +1285,7 @@
       "sku_id": "PANINI_2023-24_PRIZM_RETAIL_BOX",
       "platform": "shopify",
       "stock_confidence": "OOS",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -1304,7 +1304,7 @@
       "sku_id": "PANINI_2023-24_PRIZM_HOBBY",
       "platform": "woocommerce",
       "stock_confidence": "PROBABLY_IN_STOCK",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -1323,7 +1323,7 @@
       "sku_id": "PANINI_2023-24_PRIZM_INTERNATIONAL",
       "platform": "woocommerce",
       "stock_confidence": "PROBABLY_IN_STOCK",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -1342,7 +1342,7 @@
       "sku_id": "PANINI_2023-24_PRIZM_FAST_BREAK",
       "platform": "woocommerce",
       "stock_confidence": "PROBABLY_IN_STOCK",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -1361,7 +1361,7 @@
       "sku_id": "PANINI_2023-24_PRIZM_BLASTER",
       "platform": "shopify",
       "stock_confidence": "OOS",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -1380,7 +1380,7 @@
       "sku_id": "PANINI_2023-24_PRIZM_FAST_BREAK",
       "platform": "shopify",
       "stock_confidence": "OOS",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -1399,7 +1399,7 @@
       "sku_id": null,
       "platform": "shopify",
       "stock_confidence": "OOS",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -1418,7 +1418,7 @@
       "sku_id": "PANINI_2023-24_PRIZM_HOBBY",
       "platform": "shopify",
       "stock_confidence": "OOS",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -1437,7 +1437,7 @@
       "sku_id": null,
       "platform": "shopify",
       "stock_confidence": "CONFIRMED_IN_STOCK",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -1456,7 +1456,7 @@
       "sku_id": "PANINI_2023-24_PRIZM_INTERNATIONAL",
       "platform": "shopify",
       "stock_confidence": "CONFIRMED_IN_STOCK",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     },
@@ -1475,7 +1475,7 @@
       "sku_id": "PANINI_2023-24_PRIZM_MEGA",
       "platform": "shopify",
       "stock_confidence": "OOS",
-      "seen_at": "2026-09-28T13:40:36+00:00",
+      "seen_at": "2026-09-28T23:11:31+00:00",
       "source_layer": "REGISTERED_SOURCES",
       "read_from": "hunt.db/products_raw"
     }
@@ -1495,41 +1495,6 @@
       "type": "PRIZM_STOCK_AMBIGUOUS",
       "url": "https://kutogo.com/product/2023-24-panini-prizm-fast-break-basketball-box/",
       "why": "la boutique ne gère pas ses quantités — à vérifier à la main"
-    },
-    {
-      "type": "PRIZM_NEW_SELLER",
-      "url": "https://shoppieceofthegame.com/products/2023-24-panini-prizm-basketball-6-pack-blaster-box-ice-prizms",
-      "why": "listing jamais vu"
-    },
-    {
-      "type": "PRIZM_NEW_SELLER",
-      "url": "https://shoppieceofthegame.com/products/2023-24-panini-prizm-basketball-fast-break-box",
-      "why": "listing jamais vu"
-    },
-    {
-      "type": "PRIZM_NEW_SELLER",
-      "url": "https://shoppieceofthegame.com/products/2023-24-panini-prizm-basketball-hobby-12-box-case",
-      "why": "listing jamais vu"
-    },
-    {
-      "type": "PRIZM_NEW_SELLER",
-      "url": "https://shoppieceofthegame.com/products/2023-24-panini-prizm-basketball-hobby-box",
-      "why": "listing jamais vu"
-    },
-    {
-      "type": "PRIZM_NEW_STOCK",
-      "url": "https://shoppieceofthegame.com/products/2023-24-panini-prizm-basketball-international-hobby-12-box-case",
-      "why": "listing jamais vu"
-    },
-    {
-      "type": "PRIZM_NEW_STOCK",
-      "url": "https://shoppieceofthegame.com/products/2023-24-panini-prizm-basketball-international-hobby-box",
-      "why": "listing jamais vu"
-    },
-    {
-      "type": "PRIZM_NEW_SELLER",
-      "url": "https://shoppieceofthegame.com/products/2023-24-panini-prizm-basketball-mega-box",
-      "why": "listing jamais vu"
     },
     {
       "type": "PRIZM_SOURCE_LOST",

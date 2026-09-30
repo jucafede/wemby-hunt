@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T08:35:21+00:00",
+  "generated_at": "2026-09-30T16:39:30+00:00",
   "offers": [
     {
       "product_id": "select_2023_24_hobby_mega_green_shock",
@@ -15,8 +15,8 @@
       "match_method": "SET_FORMAT_VARIANTE",
       "confidence": "select + variante « Green Shock Prizms » nommée",
       "first_seen": "2026-09-24T07:55:54+00:00",
-      "last_seen": "2026-09-24T07:55:54+00:00",
-      "last_price": null,
+      "last_seen": "2026-09-30T16:39:30+00:00",
+      "last_price": 109.75,
       "last_in_stock": null,
       "history": [
         {
@@ -25,7 +25,28 @@
           "stock_status": "OUT_OF_STOCK",
           "stock_qty": null,
           "event": "NEW"
+        },
+        {
+          "t": "2026-09-30T16:26:27+00:00",
+          "price": 109.75,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-09-30T16:39:30+00:00",
+          "price": 109.75,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
         }
+      ],
+      "titre_observe": "2023-24 Panini Select Basketball Mega Box (Green Shock Prizms )",
+      "old_stock_score": 38,
+      "old_stock_motifs": [
+        "+18 5 fiche(s) 2019-ou-avant ENCORE AU PANIER",
+        "+12 5 format(s) retail ancien(s) achetable(s) (Mega/Blaster/Hanger)",
+        "+8 7 fiche(s) ancienne(s) encore indexée(s) mais ÉPUISÉE(S) — trace, pas stock"
       ]
     },
     {
@@ -42,9 +63,9 @@
       "match_method": "SET_FORMAT_VARIANTE",
       "confidence": "select + variante « Blue & Pink Cracked Ice Prizms » nommée",
       "first_seen": "2026-09-24T07:55:54+00:00",
-      "last_seen": "2026-09-24T07:55:54+00:00",
-      "last_price": null,
-      "last_in_stock": "2026-09-24T07:55:54+00:00",
+      "last_seen": "2026-09-30T16:39:30+00:00",
+      "last_price": 110.0,
+      "last_in_stock": "2026-09-30T16:39:30+00:00",
       "history": [
         {
           "t": "2026-09-24T07:55:54+00:00",
@@ -52,7 +73,35 @@
           "stock_status": "IN_STOCK",
           "stock_qty": null,
           "event": "NEW"
+        },
+        {
+          "t": "2026-09-30T16:26:27+00:00",
+          "price": 110.0,
+          "stock_status": "IN_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-09-30T16:39:30+00:00",
+          "price": 110.0,
+          "stock_status": "IN_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-09-30T16:39:30+00:00",
+          "price": 110.0,
+          "stock_status": "IN_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
         }
+      ],
+      "titre_observe": "2023-24 Panini Select Basketball, Mega Box (BLUE & PINK CRACKED ICE)",
+      "old_stock_score": 43,
+      "old_stock_motifs": [
+        "+7 1 fiche(s) 2021-22 ENCORE AU PANIER",
+        "+24 3 fiche(s) 2023-24 ENCORE AU PANIER",
+        "+12 4 format(s) retail ancien(s) achetable(s) (Mega/Blaster/Hanger)"
       ]
     },
     {
@@ -169,7 +218,7 @@
       "url": "https://www.worldchampionsportscards.org/products/2023-24-panini-select-basketball-mega-box",
       "price": 67.95,
       "currency": "USD",
-      "stock_status": "AMBIGU",
+      "stock_status": "OUT_OF_STOCK",
       "stock_qty": null,
       "shipping_france": null,
       "shipping_cost": null,
@@ -178,8 +227,8 @@
       "confidence": "Mega Select 2023-24 sans variante nommée — non attribuable",
       "titre_observe": "2023-24 Panini Select Basketball Mega Box",
       "first_seen": "2026-09-24T07:55:54+00:00",
-      "last_seen": "2026-09-24T07:55:54+00:00",
-      "last_price": null,
+      "last_seen": "2026-09-30T16:39:30+00:00",
+      "last_price": 67.95,
       "last_in_stock": null,
       "history": [
         {
@@ -188,7 +237,26 @@
           "stock_status": "AMBIGU",
           "stock_qty": null,
           "event": "NEW"
+        },
+        {
+          "t": "2026-09-30T16:26:27+00:00",
+          "price": 67.95,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-09-30T16:39:30+00:00",
+          "price": 67.95,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
         }
+      ],
+      "old_stock_score": 20,
+      "old_stock_motifs": [
+        "+12 3 fiche(s) 2020-21 ENCORE AU PANIER",
+        "+8 9 fiche(s) ancienne(s) encore indexée(s) mais ÉPUISÉE(S) — trace, pas stock"
       ]
     },
     {
@@ -197,7 +265,7 @@
       "url": "https://e5sports.com/products/2023-24-panini-prizm-nba-mega-box",
       "price": 125.0,
       "currency": "USD",
-      "stock_status": "AMBIGU",
+      "stock_status": "OUT_OF_STOCK",
       "stock_qty": null,
       "shipping_france": null,
       "shipping_cost": null,
@@ -206,8 +274,8 @@
       "confidence": "Mega Prizm 2023-24 sans variante nommée — non attribuable",
       "titre_observe": "2023-24 Panini Prizm NBA Mega Box",
       "first_seen": "2026-09-24T07:55:54+00:00",
-      "last_seen": "2026-09-24T07:55:54+00:00",
-      "last_price": null,
+      "last_seen": "2026-09-30T16:39:30+00:00",
+      "last_price": 125.0,
       "last_in_stock": null,
       "history": [
         {
@@ -216,7 +284,36 @@
           "stock_status": "AMBIGU",
           "stock_qty": null,
           "event": "NEW"
+        },
+        {
+          "t": "2026-09-30T16:26:27+00:00",
+          "price": 125.0,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-09-30T16:39:30+00:00",
+          "price": 125.0,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-09-30T16:39:30+00:00",
+          "price": 125.0,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
         }
+      ],
+      "old_stock_score": 63,
+      "old_stock_motifs": [
+        "+16 13 fiche(s) 2022-23 ENCORE AU PANIER",
+        "+24 2 fiche(s) 2023-24 ENCORE AU PANIER",
+        "+12 13 format(s) retail ancien(s) achetable(s) (Mega/Blaster/Hanger)",
+        "+8 17 fiche(s) ancienne(s) encore indexée(s) mais ÉPUISÉE(S) — trace, pas stock",
+        "+3 catalogue NBA scellé profond (32 fiches relevées)"
       ]
     },
     {
@@ -225,7 +322,7 @@
       "url": "https://e5sports.com/products/2023-24-panini-select-nba-mega-box",
       "price": 65.0,
       "currency": "USD",
-      "stock_status": "AMBIGU",
+      "stock_status": "OUT_OF_STOCK",
       "stock_qty": null,
       "shipping_france": null,
       "shipping_cost": null,
@@ -234,7 +331,7 @@
       "confidence": "Mega Select 2023-24 sans variante nommée — non attribuable",
       "titre_observe": "2023-24 Panini Select NBA Mega Box Wembanyama",
       "first_seen": "2026-09-24T07:55:54+00:00",
-      "last_seen": "2026-09-24T07:55:54+00:00",
+      "last_seen": "2026-09-30T16:39:30+00:00",
       "last_price": 65.0,
       "last_in_stock": null,
       "history": [
@@ -251,7 +348,50 @@
           "stock_status": "AMBIGU",
           "stock_qty": null,
           "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-09-30T16:26:27+00:00",
+          "price": 65.0,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-09-30T16:26:27+00:00",
+          "price": 65.0,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-09-30T16:39:30+00:00",
+          "price": 65.0,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-09-30T16:39:30+00:00",
+          "price": 65.0,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-09-30T16:39:30+00:00",
+          "price": 65.0,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
         }
+      ],
+      "old_stock_score": 63,
+      "old_stock_motifs": [
+        "+16 13 fiche(s) 2022-23 ENCORE AU PANIER",
+        "+24 2 fiche(s) 2023-24 ENCORE AU PANIER",
+        "+12 13 format(s) retail ancien(s) achetable(s) (Mega/Blaster/Hanger)",
+        "+8 17 fiche(s) ancienne(s) encore indexée(s) mais ÉPUISÉE(S) — trace, pas stock",
+        "+3 catalogue NBA scellé profond (32 fiches relevées)"
       ]
     },
     {
@@ -260,7 +400,7 @@
       "url": "https://deichcards.de/products/panini-prizm-basketball-nba-hobby-mega-box-2023-2024",
       "price": 375.0,
       "currency": "EUR",
-      "stock_status": "AMBIGU",
+      "stock_status": "OUT_OF_STOCK",
       "stock_qty": null,
       "shipping_france": null,
       "shipping_cost": null,
@@ -269,7 +409,7 @@
       "confidence": "Mega Prizm 2023-24 sans variante nommée — non attribuable",
       "titre_observe": "Panini Prizm Basketball NBA Hobby Mega Box 2023/2024",
       "first_seen": "2026-09-24T07:55:54+00:00",
-      "last_seen": "2026-09-24T07:55:54+00:00",
+      "last_seen": "2026-09-30T16:39:30+00:00",
       "last_price": 375.0,
       "last_in_stock": null,
       "history": [
@@ -293,7 +433,54 @@
           "stock_status": "AMBIGU",
           "stock_qty": null,
           "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-09-30T16:26:27+00:00",
+          "price": 375.0,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-09-30T16:26:27+00:00",
+          "price": 375.0,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-09-30T16:26:27+00:00",
+          "price": 375.0,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-09-30T16:39:30+00:00",
+          "price": 375.0,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-09-30T16:39:30+00:00",
+          "price": 375.0,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-09-30T16:39:30+00:00",
+          "price": 375.0,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
         }
+      ],
+      "old_stock_score": 11,
+      "old_stock_motifs": [
+        "+8 6 fiche(s) ancienne(s) encore indexée(s) mais ÉPUISÉE(S) — trace, pas stock",
+        "+3 catalogue NBA scellé profond (35 fiches relevées)"
       ]
     },
     {
@@ -302,7 +489,7 @@
       "url": "https://deichcards.de/products/panini-prizm-basketball-nba-mega-box-2023-2024",
       "price": 179.0,
       "currency": "EUR",
-      "stock_status": "AMBIGU",
+      "stock_status": "OUT_OF_STOCK",
       "stock_qty": null,
       "shipping_france": null,
       "shipping_cost": null,
@@ -311,7 +498,7 @@
       "confidence": "Mega Prizm 2023-24 sans variante nommée — non attribuable",
       "titre_observe": "Panini Prizm Basketball NBA Mega Box 2023/2024",
       "first_seen": "2026-09-24T07:55:54+00:00",
-      "last_seen": "2026-09-24T07:55:54+00:00",
+      "last_seen": "2026-09-30T16:39:30+00:00",
       "last_price": 179.0,
       "last_in_stock": null,
       "history": [
@@ -328,7 +515,47 @@
           "stock_status": "AMBIGU",
           "stock_qty": null,
           "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-09-30T16:26:27+00:00",
+          "price": 179.0,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-09-30T16:26:27+00:00",
+          "price": 179.0,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-09-30T16:39:30+00:00",
+          "price": 179.0,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-09-30T16:39:30+00:00",
+          "price": 179.0,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-09-30T16:39:30+00:00",
+          "price": 179.0,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
         }
+      ],
+      "old_stock_score": 11,
+      "old_stock_motifs": [
+        "+8 6 fiche(s) ancienne(s) encore indexée(s) mais ÉPUISÉE(S) — trace, pas stock",
+        "+3 catalogue NBA scellé profond (35 fiches relevées)"
       ]
     },
     {
@@ -337,7 +564,7 @@
       "url": "https://deichcards.de/products/panini-select-basketball-mega-box-2023-24",
       "price": 89.9,
       "currency": "EUR",
-      "stock_status": "AMBIGU",
+      "stock_status": "OUT_OF_STOCK",
       "stock_qty": null,
       "shipping_france": null,
       "shipping_cost": null,
@@ -346,7 +573,7 @@
       "confidence": "Mega Select 2023-24 sans variante nommée — non attribuable",
       "titre_observe": "Panini Select Basketball Mega Box 2023/24",
       "first_seen": "2026-09-24T07:55:54+00:00",
-      "last_seen": "2026-09-24T07:55:54+00:00",
+      "last_seen": "2026-09-30T16:39:30+00:00",
       "last_price": 89.9,
       "last_in_stock": null,
       "history": [
@@ -368,6 +595,134 @@
           "t": "2026-09-24T07:55:54+00:00",
           "price": 89.9,
           "stock_status": "AMBIGU",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-09-30T16:26:27+00:00",
+          "price": 89.9,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-09-30T16:26:27+00:00",
+          "price": 89.9,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-09-30T16:26:27+00:00",
+          "price": 89.9,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-09-30T16:39:30+00:00",
+          "price": 89.9,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-09-30T16:39:30+00:00",
+          "price": 89.9,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-09-30T16:39:30+00:00",
+          "price": 89.9,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-09-30T16:39:30+00:00",
+          "price": 89.9,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        }
+      ],
+      "old_stock_score": 11,
+      "old_stock_motifs": [
+        "+8 6 fiche(s) ancienne(s) encore indexée(s) mais ÉPUISÉE(S) — trace, pas stock",
+        "+3 catalogue NBA scellé profond (35 fiches relevées)"
+      ]
+    },
+    {
+      "product_id": null,
+      "shop_id": "awesome",
+      "url": "https://theawesomecardshop.com/products/2023-24-panini-prizm-basketball-mega-box-pink-ice-prizms",
+      "price": 134.0,
+      "currency": "USD",
+      "stock_status": "OUT_OF_STOCK",
+      "stock_qty": null,
+      "shipping_france": null,
+      "shipping_cost": null,
+      "landed_price_france": null,
+      "match_method": "AMBIGU",
+      "confidence": "Mega Prizm 2023-24 sans variante nommée — non attribuable",
+      "titre_observe": "2023/24 Panini Prizm Basketball Mega Box (Pink Ice Prizms!)",
+      "old_stock_score": 38,
+      "old_stock_motifs": [
+        "+18 5 fiche(s) 2019-ou-avant ENCORE AU PANIER",
+        "+12 5 format(s) retail ancien(s) achetable(s) (Mega/Blaster/Hanger)",
+        "+8 7 fiche(s) ancienne(s) encore indexée(s) mais ÉPUISÉE(S) — trace, pas stock"
+      ],
+      "first_seen": "2026-09-30T16:39:30+00:00",
+      "last_seen": "2026-09-30T16:39:30+00:00",
+      "last_price": null,
+      "last_in_stock": null,
+      "history": [
+        {
+          "t": "2026-09-30T16:39:30+00:00",
+          "price": 134.0,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "NEW"
+        }
+      ]
+    },
+    {
+      "product_id": null,
+      "shop_id": "worldchampion",
+      "url": "https://www.worldchampionsportscards.org/products/2023-24-panini-prizm-basketball-mega-box-pink-ice-prizms",
+      "price": 90.95,
+      "currency": "USD",
+      "stock_status": "OUT_OF_STOCK",
+      "stock_qty": null,
+      "shipping_france": null,
+      "shipping_cost": null,
+      "landed_price_france": null,
+      "match_method": "AMBIGU",
+      "confidence": "Mega Prizm 2023-24 sans variante nommée — non attribuable",
+      "titre_observe": "2023-24 Panini Prizm Basketball Mega Box (Pink Ice Prizms!)",
+      "old_stock_score": 20,
+      "old_stock_motifs": [
+        "+12 3 fiche(s) 2020-21 ENCORE AU PANIER",
+        "+8 9 fiche(s) ancienne(s) encore indexée(s) mais ÉPUISÉE(S) — trace, pas stock"
+      ],
+      "first_seen": "2026-09-30T16:39:30+00:00",
+      "last_seen": "2026-09-30T16:39:30+00:00",
+      "last_price": 90.95,
+      "last_in_stock": null,
+      "history": [
+        {
+          "t": "2026-09-30T16:39:30+00:00",
+          "price": 90.95,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "NEW"
+        },
+        {
+          "t": "2026-09-30T16:39:30+00:00",
+          "price": 90.95,
+          "stock_status": "OUT_OF_STOCK",
           "stock_qty": null,
           "event": "UNCHANGED"
         }

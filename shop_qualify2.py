@@ -51,6 +51,12 @@ UNKNOWN_NOT_READ = "UNKNOWN_NOT_READ"
 # REJECTED_NO_BASKETBALL. Un rejet produit exige une SURFACE DE CATALOGUE — un sitemap, des
 # pages de rubrique, une liste de fiches — pas une page unique.
 UNKNOWN_NO_CATALOGUE = "UNKNOWN_NO_CATALOGUE"
+# Basket scellé PROUVÉ, mais pas de la NBA : EuroLeague, WNBA, NCAA, Draft Picks, Overtime
+# Elite. Ryno's Sports Cards est passée QUALIFIED sur une seule boîte Donruss « Turkish
+# Airlines EuroLeague », épuisée de surcroît. C'est du basket, et cela ne contiendra jamais
+# une recrue NBA 2023-24. Ce n'est pas un rejet du marchand : c'est une preuve qui ne prouve
+# pas ce qu'on cherche.
+SEALED_NOT_NBA = "SEALED_NOT_NBA"
 TITRES_MIN = 15
 
 # Les signatures du vieux LCS en vente par correspondance — le profil « RK Collectibles ».
@@ -242,7 +248,16 @@ def fusionne(pass1: dict, pass2: dict) -> dict:
     elif achat == IN_STORE_ONLY:
         st, why = "IN_STORE_ONLY", "scellé présent mais aucune vente à distance identifiable"
     else:
-        st, why = QUALIFIED_S, f"basket scellé prouvé · achat {achat} · lecture {craw}"
+        # La preuve doit porter sur la NBA, pas sur « du basket ».
+        import nba_gate as _ng
+        _titre = (preuve or {}).get("product_name") or ""
+        if _titre and not _ng.est_scelle_nba(_titre):
+            _cl = _ng.classe_ligue(_titre)
+            st = SEALED_NOT_NBA
+            why = (f"scellé basket prouvé mais NON NBA ({_cl}) — « {_titre[:60]} ». "
+                   f"La NBA n'est pas réfutée, elle n'est pas prouvée : candidate.")
+        else:
+            st, why = QUALIFIED_S, f"basket scellé NBA prouvé · achat {achat} · lecture {craw}"
     return {"status": st, "reason": why, "legitimacy": pass2.get("legitimacy", UNVERIFIED),
             "crawlability": craw, "purchase_mode": achat, "lu": lu,
             # Sans lecture, on ne renvoie pas False — on renvoie None. False dirait « non ».
@@ -251,6 +266,7 @@ def fusionne(pass1: dict, pass2: dict) -> dict:
             "titres_examines": pass2.get("titres_examines") or 0, "api_lue": api,
             "saison_2023_24": bool(pass2.get("saison_2023_24")),
             "hunt_enabled": st in (QUALIFIED_S,),
+            "nba_sealed_proven": st == QUALIFIED_S,
             "prouve_par": ("api" if pass1.get("sealed_basketball") else
                            "html_public" if pass2.get("sealed_basketball") else None)}
 

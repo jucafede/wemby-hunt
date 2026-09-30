@@ -68,6 +68,17 @@ jobs:
         run: |
           set -o pipefail
           python -u prizm_core.py 2>&1 | tail -20
+      # LES CINQ CIBLES CANONIQUES — vivacité → porte NBA → old_stock → matcher → offers.json
+      # Cette étape manquait : mega_hunt écrivait dans un fichier temporaire de session, et
+      # la couche OFFER n'était alimentée par rien. Une Mega Prizm 2023-24 trouvée en rayon
+      # disparaissait donc avec le conteneur. Elle alimente maintenant discovered/offers.json,
+      # que le rapport lit — AMBIGU compris.
+      - name: Chasse Mega (5 cibles canoniques) vers la couche OFFER
+        shell: bash
+        run: |
+          set -o pipefail
+          python -u mega_hunt.py 2>&1 | tail -30
+
       # Aucun lien mensonger ne doit être publié. Le 15/09, le tableau des anomalies rendait
       # « 1.0 » comme href et envoyait l'acheteur sur une 404 de notre propre site, en lui
       # laissant croire que la boutique avait disparu.
@@ -92,7 +103,7 @@ jobs:
           git config user.email "bot@users.noreply.github.com"
           git add -f discovered/external_prizm.json discovered/sold_prizm.json \
                      discovered/sold_ledger.json discovered/candidate_domains.json \
-                     discovered/prizm_core.json || true
+                     discovered/prizm_core.json discovered/offers.json || true
           git diff --cached --quiet || git commit -m "Passage autonome : couches externes, ventes et noyau Prizm"
           # Un commit poussé pendant le run rend ce push non fast-forward. On rebase et on
           # réessaie : sans cela, une découverte est perdue pour la seule raison que quelqu'un

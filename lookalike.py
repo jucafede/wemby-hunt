@@ -601,3 +601,97 @@ def cibles(dom: str, journal=print) -> list[dict]:
                         "config": mh.valide_config(t, f"{x['titre']} {x.get('sku','')}")})
             journal(f"    CIBLE {ident['confiance']} — {x['titre'][:56]}")
     return out
+
+
+# ------------------------------------------------------------------ pipeline
+def pipeline(top_n: int = 50, journal=print) -> dict:
+    """L'enchaînement complet, DANS LE DÉPÔT.
+
+    Il existait jusqu'ici sous forme de scripts jetables dans un répertoire temporaire de
+    session : les résultats étaient réels, l'enchaînement qui les avait produits ne l'était
+    plus dès la session refermée. Une méthode qu'on ne peut pas relancer n'est pas une
+    méthode, c'est un souvenir.
+
+        graines OR → univers → dédoublonnage → VIVACITÉ → classement
+                   → porte dure NBA → old_stock v2 → matcher canonique
+
+    La vivacité passe AVANT le classement : sonder le DNS ne coûte rien au marchand, et cela
+    évite de dépenser la moitié des créneaux de validation dans des domaines morts. Un domaine
+    BLOQUÉ ou INJOIGNABLE n'est pas écarté du monde : il est écarté de CETTE passe, et le
+    fichier le dit.
+    """
+    import liveness as lv
+    import nba_probe as npb
+    import mega_hunt as mh
+
+    d = decouvre(journal=journal)
+    cands = {c["candidate_domain"]: c for c in d["candidats"]}
+    journal(f"[1] {len(cands)} candidats dédoublonnés")
+
+    etats = {e["domain"]: e for e in lv.sonde_tous(list(cands), journal=journal)}
+    vivants = [dom for dom, e in etats.items() if e["state"] in lv.EXPLOITABLE]
+    journal(f"[2] {len(vivants)} vivants · {len(cands) - len(vivants)} non examinables "
+            f"(non jugés)")
+
+    top = sorted(vivants, key=lambda x: -cands[x]["lookalike_score"])[:top_n]
+    journal(f"[3] TOP {len(top)} classé par similarité")
+
+    resultats = []
+    for dom in top:
+        c = cands[dom]
+        s = npb.sonde_nba(dom)
+        try:
+            p2 = sq2.qualifie2(dom)
+        except Exception as e:
+            p2 = {"purchase_mode": None, "reason": e.__class__.__name__}
+        achat = p2.get("purchase_mode")
+        t = s["temoin"]
+        r = {**{k: c.get(k) for k in ("candidate_name", "city", "state",
+                                      "lookalike_score", "seed_count", "source_seeds")},
+             "domain": dom, "liveness": etats[dom]["state"], "api": s["api"],
+             "fiches_vues": s["fiches_vues"], "nba_scelle": len(s["nba_scelle"]),
+             "autre_ligue": len(s["autre_ligue"]), "purchase_mode": achat,
+             "legitimacy": p2.get("legitimacy"), "crawlability": p2.get("crawlability")}
+        if t and achat in ACHAT_DISTANCE:
+            sc, motifs, detail = npb.old_stock_v2(s["nba_scelle"])
+            ex, am = [], []
+            for f in s["nba_scelle"] + s["generique"]:
+                idn = mh.identifie(f["titre"])
+                if idn["confiance"] == "HORS_PERIMETRE":
+                    continue
+                rec = {"titre": f["titre"], "url": f["url"], "prix": f["prix"],
+                       "dispo": f["dispo"], "confiance": idn["confiance"],
+                       "preuve": idn["preuve"], "upc": (idn["target"] or {}).get("upc"),
+                       "target_id": (idn["target"] or {}).get("id")}
+                (ex if idn["target"] else am).append(rec)   # AMBIGU conservé, jamais fusionné
+            r.update(verdict="QUALIFIED_NBA", sealed_product=t["titre"],
+                     product_url=t["url"], price=t["prix"], in_stock=t["dispo"],
+                     old_stock_score=sc, old_stock_motifs=motifs, old_stock_detail=detail,
+                     cibles_exactes=ex, ambigus=am,
+                     raison=f"scellé NBA + prix affiché + achat {achat}")
+        elif s["nba_scelle"]:
+            r.update(verdict="CANDIDATE_ONLY",
+                     raison="scellé NBA lu, mais prix ou achat à distance non constaté")
+        elif s["autre_ligue"]:
+            r.update(verdict="CANDIDATE_ONLY",
+                     raison=f"{len(s['autre_ligue'])} fiche(s) hors NBA — NBA non prouvée, "
+                            f"pas réfutée")
+        elif s["fiches_vues"] >= sq2.TITRES_MIN:
+            r.update(verdict="REJECTED",
+                     raison=f"{s['fiches_vues']} intitulés énumérés, aucun scellé NBA")
+        else:
+            r.update(verdict="CANDIDATE_ONLY",
+                     raison=f"catalogue non énuméré ({s['fiches_vues']} intitulés) — "
+                            f"trop peu pour conclure")
+        resultats.append(r)
+        journal(f"    {dom[:30]:<30} {r['verdict']}")
+
+    from collections import Counter
+    return {"generated_at": now(), "candidats": len(cands),
+            "liveness": dict(Counter(e["state"] for e in etats.values())),
+            "examines": len(resultats),
+            "par_verdict": dict(Counter(r["verdict"] for r in resultats)),
+            "qualifies_nba": sum(1 for r in resultats if r["verdict"] == "QUALIFIED_NBA"),
+            "resultats": resultats,
+            "note": ("Les non-examinables (DEAD, BLOCKED, TIMEOUT, UNKNOWN) et les rangs "
+                     "au-delà du TOP ne sont pas des rejets : ils ne sont pas examinés.")}

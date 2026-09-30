@@ -2418,7 +2418,8 @@ def write_html(cat, blocks, restocks, review, seen_at, trust=None, hot=None, ent
           f"{dataset_freshness()}</p>"),
          "<nav>" + " ".join(f"<a href='#{i}'>{n}</a>" for i, n in
                             [("acheter", "🔥 BUY NOW"), ("anomalies", "🔍 Anomalies"),
-                             ("insuffisant", "❓ Données"), ("europe", "🌍 Europe"),
+                             ("insuffisant", "❓ Données"), ("cibles", "🎯 5 Cibles"),
+                             ("europe", "🌍 Europe"),
                              ("surveiller", "👀 Surveiller"),
                              ("prizm", "🎯 Prizm Core"), ("inventaire", "📦 Mon inventaire"),
                              ("fr", "🇫🇷 FR"), ("explorer", "🔎 Explorer"),
@@ -2701,6 +2702,67 @@ def write_html(cat, blocks, restocks, review, seen_at, trust=None, hot=None, ent
                  f"<td><span class=small>{prov}</span></td><td>{conf}</td>"
                  f"<td><span class=small>{stxt}</span></td></tr>")
     h.append("</table></div>")
+
+    # ---------------- 🎯 LES 5 CIBLES CANONIQUES, ET CE QUI LEUR RESSEMBLE
+    # La couche OFFER était orpheline : `mega_hunt` écrivait ses trouvailles dans un fichier
+    # temporaire de session, et la page publique n'avait aucune section pour les cinq
+    # références. Une Mega Prizm 2023-24 « Pink Ice » trouvée EN STOCK n'arrivait donc jamais
+    # sous les yeux de personne.
+    #
+    # Les AMBIGU ont leur propre tableau, et c'est le point : ils ne sont ni fusionnés avec
+    # une cible (« Pink Ice » ne devient pas « Red Ice ») ni jetés. Ce sont des fiches à
+    # regarder soi-même.
+    of = ROOT / "discovered" / "offers.json"
+    _shops_interroges = len({o.get("shop_id") for o in []}) or 0
+    if of.exists():
+        try:
+            _od = json.loads(of.read_text(encoding="utf-8"))
+            _offres = _od.get("offers", [])
+        except Exception:
+            _offres = []
+        _shops_interroges = len({o.get("shop_id") for o in _offres if o.get("shop_id")})
+        _exacts = [o for o in _offres if o.get("product_id")]
+        _ambigus = [o for o in _offres if not o.get("product_id")]
+        if _offres:
+            h.append("<h2 id=cibles>🎯 Les 5 cibles canoniques</h2>")
+            h.append("<p class=small>Indexées par UPC avant tout nom commercial. "
+                     "746134160479 est la BOÎTE Green Ice, 746134160462 le PACK isolé : "
+                     "elles ne sont jamais fusionnées.</p>")
+            if _exacts:
+                h.append("<div class=wrap><table><tr><th>Produit</th><th>UPC</th>"
+                         "<th>Boutique</th><th>Prix</th><th>Stock</th><th>Preuve</th>"
+                         "<th>Vu le</th></tr>")
+                for o in sorted(_exacts, key=lambda x: (x.get("price") or 1e9)):
+                    h.append(f"<tr><td>{A(o.get('url'), (o.get('titre_observe') or '?')[:52])}</td>"
+                             f"<td class=small>{o.get('product_id') or '—'}</td>"
+                             f"<td>{o.get('shop_id') or '?'}</td>"
+                             f"<td>{money_or(o.get('price'))}</td>"
+                             f"<td>{o.get('stock_status') or '?'}</td>"
+                             f"<td class=small>{(o.get('match_method') or '')}</td>"
+                             f"<td class=small>{(o.get('last_seen') or '')[:10]}</td></tr>")
+                h.append("</table></div>")
+            else:
+                import offers as _of
+                h.append(f"<p class=small>"
+                         f"{html.escape(_of.formule_absence(len(_shops_interroges)))}</p>")
+            if _ambigus:
+                h.append("<h3>⚠️ AMBIGU — à vérifier vous-même</h3>")
+                h.append("<p class=small>Le millésime, la gamme et le format correspondent, "
+                         "mais la variante n'est pas nommée ou ne fait pas partie de nos cinq "
+                         "références. Nous ne les attribuons à aucune cible, et nous ne les "
+                         "supprimons pas : c'est à vous de regarder la fiche.</p>")
+                h.append("<div class=wrap><table><tr><th>Fiche observée</th><th>Boutique</th>"
+                         "<th>Prix</th><th>Stock</th><th>Pourquoi ambigu</th>"
+                         "<th>Vu le</th></tr>")
+                for o in sorted(_ambigus, key=lambda x: (x.get("stock_status") != "IN_STOCK",
+                                                         x.get("price") or 1e9)):
+                    h.append(f"<tr><td>{A(o.get('url'), (o.get('titre_observe') or '?')[:56])}</td>"
+                             f"<td>{o.get('shop_id') or '?'}</td>"
+                             f"<td>{money_or(o.get('price'))}</td>"
+                             f"<td>{o.get('stock_status') or '?'}</td>"
+                             f"<td class=small>{html.escape(str(o.get('confidence') or ''))[:70]}</td>"
+                             f"<td class=small>{(o.get('last_seen') or '')[:10]}</td></tr>")
+                h.append("</table></div>")
 
     # ---------------- 🌍 EUROPE — observations vérifiées à la main
     # Ces boutiques ne peuvent PAS être crawlées : robots.txt qui nous nomme, 403 permanent,

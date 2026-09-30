@@ -61,7 +61,7 @@ shops:
     status: reject
     base_url: https://mojobreakshop.com
     type: shopify_json
-    trust: trusted
+    trust: watch
     notes: "Bay Area. -25 $ dès 250 $ 1re commande (à vérifier)."
   - name: RbiCru7 Collectibles
     key: rbicru7
@@ -82,7 +82,7 @@ shops:
     status: reject
     base_url: https://www.jaspys.com
     type: shopify_json
-    trust: trusted
+    trust: watch
     notes: "Los Angeles."
   # --- benchmark / contrôle (pas Shopify, collecteur html à faire en v2, non crawlés) ---
   - name: DA Card World
@@ -418,36 +418,6 @@ shops:
     official_topps_retailer: true
     notes: "découverte du 06/09 via l'annuaire officiel Topps · shopify · 250 fiches en 1re page"
 
-  - key: mafiosicards_shop
-    name: Mafiosi Cards
-    base_url: https://mafiosicards.com
-    type: shopify_json
-    platform: shopify
-    market_region: EU
-    currency: EUR
-    country: FR
-    trust: watch
-    status: watch
-    discovered_at: 2026-09-06
-    official_topps_retailer: true
-    notes: "découverte du 06/09 via l'annuaire officiel Topps · shopify · 207 fiches en 1re page"
-
-  - key: hikaru_shop
-    name: Hikaru Distribution
-    base_url: https://hikarudistribution.com
-    type: shopify_json
-    platform: shopify
-    market_region: EU
-    currency: EUR
-    country: FR
-    trust: watch
-    status: watch
-    discovered_at: 2026-09-06
-    official_topps_retailer: true
-    notes: "découverte du 06/09 via l'annuaire officiel Topps · shopify · 250 fiches en 1re page"
-
-  # La boutique qui a déclenché la mission du 06/09 : spécialiste stickers/albums, 43 de ses
-  # 52 références NBA épuisées, et du fond de rayon 2022-23/2023-24 que personne ne surveillait.
   - key: stickerpoint
     name: Stickerpoint
     base_url: https://www.stickerpoint.fr
@@ -542,7 +512,7 @@ shops:
     currency: EUR
     country: CZ
     trust: trusted
-    status: active
+    status: watch
     priority: high
     seller_type: multi_sport_card_shop
     seller_verification: VERIFIED
@@ -808,10 +778,10 @@ shops:
     state: AZ
     city: "Scottsdale"
     trust: trusted
-    status: active
+    status: watch
     priority: medium
     seller_type: local_card_shop
-    seller_verification: VERIFIED
+    seller_verification: LIKELY
     purchase_mode: ONLINE_CART
     crawlability: FULL
     robots_checked_at: 2026-09-24
@@ -822,6 +792,12 @@ shops:
     old_stock_score: 17
     qualification_evidence: "2025/26 Topps Signature Class Basketball Hobby Box"
     catalogue_titres_examines: 869
+    nba_sealed_proven: false
+    demoted_at: 2026-09-29
+    demotion_reason: >-
+      Qualifiee sur une preuve de BASKET, pas de NBA : la porte dure exige du
+      scelle NBA. La boutique n'est pas rejetee, la NBA n'y est pas refutee -
+      elle n'y est pas prouvee. A reverifier avec nba_gate.
   - key: allstarsportsgr
     name: "All-Star Sports Cards & Gaming"
     base_url: https://allstarsportsgr.com
@@ -1108,10 +1084,10 @@ shops:
     state: TX
     city: "Plano"
     trust: trusted
-    status: active
+    status: watch
     priority: medium
     seller_type: local_card_shop
-    seller_verification: VERIFIED
+    seller_verification: LIKELY
     purchase_mode: ONLINE_CART
     crawlability: FULL
     robots_checked_at: 2026-09-24
@@ -1122,6 +1098,12 @@ shops:
     old_stock_score: 13
     qualification_evidence: "Basketball Hobby Boxes"
     catalogue_titres_examines: 655
+    nba_sealed_proven: false
+    demoted_at: 2026-09-29
+    demotion_reason: >-
+      Qualifiee sur une preuve de BASKET, pas de NBA : la porte dure exige du
+      scelle NBA. La boutique n'est pas rejetee, la NBA n'y est pas refutee -
+      elle n'y est pas prouvee. A reverifier avec nba_gate.
   - key: azsportscards
     name: "AZ Sports Cards"
     base_url: https://azsportscards.com
@@ -1133,10 +1115,10 @@ shops:
     state: AZ
     city: "Phoenix"
     trust: trusted
-    status: active
+    status: watch
     priority: medium
     seller_type: local_card_shop
-    seller_verification: VERIFIED
+    seller_verification: LIKELY
     purchase_mode: MAIL_ORDER
     crawlability: PARTIAL
     robots_checked_at: 2026-09-24
@@ -1147,6 +1129,12 @@ shops:
     old_stock_score: 12
     qualification_evidence: "Chrome Black Basketball Hobby Box:"
     catalogue_titres_examines: 635
+    nba_sealed_proven: false
+    demoted_at: 2026-09-29
+    demotion_reason: >-
+      Qualifiee sur une preuve de BASKET, pas de NBA : la porte dure exige du
+      scelle NBA. La boutique n'est pas rejetee, la NBA n'y est pas refutee -
+      elle n'y est pas prouvee. A reverifier avec nba_gate.
   - key: piecethegame
     name: Piece Of The Game
     base_url: https://shoppieceofthegame.com

@@ -152,7 +152,7 @@ check("ligne hors stock exclue de HOT NOW", oos not in hn, True)
 check("HOT NOW <= 15", len(hunt.hot_now([_mk(f"k{i}", True, ["DEAL"], -12.0, 50) for i in range(40)])) <= 15, True)
 
 # ---- rejeu sur le run réel du 18/08 09:08
-f = sorted(glob.glob("/private/tmp/claude-501/-Users-ju-Draft-Class/34b24d58-a555-46bd-9b28-3b80e0afd7d5/scratchpad/rpt20/deals_*.csv"))
+f = sorted(glob.glob(str(pathlib.Path(__file__).parent / "out" / "deals_*.csv")))
 if f:
     rows = list(csv.DictReader(open(f[0], encoding="utf-8")))
     ent = []

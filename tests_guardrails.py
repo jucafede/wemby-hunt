@@ -205,6 +205,96 @@ hunt.STOCK_UNRELIABLE, hunt.SELLER_RISK = set(), {}
 check("la liste est plafonnée", len(hunt.price_anomalies(
       [_ao("BOX", 300.0, -40, 6, shop=f"s{i}") for i in range(40)], cat=_CAT)) <= 12)
 
+
+# ==================================================================== robots.txt
+# LE DÉFAUT CORRIGÉ
+# -----------------
+# `RobotFileParser.read()` télécharge robots.txt avec l'UA par défaut de urllib. StockX le
+# refuse en 403, et le parseur pose alors `disallow_all` : nous obéissions à une règle que
+# nous n'avions JAMAIS LUE. Sur les 375 domaines que la passe nationale disait interdits,
+# 275 ne l'étaient pas. C'est la faute que ce projet traque partout — « nous n'avons pas su
+# lire » pris pour « c'est interdit » — logée dans la couche de conformité elle-même.
+#
+# Ces tests tiennent les deux bords : ne pas inventer d'interdiction, et ne rien relâcher de
+# ce qui est écrit.
+import external_engine as _xe
+
+
+def _robots(texte, st=200):
+    """Installe un robots.txt en mémoire, sans réseau."""
+    import urllib.robotparser
+    rp = urllib.robotparser.RobotFileParser()
+    if st == 200:
+        rp.parse(texte.splitlines())
+    elif st in (401, 403) or 500 <= st < 600:
+        rp.disallow_all = True
+    elif 400 <= st < 500:
+        rp.allow_all = True
+    return rp
+
+
+_ORIG = "https://exemple-test.invalid"
+STOCKX_LIKE = """User-Agent: *
+Allow: /about/buying
+Disallow: /api/
+Disallow: */search*
+Disallow: /listings
+"""
+
+_xe._robots[_ORIG] = _robots(STOCKX_LIKE)
+_xe._globs[_ORIG] = _xe._motifs_interdits.__wrapped__(_ORIG) if hasattr(
+    _xe._motifs_interdits, "__wrapped__") else None
+# on installe les motifs à joker à la main, sans réseau
+import re as _re
+_xe._globs[_ORIG] = [_re.compile("^" + "".join(
+    ".*" if c == "*" else ("$" if c == "$" else _re.escape(c)) for c in m))
+    for m in ("*/search*",)]
+
+check("fiche produit autorisée quand aucune règle ne l'interdit",
+      _xe.robots_ok(f"{_ORIG}/panini-prizm-mega-box-2023"), True)
+check("/api/ reste interdit", _xe.robots_ok(f"{_ORIG}/api/browse"), False)
+check("/listings reste interdit", _xe.robots_ok(f"{_ORIG}/listings"), False)
+check("un joker */search* est respecté malgré urllib",
+      _xe.robots_ok(f"{_ORIG}/search?s=prizm"), False)
+
+# robots.txt illisible : on ne fabrique pas une interdiction, mais on ne force rien non plus
+_O2 = "https://sans-robots.invalid"
+_xe._robots[_O2] = _robots("", st=404)
+_xe._globs[_O2] = []
+check("404 sur robots.txt = aucune restriction publiée",
+      _xe.robots_ok(f"{_O2}/products.json"), True)
+
+_O3 = "https://refus.invalid"
+_xe._robots[_O3] = _robots("", st=403)
+_xe._globs[_O3] = []
+check("403 sur robots.txt : le site refuse de montrer ses règles, on se retire",
+      _xe.robots_ok(f"{_O3}/products.json"), False)
+
+_O4 = "https://panne.invalid"
+_xe._robots[_O4] = _robots("", st=503)
+_xe._globs[_O4] = []
+check("5xx sur robots.txt : serveur en difficulté, on n'insiste pas",
+      _xe.robots_ok(f"{_O4}/products.json"), False)
+
+# un site qui NOUS nomme reste interdit, quel que soit le joker
+_O5 = "https://nous-nomme.invalid"
+_xe._robots[_O5] = _robots("""User-agent: ClaudeBot
+Disallow: /
+
+User-agent: *
+Allow: /
+""")
+_xe._globs[_O5] = []
+check("un Disallow nominatif sur ClaudeBot est respecté",
+      _xe.robots_ok(f"{_O5}/products.json"), False)
+
+# le garde-fou à jokers ne peut QUE restreindre
+_O6 = "https://tout-interdit.invalid"
+_xe._robots[_O6] = _robots("User-agent: *\nDisallow: /\n")
+_xe._globs[_O6] = []
+check("le garde-fou n'autorise jamais ce que le parseur refuse",
+      _xe.robots_ok(f"{_O6}/n-importe-quoi"), False)
+
 print(f"\nTOTAL : {len(total)} tests, {len(fails)} FAIL")
 for f in fails: print("  FAIL", f)
 sys.exit(1 if fails else 0)

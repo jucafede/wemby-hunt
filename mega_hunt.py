@@ -7,6 +7,10 @@ from pathlib import Path
 import yaml
 
 import external_engine as xe
+import liveness as lv
+import nba_gate as ng
+import nba_probe as npb
+import offers
 from mega_targets import TARGETS, PAR_UPC, PAR_SKU, UPC_VOISINS
 
 ROOT = Path(__file__).parent
@@ -91,8 +95,30 @@ def valide_config(t: dict, blob: str) -> str | None:
     return f"⚠️ config lue {packs}×{cartes}, attendu {t['packs_per_box']}×{t['cards_per_pack']}"
 
 
+# Shopify plafonne sa recherche à dix résultats : ce qui remonte dépend donc du classement,
+# pas seulement du catalogue. La Mega Prizm 2023-24 « Pink Ice » de World Champion est
+# apparue à un passage et pas au suivant, sans que rien change chez le marchand — elle
+# n'était nommée par aucune requête. « Pink Ice » et « Hyper Pink » sont des variantes Mega
+# de l'ère Wemby que nos cinq clés ne couvrent pas : c'est précisément ce que l'AMBIGU doit
+# attraper, et il ne l'attrape que si on le demande.
 REQUETES = ["prizm mega", "select mega", "mega box", "red ice", "green ice",
-            "cracked ice", "green shock", "wembanyama mega"]
+            "cracked ice", "green shock", "wembanyama mega", "pink ice", "hyper pink"]
+
+
+def _prix(v):
+    """Shopify rend « 110.00 », WooCommerce rend des centimes : ici, un nombre ou rien.
+
+    Un prix laissé en texte a fait tomber la persistance au premier comparatif de baisse —
+    `'110.00' < 108.0` n'a pas de sens en Python, et tout le passage s'est arrêté après le
+    crawl, juste avant d'écrire. Un champ mal typé ne doit pas coûter une passe entière.
+    """
+    if v is None or isinstance(v, bool):
+        return None
+    try:
+        f = float(str(v).replace(",", "").replace("$", "").strip())
+    except (TypeError, ValueError):
+        return None
+    return f if f > 0 else None
 
 
 def cherche(base, q, limit=20):
@@ -103,7 +129,7 @@ def cherche(base, q, limit=20):
         try:
             for p in json.loads(b)["resources"]["results"]["products"]:
                 out.append({"titre": p.get("title", ""), "url": base + (p.get("url") or ""),
-                            "prix": p.get("price"), "dispo": bool(p.get("available")),
+                            "prix": _prix(p.get("price")), "dispo": bool(p.get("available")),
                             "plat": "shopify"})
         except Exception:
             pass
@@ -117,7 +143,7 @@ def cherche(base, q, limit=20):
                 pr = p.get("prices") or {}
                 mn = int(pr.get("currency_minor_unit", 2) or 2)
                 out.append({"titre": p.get("name", ""), "url": p.get("permalink", ""),
-                            "prix": (float(pr.get("price") or 0) / (10 ** mn)) or None,
+                            "prix": _prix((float(pr.get("price") or 0) / (10 ** mn)) or None),
                             "dispo": bool(p.get("is_in_stock")), "plat": "woocommerce",
                             "devise": pr.get("currency_code"), "sku": p.get("sku") or ""})
         except Exception:
@@ -142,8 +168,21 @@ def main():
             boutiques.setdefault(f"https://{d['domain']}",
                                  {"key": d["domain"], "pays": None, "devise": None,
                                   "trust": None, "risk": None})
-    print(f"CHASSE MEGA — {len(boutiques)} boutiques interrogeables\n")
+    # SONDE DE VIVACITÉ AVANT TOUTE INTERROGATION
+    # -------------------------------------------
+    # Le DNS d'abord : un domaine mort ne coûte alors AUCUNE requête au marchand. Un domaine
+    # BLOQUÉ n'est pas un domaine mort — il est simplement écarté de cette passe, et reste
+    # une boutique du registre. Aucun état de vivacité ne dit quoi que ce soit du catalogue.
+    doms = {base: urllib.parse.urlsplit(base).netloc for base in boutiques}
+    etats = {e["domain"]: e for e in lv.sonde_tous(list(doms.values()), journal=print)}
+    ecartes = {b: etats[d]["state"] for b, d in doms.items()
+               if etats.get(d, {}).get("state") not in lv.EXPLOITABLE}
+    boutiques = {b: m for b, m in boutiques.items() if b not in ecartes}
+    print(f"CHASSE MEGA — {len(boutiques)} boutiques vivantes interrogées "
+          f"({len(ecartes)} écartées : non lues, PAS jugées)\n")
+
     trouves, ambigus, vus = [], [], set()
+    nba_par_boutique: dict[str, list] = {}
     for base, m in boutiques.items():
         # TOUTES les requêtes, sur CHAQUE boutique. S'arrêter à la première qui rend quelque
         # chose revenait à ne chercher que « prizm mega » partout : « green shock » et
@@ -158,6 +197,13 @@ def main():
                     break
                 continue
             for r in res:
+                # Tout scellé NBA lu ici alimente le score d'ancienneté, cible ou non :
+                # c'est la profondeur du rayon qui le mesure, pas nos cinq références.
+                if ng.est_scelle_nba(r["titre"]):
+                    nba_par_boutique.setdefault(m["key"], []).append(
+                        {"titre": r["titre"], "url": r["url"], "prix": r.get("prix"),
+                         "dispo": bool(r.get("dispo")), "saison": ng.saison(r["titre"]),
+                         "annee": ng.annee_debut(r["titre"])})
                 if r["url"] in vus:
                     continue
                 blob = f"{r['titre']} {r.get('sku','')}"
@@ -175,13 +221,42 @@ def main():
                           f"{m['key']:<20} {str(r['prix']):>9} {r['titre'][:52]}")
                 else:
                     ambigus.append(rec)
-    Path("/private/tmp/claude-501/-Users-ju-Draft-Class/0edcaf77-c597-4ffd-a60e-a4be4c1881c4/"
-         "scratchpad/mega.json").write_text(
-        json.dumps({"trouves": trouves, "ambigus": ambigus}, ensure_ascii=False, indent=2),
-        encoding="utf-8")
+                    print(f"  {'IN ' if r['dispo'] else 'OOS'} {'AMBIGU':<20} "
+                          f"{m['key']:<20} {str(r['prix']):>9} {r['titre'][:52]}")
+    # PERSISTANCE DANS LA COUCHE OFFER
+    # --------------------------------
+    # Les résultats partaient dans un fichier temporaire de session, hors du dépôt : la
+    # trouvaille du jour disparaissait avec la session. Elles vont désormais dans
+    # discovered/offers.json, la seule mémoire des observations produit × boutique.
+    #
+    # Les AMBIGU y entrent AUSSI, avec product_id = None. Les écarter parce qu'aucune cible
+    # ne leur est attribuée perdrait exactement ce qu'on cherche : une Mega Prizm 2023-24 en
+    # rayon dont la variante ne porte pas l'un de nos cinq suffixes.
+    d = offers.charge()
+    scores = {k: npb.old_stock_v2(v) for k, v in nba_par_boutique.items()}
+    evenements = []
+    for rec in trouves + ambigus:
+        sc = scores.get(rec.get("key") or "", (0, [], {}))
+        evt = offers.upsert(d, {
+            "product_id": rec.get("cible"),          # None pour un AMBIGU : c'est voulu
+            "shop_id": rec.get("key"), "url": rec.get("url"),
+            "price": rec.get("prix"), "currency": rec.get("devise") or "USD",
+            "stock_status": offers.IN_STOCK if rec.get("dispo") else offers.OUT_OF_STOCK,
+            "stock_qty": None, "shipping_france": None, "shipping_cost": None,
+            "landed_price_france": None,
+            "match_method": rec.get("confiance"), "confidence": rec.get("preuve"),
+            "titre_observe": rec.get("titre"),
+            "old_stock_score": sc[0], "old_stock_motifs": sc[1]})
+        evenements.append(evt)
+    offers.sauve(d)
     live = [t for t in trouves if t["dispo"]]
+    from collections import Counter
     print(f"\n{len(trouves)} fiche(s) identifiée(s) · {len(live)} EN STOCK · "
           f"{len(ambigus)} ambiguë(s) non attribuée(s)")
+    print(f"offers.json : {len(d['offers'])} offres · événements {dict(Counter(evenements))}")
+    if not trouves and not ambigus:
+        print(offers.formule_absence(len(boutiques),
+                                     sorted({v for v in ecartes.values()}) or None))
 
 
 if __name__ == "__main__":

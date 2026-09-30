@@ -179,6 +179,7 @@ def _sens(statut: str) -> str:
             "UNVERIFIED_NOT_CRAWLABLE": "le marchand interdit le crawl — candidat NON JUGÉ",
             "UNKNOWN_NOT_READ": "aucune lecture aboutie — candidat NON JUGÉ, pas un rejet",
             "UNKNOWN_NO_CATALOGUE": "catalogue jamais énuméré — candidat NON JUGÉ",
+            "SEALED_NOT_NBA": "scellé prouvé mais hors NBA — candidat, NBA non réfutée",
             "ERROR": "lecture impossible — ignorance, pas rejet"}.get(statut, "")
 
 

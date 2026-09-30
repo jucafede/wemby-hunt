@@ -65,6 +65,14 @@ def cle(o: dict) -> tuple:
     return (o.get("product_id"), o.get("shop_id"), (o.get("url") or "").split("?")[0])
 
 
+def _num(v):
+    """Un prix comparable, ou rien. Une comparaison ne doit jamais faire tomber un passage."""
+    try:
+        return float(v)
+    except (TypeError, ValueError):
+        return None
+
+
 def upsert(d: dict, neuve: dict) -> str:
     """Insère ou met à jour une offre, en conservant son histoire.
 
@@ -73,18 +81,20 @@ def upsert(d: dict, neuve: dict) -> str:
     """
     t = now()
     neuve["url"] = (neuve.get("url") or "").split("?")[0]
+    neuve["price"] = _num(neuve.get("price"))
     k = cle(neuve)
     for o in d["offers"]:
         if cle(o) == k:
             evt = "UNCHANGED"
-            av_stock, av_prix = o.get("stock_status"), o.get("price")
+            av_stock, av_prix = o.get("stock_status"), _num(o.get("price"))
+            neuve["price"] = _num(neuve.get("price"))
             if neuve.get("stock_status") == IN_STOCK and av_stock != IN_STOCK:
                 evt = "RESTOCK"
             elif neuve.get("stock_status") == OUT_OF_STOCK and av_stock == IN_STOCK:
                 evt = "SOLD_OUT"
-            elif (neuve.get("price") and av_prix and neuve["price"] < av_prix * 0.98):
+            elif neuve["price"] and av_prix and neuve["price"] < av_prix * 0.98:
                 evt = "PRICE_DROP"
-            elif (neuve.get("price") and av_prix and neuve["price"] > av_prix * 1.02):
+            elif neuve["price"] and av_prix and neuve["price"] > av_prix * 1.02:
                 evt = "PRICE_UP"
             o["last_price"] = av_prix
             o.update({k2: v for k2, v in neuve.items() if v is not None})

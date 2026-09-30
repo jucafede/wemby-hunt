@@ -1,12 +1,6 @@
-⚠️  [shopuscards] passage 2026-09-30T05:20:41+00:00 PARTIAL (172 produits) — ignoré, référence = dernier passage complet
-⚠️  [wolfdentcg] passage 2026-09-30T05:20:41+00:00 PARTIAL (31951 produits) — ignoré, référence = dernier passage complet
-(336 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
-
-========================================================================
-  🔔 RESTOCKS depuis le passage précédent
-========================================================================
-  🔔 RESTOCK  PANINI_2024-25_HOOPS_BLASTER  sjay2k  $60.00  https://www.sjay2k.com/products/2023-24-panini-hoops-premium-stock-basketball-6-pack-blaster-box-copy
-  🔔 RESTOCK  TOPPS_2025-26_MIDNIGHT_HOBBY  piecethegame  $974.99  https://shoppieceofthegame.com/products/2025-26-topps-midnight-basketball-hobby-box
+⚠️  [shopuscards] passage 2026-09-30T12:24:58+00:00 PARTIAL (78 produits) — ignoré, référence = dernier passage complet
+⚠️  [wolfdentcg] passage 2026-09-30T12:24:58+00:00 PARTIAL (31951 produits) — ignoré, référence = dernier passage complet
+(334 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
 
 ========================================================================
   RETAIL
@@ -920,16 +914,16 @@
 
 · SUIVI   2025-26 Topps Hoops Value Box   [TOPPS_2025-26_HOOPS_VALUE_BOX]
    1. hiddengems       $   29.99  IN STOCK  landed≈€  43.81  (score 1.00)
-        cheapest of 3 in stock
+        cheapest of 4 in stock
    2. mafiosicards_shop $   35.00  IN STOCK  landed≈€  48.99  (score 1.00)
         VERIFY  FR
    3. boxseat          $   39.99  IN STOCK  landed≈€  54.15  (score 1.00)
         VERIFY
-   4. rlsports         $   27.99  SOLD OUT  landed≈€  41.74  (score 1.00)
-        VERIFY
-   5. deichcards       $   30.00  SOLD OUT  landed≈€  43.82  (score 1.00)
+   4. dioib            $   49.00  IN STOCK  landed≈€  63.47  (score 1.00)
         VERIFY  FR
-   6. americansportstore $   39.99  SOLD OUT  landed≈€  54.15  (score 1.00)
+   5. rlsports         $   27.99  SOLD OUT  landed≈€  41.74  (score 1.00)
+        VERIFY
+   6. deichcards       $   30.00  SOLD OUT  landed≈€  43.82  (score 1.00)
         VERIFY  FR
    ask $29.99   sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU €39.00
    HISTORICAL LOW $27.99 (le 2026-08-30, rlsports, 4 shop(s) vus) | cheapest live $29.99
@@ -2513,19 +2507,19 @@
    BEST → stcuk  https://sportstradingcardsuk.com/products/pre-order-2025-26-topps-chrome-update-series-basketball-hobby-box
 
 · SUIVI   2025-26 Topps Chrome Update Hobby Jumbo   [TOPPS_2025-26_CHROME_UPDATE_JUMBO]
-   1. collectorstore   $ 2249.95  IN STOCK  landed≈€2340.14  (score 1.00)
+   1. rbicru7          $ 2275.00  IN STOCK  landed≈€2366.05  (score 1.00)
         cheapest of 6 in stock
-   2. rbicru7          $ 2275.00  IN STOCK  landed≈€2366.05  (score 1.00)
-   3. qscards          $ 2299.00  IN STOCK  landed≈€2390.87  (score 1.00)
+   2. qscards          $ 2299.00  IN STOCK  landed≈€2390.87  (score 1.00)
         VERIFY  FR
-   4. dacardworldeu    $ 2305.00  IN STOCK  landed≈€2397.08  (score 1.00)
+   3. dacardworldeu    $ 2305.00  IN STOCK  landed≈€2397.08  (score 1.00)
         VERIFY  FR
+   4. collectorstore   $ 2399.95  IN STOCK  landed≈€2495.30  (score 1.00)
    5. piecethegame     $ 2599.00  IN STOCK  landed≈€2701.19  (score 1.00)
    6. superior         $ 2950.00  IN STOCK  landed≈€3064.27  (score 1.00)
         VERIFY
    ask $2195.00 sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
-   HISTORICAL LOW $1999.00 (le 2026-08-19, rlsports, 14 shop(s) vus) | cheapest live $2249.95
-   BEST → collectorstore  https://collectorstore.com/products/2025-26-topps-chrome-update-series-basketball-jumbo-box
+   HISTORICAL LOW $1999.00 (le 2026-08-19, rlsports, 14 shop(s) vus) | cheapest live $2275.00
+   BEST → rbicru7  https://rbicru7.com/products/2025-26-topps-chrome-update-series-basketball-jumbo-box
 
 · SUIVI   2025-26 Topps Chrome Black Hobby [Chrome Black]   [TOPPS_2025-26_CHROME_BLACK_HOBBY]
    1. dennistheripper  $  449.99  IN STOCK  landed≈€ 478.26  (score 1.00)
@@ -2574,15 +2568,14 @@
 
 · SUIVI   2025-26 Topps Signature Class Hobby   [TOPPS_2025-26_SIGNATURE_CLASS_HOBBY]
    1. sportscardjunction $  425.00  IN STOCK  landed≈€ 452.41  (score 1.00)
-        VERIFY  cheapest of 21 in stock
+        VERIFY  cheapest of 22 in stock
    2. stcuk            $  425.00  IN STOCK  landed≈€ 452.41  (score 1.00)
-        VERIFY  cheapest of 21 in stock  FR
+        VERIFY  cheapest of 22 in stock  FR
    3. cardiacs         $  449.95  IN STOCK  landed≈€ 478.22  (score 1.00)
    4. vwsportscards    $  449.99  IN STOCK  landed≈€ 478.26  (score 1.00)
    5. cbhobby          $  450.00  IN STOCK  landed≈€ 478.27  (score 1.00)
         VERIFY
-   6. dennistheripper  $  450.00  IN STOCK  landed≈€ 478.27  (score 1.00)
-        VERIFY  FR
+   6. rbicru7          $  450.00  IN STOCK  landed≈€ 478.27  (score 1.00)
    ask $374.95  sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $389.00 (le 2026-08-19, rlsports, 18 shop(s) vus) | cheapest live $425.00
    BEST → sportscardjunction  https://sportscardjunction.com/products/2025-26-topps-signature-class-basketball-hobby-box
@@ -3564,7 +3557,7 @@
    ask $1285.00 sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
 
 · SUIVI   2024-25 Topps Chrome Hobby   [TOPPS_2024-25_TOPPS_CHROME_HOBBY]
-   1. rbicru7          $  265.00  IN STOCK  landed≈€ 286.90  (score 1.00)
+   1. rbicru7          $  325.00  IN STOCK  landed≈€ 348.97  (score 1.00)
         ONLY_STOCK_SEEN
    2. cardiacs         $  119.95  SOLD OUT  landed≈€ 136.86  (score 1.00)
    3. rlsports         $  139.99  SOLD OUT  landed≈€ 157.59  (score 1.00)
@@ -3574,7 +3567,7 @@
    5. awesome          $  145.75  SOLD OUT  landed≈€ 163.55  (score 1.00)
    6. columbia         $  149.99  SOLD OUT  landed≈€ 167.94  (score 1.00)
    ask $150.00  sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
-   HISTORICAL LOW $119.95 (le 2026-09-06, cardiacs, 9 shop(s) vus) | cheapest live $265.00
+   HISTORICAL LOW $119.95 (le 2026-09-06, cardiacs, 9 shop(s) vus) | cheapest live $325.00
    BEST → rbicru7  https://rbicru7.com/products/2024-25-topps-chrome-basketball-hobby-box
 
 · SUIVI   2024-25 Topps Chrome NBL Case   [TOPPS_2024-25_TOPPS_CHROME_NBL_CASE]  ⚑ False
@@ -3632,8 +3625,7 @@
    3. awesome          $  829.75  IN STOCK  landed≈€ 871.08  (score 1.00)
    4. kutogo           $  869.95  IN STOCK  landed≈€ 912.66  (score 1.00)
         VERIFY
-   5. piecethegame     $  974.99  IN STOCK  landed≈€1021.32  (score 1.00)  🔔
-        🔹RESTOCK +1j
+   5. piecethegame     $  974.99  IN STOCK  landed≈€1021.32  (score 1.00)
    6. superior         $ 1150.00  IN STOCK  landed≈€1202.35  (score 1.00)
         VERIFY
    ask $890.00  sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
@@ -3648,17 +3640,16 @@
 
 · SUIVI   2025-26 Topps Signature Class Hobby Jumbo   [TOPPS_2025-26_SIGNATURE_CLASS_HOBBY_JUMBO]
    1. rbicru7          $  705.00  IN STOCK  landed≈€ 742.04  (score 1.00)
-        🔹STRONG_DEAL -22%  cheapest of 13 in stock
+        🔹STRONG_DEAL -22%  cheapest of 14 in stock
    2. sportscardjunction $  705.00  IN STOCK  landed≈€ 742.04  (score 1.00)
-        🔹STRONG_DEAL -22%  VERIFY  cheapest of 13 in stock
+        🔹STRONG_DEAL -22%  VERIFY  cheapest of 14 in stock
    3. collectorstore   $  714.95  IN STOCK  landed≈€ 752.33  (score 1.00)
         🔹STRONG_DEAL -21%
-   4. dennistheripper  $  800.00  IN STOCK  landed≈€ 840.31  (score 1.00)
+   4. stcuk            $  895.00  IN STOCK  landed≈€ 938.58  (score 1.00)
         VERIFY  FR
-   5. stcuk            $  895.00  IN STOCK  landed≈€ 938.58  (score 1.00)
+   5. dacardworldeu    $  910.00  IN STOCK  landed≈€ 954.09  (score 1.00)
         VERIFY  FR
-   6. dacardworldeu    $  910.00  IN STOCK  landed≈€ 954.09  (score 1.00)
-        VERIFY  FR
+   6. piecethegame     $  949.99  IN STOCK  landed≈€ 995.46  (score 1.00)
    ask $899.99  sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $705.00 (le 2026-09-06, rbicru7, 12 shop(s) vus) | cheapest live $705.00
    BEST → rbicru7  https://rbicru7.com/products/2025-26-topps-signature-class-basketball-jumbo-box
@@ -3786,5 +3777,5 @@
   2023-24_HOOPS_BLASTER                    €   67.90  tanteo      
   2025-26_BOWMAN_VALUE_BLASTER             €   67.90  tanteo      
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-09-30T06-20-07.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-09-30T13-25-43.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

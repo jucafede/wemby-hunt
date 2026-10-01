@@ -1,6 +1,6 @@
-⚠️  [shopuscards] passage 2026-10-01T05:34:48+00:00 PARTIAL (181 produits) — ignoré, référence = dernier passage complet
-⚠️  [wolfdentcg] passage 2026-10-01T05:34:48+00:00 PARTIAL (31958 produits) — ignoré, référence = dernier passage complet
-(343 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
+⚠️  [shopuscards] passage 2026-10-01T12:59:39+00:00 PARTIAL (186 produits) — ignoré, référence = dernier passage complet
+⚠️  [wolfdentcg] passage 2026-10-01T12:59:39+00:00 PARTIAL (31958 produits) — ignoré, référence = dernier passage complet
+(344 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
 
 ========================================================================
   RETAIL
@@ -1213,10 +1213,12 @@
 
 · SUIVI   2024-25 Panini Donruss Optic Pack   [PANINI_2024-25_DONRUSS_OPTIC_PACK]
    1. fancave          $    5.99  IN STOCK  landed≈€  18.98  (score 1.00)
-        🔹STRONG_DEAL -83%  VERIFY  cheapest of 3 in stock
+        🔹STRONG_DEAL -83%  VERIFY  cheapest of 4 in stock
    2. dacardworldeu    $   34.00  IN STOCK  landed≈€  47.96  (score 1.00)
         VERIFY  FR
    3. superior         $   35.00  IN STOCK  landed≈€  48.99  (score 1.00)
+        VERIFY
+   4. superior         $   65.00  IN STOCK  landed≈€  80.02  (score 1.00)
         VERIFY
    ask $35.00   sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $5.99 (le 2026-09-06, fancave, 2 shop(s) vus) | cheapest live $5.99
@@ -1695,12 +1697,12 @@
 
 · SUIVI   2025-26 Topps Signature Class Pack   [TOPPS_2025-26_SIGNATURE_CLASS_PACK]
    1. boxseat          $    6.99  IN STOCK  landed≈€  20.02  (score 1.00)
-        🔹STRONG_DEAL -67%  VERIFY  cheapest of 4 in stock
-   2. tanteo           $    9.90  IN STOCK  landed≈€  23.03  (score 1.00)
-        VERIFY  FR
-   3. superior         $   21.00  IN STOCK  landed≈€  34.51  (score 1.00)
+        🔹STRONG_DEAL -67%  VERIFY  cheapest of 3 in stock
+   2. superior         $   21.00  IN STOCK  landed≈€  34.51  (score 1.00)
         VERIFY
-   4. rbicru7          $   63.00  IN STOCK  landed≈€  77.96  (score 1.00)
+   3. rbicru7          $   63.00  IN STOCK  landed≈€  77.96  (score 1.00)
+   4. tanteo           $    9.90  SOLD OUT  landed≈€  23.03  (score 1.00)
+        VERIFY  FR
    5. dacardworldeu    $   66.00  SOLD OUT  landed≈€  81.06  (score 1.00)
         VERIFY  FR
    ask $21.00   sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
@@ -2514,7 +2516,7 @@
    3. dacardworldeu    $ 2305.00  IN STOCK  landed≈€2397.08  (score 1.00)
         VERIFY  FR
    4. collectorstore   $ 2399.95  IN STOCK  landed≈€2495.30  (score 1.00)
-   5. piecethegame     $ 2599.00  IN STOCK  landed≈€2701.19  (score 1.00)
+   5. piecethegame     $ 2699.00  IN STOCK  landed≈€2804.63  (score 1.00)
    6. superior         $ 2950.00  IN STOCK  landed≈€3064.27  (score 1.00)
         VERIFY
    ask $2195.00 sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
@@ -3752,10 +3754,9 @@
   (aucune ligne en stock ne cumule un déclencheur et une référence de marché)
 
 ========================================================================
-  🇫🇷 MARCHÉ FR — 42 produit(s) avec une offre en stock
+  🇫🇷 MARCHÉ FR — 41 produit(s) avec une offre en stock
 ========================================================================
   FR MARKET PARTIAL — 2/4 source(s) vérifiée(s) : shopuscards DEGRADED, stickerpoint DEAD
-  2025-26_SIGNATURE_CLASS_PACK             €    9.90  tanteo      
   2025-26_HOOPS_HANGER                     €   29.90  tanteo      
   2024-25_PRIZM_BLASTER                    €   34.50  tanteo      
   2024-25_DONRUSS_BLASTER                  €   34.90  tanteo      
@@ -3775,6 +3776,7 @@
   2024-25_DONRUSS_MEGA                     €   64.90  tanteo      
   2023-24_HOOPS_BLASTER                    €   67.90  tanteo      
   2025-26_BOWMAN_VALUE_BLASTER             €   67.90  tanteo      
+  2023-24_DONRUSS_BLASTER                  €   69.90  tanteo      
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-10-01T06-37-39.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-10-01T14-00-14.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

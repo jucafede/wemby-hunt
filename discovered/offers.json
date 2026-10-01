@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-30T23:05:00+00:00",
+  "generated_at": "2026-10-01T06:30:39+00:00",
   "offers": [
     {
       "product_id": "select_2023_24_hobby_mega_green_shock",
@@ -409,7 +409,7 @@
       "confidence": "Mega Prizm 2023-24 sans variante nommée — non attribuable",
       "titre_observe": "Panini Prizm Basketball NBA Hobby Mega Box 2023/2024",
       "first_seen": "2026-09-24T07:55:54+00:00",
-      "last_seen": "2026-09-30T16:39:30+00:00",
+      "last_seen": "2026-10-01T06:30:39+00:00",
       "last_price": 375.0,
       "last_in_stock": null,
       "history": [
@@ -475,12 +475,33 @@
           "stock_status": "OUT_OF_STOCK",
           "stock_qty": null,
           "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-10-01T06:30:39+00:00",
+          "price": 375.0,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-10-01T06:30:39+00:00",
+          "price": 375.0,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-10-01T06:30:39+00:00",
+          "price": 375.0,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
         }
       ],
       "old_stock_score": 11,
       "old_stock_motifs": [
         "+8 6 fiche(s) ancienne(s) encore indexée(s) mais ÉPUISÉE(S) — trace, pas stock",
-        "+3 catalogue NBA scellé profond (35 fiches relevées)"
+        "+3 catalogue NBA scellé profond (34 fiches relevées)"
       ]
     },
     {
@@ -498,7 +519,7 @@
       "confidence": "Mega Prizm 2023-24 sans variante nommée — non attribuable",
       "titre_observe": "Panini Prizm Basketball NBA Mega Box 2023/2024",
       "first_seen": "2026-09-24T07:55:54+00:00",
-      "last_seen": "2026-09-30T16:39:30+00:00",
+      "last_seen": "2026-10-01T06:30:39+00:00",
       "last_price": 179.0,
       "last_in_stock": null,
       "history": [
@@ -550,12 +571,33 @@
           "stock_status": "OUT_OF_STOCK",
           "stock_qty": null,
           "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-10-01T06:30:39+00:00",
+          "price": 179.0,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-10-01T06:30:39+00:00",
+          "price": 179.0,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-10-01T06:30:39+00:00",
+          "price": 179.0,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
         }
       ],
       "old_stock_score": 11,
       "old_stock_motifs": [
         "+8 6 fiche(s) ancienne(s) encore indexée(s) mais ÉPUISÉE(S) — trace, pas stock",
-        "+3 catalogue NBA scellé profond (35 fiches relevées)"
+        "+3 catalogue NBA scellé profond (34 fiches relevées)"
       ]
     },
     {
@@ -573,7 +615,7 @@
       "confidence": "Mega Select 2023-24 sans variante nommée — non attribuable",
       "titre_observe": "Panini Select Basketball Mega Box 2023/24",
       "first_seen": "2026-09-24T07:55:54+00:00",
-      "last_seen": "2026-09-30T16:39:30+00:00",
+      "last_seen": "2026-10-01T06:30:39+00:00",
       "last_price": 89.9,
       "last_in_stock": null,
       "history": [
@@ -646,12 +688,40 @@
           "stock_status": "OUT_OF_STOCK",
           "stock_qty": null,
           "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-10-01T06:30:39+00:00",
+          "price": 89.9,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-10-01T06:30:39+00:00",
+          "price": 89.9,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-10-01T06:30:39+00:00",
+          "price": 89.9,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-10-01T06:30:39+00:00",
+          "price": 89.9,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
         }
       ],
       "old_stock_score": 11,
       "old_stock_motifs": [
         "+8 6 fiche(s) ancienne(s) encore indexée(s) mais ÉPUISÉE(S) — trace, pas stock",
-        "+3 catalogue NBA scellé profond (35 fiches relevées)"
+        "+3 catalogue NBA scellé profond (34 fiches relevées)"
       ]
     },
     {

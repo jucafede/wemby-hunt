@@ -1,6 +1,11 @@
-⚠️  [shopuscards] passage 2026-10-02T05:22:06+00:00 PARTIAL (147 produits) — ignoré, référence = dernier passage complet
-⚠️  [wolfdentcg] passage 2026-10-02T05:22:06+00:00 PARTIAL (31958 produits) — ignoré, référence = dernier passage complet
-(347 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
+⚠️  [shopuscards] passage 2026-10-02T12:21:35+00:00 PARTIAL (182 produits) — ignoré, référence = dernier passage complet
+⚠️  [wolfdentcg] passage 2026-10-02T12:21:35+00:00 PARTIAL (31958 produits) — ignoré, référence = dernier passage complet
+(346 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
+
+========================================================================
+  🔔 RESTOCKS depuis le passage précédent
+========================================================================
+  🔔 RESTOCK  TOPPS_2025-26_DEFINITIVE_HOBBY  qscards  $19999.00  https://qscards.com/products/2025-26-topps-definitive-basketball-hobby-box
 
 ========================================================================
   RETAIL
@@ -820,13 +825,13 @@
 · SUIVI   2024-25 Topps Chrome Blaster   [TOPPS_2024-25_CHROME_BLASTER]
    1. dnacardsandcollectibles $   30.00  IN STOCK  landed≈€  43.82  (score 1.00)
         cheapest of 5 in stock
-   2. dacardworldeu    $   33.00  IN STOCK  landed≈€  46.92  (score 1.00)
+   2. boxseat          $   34.99  IN STOCK  landed≈€  48.98  (score 1.00)
+        VERIFY
+   3. piecethegame     $   39.99  IN STOCK  landed≈€  54.15  (score 1.00)
+   4. superior         $   40.00  IN STOCK  landed≈€  54.16  (score 1.00)
+        VERIFY
+   5. dacardworldeu    $   42.00  IN STOCK  landed≈€  56.23  (score 1.00)
         VERIFY  FR
-   3. boxseat          $   34.99  IN STOCK  landed≈€  48.98  (score 1.00)
-        VERIFY
-   4. piecethegame     $   39.99  IN STOCK  landed≈€  54.15  (score 1.00)
-   5. superior         $   40.00  IN STOCK  landed≈€  54.16  (score 1.00)
-        VERIFY
    6. columbia         $   14.99  SOLD OUT  landed≈€  28.29  (score 1.00)
    ask $20.00   sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $14.99 (le 2026-08-30, columbia, 13 shop(s) vus) | cheapest live $30.00
@@ -1700,7 +1705,7 @@
    2. superior         $   21.00  IN STOCK  landed≈€  34.51  (score 1.00)
         VERIFY
    3. rbicru7          $   63.00  IN STOCK  landed≈€  77.96  (score 1.00)
-   4. dacardworldeu    $   66.00  SOLD OUT  landed≈€  81.06  (score 1.00)
+   4. dacardworldeu    $   82.00  SOLD OUT  landed≈€  97.61  (score 1.00)
         VERIFY  FR
    ask $21.00   sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $6.99 (le 2026-09-06, boxseat, 3 shop(s) vus) | cheapest live $6.99
@@ -3580,17 +3585,17 @@
 
 · SUIVI   2025-26 Topps Definitive Hobby   [TOPPS_2025-26_DEFINITIVE_HOBBY]
    1. cardiacs         $17499.95  IN STOCK  landed≈€18114.74  (score 1.00)
-        cheapest of 3 in stock  MARKET DATA INSUFFICIENT
+        cheapest of 4 in stock  MARKET DATA INSUFFICIENT
    2. mafiosicards_shop $19999.00  IN STOCK  landed≈€20699.75  (score 1.00)
         MARKET DATA INSUFFICIENT  FR
-   3. worldchampion    $20000.00  IN STOCK  landed≈€20700.79  (score 1.00)
-        VERIFY  MARKET DATA INSUFFICIENT
-   4. bleecker         $    0.00  SOLD OUT  landed≈€  12.79  (score 1.00)
-        NO_PRICE
-   5. monmouth         $15000.00  SOLD OUT  landed≈€15528.79  (score 1.00)
-        VERIFY  MARKET DATA INSUFFICIENT
-   6. dacardworldeu    $15250.00  SOLD OUT  landed≈€15787.39  (score 1.00)
+   3. qscards          $19999.00  IN STOCK  landed≈€20699.75  (score 1.00)  🔔
         VERIFY  MARKET DATA INSUFFICIENT  FR
+   4. worldchampion    $20000.00  IN STOCK  landed≈€20700.79  (score 1.00)
+        VERIFY  MARKET DATA INSUFFICIENT
+   5. bleecker         $    0.00  SOLD OUT  landed≈€  12.79  (score 1.00)
+        NO_PRICE
+   6. monmouth         $15000.00  SOLD OUT  landed≈€15528.79  (score 1.00)
+        VERIFY  MARKET DATA INSUFFICIENT
    ask n/a      sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $15000.00 (le 2026-09-26, monmouth, 5 shop(s) vus) | cheapest live $17499.95
    BEST → cardiacs  https://www.thecardiacs.com/products/2025-26-topps-definitive-basketball-hobby-box
@@ -3752,7 +3757,7 @@
   (aucune ligne en stock ne cumule un déclencheur et une référence de marché)
 
 ========================================================================
-  🇫🇷 MARCHÉ FR — 40 produit(s) avec une offre en stock
+  🇫🇷 MARCHÉ FR — 41 produit(s) avec une offre en stock
 ========================================================================
   FR MARKET PARTIAL — 2/4 source(s) vérifiée(s) : shopuscards DEGRADED, stickerpoint DEAD
   2025-26_HOOPS_HANGER                     €   29.90  tanteo      
@@ -3776,5 +3781,5 @@
   2023-24_DONRUSS_BLASTER                  €   69.90  tanteo      
   2023-24_OPTIC_BLASTER                    €   74.90  tanteo      
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-10-02T06-26-08.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-10-02T13-23-27.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

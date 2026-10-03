@@ -1,5 +1,5 @@
-⚠️  [shopuscards] passage 2026-10-03T11:31:59+00:00 PARTIAL (141 produits) — ignoré, référence = dernier passage complet
-⚠️  [wolfdentcg] passage 2026-10-03T11:31:59+00:00 PARTIAL (31965 produits) — ignoré, référence = dernier passage complet
+⚠️  [shopuscards] passage 2026-10-03T16:07:33+00:00 PARTIAL (163 produits) — ignoré, référence = dernier passage complet
+⚠️  [wolfdentcg] passage 2026-10-03T16:07:33+00:00 PARTIAL (31965 produits) — ignoré, référence = dernier passage complet
 (356 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
 
 ========================================================================
@@ -2494,8 +2494,8 @@
    3. qscards          $ 1149.00  IN STOCK  landed≈€1201.31  (score 1.00)
         VERIFY  FR
    4. ehcards          $ 1199.99  IN STOCK  landed≈€1254.06  (score 1.00)
-   5. collectorstore   $ 1249.95  IN STOCK  landed≈€1305.74  (score 1.00)
-   6. cardvault        $ 1299.95  IN STOCK  landed≈€1357.46  (score 1.00)
+   5. cardvault        $ 1299.95  IN STOCK  landed≈€1357.46  (score 1.00)
+   6. collectorstore   $ 1299.95  IN STOCK  landed≈€1357.46  (score 1.00)
    ask $549.99  sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $995.00 (le 2026-08-19, sportscardjunction, 2 shop(s) vus) | cheapest live $850.00
    BEST → stcuk  https://sportstradingcardsuk.com/products/pre-order-2025-26-topps-chrome-update-series-basketball-hobby-box
@@ -3774,5 +3774,5 @@
   2023-24_DONRUSS_BLASTER                  €   69.90  tanteo      
   2023-24_OPTIC_BLASTER                    €   74.90  tanteo      
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-10-03T12-36-16.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-10-03T17-12-24.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

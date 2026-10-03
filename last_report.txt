@@ -1,6 +1,6 @@
-⚠️  [shopuscards] passage 2026-10-03T05:04:56+00:00 PARTIAL (163 produits) — ignoré, référence = dernier passage complet
-⚠️  [wolfdentcg] passage 2026-10-03T05:04:56+00:00 PARTIAL (31965 produits) — ignoré, référence = dernier passage complet
-(355 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
+⚠️  [shopuscards] passage 2026-10-03T11:31:59+00:00 PARTIAL (141 produits) — ignoré, référence = dernier passage complet
+⚠️  [wolfdentcg] passage 2026-10-03T11:31:59+00:00 PARTIAL (31965 produits) — ignoré, référence = dernier passage complet
+(356 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
 
 ========================================================================
   RETAIL
@@ -1380,15 +1380,13 @@
 
 · SUIVI   2024-25 Panini Prizm Hobby Mega   [PANINI_2024-25_PRIZM_HOBBY_MEGA]
    1. piecethegame     $   69.99  IN STOCK  landed≈€  85.19  (score 1.00)
-        cheapest of 2 in stock
-   2. sjay2k           $  130.00  IN STOCK  landed≈€ 147.26  (score 1.00)
+        ONLY_STOCK_SEEN
+   2. sportscardjunction $   50.00  SOLD OUT  landed≈€  64.51  (score 1.00)
         VERIFY
-   3. sportscardjunction $   50.00  SOLD OUT  landed≈€  64.51  (score 1.00)
+   3. rlsports         $   59.99  SOLD OUT  landed≈€  74.84  (score 1.00)
         VERIFY
-   4. rlsports         $   59.99  SOLD OUT  landed≈€  74.84  (score 1.00)
-        VERIFY
-   5. awesome          $   64.75  SOLD OUT  landed≈€  79.77  (score 1.00)
-   6. ehcards          $   69.99  SOLD OUT  landed≈€  85.19  (score 1.00)
+   4. awesome          $   64.75  SOLD OUT  landed≈€  79.77  (score 1.00)
+   5. ehcards          $   69.99  SOLD OUT  landed≈€  85.19  (score 1.00)
    ask $64.75   sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $50.00 (le 2026-09-06, sportscardjunction, 6 shop(s) vus) | cheapest live $69.99
    BEST → piecethegame  https://shoppieceofthegame.com/products/2024-25-panini-prizm-basketball-hobby-mega-box-case
@@ -1721,7 +1719,7 @@
    BEST → rbicru7  https://rbicru7.com/products/2025-26-topps-chrome-basketball-hobby-pack
 
 · SUIVI   2025-26 Topps Chrome Value Box   [TOPPS_2025-26_TOPPS_CHROME_VALUE_BOX]
-   1. rlsports         $   79.99  IN STOCK  landed≈€  95.53  (score 1.00)
+   1. rlsports         $   84.99  IN STOCK  landed≈€ 100.70  (score 1.00)
         VERIFY  cheapest of 2 in stock
    2. qscards          $   99.00  IN STOCK  landed≈€ 115.19  (score 1.00)
         VERIFY  FR
@@ -1731,7 +1729,7 @@
         VERIFY
    5. hiddengems       $   99.00  SOLD OUT  landed≈€ 115.19  (score 1.00)
    ask $60.00   sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
-   HISTORICAL LOW $60.00 (le 2026-09-06, worldchampion, 3 shop(s) vus) | cheapest live $79.99
+   HISTORICAL LOW $60.00 (le 2026-09-06, worldchampion, 3 shop(s) vus) | cheapest live $84.99
    BEST → rlsports  https://rlsportscards.com/products/2025-26-topps-chrome-basketball-value-box
 
 ========================================================================
@@ -3241,15 +3239,17 @@
    BEST → kutogo  https://kutogo.com/product/2024-25-panini-noir-basketball-hobby-box/
 
 · SUIVI   2024-25 Panini Noir International   [PANINI_2024-25_NOIR_INTERNATIONAL]
-   1. deichcards       $  899.00  SOLD OUT  landed≈€ 942.71  (score 1.00)
+   1. qscards          $ 1199.00  IN STOCK  landed≈€1253.03  (score 1.00)
+        ONLY_STOCK_SEEN  VERIFY  FR
+   2. deichcards       $  899.00  SOLD OUT  landed≈€ 942.71  (score 1.00)
         VERIFY  FR
-   2. worldchampion    $  980.00  SOLD OUT  landed≈€1026.50  (score 1.00)
+   3. worldchampion    $  980.00  SOLD OUT  landed≈€1026.50  (score 1.00)
         VERIFY
-   3. awesome          $  999.75  SOLD OUT  landed≈€1046.93  (score 1.00)
-   4. columbia         $  999.99  SOLD OUT  landed≈€1047.18  (score 1.00)
+   4. awesome          $  999.75  SOLD OUT  landed≈€1046.93  (score 1.00)
+   5. columbia         $  999.99  SOLD OUT  landed≈€1047.18  (score 1.00)
    ask $999.75  sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
-   HISTORICAL LOW $980.00 (le 2026-09-06, worldchampion, 3 shop(s) vus) | aucun live
-   RESTOCK TARGET $980.00  — surveillance, pas une valeur de marché
+   HISTORICAL LOW $980.00 (le 2026-09-06, worldchampion, 3 shop(s) vus) | cheapest live $1199.00
+   BEST → qscards  https://qscards.com/products/2024-25-panini-noir-basketball-hobby-international-box
 
 · SUIVI   2024-25 Panini Obsidian Hobby   [PANINI_2024-25_OBSIDIAN_HOBBY]
    1. kutogo           $  329.95  IN STOCK  landed≈€ 354.09  (score 1.00)
@@ -3750,7 +3750,7 @@
   (aucune ligne en stock ne cumule un déclencheur et une référence de marché)
 
 ========================================================================
-  🇫🇷 MARCHÉ FR — 41 produit(s) avec une offre en stock
+  🇫🇷 MARCHÉ FR — 42 produit(s) avec une offre en stock
 ========================================================================
   FR MARKET PARTIAL — 2/4 source(s) vérifiée(s) : shopuscards DEGRADED, stickerpoint DEAD
   2025-26_HOOPS_HANGER                     €   29.90  tanteo      
@@ -3774,5 +3774,5 @@
   2023-24_DONRUSS_BLASTER                  €   69.90  tanteo      
   2023-24_OPTIC_BLASTER                    €   74.90  tanteo      
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-10-03T06-08-42.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-10-03T12-36-16.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

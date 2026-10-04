@@ -1,6 +1,11 @@
-⚠️  [shopuscards] passage 2026-10-04T12:13:08+00:00 PARTIAL (144 produits) — ignoré, référence = dernier passage complet
-⚠️  [wolfdentcg] passage 2026-10-04T12:13:08+00:00 PARTIAL (31949 produits) — ignoré, référence = dernier passage complet
+⚠️  [shopuscards] passage 2026-10-04T21:13:42+00:00 PARTIAL (193 produits) — ignoré, référence = dernier passage complet
+⚠️  [wolfdentcg] passage 2026-10-04T21:13:42+00:00 PARTIAL (31950 produits) — ignoré, référence = dernier passage complet
 (361 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
+
+========================================================================
+  🔔 RESTOCKS depuis le passage précédent
+========================================================================
+  🔔 RESTOCK  TOPPS_2025-26_FINEST_HOBBY  sjay2k  $1300.00  https://www.sjay2k.com/products/2025-26-topps-finest-basketball-hobby-box-pre-order-march-5
 
 ========================================================================
   RETAIL
@@ -2402,7 +2407,7 @@
 · CANDIDAT   2025-26 Topps Bowman Case de Hobby (12 boîtes)   [TOPPS_2025-26_BOWMAN_HOBBY_CASE]
    1. kutogo           $ 3999.95  (12 boîtes = $ 333.33/boîte)  IN STOCK  landed≈€ 357.58  (score 1.00)
         🔹STRONG_DEAL -44%  VERIFY  cheapest of 3 in stock
-   2. piecethegame     $ 7199.99  (12 boîtes = $ 600.00/boîte)  IN STOCK  landed≈€ 633.43  (score 1.00)
+   2. piecethegame     $ 7399.99  (12 boîtes = $ 616.67/boîte)  IN STOCK  landed≈€ 650.67  (score 1.00)
    3. piecethegame     $ 7989.00  (8 boîtes = $ 998.62/boîte)  IN STOCK  landed≈€ 701.44  (score 1.00)
    4. awesome          $ 3990.75  (12 boîtes = $ 332.56/boîte)  SOLD OUT  landed≈€ 356.79  (score 1.00)
    5. awesome          $ 5175.75  (8 boîtes = $ 646.97/boîte)  SOLD OUT  landed≈€ 458.94  (score 1.00)
@@ -2419,12 +2424,12 @@
    BEST → kutogo  https://kutogo.com/product/2025-26-bowman-basketball-jumbo-8-box-case/
 
 · CANDIDAT   2025-26 Topps Bowman Case de Delight (6 boîtes)   [TOPPS_2025-26_BOWMAN_BREAKERS_DELIGHT_CASE]
-   1. piecethegame     $13994.94  (6 boîtes = $2332.49/boîte)  IN STOCK  landed≈€2425.52  (score 1.00)
+   1. piecethegame     $14999.99  (6 boîtes = $2500.00/boîte)  IN STOCK  landed≈€2598.79  (score 1.00)
         ONLY_STOCK_SEEN  MARKET DATA INSUFFICIENT
    2. sportscardjunction $ 9995.00  (6 boîtes = $1665.83/boîte)  SOLD OUT  landed≈€1735.93  (score 1.00)
         VERIFY  MARKET DATA INSUFFICIENT
    ask n/a      sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
-   HISTORICAL LOW case $13994.94 · $2332.49/boîte (le 2026-09-28, piecethegame, 1 shop(s) vus) | cheapest live $13994.94
+   HISTORICAL LOW case $13994.94 · $2332.49/boîte (le 2026-09-28, piecethegame, 1 shop(s) vus) | cheapest live $14999.99
    BEST → piecethegame  https://shoppieceofthegame.com/products/2025-26-bowman-basketball-breakers-delight-6-box-case
 
 · CANDIDAT   2025-26 Topps Bowman Case de Mega (20 boîtes)   [TOPPS_2025-26_BOWMAN_MEGA_CASE]
@@ -2435,13 +2440,13 @@
    RESTOCK TARGET case $1699.80 · $84.99/boîte  — surveillance, pas une valeur de marché
 
 · CANDIDAT   2025-26 Topps Bowman Case de Blaster (40 boîtes)   [TOPPS_2025-26_BOWMAN_VALUE_BLASTER_CASE]
-   1. piecethegame     $ 2194.99  (40 boîtes = $  54.87/boîte)  IN STOCK  landed≈€  69.55  (score 1.00)
+   1. piecethegame     $ 2399.99  (40 boîtes = $  60.00/boîte)  IN STOCK  landed≈€  74.85  (score 1.00)
         ONLY_STOCK_SEEN
    2. awesome          $ 1590.75  (40 boîtes = $  39.77/boîte)  SOLD OUT  landed≈€  53.92  (score 1.00)
    3. worldchampion    $ 2400.00  (40 boîtes = $  60.00/boîte)  SOLD OUT  landed≈€  74.85  (score 1.00)
         VERIFY
    ask $1590.75 sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
-   HISTORICAL LOW case $1590.80 · $39.77/boîte (le 2026-08-19, awesome, 3 shop(s) vus) | cheapest live $2194.99
+   HISTORICAL LOW case $1590.80 · $39.77/boîte (le 2026-08-19, awesome, 3 shop(s) vus) | cheapest live $2399.99
    BEST → piecethegame  https://shoppieceofthegame.com/products/2025-26-bowman-basketball-blaster-box-40-box-case
 
 · SUIVI   2025-26 Topps Chrome Hobby   [TOPPS_2025-26_CHROME_HOBBY]
@@ -2485,17 +2490,18 @@
    ask $4999.75 sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
 
 · SUIVI   2025-26 Topps Chrome Update Hobby   [TOPPS_2025-26_CHROME_UPDATE_HOBBY]
-   1. stcuk            $  850.00  IN STOCK  landed≈€ 892.03  (score 1.00)
-        VERIFY  cheapest of 8 in stock  FR
-   2. rbicru7          $ 1125.00  IN STOCK  landed≈€1176.49  (score 1.00)
-   3. qscards          $ 1149.00  IN STOCK  landed≈€1201.31  (score 1.00)
+   1. rbicru7          $ 1125.00  IN STOCK  landed≈€1176.49  (score 1.00)
+        cheapest of 7 in stock
+   2. qscards          $ 1149.00  IN STOCK  landed≈€1201.31  (score 1.00)
         VERIFY  FR
-   4. ehcards          $ 1199.99  IN STOCK  landed≈€1254.06  (score 1.00)
-   5. cardvault        $ 1299.95  IN STOCK  landed≈€1357.46  (score 1.00)
-   6. collectorstore   $ 1299.95  IN STOCK  landed≈€1357.46  (score 1.00)
+   3. ehcards          $ 1199.99  IN STOCK  landed≈€1254.06  (score 1.00)
+   4. cardvault        $ 1299.95  IN STOCK  landed≈€1357.46  (score 1.00)
+   5. collectorstore   $ 1299.95  IN STOCK  landed≈€1357.46  (score 1.00)
+   6. boxseat          $ 1349.99  IN STOCK  landed≈€1409.22  (score 1.00)
+        VERIFY
    ask $549.99  sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
-   HISTORICAL LOW $995.00 (le 2026-08-19, sportscardjunction, 2 shop(s) vus) | cheapest live $850.00
-   BEST → stcuk  https://sportstradingcardsuk.com/products/pre-order-2025-26-topps-chrome-update-series-basketball-hobby-box
+   HISTORICAL LOW $974.99 (le 2026-08-19, columbia, 16 shop(s) vus) | cheapest live $1125.00
+   BEST → rbicru7  https://rbicru7.com/products/2025-26-topps-chrome-update-series-basketball-hobby-box
 
 · SUIVI   2025-26 Topps Chrome Update Hobby Jumbo   [TOPPS_2025-26_CHROME_UPDATE_JUMBO]
    1. rbicru7          $ 2275.00  IN STOCK  landed≈€2366.05  (score 1.00)
@@ -2602,7 +2608,7 @@
 
 · CANDIDAT   2025-26 Topps Finest Hobby   [TOPPS_2025-26_FINEST_HOBBY]
    1. stcuk            $  695.00  IN STOCK  landed≈€ 731.70  (score 1.00)
-        VERIFY  cheapest of 7 in stock  FR
+        VERIFY  cheapest of 8 in stock  FR
    2. kutogo           $  814.95  IN STOCK  landed≈€ 855.77  (score 1.00)
         VERIFY
    3. cardiacs         $  849.95  IN STOCK  landed≈€ 891.98  (score 1.00)
@@ -3696,7 +3702,7 @@
   [bleecker] 1999-00 Topps Chrome Basketball Hobby Box  $750.00 OOS  → [["TOPPS_2023-24_CHROME_HOBBY", 0.77], ["TOPPS_2025-26_CHROME_HOBBY", 0.77], ["TOPPS_2024-25_TOPPS_CHROME_HOBBY", 0.77]]
 
 ========================================================================
-  👀 WATCHLIST — 95 prioritaires / 192 historiques / 3 autres
+  👀 WATCHLIST — 95 prioritaires / 191 historiques / 3 autres
 ========================================================================
   🔔 RESTOCK PRIORITY  2024-25 Panini Hoops Pack                  target                          $0.75 (2026-09-06, 6 shop(s))   -93.1% vs ask $10.90
   🔔 RESTOCK PRIORITY  2024-25 Panini Mosaic Pack                 target                          $4.99 (2026-09-06, 2 shop(s))   -84.4% vs ask $32.00
@@ -3771,5 +3777,5 @@
   2023-24_DONRUSS_BLASTER                  €   69.90  tanteo      
   2023-24_OPTIC_BLASTER                    €   74.90  tanteo      
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-10-04T13-13-41.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-10-04T22-16-11.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

@@ -1,11 +1,6 @@
-⚠️  [shopuscards] passage 2026-10-04T05:37:47+00:00 PARTIAL (190 produits) — ignoré, référence = dernier passage complet
-⚠️  [wolfdentcg] passage 2026-10-04T05:37:47+00:00 PARTIAL (31949 produits) — ignoré, référence = dernier passage complet
+⚠️  [shopuscards] passage 2026-10-04T12:13:08+00:00 PARTIAL (144 produits) — ignoré, référence = dernier passage complet
+⚠️  [wolfdentcg] passage 2026-10-04T12:13:08+00:00 PARTIAL (31949 produits) — ignoré, référence = dernier passage complet
 (361 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
-
-========================================================================
-  🔔 RESTOCKS depuis le passage précédent
-========================================================================
-  🔔 RESTOCK  PANINI_2025-26_DONRUSS_MEGA  sjay2k  $110.00  https://www.sjay2k.com/products/2025-26-panini-donruss-basketball-mega-box
 
 ========================================================================
   RETAIL
@@ -3776,5 +3771,5 @@
   2023-24_DONRUSS_BLASTER                  €   69.90  tanteo      
   2023-24_OPTIC_BLASTER                    €   74.90  tanteo      
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-10-04T06-41-39.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-10-04T13-13-41.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

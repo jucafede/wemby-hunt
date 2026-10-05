@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-04T22:08:35+00:00",
+  "generated_at": "2026-10-05T06:17:00+00:00",
   "offers": [
     {
       "product_id": "select_2023_24_hobby_mega_green_shock",
@@ -281,7 +281,7 @@
       "confidence": "Mega Prizm 2023-24 sans variante nommée — non attribuable",
       "titre_observe": "2023-24 Panini Prizm NBA Mega Box",
       "first_seen": "2026-09-24T07:55:54+00:00",
-      "last_seen": "2026-09-30T16:39:30+00:00",
+      "last_seen": "2026-10-05T06:17:00+00:00",
       "last_price": 125.0,
       "last_in_stock": null,
       "history": [
@@ -312,15 +312,36 @@
           "stock_status": "OUT_OF_STOCK",
           "stock_qty": null,
           "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-10-05T06:17:00+00:00",
+          "price": 125.0,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-10-05T06:17:00+00:00",
+          "price": 125.0,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-10-05T06:17:00+00:00",
+          "price": 125.0,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
         }
       ],
       "old_stock_score": 63,
       "old_stock_motifs": [
-        "+16 13 fiche(s) 2022-23 ENCORE AU PANIER",
+        "+16 10 fiche(s) 2022-23 ENCORE AU PANIER",
         "+24 2 fiche(s) 2023-24 ENCORE AU PANIER",
-        "+12 13 format(s) retail ancien(s) achetable(s) (Mega/Blaster/Hanger)",
-        "+8 17 fiche(s) ancienne(s) encore indexée(s) mais ÉPUISÉE(S) — trace, pas stock",
-        "+3 catalogue NBA scellé profond (32 fiches relevées)"
+        "+12 10 format(s) retail ancien(s) achetable(s) (Mega/Blaster/Hanger)",
+        "+8 22 fiche(s) ancienne(s) encore indexée(s) mais ÉPUISÉE(S) — trace, pas stock",
+        "+3 catalogue NBA scellé profond (34 fiches relevées)"
       ]
     },
     {
@@ -338,7 +359,7 @@
       "confidence": "Mega Select 2023-24 sans variante nommée — non attribuable",
       "titre_observe": "2023-24 Panini Select NBA Mega Box Wembanyama",
       "first_seen": "2026-09-24T07:55:54+00:00",
-      "last_seen": "2026-09-30T16:39:30+00:00",
+      "last_seen": "2026-10-05T06:17:00+00:00",
       "last_price": 65.0,
       "last_in_stock": null,
       "history": [
@@ -390,15 +411,50 @@
           "stock_status": "OUT_OF_STOCK",
           "stock_qty": null,
           "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-10-05T06:17:00+00:00",
+          "price": 65.0,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-10-05T06:17:00+00:00",
+          "price": 65.0,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-10-05T06:17:00+00:00",
+          "price": 65.0,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-10-05T06:17:00+00:00",
+          "price": 65.0,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-10-05T06:17:00+00:00",
+          "price": 65.0,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
         }
       ],
       "old_stock_score": 63,
       "old_stock_motifs": [
-        "+16 13 fiche(s) 2022-23 ENCORE AU PANIER",
+        "+16 10 fiche(s) 2022-23 ENCORE AU PANIER",
         "+24 2 fiche(s) 2023-24 ENCORE AU PANIER",
-        "+12 13 format(s) retail ancien(s) achetable(s) (Mega/Blaster/Hanger)",
-        "+8 17 fiche(s) ancienne(s) encore indexée(s) mais ÉPUISÉE(S) — trace, pas stock",
-        "+3 catalogue NBA scellé profond (32 fiches relevées)"
+        "+12 10 format(s) retail ancien(s) achetable(s) (Mega/Blaster/Hanger)",
+        "+8 22 fiche(s) ancienne(s) encore indexée(s) mais ÉPUISÉE(S) — trace, pas stock",
+        "+3 catalogue NBA scellé profond (34 fiches relevées)"
       ]
     },
     {

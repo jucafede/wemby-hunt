@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-06T00:53:20+00:00",
+  "generated_at": "2026-10-06T07:09:46+00:00",
   "offers": [
     {
       "product_id": "select_2023_24_hobby_mega_green_shock",
@@ -935,6 +935,39 @@
           "stock_status": "OUT_OF_STOCK",
           "stock_qty": null,
           "event": "UNCHANGED"
+        }
+      ]
+    },
+    {
+      "product_id": null,
+      "shop_id": "cardsmithsbreaks.com",
+      "url": "https://cardsmithsbreaks.com/product/2023-24-panini-prizm-mega-basketball/",
+      "price": null,
+      "currency": "USD",
+      "stock_status": "IN_STOCK",
+      "stock_qty": null,
+      "shipping_france": null,
+      "shipping_cost": null,
+      "landed_price_france": null,
+      "match_method": "AMBIGU",
+      "confidence": "Mega Prizm 2023-24 sans variante nommée — non attribuable",
+      "titre_observe": "2023-24 Panini Prizm Mega Basketball",
+      "old_stock_score": 16,
+      "old_stock_motifs": [
+        "+12 1 fiche(s) 2023-24 ENCORE AU PANIER",
+        "+4 1 format(s) retail ancien(s) achetable(s) (Mega/Blaster/Hanger)"
+      ],
+      "first_seen": "2026-10-06T07:09:46+00:00",
+      "last_seen": "2026-10-06T07:09:46+00:00",
+      "last_price": null,
+      "last_in_stock": "2026-10-06T07:09:46+00:00",
+      "history": [
+        {
+          "t": "2026-10-06T07:09:46+00:00",
+          "price": null,
+          "stock_status": "IN_STOCK",
+          "stock_qty": null,
+          "event": "NEW"
         }
       ]
     }

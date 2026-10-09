@@ -1,14 +1,6 @@
-⚠️  [shopuscards] passage 2026-10-08T23:15:30+00:00 PARTIAL (185 produits) — ignoré, référence = dernier passage complet
-⚠️  [kutogo] passage 2026-10-08T23:15:30+00:00 PARTIAL (0 produits) — ignoré, référence = dernier passage complet
-⚠️  [wolfdentcg] passage 2026-10-08T23:15:30+00:00 PARTIAL (32002 produits) — ignoré, référence = dernier passage complet
+⚠️  [shopuscards] passage 2026-10-09T05:53:43+00:00 PARTIAL (160 produits) — ignoré, référence = dernier passage complet
+⚠️  [wolfdentcg] passage 2026-10-09T05:53:43+00:00 PARTIAL (32003 produits) — ignoré, référence = dernier passage complet
 (364 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
-
-========================================================================
-  🔔 RESTOCKS depuis le passage précédent
-========================================================================
-  🔔 RESTOCK  PANINI_2024-25_REVOLUTION_MEGA  monmouth  $69.99  https://monmouthcards.com/products/2024-25-panini-revolution-basketball-mega-box
-  🔔 RESTOCK  PANINI_2024-25_SELECT_HOBBY  rbicru7  $410.00  https://rbicru7.com/products/2024-25-panini-select-basketball-hobby-box
-  🔔 RESTOCK  TOPPS_2025-26_BOWMAN_HOBBY  rbicru7  $595.00  https://rbicru7.com/products/2025-26-bowman-basketball-hobby-box
 
 ========================================================================
   RETAIL
@@ -722,8 +714,8 @@
    BEST → cbhobby  https://cbhobby.com/products/2023-24-panini-revolution-basketball-stocking-stuffer-tin
 
 · SUIVI   2024-25 Panini Revolution Mega   [PANINI_2024-25_REVOLUTION_MEGA]
-   1. monmouth         $   69.99  IN STOCK  landed≈€  85.19  (score 1.00)  🔔
-        🔹RESTOCK +11j  🔹STRONG_DEAL -22%  YEAR2  VERIFY  cheapest of 2 in stock
+   1. monmouth         $   69.99  IN STOCK  landed≈€  85.19  (score 1.00)
+        🔹STRONG_DEAL -22%  YEAR2  VERIFY  cheapest of 2 in stock
    2. superior         $   90.00  IN STOCK  landed≈€ 105.88  (score 1.00)
         YEAR2  VERIFY
    3. hiddengems       $   34.99  SOLD OUT  landed≈€  48.98  (score 1.00)
@@ -2117,8 +2109,8 @@
         YEAR2  VERIFY  cheapest of 5 in stock
    2. collectorstore   $  394.95  IN STOCK  landed≈€ 421.32  (score 1.00)
         YEAR2
-   3. rbicru7          $  410.00  IN STOCK  landed≈€ 436.89  (score 1.00)  🔔
-        🔹RESTOCK +0j  YEAR2
+   3. rbicru7          $  410.00  IN STOCK  landed≈€ 436.89  (score 1.00)
+        YEAR2
    4. ballgame         $  450.00  IN STOCK  landed≈€ 478.27  (score 1.00)
         YEAR2  VERIFY
    5. sjay2k           $  700.00  IN STOCK  landed≈€ 736.87  (score 1.00)
@@ -2610,7 +2602,6 @@
         VERIFY  FR
    4. cardiacs         $ 2349.95  IN STOCK  landed≈€2443.58  (score 1.00)
    5. piecethegame     $ 2369.99  IN STOCK  landed≈€2464.31  (score 1.00)
-        🔹NEW_LOW  🔹PRICE_DROP -5%
    6. hikaru_shop      $ 2799.00  IN STOCK  landed≈€2908.07  (score 1.00)
         FR
    ask $2500.00 sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
@@ -3734,14 +3725,13 @@
      historical low     2025-26 Panini Select EuroLeague Pack                              $22.00 (2026-09-06, 1 shop(s))
 
 ========================================================================
-  🩺 SANTÉ DES SOURCES — 5 anomalie(s)
+  🩺 SANTÉ DES SOURCES — 4 anomalie(s)
 ========================================================================
-  PARTIAL   kutogo               dernier passage interrompu (TIMEOUT, 8.4 min)
   DEGRADED  shopuscards          6 passages interrompus sur 6 (dernier : PARTIAL:BUDGET)
   DEAD      stickerpoint         6 passages complets consécutifs à 0 produit
   DEAD      supercollectors      6 passages complets consécutifs à 0 produit
   DEGRADED  wolfdentcg           6 passages interrompus sur 6 (dernier : PAGINATION_INCOMPLETE)
-  44 HEALTHY · 27 SKIPPED · 2 DEGRADED · 2 DEAD · 1 PARTIAL
+  45 HEALTHY · 27 SKIPPED · 2 DEGRADED · 2 DEAD
 
 ========================================================================
   ⛔ BLOCKLIST — 2 domaine(s) jamais crawlés
@@ -3781,5 +3771,5 @@
   2025-26_BOWMAN_VALUE_BLASTER             €   67.90  tanteo      
   2023-24_DONRUSS_BLASTER                  €   69.90  tanteo      
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-10-09T00-30-05.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-10-09T06-54-06.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

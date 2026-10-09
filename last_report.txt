@@ -1,6 +1,11 @@
-⚠️  [shopuscards] passage 2026-10-09T05:53:43+00:00 PARTIAL (160 produits) — ignoré, référence = dernier passage complet
-⚠️  [wolfdentcg] passage 2026-10-09T05:53:43+00:00 PARTIAL (32003 produits) — ignoré, référence = dernier passage complet
+⚠️  [shopuscards] passage 2026-10-09T13:04:17+00:00 PARTIAL (160 produits) — ignoré, référence = dernier passage complet
+⚠️  [wolfdentcg] passage 2026-10-09T13:04:17+00:00 PARTIAL (32003 produits) — ignoré, référence = dernier passage complet
 (364 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
+
+========================================================================
+  🔔 RESTOCKS depuis le passage précédent
+========================================================================
+  🔔 RESTOCK  TOPPS_2025-26_HOOPS_BLASTER  dacardworldeu  $44.00  https://dacardworld.eu/products/2025-26-topps-hoops-basketball-blaster
 
 ========================================================================
   RETAIL
@@ -138,16 +143,16 @@
 
 👀 WATCH   2023-24 Panini Mosaic Blaster   [PANINI_2023-24_MOSAIC_BLASTER]
    1. rbicru7          $   50.00  IN STOCK  landed≈€  64.51  (score 1.00)
-        RC_YEAR  cheapest of 3 in stock
-   2. tanteo           $   57.90  IN STOCK  landed≈€  72.68  (score 1.00)
-        RC_YEAR  VERIFY  FR
-   3. superior         $   85.00  IN STOCK  landed≈€ 100.71  (score 1.00)
+        RC_YEAR  cheapest of 2 in stock
+   2. superior         $   85.00  IN STOCK  landed≈€ 100.71  (score 1.00)
         RC_YEAR  VERIFY
-   4. hiddengems       $   19.99  SOLD OUT  landed≈€  33.47  (score 1.00)
+   3. hiddengems       $   19.99  SOLD OUT  landed≈€  33.47  (score 1.00)
         RC_YEAR
-   5. awesome          $   34.00  SOLD OUT  landed≈€  47.96  (score 1.00)
+   4. awesome          $   34.00  SOLD OUT  landed≈€  47.96  (score 1.00)
         RC_YEAR
-   6. rlsports         $   34.99  SOLD OUT  landed≈€  48.98  (score 1.00)
+   5. rlsports         $   34.99  SOLD OUT  landed≈€  48.98  (score 1.00)
+        RC_YEAR  VERIFY
+   6. e5sports         $   40.00  SOLD OUT  landed≈€  54.16  (score 1.00)
         RC_YEAR  VERIFY
    ask n/a      sold $38.00   [ebay_sold 2026-08-30] | buy ≤ $32.00   | watch ≤ $50.00   | EU n/a  ⏳ STALE THRESHOLD (40 j)
    HISTORICAL LOW $19.99 (le 2026-08-17, hiddengems, 10 shop(s) vus) | cheapest live $50.00
@@ -905,7 +910,7 @@
 
 · SUIVI   2025-26 Topps Hoops Blaster   [TOPPS_2025-26_HOOPS_BLASTER]
    1. sportscardjunction $   30.00  IN STOCK  landed≈€  43.82  (score 1.00)
-        VERIFY  cheapest of 10 in stock
+        VERIFY  cheapest of 11 in stock
    2. piecethegame     $   34.99  IN STOCK  landed≈€  48.98  (score 1.00)
    3. dnacardsandcollectibles $   35.00  IN STOCK  landed≈€  48.99  (score 1.00)
    4. rbicru7          $   35.00  IN STOCK  landed≈€  48.99  (score 1.00)
@@ -3747,7 +3752,7 @@
   (aucune ligne en stock ne cumule un déclencheur et une référence de marché)
 
 ========================================================================
-  🇫🇷 MARCHÉ FR — 44 produit(s) avec une offre en stock
+  🇫🇷 MARCHÉ FR — 43 produit(s) avec une offre en stock
 ========================================================================
   FR MARKET PARTIAL — 2/4 source(s) vérifiée(s) : shopuscards DEGRADED, stickerpoint DEAD
   2025-26_HOOPS_HANGER                     €   29.90  tanteo      
@@ -3764,12 +3769,12 @@
   2025-26_HOOPS_BLASTER                    €   47.90  tanteo      
   2024-25_MONOPOLY_PRIZM_BLASTER           €   49.90  tanteo      
   2025-26_SIGNATURE_CLASS_BLASTER          €   54.90  tanteo      
-  2023-24_MOSAIC_BLASTER                   €   57.90  tanteo      
   2023-24_CONTENDERS_BLASTER               €   57.90  tanteo      
   2024-25_DONRUSS_MEGA                     €   64.90  tanteo      
   2023-24_HOOPS_BLASTER                    €   67.90  tanteo      
   2025-26_BOWMAN_VALUE_BLASTER             €   67.90  tanteo      
   2023-24_DONRUSS_BLASTER                  €   69.90  tanteo      
+  2023-24_OPTIC_BLASTER                    €   74.90  tanteo      
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-10-09T06-54-06.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-10-09T14-13-22.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

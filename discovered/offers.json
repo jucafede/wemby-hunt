@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-09T06:49:01+00:00",
+  "generated_at": "2026-10-09T14:05:00+00:00",
   "offers": [
     {
       "product_id": "select_2023_24_hobby_mega_green_shock",
@@ -972,9 +972,9 @@
         "+8 2 format(s) retail ancien(s) achetable(s) (Mega/Blaster/Hanger)"
       ],
       "first_seen": "2026-10-06T07:09:46+00:00",
-      "last_seen": "2026-10-09T06:49:01+00:00",
+      "last_seen": "2026-10-09T14:05:00+00:00",
       "last_price": null,
-      "last_in_stock": "2026-10-09T06:49:01+00:00",
+      "last_in_stock": "2026-10-09T14:05:00+00:00",
       "history": [
         {
           "t": "2026-10-06T07:09:46+00:00",
@@ -1038,6 +1038,13 @@
           "stock_status": "IN_STOCK",
           "stock_qty": null,
           "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-10-09T14:05:00+00:00",
+          "price": null,
+          "stock_status": "IN_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
         }
       ]
     },
@@ -1061,9 +1068,9 @@
         "+8 2 format(s) retail ancien(s) achetable(s) (Mega/Blaster/Hanger)"
       ],
       "first_seen": "2026-10-06T19:14:58+00:00",
-      "last_seen": "2026-10-09T06:49:01+00:00",
+      "last_seen": "2026-10-09T14:05:00+00:00",
       "last_price": null,
-      "last_in_stock": "2026-10-09T06:49:01+00:00",
+      "last_in_stock": "2026-10-09T14:05:00+00:00",
       "history": [
         {
           "t": "2026-10-06T19:14:58+00:00",
@@ -1116,6 +1123,13 @@
         },
         {
           "t": "2026-10-09T06:49:01+00:00",
+          "price": null,
+          "stock_status": "IN_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-10-09T14:05:00+00:00",
           "price": null,
           "stock_status": "IN_STOCK",
           "stock_qty": null,

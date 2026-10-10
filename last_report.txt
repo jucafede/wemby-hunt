@@ -1,6 +1,6 @@
-⚠️  [shopuscards] passage 2026-10-10T05:36:27+00:00 PARTIAL (178 produits) — ignoré, référence = dernier passage complet
-⚠️  [wolfdentcg] passage 2026-10-10T05:36:27+00:00 PARTIAL (31994 produits) — ignoré, référence = dernier passage complet
-(366 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
+⚠️  [shopuscards] passage 2026-10-10T12:21:35+00:00 PARTIAL (167 produits) — ignoré, référence = dernier passage complet
+⚠️  [wolfdentcg] passage 2026-10-10T12:21:35+00:00 PARTIAL (31994 produits) — ignoré, référence = dernier passage complet
+(367 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
 
 ========================================================================
   RETAIL
@@ -603,7 +603,7 @@
 
 · SUIVI   2024-25 Panini Donruss Mega   [PANINI_2024-25_DONRUSS_MEGA]
    1. smyrnasportscards $   37.99  IN STOCK  landed≈€  52.08  (score 1.00)
-        🔹DEAL -16%  YEAR2  cheapest of 6 in stock
+        🔹DEAL -16%  YEAR2  cheapest of 5 in stock
    2. ehcards          $   44.99  IN STOCK  landed≈€  59.33  (score 1.00)
         YEAR2
    3. piecethegame     $   49.95  IN STOCK  landed≈€  64.46  (score 1.00)
@@ -612,8 +612,8 @@
         YEAR2  VERIFY
    5. tanteo           $   64.90  IN STOCK  landed≈€  79.92  (score 1.00)
         YEAR2  VERIFY  FR
-   6. sjay2k           $   90.00  IN STOCK  landed≈€ 105.88  (score 1.00)
-        YEAR2  VERIFY
+   6. hiddengems       $   25.00  SOLD OUT  landed≈€  38.65  (score 1.00)
+        YEAR2
    ask $44.99   sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $25.00 (le 2026-08-18, hiddengems, 11 shop(s) vus) | cheapest live $37.99
    BEST → smyrnasportscards  https://smyrnasportscards.com/products/2024-25-donruss-basketball-mega-box
@@ -794,13 +794,12 @@
 
 · SUIVI   2025-26 Topps Bowman Blaster   [TOPPS_2025-26_BOWMAN_VALUE_BLASTER]
    1. piecethegame     $   54.99  IN STOCK  landed≈€  69.67  (score 1.00)
-        cheapest of 4 in stock
+        cheapest of 3 in stock
    2. rbicru7          $   55.00  IN STOCK  landed≈€  69.68  (score 1.00)
    3. nickscards       $   64.95  IN STOCK  landed≈€  79.97  (score 1.00)
-   4. tanteo           $   67.90  IN STOCK  landed≈€  83.02  (score 1.00)
-        VERIFY  FR
-   5. cardvault        $   29.95  SOLD OUT  landed≈€  43.77  (score 1.00)
-   6. columbia         $   32.79  SOLD OUT  landed≈€  46.71  (score 1.00)
+   4. cardvault        $   29.95  SOLD OUT  landed≈€  43.77  (score 1.00)
+   5. columbia         $   32.79  SOLD OUT  landed≈€  46.71  (score 1.00)
+   6. awesome          $   39.75  SOLD OUT  landed≈€  53.91  (score 1.00)
    ask $29.99   sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU €49.99
    HISTORICAL LOW $29.95 (le 2026-09-24, cardvault, 14 shop(s) vus) | cheapest live $54.99
    BEST → piecethegame  https://shoppieceofthegame.com/products/2025-26-bowman-basketball-blaster-box
@@ -900,7 +899,7 @@
    4. piecethegame     $  119.99  IN STOCK  landed≈€ 136.91  (score 1.00)
    5. dacardworldeu    $  135.00  IN STOCK  landed≈€ 152.43  (score 1.00)
         VERIFY  FR
-   6. superior         $  150.00  IN STOCK  landed≈€ 167.95  (score 1.00)
+   6. superior         $  160.00  IN STOCK  landed≈€ 178.29  (score 1.00)
         VERIFY
    ask $120.00  sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU €62.49
    HISTORICAL LOW $45.00 (le 2026-08-19, sportscardjunction, 12 shop(s) vus) | cheapest live $83.90
@@ -1662,7 +1661,7 @@
    4. rbicru7          $   33.00  IN STOCK  landed≈€  46.92  (score 1.00)
    5. boxseat          $   34.99  IN STOCK  landed≈€  48.98  (score 1.00)
         VERIFY
-   6. rbicru7          $   80.00  IN STOCK  landed≈€  95.54  (score 1.00)
+   6. rbicru7          $   85.00  IN STOCK  landed≈€ 100.71  (score 1.00)
    ask $27.00   sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $8.00 (le 2026-09-06, sportscardjunction, 5 shop(s) vus) | cheapest live $11.99
    BEST → boxseat  https://boxseatcollectibles.com/products/2025-26-bowman-basketball-blaster-pack
@@ -2393,7 +2392,7 @@
         🔹DEAL -11%  VERIFY  cheapest of 6 in stock
    2. sportscardjunction $  850.00  IN STOCK  landed≈€ 892.03  (score 1.00)
         VERIFY
-   3. rbicru7          $  875.00  IN STOCK  landed≈€ 917.89  (score 1.00)
+   3. rbicru7          $  900.00  IN STOCK  landed≈€ 943.75  (score 1.00)
    4. collectorstore   $  924.95  IN STOCK  landed≈€ 969.56  (score 1.00)
    5. piecethegame     $ 1014.99  IN STOCK  landed≈€1062.69  (score 1.00)
    6. superior         $ 1175.00  IN STOCK  landed≈€1228.21  (score 1.00)
@@ -3584,7 +3583,7 @@
         VERIFY  cheapest of 5 in stock  MARKET DATA INSUFFICIENT
    2. cardiacs         $14499.95  IN STOCK  landed≈€15011.54  (score 1.00)
         MARKET DATA INSUFFICIENT
-   3. dennistheripper  $15999.99  IN STOCK  landed≈€16563.18  (score 1.00)
+   3. dennistheripper  $16000.00  IN STOCK  landed≈€16563.19  (score 1.00)
         VERIFY  MARKET DATA INSUFFICIENT  FR
    4. mafiosicards_shop $19999.00  IN STOCK  landed≈€20699.75  (score 1.00)
         MARKET DATA INSUFFICIENT  FR
@@ -3598,13 +3597,11 @@
 
 · SUIVI   2025-26 Topps Finest Breakers Delight   [TOPPS_2025-26_FINEST_BREAKERS_DELIGHT]
    1. dennistheripper  $ 1399.99  IN STOCK  landed≈€1460.94  (score 1.00)
-        VERIFY  cheapest of 3 in stock  FR
+        VERIFY  cheapest of 2 in stock  FR
    2. qscards          $ 1499.00  IN STOCK  landed≈€1563.35  (score 1.00)
         VERIFY  FR
-   3. dacardworldeu    $ 1665.00  IN STOCK  landed≈€1735.06  (score 1.00)
-        VERIFY  FR
-   4. awesome          $ 1629.75  SOLD OUT  landed≈€1698.60  (score 1.00)
-   5. piecethegame     $ 1649.99  SOLD OUT  landed≈€1719.54  (score 1.00)
+   3. awesome          $ 1629.75  SOLD OUT  landed≈€1698.60  (score 1.00)
+   4. piecethegame     $ 1649.99  SOLD OUT  landed≈€1719.54  (score 1.00)
    ask $1599.75 sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $1599.75 (le 2026-09-06, awesome, 2 shop(s) vus) | cheapest live $1399.99
    BEST → dennistheripper  https://dennistheripper.de/products/2025-26-topps-finest-basketball-breaker-delight-box-1
@@ -3755,7 +3752,7 @@
   (aucune ligne en stock ne cumule un déclencheur et une référence de marché)
 
 ========================================================================
-  🇫🇷 MARCHÉ FR — 43 produit(s) avec une offre en stock
+  🇫🇷 MARCHÉ FR — 42 produit(s) avec une offre en stock
 ========================================================================
   FR MARKET PARTIAL — 2/4 source(s) vérifiée(s) : shopuscards DEGRADED, stickerpoint DEAD
   2025-26_HOOPS_HANGER                     €   29.90  tanteo      
@@ -3775,9 +3772,9 @@
   2023-24_CONTENDERS_BLASTER               €   57.90  tanteo      
   2024-25_DONRUSS_MEGA                     €   64.90  tanteo      
   2023-24_HOOPS_BLASTER                    €   67.90  tanteo      
-  2025-26_BOWMAN_VALUE_BLASTER             €   67.90  tanteo      
   2023-24_DONRUSS_BLASTER                  €   69.90  tanteo      
   2023-24_OPTIC_BLASTER                    €   74.90  tanteo      
+  2025-26_CHROME_UPDATE_BLASTER            €   83.90  tanteo      
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-10-10T06-37-19.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-10-10T13-23-39.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

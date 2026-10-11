@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-10T22:30:03+00:00",
+  "generated_at": "2026-10-11T06:30:47+00:00",
   "offers": [
     {
       "product_id": "select_2023_24_hobby_mega_green_shock",
@@ -67,7 +67,7 @@
       "product_id": "select_2023_24_mega_blue_pink",
       "shop_id": "rbicru7",
       "url": "https://rbicru7.com/products/2023-24-panini-select-basketball-mega-box-releases-5-17",
-      "price": 110.0,
+      "price": 120.0,
       "currency": "USD",
       "stock_status": "IN_STOCK",
       "stock_qty": null,
@@ -77,9 +77,9 @@
       "match_method": "SET_FORMAT_VARIANTE",
       "confidence": "select + variante « Blue & Pink Cracked Ice Prizms » nommée",
       "first_seen": "2026-09-24T07:55:54+00:00",
-      "last_seen": "2026-09-30T16:39:30+00:00",
-      "last_price": 110.0,
-      "last_in_stock": "2026-09-30T16:39:30+00:00",
+      "last_seen": "2026-10-11T06:30:47+00:00",
+      "last_price": 120.0,
+      "last_in_stock": "2026-10-11T06:30:47+00:00",
       "history": [
         {
           "t": "2026-09-24T07:55:54+00:00",
@@ -108,14 +108,28 @@
           "stock_status": "IN_STOCK",
           "stock_qty": null,
           "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-10-11T06:30:47+00:00",
+          "price": 120.0,
+          "stock_status": "IN_STOCK",
+          "stock_qty": null,
+          "event": "PRICE_UP"
+        },
+        {
+          "t": "2026-10-11T06:30:47+00:00",
+          "price": 120.0,
+          "stock_status": "IN_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
         }
       ],
       "titre_observe": "2023-24 Panini Select Basketball, Mega Box (BLUE & PINK CRACKED ICE)",
-      "old_stock_score": 43,
+      "old_stock_score": 50,
       "old_stock_motifs": [
-        "+7 1 fiche(s) 2021-22 ENCORE AU PANIER",
+        "+14 2 fiche(s) 2021-22 ENCORE AU PANIER",
         "+24 3 fiche(s) 2023-24 ENCORE AU PANIER",
-        "+12 4 format(s) retail ancien(s) achetable(s) (Mega/Blaster/Hanger)"
+        "+12 5 format(s) retail ancien(s) achetable(s) (Mega/Blaster/Hanger)"
       ]
     },
     {

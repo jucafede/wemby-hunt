@@ -1,5 +1,5 @@
-⚠️  [shopuscards] passage 2026-10-11T05:32:35+00:00 PARTIAL (164 produits) — ignoré, référence = dernier passage complet
-⚠️  [wolfdentcg] passage 2026-10-11T05:32:35+00:00 PARTIAL (31995 produits) — ignoré, référence = dernier passage complet
+⚠️  [shopuscards] passage 2026-10-11T12:37:50+00:00 PARTIAL (161 produits) — ignoré, référence = dernier passage complet
+⚠️  [wolfdentcg] passage 2026-10-11T12:37:50+00:00 PARTIAL (31995 produits) — ignoré, référence = dernier passage complet
 (368 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
 
 ========================================================================
@@ -3777,5 +3777,5 @@
   2025-26_CHROME_UPDATE_BLASTER            €   83.90  tanteo      
   2025-26_CHROME_VALUE_BOX                 €   99.00  qscards     
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-10-11T06-37-14.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-10-11T13-36-56.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

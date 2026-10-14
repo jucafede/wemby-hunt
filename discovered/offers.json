@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-14T12:37:30+00:00",
+  "generated_at": "2026-10-14T18:04:40+00:00",
   "offers": [
     {
       "product_id": "select_2023_24_hobby_mega_green_shock",
@@ -1214,9 +1214,9 @@
         "+12 3 format(s) retail ancien(s) achetable(s) (Mega/Blaster/Hanger)"
       ],
       "first_seen": "2026-10-06T19:14:58+00:00",
-      "last_seen": "2026-10-14T12:37:30+00:00",
+      "last_seen": "2026-10-14T18:04:40+00:00",
       "last_price": null,
-      "last_in_stock": "2026-10-14T12:37:30+00:00",
+      "last_in_stock": "2026-10-14T18:04:40+00:00",
       "history": [
         {
           "t": "2026-10-06T19:14:58+00:00",
@@ -1347,6 +1347,60 @@
         {
           "t": "2026-10-14T12:37:30+00:00",
           "price": null,
+          "stock_status": "IN_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-10-14T18:04:40+00:00",
+          "price": null,
+          "stock_status": "IN_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        }
+      ]
+    },
+    {
+      "product_id": "select_2023_24_hobby_mega_green_shock",
+      "shop_id": "sandssportscards",
+      "url": "https://sandssportscards.com/products/2023-24-panini-select-basketball-hobby-mega-box-green-shock-prizms",
+      "price": 400.0,
+      "currency": "USD",
+      "stock_status": "IN_STOCK",
+      "stock_qty": null,
+      "shipping_france": null,
+      "shipping_cost": null,
+      "landed_price_france": null,
+      "match_method": "SET_FORMAT_VARIANTE",
+      "confidence": "select + variante « Green Shock Prizms » nommée",
+      "titre_observe": "2023-24 Panini Select Basketball Hobby Mega Box (Green Shock Prizms)",
+      "old_stock_score": 36,
+      "old_stock_motifs": [
+        "+24 3 fiche(s) 2023-24 ENCORE AU PANIER",
+        "+12 3 format(s) retail ancien(s) achetable(s) (Mega/Blaster/Hanger)"
+      ],
+      "first_seen": "2026-10-14T18:04:40+00:00",
+      "last_seen": "2026-10-14T18:04:40+00:00",
+      "last_price": 400.0,
+      "last_in_stock": "2026-10-14T18:04:40+00:00",
+      "history": [
+        {
+          "t": "2026-10-14T18:04:40+00:00",
+          "price": 400.0,
+          "stock_status": "IN_STOCK",
+          "stock_qty": null,
+          "event": "NEW"
+        },
+        {
+          "t": "2026-10-14T18:04:40+00:00",
+          "price": 400.0,
+          "stock_status": "IN_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-10-14T18:04:40+00:00",
+          "price": 400.0,
           "stock_status": "IN_STOCK",
           "stock_qty": null,
           "event": "UNCHANGED"

@@ -1,6 +1,11 @@
-⚠️  [shopuscards] passage 2026-10-14T17:01:10+00:00 PARTIAL (184 produits) — ignoré, référence = dernier passage complet
-⚠️  [wolfdentcg] passage 2026-10-14T17:01:10+00:00 PARTIAL (32092 produits) — ignoré, référence = dernier passage complet
+⚠️  [shopuscards] passage 2026-10-14T21:33:35+00:00 PARTIAL (197 produits) — ignoré, référence = dernier passage complet
+⚠️  [wolfdentcg] passage 2026-10-14T21:33:35+00:00 PARTIAL (32095 produits) — ignoré, référence = dernier passage complet
 (375 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
+
+========================================================================
+  🔔 RESTOCKS depuis le passage précédent
+========================================================================
+  🔔 RESTOCK  PANINI_2025-26_PRIZM_BLASTER  awesome  $29.75  https://theawesomecardshop.com/products/2025-26-panini-prizm-basketball-blaster-box
 
 ========================================================================
   RETAIL
@@ -940,21 +945,21 @@
    BEST → hiddengems  https://www.hiddengemscardshop.com/products/2025-26-topps-hoops-basketball-value-box
 
 · SUIVI   2025-26 Topps Signature Class Value Box   [TOPPS_2025-26_SIGNATURE_CLASS_VALUE_BOX]
-   1. hallofcollect    $   45.00  IN STOCK  landed≈€  59.34  (score 1.00)
-        ONLY_STOCK_SEEN  VERIFY  MARKET DATA INSUFFICIENT  FR
-   2. rlsports         $   34.99  SOLD OUT  landed≈€  48.98  (score 1.00)
+   1. rlsports         $   34.99  SOLD OUT  landed≈€  48.98  (score 1.00)
         VERIFY  MARKET DATA INSUFFICIENT
-   3. deichcards       $   35.00  SOLD OUT  landed≈€  48.99  (score 1.00)
+   2. deichcards       $   35.00  SOLD OUT  landed≈€  48.99  (score 1.00)
         VERIFY  MARKET DATA INSUFFICIENT  FR
-   4. hiddengems       $   35.00  SOLD OUT  landed≈€  48.99  (score 1.00)
+   3. hiddengems       $   35.00  SOLD OUT  landed≈€  48.99  (score 1.00)
         MARKET DATA INSUFFICIENT
-   5. mafiosicards_shop $   39.00  SOLD OUT  landed≈€  53.13  (score 1.00)
+   4. mafiosicards_shop $   39.00  SOLD OUT  landed≈€  53.13  (score 1.00)
         MARKET DATA INSUFFICIENT  FR
-   6. boxseat          $   39.99  SOLD OUT  landed≈€  54.15  (score 1.00)
+   5. boxseat          $   39.99  SOLD OUT  landed≈€  54.15  (score 1.00)
         VERIFY  MARKET DATA INSUFFICIENT
+   6. hallofcollect    $   45.00  SOLD OUT  landed≈€  59.34  (score 1.00)
+        VERIFY  MARKET DATA INSUFFICIENT  FR
    ask n/a      sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU €39.00
-   HISTORICAL LOW $34.99 (le 2026-09-06, rlsports, 4 shop(s) vus) | cheapest live $45.00
-   BEST → hallofcollect  https://hallofcollect.de/products/topps-nba-signature-class-2025-2026-value-box
+   HISTORICAL LOW $34.99 (le 2026-09-06, rlsports, 4 shop(s) vus) | aucun live
+   RESTOCK TARGET $34.99  — surveillance, pas une valeur de marché
 
 · SUIVI   2025-26 Topps Signature Class Blaster   [TOPPS_2025-26_SIGNATURE_CLASS_BLASTER]
    1. sportscardjunction $   40.00  IN STOCK  landed≈€  54.16  (score 1.00)
@@ -1542,19 +1547,19 @@
 
 · SUIVI   2025-26 Panini Prizm Blaster   [PANINI_2025-26_PRIZM_BLASTER]
    1. stcuk            $   25.00  IN STOCK  landed≈€  38.65  (score 1.00)
-        VERIFY  cheapest of 11 in stock  FR
-   2. collectorstore   $   29.99  IN STOCK  landed≈€  43.81  (score 1.00)
+        VERIFY  cheapest of 12 in stock  FR
+   2. awesome          $   29.75  IN STOCK  landed≈€  43.56  (score 1.00)  🔔
+        🔹RESTOCK +38j  🔹NEW_LOW  🔹PRICE_DROP -9%  🔹DEAL -15%
+   3. collectorstore   $   29.99  IN STOCK  landed≈€  43.81  (score 1.00)
         🔹DEAL -14%
-   3. ehcards          $   29.99  IN STOCK  landed≈€  43.81  (score 1.00)
+   4. ehcards          $   29.99  IN STOCK  landed≈€  43.81  (score 1.00)
         🔹DEAL -14%
-   4. monmouth         $   29.99  IN STOCK  landed≈€  43.81  (score 1.00)
+   5. monmouth         $   29.99  IN STOCK  landed≈€  43.81  (score 1.00)
         🔹DEAL -14%  VERIFY
-   5. rbicru7          $   30.00  IN STOCK  landed≈€  43.82  (score 1.00)
+   6. rbicru7          $   30.00  IN STOCK  landed≈€  43.82  (score 1.00)
         🔹DEAL -14%
-   6. dacardworldeu    $   32.00  IN STOCK  landed≈€  45.89  (score 1.00)
-        VERIFY  FR
    ask $35.00   sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
-   HISTORICAL LOW $29.99 (le 2026-09-06, collectorstore, 9 shop(s) vus) | cheapest live $25.00
+   HISTORICAL LOW $29.75 (le 2026-10-14, awesome, 9 shop(s) vus) | cheapest live $25.00
    BEST → stcuk  https://sportstradingcardsuk.com/products/2025-26-panini-prizm-basketball-blaster-box
 
 · SUIVI   2025-26 Panini Prizm Mega   [PANINI_2025-26_PRIZM_MEGA]
@@ -2392,7 +2397,7 @@
         VERIFY
    3. rbicru7          $  900.00  IN STOCK  landed≈€ 943.75  (score 1.00)
    4. collectorstore   $  924.95  IN STOCK  landed≈€ 969.56  (score 1.00)
-   5. piecethegame     $ 1014.99  IN STOCK  landed≈€1062.69  (score 1.00)
+   5. piecethegame     $ 1049.99  IN STOCK  landed≈€1098.90  (score 1.00)
    6. superior         $ 1175.00  IN STOCK  landed≈€1228.21  (score 1.00)
         VERIFY
    ask $749.00  sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
@@ -3773,5 +3778,5 @@
   2024-25_DONRUSS_RETAIL_BOX               €  119.00  qscards     
   2025-26_EUROLEAGUE_SELECT_HOBBY          €  129.00  qscards     
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-10-14T18-13-52.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-10-14T22-35-30.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-13T23:35:40+00:00",
+  "generated_at": "2026-10-14T05:38:17+00:00",
   "offers": [
     {
       "product_id": "select_2023_24_hobby_mega_green_shock",
@@ -77,9 +77,9 @@
       "match_method": "SET_FORMAT_VARIANTE",
       "confidence": "select + variante « Blue & Pink Cracked Ice Prizms » nommée",
       "first_seen": "2026-09-24T07:55:54+00:00",
-      "last_seen": "2026-10-11T06:30:47+00:00",
+      "last_seen": "2026-10-14T05:38:17+00:00",
       "last_price": 120.0,
-      "last_in_stock": "2026-10-11T06:30:47+00:00",
+      "last_in_stock": "2026-10-14T05:38:17+00:00",
       "history": [
         {
           "t": "2026-09-24T07:55:54+00:00",
@@ -122,14 +122,27 @@
           "stock_status": "IN_STOCK",
           "stock_qty": null,
           "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-10-14T05:38:17+00:00",
+          "price": 120.0,
+          "stock_status": "IN_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-10-14T05:38:17+00:00",
+          "price": 120.0,
+          "stock_status": "IN_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
         }
       ],
       "titre_observe": "2023-24 Panini Select Basketball, Mega Box (BLUE & PINK CRACKED ICE)",
-      "old_stock_score": 50,
+      "old_stock_score": 36,
       "old_stock_motifs": [
-        "+14 2 fiche(s) 2021-22 ENCORE AU PANIER",
         "+24 3 fiche(s) 2023-24 ENCORE AU PANIER",
-        "+12 5 format(s) retail ancien(s) achetable(s) (Mega/Blaster/Hanger)"
+        "+12 3 format(s) retail ancien(s) achetable(s) (Mega/Blaster/Hanger)"
       ]
     },
     {
@@ -1201,9 +1214,9 @@
         "+12 3 format(s) retail ancien(s) achetable(s) (Mega/Blaster/Hanger)"
       ],
       "first_seen": "2026-10-06T19:14:58+00:00",
-      "last_seen": "2026-10-13T23:35:40+00:00",
+      "last_seen": "2026-10-14T05:38:17+00:00",
       "last_price": null,
-      "last_in_stock": "2026-10-13T23:35:40+00:00",
+      "last_in_stock": "2026-10-14T05:38:17+00:00",
       "history": [
         {
           "t": "2026-10-06T19:14:58+00:00",
@@ -1319,6 +1332,13 @@
         },
         {
           "t": "2026-10-13T23:35:40+00:00",
+          "price": null,
+          "stock_status": "IN_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-10-14T05:38:17+00:00",
           "price": null,
           "stock_status": "IN_STOCK",
           "stock_qty": null,

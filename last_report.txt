@@ -1,11 +1,12 @@
-⚠️  [shopuscards] passage 2026-10-14T04:39:40+00:00 PARTIAL (185 produits) — ignoré, référence = dernier passage complet
-⚠️  [wolfdentcg] passage 2026-10-14T04:39:40+00:00 PARTIAL (32078 produits) — ignoré, référence = dernier passage complet
-(374 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
+⚠️  [shopuscards] passage 2026-10-14T11:39:53+00:00 PARTIAL (151 produits) — ignoré, référence = dernier passage complet
+⚠️  [wolfdentcg] passage 2026-10-14T11:39:53+00:00 PARTIAL (32078 produits) — ignoré, référence = dernier passage complet
+(373 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
 
 ========================================================================
   🔔 RESTOCKS depuis le passage précédent
 ========================================================================
-  🔔 RESTOCK  TOPPS_2025-26_CHROME_HOBBY  rlsports  $1350.00  https://rlsportscards.com/products/2025-26-topps-chrome-basketball-hobby-box
+  🔔 RESTOCK  PANINI_2024-25_MONOPOLY_PRIZM_BLASTER  sjay2k  $50.00  https://www.sjay2k.com/products/2024-25-panini-prizm-monopoly-basketball-6-pack-blaster-box-millionaire-black-inserts-1
+  🔔 RESTOCK  PANINI_2024-25_SELECT_BLASTER  sjay2k  $60.00  https://www.sjay2k.com/products/2024-25-panini-select-basketball-h2-hybrid-box-copy-copy
 
 ========================================================================
   RETAIL
@@ -414,21 +415,21 @@
    BEST → rbicru7  https://rbicru7.com/products/2023-24-panini-prizm-turkish-airlines-euroleague-basketball-blaster-box
 
 · SUIVI   2024-25 Panini Prizm Blaster   [PANINI_2024-25_PRIZM_BLASTER]
-   1. dacardworldeu    $   28.00  IN STOCK  landed≈€  41.75  (score 1.00)
-        YEAR2  VERIFY  cheapest of 3 in stock  FR
-   2. ehcards          $   29.99  IN STOCK  landed≈€  43.81  (score 1.00)
-        YEAR2
-   3. piecethegame     $   29.99  IN STOCK  landed≈€  43.81  (score 1.00)
-        YEAR2
-   4. sportscardjunction $   10.00  SOLD OUT  landed≈€  23.13  (score 1.00)
+   1. ehcards          $   29.99  IN STOCK  landed≈€  43.81  (score 1.00)
+        YEAR2  cheapest of 2 in stock
+   2. piecethegame     $   29.99  IN STOCK  landed≈€  43.81  (score 1.00)
+        YEAR2  cheapest of 2 in stock
+   3. sportscardjunction $   10.00  SOLD OUT  landed≈€  23.13  (score 1.00)
         YEAR2  VERIFY
-   5. cardiacs         $   19.95  SOLD OUT  landed≈€  33.42  (score 1.00)
+   4. cardiacs         $   19.95  SOLD OUT  landed≈€  33.42  (score 1.00)
         YEAR2
-   6. awesome          $   23.75  SOLD OUT  landed≈€  37.35  (score 1.00)
+   5. awesome          $   23.75  SOLD OUT  landed≈€  37.35  (score 1.00)
         YEAR2
+   6. bleecker         $   30.00  SOLD OUT  landed≈€  43.82  (score 1.00)
+        YEAR2  VERIFY
    ask $15.00   sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
-   HISTORICAL LOW $10.00 (le 2026-08-18, sportscardjunction, 9 shop(s) vus) | cheapest live $28.00
-   BEST → dacardworldeu  https://dacardworld.eu/products/2024-25-panini-prizm-basketball-6-pack-blaster
+   HISTORICAL LOW $10.00 (le 2026-08-18, sportscardjunction, 9 shop(s) vus) | cheapest live $29.99
+   BEST → ehcards  https://ehcards.com/products/2024-25-panini-prizm-nba-basketball-6-pack-blaster-box
 
 · SUIVI   2024-25 Panini Prizm Mega   [PANINI_2024-25_PRIZM_MEGA]
    1. piecethegame     $   59.99  IN STOCK  landed≈€  74.84  (score 1.00)
@@ -449,15 +450,15 @@
 
 · SUIVI   2024-25 Panini Prizm Monopoly Blaster   [PANINI_2024-25_MONOPOLY_PRIZM_BLASTER]
    1. tanteo           $   49.90  IN STOCK  landed≈€  64.40  (score 1.00)
-        ONLY_STOCK_SEEN  VERIFY  FR
-   2. bleecker         $   25.00  SOLD OUT  landed≈€  38.65  (score 1.00)
+        VERIFY  cheapest of 2 in stock  FR
+   2. sjay2k           $   50.00  IN STOCK  landed≈€  64.51  (score 1.00)  🔔
+        🔹RESTOCK +11j  VERIFY
+   3. bleecker         $   25.00  SOLD OUT  landed≈€  38.65  (score 1.00)
         VERIFY
-   3. hiddengems       $   25.00  SOLD OUT  landed≈€  38.65  (score 1.00)
-   4. boxseat          $   29.99  SOLD OUT  landed≈€  43.81  (score 1.00)
+   4. hiddengems       $   25.00  SOLD OUT  landed≈€  38.65  (score 1.00)
+   5. boxseat          $   29.99  SOLD OUT  landed≈€  43.81  (score 1.00)
         VERIFY
-   5. bleecker         $   30.00  SOLD OUT  landed≈€  43.82  (score 1.00)
-        VERIFY
-   6. worldchampion    $   35.00  SOLD OUT  landed≈€  48.99  (score 1.00)
+   6. bleecker         $   30.00  SOLD OUT  landed≈€  43.82  (score 1.00)
         VERIFY
    ask $27.50   sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $25.00 (le 2026-08-30, hiddengems, 5 shop(s) vus) | cheapest live $49.90
@@ -465,7 +466,7 @@
 
 · SUIVI   2024-25 Panini Select Blaster   [PANINI_2024-25_SELECT_BLASTER]
    1. collectorstore   $   27.99  IN STOCK  landed≈€  41.74  (score 1.00)
-        YEAR2  cheapest of 9 in stock
+        YEAR2  cheapest of 10 in stock
    2. rbicru7          $   28.00  IN STOCK  landed≈€  41.75  (score 1.00)
         YEAR2
    3. ehcards          $   29.99  IN STOCK  landed≈€  43.81  (score 1.00)
@@ -2466,8 +2467,8 @@
         VERIFY  FR
    3. kutogo           $ 1199.95  IN STOCK  landed≈€1254.02  (score 1.00)
         VERIFY
-   4. rlsports         $ 1350.00  IN STOCK  landed≈€1409.23  (score 1.00)  🔔
-        🔹RESTOCK +55j  VERIFY
+   4. rlsports         $ 1350.00  IN STOCK  landed≈€1409.23  (score 1.00)
+        VERIFY
    5. mafiosicards_shop $ 1399.00  IN STOCK  landed≈€1459.91  (score 1.00)
         FR
    6. superior         $ 1500.00  IN STOCK  landed≈€1564.39  (score 1.00)
@@ -3779,5 +3780,5 @@
   2024-25_DONRUSS_RETAIL_BOX               €  119.00  qscards     
   2025-26_EUROLEAGUE_SELECT_HOBBY          €  129.00  qscards     
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-10-14T05-47-15.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-10-14T12-43-01.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

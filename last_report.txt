@@ -1,11 +1,6 @@
-⚠️  [shopuscards] passage 2026-10-15T04:22:27+00:00 PARTIAL (162 produits) — ignoré, référence = dernier passage complet
-⚠️  [wolfdentcg] passage 2026-10-15T04:22:27+00:00 PARTIAL (32095 produits) — ignoré, référence = dernier passage complet
+⚠️  [shopuscards] passage 2026-10-15T11:18:35+00:00 PARTIAL (174 produits) — ignoré, référence = dernier passage complet
+⚠️  [wolfdentcg] passage 2026-10-15T11:18:35+00:00 PARTIAL (32095 produits) — ignoré, référence = dernier passage complet
 (376 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
-
-========================================================================
-  🔔 RESTOCKS depuis le passage précédent
-========================================================================
-  🔔 RESTOCK  TOPPS_2025-26_CHROME_CACTUS_JACK_HOBBY  collectorstore  $629.95  https://collectorstore.com/products/2025-26-topps-chrome-cactus-jack-basketball-hobby-box
 
 ========================================================================
   RETAIL
@@ -3449,7 +3444,7 @@
 
 · SUIVI   2025-26 Panini Noir Hobby   [PANINI_2025-26_NOIR_HOBBY]
    1. cbhobby          $  750.00  IN STOCK  landed≈€ 788.59  (score 1.00)
-        🔹NEW_LOW  🔹PRICE_DROP -6%  🔹DEAL -12%  VERIFY  cheapest of 13 in stock
+        🔹DEAL -12%  VERIFY  cheapest of 13 in stock
    2. kutogo           $  769.95  IN STOCK  landed≈€ 809.22  (score 1.00)
         VERIFY
    3. collectorstore   $  799.99  IN STOCK  landed≈€ 840.30  (score 1.00)
@@ -3779,5 +3774,5 @@
   2024-25_DONRUSS_RETAIL_BOX               €  119.00  qscards     
   2025-26_EUROLEAGUE_SELECT_HOBBY          €  129.00  qscards     
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-10-15T05-18-20.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-10-15T12-22-37.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

@@ -1,12 +1,11 @@
-⚠️  [shopuscards] passage 2026-10-15T16:49:01+00:00 PARTIAL (181 produits) — ignoré, référence = dernier passage complet
-⚠️  [wolfdentcg] passage 2026-10-15T16:49:01+00:00 PARTIAL (32097 produits) — ignoré, référence = dernier passage complet
+⚠️  [shopuscards] passage 2026-10-15T21:15:52+00:00 PARTIAL (162 produits) — ignoré, référence = dernier passage complet
+⚠️  [wolfdentcg] passage 2026-10-15T21:15:52+00:00 PARTIAL (32102 produits) — ignoré, référence = dernier passage complet
 (378 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
 
 ========================================================================
   🔔 RESTOCKS depuis le passage précédent
 ========================================================================
-  🔔 RESTOCK  TOPPS_2025-26_HOOPS_JUMBO  deichcards  $550.00  https://deichcards.de/products/topps-nba-hoops-2025-26-jumbo-box
-  🔔 RESTOCK  TOPPS_2025-26_SIGNATURE_CLASS_VALUE_BOX  deichcards  $35.00  https://deichcards.de/products/topps-signature-class-nba-value-box-2025-2026
+  🔔 RESTOCK  PANINI_2023-24_MOSAIC_BLASTER  tanteo  $64.90  https://tanteocartescollections.com/products/2023-24-panini-mosaic-cartes-basketball-nba-blaster-box
 
 ========================================================================
   RETAIL
@@ -146,16 +145,16 @@
 
 👀 WATCH   2023-24 Panini Mosaic Blaster   [PANINI_2023-24_MOSAIC_BLASTER]
    1. rbicru7          $   50.00  IN STOCK  landed≈€  64.51  (score 1.00)
-        RC_YEAR  cheapest of 2 in stock
-   2. superior         $   85.00  IN STOCK  landed≈€ 100.71  (score 1.00)
+        RC_YEAR  cheapest of 3 in stock
+   2. tanteo           $   64.90  IN STOCK  landed≈€  79.92  (score 1.00)  🔔
+        RC_YEAR  VERIFY  FR
+   3. superior         $   85.00  IN STOCK  landed≈€ 100.71  (score 1.00)
         RC_YEAR  VERIFY
-   3. hiddengems       $   19.99  SOLD OUT  landed≈€  33.47  (score 1.00)
+   4. hiddengems       $   19.99  SOLD OUT  landed≈€  33.47  (score 1.00)
         RC_YEAR
-   4. awesome          $   34.00  SOLD OUT  landed≈€  47.96  (score 1.00)
+   5. awesome          $   34.00  SOLD OUT  landed≈€  47.96  (score 1.00)
         RC_YEAR
-   5. rlsports         $   34.99  SOLD OUT  landed≈€  48.98  (score 1.00)
-        RC_YEAR  VERIFY
-   6. e5sports         $   40.00  SOLD OUT  landed≈€  54.16  (score 1.00)
+   6. rlsports         $   34.99  SOLD OUT  landed≈€  48.98  (score 1.00)
         RC_YEAR  VERIFY
    ask n/a      sold $38.00   [ebay_sold 2026-08-30] | buy ≤ $32.00   | watch ≤ $50.00   | EU n/a  ⏳ STALE THRESHOLD (46 j)
    HISTORICAL LOW $19.99 (le 2026-08-17, hiddengems, 10 shop(s) vus) | cheapest live $50.00
@@ -945,10 +944,10 @@
    BEST → hiddengems  https://www.hiddengemscardshop.com/products/2025-26-topps-hoops-basketball-value-box
 
 · SUIVI   2025-26 Topps Signature Class Value Box   [TOPPS_2025-26_SIGNATURE_CLASS_VALUE_BOX]
-   1. deichcards       $   35.00  IN STOCK  landed≈€  48.99  (score 1.00)  🔔
-        ONLY_STOCK_SEEN  VERIFY  MARKET DATA INSUFFICIENT  FR
-   2. rlsports         $   34.99  SOLD OUT  landed≈€  48.98  (score 1.00)
+   1. rlsports         $   34.99  SOLD OUT  landed≈€  48.98  (score 1.00)
         VERIFY  MARKET DATA INSUFFICIENT
+   2. deichcards       $   35.00  SOLD OUT  landed≈€  48.99  (score 1.00)
+        VERIFY  MARKET DATA INSUFFICIENT  FR
    3. hiddengems       $   35.00  SOLD OUT  landed≈€  48.99  (score 1.00)
         MARKET DATA INSUFFICIENT
    4. mafiosicards_shop $   39.00  SOLD OUT  landed≈€  53.13  (score 1.00)
@@ -958,8 +957,8 @@
    6. hallofcollect    $   45.00  SOLD OUT  landed≈€  59.34  (score 1.00)
         VERIFY  MARKET DATA INSUFFICIENT  FR
    ask n/a      sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU €39.00
-   HISTORICAL LOW $34.99 (le 2026-09-06, rlsports, 4 shop(s) vus) | cheapest live $35.00
-   BEST → deichcards  https://deichcards.de/products/topps-signature-class-nba-value-box-2025-2026
+   HISTORICAL LOW $34.99 (le 2026-09-06, rlsports, 4 shop(s) vus) | aucun live
+   RESTOCK TARGET $34.99  — surveillance, pas une valeur de marché
 
 · SUIVI   2025-26 Topps Signature Class Blaster   [TOPPS_2025-26_SIGNATURE_CLASS_BLASTER]
    1. sportscardjunction $   40.00  IN STOCK  landed≈€  54.16  (score 1.00)
@@ -2508,7 +2507,7 @@
         VERIFY
    4. collectorstore   $ 1399.95  IN STOCK  landed≈€1460.90  (score 1.00)
    5. rbicru7          $ 1450.00  IN STOCK  landed≈€1512.67  (score 1.00)
-   6. piecethegame     $ 1514.99  IN STOCK  landed≈€1579.89  (score 1.00)
+   6. piecethegame     $ 1649.99  IN STOCK  landed≈€1719.54  (score 1.00)
    ask $549.99  sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $974.99 (le 2026-08-19, columbia, 16 shop(s) vus) | cheapest live $1149.00
    BEST → qscards  https://qscards.com/products/2025-26-topps-chrome-update-basketball-hobby-box
@@ -2518,9 +2517,9 @@
         VERIFY  cheapest of 6 in stock  FR
    2. collectorstore   $ 2499.95  IN STOCK  landed≈€2598.74  (score 1.00)
    3. rbicru7          $ 2795.00  IN STOCK  landed≈€2903.94  (score 1.00)
-   4. piecethegame     $ 2949.99  IN STOCK  landed≈€3064.26  (score 1.00)
-   5. superior         $ 2950.00  IN STOCK  landed≈€3064.27  (score 1.00)
+   4. superior         $ 2950.00  IN STOCK  landed≈€3064.27  (score 1.00)
         VERIFY
+   5. piecethegame     $ 2999.99  IN STOCK  landed≈€3115.98  (score 1.00)
    6. dacardworldeu    $ 3815.00  IN STOCK  landed≈€3959.02  (score 1.00)
         VERIFY  FR
    ask $2195.00 sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
@@ -2658,8 +2657,9 @@
    3. sportscardjunction $  575.00  IN STOCK  landed≈€ 607.57  (score 1.00)
         VERIFY
    4. arthurscardsandcollectibles $  580.00  IN STOCK  landed≈€ 612.74  (score 1.00)
-   5. rbicru7          $  585.00  IN STOCK  landed≈€ 617.91  (score 1.00)
-   6. stcuk            $  600.00  IN STOCK  landed≈€ 633.43  (score 1.00)
+   5. stcuk            $  600.00  IN STOCK  landed≈€ 633.43  (score 1.00)
+        VERIFY  FR
+   6. dacardworldeu    $  600.44  IN STOCK  landed≈€ 633.88  (score 1.00)
         VERIFY  FR
    ask $539.99  sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $539.99 (le 2026-08-19, columbia, 16 shop(s) vus) | cheapest live $562.99
@@ -3754,7 +3754,7 @@
   (aucune ligne en stock ne cumule un déclencheur et une référence de marché)
 
 ========================================================================
-  🇫🇷 MARCHÉ FR — 39 produit(s) avec une offre en stock
+  🇫🇷 MARCHÉ FR — 40 produit(s) avec une offre en stock
 ========================================================================
   FR MARKET PARTIAL — 2/4 source(s) vérifiée(s) : shopuscards DEGRADED, stickerpoint DEAD
   2025-26_HOOPS_HANGER                     €   29.90  tanteo      
@@ -3769,6 +3769,7 @@
   2024-25_OPTIC_BLASTER                    €   47.90  tanteo      
   2024-25_MONOPOLY_PRIZM_BLASTER           €   49.90  tanteo      
   2023-24_CONTENDERS_BLASTER               €   57.90  tanteo      
+  2023-24_MOSAIC_BLASTER                   €   64.90  tanteo      
   2024-25_DONRUSS_MEGA                     €   64.90  tanteo      
   2023-24_HOOPS_BLASTER                    €   67.90  tanteo      
   2023-24_DONRUSS_BLASTER                  €   69.90  tanteo      
@@ -3776,7 +3777,6 @@
   2025-26_CHROME_UPDATE_BLASTER            €   83.90  tanteo      
   2025-26_CHROME_VALUE_BOX                 €   99.00  qscards     
   2024-25_DONRUSS_RETAIL_BOX               €  119.00  qscards     
-  2025-26_EUROLEAGUE_SELECT_HOBBY          €  129.00  qscards     
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-10-15T18-00-06.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-10-15T22-13-44.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

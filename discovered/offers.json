@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-14T22:29:52+00:00",
+  "generated_at": "2026-10-15T05:13:21+00:00",
   "offers": [
     {
       "product_id": "select_2023_24_hobby_mega_green_shock",
@@ -268,8 +268,8 @@
       "confidence": "Mega Select 2023-24 sans variante nommée — non attribuable",
       "titre_observe": "2023-24 Panini Select Basketball Mega Box",
       "first_seen": "2026-09-24T07:55:54+00:00",
-      "last_seen": "2026-10-12T06:36:38+00:00",
-      "last_price": 67.95,
+      "last_seen": "2026-10-15T05:13:21+00:00",
+      "last_price": 75.0,
       "last_in_stock": null,
       "history": [
         {
@@ -299,6 +299,13 @@
           "stock_status": "OUT_OF_STOCK",
           "stock_qty": null,
           "event": "PRICE_UP"
+        },
+        {
+          "t": "2026-10-15T05:13:21+00:00",
+          "price": 75.0,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
         }
       ],
       "old_stock_score": 14,
@@ -1036,7 +1043,7 @@
         "+8 12 fiche(s) ancienne(s) encore indexée(s) mais ÉPUISÉE(S) — trace, pas stock"
       ],
       "first_seen": "2026-09-30T16:39:30+00:00",
-      "last_seen": "2026-10-12T06:36:38+00:00",
+      "last_seen": "2026-10-15T05:13:21+00:00",
       "last_price": 100.0,
       "last_in_stock": null,
       "history": [
@@ -1063,6 +1070,20 @@
         },
         {
           "t": "2026-10-12T06:36:38+00:00",
+          "price": 100.0,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-10-15T05:13:21+00:00",
+          "price": 100.0,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-10-15T05:13:21+00:00",
           "price": 100.0,
           "stock_status": "OUT_OF_STOCK",
           "stock_qty": null,
@@ -1214,9 +1235,9 @@
         "+12 3 format(s) retail ancien(s) achetable(s) (Mega/Blaster/Hanger)"
       ],
       "first_seen": "2026-10-06T19:14:58+00:00",
-      "last_seen": "2026-10-14T22:29:52+00:00",
+      "last_seen": "2026-10-15T05:13:21+00:00",
       "last_price": null,
-      "last_in_stock": "2026-10-14T22:29:52+00:00",
+      "last_in_stock": "2026-10-15T05:13:21+00:00",
       "history": [
         {
           "t": "2026-10-06T19:14:58+00:00",
@@ -1360,6 +1381,13 @@
         },
         {
           "t": "2026-10-14T22:29:52+00:00",
+          "price": null,
+          "stock_status": "IN_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-10-15T05:13:21+00:00",
           "price": null,
           "stock_status": "IN_STOCK",
           "stock_qty": null,

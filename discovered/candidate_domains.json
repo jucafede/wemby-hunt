@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-16T12:10:21+00:00",
+  "generated_at": "2026-10-16T17:32:34+00:00",
   "domains": [
     {
       "domain": "stickerpoint.de",
@@ -104,10 +104,10 @@
       "domain": "cashcardsunlimited.com",
       "base_url": "https://cashcardsunlimited.com",
       "first_seen": "2026-09-07T09:15:18+00:00",
-      "last_checked": "2026-10-16T05:10:48+00:00",
+      "last_checked": "2026-10-16T17:31:07+00:00",
       "platform": "shopify",
       "reachable": true,
-      "n_catalog": 4355,
+      "n_catalog": 4365,
       "prizm_core_hits": 0,
       "discovered_by": "sondage sellers_probe.json (joignable)"
     },
@@ -170,10 +170,10 @@
       "domain": "eastsidecollectables.com.au",
       "base_url": "https://eastsidecollectables.com.au",
       "first_seen": "2026-09-07T09:15:18+00:00",
-      "last_checked": "2026-10-16T05:11:22+00:00",
+      "last_checked": "2026-10-16T17:31:45+00:00",
       "platform": "shopify",
       "reachable": true,
-      "n_catalog": 3319,
+      "n_catalog": 3335,
       "prizm_core_hits": 0,
       "discovered_by": "prospection (catalogue échantillonné)"
     },
@@ -181,7 +181,7 @@
       "domain": "portcitysportscollectibles.com",
       "base_url": "https://portcitysportscollectibles.com",
       "first_seen": "2026-09-07T09:15:18+00:00",
-      "last_checked": "2026-10-16T12:08:48+00:00",
+      "last_checked": "2026-10-16T17:32:32+00:00",
       "platform": "shopify",
       "reachable": true,
       "n_catalog": 192,
@@ -192,10 +192,10 @@
       "domain": "cmbcollectibles.com",
       "base_url": "https://cmbcollectibles.com",
       "first_seen": "2026-09-07T09:15:18+00:00",
-      "last_checked": "2026-10-16T12:08:45+00:00",
+      "last_checked": "2026-10-16T17:32:28+00:00",
       "platform": "shopify",
       "reachable": true,
-      "n_catalog": 5585,
+      "n_catalog": 5586,
       "prizm_core_hits": 4,
       "discovered_by": "prospection (catalogue échantillonné)"
     },
@@ -214,7 +214,7 @@
       "domain": "cardpopusa.com",
       "base_url": "https://cardpopusa.com",
       "first_seen": "2026-09-07T09:15:18+00:00",
-      "last_checked": "2026-10-16T12:08:51+00:00",
+      "last_checked": "2026-10-16T17:32:34+00:00",
       "platform": "shopify",
       "reachable": true,
       "n_catalog": 249,
@@ -247,7 +247,7 @@
       "domain": "collectorsclub.com",
       "base_url": "https://collectorsclub.com",
       "first_seen": "2026-09-08T16:59:05+00:00",
-      "last_checked": "2026-10-16T05:10:59+00:00",
+      "last_checked": "2026-10-16T17:31:21+00:00",
       "platform": "shopify",
       "reachable": true,
       "n_catalog": 1755,
@@ -258,10 +258,10 @@
       "domain": "honeyholecollect.com",
       "base_url": "https://honeyholecollect.com",
       "first_seen": "2026-09-10T16:45:43+00:00",
-      "last_checked": "2026-10-16T05:10:04+00:00",
+      "last_checked": "2026-10-16T17:30:35+00:00",
       "platform": "shopify",
       "reachable": true,
-      "n_catalog": 3698,
+      "n_catalog": 3700,
       "prizm_core_hits": 6,
       "discovered_by": "recherche web · 2023-24 Panini Prizm Basketball Hobby Box buy"
     },
@@ -319,6 +319,17 @@
       "n_catalog": 781,
       "prizm_core_hits": 6,
       "discovered_by": "recherche web · 2023/24 Panini Prizm Hobby basketball box in stock"
+    },
+    {
+      "domain": "waxstat.com",
+      "base_url": "https://waxstat.com",
+      "first_seen": "2026-10-16T17:26:14+00:00",
+      "last_checked": "2026-10-16T17:30:07+00:00",
+      "platform": null,
+      "reachable": false,
+      "n_catalog": 0,
+      "prizm_core_hits": null,
+      "discovered_by": "recherche web · 2023-24 Panini Prizm Basketball Hobby Box buy"
     }
   ],
   "note": "Domaines marchands connus mais NON enregistrés comme sources. Chacun porte sa provenance et la date de son dernier balayage. Un domaine injoignable reste inscrit, marqué injoignable — l'effacer ferait reperdre l'information."

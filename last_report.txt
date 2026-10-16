@@ -1,12 +1,6 @@
-⚠️  [shopuscards] passage 2026-10-16T04:17:59+00:00 PARTIAL (173 produits) — ignoré, référence = dernier passage complet
-⚠️  [wolfdentcg] passage 2026-10-16T04:17:59+00:00 PARTIAL (32107 produits) — ignoré, référence = dernier passage complet
+⚠️  [shopuscards] passage 2026-10-16T11:13:30+00:00 PARTIAL (161 produits) — ignoré, référence = dernier passage complet
+⚠️  [wolfdentcg] passage 2026-10-16T11:13:30+00:00 PARTIAL (32107 produits) — ignoré, référence = dernier passage complet
 (379 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
-
-========================================================================
-  🔔 RESTOCKS depuis le passage précédent
-========================================================================
-  🔔 RESTOCK  TOPPS_2025-26_CHROME_BLASTER  awesome  $99.75  https://theawesomecardshop.com/products/2025-26-topps-chrome-basketball-blaster-box
-  🔔 RESTOCK  TOPPS_2025-26_HOOPS_BLASTER  awesome  $29.75  https://theawesomecardshop.com/products/2025-26-topps-nba-hoops-basketball-blaster-box
 
 ========================================================================
   RETAIL
@@ -852,8 +846,7 @@
    2. rbicru7          $   85.00  IN STOCK  landed≈€ 100.71  (score 1.00)
    3. dacardworldeu    $   92.00  IN STOCK  landed≈€ 107.95  (score 1.00)
         VERIFY  FR
-   4. awesome          $   99.75  IN STOCK  landed≈€ 115.97  (score 1.00)  🔔
-        🔹RESTOCK +57j
+   4. awesome          $   99.75  IN STOCK  landed≈€ 115.97  (score 1.00)
    5. superior         $  115.00  IN STOCK  landed≈€ 131.74  (score 1.00)
         VERIFY
    6. columbia         $   44.99  SOLD OUT  landed≈€  59.33  (score 1.00)
@@ -915,8 +908,8 @@
    BEST → tanteo  https://tanteocartescollections.com/products/2025-26-topps-update-series-cartes-basketball-nba-blaster-box
 
 · SUIVI   2025-26 Topps Hoops Blaster   [TOPPS_2025-26_HOOPS_BLASTER]
-   1. awesome          $   29.75  IN STOCK  landed≈€  43.56  (score 1.00)  🔔
-        🔹RESTOCK +57j  cheapest of 11 in stock
+   1. awesome          $   29.75  IN STOCK  landed≈€  43.56  (score 1.00)
+        cheapest of 11 in stock
    2. sportscardjunction $   30.00  IN STOCK  landed≈€  43.82  (score 1.00)
         VERIFY
    3. piecethegame     $   34.99  IN STOCK  landed≈€  48.98  (score 1.00)
@@ -3779,5 +3772,5 @@
   2025-26_CHROME_VALUE_BOX                 €   99.00  qscards     
   2024-25_DONRUSS_RETAIL_BOX               €  119.00  qscards     
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-10-16T05-21-06.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-10-16T12-20-44.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

@@ -1,6 +1,11 @@
-⚠️  [shopuscards] passage 2026-10-16T11:13:30+00:00 PARTIAL (161 produits) — ignoré, référence = dernier passage complet
-⚠️  [wolfdentcg] passage 2026-10-16T11:13:30+00:00 PARTIAL (32107 produits) — ignoré, référence = dernier passage complet
+⚠️  [shopuscards] passage 2026-10-16T16:31:30+00:00 PARTIAL (184 produits) — ignoré, référence = dernier passage complet
+⚠️  [wolfdentcg] passage 2026-10-16T16:31:30+00:00 PARTIAL (32107 produits) — ignoré, référence = dernier passage complet
 (379 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
+
+========================================================================
+  🔔 RESTOCKS depuis le passage précédent
+========================================================================
+  🔔 RESTOCK  TOPPS_2025-26_CHROME_UPDATE_JUMBO  collectorstore  $2699.95  https://collectorstore.com/products/2025-26-topps-chrome-update-series-basketball-jumbo-box
 
 ========================================================================
   RETAIL
@@ -969,10 +974,10 @@
    BEST → sportscardjunction  https://sportscardjunction.com/products/2025-26-topps-signature-class-basketball-blaster-box
 
 · CANDIDAT   2025-26 Panini Select EuroLeague Mega   [PANINI_2025-26_EUROLEAGUE_SELECT_MEGA]  ⚑ euroleague
-   1. cardvault        $   39.95  IN STOCK  landed≈€  54.11  (score 1.00)
-        ONLY_STOCK_SEEN  EUROLEAGUE  MARKET DATA INSUFFICIENT
+   1. cardvault        $   24.95  IN STOCK  landed≈€  38.60  (score 1.00)
+        🔹NEW_LOW  🔹PRICE_DROP -38%  ONLY_STOCK_SEEN  EUROLEAGUE  MARKET DATA INSUFFICIENT
    ask n/a      sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU €53.99
-   HISTORICAL LOW $39.95 (le 2026-09-24, cardvault, 1 shop(s) vus) | cheapest live $39.95
+   HISTORICAL LOW $24.95 (le 2026-10-16, cardvault, 1 shop(s) vus) | cheapest live $24.95
    BEST → cardvault  https://cardvaultbytombrady.com/products/2025-26-panini-select-euroleague-basketball-mega-box
 
 · CANDIDAT   2025-26 Panini Contenders EuroLeague Mega   [PANINI_2025-26_EUROLEAGUE_CONTENDERS_MEGA]  ⚑ euroleague
@@ -2507,32 +2512,32 @@
 
 · SUIVI   2025-26 Topps Chrome Update Hobby Jumbo   [TOPPS_2025-26_CHROME_UPDATE_JUMBO]
    1. qscards          $ 2299.00  IN STOCK  landed≈€2390.87  (score 1.00)
-        VERIFY  cheapest of 5 in stock  FR
-   2. rbicru7          $ 2795.00  IN STOCK  landed≈€2903.94  (score 1.00)
-   3. superior         $ 2950.00  IN STOCK  landed≈€3064.27  (score 1.00)
+        VERIFY  cheapest of 6 in stock  FR
+   2. collectorstore   $ 2699.95  IN STOCK  landed≈€2805.62  (score 1.00)  🔔
+        🔹RESTOCK +0j
+   3. rbicru7          $ 2795.00  IN STOCK  landed≈€2903.94  (score 1.00)
+   4. superior         $ 2950.00  IN STOCK  landed≈€3064.27  (score 1.00)
         VERIFY
-   4. piecethegame     $ 2999.99  IN STOCK  landed≈€3115.98  (score 1.00)
-   5. dacardworldeu    $ 3815.00  IN STOCK  landed≈€3959.02  (score 1.00)
+   5. piecethegame     $ 2999.99  IN STOCK  landed≈€3115.98  (score 1.00)
+   6. dacardworldeu    $ 3815.00  IN STOCK  landed≈€3959.02  (score 1.00)
         VERIFY  FR
-   6. rlsports         $ 1999.00  SOLD OUT  landed≈€2080.55  (score 1.00)
-        VERIFY
    ask $2195.00 sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $1999.00 (le 2026-08-19, rlsports, 14 shop(s) vus) | cheapest live $2299.00
    BEST → qscards  https://qscards.com/products/2025-26-topps-chrome-update-basketball-jumbo-box
 
 · SUIVI   2025-26 Topps Chrome Black Hobby [Chrome Black]   [TOPPS_2025-26_CHROME_BLACK_HOBBY]
    1. dennistheripper  $  449.99  IN STOCK  landed≈€ 478.26  (score 1.00)
-        VERIFY  cheapest of 20 in stock  FR
-   2. deichcards       $  450.00  IN STOCK  landed≈€ 478.27  (score 1.00)
+        VERIFY  cheapest of 19 in stock  FR
+   2. stcuk            $  450.00  IN STOCK  landed≈€ 478.27  (score 1.00)
         VERIFY  FR
-   3. stcuk            $  450.00  IN STOCK  landed≈€ 478.27  (score 1.00)
-        VERIFY  FR
-   4. cbhobby          $  475.00  IN STOCK  landed≈€ 504.13  (score 1.00)
+   3. cbhobby          $  475.00  IN STOCK  landed≈€ 504.13  (score 1.00)
         🔹STRONG_DEAL -26%  VERIFY
-   5. rlsports         $  475.00  IN STOCK  landed≈€ 504.13  (score 1.00)
+   4. rlsports         $  475.00  IN STOCK  landed≈€ 504.13  (score 1.00)
         🔹STRONG_DEAL -26%  VERIFY
-   6. sportscardjunction $  475.00  IN STOCK  landed≈€ 504.13  (score 1.00)
+   5. sportscardjunction $  475.00  IN STOCK  landed≈€ 504.13  (score 1.00)
         🔹STRONG_DEAL -26%  VERIFY
+   6. collectorstore   $  479.95  IN STOCK  landed≈€ 509.25  (score 1.00)
+        🔹STRONG_DEAL -25%
    ask $637.50  sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $412.99 (le 2026-09-16, columbia, 19 shop(s) vus) | cheapest live $449.99
    BEST → dennistheripper  https://dennistheripper.de/products/2025-26-topps-chrome-black-basketball-hobby-box
@@ -2602,7 +2607,7 @@
    4. piecethegame     $ 2369.99  IN STOCK  landed≈€2464.31  (score 1.00)
    5. hikaru_shop      $ 2799.00  IN STOCK  landed≈€2908.07  (score 1.00)
         FR
-   6. dacardworldeu    $ 2905.00  IN STOCK  landed≈€3017.72  (score 1.00)
+   6. qscards          $ 2999.00  IN STOCK  landed≈€3114.95  (score 1.00)
         VERIFY  FR
    ask $2500.00 sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $2250.00 (le 2026-10-05, worldchampion, 11 shop(s) vus) | cheapest live $2250.00
@@ -2696,8 +2701,8 @@
 · CANDIDAT   2025-26 Panini Select EuroLeague Hobby   [PANINI_2025-26_EUROLEAGUE_SELECT_HOBBY]  ⚑ euroleague
    1. collectorstore   $   79.95  IN STOCK  landed≈€  95.49  (score 1.00)
         EUROLEAGUE  cheapest of 8 in stock  MARKET DATA INSUFFICIENT
-   2. cardvault        $   99.95  IN STOCK  landed≈€ 116.18  (score 1.00)
-        EUROLEAGUE  MARKET DATA INSUFFICIENT
+   2. cardvault        $   89.95  IN STOCK  landed≈€ 105.83  (score 1.00)
+        🔹NEW_LOW  🔹PRICE_DROP -10%  EUROLEAGUE  MARKET DATA INSUFFICIENT
    3. vwsportscards    $   99.99  IN STOCK  landed≈€ 116.22  (score 1.00)
         EUROLEAGUE  MARKET DATA INSUFFICIENT
    4. rbicru7          $  110.00  IN STOCK  landed≈€ 126.57  (score 1.00)
@@ -3772,5 +3777,5 @@
   2025-26_CHROME_VALUE_BOX                 €   99.00  qscards     
   2024-25_DONRUSS_RETAIL_BOX               €  119.00  qscards     
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-10-16T12-20-44.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-10-16T17-45-09.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

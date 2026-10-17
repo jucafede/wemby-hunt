@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-17T16:28:21+00:00",
+  "generated_at": "2026-10-17T21:22:44+00:00",
   "offers": [
     {
       "product_id": "select_2023_24_hobby_mega_green_shock",
@@ -1245,13 +1245,13 @@
       "titre_observe": "2023-24 Panini Select Basketball Mega Box",
       "old_stock_score": 36,
       "old_stock_motifs": [
-        "+24 3 fiche(s) 2023-24 ENCORE AU PANIER",
-        "+12 3 format(s) retail ancien(s) achetable(s) (Mega/Blaster/Hanger)"
+        "+24 4 fiche(s) 2023-24 ENCORE AU PANIER",
+        "+12 4 format(s) retail ancien(s) achetable(s) (Mega/Blaster/Hanger)"
       ],
       "first_seen": "2026-10-06T19:14:58+00:00",
-      "last_seen": "2026-10-17T16:28:21+00:00",
+      "last_seen": "2026-10-17T21:22:44+00:00",
       "last_price": null,
-      "last_in_stock": "2026-10-17T16:28:21+00:00",
+      "last_in_stock": "2026-10-17T21:22:44+00:00",
       "history": [
         {
           "t": "2026-10-06T19:14:58+00:00",
@@ -1458,6 +1458,13 @@
         },
         {
           "t": "2026-10-17T16:28:21+00:00",
+          "price": null,
+          "stock_status": "IN_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-10-17T21:22:44+00:00",
           "price": null,
           "stock_status": "IN_STOCK",
           "stock_qty": null,

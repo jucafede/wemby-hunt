@@ -1,11 +1,6 @@
-⚠️  [shopuscards] passage 2026-10-18T04:15:58+00:00 PARTIAL (166 produits) — ignoré, référence = dernier passage complet
-⚠️  [wolfdentcg] passage 2026-10-18T04:15:58+00:00 PARTIAL (32144 produits) — ignoré, référence = dernier passage complet
+⚠️  [shopuscards] passage 2026-10-18T10:52:04+00:00 PARTIAL (159 produits) — ignoré, référence = dernier passage complet
+⚠️  [wolfdentcg] passage 2026-10-18T10:52:04+00:00 PARTIAL (32144 produits) — ignoré, référence = dernier passage complet
 (382 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
-
-========================================================================
-  🔔 RESTOCKS depuis le passage précédent
-========================================================================
-  🔔 RESTOCK  PANINI_2025-26_COURT_KINGS_HOBBY  sjay2k  $260.00  https://www.sjay2k.com/products/2025-26-panini-court-kings-basketball-hobby-box-pre-order-august-1
 
 ========================================================================
   RETAIL
@@ -3771,5 +3766,5 @@
   2025-26_CHROME_VALUE_BOX                 €   99.00  qscards     
   2024-25_DONRUSS_RETAIL_BOX               €  119.00  qscards     
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-10-18T05-28-17.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-10-18T12-08-05.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

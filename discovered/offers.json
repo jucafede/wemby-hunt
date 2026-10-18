@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-17T21:22:44+00:00",
+  "generated_at": "2026-10-18T05:18:20+00:00",
   "offers": [
     {
       "product_id": "select_2023_24_hobby_mega_green_shock",
@@ -1249,9 +1249,9 @@
         "+12 4 format(s) retail ancien(s) achetable(s) (Mega/Blaster/Hanger)"
       ],
       "first_seen": "2026-10-06T19:14:58+00:00",
-      "last_seen": "2026-10-17T21:22:44+00:00",
+      "last_seen": "2026-10-18T05:18:20+00:00",
       "last_price": null,
-      "last_in_stock": "2026-10-17T21:22:44+00:00",
+      "last_in_stock": "2026-10-18T05:18:20+00:00",
       "history": [
         {
           "t": "2026-10-06T19:14:58+00:00",
@@ -1469,6 +1469,13 @@
           "stock_status": "IN_STOCK",
           "stock_qty": null,
           "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-10-18T05:18:20+00:00",
+          "price": null,
+          "stock_status": "IN_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
         }
       ]
     },
@@ -1516,6 +1523,40 @@
           "stock_status": "IN_STOCK",
           "stock_qty": null,
           "event": "UNCHANGED"
+        }
+      ]
+    },
+    {
+      "product_id": null,
+      "shop_id": "bleecker",
+      "url": "https://bleeckertrading.com/products/2023-24-select-basketball-sealed-mega-box-1",
+      "price": 95.0,
+      "currency": "USD",
+      "stock_status": "OUT_OF_STOCK",
+      "stock_qty": null,
+      "shipping_france": null,
+      "shipping_cost": null,
+      "landed_price_france": null,
+      "match_method": "AMBIGU",
+      "confidence": "Mega Select 2023-24 sans variante nommée — non attribuable",
+      "titre_observe": "2023-24 Select Basketball Hobby Mega Box",
+      "old_stock_score": 17,
+      "old_stock_motifs": [
+        "+6 1 fiche(s) 2020-21 ENCORE AU PANIER",
+        "+8 13 fiche(s) ancienne(s) encore indexée(s) mais ÉPUISÉE(S) — trace, pas stock",
+        "+3 catalogue NBA scellé profond (27 fiches relevées)"
+      ],
+      "first_seen": "2026-10-18T05:18:20+00:00",
+      "last_seen": "2026-10-18T05:18:20+00:00",
+      "last_price": null,
+      "last_in_stock": null,
+      "history": [
+        {
+          "t": "2026-10-18T05:18:20+00:00",
+          "price": 95.0,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "NEW"
         }
       ]
     }

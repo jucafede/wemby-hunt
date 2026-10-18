@@ -1,5 +1,5 @@
-⚠️  [shopuscards] passage 2026-10-18T10:52:04+00:00 PARTIAL (159 produits) — ignoré, référence = dernier passage complet
-⚠️  [wolfdentcg] passage 2026-10-18T10:52:04+00:00 PARTIAL (32144 produits) — ignoré, référence = dernier passage complet
+⚠️  [shopuscards] passage 2026-10-18T15:46:06+00:00 PARTIAL (144 produits) — ignoré, référence = dernier passage complet
+⚠️  [wolfdentcg] passage 2026-10-18T15:46:06+00:00 PARTIAL (32164 produits) — ignoré, référence = dernier passage complet
 (382 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
 
 ========================================================================
@@ -922,17 +922,17 @@
 
 · SUIVI   2025-26 Topps Hoops Value Box   [TOPPS_2025-26_HOOPS_VALUE_BOX]
    1. hiddengems       $   29.99  IN STOCK  landed≈€  43.81  (score 1.00)
-        cheapest of 6 in stock
+        cheapest of 5 in stock
    2. deichcards       $   30.00  IN STOCK  landed≈€  43.82  (score 1.00)
         VERIFY  FR
    3. mafiosicards_shop $   35.00  IN STOCK  landed≈€  48.99  (score 1.00)
         FR
-   4. americansportstore $   39.99  IN STOCK  landed≈€  54.15  (score 1.00)
-        VERIFY  FR
-   5. boxseat          $   39.99  IN STOCK  landed≈€  54.15  (score 1.00)
+   4. boxseat          $   39.99  IN STOCK  landed≈€  54.15  (score 1.00)
         VERIFY
-   6. dioib            $   49.00  IN STOCK  landed≈€  63.47  (score 1.00)
+   5. dioib            $   49.00  IN STOCK  landed≈€  63.47  (score 1.00)
         VERIFY  FR
+   6. rlsports         $   27.99  SOLD OUT  landed≈€  41.74  (score 1.00)
+        VERIFY
    ask $29.99   sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU €39.00
    HISTORICAL LOW $27.99 (le 2026-08-30, rlsports, 4 shop(s) vus) | cheapest live $29.99
    BEST → hiddengems  https://www.hiddengemscardshop.com/products/2025-26-topps-hoops-basketball-value-box
@@ -3691,7 +3691,7 @@
   [bleecker] 1999-00 Topps Chrome Basketball Hobby Box  $750.00 OOS  → [["TOPPS_2023-24_CHROME_HOBBY", 0.77], ["TOPPS_2025-26_CHROME_HOBBY", 0.77], ["TOPPS_2024-25_TOPPS_CHROME_HOBBY", 0.77]]
 
 ========================================================================
-  👀 WATCHLIST — 97 prioritaires / 190 historiques / 2 autres
+  👀 WATCHLIST — 97 prioritaires / 190 historiques / 3 autres
 ========================================================================
   🔔 RESTOCK PRIORITY  2024-25 Panini Hoops Pack                  target                          $0.75 (2026-09-06, 6 shop(s))   -93.1% vs ask $10.90
   🔔 RESTOCK PRIORITY  2024-25 Panini Mosaic Pack                 target                          $4.99 (2026-09-06, 2 shop(s))   -84.4% vs ask $32.00
@@ -3766,5 +3766,5 @@
   2025-26_CHROME_VALUE_BOX                 €   99.00  qscards     
   2024-25_DONRUSS_RETAIL_BOX               €  119.00  qscards     
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-10-18T12-08-05.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-10-18T17-00-07.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

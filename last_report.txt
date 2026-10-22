@@ -1,13 +1,6 @@
-⚠️  [shopuscards] passage 2026-10-22T04:26:08+00:00 PARTIAL (183 produits) — ignoré, référence = dernier passage complet
-⚠️  [wolfdentcg] passage 2026-10-22T04:26:08+00:00 PARTIAL (32258 produits) — ignoré, référence = dernier passage complet
+⚠️  [shopuscards] passage 2026-10-22T11:37:55+00:00 PARTIAL (182 produits) — ignoré, référence = dernier passage complet
+⚠️  [wolfdentcg] passage 2026-10-22T11:37:55+00:00 PARTIAL (32258 produits) — ignoré, référence = dernier passage complet
 (394 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
-
-========================================================================
-  🔔 RESTOCKS depuis le passage précédent
-========================================================================
-  🔔 RESTOCK  PANINI_2025-26_COURT_KINGS_HOBBY  sjay2k  $260.00  https://www.sjay2k.com/products/2025-26-panini-court-kings-basketball-hobby-box-pre-order-august-1
-  🔔 RESTOCK  PANINI_2025-26_PRIZM_MEGA  sjay2k  $110.00  https://www.sjay2k.com/products/2025-26-panini-prizm-basketball-trading-card-hobby-box-pre-order-august-1-copy
-  🔔 RESTOCK  TOPPS_2025-26_DEFINITIVE_HOBBY  sjay2k  $25000.00  https://www.sjay2k.com/products/2025-26-topps-definitive-basketball-hobby-box-pre-order-august-27
 
 ========================================================================
   RETAIL
@@ -2605,7 +2598,7 @@
 
 · CANDIDAT   2025-26 Topps Motif Hobby   [TOPPS_2025-26_MOTIF_HOBBY]
    1. worldchampion    $ 2250.00  IN STOCK  landed≈€2340.19  (score 1.00)
-        🔹DEAL -10%  VERIFY  cheapest of 10 in stock
+        🔹DEAL -10%  VERIFY  cheapest of 9 in stock
    2. columbia         $ 2299.99  IN STOCK  landed≈€2391.90  (score 1.00)
    3. cardiacs         $ 2349.95  IN STOCK  landed≈€2443.58  (score 1.00)
    4. dacardworldeu    $ 2750.44  IN STOCK  landed≈€2857.84  (score 1.00)
@@ -3593,8 +3586,8 @@
         MARKET DATA INSUFFICIENT  FR
    4. qscards          $19999.00  IN STOCK  landed≈€20699.75  (score 1.00)
         VERIFY  MARKET DATA INSUFFICIENT  FR
-   5. sjay2k           $25000.00  IN STOCK  landed≈€25872.79  (score 1.00)  🔔
-        🔹RESTOCK +45j  VERIFY  MARKET DATA INSUFFICIENT
+   5. sjay2k           $25000.00  IN STOCK  landed≈€25872.79  (score 1.00)
+        VERIFY  MARKET DATA INSUFFICIENT
    6. bleecker         $    0.00  SOLD OUT  landed≈€  12.79  (score 1.00)
         NO_PRICE
    ask n/a      sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
@@ -3704,7 +3697,7 @@
   [bleecker] 1999-00 Topps Chrome Basketball Hobby Box  $750.00 OOS  → [["TOPPS_2023-24_CHROME_HOBBY", 0.77], ["TOPPS_2025-26_CHROME_HOBBY", 0.77], ["TOPPS_2024-25_TOPPS_CHROME_HOBBY", 0.77]]
 
 ========================================================================
-  👀 WATCHLIST — 97 prioritaires / 189 historiques / 3 autres
+  👀 WATCHLIST — 97 prioritaires / 190 historiques / 3 autres
 ========================================================================
   🔔 RESTOCK PRIORITY  2024-25 Panini Hoops Pack                  target                          $0.75 (2026-09-06, 6 shop(s))   -93.1% vs ask $10.90
   🔔 RESTOCK PRIORITY  2024-25 Panini Mosaic Pack                 target                          $4.99 (2026-09-06, 2 shop(s))   -84.4% vs ask $32.00
@@ -3779,5 +3772,5 @@
   2024-25_DONRUSS_RETAIL_BOX               €  119.00  qscards     
   2025-26_EUROLEAGUE_SELECT_HOBBY          €  129.00  qscards     
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-10-22T05-45-47.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-10-22T12-59-19.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

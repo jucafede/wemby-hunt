@@ -1,13 +1,6 @@
-⚠️  [shopuscards] passage 2026-10-23T04:31:52+00:00 PARTIAL (190 produits) — ignoré, référence = dernier passage complet
-⚠️  [wolfdentcg] passage 2026-10-23T04:31:52+00:00 PARTIAL (32257 produits) — ignoré, référence = dernier passage complet
+⚠️  [shopuscards] passage 2026-10-23T11:27:18+00:00 PARTIAL (192 produits) — ignoré, référence = dernier passage complet
+⚠️  [wolfdentcg] passage 2026-10-23T11:27:18+00:00 PARTIAL (32257 produits) — ignoré, référence = dernier passage complet
 (396 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
-
-========================================================================
-  🔔 RESTOCKS depuis le passage précédent
-========================================================================
-  🔔 RESTOCK  PANINI_2025-26_COURT_KINGS_HOBBY  sjay2k  $260.00  https://www.sjay2k.com/products/2025-26-panini-court-kings-basketball-hobby-box-pre-order-august-1
-  🔔 RESTOCK  TOPPS_2025-26_FINEST_HOBBY  sjay2k  $1300.00  https://www.sjay2k.com/products/2025-26-topps-finest-basketball-hobby-box-pre-order-march-5
-  🔔 RESTOCK  TOPPS_2025-26_MOTIF_HOBBY  sjay2k  $4000.00  https://www.sjay2k.com/products/2025-26-topps-motif-basketball-hobby-box-pre-order-july-9
 
 ========================================================================
   RETAIL
@@ -931,17 +924,17 @@
 
 · SUIVI   2025-26 Topps Hoops Value Box   [TOPPS_2025-26_HOOPS_VALUE_BOX]
    1. hiddengems       $   29.99  IN STOCK  landed≈€  43.81  (score 1.00)
-        cheapest of 5 in stock
+        cheapest of 4 in stock
    2. deichcards       $   30.00  IN STOCK  landed≈€  43.82  (score 1.00)
         VERIFY  FR
    3. mafiosicards_shop $   35.00  IN STOCK  landed≈€  48.99  (score 1.00)
         FR
    4. boxseat          $   39.99  IN STOCK  landed≈€  54.15  (score 1.00)
         VERIFY
-   5. dioib            $   48.00  IN STOCK  landed≈€  62.44  (score 1.00)
-        VERIFY  FR
-   6. rlsports         $   27.99  SOLD OUT  landed≈€  41.74  (score 1.00)
+   5. rlsports         $   27.99  SOLD OUT  landed≈€  41.74  (score 1.00)
         VERIFY
+   6. americansportstore $   39.99  SOLD OUT  landed≈€  54.15  (score 1.00)
+        VERIFY  FR
    ask $29.99   sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU €39.00
    HISTORICAL LOW $27.99 (le 2026-08-30, rlsports, 4 shop(s) vus) | cheapest live $29.99
    BEST → hiddengems  https://www.hiddengemscardshop.com/products/2025-26-topps-hoops-basketball-value-box
@@ -2611,14 +2604,14 @@
 
 · CANDIDAT   2025-26 Topps Motif Hobby   [TOPPS_2025-26_MOTIF_HOBBY]
    1. worldchampion    $ 2250.00  IN STOCK  landed≈€2340.19  (score 1.00)
-        🔹DEAL -10%  VERIFY  cheapest of 9 in stock
+        🔹DEAL -10%  VERIFY  cheapest of 10 in stock
    2. columbia         $ 2299.99  IN STOCK  landed≈€2391.90  (score 1.00)
    3. cardiacs         $ 2349.95  IN STOCK  landed≈€2443.58  (score 1.00)
-   4. hikaru_shop      $ 2799.00  IN STOCK  landed≈€2908.07  (score 1.00)
-        FR
-   5. piecethegame     $ 2849.99  IN STOCK  landed≈€2960.82  (score 1.00)
-   6. qscards          $ 2999.00  IN STOCK  landed≈€3114.95  (score 1.00)
+   4. dacardworldeu    $ 2750.44  IN STOCK  landed≈€2857.84  (score 1.00)
         VERIFY  FR
+   5. hikaru_shop      $ 2799.00  IN STOCK  landed≈€2908.07  (score 1.00)
+        FR
+   6. piecethegame     $ 2849.99  IN STOCK  landed≈€2960.82  (score 1.00)
    ask $2500.00 sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $2250.00 (le 2026-10-05, worldchampion, 11 shop(s) vus) | cheapest live $2250.00
    BEST → worldchampion  https://www.worldchampionsportscards.org/products/2025-26-topps-motif-basketball-hobby-box
@@ -2633,8 +2626,8 @@
         VERIFY  FR
    5. superior         $ 1225.00  IN STOCK  landed≈€1279.93  (score 1.00)
         VERIFY
-   6. sjay2k           $ 1300.00  IN STOCK  landed≈€1357.51  (score 1.00)  🔔
-        🔹RESTOCK +1j  VERIFY
+   6. sjay2k           $ 1300.00  IN STOCK  landed≈€1357.51  (score 1.00)
+        VERIFY
    ask $799.75  sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $770.00 (le 2026-08-19, rlsports, 12 shop(s) vus) | cheapest live $814.95
    BEST → kutogo  https://kutogo.com/product/2025-26-topps-finest-basketball-hobby-box/
@@ -3676,7 +3669,7 @@
   [columbia] 2024‑25 Panini Noir Basketball Hobby Box  $2098.99 OOS  → [["PANINI_2023-24_NOIR_HOBBY", 0.77], ["PANINI_2024-25_NOIR_HOBBY", 0.77], ["PANINI_2025-26_NOIR_HOBBY", 0.77]]
   [monmouth] 1999-2000 Topps Chrome Basketball Hobby Personal Pack Personal Pack 1  $64.99 OOS  → [["TOPPS_2023-24_TOPPS_CHROME_PACK", 0.77], ["TOPPS_2025-26_TOPPS_CHROME_PACK", 0.77]]
   [monmouth] 1999-2000 Topps Chrome Basketball Hobby Personal Pack Personal Pack 2  $64.99 OOS  → [["TOPPS_2023-24_TOPPS_CHROME_PACK", 0.77], ["TOPPS_2025-26_TOPPS_CHROME_PACK", 0.77]]
-  [monmouth] 1999-2000 Topps Chrome Basketball Hobby Personal Pack Personal Pack 3  $64.99 IN  → [["TOPPS_2023-24_TOPPS_CHROME_PACK", 0.77], ["TOPPS_2025-26_TOPPS_CHROME_PACK", 0.77]]
+  [monmouth] 1999-2000 Topps Chrome Basketball Hobby Personal Pack Personal Pack 3  $64.99 OOS  → [["TOPPS_2023-24_TOPPS_CHROME_PACK", 0.77], ["TOPPS_2025-26_TOPPS_CHROME_PACK", 0.77]]
   [monmouth] 1999-2000 Topps Chrome Basketball Hobby Personal Pack Personal Pack 4  $64.99 IN  → [["TOPPS_2023-24_TOPPS_CHROME_PACK", 0.77], ["TOPPS_2025-26_TOPPS_CHROME_PACK", 0.77]]
   [monmouth] 1999-2000 Topps Chrome Basketball Hobby Personal Pack Personal Pack 5  $64.99 IN  → [["TOPPS_2023-24_TOPPS_CHROME_PACK", 0.77], ["TOPPS_2025-26_TOPPS_CHROME_PACK", 0.77]]
   [monmouth] 1999-2000 Topps Chrome Basketball Hobby Personal Pack Personal Pack 6  $64.99 IN  → [["TOPPS_2023-24_TOPPS_CHROME_PACK", 0.77], ["TOPPS_2025-26_TOPPS_CHROME_PACK", 0.77]]
@@ -3785,5 +3778,5 @@
   2024-25_DONRUSS_RETAIL_BOX               €  119.00  qscards     
   2025-26_EUROLEAGUE_SELECT_HOBBY          €  129.00  qscards     
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-10-23T05-39-21.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-10-23T12-51-46.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

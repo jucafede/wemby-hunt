@@ -1,6 +1,11 @@
-⚠️  [shopuscards] passage 2026-10-23T11:27:18+00:00 PARTIAL (192 produits) — ignoré, référence = dernier passage complet
-⚠️  [wolfdentcg] passage 2026-10-23T11:27:18+00:00 PARTIAL (32257 produits) — ignoré, référence = dernier passage complet
-(396 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
+⚠️  [shopuscards] passage 2026-10-23T16:56:24+00:00 PARTIAL (157 produits) — ignoré, référence = dernier passage complet
+⚠️  [wolfdentcg] passage 2026-10-23T16:56:24+00:00 PARTIAL (32265 produits) — ignoré, référence = dernier passage complet
+(397 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
+
+========================================================================
+  🔔 RESTOCKS depuis le passage précédent
+========================================================================
+  🔔 RESTOCK  TOPPS_2025-26_INCEPTION_HOBBY  collectorstore  $799.95  https://collectorstore.com/products/2025-26-topps-inception-basketball-hobby-box
 
 ========================================================================
   RETAIL
@@ -2385,7 +2390,7 @@
         VERIFY
    4. cardvault        $  594.95  IN STOCK  landed≈€ 628.20  (score 1.00)
    5. rbicru7          $  595.00  IN STOCK  landed≈€ 628.26  (score 1.00)
-   6. collectorstore   $  599.95  IN STOCK  landed≈€ 633.38  (score 1.00)
+   6. collectorstore   $  624.95  IN STOCK  landed≈€ 659.24  (score 1.00)
    ask $339.99  sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $333.75 (le 2026-08-19, awesome, 15 shop(s) vus) | cheapest live $434.95
    BEST → kutogo  https://kutogo.com/product/2025-26-bowman-basketball-hobby-box/
@@ -2589,15 +2594,16 @@
 
 · CANDIDAT   2025-26 Topps Inception Hobby   [TOPPS_2025-26_INCEPTION_HOBBY]
    1. qscards          $  599.00  IN STOCK  landed≈€ 632.39  (score 1.00)
-        VERIFY  cheapest of 3 in stock  FR
+        VERIFY  cheapest of 4 in stock  FR
    2. piecethegame     $  789.99  IN STOCK  landed≈€ 829.95  (score 1.00)
-   3. superior         $  900.00  IN STOCK  landed≈€ 943.75  (score 1.00)
+   3. collectorstore   $  799.95  IN STOCK  landed≈€ 840.26  (score 1.00)  🔔
+        🔹RESTOCK +0j
+   4. superior         $  900.00  IN STOCK  landed≈€ 943.75  (score 1.00)
         VERIFY
-   4. americansportstore $  374.99  SOLD OUT  landed≈€ 400.68  (score 1.00)
+   5. americansportstore $  374.99  SOLD OUT  landed≈€ 400.68  (score 1.00)
         VERIFY  FR
-   5. deichcards       $  395.00  SOLD OUT  landed≈€ 421.38  (score 1.00)
+   6. deichcards       $  395.00  SOLD OUT  landed≈€ 421.38  (score 1.00)
         VERIFY  FR
-   6. columbia         $  477.99  SOLD OUT  landed≈€ 507.22  (score 1.00)
    ask $515.75  sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $477.99 (le 2026-08-19, columbia, 15 shop(s) vus) | cheapest live $599.00
    BEST → qscards  https://qscards.com/products/2025-26-topps-inception-basketball-hobby-box-copy
@@ -2658,9 +2664,9 @@
    2. arthurscardsandcollectibles $  580.00  IN STOCK  landed≈€ 612.74  (score 1.00)
    3. stcuk            $  600.00  IN STOCK  landed≈€ 633.43  (score 1.00)
         VERIFY  FR
-   4. rbicru7          $  625.00  IN STOCK  landed≈€ 659.29  (score 1.00)
-   5. collectorstore   $  629.95  IN STOCK  landed≈€ 664.41  (score 1.00)
-   6. piecethegame     $  649.99  IN STOCK  landed≈€ 685.14  (score 1.00)
+   4. collectorstore   $  629.95  IN STOCK  landed≈€ 664.41  (score 1.00)
+   5. piecethegame     $  649.99  IN STOCK  landed≈€ 685.14  (score 1.00)
+   6. rbicru7          $  650.00  IN STOCK  landed≈€ 685.15  (score 1.00)
    ask $539.99  sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $539.99 (le 2026-08-19, columbia, 16 shop(s) vus) | cheapest live $575.00
    BEST → sportscardjunction  https://sportscardjunction.com/products/2025-26-topps-chrome-cactus-jack-basketball-hobby-box
@@ -3778,5 +3784,5 @@
   2024-25_DONRUSS_RETAIL_BOX               €  119.00  qscards     
   2025-26_EUROLEAGUE_SELECT_HOBBY          €  129.00  qscards     
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-10-23T12-51-46.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-10-23T18-05-25.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

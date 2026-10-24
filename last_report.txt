@@ -1,5 +1,5 @@
-⚠️  [shopuscards] passage 2026-10-24T10:46:10+00:00 PARTIAL (187 produits) — ignoré, référence = dernier passage complet
-⚠️  [wolfdentcg] passage 2026-10-24T10:46:10+00:00 PARTIAL (32297 produits) — ignoré, référence = dernier passage complet
+⚠️  [shopuscards] passage 2026-10-24T15:49:10+00:00 PARTIAL (161 produits) — ignoré, référence = dernier passage complet
+⚠️  [wolfdentcg] passage 2026-10-24T15:49:10+00:00 PARTIAL (32296 produits) — ignoré, référence = dernier passage complet
 (399 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
 
 ========================================================================
@@ -2528,7 +2528,7 @@
 
 · SUIVI   2025-26 Topps Chrome Black Hobby [Chrome Black]   [TOPPS_2025-26_CHROME_BLACK_HOBBY]
    1. dennistheripper  $  449.99  IN STOCK  landed≈€ 478.26  (score 1.00)
-        VERIFY  cheapest of 19 in stock  FR
+        VERIFY  cheapest of 18 in stock  FR
    2. deichcards       $  450.00  IN STOCK  landed≈€ 478.27  (score 1.00)
         VERIFY  FR
    3. stcuk            $  450.00  IN STOCK  landed≈€ 478.27  (score 1.00)
@@ -3778,5 +3778,5 @@
   2024-25_DONRUSS_RETAIL_BOX               €  119.00  qscards     
   2025-26_EUROLEAGUE_SELECT_HOBBY          €  129.00  qscards     
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-10-24T12-08-03.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-10-24T17-12-21.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

@@ -1,5 +1,5 @@
-⚠️  [shopuscards] passage 2026-10-24T04:21:50+00:00 PARTIAL (170 produits) — ignoré, référence = dernier passage complet
-⚠️  [wolfdentcg] passage 2026-10-24T04:21:50+00:00 PARTIAL (32297 produits) — ignoré, référence = dernier passage complet
+⚠️  [shopuscards] passage 2026-10-24T10:46:10+00:00 PARTIAL (187 produits) — ignoré, référence = dernier passage complet
+⚠️  [wolfdentcg] passage 2026-10-24T10:46:10+00:00 PARTIAL (32297 produits) — ignoré, référence = dernier passage complet
 (399 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
 
 ========================================================================
@@ -1714,17 +1714,17 @@
 
 · SUIVI   2025-26 Topps Chrome Pack   [TOPPS_2025-26_TOPPS_CHROME_PACK]
    1. monmouth         $  199.99  IN STOCK  landed≈€ 219.66  (score 1.00)
-        VERIFY  cheapest of 12 in stock
+        VERIFY  cheapest of 11 in stock
    2. monmouth         $  199.99  IN STOCK  landed≈€ 219.66  (score 1.00)
-        VERIFY  cheapest of 12 in stock
+        VERIFY  cheapest of 11 in stock
    3. monmouth         $  199.99  IN STOCK  landed≈€ 219.66  (score 1.00)
-        VERIFY  cheapest of 12 in stock
+        VERIFY  cheapest of 11 in stock
    4. monmouth         $  199.99  IN STOCK  landed≈€ 219.66  (score 1.00)
-        VERIFY  cheapest of 12 in stock
+        VERIFY  cheapest of 11 in stock
    5. monmouth         $  199.99  IN STOCK  landed≈€ 219.66  (score 1.00)
-        VERIFY  cheapest of 12 in stock
+        VERIFY  cheapest of 11 in stock
    6. monmouth         $  199.99  IN STOCK  landed≈€ 219.66  (score 1.00)
-        VERIFY  cheapest of 12 in stock
+        VERIFY  cheapest of 11 in stock
    ask $69.99   sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $60.00 (le 2026-09-06, rbicru7, 2 shop(s) vus) | cheapest live $199.99
    BEST → monmouth  https://monmouthcards.com/products/2025-26-topps-chrome-basketball-live-jumbo-pack-break
@@ -3778,5 +3778,5 @@
   2024-25_DONRUSS_RETAIL_BOX               €  119.00  qscards     
   2025-26_EUROLEAGUE_SELECT_HOBBY          €  129.00  qscards     
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-10-24T05-43-45.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-10-24T12-08-03.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

@@ -1,6 +1,11 @@
-⚠️  [shopuscards] passage 2026-10-25T16:00:32+00:00 PARTIAL (154 produits) — ignoré, référence = dernier passage complet
-⚠️  [wolfdentcg] passage 2026-10-25T16:00:32+00:00 PARTIAL (32381 produits) — ignoré, référence = dernier passage complet
+⚠️  [shopuscards] passage 2026-10-25T20:44:12+00:00 PARTIAL (164 produits) — ignoré, référence = dernier passage complet
+⚠️  [wolfdentcg] passage 2026-10-25T20:44:12+00:00 PARTIAL (32380 produits) — ignoré, référence = dernier passage complet
 (402 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
+
+========================================================================
+  🔔 RESTOCKS depuis le passage précédent
+========================================================================
+  🔔 RESTOCK  TOPPS_2025-26_SIGNATURE_CLASS_BLASTER  piecethegame  $44.99  https://shoppieceofthegame.com/products/2025-26-topps-signature-class-basketball-blaster-box
 
 ========================================================================
   RETAIL
@@ -856,19 +861,19 @@
    BEST → dacardworldeu  https://dacardworld.eu/products/2025-26-topps-chrome-basketball-7-pack-blaster
 
 · SUIVI   2025-26 Topps Chrome Hanger   [TOPPS_2025-26_CHROME_HANGER]
-   1. awesome          $   64.75  IN STOCK  landed≈€  79.77  (score 1.00)
-        cheapest of 5 in stock
-   2. hiddengems       $   69.99  IN STOCK  landed≈€  85.19  (score 1.00)
-   3. dacardworldeu    $   71.00  IN STOCK  landed≈€  86.23  (score 1.00)
+   1. hiddengems       $   69.99  IN STOCK  landed≈€  85.19  (score 1.00)
+        cheapest of 4 in stock
+   2. dacardworldeu    $   71.00  IN STOCK  landed≈€  86.23  (score 1.00)
         VERIFY  FR
-   4. superior         $   98.00  IN STOCK  landed≈€ 114.16  (score 1.00)
+   3. superior         $   98.00  IN STOCK  landed≈€ 114.16  (score 1.00)
         VERIFY
-   5. piecethegame     $   98.99  IN STOCK  landed≈€ 115.18  (score 1.00)
-   6. bleecker         $   50.00  SOLD OUT  landed≈€  64.51  (score 1.00)
+   4. piecethegame     $   98.99  IN STOCK  landed≈€ 115.18  (score 1.00)
+   5. bleecker         $   50.00  SOLD OUT  landed≈€  64.51  (score 1.00)
         VERIFY
+   6. awesome          $   64.75  SOLD OUT  landed≈€  79.77  (score 1.00)
    ask $69.99   sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
-   HISTORICAL LOW $50.00 (le 2026-08-19, bleecker, 7 shop(s) vus) | cheapest live $64.75
-   BEST → awesome  https://theawesomecardshop.com/products/2025-26-topps-chrome-basketball-hanger-box
+   HISTORICAL LOW $50.00 (le 2026-08-19, bleecker, 7 shop(s) vus) | cheapest live $69.99
+   BEST → hiddengems  https://www.hiddengemscardshop.com/products/2025-26-topps-chrome-basketball-hanger-box
 
 · SUIVI   2025-26 Topps Chrome Update Mega   [TOPPS_2025-26_CHROME_UPDATE_MEGA]
    1. superior         $  310.00  IN STOCK  landed≈€ 333.45  (score 1.00)
@@ -957,14 +962,14 @@
 
 · SUIVI   2025-26 Topps Signature Class Blaster   [TOPPS_2025-26_SIGNATURE_CLASS_BLASTER]
    1. sportscardjunction $   40.00  IN STOCK  landed≈€  54.16  (score 1.00)
-        VERIFY  cheapest of 6 in stock
-   2. collectorstore   $   49.99  IN STOCK  landed≈€  64.50  (score 1.00)
-   3. ehcards          $   49.99  IN STOCK  landed≈€  64.50  (score 1.00)
-   4. rbicru7          $   50.00  IN STOCK  landed≈€  64.51  (score 1.00)
-   5. dacardworldeu    $   60.00  IN STOCK  landed≈€  74.85  (score 1.00)
+        VERIFY  cheapest of 7 in stock
+   2. piecethegame     $   44.99  IN STOCK  landed≈€  59.33  (score 1.00)  🔔
+        🔹RESTOCK +15j
+   3. collectorstore   $   49.99  IN STOCK  landed≈€  64.50  (score 1.00)
+   4. ehcards          $   49.99  IN STOCK  landed≈€  64.50  (score 1.00)
+   5. rbicru7          $   50.00  IN STOCK  landed≈€  64.51  (score 1.00)
+   6. dacardworldeu    $   60.00  IN STOCK  landed≈€  74.85  (score 1.00)
         VERIFY  FR
-   6. superior         $   80.00  IN STOCK  landed≈€  95.54  (score 1.00)
-        VERIFY
    ask $39.75   sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $32.95 (le 2026-08-30, cardiacs, 13 shop(s) vus) | cheapest live $40.00
    BEST → sportscardjunction  https://sportscardjunction.com/products/2025-26-topps-signature-class-basketball-blaster-box
@@ -2515,7 +2520,6 @@
         VERIFY
    3. rbicru7          $ 2997.00  IN STOCK  landed≈€3112.88  (score 1.00)
    4. piecethegame     $ 3524.99  IN STOCK  landed≈€3659.04  (score 1.00)
-        🔹PRICE_DROP -2%
    5. dacardworldeu    $ 3815.00  IN STOCK  landed≈€3959.02  (score 1.00)
         VERIFY  FR
    6. rlsports         $ 1999.00  SOLD OUT  landed≈€2080.55  (score 1.00)
@@ -3731,13 +3735,14 @@
      historical low     2025-26 Panini Select EuroLeague Pack                              $22.00 (2026-09-06, 1 shop(s))
 
 ========================================================================
-  🩺 SANTÉ DES SOURCES — 4 anomalie(s)
+  🩺 SANTÉ DES SOURCES — 5 anomalie(s)
 ========================================================================
+  DEGRADED  kutogo               volume 0 contre une base récente de 737
   DEGRADED  shopuscards          6 passages interrompus sur 6 (dernier : PARTIAL:BUDGET)
   DEAD      stickerpoint         6 passages complets consécutifs à 0 produit
   DEAD      supercollectors      6 passages complets consécutifs à 0 produit
   DEGRADED  wolfdentcg           6 passages interrompus sur 6 (dernier : PAGINATION_INCOMPLETE)
-  45 HEALTHY · 27 SKIPPED · 2 DEGRADED · 2 DEAD
+  44 HEALTHY · 27 SKIPPED · 3 DEGRADED · 2 DEAD
 
 ========================================================================
   ⛔ BLOCKLIST — 2 domaine(s) jamais crawlés
@@ -3777,5 +3782,5 @@
   2024-25_DONRUSS_RETAIL_BOX               €  119.00  qscards     
   2025-26_EUROLEAGUE_SELECT_HOBBY          €  129.00  qscards     
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-10-25T17-24-42.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-10-25T22-06-57.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

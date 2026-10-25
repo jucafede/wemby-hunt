@@ -1,5 +1,5 @@
-⚠️  [shopuscards] passage 2026-10-25T11:11:57+00:00 PARTIAL (148 produits) — ignoré, référence = dernier passage complet
-⚠️  [wolfdentcg] passage 2026-10-25T11:11:57+00:00 PARTIAL (32381 produits) — ignoré, référence = dernier passage complet
+⚠️  [shopuscards] passage 2026-10-25T16:00:32+00:00 PARTIAL (154 produits) — ignoré, référence = dernier passage complet
+⚠️  [wolfdentcg] passage 2026-10-25T16:00:32+00:00 PARTIAL (32381 produits) — ignoré, référence = dernier passage complet
 (402 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
 
 ========================================================================
@@ -2414,7 +2414,7 @@
 · CANDIDAT   2025-26 Topps Bowman Case de Hobby (12 boîtes)   [TOPPS_2025-26_BOWMAN_HOBBY_CASE]
    1. kutogo           $ 3999.95  (12 boîtes = $ 333.33/boîte)  IN STOCK  landed≈€ 357.58  (score 1.00)
         🔹STRONG_DEAL -44%  VERIFY  cheapest of 4 in stock
-   2. piecethegame     $ 7794.99  (12 boîtes = $ 649.58/boîte)  IN STOCK  landed≈€ 684.72  (score 1.00)
+   2. piecethegame     $ 8099.99  (12 boîtes = $ 675.00/boîte)  IN STOCK  landed≈€ 711.01  (score 1.00)
    3. piecethegame     $ 8499.99  (8 boîtes = $1062.50/boîte)  IN STOCK  landed≈€ 745.49  (score 1.00)
    4. awesome          $15499.75  (6 boîtes = $2583.29/boîte)  IN STOCK  landed≈€1348.87  (score 1.00)
    5. awesome          $ 3990.75  (12 boîtes = $ 332.56/boîte)  SOLD OUT  landed≈€ 356.79  (score 1.00)
@@ -2503,7 +2503,7 @@
    3. collectorstore   $ 1399.95  IN STOCK  landed≈€1460.90  (score 1.00)
    4. ehcards          $ 1399.99  IN STOCK  landed≈€1460.94  (score 1.00)
    5. rbicru7          $ 1450.00  IN STOCK  landed≈€1512.67  (score 1.00)
-   6. piecethegame     $ 1674.99  IN STOCK  landed≈€1745.40  (score 1.00)
+   6. piecethegame     $ 1764.99  IN STOCK  landed≈€1838.49  (score 1.00)
    ask $549.99  sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $974.99 (le 2026-08-19, columbia, 16 shop(s) vus) | cheapest live $1149.00
    BEST → qscards  https://qscards.com/products/2025-26-topps-chrome-update-basketball-hobby-box
@@ -2514,7 +2514,8 @@
    2. cbhobby          $ 2750.00  IN STOCK  landed≈€2857.39  (score 1.00)
         VERIFY
    3. rbicru7          $ 2997.00  IN STOCK  landed≈€3112.88  (score 1.00)
-   4. piecethegame     $ 3594.99  IN STOCK  landed≈€3731.45  (score 1.00)
+   4. piecethegame     $ 3524.99  IN STOCK  landed≈€3659.04  (score 1.00)
+        🔹PRICE_DROP -2%
    5. dacardworldeu    $ 3815.00  IN STOCK  landed≈€3959.02  (score 1.00)
         VERIFY  FR
    6. rlsports         $ 1999.00  SOLD OUT  landed≈€2080.55  (score 1.00)
@@ -2585,8 +2586,8 @@
 · CANDIDAT   2025-26 Topps Inception Hobby   [TOPPS_2025-26_INCEPTION_HOBBY]
    1. qscards          $  599.00  IN STOCK  landed≈€ 632.39  (score 1.00)
         VERIFY  cheapest of 4 in stock  FR
-   2. piecethegame     $  789.99  IN STOCK  landed≈€ 829.95  (score 1.00)
-   3. collectorstore   $  799.95  IN STOCK  landed≈€ 840.26  (score 1.00)
+   2. collectorstore   $  799.95  IN STOCK  landed≈€ 840.26  (score 1.00)
+   3. piecethegame     $  824.99  IN STOCK  landed≈€ 866.16  (score 1.00)
    4. superior         $  900.00  IN STOCK  landed≈€ 943.75  (score 1.00)
         VERIFY
    5. americansportstore $  374.99  SOLD OUT  landed≈€ 400.68  (score 1.00)
@@ -2648,18 +2649,18 @@
    RESTOCK TARGET $1799.95  — surveillance, pas une valeur de marché
 
 · SUIVI   2025-26 Topps Chrome Hobby [Cactus Jack]   [TOPPS_2025-26_CHROME_CACTUS_JACK_HOBBY]
-   1. sportscardjunction $  575.00  IN STOCK  landed≈€ 607.57  (score 1.00)
-        VERIFY  cheapest of 9 in stock
-   2. arthurscardsandcollectibles $  580.00  IN STOCK  landed≈€ 612.74  (score 1.00)
-   3. stcuk            $  600.00  IN STOCK  landed≈€ 633.43  (score 1.00)
+   1. arthurscardsandcollectibles $  580.00  IN STOCK  landed≈€ 612.74  (score 1.00)
+        cheapest of 8 in stock
+   2. stcuk            $  600.00  IN STOCK  landed≈€ 633.43  (score 1.00)
         VERIFY  FR
-   4. collectorstore   $  629.95  IN STOCK  landed≈€ 664.41  (score 1.00)
-   5. rbicru7          $  650.00  IN STOCK  landed≈€ 685.15  (score 1.00)
-   6. kutogo           $  689.95  IN STOCK  landed≈€ 726.47  (score 1.00)
+   3. collectorstore   $  629.95  IN STOCK  landed≈€ 664.41  (score 1.00)
+   4. rbicru7          $  650.00  IN STOCK  landed≈€ 685.15  (score 1.00)
+   5. kutogo           $  689.95  IN STOCK  landed≈€ 726.47  (score 1.00)
         VERIFY
+   6. piecethegame     $  689.99  IN STOCK  landed≈€ 726.51  (score 1.00)
    ask $539.99  sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
-   HISTORICAL LOW $539.99 (le 2026-08-19, columbia, 16 shop(s) vus) | cheapest live $575.00
-   BEST → sportscardjunction  https://sportscardjunction.com/products/2025-26-topps-chrome-cactus-jack-basketball-hobby-box
+   HISTORICAL LOW $539.99 (le 2026-08-19, columbia, 16 shop(s) vus) | cheapest live $580.00
+   BEST → arthurscardsandcollectibles  https://arthurscardsandcollectibles.com/products/2025-26-topps-chrome-cactus-jack-basketball-hobby-box
 
 · CANDIDAT   2025-26 Panini Origins EuroLeague H2   [PANINI_2025-26_EUROLEAGUE_ORIGINS_H2]  ⚑ euroleague
    1. columbia         $   29.99  IN STOCK  landed≈€  43.81  (score 1.00)
@@ -3776,5 +3777,5 @@
   2024-25_DONRUSS_RETAIL_BOX               €  119.00  qscards     
   2025-26_EUROLEAGUE_SELECT_HOBBY          €  129.00  qscards     
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-10-25T12-35-23.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-10-25T17-24-42.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

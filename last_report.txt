@@ -1,12 +1,6 @@
-⚠️  [shopuscards] passage 2026-10-27T17:56:17+00:00 PARTIAL (175 produits) — ignoré, référence = dernier passage complet
-⚠️  [wolfdentcg] passage 2026-10-27T17:56:17+00:00 PARTIAL (32404 produits) — ignoré, référence = dernier passage complet
-(413 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
-
-========================================================================
-  🔔 RESTOCKS depuis le passage précédent
-========================================================================
-  🔔 RESTOCK  PANINI_2025-26_HOOPS_HANGER  dennistheripper  $24.99  https://dennistheripper.de/products/2025-26-topps-nba-hoops-basketball-hanger-box
-  🔔 RESTOCK  TOPPS_2025-26_CHROME_BLASTER  superior  $145.00  https://superiorsportsinvestments.com/products/2025-26-topps-chrome-basketball-blaster-box
+⚠️  [shopuscards] passage 2026-10-27T22:06:05+00:00 PARTIAL (194 produits) — ignoré, référence = dernier passage complet
+⚠️  [wolfdentcg] passage 2026-10-27T22:06:05+00:00 PARTIAL (32462 produits) — ignoré, référence = dernier passage complet
+(414 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
 
 ========================================================================
   RETAIL
@@ -854,8 +848,8 @@
    2. ehcards          $   99.99  IN STOCK  landed≈€ 116.22  (score 1.00)
    3. rbicru7          $  100.00  IN STOCK  landed≈€ 116.23  (score 1.00)
    4. piecethegame     $  124.99  IN STOCK  landed≈€ 142.08  (score 1.00)
-   5. superior         $  145.00  IN STOCK  landed≈€ 162.78  (score 1.00)  🔔
-        🔹RESTOCK +0j  VERIFY
+   5. superior         $  145.00  IN STOCK  landed≈€ 162.78  (score 1.00)
+        VERIFY
    6. columbia         $   44.99  SOLD OUT  landed≈€  59.33  (score 1.00)
    ask $79.99   sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $44.99 (le 2026-08-19, columbia, 11 shop(s) vus) | cheapest live $92.00
@@ -2531,16 +2525,16 @@
 
 · SUIVI   2025-26 Topps Chrome Black Hobby [Chrome Black]   [TOPPS_2025-26_CHROME_BLACK_HOBBY]
    1. dennistheripper  $  449.99  IN STOCK  landed≈€ 478.26  (score 1.00)
-        VERIFY  cheapest of 17 in stock  FR
+        VERIFY  cheapest of 16 in stock  FR
    2. deichcards       $  450.00  IN STOCK  landed≈€ 478.27  (score 1.00)
         VERIFY  FR
    3. stcuk            $  450.00  IN STOCK  landed≈€ 478.27  (score 1.00)
         VERIFY  FR
-   4. cbhobby          $  475.00  IN STOCK  landed≈€ 504.13  (score 1.00)
+   4. rlsports         $  475.00  IN STOCK  landed≈€ 504.13  (score 1.00)
         🔹STRONG_DEAL -26%  VERIFY
-   5. rlsports         $  475.00  IN STOCK  landed≈€ 504.13  (score 1.00)
-        🔹STRONG_DEAL -26%  VERIFY
-   6. collectorstore   $  479.95  IN STOCK  landed≈€ 509.25  (score 1.00)
+   5. collectorstore   $  479.95  IN STOCK  landed≈€ 509.25  (score 1.00)
+        🔹STRONG_DEAL -25%
+   6. allstarcasebreaks $  480.00  IN STOCK  landed≈€ 509.30  (score 1.00)
         🔹STRONG_DEAL -25%
    ask $637.50  sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $412.99 (le 2026-09-16, columbia, 19 shop(s) vus) | cheapest live $449.99
@@ -3586,7 +3580,7 @@
 
 · SUIVI   2025-26 Topps Definitive Hobby   [TOPPS_2025-26_DEFINITIVE_HOBBY]
    1. cardiacs         $13499.95  IN STOCK  landed≈€13977.14  (score 1.00)
-        🔹NEW_LOW  🔹PRICE_DROP -7%  cheapest of 5 in stock  MARKET DATA INSUFFICIENT
+        cheapest of 5 in stock  MARKET DATA INSUFFICIENT
    2. worldchampion    $14000.00  IN STOCK  landed≈€14494.39  (score 1.00)
         VERIFY  MARKET DATA INSUFFICIENT
    3. qscards          $18900.00  IN STOCK  landed≈€19562.95  (score 1.00)
@@ -3702,7 +3696,7 @@
   [bleecker] 1999-00 Topps Chrome Basketball Hobby Box  $750.00 OOS  → [["TOPPS_2023-24_CHROME_HOBBY", 0.77], ["TOPPS_2025-26_CHROME_HOBBY", 0.77], ["TOPPS_2024-25_TOPPS_CHROME_HOBBY", 0.77]]
 
 ========================================================================
-  👀 WATCHLIST — 98 prioritaires / 190 historiques / 3 autres
+  👀 WATCHLIST — 98 prioritaires / 189 historiques / 3 autres
 ========================================================================
   🔔 RESTOCK PRIORITY  2024-25 Panini Hoops Pack                  target                          $0.75 (2026-09-06, 6 shop(s))   -93.1% vs ask $10.90
   🔔 RESTOCK PRIORITY  2024-25 Panini Mosaic Pack                 target                          $4.99 (2026-09-06, 2 shop(s))   -84.4% vs ask $32.00
@@ -3777,5 +3771,5 @@
   2024-25_DONRUSS_RETAIL_BOX               €  119.00  qscards     
   2025-26_EUROLEAGUE_SELECT_HOBBY          €  129.00  qscards     
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-10-27T19-21-37.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-10-27T23-34-19.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

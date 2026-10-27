@@ -1,11 +1,6 @@
-⚠️  [shopuscards] passage 2026-10-27T04:47:48+00:00 PARTIAL (152 produits) — ignoré, référence = dernier passage complet
-⚠️  [wolfdentcg] passage 2026-10-27T04:47:48+00:00 PARTIAL (32383 produits) — ignoré, référence = dernier passage complet
-(413 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
-
-========================================================================
-  🔔 RESTOCKS depuis le passage précédent
-========================================================================
-  🔔 RESTOCK  TOPPS_2025-26_CHROME_HOBBY  bleecker  $1500.00  https://bleeckertrading.com/products/2025-26-topps-chrome-basketball-hobby-box-presale
+⚠️  [shopuscards] passage 2026-10-27T12:00:25+00:00 PARTIAL (154 produits) — ignoré, référence = dernier passage complet
+⚠️  [wolfdentcg] passage 2026-10-27T12:00:25+00:00 PARTIAL (32390 produits) — ignoré, référence = dernier passage complet
+(414 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
 
 ========================================================================
   RETAIL
@@ -2098,7 +2093,7 @@
 
 · SUIVI   2024-25 Panini Prizm Hobby   [PANINI_2024-25_PRIZM_HOBBY]
    1. kutogo           $  499.95  IN STOCK  landed≈€ 529.94  (score 1.00)
-        YEAR2  VERIFY  cheapest of 11 in stock
+        YEAR2  VERIFY  cheapest of 10 in stock
    2. ballgame         $  545.00  IN STOCK  landed≈€ 576.54  (score 1.00)
         YEAR2  VERIFY
    3. awesome          $  559.75  IN STOCK  landed≈€ 591.79  (score 1.00)
@@ -2466,8 +2461,8 @@
         VERIFY
    3. mafiosicards_shop $ 1399.00  IN STOCK  landed≈€1459.91  (score 1.00)
         FR
-   4. bleecker         $ 1500.00  IN STOCK  landed≈€1564.39  (score 1.00)  🔔
-        🔹RESTOCK +68j  VERIFY
+   4. bleecker         $ 1500.00  IN STOCK  landed≈€1564.39  (score 1.00)
+        VERIFY
    5. superior         $ 1500.00  IN STOCK  landed≈€1564.39  (score 1.00)
         VERIFY
    6. dacardworldeu    $ 1525.44  IN STOCK  landed≈€1590.70  (score 1.00)
@@ -3778,5 +3773,5 @@
   2024-25_DONRUSS_RETAIL_BOX               €  119.00  qscards     
   2025-26_EUROLEAGUE_SELECT_HOBBY          €  129.00  qscards     
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-10-27T06-10-11.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-10-27T13-26-42.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

@@ -1,12 +1,11 @@
-⚠️  [shopuscards] passage 2026-10-28T05:21:56+00:00 PARTIAL (151 produits) — ignoré, référence = dernier passage complet
-⚠️  [wolfdentcg] passage 2026-10-28T05:21:56+00:00 PARTIAL (32463 produits) — ignoré, référence = dernier passage complet
-(411 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
+⚠️  [shopuscards] passage 2026-10-28T12:38:56+00:00 PARTIAL (185 produits) — ignoré, référence = dernier passage complet
+⚠️  [wolfdentcg] passage 2026-10-28T12:38:56+00:00 PARTIAL (32463 produits) — ignoré, référence = dernier passage complet
+(414 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
 
 ========================================================================
   🔔 RESTOCKS depuis le passage précédent
 ========================================================================
-  🔔 RESTOCK  PANINI_2023-24_PHOENIX_BLASTER  sjay2k  $80.00  https://www.sjay2k.com/products/2023-24-panini-phoenix-basketball-6-pack-blaster-box
-  🔔 RESTOCK  PANINI_2024-25_SELECT_BLASTER  sjay2k  $60.00  https://www.sjay2k.com/products/2024-25-panini-select-basketball-h2-hybrid-box-copy-copy
+  🔔 RESTOCK  PANINI_2024-25_HOOPS_PACK  stcuk  $3.00  https://sportstradingcardsuk.com/products/2024-25-panini-hoops-basketball-international-gravity-pack
 
 ========================================================================
   RETAIL
@@ -21,8 +20,8 @@
         RC_YEAR
    4. piecethegame     $   49.99  IN STOCK  landed≈€  64.50  (score 1.00)
         RC_YEAR
-   5. sjay2k           $   80.00  IN STOCK  landed≈€  95.54  (score 1.00)  🔔
-        🔹RESTOCK +56j  RC_YEAR  VERIFY
+   5. sjay2k           $   80.00  IN STOCK  landed≈€  95.54  (score 1.00)
+        RC_YEAR  VERIFY
    6. hiddengems       $   19.99  SOLD OUT  landed≈€  33.47  (score 1.00)
         RC_YEAR
    ask $34.95   sold $20.00   [ebay_sold 2026-08-19] | buy ≤ $27.00   | watch ≤ $31.00   | EU €49.99  ⏳ STALE THRESHOLD (72 j)
@@ -484,8 +483,8 @@
 · SUIVI   2024-25 Panini Select Hobby Blaster   [PANINI_2024-25_SELECT_HOBBY_BLASTER]
    1. collectorstore   $   34.99  IN STOCK  landed≈€  48.98  (score 1.00)
         cheapest of 4 in stock
-   2. rbicru7          $   38.00  IN STOCK  landed≈€  52.09  (score 1.00)
-   3. ehcards          $   39.99  IN STOCK  landed≈€  54.15  (score 1.00)
+   2. ehcards          $   39.99  IN STOCK  landed≈€  54.15  (score 1.00)
+   3. rbicru7          $   40.00  IN STOCK  landed≈€  54.16  (score 1.00)
    4. piecethegame     $   49.99  IN STOCK  landed≈€  64.50  (score 1.00)
    5. cardiacs         $   29.95  SOLD OUT  landed≈€  43.77  (score 1.00)
    6. rlsports         $   29.99  SOLD OUT  landed≈€  43.81  (score 1.00)
@@ -1298,19 +1297,19 @@
    BEST → piecethegame  https://shoppieceofthegame.com/products/2024-25-panini-nba-hoops-basketball-hobby-blaster-box
 
 · SUIVI   2024-25 Panini Hoops Pack   [PANINI_2024-25_HOOPS_PACK]
-   1. awesome          $    7.00  IN STOCK  landed≈€  20.03  (score 1.00)
-        🔹STRONG_DEAL -36%  cheapest of 4 in stock
-   2. rbicru7          $    9.50  IN STOCK  landed≈€  22.61  (score 1.00)
+   1. stcuk            $    3.00  IN STOCK  landed≈€  15.89  (score 1.00)  🔔
+        VERIFY  cheapest of 5 in stock  FR
+   2. awesome          $    7.00  IN STOCK  landed≈€  20.03  (score 1.00)
+        🔹STRONG_DEAL -36%
+   3. rbicru7          $    9.50  IN STOCK  landed≈€  22.61  (score 1.00)
         🔹DEAL -13%
-   3. superior         $   21.00  IN STOCK  landed≈€  34.51  (score 1.00)
+   4. superior         $   21.00  IN STOCK  landed≈€  34.51  (score 1.00)
         VERIFY
-   4. piecethegame     $   39.99  IN STOCK  landed≈€  54.15  (score 1.00)
-   5. stcuk            $    3.00  SOLD OUT  landed≈€  15.89  (score 1.00)
-        VERIFY  FR
+   5. piecethegame     $   39.99  IN STOCK  landed≈€  54.15  (score 1.00)
    6. cardiacs         $    3.50  SOLD OUT  landed≈€  16.41  (score 1.00)
    ask $10.90   sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
-   HISTORICAL LOW $0.75 (le 2026-09-06, rbicru7, 6 shop(s) vus) | cheapest live $7.00
-   BEST → awesome  https://theawesomecardshop.com/products/2024-25-panini-nba-hoops-basketball-hobby-pack
+   HISTORICAL LOW $0.75 (le 2026-09-06, rbicru7, 6 shop(s) vus) | cheapest live $3.00
+   BEST → stcuk  https://sportstradingcardsuk.com/products/2024-25-panini-hoops-basketball-international-gravity-pack
 
 · SUIVI   2024-25 Panini Hoops Retail Box   [PANINI_2024-25_HOOPS_RETAIL_BOX]
    1. smyrnasportscards $   61.99  IN STOCK  landed≈€  76.91  (score 1.00)
@@ -1547,7 +1546,7 @@
 
 · SUIVI   2025-26 Panini Prizm Blaster   [PANINI_2025-26_PRIZM_BLASTER]
    1. stcuk            $   25.00  IN STOCK  landed≈€  38.65  (score 1.00)
-        VERIFY  cheapest of 13 in stock  FR
+        VERIFY  cheapest of 14 in stock  FR
    2. collectorstore   $   25.99  IN STOCK  landed≈€  39.67  (score 1.00)
         🔹STRONG_DEAL -26%
    3. dacardworldeu    $   29.00  IN STOCK  landed≈€  42.79  (score 1.00)
@@ -3777,5 +3776,5 @@
   2024-25_DONRUSS_RETAIL_BOX               €  119.00  qscards     
   2025-26_EUROLEAGUE_SELECT_HOBBY          €  129.00  qscards     
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-10-28T06-47-16.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-10-28T14-04-52.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

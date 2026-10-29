@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-28T23:42:55+00:00",
+  "generated_at": "2026-10-29T06:39:33+00:00",
   "offers": [
     {
       "product_id": "select_2023_24_hobby_mega_green_shock",
@@ -15,7 +15,7 @@
       "match_method": "SET_FORMAT_VARIANTE",
       "confidence": "select + variante « Green Shock Prizms » nommée",
       "first_seen": "2026-09-24T07:55:54+00:00",
-      "last_seen": "2026-10-21T05:24:40+00:00",
+      "last_seen": "2026-10-29T06:39:33+00:00",
       "last_price": 109.75,
       "last_in_stock": null,
       "history": [
@@ -70,6 +70,13 @@
         },
         {
           "t": "2026-10-21T05:24:40+00:00",
+          "price": 109.75,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-10-29T06:39:33+00:00",
           "price": 109.75,
           "stock_status": "OUT_OF_STOCK",
           "stock_qty": null,
@@ -289,7 +296,7 @@
       "confidence": "Mega Select 2023-24 sans variante nommée — non attribuable",
       "titre_observe": "2023-24 Panini Select Basketball Mega Box",
       "first_seen": "2026-09-24T07:55:54+00:00",
-      "last_seen": "2026-10-22T18:10:32+00:00",
+      "last_seen": "2026-10-29T06:39:33+00:00",
       "last_price": 75.0,
       "last_in_stock": null,
       "history": [
@@ -362,12 +369,19 @@
           "stock_status": "OUT_OF_STOCK",
           "stock_qty": null,
           "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-10-29T06:39:33+00:00",
+          "price": 75.0,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
         }
       ],
       "old_stock_score": 14,
       "old_stock_motifs": [
         "+6 1 fiche(s) 2020-21 ENCORE AU PANIER",
-        "+8 11 fiche(s) ancienne(s) encore indexée(s) mais ÉPUISÉE(S) — trace, pas stock"
+        "+8 13 fiche(s) ancienne(s) encore indexée(s) mais ÉPUISÉE(S) — trace, pas stock"
       ]
     },
     {
@@ -1239,7 +1253,7 @@
         "+8 9 fiche(s) ancienne(s) encore indexée(s) mais ÉPUISÉE(S) — trace, pas stock"
       ],
       "first_seen": "2026-09-30T16:39:30+00:00",
-      "last_seen": "2026-10-21T05:24:40+00:00",
+      "last_seen": "2026-10-29T06:39:33+00:00",
       "last_price": 134.0,
       "last_in_stock": null,
       "history": [
@@ -1284,6 +1298,13 @@
           "stock_status": "OUT_OF_STOCK",
           "stock_qty": null,
           "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-10-29T06:39:33+00:00",
+          "price": 134.0,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
         }
       ]
     },
@@ -1304,10 +1325,10 @@
       "old_stock_score": 14,
       "old_stock_motifs": [
         "+6 1 fiche(s) 2020-21 ENCORE AU PANIER",
-        "+8 11 fiche(s) ancienne(s) encore indexée(s) mais ÉPUISÉE(S) — trace, pas stock"
+        "+8 13 fiche(s) ancienne(s) encore indexée(s) mais ÉPUISÉE(S) — trace, pas stock"
       ],
       "first_seen": "2026-09-30T16:39:30+00:00",
-      "last_seen": "2026-10-22T18:10:32+00:00",
+      "last_seen": "2026-10-29T06:39:33+00:00",
       "last_price": 100.0,
       "last_in_stock": null,
       "history": [
@@ -1404,6 +1425,27 @@
         },
         {
           "t": "2026-10-22T18:10:32+00:00",
+          "price": 100.0,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-10-29T06:39:33+00:00",
+          "price": 100.0,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-10-29T06:39:33+00:00",
+          "price": 100.0,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-10-29T06:39:33+00:00",
           "price": 100.0,
           "stock_status": "OUT_OF_STOCK",
           "stock_qty": null,

@@ -1,11 +1,11 @@
-⚠️  [shopuscards] passage 2026-10-30T05:32:14+00:00 PARTIAL (207 produits) — ignoré, référence = dernier passage complet
-⚠️  [wolfdentcg] passage 2026-10-30T05:32:14+00:00 PARTIAL (32496 produits) — ignoré, référence = dernier passage complet
+⚠️  [shopuscards] passage 2026-10-30T12:42:11+00:00 PARTIAL (159 produits) — ignoré, référence = dernier passage complet
+⚠️  [wolfdentcg] passage 2026-10-30T12:42:11+00:00 PARTIAL (32507 produits) — ignoré, référence = dernier passage complet
 (423 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
 
 ========================================================================
   🔔 RESTOCKS depuis le passage précédent
 ========================================================================
-  🔔 RESTOCK  TOPPS_2025-26_HOOPS_BLASTER  sjay2k  $65.00  https://www.sjay2k.com/products/2025-26-topps-nba-hoops-basketball-value-blaster-box-pre-order-may-14
+  🔔 RESTOCK  PANINI_2024-25_SELECT_BLASTER  tanteo  $36.90  https://tanteocartescollections.com/products/2024-25-panini-select-cartes-basketball-nba-blaster-box
 
 ========================================================================
   RETAIL
@@ -465,7 +465,7 @@
 
 · SUIVI   2024-25 Panini Select Blaster   [PANINI_2024-25_SELECT_BLASTER]
    1. collectorstore   $   27.99  IN STOCK  landed≈€  41.74  (score 1.00)
-        YEAR2  cheapest of 8 in stock
+        YEAR2  cheapest of 9 in stock
    2. ehcards          $   29.99  IN STOCK  landed≈€  43.81  (score 1.00)
         YEAR2
    3. smyrnasportscards $   30.00  IN STOCK  landed≈€  43.82  (score 1.00)
@@ -2434,7 +2434,7 @@
 
 · CANDIDAT   2025-26 Topps Bowman Case de Delight (6 boîtes)   [TOPPS_2025-26_BOWMAN_BREAKERS_DELIGHT_CASE]
    1. piecethegame     $17899.00  (6 boîtes = $2983.17/boîte)  IN STOCK  landed≈€3098.58  (score 1.00)
-        🔹PRICE_DROP -4%  ONLY_STOCK_SEEN  MARKET DATA INSUFFICIENT
+        ONLY_STOCK_SEEN  MARKET DATA INSUFFICIENT
    2. sportscardjunction $ 9995.00  (6 boîtes = $1665.83/boîte)  SOLD OUT  landed≈€1735.93  (score 1.00)
         VERIFY  MARKET DATA INSUFFICIENT
    ask n/a      sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
@@ -3750,12 +3750,13 @@
   (aucune ligne en stock ne cumule un déclencheur et une référence de marché)
 
 ========================================================================
-  🇫🇷 MARCHÉ FR — 35 produit(s) avec une offre en stock
+  🇫🇷 MARCHÉ FR — 36 produit(s) avec une offre en stock
 ========================================================================
   FR MARKET PARTIAL — 2/4 source(s) vérifiée(s) : shopuscards DEGRADED, stickerpoint DEAD
   2025-26_HOOPS_HANGER                     €   29.90  tanteo      
   2024-25_DONRUSS_BLASTER                  €   34.90  tanteo      
   2025-26_PRIZM_BLASTER                    €   35.00  qscards       (+1 autre(s) offre(s) FR)
+  2024-25_SELECT_BLASTER                   €   36.90  tanteo      
   2024-25_HOOPS_BLASTER                    €   39.90  tanteo        (+1 autre(s) offre(s) FR)
   2025-26_DONRUSS_BLASTER                  €   39.90  tanteo      
   2024-25_TOTALLY_CERTIFIED_BLASTER        €   39.95  tanteo      
@@ -3772,7 +3773,6 @@
   2025-26_CHROME_VALUE_BOX                 €   99.00  qscards     
   2025-26_EUROLEAGUE_SELECT_HOBBY          €  109.00  qscards     
   2024-25_DONRUSS_RETAIL_BOX               €  119.00  qscards     
-  2025-26_COURT_KINGS_HOBBY                €  179.90  tanteo      
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-10-30T06-58-58.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-10-30T14-07-58.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

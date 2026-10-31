@@ -1,11 +1,6 @@
-⚠️  [shopuscards] passage 2026-10-31T05:17:51+00:00 PARTIAL (193 produits) — ignoré, référence = dernier passage complet
-⚠️  [wolfdentcg] passage 2026-10-31T05:17:51+00:00 PARTIAL (32492 produits) — ignoré, référence = dernier passage complet
-(423 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
-
-========================================================================
-  🔔 RESTOCKS depuis le passage précédent
-========================================================================
-  🔔 RESTOCK  PANINI_2023-24_SELECT_BLASTER  fancave  $89.99  https://fancave.com/products/2023-24-panini-select-basketball-blaster-box
+⚠️  [shopuscards] passage 2026-10-31T12:09:26+00:00 PARTIAL (200 produits) — ignoré, référence = dernier passage complet
+⚠️  [wolfdentcg] passage 2026-10-31T12:09:26+00:00 PARTIAL (32492 produits) — ignoré, référence = dernier passage complet
+(422 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
 
 ========================================================================
   RETAIL
@@ -114,8 +109,8 @@
    BEST → rbicru7  https://rbicru7.com/products/2023-24-donruss-optic-basketball-mega-box
 
 ⛔ NO_GO   2023-24 Panini Select Blaster   [PANINI_2023-24_SELECT_BLASTER]
-   1. fancave          $   89.99  IN STOCK  landed≈€ 105.87  (score 1.00)  🔔
-        🔹RESTOCK +51j  RC_YEAR  VERIFY  cheapest of 2 in stock  MARKET DATA INSUFFICIENT
+   1. fancave          $   89.99  IN STOCK  landed≈€ 105.87  (score 1.00)
+        RC_YEAR  VERIFY  cheapest of 2 in stock  MARKET DATA INSUFFICIENT
    2. superior         $  135.00  IN STOCK  landed≈€ 152.43  (score 1.00)
         RC_YEAR  VERIFY  MARKET DATA INSUFFICIENT
    3. bleecker         $   45.00  SOLD OUT  landed≈€  59.34  (score 1.00)
@@ -1547,7 +1542,7 @@
 
 · SUIVI   2025-26 Panini Prizm Blaster   [PANINI_2025-26_PRIZM_BLASTER]
    1. stcuk            $   25.00  IN STOCK  landed≈€  38.65  (score 1.00)
-        VERIFY  cheapest of 14 in stock  FR
+        VERIFY  cheapest of 15 in stock  FR
    2. collectorstore   $   25.99  IN STOCK  landed≈€  39.67  (score 1.00)
         🔹STRONG_DEAL -26%
    3. monmouth         $   25.99  IN STOCK  landed≈€  39.67  (score 1.00)
@@ -3690,7 +3685,7 @@
   [monmouth] 1999-2000 Topps Chrome Basketball Hobby Personal Pack Personal Pack 18  $64.99 IN  → [["TOPPS_2023-24_TOPPS_CHROME_PACK", 0.77], ["TOPPS_2025-26_TOPPS_CHROME_PACK", 0.77]]
   [monmouth] 1999-2000 Topps Chrome Basketball Hobby Personal Pack Personal Pack 19  $64.99 IN  → [["TOPPS_2023-24_TOPPS_CHROME_PACK", 0.77], ["TOPPS_2025-26_TOPPS_CHROME_PACK", 0.77]]
   [monmouth] 1999-2000 Topps Chrome Basketball Hobby Personal Pack Personal Pack 20  $64.99 IN  → [["TOPPS_2023-24_TOPPS_CHROME_PACK", 0.77], ["TOPPS_2025-26_TOPPS_CHROME_PACK", 0.77]]
-  [monmouth] 1999-2000 Topps Chrome Basketball Hobby Personal Pack Personal Pack 21  $64.99 IN  → [["TOPPS_2023-24_TOPPS_CHROME_PACK", 0.77], ["TOPPS_2025-26_TOPPS_CHROME_PACK", 0.77]]
+  [monmouth] 1999-2000 Topps Chrome Basketball Hobby Personal Pack Personal Pack 21  $64.99 OOS  → [["TOPPS_2023-24_TOPPS_CHROME_PACK", 0.77], ["TOPPS_2025-26_TOPPS_CHROME_PACK", 0.77]]
   [monmouth] 1999-2000 Topps Chrome Basketball Hobby Personal Pack Personal Pack 22  $64.99 IN  → [["TOPPS_2023-24_TOPPS_CHROME_PACK", 0.77], ["TOPPS_2025-26_TOPPS_CHROME_PACK", 0.77]]
   [monmouth] 1999-2000 Topps Chrome Basketball Hobby Personal Pack Personal Pack 23  $64.99 IN  → [["TOPPS_2023-24_TOPPS_CHROME_PACK", 0.77], ["TOPPS_2025-26_TOPPS_CHROME_PACK", 0.77]]
   [monmouth] 1999-2000 Topps Chrome Basketball Hobby Personal Pack Personal Pack 24  $64.99 OOS  → [["TOPPS_2023-24_TOPPS_CHROME_PACK", 0.77], ["TOPPS_2025-26_TOPPS_CHROME_PACK", 0.77]]
@@ -3781,5 +3776,5 @@
   2025-26_EUROLEAGUE_SELECT_HOBBY          €  109.00  qscards     
   2024-25_DONRUSS_RETAIL_BOX               €  119.00  qscards     
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-10-31T06-42-25.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-10-31T13-30-21.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

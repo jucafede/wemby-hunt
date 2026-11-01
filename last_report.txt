@@ -1,5 +1,5 @@
-⚠️  [shopuscards] passage 2026-11-01T05:47:51+00:00 PARTIAL (158 produits) — ignoré, référence = dernier passage complet
-⚠️  [wolfdentcg] passage 2026-11-01T05:47:51+00:00 PARTIAL (32516 produits) — ignoré, référence = dernier passage complet
+⚠️  [shopuscards] passage 2026-11-01T13:10:21+00:00 PARTIAL (174 produits) — ignoré, référence = dernier passage complet
+⚠️  [wolfdentcg] passage 2026-11-01T13:10:21+00:00 PARTIAL (32517 produits) — ignoré, référence = dernier passage complet
 (424 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
 
 ========================================================================
@@ -1409,7 +1409,7 @@
    3. sportscardjunction $    6.00  IN STOCK  landed≈€  18.99  (score 1.00)
         🔹STRONG_DEAL -57%  VERIFY
    4. fancave          $    6.99  IN STOCK  landed≈€  20.02  (score 1.00)
-        🔹NEW_LOW  🔹PRICE_DROP -13%  🔹STRONG_DEAL -50%  VERIFY
+        🔹STRONG_DEAL -50%  VERIFY
    5. boxseat          $   13.99  IN STOCK  landed≈€  27.26  (score 1.00)
         VERIFY
    6. superior         $   30.00  IN STOCK  landed≈€  43.82  (score 1.00)
@@ -3774,5 +3774,5 @@
   2025-26_EUROLEAGUE_SELECT_HOBBY          €  109.00  qscards     
   2024-25_DONRUSS_RETAIL_BOX               €  119.00  qscards     
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-11-01T06-59-37.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-11-01T14-34-48.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

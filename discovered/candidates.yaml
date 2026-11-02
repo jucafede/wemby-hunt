@@ -1,8 +1,129 @@
-generated_at: '2026-10-26T11:10:30+00:00'
+generated_at: '2026-11-02T13:34:06+00:00'
 engine: ddg
 skus_queried: 10
 metrics:
-  nouvelles_sources_qualifiees: 0
-  dont_au_moins_1_match_in_stock: 0
+  nouvelles_sources_qualifiees: 11
+  dont_au_moins_1_match_in_stock: 3
 note: Prospection automatique. sources.yaml n'est JAMAIS modifié par ce module.
-candidates: []
+candidates:
+- domain: schkstore.com
+  shopify: true
+  products_sampled: 250
+  basketball: 51
+  sealed_2023_24: 0
+  matched: 38
+  matched_in_stock: 16
+  error: null
+  base_url: https://schkstore.com
+  seen_for:
+  - PANINI_2023-24_PRIZM_RETAIL_BOX
+- domain: fastbreaktradingcards.com
+  shopify: true
+  products_sampled: 250
+  basketball: 31
+  sealed_2023_24: 0
+  matched: 22
+  matched_in_stock: 2
+  error: null
+  base_url: https://fastbreaktradingcards.com
+  seen_for:
+  - PANINI_2023-24_CONTENDERS_BLASTER
+- domain: underpaidcollectibles.com
+  shopify: true
+  products_sampled: 250
+  basketball: 18
+  sealed_2023_24: 0
+  matched: 10
+  matched_in_stock: 2
+  error: null
+  base_url: https://underpaidcollectibles.com
+  seen_for:
+  - PANINI_2023-24_CONTENDERS_HOBBY
+- domain: threestarssportscards.com
+  shopify: true
+  products_sampled: 250
+  basketball: 9
+  sealed_2023_24: 0
+  matched: 0
+  matched_in_stock: 0
+  error: null
+  base_url: https://threestarssportscards.com
+  seen_for:
+  - PANINI_2023-24_MOSAIC_FAST_BREAK_CASE
+- domain: store.solesavy.com
+  shopify: true
+  products_sampled: 250
+  basketball: 4
+  sealed_2023_24: 0
+  matched: 0
+  matched_in_stock: 0
+  error: null
+  base_url: https://store.solesavy.com
+  seen_for:
+  - PANINI_2023-24_CONTENDERS_BLASTER
+- domain: cmbcollectibles.com
+  shopify: true
+  products_sampled: 250
+  basketball: 2
+  sealed_2023_24: 0
+  matched: 1
+  matched_in_stock: 0
+  error: null
+  base_url: https://cmbcollectibles.com
+  seen_for:
+  - PANINI_2023-24_HOOPS_BLASTER
+- domain: cardpopusa.com
+  shopify: true
+  products_sampled: 250
+  basketball: 2
+  sealed_2023_24: 0
+  matched: 0
+  matched_in_stock: 0
+  error: null
+  base_url: https://cardpopusa.com
+  seen_for:
+  - PANINI_2023-24_PHOENIX_BLASTER
+- domain: bluebreaks.com
+  shopify: true
+  products_sampled: 250
+  basketball: 1
+  sealed_2023_24: 0
+  matched: 0
+  matched_in_stock: 0
+  error: null
+  base_url: https://bluebreaks.com
+  seen_for:
+  - PANINI_2023-24_CONTENDERS_HOBBY
+- domain: cardboardmemories.ca
+  shopify: true
+  products_sampled: 250
+  basketball: 1
+  sealed_2023_24: 0
+  matched: 0
+  matched_in_stock: 0
+  error: null
+  base_url: https://cardboardmemories.ca
+  seen_for:
+  - PANINI_2023-24_SELECT_HOBBY
+- domain: the-stadium-bc.myshopify.com
+  shopify: true
+  products_sampled: 250
+  basketball: 0
+  sealed_2023_24: 0
+  matched: 0
+  matched_in_stock: 0
+  error: null
+  base_url: https://the-stadium-bc.myshopify.com
+  seen_for:
+  - PANINI_2023-24_CONTENDERS_BLASTER
+- domain: cravecollect.com
+  shopify: true
+  products_sampled: 1
+  basketball: 0
+  sealed_2023_24: 0
+  matched: 0
+  matched_in_stock: 0
+  error: null
+  base_url: https://cravecollect.com
+  seen_for:
+  - PANINI_2023-24_MOSAIC_BLASTER

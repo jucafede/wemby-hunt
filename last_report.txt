@@ -1,13 +1,6 @@
-⚠️  [shopuscards] passage 2026-11-04T23:33:28+00:00 PARTIAL (0 produits) — ignoré, référence = dernier passage complet
-⚠️  [wolfdentcg] passage 2026-11-04T23:33:28+00:00 PARTIAL (32438 produits) — ignoré, référence = dernier passage complet
+⚠️  [shopuscards] passage 2026-11-05T06:25:16+00:00 PARTIAL (0 produits) — ignoré, référence = dernier passage complet
+⚠️  [wolfdentcg] passage 2026-11-05T06:25:16+00:00 PARTIAL (32439 produits) — ignoré, référence = dernier passage complet
 (455 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
-
-========================================================================
-  🔔 RESTOCKS depuis le passage précédent
-========================================================================
-  🔔 RESTOCK  PANINI_2024-25_HOOPS_PACK  monmouth  $24.99  https://monmouthcards.com/products/2024-25-panini-haunted-hoops-basketball-bundle
-  🔔 RESTOCK  PANINI_2024-25_MONOPOLY_PRIZM_BLASTER  sjay2k  $50.00  https://www.sjay2k.com/products/2024-25-panini-prizm-monopoly-basketball-6-pack-blaster-box-millionaire-black-inserts-1
-  🔔 RESTOCK  TOPPS_2025-26_CHROME_UPDATE_HOBBY  boxseat  $1349.99  https://boxseatcollectibles.com/products/2025-26-topps-chrome-hobby-basketball
 
 ========================================================================
   RETAIL
@@ -15,17 +8,17 @@
 
 ⛔ NO_GO   2023-24 Panini Phoenix Blaster   [PANINI_2023-24_PHOENIX_BLASTER]
    1. ehcards          $   34.99  IN STOCK  landed≈€  48.98  (score 1.00)
-        RC_YEAR  cheapest of 5 in stock
+        RC_YEAR  cheapest of 4 in stock
    2. tanteo           $   44.90  IN STOCK  landed≈€  59.23  (score 1.00)
         RC_YEAR  VERIFY  FR
    3. sandssportscards $   45.00  IN STOCK  landed≈€  59.34  (score 1.00)
         RC_YEAR
    4. piecethegame     $   49.99  IN STOCK  landed≈€  64.50  (score 1.00)
         RC_YEAR
-   5. sjay2k           $   80.00  IN STOCK  landed≈€  95.54  (score 1.00)
-        RC_YEAR  VERIFY
-   6. hiddengems       $   19.99  SOLD OUT  landed≈€  33.47  (score 1.00)
+   5. hiddengems       $   19.99  SOLD OUT  landed≈€  33.47  (score 1.00)
         RC_YEAR
+   6. sportscardjunction $   25.00  SOLD OUT  landed≈€  38.65  (score 1.00)
+        RC_YEAR  VERIFY
    ask $34.95   sold $20.00   [ebay_sold 2026-08-19] | buy ≤ $27.00   | watch ≤ $31.00   | EU €49.99  ⏳ STALE THRESHOLD (80 j)
    HISTORICAL LOW $19.99 (le 2026-08-17, hiddengems, 11 shop(s) vus) | cheapest live $34.99
    BEST → ehcards  https://ehcards.com/products/2023-24-panini-phoenix-basketball-6-pack-blaster-box
@@ -456,8 +449,8 @@
 · SUIVI   2024-25 Panini Prizm Monopoly Blaster   [PANINI_2024-25_MONOPOLY_PRIZM_BLASTER]
    1. tanteo           $   49.90  IN STOCK  landed≈€  64.40  (score 1.00)
         VERIFY  cheapest of 2 in stock  FR
-   2. sjay2k           $   50.00  IN STOCK  landed≈€  64.51  (score 1.00)  🔔
-        🔹RESTOCK +0j  VERIFY
+   2. sjay2k           $   50.00  IN STOCK  landed≈€  64.51  (score 1.00)
+        VERIFY
    3. bleecker         $   25.00  SOLD OUT  landed≈€  38.65  (score 1.00)
         VERIFY
    4. hiddengems       $   25.00  SOLD OUT  landed≈€  38.65  (score 1.00)
@@ -1307,8 +1300,8 @@
         🔹DEAL -13%
    4. superior         $   21.00  IN STOCK  landed≈€  34.51  (score 1.00)
         VERIFY
-   5. monmouth         $   24.99  IN STOCK  landed≈€  38.64  (score 1.00)  🔔
-        🔹RESTOCK +7j  VERIFY
+   5. monmouth         $   24.99  IN STOCK  landed≈€  38.64  (score 1.00)
+        VERIFY
    6. piecethegame     $   39.99  IN STOCK  landed≈€  54.15  (score 1.00)
    ask $10.90   sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $0.75 (le 2026-09-06, rbicru7, 7 shop(s) vus) | cheapest live $3.00
@@ -2497,8 +2490,8 @@
    ask $4999.75 sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
 
 · SUIVI   2025-26 Topps Chrome Update Hobby   [TOPPS_2025-26_CHROME_UPDATE_HOBBY]
-   1. boxseat          $ 1349.99  IN STOCK  landed≈€1409.22  (score 1.00)  🔔
-        🔹RESTOCK +1j  VERIFY  cheapest of 6 in stock
+   1. boxseat          $ 1349.99  IN STOCK  landed≈€1409.22  (score 1.00)
+        VERIFY  cheapest of 6 in stock
    2. qscards          $ 1399.00  IN STOCK  landed≈€1459.91  (score 1.00)
         VERIFY  FR
    3. ehcards          $ 1399.99  IN STOCK  landed≈€1460.94  (score 1.00)
@@ -2533,7 +2526,7 @@
    4. qscards          $  499.00  IN STOCK  landed≈€ 528.95  (score 1.00)
         VERIFY  FR
    5. worldchampion    $  500.00  IN STOCK  landed≈€ 529.99  (score 1.00)
-        🔹NEW_LOW  🔹PRICE_DROP -33%  🔹STRONG_DEAL -22%  VERIFY
+        🔹STRONG_DEAL -22%  VERIFY
    6. rbicru7          $  505.00  IN STOCK  landed≈€ 535.16  (score 1.00)
         🔹STRONG_DEAL -21%
    ask $637.50  sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
@@ -3413,7 +3406,7 @@
    4. monmouth         $  169.99  IN STOCK  landed≈€ 188.63  (score 1.00)
         VERIFY
    5. worldchampion    $  170.00  IN STOCK  landed≈€ 188.64  (score 1.00)
-        🔹NEW_LOW  🔹PRICE_DROP -29%  VERIFY
+        VERIFY
    6. tanteo           $  179.90  IN STOCK  landed≈€ 198.88  (score 1.00)
         VERIFY  FR
    ask $150.00  sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
@@ -3767,5 +3760,5 @@
   2025-26_COURT_KINGS_HOBBY                €  179.90  tanteo      
   2024-25_ORIGINS_H2                       €  279.00  tanteo      
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-11-05T00-59-40.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-11-05T07-37-43.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

@@ -1,11 +1,6 @@
-⚠️  [shopuscards] passage 2026-11-07T05:45:48+00:00 PARTIAL (0 produits) — ignoré, référence = dernier passage complet
-⚠️  [wolfdentcg] passage 2026-11-07T05:45:48+00:00 PARTIAL (32447 produits) — ignoré, référence = dernier passage complet
-(458 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
-
-========================================================================
-  🔔 RESTOCKS depuis le passage précédent
-========================================================================
-  🔔 RESTOCK  PANINI_2025-26_PRIZM_HOBBY  rlsports  $270.00  https://rlsportscards.com/products/2025-26-panini-prizm-basketball-hobby-box
+⚠️  [shopuscards] passage 2026-11-07T12:51:37+00:00 PARTIAL (0 produits) — ignoré, référence = dernier passage complet
+⚠️  [wolfdentcg] passage 2026-11-07T12:51:37+00:00 PARTIAL (32447 produits) — ignoré, référence = dernier passage complet
+(459 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
 
 ========================================================================
   RETAIL
@@ -3478,8 +3473,8 @@
    2. cardvault        $  239.95  IN STOCK  landed≈€ 260.99  (score 1.00)
         🔹DEAL -13%
    3. rbicru7          $  260.00  IN STOCK  landed≈€ 281.73  (score 1.00)
-   4. rlsports         $  270.00  IN STOCK  landed≈€ 292.08  (score 1.00)  🔔
-        🔹RESTOCK +4j  VERIFY
+   4. rlsports         $  270.00  IN STOCK  landed≈€ 292.08  (score 1.00)
+        VERIFY
    5. awesome          $  274.75  IN STOCK  landed≈€ 296.99  (score 1.00)
    6. piecethegame     $  279.99  IN STOCK  landed≈€ 302.41  (score 1.00)
    ask $275.00  sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
@@ -3763,5 +3758,5 @@
   2024-25_ORIGINS_H2                       €  279.00  tanteo      
   2025-26_HOOPS_HOBBY                      €  299.00  qscards     
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-11-07T07-05-49.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-11-07T14-18-03.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

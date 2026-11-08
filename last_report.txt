@@ -1,11 +1,6 @@
-⚠️  [shopuscards] passage 2026-11-08T05:48:46+00:00 PARTIAL (0 produits) — ignoré, référence = dernier passage complet
-⚠️  [wolfdentcg] passage 2026-11-08T05:48:46+00:00 PARTIAL (32446 produits) — ignoré, référence = dernier passage complet
+⚠️  [shopuscards] passage 2026-11-08T13:12:37+00:00 PARTIAL (0 produits) — ignoré, référence = dernier passage complet
+⚠️  [wolfdentcg] passage 2026-11-08T13:12:37+00:00 PARTIAL (32446 produits) — ignoré, référence = dernier passage complet
 (466 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
-
-========================================================================
-  🔔 RESTOCKS depuis le passage précédent
-========================================================================
-  🔔 RESTOCK  PANINI_2025-26_NOIR_HOBBY  sjay2k  $1500.00  https://www.sjay2k.com/products/2025-26-panini-noir-basketball-hobby-box-pre-order-tba
 
 ========================================================================
   RETAIL
@@ -3763,5 +3758,5 @@
   2025-26_HOOPS_HOBBY                      €  299.00  qscards     
   2024-25_MOSAIC_FAST_BREAK                €  359.90  tanteo      
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-11-08T07-03-48.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-11-08T14-40-02.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

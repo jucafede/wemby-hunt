@@ -1,6 +1,6 @@
-⚠️  [shopuscards] passage 2026-11-11T05:54:57+00:00 PARTIAL (162 produits) — ignoré, référence = dernier passage complet
-⚠️  [wolfdentcg] passage 2026-11-11T05:54:57+00:00 PARTIAL (32465 produits) — ignoré, référence = dernier passage complet
-(476 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
+⚠️  [shopuscards] passage 2026-11-11T14:01:34+00:00 PARTIAL (178 produits) — ignoré, référence = dernier passage complet
+⚠️  [wolfdentcg] passage 2026-11-11T14:01:34+00:00 PARTIAL (32470 produits) — ignoré, référence = dernier passage complet
+(477 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
 
 ========================================================================
   RETAIL
@@ -1573,7 +1573,8 @@
 · SUIVI   2025-26 Panini Prizm Pack   [PANINI_2025-26_PRIZM_PACK]
    1. stcuk            $   20.00  IN STOCK  landed≈€  33.48  (score 1.00)
         VERIFY  cheapest of 3 in stock  FR
-   2. rbicru7          $   25.00  IN STOCK  landed≈€  38.65  (score 1.00)
+   2. rbicru7          $   24.00  IN STOCK  landed≈€  37.61  (score 1.00)
+        🔹PRICE_DROP -4%
    3. boxseat          $   34.99  IN STOCK  landed≈€  48.98  (score 1.00)
         VERIFY
    ask $23.00   sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
@@ -2567,7 +2568,7 @@
    1. collectorstore   $  799.95  IN STOCK  landed≈€ 840.26  (score 1.00)
         cheapest of 3 in stock
    2. piecethegame     $  824.99  IN STOCK  landed≈€ 866.16  (score 1.00)
-   3. superior         $  900.00  IN STOCK  landed≈€ 943.75  (score 1.00)
+   3. superior         $  930.00  IN STOCK  landed≈€ 974.78  (score 1.00)
         VERIFY
    4. americansportstore $  374.99  SOLD OUT  landed≈€ 400.68  (score 1.00)
         VERIFY  FR
@@ -3464,7 +3465,8 @@
         VERIFY  cheapest of 13 in stock  FR
    2. cardvault        $  239.95  IN STOCK  landed≈€ 260.99  (score 1.00)
         🔹DEAL -13%
-   3. rbicru7          $  260.00  IN STOCK  landed≈€ 281.73  (score 1.00)
+   3. rbicru7          $  250.00  IN STOCK  landed≈€ 271.39  (score 1.00)
+        🔹PRICE_DROP -4%
    4. rlsports         $  270.00  IN STOCK  landed≈€ 292.08  (score 1.00)
         VERIFY
    5. awesome          $  274.75  IN STOCK  landed≈€ 296.99  (score 1.00)
@@ -3750,5 +3752,5 @@
   2025-26_HOOPS_HOBBY                      €  299.00  qscards     
   2024-25_MOSAIC_FAST_BREAK                €  359.90  tanteo      
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-11-11T07-16-50.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-11-11T15-14-49.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

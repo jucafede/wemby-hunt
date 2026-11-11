@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T00:25:52+00:00",
+  "generated_at": "2026-11-11T07:08:21+00:00",
   "offers": [
     {
       "product_id": "select_2023_24_hobby_mega_green_shock",
@@ -112,9 +112,9 @@
       "match_method": "SET_FORMAT_VARIANTE",
       "confidence": "select + variante « Blue & Pink Cracked Ice Prizms » nommée",
       "first_seen": "2026-09-24T07:55:54+00:00",
-      "last_seen": "2026-10-14T05:38:17+00:00",
+      "last_seen": "2026-11-11T07:08:21+00:00",
       "last_price": 120.0,
-      "last_in_stock": "2026-10-14T05:38:17+00:00",
+      "last_in_stock": "2026-11-11T07:08:21+00:00",
       "history": [
         {
           "t": "2026-09-24T07:55:54+00:00",
@@ -171,13 +171,20 @@
           "stock_status": "IN_STOCK",
           "stock_qty": null,
           "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-11-11T07:08:21+00:00",
+          "price": 120.0,
+          "stock_status": "IN_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
         }
       ],
       "titre_observe": "2023-24 Panini Select Basketball, Mega Box (BLUE & PINK CRACKED ICE)",
-      "old_stock_score": 36,
+      "old_stock_score": 16,
       "old_stock_motifs": [
-        "+24 3 fiche(s) 2023-24 ENCORE AU PANIER",
-        "+12 3 format(s) retail ancien(s) achetable(s) (Mega/Blaster/Hanger)"
+        "+12 1 fiche(s) 2023-24 ENCORE AU PANIER",
+        "+4 1 format(s) retail ancien(s) achetable(s) (Mega/Blaster/Hanger)"
       ]
     },
     {
@@ -413,7 +420,7 @@
       "confidence": "Mega Prizm 2023-24 sans variante nommée — non attribuable",
       "titre_observe": "2023-24 Panini Prizm NBA Mega Box",
       "first_seen": "2026-09-24T07:55:54+00:00",
-      "last_seen": "2026-11-04T07:19:50+00:00",
+      "last_seen": "2026-11-11T07:08:21+00:00",
       "last_price": 125.0,
       "last_in_stock": null,
       "history": [
@@ -507,14 +514,20 @@
           "stock_status": "OUT_OF_STOCK",
           "stock_qty": null,
           "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-11-11T07:08:21+00:00",
+          "price": 125.0,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
         }
       ],
-      "old_stock_score": 39,
+      "old_stock_score": 36,
       "old_stock_motifs": [
-        "+16 10 fiche(s) 2022-23 ENCORE AU PANIER",
-        "+12 10 format(s) retail ancien(s) achetable(s) (Mega/Blaster/Hanger)",
-        "+8 24 fiche(s) ancienne(s) encore indexée(s) mais ÉPUISÉE(S) — trace, pas stock",
-        "+3 catalogue NBA scellé profond (34 fiches relevées)"
+        "+16 6 fiche(s) 2022-23 ENCORE AU PANIER",
+        "+12 6 format(s) retail ancien(s) achetable(s) (Mega/Blaster/Hanger)",
+        "+8 13 fiche(s) ancienne(s) encore indexée(s) mais ÉPUISÉE(S) — trace, pas stock"
       ]
     },
     {
@@ -532,7 +545,7 @@
       "confidence": "Mega Select 2023-24 sans variante nommée — non attribuable",
       "titre_observe": "2023-24 Panini Select NBA Mega Box Wembanyama",
       "first_seen": "2026-09-24T07:55:54+00:00",
-      "last_seen": "2026-11-04T07:19:50+00:00",
+      "last_seen": "2026-11-11T07:08:21+00:00",
       "last_price": 65.0,
       "last_in_stock": null,
       "history": [
@@ -682,14 +695,34 @@
           "stock_status": "OUT_OF_STOCK",
           "stock_qty": null,
           "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-11-11T07:08:21+00:00",
+          "price": 65.0,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-11-11T07:08:21+00:00",
+          "price": 65.0,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-11-11T07:08:21+00:00",
+          "price": 65.0,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
         }
       ],
-      "old_stock_score": 39,
+      "old_stock_score": 36,
       "old_stock_motifs": [
-        "+16 10 fiche(s) 2022-23 ENCORE AU PANIER",
-        "+12 10 format(s) retail ancien(s) achetable(s) (Mega/Blaster/Hanger)",
-        "+8 24 fiche(s) ancienne(s) encore indexée(s) mais ÉPUISÉE(S) — trace, pas stock",
-        "+3 catalogue NBA scellé profond (34 fiches relevées)"
+        "+16 6 fiche(s) 2022-23 ENCORE AU PANIER",
+        "+12 6 format(s) retail ancien(s) achetable(s) (Mega/Blaster/Hanger)",
+        "+8 13 fiche(s) ancienne(s) encore indexée(s) mais ÉPUISÉE(S) — trace, pas stock"
       ]
     },
     {
@@ -707,7 +740,7 @@
       "confidence": "Mega Prizm 2023-24 sans variante nommée — non attribuable",
       "titre_observe": "Panini Prizm Basketball NBA Hobby Mega Box 2023/2024",
       "first_seen": "2026-09-24T07:55:54+00:00",
-      "last_seen": "2026-11-04T07:19:50+00:00",
+      "last_seen": "2026-11-11T07:08:21+00:00",
       "last_price": 375.0,
       "last_in_stock": null,
       "history": [
@@ -899,12 +932,18 @@
           "stock_status": "OUT_OF_STOCK",
           "stock_qty": null,
           "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-11-11T07:08:21+00:00",
+          "price": 375.0,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
         }
       ],
-      "old_stock_score": 11,
+      "old_stock_score": 4,
       "old_stock_motifs": [
-        "+8 6 fiche(s) ancienne(s) encore indexée(s) mais ÉPUISÉE(S) — trace, pas stock",
-        "+3 catalogue NBA scellé profond (35 fiches relevées)"
+        "+4 2 fiche(s) ancienne(s) encore indexée(s) mais ÉPUISÉE(S) — trace, pas stock"
       ]
     },
     {
@@ -922,7 +961,7 @@
       "confidence": "Mega Prizm 2023-24 sans variante nommée — non attribuable",
       "titre_observe": "Panini Prizm Basketball NBA Mega Box 2023/2024",
       "first_seen": "2026-09-24T07:55:54+00:00",
-      "last_seen": "2026-11-04T07:19:50+00:00",
+      "last_seen": "2026-11-11T07:08:21+00:00",
       "last_price": 179.0,
       "last_in_stock": null,
       "history": [
@@ -1100,12 +1139,18 @@
           "stock_status": "OUT_OF_STOCK",
           "stock_qty": null,
           "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-11-11T07:08:21+00:00",
+          "price": 179.0,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
         }
       ],
-      "old_stock_score": 11,
+      "old_stock_score": 4,
       "old_stock_motifs": [
-        "+8 6 fiche(s) ancienne(s) encore indexée(s) mais ÉPUISÉE(S) — trace, pas stock",
-        "+3 catalogue NBA scellé profond (35 fiches relevées)"
+        "+4 2 fiche(s) ancienne(s) encore indexée(s) mais ÉPUISÉE(S) — trace, pas stock"
       ]
     },
     {
@@ -1123,7 +1168,7 @@
       "confidence": "Mega Select 2023-24 sans variante nommée — non attribuable",
       "titre_observe": "Panini Select Basketball Mega Box 2023/24",
       "first_seen": "2026-09-24T07:55:54+00:00",
-      "last_seen": "2026-11-04T07:19:50+00:00",
+      "last_seen": "2026-11-11T07:08:21+00:00",
       "last_price": 89.9,
       "last_in_stock": null,
       "history": [
@@ -1364,12 +1409,25 @@
           "stock_status": "OUT_OF_STOCK",
           "stock_qty": null,
           "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-11-11T07:08:21+00:00",
+          "price": 89.9,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
+        },
+        {
+          "t": "2026-11-11T07:08:21+00:00",
+          "price": 89.9,
+          "stock_status": "OUT_OF_STOCK",
+          "stock_qty": null,
+          "event": "UNCHANGED"
         }
       ],
-      "old_stock_score": 11,
+      "old_stock_score": 4,
       "old_stock_motifs": [
-        "+8 6 fiche(s) ancienne(s) encore indexée(s) mais ÉPUISÉE(S) — trace, pas stock",
-        "+3 catalogue NBA scellé profond (35 fiches relevées)"
+        "+4 2 fiche(s) ancienne(s) encore indexée(s) mais ÉPUISÉE(S) — trace, pas stock"
       ]
     },
     {

@@ -1,11 +1,6 @@
-⚠️  [shopuscards] passage 2026-11-14T17:56:48+00:00 PARTIAL (192 produits) — ignoré, référence = dernier passage complet
-⚠️  [wolfdentcg] passage 2026-11-14T17:56:48+00:00 PARTIAL (32465 produits) — ignoré, référence = dernier passage complet
-(488 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
-
-========================================================================
-  🔔 RESTOCKS depuis le passage précédent
-========================================================================
-  🔔 RESTOCK  TOPPS_2025-26_CHROME_HOBBY  qscards  $1199.00  https://qscards.com/products/2025-26-topps-chrome-basketball-hobby-box
+⚠️  [shopuscards] passage 2026-11-14T22:17:09+00:00 PARTIAL (166 produits) — ignoré, référence = dernier passage complet
+⚠️  [wolfdentcg] passage 2026-11-14T22:17:09+00:00 PARTIAL (32464 produits) — ignoré, référence = dernier passage complet
+(486 observation(s) 'stale' ignorées : produit plus présent au dernier passage du shop — historique conservé)
 
 ========================================================================
   RETAIL
@@ -614,16 +609,16 @@
 
 · SUIVI   2024-25 Panini Donruss Mega   [PANINI_2024-25_DONRUSS_MEGA]
    1. ehcards          $   44.99  IN STOCK  landed≈€  59.33  (score 1.00)
-        YEAR2  cheapest of 3 in stock
+        YEAR2  cheapest of 4 in stock
    2. piecethegame     $   49.95  IN STOCK  landed≈€  64.46  (score 1.00)
         YEAR2
-   3. tanteo           $   64.90  IN STOCK  landed≈€  79.92  (score 1.00)
+   3. monmouth         $   49.99  IN STOCK  landed≈€  64.50  (score 1.00)
+        YEAR2  VERIFY
+   4. tanteo           $   64.90  IN STOCK  landed≈€  79.92  (score 1.00)
         YEAR2  VERIFY  FR
-   4. hiddengems       $   25.00  SOLD OUT  landed≈€  38.65  (score 1.00)
+   5. hiddengems       $   25.00  SOLD OUT  landed≈€  38.65  (score 1.00)
         YEAR2
-   5. nickscards       $   29.95  SOLD OUT  landed≈€  43.77  (score 1.00)
-        YEAR2
-   6. cardiacs         $   34.95  SOLD OUT  landed≈€  48.94  (score 1.00)
+   6. nickscards       $   29.95  SOLD OUT  landed≈€  43.77  (score 1.00)
         YEAR2
    ask $44.99   sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $25.00 (le 2026-08-18, hiddengems, 11 shop(s) vus) | cheapest live $44.99
@@ -1425,7 +1420,7 @@
         NO_PRICE
    4. columbia         $   69.99  SOLD OUT  landed≈€  85.19  (score 1.00)
    5. cardiacs         $   74.95  SOLD OUT  landed≈€  90.32  (score 1.00)
-   6. bleecker         $  115.00  SOLD OUT  landed≈€ 131.74  (score 1.00)
+   6. monmouth         $   89.99  SOLD OUT  landed≈€ 105.87  (score 1.00)
         VERIFY
    ask $84.75   sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $69.99 (le 2026-09-06, columbia, 6 shop(s) vus) | cheapest live $99.75
@@ -2086,10 +2081,10 @@
         YEAR2
    4. piecethegame     $  584.99  IN STOCK  landed≈€ 617.90  (score 1.00)
         YEAR2
-   5. bleecker         $  625.00  IN STOCK  landed≈€ 659.29  (score 1.00)
-        YEAR2  VERIFY
-   6. dacardworldeu    $  645.00  IN STOCK  landed≈€ 679.98  (score 1.00)
+   5. dacardworldeu    $  600.00  IN STOCK  landed≈€ 633.43  (score 1.00)
         YEAR2  VERIFY  FR
+   6. bleecker         $  625.00  IN STOCK  landed≈€ 659.29  (score 1.00)
+        YEAR2  VERIFY
    ask $300.00  sold n/a      | buy ≤ n/a      | watch ≤ n/a      | EU n/a
    HISTORICAL LOW $439.99 (le 2026-08-18, columbia, 15 shop(s) vus) | cheapest live $499.95
    BEST → kutogo  https://kutogo.com/product/2024-25-panini-prizm-basketball-hobby-box/
@@ -2440,7 +2435,7 @@
    RESTOCK TARGET case $1590.80 · $39.77/boîte  — surveillance, pas une valeur de marché
 
 · SUIVI   2025-26 Topps Chrome Hobby   [TOPPS_2025-26_CHROME_HOBBY]
-   1. qscards          $ 1199.00  IN STOCK  landed≈€1253.03  (score 1.00)  🔔
+   1. qscards          $ 1199.00  IN STOCK  landed≈€1253.03  (score 1.00)
         VERIFY  cheapest of 7 in stock  FR
    2. kutogo           $ 1199.95  IN STOCK  landed≈€1254.02  (score 1.00)
         VERIFY
@@ -3676,7 +3671,7 @@
   [piecethegame] 1997-98 Topps Chrome Basketball Hobby Box  $1599.99 OOS  → [["TOPPS_2023-24_CHROME_HOBBY", 0.77], ["TOPPS_2025-26_CHROME_HOBBY", 0.77], ["TOPPS_2024-25_TOPPS_CHROME_HOBBY", 0.77]]
 
 ========================================================================
-  👀 WATCHLIST — 96 prioritaires / 187 historiques / 3 autres
+  👀 WATCHLIST — 96 prioritaires / 186 historiques / 3 autres
 ========================================================================
   🔔 RESTOCK PRIORITY  2024-25 Panini Hoops Pack                  target                          $0.75 (2026-09-06, 7 shop(s))   -93.1% vs ask $10.90
   🔔 RESTOCK PRIORITY  2024-25 Panini Mosaic Pack                 target                          $4.99 (2026-09-06, 2 shop(s))   -84.4% vs ask $32.00
@@ -3751,5 +3746,5 @@
   2025-26_HOOPS_HOBBY                      €  299.00  qscards     
   2024-25_MOSAIC_FAST_BREAK                €  359.90  tanteo      
 
-CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-11-14T19-27-19.csv
+CSV → /home/runner/work/wemby-hunt/wemby-hunt/out/deals_2026-11-14T23-44-47.csv
 HTML → /home/runner/work/wemby-hunt/wemby-hunt/out/index.html

@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-11-23T08:32:21+00:00",
+  "generated_at": "2026-11-24T01:00:31+00:00",
   "method": "automatique · KNOWN URL REFRESH, puis NEW LISTING DISCOVERY par recherche web ET par balayage des catalogues candidats",
   "stale_after_hours": 24,
   "note": "Une annonce non VÉRIFIÉE depuis plus de 24 h passe STALE : visible, datée, mais ni live, ni meilleur prix, ni déclencheur d'achat. eBay, StockX et les sites de cotation refusent toute lecture automatisée (403) — leurs annonces ne peuvent donc pas être confirmées ici, et ne le prétendent pas.",
   "states": {
-    "CONFIRMED_LIVE": 7,
+    "CONFIRMED_LIVE": 5,
     "PROBABLE_LIVE": 1,
-    "OOS": 18,
-    "STALE": 34,
+    "OOS": 16,
+    "STALE": 35,
     "LOST": 0,
-    "AMBIGUOUS": 0
+    "AMBIGUOUS": 3
   },
   "run": {
     "known_urls_checked": 60,
@@ -20,14 +20,19 @@
     "ecartes_deja_crawles": [
       "shoppieceofthegame.com"
     ],
-    "domains_reachable": 7,
-    "catalog_items_read": 18897,
+    "domains_reachable": 8,
+    "catalog_items_read": 22844,
     "new_domains": [],
-    "new_listings": 16,
+    "new_listings": 12,
     "new_by_search": 0,
-    "new_by_sweep": 16,
+    "new_by_sweep": 12,
     "price_changes": [],
     "live_to_oos": [
+      {
+        "url": "https://giantsportscards.com/products/2023-24-panini-prizm-basketball-hobby-box",
+        "statut": "AMBIGUOUS",
+        "format": "Hobby"
+      },
       {
         "url": "https://collectorsclub.com/products/2023-24-panini-prizm-basketball-hobby-box",
         "statut": "AMBIGUOUS",
@@ -37,9 +42,24 @@
         "url": "https://collectorsclub.com/products/2023-24-panini-prizm-basketball-fotl-hobby-box",
         "statut": "AMBIGUOUS",
         "format": "FOTL"
+      },
+      {
+        "url": "https://giantsportscards.com/products/2023-24-panini-prizm-basketball-retail-display-box",
+        "statut": "AMBIGUOUS",
+        "format": "Inconnu"
+      },
+      {
+        "url": "https://aamintcards.com/products/2023-24-panini-prizm-basketball-mega-box",
+        "statut": "AMBIGUOUS",
+        "format": "Mega"
       }
     ],
-    "oos_to_live": [],
+    "oos_to_live": [
+      {
+        "url": "https://www.fanaticscollect.com/buy-now/95c9969c-91b6-4b76-825c-d2635cdd664f/202324-panini-prizm-basketball-hobby-box",
+        "format": "Hobby"
+      }
+    ],
     "became_stale": [
       {
         "url": "https://stockx.com/2023-24-panini-prizm-basketball-1st-off-the-line-hobby-box",
@@ -110,10 +130,6 @@
         "format": "Hobby"
       },
       {
-        "url": "https://giantsportscards.com/products/2023-24-panini-prizm-basketball-hobby-box",
-        "format": "Hobby"
-      },
-      {
         "url": "https://itstimecards.com/products/2023-24-panini-prizm-ice-basketball-blaster-box",
         "format": "Blaster"
       },
@@ -174,7 +190,7 @@
         "format": "Retail Box"
       },
       {
-        "url": "https://www.fanaticscollect.com/buy-now/95c9969c-91b6-4b76-825c-d2635cdd664f/202324-panini-prizm-basketball-hobby-box",
+        "url": "https://shoppieceofthegame.com/products/2023-24-panini-prizm-basketball-hobby-box",
         "format": "Hobby"
       },
       {
@@ -218,16 +234,8 @@
         "format": "Hobby"
       },
       {
-        "url": "https://giantsportscards.com/products/2023-24-panini-prizm-basketball-retail-display-box",
-        "format": "Inconnu"
-      },
-      {
         "url": "https://www.steelcitycollectibles.com/i/2023-24-panini-prizm-basketball-hobby-box",
         "format": "Hobby"
-      },
-      {
-        "url": "https://aamintcards.com/products/2023-24-panini-prizm-basketball-mega-box",
-        "format": "Mega"
       },
       {
         "url": "https://www.steelcitycollectibles.com/i/2023-24-panini-prizm-basketball-hobby-12-box-case",
@@ -235,9 +243,9 @@
       }
     ],
     "lost": [],
-    "urls_seen": 312,
-    "urls_probed": 1,
-    "rejected": 1,
+    "urls_seen": 336,
+    "urls_probed": 3,
+    "rejected": 3,
     "engine_attempts": [
       {
         "query": "2023-24 Panini Prizm Basketball Hobby Box buy",
@@ -342,7 +350,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 14
+            "n": 3
           }
         ]
       },
@@ -378,7 +386,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 6
+            "n": 7
           }
         ]
       },
@@ -450,7 +458,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 6
+            "n": 7
           }
         ]
       },
@@ -486,7 +494,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 7
+            "n": 8
           }
         ]
       },
@@ -522,7 +530,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 14
+            "n": 11
           }
         ]
       },
@@ -558,7 +566,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 6
+            "n": 8
           }
         ]
       },
@@ -666,7 +674,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 6
+            "n": 7
           }
         ]
       },
@@ -738,7 +746,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 7
+            "n": 8
           }
         ]
       },
@@ -774,7 +782,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 6
+            "n": 8
           }
         ]
       },
@@ -810,7 +818,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 7
+            "n": 8
           }
         ]
       },
@@ -846,7 +854,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 7
+            "n": 8
           }
         ]
       },
@@ -918,7 +926,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 7
+            "n": 8
           }
         ]
       },
@@ -954,7 +962,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 6
+            "n": 7
           }
         ]
       },
@@ -1026,7 +1034,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 6
+            "n": 8
           }
         ]
       },
@@ -1062,7 +1070,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 7
+            "n": 8
           }
         ]
       },
@@ -1098,7 +1106,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 6
+            "n": 8
           }
         ]
       },
@@ -1134,7 +1142,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 7
+            "n": 8
           }
         ]
       },
@@ -1170,7 +1178,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 6
+            "n": 8
           }
         ]
       },
@@ -1206,7 +1214,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 7
+            "n": 8
           }
         ]
       },
@@ -1278,7 +1286,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 6
+            "n": 8
           }
         ]
       },
@@ -1458,7 +1466,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 6
+            "n": 8
           }
         ]
       },
@@ -1530,7 +1538,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 6
+            "n": 8
           }
         ]
       },
@@ -1566,7 +1574,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 7
+            "n": 8
           }
         ]
       },
@@ -1602,7 +1610,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 6
+            "n": 8
           }
         ]
       },
@@ -1638,7 +1646,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 6
+            "n": 8
           }
         ]
       },
@@ -1674,7 +1682,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 7
+            "n": 8
           }
         ]
       },
@@ -1710,7 +1718,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 6
+            "n": 8
           }
         ]
       },
@@ -1746,7 +1754,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 7
+            "n": 8
           }
         ]
       },
@@ -1782,7 +1790,7 @@
           {
             "engine": "bing",
             "outcome": "OK",
-            "n": 7
+            "n": 8
           }
         ]
       }
@@ -1792,7 +1800,7 @@
     {
       "format": "FOTL",
       "first_seen": "2026-09-06",
-      "last_checked": "2026-11-23T08:24:33+00:00",
+      "last_checked": "2026-11-24T00:52:14+00:00",
       "last_seen_live": "2026-09-06",
       "price": null,
       "currency": "USD",
@@ -1812,7 +1820,7 @@
     {
       "format": "Mega",
       "first_seen": "2026-09-06",
-      "last_checked": "2026-11-23T08:24:33+00:00",
+      "last_checked": "2026-11-24T00:52:14+00:00",
       "last_seen_live": "2026-09-06",
       "price": 239.99,
       "currency": "USD",
@@ -1832,7 +1840,7 @@
     {
       "format": "Mega",
       "first_seen": "2026-09-06",
-      "last_checked": "2026-11-23T08:24:33+00:00",
+      "last_checked": "2026-11-24T00:52:14+00:00",
       "last_seen_live": "2026-09-06",
       "price": 230.99,
       "currency": "USD",
@@ -1852,7 +1860,7 @@
     {
       "format": "Mega",
       "first_seen": "2026-09-06",
-      "last_checked": "2026-11-23T08:24:34+00:00",
+      "last_checked": "2026-11-24T00:52:15+00:00",
       "last_seen_live": "2026-09-06",
       "price": 134.0,
       "currency": "USD",
@@ -1872,7 +1880,7 @@
     {
       "format": "Blaster",
       "first_seen": "2026-09-06",
-      "last_checked": "2026-11-23T08:24:34+00:00",
+      "last_checked": "2026-11-24T00:52:15+00:00",
       "last_seen_live": "2026-09-06",
       "price": 129.95,
       "currency": "USD",
@@ -1892,7 +1900,7 @@
     {
       "format": "Blaster",
       "first_seen": "2026-09-06",
-      "last_checked": "2026-11-23T08:24:35+00:00",
+      "last_checked": "2026-11-24T00:52:16+00:00",
       "last_seen_live": "2026-09-06",
       "price": 74.0,
       "currency": "USD",
@@ -1912,7 +1920,7 @@
     {
       "format": "Retail Box",
       "first_seen": "2026-09-06",
-      "last_checked": "2026-11-23T08:24:35+00:00",
+      "last_checked": "2026-11-24T00:52:16+00:00",
       "last_seen_live": "2026-09-06",
       "price": 299.98,
       "currency": "USD",
@@ -1932,7 +1940,7 @@
     {
       "format": "Choice",
       "first_seen": "2026-09-06",
-      "last_checked": "2026-11-23T08:24:36+00:00",
+      "last_checked": "2026-11-24T00:52:17+00:00",
       "last_seen_live": "2026-09-06",
       "price": 867.0,
       "currency": "USD",
@@ -1952,7 +1960,7 @@
     {
       "format": "Hobby",
       "first_seen": "2026-09-06",
-      "last_checked": "2026-11-23T08:24:37+00:00",
+      "last_checked": "2026-11-24T00:52:18+00:00",
       "last_seen_live": "2026-09-06",
       "price": 874.0,
       "currency": "USD",
@@ -1972,7 +1980,7 @@
     {
       "format": "Premium Factory Set",
       "first_seen": "2026-09-06",
-      "last_checked": "2026-11-23T08:24:39+00:00",
+      "last_checked": "2026-11-24T00:52:20+00:00",
       "last_seen_live": null,
       "price": null,
       "currency": "USD",
@@ -1992,7 +2000,7 @@
     {
       "format": "Mega",
       "first_seen": "2026-09-06",
-      "last_checked": "2026-11-23T08:24:41+00:00",
+      "last_checked": "2026-11-24T00:52:22+00:00",
       "last_seen_live": null,
       "price": null,
       "currency": "USD",
@@ -2012,7 +2020,7 @@
     {
       "format": "Mega",
       "first_seen": "2026-09-06",
-      "last_checked": "2026-11-23T08:24:41+00:00",
+      "last_checked": "2026-11-24T00:52:22+00:00",
       "last_seen_live": null,
       "price": null,
       "currency": "USD",
@@ -2032,7 +2040,7 @@
     {
       "format": "Hobby",
       "first_seen": "2026-09-07T09:07:17+00:00",
-      "last_checked": "2026-11-23T08:24:45+00:00",
+      "last_checked": "2026-11-24T00:52:26+00:00",
       "last_seen_live": null,
       "price": 1199.99,
       "currency": "CAD",
@@ -2052,7 +2060,7 @@
     {
       "format": "International",
       "first_seen": "2026-09-07T09:40:30+00:00",
-      "last_checked": "2026-11-23T08:31:22+00:00",
+      "last_checked": "2026-11-24T01:00:31+00:00",
       "last_seen_live": null,
       "price": 334.95,
       "currency": "USD",
@@ -2075,7 +2083,7 @@
     {
       "format": "Choice",
       "first_seen": "2026-09-07T09:40:30+00:00",
-      "last_checked": "2026-11-23T08:31:22+00:00",
+      "last_checked": "2026-11-24T01:00:31+00:00",
       "last_seen_live": null,
       "price": 10599.95,
       "currency": "USD",
@@ -2097,7 +2105,7 @@
     {
       "format": "Fast Break",
       "first_seen": "2026-09-07T09:40:30+00:00",
-      "last_checked": "2026-11-23T08:31:22+00:00",
+      "last_checked": "2026-11-24T01:00:31+00:00",
       "last_seen_live": null,
       "price": 12499.95,
       "currency": "USD",
@@ -2119,7 +2127,7 @@
     {
       "format": "Fast Break",
       "first_seen": "2026-09-07T09:40:30+00:00",
-      "last_checked": "2026-11-23T08:31:22+00:00",
+      "last_checked": "2026-11-24T01:00:31+00:00",
       "last_seen_live": null,
       "price": 549.95,
       "currency": "USD",
@@ -2142,7 +2150,7 @@
     {
       "format": "Hobby",
       "first_seen": "2026-09-07T09:40:30+00:00",
-      "last_checked": "2026-11-23T08:31:22+00:00",
+      "last_checked": "2026-11-24T01:00:31+00:00",
       "last_seen_live": null,
       "price": 13549.95,
       "currency": "USD",
@@ -2164,8 +2172,8 @@
     {
       "format": "Hobby",
       "first_seen": "2026-09-07T09:40:30+00:00",
-      "last_checked": "2026-11-23T08:31:22+00:00",
-      "last_seen_live": "2026-11-23T08:31:22+00:00",
+      "last_checked": "2026-11-24T01:00:31+00:00",
+      "last_seen_live": "2026-11-24T01:00:31+00:00",
       "price": 3099.95,
       "currency": "USD",
       "seller": "giantsportscards.com",
@@ -2187,7 +2195,7 @@
     {
       "format": "Blaster",
       "first_seen": "2026-09-07T09:41:43+00:00",
-      "last_checked": "2026-11-23T08:24:54+00:00",
+      "last_checked": "2026-11-24T00:59:20+00:00",
       "last_seen_live": null,
       "price": 64.99,
       "currency": "USD",
@@ -2195,13 +2203,13 @@
       "seller_type": "RETAILER_EXTERNE",
       "url": "https://itstimecards.com/products/2023-24-panini-prizm-ice-basketball-blaster-box",
       "discovery_method": "balayage catalogue · shopify",
-      "stock_status": "STALE",
-      "confidence": "LOW",
+      "stock_status": "OOS",
+      "confidence": "HIGH",
       "layer": "web",
       "title_lu": "2023-24 Panini Prizm Ice Basketball Blaster Box",
       "probe": {
-        "raw": "AMBIGUOUS",
-        "why": "HTTP 429"
+        "raw": "OOS",
+        "why": "disponibilité structurée de l'API"
       },
       "quantity": 1,
       "sku_id": "PANINI_2023-24_PRIZM_BLASTER",
@@ -2210,7 +2218,7 @@
     {
       "format": "Pack",
       "first_seen": "2026-09-07T09:42:49+00:00",
-      "last_checked": "2026-11-23T08:24:56+00:00",
+      "last_checked": "2026-11-24T00:58:50+00:00",
       "last_seen_live": null,
       "price": 19.99,
       "currency": "USD",
@@ -2218,13 +2226,13 @@
       "seller_type": "RETAILER_EXTERNE",
       "url": "https://cmbcollectibles.com/products/2023-24-panini-prizm-nba-value-pack-new-15-cards-red-white-and-blue-prizms",
       "discovery_method": "balayage catalogue · shopify",
-      "stock_status": "STALE",
-      "confidence": "LOW",
+      "stock_status": "OOS",
+      "confidence": "HIGH",
       "layer": "web",
       "title_lu": "2023-24 Panini Prizm NBA Value Pack. New. 15 Cards. Red, White and Blue Prizms!",
       "probe": {
-        "raw": "AMBIGUOUS",
-        "why": "HTTP 429"
+        "raw": "OOS",
+        "why": "disponibilité structurée de l'API"
       },
       "quantity": 1,
       "unit_price": 19.99
@@ -2232,7 +2240,7 @@
     {
       "format": "Mega",
       "first_seen": "2026-09-07T09:42:49+00:00",
-      "last_checked": "2026-11-23T08:24:57+00:00",
+      "last_checked": "2026-11-24T00:58:50+00:00",
       "last_seen_live": null,
       "price": 89.99,
       "currency": "USD",
@@ -2240,13 +2248,13 @@
       "seller_type": "RETAILER_EXTERNE",
       "url": "https://cmbcollectibles.com/products/2023-24-panini-prizm-basketball-mega-box-new",
       "discovery_method": "balayage catalogue · shopify",
-      "stock_status": "STALE",
-      "confidence": "LOW",
+      "stock_status": "OOS",
+      "confidence": "HIGH",
       "layer": "web",
       "title_lu": "2023-24 Panini Prizm Basketball Mega Box. New.",
       "probe": {
-        "raw": "AMBIGUOUS",
-        "why": "HTTP 429"
+        "raw": "OOS",
+        "why": "disponibilité structurée de l'API"
       },
       "quantity": 1,
       "sku_id": "PANINI_2023-24_PRIZM_MEGA",
@@ -2255,7 +2263,7 @@
     {
       "format": "Retail Box",
       "first_seen": "2026-09-07T09:42:49+00:00",
-      "last_checked": "2026-11-23T08:24:58+00:00",
+      "last_checked": "2026-11-24T00:58:50+00:00",
       "last_seen_live": null,
       "price": 8.99,
       "currency": "USD",
@@ -2263,13 +2271,13 @@
       "seller_type": "RETAILER_EXTERNE",
       "url": "https://cmbcollectibles.com/products/2023-24-panini-prizm-nba-sealed-pack-retail-box",
       "discovery_method": "balayage catalogue · shopify",
-      "stock_status": "STALE",
-      "confidence": "LOW",
+      "stock_status": "OOS",
+      "confidence": "HIGH",
       "layer": "web",
       "title_lu": "2023-24 Panini Prizm NBA sealed pack. Retail Box.",
       "probe": {
-        "raw": "AMBIGUOUS",
-        "why": "HTTP 429"
+        "raw": "OOS",
+        "why": "disponibilité structurée de l'API"
       },
       "quantity": 1,
       "sku_id": "PANINI_2023-24_PRIZM_RETAIL_BOX",
@@ -2278,7 +2286,7 @@
     {
       "format": "Blaster",
       "first_seen": "2026-09-07T09:42:49+00:00",
-      "last_checked": "2026-11-23T08:24:59+00:00",
+      "last_checked": "2026-11-24T00:58:50+00:00",
       "last_seen_live": null,
       "price": 39.99,
       "currency": "USD",
@@ -2286,13 +2294,13 @@
       "seller_type": "RETAILER_EXTERNE",
       "url": "https://cmbcollectibles.com/products/2023-24-panini-prizm-nba-blaster-box-new",
       "discovery_method": "balayage catalogue · shopify",
-      "stock_status": "STALE",
-      "confidence": "LOW",
+      "stock_status": "OOS",
+      "confidence": "HIGH",
       "layer": "web",
       "title_lu": "2023-24 Panini Prizm NBA Blaster Box.",
       "probe": {
-        "raw": "AMBIGUOUS",
-        "why": "HTTP 429"
+        "raw": "OOS",
+        "why": "disponibilité structurée de l'API"
       },
       "quantity": 1,
       "sku_id": "PANINI_2023-24_PRIZM_BLASTER",
@@ -2301,7 +2309,7 @@
     {
       "format": "Hobby",
       "first_seen": "2026-09-08T16:59:05+00:00",
-      "last_checked": "2026-11-23T08:25:01+00:00",
+      "last_checked": "2026-11-24T00:52:42+00:00",
       "last_seen_live": "2026-11-22T07:19:45+00:00",
       "price": 3400.0,
       "currency": "USD",
@@ -2321,7 +2329,7 @@
     {
       "format": "Hobby",
       "first_seen": "2026-09-08T16:59:05+00:00",
-      "last_checked": "2026-11-23T08:32:21+00:00",
+      "last_checked": "2026-11-24T00:52:45+00:00",
       "last_seen_live": "2026-11-23T08:32:21+00:00",
       "price": 4000.0,
       "currency": "USD",
@@ -2329,12 +2337,12 @@
       "seller_type": "RETAILER_EXTERNE",
       "url": "https://collectorsclub.com/products/2023-24-panini-prizm-basketball-hobby-box",
       "discovery_method": "balayage catalogue · shopify",
-      "stock_status": "CONFIRMED_LIVE",
-      "confidence": "HIGH",
+      "stock_status": "AMBIGUOUS",
+      "confidence": "LOW",
       "layer": "web",
       "probe": {
-        "raw": "CONFIRMED_LIVE",
-        "why": "disponibilité structurée de l'API"
+        "raw": "AMBIGUOUS",
+        "why": "HTTP 429"
       },
       "title_lu": "2023-24 Panini Prizm Basketball Hobby Box",
       "quantity": 1,
@@ -2344,7 +2352,7 @@
     {
       "format": "FOTL",
       "first_seen": "2026-09-08T17:03:56+00:00",
-      "last_checked": "2026-11-23T08:25:04+00:00",
+      "last_checked": "2026-11-24T00:52:46+00:00",
       "last_seen_live": "2026-09-09T21:24:05+00:00",
       "quantity": 1,
       "sku_id": null,
@@ -2367,7 +2375,7 @@
     {
       "format": "Hobby",
       "first_seen": "2026-09-10T16:45:43+00:00",
-      "last_checked": "2026-11-23T08:32:10+00:00",
+      "last_checked": "2026-11-24T00:52:48+00:00",
       "last_seen_live": null,
       "price": 1494.95,
       "currency": "USD",
@@ -2375,12 +2383,12 @@
       "seller_type": "RETAILER_EXTERNE",
       "url": "https://honeyholecollect.com/products/2023-24-panini-prizm-basketball-hobby-box",
       "discovery_method": "balayage catalogue · shopify",
-      "stock_status": "OOS",
-      "confidence": "HIGH",
+      "stock_status": "STALE",
+      "confidence": "LOW",
       "layer": "web",
       "probe": {
-        "raw": "OOS",
-        "why": "disponibilité structurée de l'API"
+        "raw": "AMBIGUOUS",
+        "why": "HTTP 429"
       },
       "title_lu": "2023/24 Panini Prizm Basketball Hobby Box",
       "quantity": 1,
@@ -2390,7 +2398,7 @@
     {
       "format": "Fast Break",
       "first_seen": "2026-09-10T16:50:01+00:00",
-      "last_checked": "2026-11-23T08:32:10+00:00",
+      "last_checked": "2026-11-24T00:52:49+00:00",
       "last_seen_live": null,
       "quantity": 1,
       "sku_id": "PANINI_2023-24_PRIZM_FAST_BREAK",
@@ -2401,19 +2409,19 @@
       "seller_type": "RETAILER_EXTERNE",
       "url": "https://honeyholecollect.com/products/2023-24-panini-prizm-basketball-fast-break-box",
       "discovery_method": "balayage catalogue · shopify",
-      "stock_status": "OOS",
-      "confidence": "HIGH",
+      "stock_status": "STALE",
+      "confidence": "LOW",
       "layer": "web",
       "title_lu": "2023/24 Panini Prizm Basketball Fast Break Box",
       "probe": {
-        "raw": "OOS",
-        "why": "disponibilité structurée de l'API"
+        "raw": "AMBIGUOUS",
+        "why": "HTTP 429"
       }
     },
     {
       "format": "International",
       "first_seen": "2026-09-10T16:50:01+00:00",
-      "last_checked": "2026-11-23T08:32:10+00:00",
+      "last_checked": "2026-11-24T00:52:50+00:00",
       "last_seen_live": null,
       "quantity": 1,
       "sku_id": "PANINI_2023-24_PRIZM_INTERNATIONAL",
@@ -2424,19 +2432,19 @@
       "seller_type": "RETAILER_EXTERNE",
       "url": "https://honeyholecollect.com/products/2023-24-panini-prizm-basketball-international-hobby-box",
       "discovery_method": "balayage catalogue · shopify",
-      "stock_status": "OOS",
-      "confidence": "HIGH",
+      "stock_status": "STALE",
+      "confidence": "LOW",
       "layer": "web",
       "title_lu": "2023/24 Panini Prizm Basketball International Hobby Box",
       "probe": {
-        "raw": "OOS",
-        "why": "disponibilité structurée de l'API"
+        "raw": "AMBIGUOUS",
+        "why": "HTTP 429"
       }
     },
     {
       "format": "Blaster",
       "first_seen": "2026-09-10T16:50:01+00:00",
-      "last_checked": "2026-11-23T08:32:10+00:00",
+      "last_checked": "2026-11-24T00:52:51+00:00",
       "last_seen_live": null,
       "quantity": 1,
       "sku_id": "PANINI_2023-24_PRIZM_BLASTER",
@@ -2447,19 +2455,19 @@
       "seller_type": "RETAILER_EXTERNE",
       "url": "https://honeyholecollect.com/products/2023-24-panini-prizm-basketball-blaster-box",
       "discovery_method": "balayage catalogue · shopify",
-      "stock_status": "OOS",
-      "confidence": "HIGH",
+      "stock_status": "STALE",
+      "confidence": "LOW",
       "layer": "web",
       "title_lu": "2023/24 Panini Prizm Basketball Blaster Box",
       "probe": {
-        "raw": "OOS",
-        "why": "disponibilité structurée de l'API"
+        "raw": "AMBIGUOUS",
+        "why": "HTTP 429"
       }
     },
     {
       "format": "Choice",
       "first_seen": "2026-09-10T16:50:01+00:00",
-      "last_checked": "2026-11-23T08:32:10+00:00",
+      "last_checked": "2026-11-24T00:52:52+00:00",
       "last_seen_live": null,
       "quantity": 1,
       "sku_id": "PANINI_2023-24_PRIZM_CHOICE",
@@ -2470,19 +2478,19 @@
       "seller_type": "RETAILER_EXTERNE",
       "url": "https://honeyholecollect.com/products/2023-24-panini-prizm-basketball-choice-box",
       "discovery_method": "balayage catalogue · shopify",
-      "stock_status": "OOS",
-      "confidence": "HIGH",
+      "stock_status": "STALE",
+      "confidence": "LOW",
       "layer": "web",
       "title_lu": "2023/24 Panini Prizm Basketball Choice Box",
       "probe": {
-        "raw": "OOS",
-        "why": "disponibilité structurée de l'API"
+        "raw": "AMBIGUOUS",
+        "why": "HTTP 429"
       }
     },
     {
       "format": "Retail Box",
       "first_seen": "2026-09-10T16:50:01+00:00",
-      "last_checked": "2026-11-23T08:32:10+00:00",
+      "last_checked": "2026-11-24T00:52:53+00:00",
       "last_seen_live": null,
       "quantity": 1,
       "sku_id": "PANINI_2023-24_PRIZM_RETAIL_BOX",
@@ -2493,19 +2501,19 @@
       "seller_type": "RETAILER_EXTERNE",
       "url": "https://honeyholecollect.com/products/2023-24-panini-prizm-basketball-retail-box",
       "discovery_method": "balayage catalogue · shopify",
-      "stock_status": "OOS",
-      "confidence": "HIGH",
+      "stock_status": "STALE",
+      "confidence": "LOW",
       "layer": "web",
       "title_lu": "2023/24 Panini Prizm Basketball Retail Box",
       "probe": {
-        "raw": "OOS",
-        "why": "disponibilité structurée de l'API"
+        "raw": "AMBIGUOUS",
+        "why": "HTTP 429"
       }
     },
     {
       "format": "FOTL",
       "first_seen": "2026-09-11T04:55:55+00:00",
-      "last_checked": "2026-11-23T08:32:21+00:00",
+      "last_checked": "2026-11-24T00:52:53+00:00",
       "last_seen_live": "2026-11-23T08:32:21+00:00",
       "quantity": 1,
       "sku_id": null,
@@ -2516,19 +2524,19 @@
       "seller_type": "RETAILER_EXTERNE",
       "url": "https://collectorsclub.com/products/2023-24-panini-prizm-basketball-fotl-hobby-box",
       "discovery_method": "balayage catalogue · shopify",
-      "stock_status": "CONFIRMED_LIVE",
-      "confidence": "HIGH",
+      "stock_status": "AMBIGUOUS",
+      "confidence": "LOW",
       "layer": "web",
       "title_lu": "2023-24 Panini Prizm Basketball FOTL Hobby Box",
       "probe": {
-        "raw": "CONFIRMED_LIVE",
-        "why": "disponibilité structurée de l'API"
+        "raw": "AMBIGUOUS",
+        "why": "HTTP 429"
       }
     },
     {
       "format": "Hobby",
       "first_seen": "2026-09-11T21:26:05+00:00",
-      "last_checked": "2026-11-23T08:25:13+00:00",
+      "last_checked": "2026-11-24T00:52:54+00:00",
       "last_seen_live": "2026-09-20T05:19:04+00:00",
       "quantity": 1,
       "sku_id": "PANINI_2023-24_PRIZM_HOBBY",
@@ -2551,7 +2559,7 @@
     {
       "format": "Retail Box",
       "first_seen": "2026-09-12T11:07:36+00:00",
-      "last_checked": "2026-11-23T08:25:15+00:00",
+      "last_checked": "2026-11-24T00:52:56+00:00",
       "last_seen_live": "2026-09-29T13:20:49+00:00",
       "price": 399.99,
       "currency": "USD",
@@ -2571,7 +2579,7 @@
     {
       "format": "Hobby",
       "first_seen": "2026-09-12T15:56:55+00:00",
-      "last_checked": "2026-11-23T08:25:17+00:00",
+      "last_checked": "2026-11-24T00:52:58+00:00",
       "last_seen_live": null,
       "price": 964.99,
       "currency": "USD",
@@ -2579,19 +2587,19 @@
       "seller_type": "RETAILER_EXTERNE",
       "url": "https://shoppieceofthegame.com/products/2023-24-panini-prizm-basketball-hobby-box",
       "discovery_method": "recherche web · 2023-24 Panini Prizm Basketball Hobby Box buy",
-      "stock_status": "OOS",
-      "confidence": "HIGH",
+      "stock_status": "STALE",
+      "confidence": "LOW",
       "layer": "web",
       "probe": {
-        "raw": "OOS",
-        "why": null
+        "raw": "AMBIGUOUS",
+        "why": "HTTP 429"
       },
       "title_lu": "2023-24 Panini Prizm Basketball Hobby Box – Piece Of The Game"
     },
     {
       "format": "Mega",
       "first_seen": "2026-09-15T05:12:10+00:00",
-      "last_checked": "2026-11-23T08:25:20+00:00",
+      "last_checked": "2026-11-24T00:53:00+00:00",
       "last_seen_live": null,
       "price": null,
       "currency": "USD",
@@ -2611,8 +2619,8 @@
     {
       "format": "Blaster",
       "first_seen": "2026-09-15T05:13:04+00:00",
-      "last_checked": "2026-11-23T08:25:21+00:00",
-      "last_seen_live": "2026-11-23T08:25:21+00:00",
+      "last_checked": "2026-11-24T00:53:02+00:00",
+      "last_seen_live": "2026-11-24T00:53:02+00:00",
       "price": null,
       "currency": "USD",
       "seller": "target.com",
@@ -2631,28 +2639,28 @@
     {
       "format": "Hobby",
       "first_seen": "2026-09-28T14:23:34+00:00",
-      "last_checked": "2026-11-23T08:25:23+00:00",
-      "last_seen_live": "2026-11-22T07:20:07+00:00",
+      "last_checked": "2026-11-24T00:53:04+00:00",
+      "last_seen_live": "2026-11-24T00:53:04+00:00",
       "price": 3400.0,
       "currency": "USD",
       "seller": "fanaticscollect.com",
       "seller_type": "RETAILER_EXTERNE",
       "url": "https://www.fanaticscollect.com/buy-now/95c9969c-91b6-4b76-825c-d2635cdd664f/202324-panini-prizm-basketball-hobby-box",
       "discovery_method": "recherche web · 2023-24 Panini Prizm Basketball Hobby Box buy",
-      "stock_status": "STALE",
-      "confidence": "LOW",
+      "stock_status": "CONFIRMED_LIVE",
+      "confidence": "HIGH",
       "layer": "web",
       "probe": {
-        "raw": "AMBIGUOUS",
-        "why": "aucun signal de stock"
+        "raw": "CONFIRMED_LIVE",
+        "why": null
       },
       "title_lu": "2023/24 Panini Prizm Basketball Hobby Box on Fanatics Collect"
     },
     {
       "format": "Hobby",
       "first_seen": "2026-09-28T23:56:21+00:00",
-      "last_checked": "2026-11-23T08:25:26+00:00",
-      "last_seen_live": "2026-11-23T08:25:26+00:00",
+      "last_checked": "2026-11-24T00:53:07+00:00",
+      "last_seen_live": "2026-11-24T00:53:07+00:00",
       "price": 3299.95,
       "currency": "USD",
       "seller": "midwestcards.com",
@@ -2671,8 +2679,8 @@
     {
       "format": "Hobby",
       "first_seen": "2026-10-01T06:21:54+00:00",
-      "last_checked": "2026-11-23T08:25:26+00:00",
-      "last_seen_live": "2026-11-23T08:25:26+00:00",
+      "last_checked": "2026-11-24T00:53:07+00:00",
+      "last_seen_live": "2026-11-24T00:53:07+00:00",
       "price": 3299.95,
       "currency": "USD",
       "seller": "midwestcards.com",
@@ -2691,7 +2699,7 @@
     {
       "format": "Hobby",
       "first_seen": "2026-10-06T07:00:24+00:00",
-      "last_checked": "2026-11-23T08:25:27+00:00",
+      "last_checked": "2026-11-24T00:53:08+00:00",
       "last_seen_live": "2026-10-28T13:39:31+00:00",
       "price": 3087.8,
       "currency": "USD",
@@ -2714,7 +2722,7 @@
     {
       "format": "Fast Break",
       "first_seen": "2026-10-06T07:04:42+00:00",
-      "last_checked": "2026-11-23T08:25:27+00:00",
+      "last_checked": "2026-11-24T00:53:08+00:00",
       "last_seen_live": "2026-10-28T13:39:32+00:00",
       "quantity": 1,
       "sku_id": "PANINI_2023-24_PRIZM_FAST_BREAK",
@@ -2737,7 +2745,7 @@
     {
       "format": "Fast Break",
       "first_seen": "2026-10-06T07:04:42+00:00",
-      "last_checked": "2026-11-23T08:25:27+00:00",
+      "last_checked": "2026-11-24T00:53:08+00:00",
       "last_seen_live": "2026-10-28T13:39:33+00:00",
       "quantity": 20,
       "sku_id": null,
@@ -2760,7 +2768,7 @@
     {
       "format": "International",
       "first_seen": "2026-10-06T07:04:42+00:00",
-      "last_checked": "2026-11-23T08:25:27+00:00",
+      "last_checked": "2026-11-24T00:53:08+00:00",
       "last_seen_live": "2026-10-28T13:39:34+00:00",
       "quantity": 1,
       "sku_id": "PANINI_2023-24_PRIZM_INTERNATIONAL",
@@ -2783,7 +2791,7 @@
     {
       "format": "Hobby",
       "first_seen": "2026-10-06T07:04:42+00:00",
-      "last_checked": "2026-11-23T08:25:27+00:00",
+      "last_checked": "2026-11-24T00:53:08+00:00",
       "last_seen_live": "2026-10-28T13:39:35+00:00",
       "quantity": 12,
       "sku_id": null,
@@ -2806,7 +2814,7 @@
     {
       "format": "Choice",
       "first_seen": "2026-10-06T07:04:42+00:00",
-      "last_checked": "2026-11-23T08:25:27+00:00",
+      "last_checked": "2026-11-24T00:53:08+00:00",
       "last_seen_live": "2026-10-28T13:39:36+00:00",
       "quantity": 20,
       "sku_id": null,
@@ -2829,7 +2837,7 @@
     {
       "format": "Hobby Blaster",
       "first_seen": "2026-10-06T07:05:46+00:00",
-      "last_checked": "2026-11-23T08:25:30+00:00",
+      "last_checked": "2026-11-24T00:53:11+00:00",
       "last_seen_live": "2026-10-28T06:29:18+00:00",
       "quantity": 1,
       "sku_id": "PANINI_2023-24_PRIZM_HOBBY_BLASTER",
@@ -2852,7 +2860,7 @@
     {
       "format": "Mega",
       "first_seen": "2026-10-06T07:05:46+00:00",
-      "last_checked": "2026-11-23T08:25:30+00:00",
+      "last_checked": "2026-11-24T00:53:12+00:00",
       "last_seen_live": "2026-10-28T06:29:18+00:00",
       "quantity": 1,
       "sku_id": "PANINI_2023-24_PRIZM_MEGA",
@@ -2875,7 +2883,7 @@
     {
       "format": "Hobby",
       "first_seen": "2026-10-10T13:07:56+00:00",
-      "last_checked": "2026-11-23T08:25:31+00:00",
+      "last_checked": "2026-11-24T00:53:12+00:00",
       "last_seen_live": null,
       "price": 349.95,
       "currency": "USD",
@@ -2895,7 +2903,7 @@
     {
       "format": "Fast Break",
       "first_seen": "2026-10-11T06:26:36+00:00",
-      "last_checked": "2026-11-23T08:25:32+00:00",
+      "last_checked": "2026-11-24T00:53:13+00:00",
       "last_seen_live": "2026-10-28T06:29:18+00:00",
       "quantity": 1,
       "sku_id": "PANINI_2023-24_PRIZM_FAST_BREAK",
@@ -2918,7 +2926,7 @@
     {
       "format": "Hobby",
       "first_seen": "2026-10-11T06:26:36+00:00",
-      "last_checked": "2026-11-23T08:25:33+00:00",
+      "last_checked": "2026-11-24T00:53:14+00:00",
       "last_seen_live": "2026-10-28T06:29:18+00:00",
       "quantity": 1,
       "sku_id": "PANINI_2023-24_PRIZM_HOBBY",
@@ -2941,7 +2949,7 @@
     {
       "format": "Hobby",
       "first_seen": "2026-10-16T17:26:14+00:00",
-      "last_checked": "2026-11-23T08:25:35+00:00",
+      "last_checked": "2026-11-24T00:53:17+00:00",
       "last_seen_live": null,
       "price": null,
       "currency": "USD",
@@ -2961,8 +2969,8 @@
     {
       "format": "Inconnu",
       "first_seen": "2026-10-26T23:36:07+00:00",
-      "last_checked": "2026-11-23T08:31:22+00:00",
-      "last_seen_live": "2026-11-23T08:31:22+00:00",
+      "last_checked": "2026-11-24T01:00:31+00:00",
+      "last_seen_live": "2026-11-24T01:00:31+00:00",
       "quantity": 1,
       "sku_id": null,
       "unit_price": 374.95,
@@ -2984,7 +2992,7 @@
     {
       "format": "Hobby",
       "first_seen": "2026-10-31T06:19:07+00:00",
-      "last_checked": "2026-11-23T08:25:38+00:00",
+      "last_checked": "2026-11-24T00:53:19+00:00",
       "last_seen_live": null,
       "price": 1674.94,
       "currency": "USD",
@@ -3004,7 +3012,7 @@
     {
       "format": "Hobby",
       "first_seen": "2026-11-04T00:15:56+00:00",
-      "last_checked": "2026-11-23T08:25:40+00:00",
+      "last_checked": "2026-11-24T00:53:22+00:00",
       "last_seen_live": null,
       "price": 3299.95,
       "currency": "USD",
@@ -3024,7 +3032,7 @@
     {
       "format": "Hobby",
       "first_seen": "2026-11-08T06:43:07+00:00",
-      "last_checked": "2026-11-23T08:25:42+00:00",
+      "last_checked": "2026-11-24T00:53:25+00:00",
       "last_seen_live": null,
       "price": 1099.95,
       "currency": "USD",
@@ -3044,7 +3052,7 @@
     {
       "format": "Mega",
       "first_seen": "2026-11-18T08:14:57+00:00",
-      "last_checked": "2026-11-23T08:31:39+00:00",
+      "last_checked": "2026-11-24T00:53:27+00:00",
       "last_seen_live": "2026-11-23T08:31:39+00:00",
       "quantity": 1,
       "sku_id": "PANINI_2023-24_PRIZM_MEGA",
@@ -3055,19 +3063,19 @@
       "seller_type": "RETAILER_EXTERNE",
       "url": "https://aamintcards.com/products/2023-24-panini-prizm-basketball-mega-box",
       "discovery_method": "balayage catalogue · shopify",
-      "stock_status": "CONFIRMED_LIVE",
-      "confidence": "HIGH",
+      "stock_status": "AMBIGUOUS",
+      "confidence": "LOW",
       "layer": "web",
       "title_lu": "2023/24 Panini Prizm Basketball Mega Box",
       "probe": {
-        "raw": "CONFIRMED_LIVE",
-        "why": "disponibilité structurée de l'API"
+        "raw": "AMBIGUOUS",
+        "why": "HTTP 429"
       }
     },
     {
       "format": "Hobby",
       "first_seen": "2026-11-21T20:05:47+00:00",
-      "last_checked": "2026-11-23T08:25:45+00:00",
+      "last_checked": "2026-11-24T00:53:27+00:00",
       "last_seen_live": null,
       "price": 38999.95,
       "currency": "USD",
